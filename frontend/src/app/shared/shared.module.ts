@@ -6,11 +6,13 @@ import { ContentLayoutComponent } from './components/layouts/content-layout.comp
 import { RouterModule } from '@angular/router'
 import { AccordionModule } from 'primeng/accordion'
 import { ButtonModule } from 'primeng/button'
-import { RippleModule } from 'primeng/ripple'
+import { RippleModule } from 'primeng/ripple';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component'
 
 let modules = [AccordionModule, ButtonModule, RippleModule]
 @NgModule({
-  declarations: [CardRecruiterComponent, ContentLayoutComponent],
+  declarations: [CardRecruiterComponent, ContentLayoutComponent, NavbarComponent, FooterComponent],
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
   exports: [
     CardRecruiterComponent,
