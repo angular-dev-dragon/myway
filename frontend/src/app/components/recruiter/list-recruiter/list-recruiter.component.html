@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row col-12">
+    <app-card-recruiter
+      *ngFor="let recruiter of recruiterList"
+      class="col-md-4"
+      [imageBg]="recruiter.imageBg"
+      [logo]="recruiter.logo"
+      [title]="recruiter.title"
+      [type]="recruiter.type"
+      [salaries]="recruiter.salaries"
+      [caption]="recruiter.caption"
+    ></app-card-recruiter>
+  </div>
+</div>

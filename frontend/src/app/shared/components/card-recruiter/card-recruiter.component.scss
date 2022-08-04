@@ -1,0 +1,28 @@
+.card-recruiter {
+  margin-bottom: 1.5em;
+  box-shadow: 0 4px 8px rgba(118, 118, 120, 0.2);
+  .header-card {
+    .img-bg-card {
+      height: 100px;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  .body-card {
+    padding: 1.5em;
+    display: flex;
+
+    justify-content: space-between;
+    .card-left {
+      margin-inline-end: 1.5rem;
+      .logo-card {
+        height: 100px;
+        width: 100px;
+      }
+    }
+  }
+  .card-right {
+    flex: 1 0 0;
+    min-width: 50%;
+  }
+}

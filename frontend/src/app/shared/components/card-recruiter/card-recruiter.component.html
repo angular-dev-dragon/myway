@@ -1,0 +1,31 @@
+<div class="card-recruiter">
+  <div class="header-card">
+    <img
+      [lazyLoad]="imageBg"
+      [defaultImage]="'assets/images/bg-recruiter'"
+      class="img-bg-card"
+      alt="Image Bg Recruiter"
+    />
+  </div>
+  <div class="body-card">
+    <div class="card-left">
+      <img
+        [lazyLoad]="logo"
+        [defaultImage]="'assets/images/bg-recruiter'"
+        class="logo-card"
+        alt="Logo Recruiter"
+      />
+    </div>
+    <div class="card-right">
+      <h6>{{ title }}</h6>
+      <div class="info-small text-secondary mb-2">
+        <span class="small">{{ type }}</span>
+        <span class="small" *ngIf="salaries != ''">{{ salaries }}</span>
+      </div>
+      <div class="">
+        <p>{{ caption }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-card"></div>
+</div>
