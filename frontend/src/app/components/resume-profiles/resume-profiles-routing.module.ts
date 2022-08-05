@@ -1,7 +1,7 @@
-import { MainProfileComponent } from './components/resume-profiles/main-profile/main-profile.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TestComponent } from './components/resume-profiles/test/test.component';
+import { MainProfileComponent } from './main-profile/main-profile.component';
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   {
@@ -18,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class MayWayRoutingModule { }
+export class ResumeProfilesRoutingModule { }
