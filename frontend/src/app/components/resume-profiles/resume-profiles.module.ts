@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { ResumeProfilesRoutingModule } from './resume-profiles-routing.module';
-import { MainProfileComponent } from './main-profile/main-profile.component';
+
 
 
 import { SharedModule } from 'src/app/shared/shared.module';
@@ -18,7 +18,8 @@ import { MainBarComponent } from './main-bar/main-bar.component';
 
 
 @NgModule({
-  declarations: [MainProfileComponent, LayoutsComponent, LeftSideBarComponent, RightSideBarComponent, MainBarComponent,],
+  declarations: [
+    LayoutsComponent, LeftSideBarComponent, RightSideBarComponent, MainBarComponent,],
   imports: [
     SharedModule,
     RouterModule,
@@ -26,7 +27,7 @@ import { MainBarComponent } from './main-bar/main-bar.component';
 
   ],
   exports: [
-    MainProfileComponent,
+ 
     ResumeProfilesRoutingModule,
 
   ],
