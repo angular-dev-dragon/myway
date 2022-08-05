@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbNavItem,  } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-main-profile',
   templateUrl: './main-profile.component.html',

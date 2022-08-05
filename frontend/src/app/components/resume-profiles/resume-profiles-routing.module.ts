@@ -15,7 +15,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { anchorScrolling:'enabled' })],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class ResumeProfilesRoutingModule { }

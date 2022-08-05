@@ -1,3 +1,4 @@
+
 import { Routes } from '@angular/router'
 
 export const content: Routes = [
@@ -5,14 +6,22 @@ export const content: Routes = [
     path: 'recruteur',
     loadChildren: () =>
       import('../../components/recruiter/recruiter.module').then(
-        (m) => m.RecruiterModule,
+        (m) => m.RecruiterModule
       ),
   },
   {
     path: 'offres',
     loadChildren: () =>
-      import('../../components/recruiter/recruiter.module').then(
-        (m) => m.RecruiterModule,
+      import('./../../components/offres/offres.module').then(
+        (m) => m.OffresModule
+      ),
+  },
+
+  {
+    path: 'resume-profiles',
+    loadChildren: () =>
+      import('../../components/resume-profiles/resume-profiles.module').then(
+        (m) => m.ResumeProfilesModule
       ),
   },
   // {
@@ -98,4 +107,4 @@ export const content: Routes = [
   //   pathMatch: 'full',
   //   redirectTo: 'PageNotFound',
   // },
-]
+];

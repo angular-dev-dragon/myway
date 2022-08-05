@@ -1,29 +1,22 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import { RouterModule } from '@angular/router';
 
 import { ResumeProfilesRoutingModule } from './resume-profiles-routing.module';
 import { MainProfileComponent } from './main-profile/main-profile.component';
 import { SuggestionComponent } from './suggestion/suggestion.component';
 import { TestComponent } from './test/test.component';
-import { FooterComponent } from './footer/footer.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+
 
 
 @NgModule({
-  declarations: [
-    MainProfileComponent,
-    SuggestionComponent,
-    TestComponent,
-    FooterComponent,
-    NavbarComponent
-  ],
-  imports: [
-    CommonModule,
-    ResumeProfilesRoutingModule
-  ],
+  declarations: [MainProfileComponent, SuggestionComponent, TestComponent],
+  imports: [ SharedModule, RouterModule],
   exports: [
     MainProfileComponent,
-    SuggestionComponent
-  ]
+    SuggestionComponent,
+    ResumeProfilesRoutingModule,
+  ],
 })
-export class ResumeProfilesModule { }
+export class ResumeProfilesModule {}
