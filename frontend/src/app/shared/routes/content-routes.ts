@@ -8,6 +8,13 @@ export const content: Routes = [
         (m) => m.RecruiterModule,
       ),
   },
+  {
+    path: 'offres',
+    loadChildren: () =>
+      import('../../components/recruiter/recruiter.module').then(
+        (m) => m.RecruiterModule,
+      ),
+  },
   // {
   //   path: '',
   //   pathMatch: 'full',
