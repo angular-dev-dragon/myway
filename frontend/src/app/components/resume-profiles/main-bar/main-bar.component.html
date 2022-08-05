@@ -5,7 +5,7 @@
         <div class="herder-top-card">
 
           <h5 class="col"><i class="fa-solid fa-circle-info"></i> info </h5>
-          <div class=" icons "></div>
+          <div (click)="showinfo()" class=" icons "></div>
 
         </div>
 
@@ -64,7 +64,7 @@
         <div class="herder-top-card">
 
           <h5 class="col"><i class="fa-solid fa-vial"></i> Experince</h5>
-          <div class=" icons "></div>
+          <div (click)="showExperince()" class=" icons "></div>
 
         </div>
 
@@ -217,7 +217,7 @@
         <div class="herder-top-card">
 
           <h5 class="col"> <i class="fa-solid fa-building-columns"></i> Edcucation </h5>
-          <div class=" icons "></div>
+          <div (click)="showEdcucation()"  class=" icons "></div>
 
         </div>
         <section class="timeline_area section_padding_130">
@@ -366,7 +366,7 @@
         <div class="herder-top-card">
 
           <h5 class="col"><i class="fa-solid fa-brain"></i> hobbie</h5>
-          <div class=" icons "></div>
+          <div (click)="showhobbie()"  class=" icons "></div>
 
         </div>
         <div class="main-container">
@@ -413,5 +413,77 @@
       </div>
     </div>
   </div>
-
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p-dialog header="Header" [(visible)]="info" [style]="{width: '50vw'}">
+  <h1>info</h1>
+  <h1></h1>
+  <ng-template pTemplate="footer">
+    <p-button icon="pi pi-check" (click)="info=false" label="Ok" styleClass="p-button-text"></p-button>
+  </ng-template>
+</p-dialog>
+
+<p-dialog header="Header" [(visible)]="Experince" [style]="{width: '50vw'}">
+  <h1>Experince</h1>
+  <h1></h1>
+  <ng-template pTemplate="footer">
+    <p-button icon="pi pi-check" (click)="Experince=false" label="Ok" styleClass="p-button-text"></p-button>
+  </ng-template>
+</p-dialog>
+
+<p-dialog header="Header" [(visible)]=" Edcucation" [style]="{width: '50vw'}">
+  <h1>Edcucation</h1>
+  <h1></h1>
+  <ng-template pTemplate="footer">
+    <p-button icon="pi pi-check" (click)=" Edcucation=false" label="Ok" styleClass="p-button-text"></p-button>
+  </ng-template>
+</p-dialog>
+
+<p-dialog header="Header" [(visible)]="hobbie" [style]="{width: '50vw'}">
+  <h1>hobbie</h1>
+  <h1></h1>
+  <ng-template pTemplate="footer">
+    <p-button icon="pi pi-check" (click)="hobbie=false" label="Ok" styleClass="p-button-text"></p-button>
+  </ng-template>
+</p-dialog>
+
+
+
