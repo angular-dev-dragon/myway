@@ -27,7 +27,7 @@ export class DetailsRecruiterComponent implements OnInit {
     },
     { label: 'faq', icon: 'pi pi-fw pi-calendar', routerLink: ['faq'] },
     { label: 'Avis', icon: 'pi pi-fw pi-pencil', routerLink: ['avis'] },
-    { label: 'Documentation', icon: 'pi pi-fw pi-file' },
+    { label: 'Membre', icon: 'pi pi-fw pi-user', routerLink: ['membre'] },
     { label: 'Settings', icon: 'pi pi-fw pi-cog' },
   ]
 }

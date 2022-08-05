@@ -8,10 +8,11 @@ import { DetailsRecruiterComponent } from './details-recruiter/details-recruiter
 import { RouterModule } from '@angular/router';
 import { PresentationComponent } from './presentation/presentation.component';
 import { FaqComponent } from './faq/faq.component';
-import { AvisComponent } from './avis/avis.component'
+import { AvisComponent } from './avis/avis.component';
+import { MembreComponent } from './membre/membre.component'
 
 @NgModule({
-  declarations: [ListRecruiterComponent, DetailsRecruiterComponent, PresentationComponent, FaqComponent, AvisComponent],
+  declarations: [ListRecruiterComponent, DetailsRecruiterComponent, PresentationComponent, FaqComponent, AvisComponent, MembreComponent],
   imports: [SharedModule, RouterModule],
   exports: [ListRecruiterComponent, RecruiterRoutingModule],
 })

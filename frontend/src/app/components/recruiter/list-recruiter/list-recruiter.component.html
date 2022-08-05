@@ -2,7 +2,7 @@
   <div class="row col-12">
     <app-card-recruiter
       *ngFor="let recruiter of recruiterList"
-      [routerLink]="['/details-recruteur']"
+      [routerLink]="['details-recruteur']"
       class="col-md-4 col-sm-6"
       [imageBg]="recruiter.imageBg"
       [logo]="recruiter.logo"

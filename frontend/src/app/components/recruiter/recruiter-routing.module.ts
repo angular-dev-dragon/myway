@@ -4,13 +4,14 @@ import { AvisComponent } from './avis/avis.component'
 import { DetailsRecruiterComponent } from './details-recruiter/details-recruiter.component'
 import { FaqComponent } from './faq/faq.component'
 import { ListRecruiterComponent } from './list-recruiter/list-recruiter.component'
+import { MembreComponent } from './membre/membre.component'
 import { PresentationComponent } from './presentation/presentation.component'
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   component: ListRecruiterComponent,
-  // },
+  {
+    path: '',
+    component: ListRecruiterComponent,
+  },
   {
     path: 'list-recruteur',
     component: ListRecruiterComponent,
@@ -35,6 +36,10 @@ const routes: Routes = [
       {
         path: 'avis',
         component: AvisComponent,
+      },
+      {
+        path: 'membre',
+        component: MembreComponent,
       },
     ],
   },

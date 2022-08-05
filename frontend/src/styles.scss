@@ -8,3 +8,17 @@
   padding: 20px;
   border-radius: 10px;
 }
+.p-tabmenu
+  .p-tabmenu-nav
+  .p-tabmenuitem
+  .p-menuitem-link:not(.p-disabled):focus {
+  box-shadow: none !important;
+}
+.p-tabmenu
+  .p-tabmenu-nav
+  .p-tabmenuitem:not(.p-highlight):not(.p-disabled):hover
+  .p-menuitem-link {
+  background: #ffffff;
+  border-color: #3f1c92 !important;
+  color: #1a578d !important;
+}
