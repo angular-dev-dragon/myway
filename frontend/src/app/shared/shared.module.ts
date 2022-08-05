@@ -7,13 +7,26 @@ import { RouterModule } from '@angular/router'
 import { AccordionModule } from 'primeng/accordion'
 import { ButtonModule } from 'primeng/button'
 import { RippleModule } from 'primeng/ripple'
+import { TabViewModule } from 'primeng/tabview'
 
-let modules = [AccordionModule, ButtonModule, RippleModule]
+import { TabMenuModule } from 'primeng/tabmenu'
+import { CardInfoSmall } from './components/card-info-small/card-info-small.component'
+import { ReactiveFormsModule } from '@angular/forms'
+let modules = [
+  AccordionModule,
+  ButtonModule,
+  RippleModule,
+  TabMenuModule,
+  TabViewModule,
+  ReactiveFormsModule,
+]
 @NgModule({
-  declarations: [CardRecruiterComponent, ContentLayoutComponent],
+  declarations: [CardRecruiterComponent, CardInfoSmall, ContentLayoutComponent],
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
   exports: [
     CardRecruiterComponent,
+    CardInfoSmall,
+
     LazyLoadImageModule,
     CommonModule,
     ContentLayoutComponent,
