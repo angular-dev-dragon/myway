@@ -1,0 +1,65 @@
+<div class="section-recruteur mb-3">
+  <h4>Gallerie de</h4>
+</div>
+<div class="section-recruteur">
+  <div class="row">
+    <div
+      class="col-md-6 col-lg-4"
+      (click)="openModal(modalGallerie, gallery)"
+      *ngFor="let gallery of gallerie"
+    >
+      <img
+        *ngIf="gallery?.type_contenu === 'image'"
+        [lazyLoad]="gallery"
+        [defaultImage]="'assets/images/img-article.webp'"
+        alt=""
+        class="img-gallerie"
+      />
+
+      <video
+        *ngIf="gallery?.type_contenu === 'video'"
+        class="img-gallerie"
+        src=""
+        controls
+        type="video/mp4"
+      ></video>
+    </div>
+  </div>
+</div>
+<ng-template #modalGallerie let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Media Details</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <img
+      *ngIf="selectedMedia?.type_contenu === 'image'"
+      [lazyLoad]="selectedMedia"
+      [defaultImage]="'assets/images/img-article.webp'"
+      alt=""
+      class="img-gallerie"
+    />
+
+    <video
+      *ngIf="selectedMedia?.type_contenu === 'video'"
+      class="video-fluid"
+      src=""
+      controls
+      type="video/mp4"
+    ></video>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="modal.close('Save click')"
+    >
+      closes
+    </button>
+  </div>
+</ng-template>

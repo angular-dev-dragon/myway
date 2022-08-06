@@ -5,20 +5,20 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { MayWayModule } from './shared/may-way/may-way.module'
+
 import { RecruiterModule } from './components/recruiter/recruiter.module'
 import { SharedModule } from './shared/shared.module'
+import { ResumeProfilesModule } from './components/resume-profiles/resume-profiles.module'
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-
     AppRoutingModule,
     BrowserAnimationsModule,
-    MayWayModule,
     RecruiterModule,
     SharedModule,
+    ResumeProfilesModule
   ],
   exports: [],
   providers: [],
