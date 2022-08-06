@@ -4,16 +4,17 @@ import { LazyLoadImageModule } from 'ng-lazyload-image' // <-- import it
 import { CardRecruiterComponent } from './components/card-recruiter/card-recruiter.component'
 import { ContentLayoutComponent } from './components/layouts/content-layout.component'
 import { RouterModule } from '@angular/router'
-import { AccordionModule } from 'primeng/accordion'
+import { SkeletonModule } from 'primeng/skeleton'
 import { ButtonModule } from 'primeng/button'
 import { RippleModule } from 'primeng/ripple'
 import { TabViewModule } from 'primeng/tabview'
-
+import { AccordionModule } from 'primeng/accordion'
 import { TabMenuModule } from 'primeng/tabmenu'
 import { CardInfoSmall } from './components/card-info-small/card-info-small.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { NavbarComponent } from './components/navbar/navbar.component'
 import { FooterComponent } from './components/footer/footer.component'
+
 import { CardMembreComponent } from './components/card-membre/card-membre.component'
 import { HttpClient } from '@angular/common/http'
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
@@ -25,9 +26,11 @@ import {
 } from '@ngx-translate/core'
 import { RatingModule } from 'primeng/rating'
 
+import { DialogModule } from 'primeng/dialog'
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
 }
+
 let modules: any = [
   AccordionModule,
   ButtonModule,
@@ -35,6 +38,7 @@ let modules: any = [
   TabMenuModule,
   TabViewModule,
   ReactiveFormsModule,
+  DialogModule,
   FormsModule,
   HttpClientModule,
   TranslateModule.forRoot({
@@ -46,6 +50,7 @@ let modules: any = [
   }),
   RatingModule,
 ]
+
 @NgModule({
   declarations: [
     CardRecruiterComponent,
