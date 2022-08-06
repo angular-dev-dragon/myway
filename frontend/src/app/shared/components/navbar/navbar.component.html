@@ -1,42 +1,68 @@
-<div class="b-example-divider"></div>
+<!--DEBUT DE NAVBAR-->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c4f8ffba; padding: 20px">
+  <div class="container-fluid container">
+    <a class="navbar-brand logo-font" style="margin-left: -50px; font-size: 25px; " href="#">MyWay</a>
+    <button class="navbar-toggler order-first" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor"
+      aria-controls="navbarColor" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="padding-left: 15px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Entreprises</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Offres</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Formations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Conseils</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Actualités</a>
+        </li>
 
-  <header class="p-3 mb-3 border-bottom" style="box-shadow:15px 5px 20px grey ;">
-    <div class="container-fluid">
-        
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        
-
-        <h1 style="margin-left:15px;">MyWay</h1>
-
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" style="margin-left:100px ;">
-          <li><a href="/accueil" class="nav-link px-2 link-secondary">Accueil</a></li>
-          <li><a href="#" class="nav-link px-2 link-dark">Entreprises</a></li>
-          <li><a href="#" class="nav-link px-2 link-dark">Offres</a></li>
-          <li><a href="#" class="nav-link px-2 link-dark">Formations</a></li>
-          <li><a href="#" class="nav-link px-2 link-dark">Conseils</a></li>
-          <li><a href="#" class="nav-link px-2 link-dark">Actualités</a></li>
-        </ul>
-
-     
-
-        <div class="dropdown text-end">
-           
-          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="" alt="mdo" width="32" height="32" class="rounded-circle">
-          </a>
-          <ul class=" dropdown-menu dropdown-menu-right collapse  text-small">
-            <li><a class="dropdown-item" href="#">Se connecter</a></li>
-            <li><a class="dropdown-item" href="#">S'inscrire</a></li>
-            <!-- <li><a class="dropdown-item" href="#">Profile</a></li> -->
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
-          </ul>
-        </div>
-
-      </div>
+      </ul>
+      <form class="d-flex" style="align-items:baseline">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </form>
     </div>
-   
+    <!-- <div
+      class="nav navbar-nav ml-md--auto ml-auto action-buttons"
+     
+    >
+      <div class="nav-item dropdown">
+        <a [routerLink]="['/login']" class="nav-link mr-4">Login</a>
+      </div>
+      <div class="nav-item dropdown">
+        <a [routerLink]="['/register']" class="btn btn-primary dsign-up-btn">
+          Sign up
+        </a>
+      </div>
+    </div> -->
+    <div class="dropdown text-end">
 
-  </header>
+      <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+        aria-expanded="false" style="padding-left: 30px" >
+        <img src="" alt="mdo" width="32" height="32" class="rounded-circle">
+      </a>
+      <ul class=" dropdown-menu dropdown-menu-right collapse  text-small">
+        <li><a class="dropdown-item" href="#">Se connecter</a></li>
+        <li><a class="dropdown-item" href="#">S'inscrire</a></li>
+        <!-- <li><a class="dropdown-item" href="#">Profile</a></li> -->
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="#">Sign out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
- 
+
