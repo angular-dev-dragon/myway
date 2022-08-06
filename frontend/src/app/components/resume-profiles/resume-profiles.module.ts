@@ -11,6 +11,7 @@ import { LayoutsComponent } from './layouts/layouts.component';
 import { LeftSideBarComponent } from './left-side-bar/left-side-bar.component';
 import { RightSideBarComponent } from './right-side-bar/right-side-bar.component';
 import { MainBarComponent } from './main-bar/main-bar.component';
+import { TestComponent } from './test/test.component';
 
 
 
@@ -19,7 +20,7 @@ import { MainBarComponent } from './main-bar/main-bar.component';
 
 @NgModule({
   declarations: [
-    LayoutsComponent, LeftSideBarComponent, RightSideBarComponent, MainBarComponent,],
+    LayoutsComponent, LeftSideBarComponent, RightSideBarComponent, MainBarComponent, TestComponent,],
   imports: [
     SharedModule,
     RouterModule,
@@ -27,7 +28,7 @@ import { MainBarComponent } from './main-bar/main-bar.component';
 
   ],
   exports: [
- 
+
     ResumeProfilesRoutingModule,
 
   ],
