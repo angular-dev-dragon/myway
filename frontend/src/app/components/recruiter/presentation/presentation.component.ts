@@ -63,6 +63,7 @@ export class PresentationComponent implements OnInit {
     effectif: 102,
     secteurActivite: 'Developpement Digitale',
     email: 'testmail@gmail.com',
+    phone: '0522114477',
     cordonneeGeo: '150, Rue ali Ben Omar Casablanca',
     website: 'www.websiterecruteur.com',
   }

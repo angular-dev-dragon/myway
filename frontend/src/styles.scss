@@ -22,3 +22,7 @@
   border-color: #3f1c92 !important;
   color: #1a578d !important;
 }
+.ellipsis-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
