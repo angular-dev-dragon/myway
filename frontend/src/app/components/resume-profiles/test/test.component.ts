@@ -15,7 +15,13 @@ export class TestComponent implements OnInit {
     this.modalService.open(
       content,
 
-      { size: 'xl', windowClass: 'dark-modal' , scrollable: true ,modalDialogClass: 'dark-modal,centered: true '}
+      {
+        size: 'xl',
+        scrollable: true,
+        modalDialogClass: 'dark-modal transparent-bg',
+        centered: true,
+        
+      }
     );
   }
 
