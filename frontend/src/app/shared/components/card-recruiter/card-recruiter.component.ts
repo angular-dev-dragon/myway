@@ -8,7 +8,6 @@ import { Component, Input, OnInit } from '@angular/core'
 export class CardRecruiterComponent implements OnInit {
   @Input() imageBg = ''
   @Input() logo = ''
-
   @Input() title = ''
   @Input() type = ''
   @Input() salaries = ''
