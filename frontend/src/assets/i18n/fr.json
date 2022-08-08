@@ -50,7 +50,6 @@
     "champ_3": "*ce champs doit contenir au minimum 3 caractères",
     "champ_min": "*ce champs doit contenir au minimum",
     "champ_max": "*ce champs doit contenir au maximum",
-
     "champ_10": "*ce champs doit contenir au minimum 10 caractères",
     "champ_lettre": "*ce champs ne peut contenir que de lettres",
     "reference-item": "Reference Du Produit",
@@ -62,7 +61,6 @@
     "date-rdv": "Date du Rendez-Vous",
     "date_debut": "Date Début",
     "date_fin": "Date Fin",
-
     "codePostal": "Code Postal",
     "exp_codePostal": "ex : 20300",
     "ville": "Ville",
@@ -77,10 +75,8 @@
     "titre": "Titre",
     "date_naiss": "Date de naissance",
     "exp_date_naiss": "ex : 10/11/2015",
-
     "haut_diplome": "Plus haut diplôme obtenu",
     "exp_haut_diplome": "Bachelor",
-
     "universite": "Université",
     "exp_universite": "ex : université Harvard",
     "domaine": "Domaine ou spécialisation",
@@ -89,9 +85,7 @@
     "exp_statut": "ex :Employé  à temps complet",
     "secteur": "Secteur",
     "exp_secteur": "Si vous êtes employé(e), indiquez-nous dans quel secteur",
-
     "employeur": "Employeur",
-
     "exp_emploi": "Si vous êtes employé(e), indiquez-nous votre lieu de travail",
     "profession": "Profession",
     "exp_profession": "Si vous êtes employé(e), indiquez-nous votre profession",
@@ -106,5 +100,24 @@
     "image": "Image",
     "password": "Mot de Passe",
     "exp_password": "************"
+  },
+  "candidate": {
+    "b_t": {
+      "Ed": "Education",
+      "Ex": "Experience",
+      "skill": "Skill",
+      "Lan": "Languages",
+      "Certificates": "Certificates",
+      "hobbies": "Hobbies",
+      "conections": "Conections",
+      " About_me": "About me",
+      "Contact": "Contact",
+      "expectation": "Expectation",
+      "Achievements": "Achievements"
+    },
+    "Home": "Home",
+    "user": "User",
+    "candidate": "Candidate",
+    "user_profile": "User Profile"
+
   }
-}
