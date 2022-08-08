@@ -1,50 +1,91 @@
-<div class="b-example-divider"></div>
 
-<header class="p-3 mb-3 border-bottom" style="box-shadow: 15px 5px 20px grey;">
-  <div class="container-fluid">
-    <div
-      class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
-    >
-      <h1 style="margin-left: 15px;">MyWay</h1>
 
-      <ul
-        class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
-        style="margin-left: 100px;"
-      >
-        <li>
-          <a href="/accueil" class="nav-link px-2 link-secondary">Accueil</a>
-        </li>
-        <li>
-          <a
-            class="nav-link px-2 link-dark"
-            [routerLink]="['/recruteur/list-recruteur']"
-          >
-            Entreprises
+<!--DEBUT DE NAVBAR-->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c4f8ffba; padding: 20px; box-shadow: 10px 7px 15px #cdcbcb;" >
+  <div class="container-fluid " style="margin-left: 90px">
+    <a class="navbar-brand logo-font" style="margin-left: -50px; font-size: 25px; " href="#">MyWay</a>
+    <button class="navbar-toggler order-first" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor"
+      aria-controls="navbarColor" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor" style=" padding-left: 100px">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="padding-left: 15px;">
+      
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+            Emploi/ Stage
           </a>
+          <ul  class=" dropdown-menu">
+            <li><a class="dropdown-item" href="#">Offres d'emploi</a></li>
+            <li><a class="dropdown-item" href="#">Offres de stage</a></li>
+            <li><a class="dropdown-item" href="#">Demande spécifique</a></li>
+          </ul>
         </li>
-        <li><a href="#" class="nav-link px-2 link-dark">Offres</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">Formations</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">Conseils</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">Actualités</a></li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Compétences</a>
+        </li>
+
+      
+        <li class="nav-item dropdown">
+          <a  class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+            Annuaires
+          </a>
+          
+          <ul  class=" dropdown-menu" >
+            <li><a class="dropdown-item" href="#">Recruteurs</a></li>
+            <li><a class="dropdown-item" href="#">Cabinets de recrutement</a></li>
+            <li><a class="dropdown-item" href="#">Associations d'insertion économique </a></li>
+            <li><a class="dropdown-item" href="#">Etablissements de formations</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+            Infos pratiques
+          </a>
+          <ul  class=" dropdown-menu">
+            <li><a class="dropdown-item" href="#">Conseils pratiques</a></li>
+            <li><a class="dropdown-item" href="#">Adresses utiles  </a></li>
+            <li><a class="dropdown-item" href="#">Liens utiles</a></li>
+            <li><a class="dropdown-item" href="#">Documents et formulaires à télécharger</a></li>
+            <li><a class="dropdown-item" href="#">législations et textes de lois</a></li>
+            <li><a class="dropdown-item" href="#">Evénements et actualités</a></li>
+          </ul>
+        </li>
+       
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Espace communautaire
+          </a>
+          <ul  class= "dropdown-menu">
+            <li><a class="dropdown-item" href="#">Forums de discussions</a></li>
+            <li><a class="dropdown-item" href="#">Sondages  </a></li>
+            <li><a class="dropdown-item" href="#">Témoignages</a></li>
+            <li><a class="dropdown-item" href="#">Soutiens  </a></li>
+           
+          </ul>
+        </li>
+
       </ul>
 
-      <div class="dropdown text-end">
-        <a
-          href="#"
-          class="d-block link-dark text-decoration-none dropdown-toggle"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <img src="" alt="mdo" width="32" height="32" class="rounded-circle" />
-        </a>
-        <ul class="dropdown-menu dropdown-menu-right collapse text-small">
-          <li><a class="dropdown-item" href="#">Se connecter</a></li>
-          <li><a class="dropdown-item" href="#">S'inscrire</a></li>
-          <!-- <li><a class="dropdown-item" href="#">Profile</a></li> -->
-          <li><hr class="dropdown-divider" /></li>
-          <li><a class="dropdown-item" href="#">Sign out</a></li>
-        </ul>
-      </div>
+    </div>
+
+    <div class="dropdown text-end">
+
+      <a href="#" class="link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+        aria-expanded="false" style="padding-left: 30px" >
+        <img src="" alt="mdo" width="32" height="32" class="rounded-circle">
+      </a>
+      <ul class=" dropdown-menu dropdown-menu-right collapse  text-small">
+        <li><a class="dropdown-item" href="#">Se connecter</a></li>
+        <li><a class="dropdown-item" href="#">S'inscrire</a></li>
+        <!-- <li><a class="dropdown-item" href="#">Profile</a></li> -->
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="#">Sign out</a></li>
+      </ul>
     </div>
   </div>
-</header>
+</nav>

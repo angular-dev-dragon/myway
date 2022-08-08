@@ -6,18 +6,22 @@ import { ResumeProfilesRoutingModule } from './resume-profiles-routing.module'
 
 import { SharedModule } from 'src/app/shared/shared.module'
 import { LayoutsComponent } from './layouts/layouts.component'
-import { LeftSideBarComponent } from './left-side-bar/left-side-bar.component'
-import { RightSideBarComponent } from './right-side-bar/right-side-bar.component'
-import { MainBarComponent } from './main-bar/main-bar.component'
+import { TestComponent } from './test/test.component'
+import { HerobarModule } from './herobar/herobar.module'
+import { SideBarModule } from './side-bar/side-bar.module'
+import { AssistantBarModule } from './assistant-bar/assistant-bar.module'
+import { UrlPathNavComponent } from './url-path-nav/url-path-nav.component'
 
 @NgModule({
-  declarations: [
-    LayoutsComponent,
-    LeftSideBarComponent,
-    RightSideBarComponent,
-    MainBarComponent,
+  declarations: [LayoutsComponent, TestComponent, UrlPathNavComponent],
+  imports: [
+    SharedModule,
+    RouterModule,
+    HerobarModule,
+    SideBarModule,
+    AssistantBarModule,
   ],
-  imports: [SharedModule, RouterModule],
+
   exports: [ResumeProfilesRoutingModule],
 })
 export class ResumeProfilesModule {}
