@@ -1,0 +1,43 @@
+<div class="bg-white card-article-container">
+  <div
+    href="/int-en/case-studies/carlsberg-b2b-engagement-plattform"
+    class="card-flexible"
+  >
+    <div class="card-article-media">
+      <img
+        [lazyLoad]="image"
+        [defaultImage]="
+          'https://www.sqli.com/sites/default/files/styles/xl_thumbnail_teaser/public/2022-06/wine-2021-09-04-09-31-01-utc.jpg?h=306e89dc&itok=fEux5AhX'
+        "
+        alt="Carlsberg Banner Beer"
+        class="card-article-img"
+      />
+    </div>
+
+    <div class="card-article-body d-flex flex-column justify-content-evenly">
+      <div class="card-article-title">
+        <h4 class="">
+          {{ titre }}
+        </h4>
+        <h6 class="">
+          {{ sousTitre }}
+        </h6>
+      </div>
+      <p class="card-article-etiquette m-0">
+        {{ etiquette }}
+      </p>
+      <div class="card-article-motCle">
+        <span class="motCle" *ngFor="let motCle of motsCles">
+          <span class="tag small me-2 p-1 text-secondary bg-light">
+            #{{ motCle }}
+          </span>
+        </span>
+      </div>
+      <span
+        class="teaser-content__wrapper__link link-underlined link-underlined--pink"
+      >
+        Lire Plus
+      </span>
+    </div>
+  </div>
+</div>

@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { RecruiterModule } from './components/recruiter/recruiter.module'
 import { SharedModule } from './shared/shared.module'
 import { ResumeProfilesModule } from './components/resume-profiles/resume-profiles.module'
+import { InfoPratiqueModule } from './components/info-pratique/info-pratique.module'
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +19,8 @@ import { ResumeProfilesModule } from './components/resume-profiles/resume-profil
     BrowserAnimationsModule,
     RecruiterModule,
     SharedModule,
-    ResumeProfilesModule
+    ResumeProfilesModule,
+    InfoPratiqueModule,
   ],
   exports: [],
   providers: [],
