@@ -101,23 +101,24 @@
     "password": "Mot de Passe",
     "exp_password": "************"
   },
-  "candidate": {
-    "b_t": {
-      "Ed": "Education",
-      "Ex": "Experience",
-      "skill": "Skill",
-      "Lan": "Languages",
-      "Certificates": "Certificates",
-      "hobbies": "Hobbies",
-      "conections": "Conections",
-      " About_me": "About me",
-      "Contact": "Contact",
-      "expectation": "Expectation",
-      "Achievements": "Achievements"
-    },
-    "Home": "Home",
-    "user": "User",
-    "candidate": "Candidate",
-    "user_profile": "User Profile"
+  "candidat": {
+    "t": {
+    "ed": "Éducation",
+    "ex": "Expérience",
+    "skill": "Compétences",
+    "l": "Langues",
+    "c": "Certificats",
+    "hob": "Loisirs",
+    "conections": "Connexions",
+    "about_me": "À propos de moi",
+    "contact": "contacter",
+    "expe": "Attente",
+    "ach": "Réalisations"
+  },
+  "home": "Maison",
+  "user": "Utilisateur",
+  "candidate": "Candidat",
+  "user_profile": "Profil utilisateur"
 
   }
+}
