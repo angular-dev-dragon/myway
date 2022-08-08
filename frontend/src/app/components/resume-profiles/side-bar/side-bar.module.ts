@@ -6,9 +6,11 @@ import { SkillsComponent } from './skills/skills.component';
 import { LangougeComponent } from './langouge/langouge.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
-import { CertificatComponent } from './certificat/certificat.component';
+
 import { SharedModule } from 'src/app/shared/shared.module';
 import { LayoutComponent } from './layout/layout.component';
+import { PersonalInformationComponent } from './personal-information/personal-information.component';
+
 
 
 @NgModule({
@@ -19,7 +21,7 @@ import { LayoutComponent } from './layout/layout.component';
     LangougeComponent,
     ContactComponent,
     AboutComponent,
-    CertificatComponent,
+    PersonalInformationComponent,
     LayoutComponent,
   ],
   imports: [CommonModule, SharedModule],

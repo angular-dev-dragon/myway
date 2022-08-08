@@ -6,14 +6,14 @@ import { PrimeNGConfig } from 'primeng/api';
   styleUrls: ['./personal-information.component.scss', '../../style/main.scss'],
 })
 export class PersonalInformationComponent implements OnInit {
-  info: boolean | undefined;
+  // info: boolean | undefined;
   constructor(private primengConfig: PrimeNGConfig) {}
 
   ngOnInit() {
     this.primengConfig.ripple = true;
   }
 
-  showinfo() {
-    this.info = true;
-  }
+  // showinfo() {
+  //   this.info = true;
+  // }
 }
