@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router'
 import { SharedModule } from 'src/app/shared/shared.module'
-import { ConseilsPratiqueComponent } from './conseils-pratique/conseils-pratique.component'
-import { InfoPratiqueRoutingModule } from './info-pratique-routing.module';
-import { DetailsArticleComponent } from './details-article/details-article.component';
-import { TextDeLoisComponent } from './text-de-lois/text-de-lois.component'
+
+import { ListLiensUtilesComponent } from './list-liens-utiles/list-liens-utiles.component'
+import { ListAdressesUtilesComponent } from './list-adresses-utiles/list-adresses-utiles.component'
+import { InfoPratiquesRoutingModule } from './info-pratique-routing.module';
+import { ListDocumentsComponent } from './list-documents/list-documents.component';
+import { DocumentDetailsComponent } from './document-details/document-details.component'
 
 @NgModule({
-  declarations: [ConseilsPratiqueComponent, DetailsArticleComponent, TextDeLoisComponent],
+  declarations: [ListLiensUtilesComponent, ListAdressesUtilesComponent, ListDocumentsComponent, DocumentDetailsComponent],
   imports: [SharedModule, RouterModule],
-  exports: [InfoPratiqueRoutingModule],
+  exports: [InfoPratiquesRoutingModule],
 })
 export class InfoPratiqueModule {}

@@ -10,6 +10,7 @@ import { RecruiterModule } from './components/recruiter/recruiter.module'
 import { SharedModule } from './shared/shared.module'
 import { ResumeProfilesModule } from './components/resume-profiles/resume-profiles.module'
 import { InfoPratiqueModule } from './components/info-pratique/info-pratique.module'
+import { RubriquePostModule } from './components/rubrique-article/rubrique-post.module'
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { InfoPratiqueModule } from './components/info-pratique/info-pratique.mod
     SharedModule,
     ResumeProfilesModule,
     InfoPratiqueModule,
+    RubriquePostModule,
   ],
   exports: [],
   providers: [],

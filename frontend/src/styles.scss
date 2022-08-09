@@ -27,7 +27,13 @@
   overflow: hidden;
 }
 
-.transparent-bg>.modal-content {
+.transparent-bg > .modal-content {
   background-color: #fefefe00 !important;
   border: none !important;
+}
+a {
+  text-decoration: none;
+}
+.pull-right {
+  float: right;
 }

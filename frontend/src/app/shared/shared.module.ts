@@ -28,6 +28,9 @@ import { RatingModule } from 'primeng/rating'
 
 import { DialogModule } from 'primeng/dialog'
 import { CardArticleComponent } from './components/card-article/card-article.component'
+import { CardDocumentComponent } from './components/card-document/card-document.component'
+
+import { MapComponent } from './components/map/map.component'
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
 }
@@ -61,6 +64,8 @@ let modules: any = [
     FooterComponent,
     CardMembreComponent,
     CardArticleComponent,
+    CardDocumentComponent,
+    MapComponent,
   ],
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
   exports: [
@@ -74,6 +79,9 @@ let modules: any = [
     LazyLoadImageModule,
     CommonModule,
     ContentLayoutComponent,
+    CardDocumentComponent,
+
+    MapComponent,
     ...modules,
   ],
 })

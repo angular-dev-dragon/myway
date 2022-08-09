@@ -13,7 +13,7 @@
   margin: 0;
   li {
     cursor: pointer;
-    border: 1px solid #ccc;
+    border: 1px solid #fff;
     font-size: 25px;
     margin-inline-end: 0.5em;
     width: 40px;
@@ -21,7 +21,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #666;
+    color: #fff;
     border-radius: 10px;
   }
 }
@@ -42,11 +42,17 @@
 }
 .info-article {
   margin-inline-end: 5px;
-  color: #666;
+  color: #fff;
   text-decoration: none;
   i {
     margin-inline-end: 3px;
     font-size: 20px;
-    color: #666;
+    color: #fff;
+  }
+}
+.article-download {
+  color: #000;
+  a {
+    text-decoration: none;
   }
 }

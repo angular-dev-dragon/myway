@@ -24,12 +24,33 @@ export const content: Routes = [
       ),
   },
   {
+    path: 'rubrique',
+    loadChildren: () =>
+      import('../../components/rubrique-article/rubrique-post.module').then(
+        (m) => m.RubriquePostModule,
+      ),
+  },
+  {
     path: 'info-pratique',
     loadChildren: () =>
       import('../../components/info-pratique/info-pratique.module').then(
         (m) => m.InfoPratiqueModule,
       ),
   },
+  // {
+  //   path: 'liens-utiles',
+  //   loadChildren: () =>
+  //     import('../../components/info-pratique/info-pratique.module').then(
+  //       (m) => m.LiensUtilesModule,
+  //     ),
+  // },
+  // {
+  //   path: 'adresses-utiles',
+  //   loadChildren: () =>
+  //     import('../../components/adresses-utiles/info-pratique.module').then(
+  //       (m) => m.AdressesUtilesModume,
+  //     ),
+  // },
   // {
   //   path: '',
   //   pathMatch: 'full',

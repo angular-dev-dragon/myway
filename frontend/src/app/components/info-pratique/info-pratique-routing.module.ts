@@ -1,16 +1,26 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
-import { ConseilsPratiqueComponent } from './conseils-pratique/conseils-pratique.component'
-import { DetailsArticleComponent } from './details-article/details-article.component'
+import { DocumentDetailsComponent } from './document-details/document-details.component'
+import { ListAdressesUtilesComponent } from './list-adresses-utiles/list-adresses-utiles.component'
+import { ListDocumentsComponent } from './list-documents/list-documents.component'
+import { ListLiensUtilesComponent } from './list-liens-utiles/list-liens-utiles.component'
 
 const routes: Routes = [
   {
-    path: 'conseils-pratique',
-    component: ConseilsPratiqueComponent,
+    path: 'list-liens-utiles',
+    component: ListLiensUtilesComponent,
   },
   {
-    path: 'details-artcile',
-    component: DetailsArticleComponent,
+    path: 'list-adresses-utiles',
+    component: ListAdressesUtilesComponent,
+  },
+  {
+    path: 'list-documents-a-telecharger',
+    component: ListDocumentsComponent,
+  },
+  {
+    path: 'document-details',
+    component: DocumentDetailsComponent,
   },
 ]
 
@@ -18,4 +28,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class InfoPratiqueRoutingModule {}
+export class InfoPratiquesRoutingModule {}

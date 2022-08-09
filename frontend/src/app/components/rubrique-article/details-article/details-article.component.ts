@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-details-article',
@@ -6,7 +7,37 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./details-article.component.scss'],
 })
 export class DetailsArticleComponent implements OnInit {
-  constructor() {}
+  public avisForm: FormGroup
+
+  constructor(private fb: FormBuilder) {
+    this.avisForm = this.fb.group({
+      name: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(30),
+        Validators.pattern('^[a-zA-Z \u0600-\u06FF]+$'),
+      ]),
+      prenom: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(30),
+        Validators.pattern('^[a-zA-Z \u0600-\u06FF]+$'),
+      ]),
+
+      reference: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(30),
+      ]),
+      telephone: new FormControl('', [
+        Validators.required,
+        Validators.pattern('^((\\+212-?)|0)?[0-9]{10}$'),
+        Validators.minLength(10),
+      ]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      avis: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    })
+  }
 
   ngOnInit(): void {}
   article: any = {
@@ -87,14 +118,9 @@ export class DetailsArticleComponent implements OnInit {
       {
         commentaire_interne: [],
         _id: { $oid: '622b0fa13ffa4e31e920a075' },
-        translations: {
-          fr: {
-            __titre: 'Est dicta ducimus s',
-            __commentaire: 'Sed ad inventore qui',
-          },
-          en: { __titre: '' },
-          ar: { __titre: '' },
-        },
+        titre: 'Est dicta ducimus s',
+        commentaire: 'Sed ad inventore qui',
+
         chemin_si_doc: '',
         link: 'Mollit ut ducimus v',
         lien_interne_externe: 'false',
@@ -259,5 +285,12 @@ export class DetailsArticleComponent implements OnInit {
     //   .subscribe((res) => {
     //     // //console.log('nombre de like ======= ',res.like);
     //   })
+  }
+  public sendAvis() {
+    if (this.avisForm.valid) {
+      this.avisForm.reset()
+    } else {
+      this.avisForm.markAllAsTouched()
+    }
   }
 }

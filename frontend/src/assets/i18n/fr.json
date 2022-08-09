@@ -106,5 +106,67 @@
     "image": "Image",
     "password": "Mot de Passe",
     "exp_password": "************"
+  },
+  "document": {
+    "telecharger": "Télécharger ",
+    "docA": "Document a Télécharger"
+  },
+  "article": {
+    "ref": "Réferences"
+  },
+  "adresse": {
+    "filter": "Filter",
+    "clear": "Clear all",
+    "text_sorry": "Sorry! Couldn't find what you were looking For!!!",
+    "check": "Please check if you have misspelt something or try searchin with other words.",
+    "continue_browsing": "continue browsing",
+    "reinitialiser": "Réinitialiser",
+    "filtrer": "Filtrer par mot clé",
+    "annajda_ex": "ex : IDMAJ",
+    "guichet": "E-guichet",
+    "s_inscrire": "S'inscrire en ligne",
+    "rendez_vous": "Prendre Rendez-Vous",
+    "get_info": "Demande D'information",
+    "consulter": "Consulter",
+    "nbr_participations": "Nombre de participations:",
+    "de": "De",
+    "à": "à",
+    "participer": "Participer",
+    "description": "Description",
+    "adresse": "Adresse",
+    "tele": "Téléphone",
+    "fax": "Fax",
+    "email": "Email",
+    "site": "Site web",
+    "horaires": "Horaires d'ouverture",
+    "close": "close",
+    "consulter_site": "consulter site web"
+  },
+  "add": {
+    "ajouter": "Ajouter un lien utile",
+    "choix": "Choix de Taxonomie",
+    "selc": "Sélectionner une catégorie",
+    "sel_sn": "Sélectionner un sous niveau",
+    "information": "Informations générales",
+    "etat": "État",
+    "sel_etat": "Sélectionner un état",
+    "creation": "En cours de création",
+    "valider": "À valider",
+    "designation": "Désignation",
+    "titre": "Titre",
+    "desc": "Descriptif",
+    "lien": "Lien HyperText",
+    "ajouter_img": "Ajouter une image",
+    "upload": "Télécharger une image",
+    "ajouter_ser": "Ajouter les services",
+    "services": "Services",
+    "enregistrer": "Enregistrer",
+    "description": "Description de Organisation"
+  },
+  "globale": {
+    "details": "Details",
+    "description": "Description",
+    "telecharger": "Télécharger",
+    "commentaires": "Commentaires"
   }
 }
