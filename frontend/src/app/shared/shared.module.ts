@@ -1,6 +1,6 @@
 import { Inject, NgModule, PLATFORM_ID } from '@angular/core'
 import { CommonModule, isPlatformBrowser } from '@angular/common'
-import { LazyLoadImageModule } from 'ng-lazyload-image' // <-- import it
+import { LazyLoadImageModule } from 'ng-lazyload-image' 
 import { CardRecruiterComponent } from './components/card-recruiter/card-recruiter.component'
 import { ContentLayoutComponent } from './components/layouts/content-layout.component'
 import { RouterModule } from '@angular/router'
