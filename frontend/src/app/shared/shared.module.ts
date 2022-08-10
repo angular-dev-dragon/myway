@@ -31,8 +31,8 @@ import { ToastModule } from 'primeng/toast';
 // form importes
 // form importes
 // form importes
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { CalendarModule } from 'primeng/calendar';
 import { ChipsModule } from 'primeng/chips';
@@ -84,8 +84,6 @@ let modules: any = [
   TriStateCheckboxModule ,
   SplitButtonModule ,
   SpeedDialModule ,
-  BrowserModule,
-  BrowserAnimationsModule,
   AutoCompleteModule,
   CalendarModule,
   ChipsModule,

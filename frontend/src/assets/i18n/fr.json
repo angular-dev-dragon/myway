@@ -162,8 +162,8 @@
     "details": "Details",
     "description": "Description",
     "telecharger": "Télécharger",
-    "commentaires": "Commentaires",
-
+    "commentaires": "Commentaires"
+  },
     "candidat": {
       "t": {
         "ed": "Éducation",
@@ -183,5 +183,5 @@
       "candidate": "Candidat",
       "user_profile": "Profil utilisateur"
     }
-  }
+
 }
