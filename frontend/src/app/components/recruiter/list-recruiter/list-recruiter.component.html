@@ -2,7 +2,7 @@
   <div class="row col-12">
     <app-card-recruiter
       *ngFor="let recruiter of recruiterList"
-      [routerLink]="['/details-recruteur']"
+      [routerLink]="['/recruteur/details-recruteur/presentation']"
       class="col-md-4 col-sm-6"
       [imageBg]="recruiter.imageBg"
       [logo]="recruiter.logo"
@@ -12,4 +12,92 @@
       [caption]="recruiter.caption"
     ></app-card-recruiter>
   </div>
+
+  <!-- <div class="col-md-4 flex justify-center items-center h-screen">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+      <img
+        class="w-full"
+        src="https://source.unsplash.com/random/1600x900"
+        alt="Sunset in the mountains"
+      />
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+        <p class="text-gray-700 text-base">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
+          quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
+          nihil.
+        </p>
+      </div>
+      <div class="px-6 py-4">
+        <span
+          class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
+        >
+          #photography
+        </span>
+        <span
+          class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
+        >
+          #travel
+        </span>
+        <span
+          class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700"
+        >
+          #winter
+        </span>
+      </div>
+    </div>
+  </div> -->
+  <!-- 
+  <div class="col-md-6 bg-white card-article-container">  
+    <div
+      href="/int-en/case-studies/carlsberg-b2b-engagement-plattform"
+      class="d-flex flex-row"
+    >
+      <div class="card-article-media">
+        <img
+          src="https://www.sqli.com/sites/default/files/styles/xl_thumbnail_teaser/public/2022-06/wine-2021-09-04-09-31-01-utc.jpg?h=306e89dc&itok=fEux5AhX"
+          alt="Carlsberg Banner Beer"
+          class="img-fluid card-article-img"
+        />
+      </div>
+
+      <div class="card-article-body d-flex flex-column justify-content-evenly">
+        <div class="card-article-tag">
+          <span class="teaser-content__wrapper__data__tag">
+            <span
+              class="tag small me-2"
+              style="color: #000000; background-color: #b4e1c2;"
+            >
+              e-Commerce
+            </span>
+
+            <span
+              class="tag small"
+              style="color: #000000; background-color: #fca1a1;"
+            >
+              Technology
+            </span>
+          </span>
+        </div>
+
+        <p class="card-article-etiquette m-0">
+          Carlsberg
+        </p>
+        <div class="card-article-title">
+          <h4 class="">
+            B2B Engagement Platform with SAP CX
+          </h4>
+          <h6 class="">
+            Sous Titre
+          </h6>
+        </div>
+
+        <span
+          class="teaser-content__wrapper__link link-underlined link-underlined--pink"
+        >
+          Read more
+        </span>
+      </div>
+    </div>
+  </div> -->
 </div>

@@ -1,0 +1,49 @@
+<div class="card mb-4 mt-4">
+  <div class="card-body h-100">
+    <div class="herder-top-card">
+
+      <h5 class="col about">{{'candidat.t.about_me'|translate}}</h5>
+      <div (click)="showAbout()" class=" icons "></div>
+
+    </div>
+
+    <p class="para">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis illo fugit officiis distinctio
+      culpa officia
+      totam atque exercitationem inventore repudiandae?
+    </p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p-dialog header="Header" [(visible)]="About" [style]="{width: '50vw'}">
+  <h1>About</h1>
+  <h1></h1>
+  <ng-template pTemplate="footer">
+    <p-button icon="pi pi-check" (click)="About=false" label="Ok" styleClass="p-button-text"></p-button>
+  </ng-template>
+</p-dialog>

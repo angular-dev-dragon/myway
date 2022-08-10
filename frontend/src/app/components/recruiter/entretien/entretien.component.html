@@ -110,9 +110,6 @@
                 <div *ngIf="entretienForm.get('name')?.errors?.['maxlength']">
                   {{ 'form.champ_30' }}
                 </div>
-                <div *ngIf="entretienForm.get('name')?.errors?.['pattern']">
-                  {{ 'form.champ_lettre' }}
-                </div>
               </div>
             </div>
 
@@ -149,9 +146,6 @@
                 </div>
                 <div *ngIf="entretienForm.get('prenom')?.errors?.['maxlength']">
                   {{ 'form.champ_30' }}
-                </div>
-                <div *ngIf="entretienForm.get('prenom')?.errors?.['pattern']">
-                  {{ 'form.champ_lettre' }}
                 </div>
               </div>
             </div>
