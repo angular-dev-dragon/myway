@@ -10,6 +10,7 @@ import { FormGroup, FormBuilder, Validators , FormControl } from '@angular/forms
 })
 export class HeadProfileComponent implements OnInit {
   date: any;
+  online: boolean = false;
   public headerProfileForm: FormGroup;
   constructor(
     private c: NgbModalConfig,
