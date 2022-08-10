@@ -27,6 +27,10 @@ import {
 import { RatingModule } from 'primeng/rating'
 
 import { DialogModule } from 'primeng/dialog'
+import { BrowserModule } from '@angular/platform-browser'
+import { CalendarModule } from 'primeng/calendar'
+import { DropdownModule } from 'primeng/dropdown'
+import { InputTextModule } from 'primeng/inputtext'
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
 }
@@ -49,6 +53,14 @@ let modules: any = [
     },
   }),
   RatingModule,
+  BrowserModule,
+  TabViewModule,
+  InputTextModule,
+  FormsModule,
+  CalendarModule,
+  DropdownModule,
+  ReactiveFormsModule,
+  AccordionModule,
 ]
 
 @NgModule({
