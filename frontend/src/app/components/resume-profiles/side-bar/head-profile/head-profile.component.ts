@@ -10,14 +10,14 @@ import { FormGroup, FormBuilder, Validators , FormControl } from '@angular/forms
 })
 export class HeadProfileComponent implements OnInit {
   date: any;
-  public entretienForm: FormGroup;
+  public headerProfileForm: FormGroup;
   constructor(
     private c: NgbModalConfig,
     private ms: NgbModal,
     private fb: FormBuilder
   ) {
 
-    this.entretienForm = this.fb.group({
+    this.headerProfileForm = this.fb.group({
       name: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
@@ -54,10 +54,10 @@ export class HeadProfileComponent implements OnInit {
   }
 
   sendEntretien() {
-    if (this.entretienForm.valid) {
-      console.log('this.entretienForm', this.entretienForm);
+    if (this.headerProfileForm.valid) {
+      console.log('this.headerProfileForm', this.headerProfileForm);
     } else {
-      this.entretienForm.markAllAsTouched();
+      this.headerProfileForm.markAllAsTouched();
       console.log('not valid');
 
     }
