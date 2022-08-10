@@ -132,17 +132,19 @@
                               <label class="filter">Ville</label>
                               <div>
                                 <select
+                                  (change)="filterParVille(ville.value)"
                                   name="secteur"
                                   id="secteur-select"
                                   class="form-select"
+                                  #ville
                                 >
                                   <option value="">choisissez la ville</option>
                                   <option value="dog">Tout</option>
-                                  <option value="cat">Agriculture</option>
-                                  <option value="hamster">Électronique</option>
-                                  <option value="parrot">Informatique</option>
-                                  <option value="spider">Santé</option>
-                                  <option value="goldfish">Textile</option>
+                                  <option value="Tanger">Tanger</option>
+                                  <option value="Tétouan">Tétouan</option>
+                                  <option value="Rabat">Rabat</option>
+                                  <option value="Casablanca">Casablanca</option>
+                                  <option value="Nador">Casablanca</option>
                                 </select>
                               </div>
                             </li>
@@ -574,7 +576,7 @@
                           <td class="number text-center"></td>
                           <td class="image">
                             <img
-                              src="../../../../../assets/images pour offres/téléchargement.png"
+                              src="../../../../assets/images/images pour offres/téléchargement.png"
                               alt=""
                               class="img-offre"
                               style="margin-inline-end: 13px;"

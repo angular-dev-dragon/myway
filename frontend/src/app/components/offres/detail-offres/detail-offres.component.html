@@ -3,7 +3,7 @@
     <div class="row g-0">
       <div class="col-md-3">
         <img
-          src="../../../../../assets/images pour offres/téléchargement.png"
+          src="../../../../assets/images/images pour offres/téléchargement.png"
           class="img-fluid rounded-start"
           alt="..."
         />
@@ -34,11 +34,11 @@
           >
             <li style="margin-right: 20px;">
               <i class="fa-regular fa-calendar"></i>
-              Date de publication:
+              Date de publication:{{ details.Date_pub }}
             </li>
             <li>
               <i class="fa-regular fa-calendar"></i>
-              Date de postulation:
+              Date de postulation:{{ details.Date_pos }}
             </li>
           </ul>
           <p class="card-text"></p>
@@ -77,33 +77,12 @@
     <div class="card">
       <!-- <h5>Détails de l'offre</h5> -->
       <p-tabView>
-        <p-tabPanel header="Détails de l'offre">
-          <!-- <div class="details">
-            <div *ngFor="let info of details.Description">
-              <h6 class="criteres-offres" *ngIf="info.Titre">
-                {{ info.Titre }} {{ details.Intitule }}
-              </h6>
-              <p *ngIf="info.Texte">{{ info.Texte }}</p>
-              <ul *ngIf="info.List">
-                <li *ngFor="let list of info.List">{{ list }}</li>
-              </ul>
-            </div>
-            <h6 class="criteres-offres">Critères de l'offre:</h6>
-            <ul>
-              <li>Secteur d'activité: {{ details.Secteur }}</li>
-              <li>Type de contrat: {{ details.TypeContrat }}</li>
-              <li>Région: {{ details.Region }}</li>
-              <li>Ville: {{ details.Ville }}</li>
-              <li>Niveaux d'études: {{ details.NiveauxEt }}</li>
-              <li>Niveau d'expérience: {{ details.NiveauxEx }}</li>
-              <li>langues exigées: {{ details.Langues }}</li>
-              <li>Salaire: {{ details.Salaire }}</li>
-              <li>Compétence clés: {{ details.Competences }}</li>
-              <li>Nombres de poste(s): {{ details.NombresPoste }}</li>
-            </ul>
-          </div> -->
+        <p-tabPanel header="{{ 'offre.details' | translate }}">
           <p-accordion>
-            <p-accordionTab header="Description " [selected]="true">
+            <p-accordionTab
+              header="{{ 'globale.description' | translate }} "
+              [selected]="true"
+            >
               <div *ngFor="let info of details.Description">
                 <h6 class="criteres-offres" *ngIf="info.Titre">
                   {{ info.Titre }} {{ details.Intitule }}
@@ -115,7 +94,7 @@
               </div>
             </p-accordionTab>
 
-            <p-accordionTab header="Missions ">
+            <p-accordionTab header="{{ 'offre.missions' | translate }} ">
               <div *ngFor="let info of details.Missions">
                 <h6 class="criteres-offres" *ngIf="info.Titre">
                   {{ info.Titre }}
@@ -127,7 +106,7 @@
               </div>
             </p-accordionTab>
 
-            <p-accordionTab header="Profil recherché">
+            <p-accordionTab header="{{ 'offre.profilR' | translate }}">
               <div *ngFor="let info of details.ProfilRecherche">
                 <h6 class="criteres-offres" *ngIf="info.Titre">
                   {{ info.Titre }}
@@ -138,7 +117,7 @@
                 </ul>
               </div>
             </p-accordionTab>
-            <p-accordionTab header="Critères de l'offre:">
+            <p-accordionTab header="{{ 'offre.critere_offre' | translate }}">
               <ul>
                 <li>Secteur d'activité: {{ details.Secteur }}</li>
                 <li>Type de contrat: {{ details.TypeContrat }}</li>
@@ -156,27 +135,34 @@
         </p-tabPanel>
 
         <!--2-->
-        <p-tabPanel header="Détail de l'entreprise">
+        <p-tabPanel header="{{ 'offre.det_entr' | translate }}">
           <img
-            src="../../../../../assets/images pour offres/téléchargement.png"
+            src="../../../../assets/images/images pour offres/téléchargement.png"
             class="rounded float-end"
             alt="..."
           />
 
           <ul>
             <li>
-              <h5>L'entreprise: {{ Det_Ent.NomEntreprise }}</h5>
+              <h5>
+                {{ 'offre.entreprise' | translate }}:
+                {{ Det_Ent.NomEntreprise }}
+              </h5>
             </li>
-            <li>Secteur: {{ Det_Ent.Secteur }}</li>
-            <li>Site Internet: {{ Det_Ent.SiteInternet }}</li>
-            <li>Description: {{ Det_Ent.Description }}</li>
+            <li>{{ 'form.secteur' | translate }}: {{ Det_Ent.Secteur }}</li>
+            <li>
+              {{ 'adresse.site' | translate }}: {{ Det_Ent.SiteInternet }}
+            </li>
+            <li>
+              {{ 'adresse.description' | translate }}: {{ Det_Ent.Description }}
+            </li>
           </ul>
         </p-tabPanel>
         <!--3-->
-        <p-tabPanel header="Postulez !">
+        <p-tabPanel header="{{ 'offre.postuler' | translate }}">
           <p>
-            J'ai déja un compte:
-            <a href="#">se connecter</a>
+            {{ 'offre.dejaCompte' | translate }}:
+            <a href="#">{{ 'offre.connect' | translate }}</a>
           </p>
           <hr />
           <!--Formulaire postuler-->
@@ -187,7 +173,7 @@
                 <!--Salutation-->
                 <div class="mb-3 col-md-2">
                   <label for="salutation" class="form-label">
-                    {{ 'form.salutation' }}
+                    {{ 'form.salut' | translate }}:
                   </label>
                   <select
                     id="salutation"
@@ -200,10 +186,12 @@
                         postulezForm.get('salutation')?.invalid
                     }"
                   >
-                    <option selected disabled>Civilité</option>
-                    <option>Mme</option>
-                    <option>Mlle</option>
-                    <option>Mr</option>
+                    <option selected disabled>
+                      {{ 'form.salut' | translate }}
+                    </option>
+                    <option>{{ 'form.mme' | translate }}</option>
+                    <option>{{ 'form.mlle' | translate }}</option>
+                    <option>{{ 'form.mr' | translate }}</option>
                   </select>
                   <div
                     *ngIf="
@@ -215,7 +203,7 @@
                     <div
                       *ngIf="postulezForm.get('salutation')?.errors?.['required']"
                     >
-                      {{ 'form.champ_oblig' }}
+                      {{ 'form.champ_oblig' | translate }}
                     </div>
                   </div>
                 </div>
@@ -223,12 +211,14 @@
                 <!-- Name input -->
 
                 <div class="mb-3 col-md-5">
-                  <label class="form-label" for="name">{{ 'form.nom' }}</label>
+                  <label class="form-label" for="name">
+                    {{ 'form.nom' | translate }}:
+                  </label>
                   <input
                     class="form-control"
                     id="name"
                     type="text"
-                    placeholder="{{ 'form.exp_nom' }}"
+                    placeholder="{{ 'form.exp_nom' | translate }}"
                     [ngClass]="{
                       'is-invalid':
                         postulezForm.get('name')?.touched &&
@@ -245,17 +235,17 @@
                     class="invalid-feedback mb-2"
                   >
                     <div *ngIf="postulezForm.get('name')?.errors?.['required']">
-                      {{ 'form.champ_oblig' }}
+                      {{ 'form.champ_oblig' | translate }}
                     </div>
                     <div
                       *ngIf="postulezForm.get('name')?.errors?.['minlength']"
                     >
-                      {{ 'form.champ_3' }}
+                      {{ 'form.champ_3' | translate }}
                     </div>
                     <div
                       *ngIf="postulezForm.get('name')?.errors?.['maxlength']"
                     >
-                      {{ 'form.champ_30' }}
+                      {{ 'form.champ_30' | translate }}
                     </div>
                   </div>
                 </div>
@@ -263,13 +253,13 @@
                 <!-- Prenom input -->
                 <div class="mb-3 col-md-5">
                   <label class="form-label" for="prenom">
-                    {{ 'form.prenom' }}
+                    {{ 'form.prenom' | translate }}:
                   </label>
                   <input
                     class="form-control"
                     id="prenom"
                     type="prenom"
-                    placeholder="{{ 'form.exp_pre' }}"
+                    placeholder="{{ 'form.exp_pre' | translate }}"
                     formControlName="prenom"
                     name="prenom"
                     [ngClass]="{
@@ -288,17 +278,17 @@
                     <div
                       *ngIf="postulezForm.get('prenom')?.errors?.['required']"
                     >
-                      {{ 'form.champ_oblig' }}
+                      {{ 'form.champ_oblig' | translate }}
                     </div>
                     <div
                       *ngIf="postulezForm.get('prenom')?.errors?.['minlength']"
                     >
-                      {{ 'form.champ_3' }}
+                      {{ 'form.champ_3' | translate }}
                     </div>
                     <div
                       *ngIf="postulezForm.get('prenom')?.errors?.['maxlength']"
                     >
-                      {{ 'form.champ_30' }}
+                      {{ 'form.champ_30' | translate }}
                     </div>
                   </div>
                 </div>
@@ -309,13 +299,13 @@
                 <!-- Email input -->
                 <div class="mb-3 col-md-6">
                   <label class="form-label" for="emailAddress">
-                    {{ 'form.email' }}
+                    {{ 'form.email' | translate }}:
                   </label>
                   <input
                     class="form-control"
                     id="emailAddress"
                     type="email"
-                    placeholder="{{ 'form.exp_email' }}"
+                    placeholder="{{ 'form.exp_email' | translate }}"
                     formControlName="email"
                     name="email"
                     [ngClass]="{
@@ -334,10 +324,10 @@
                     <div
                       *ngIf="postulezForm.get('email')?.errors?.['required']"
                     >
-                      {{ 'form.champ_oblig' }}
+                      {{ 'form.champ_oblig' | translate }}
                     </div>
                     <div *ngIf="postulezForm.get('email')?.errors?.['email']">
-                      {{ 'form.mail_valid' }}
+                      {{ 'form.mail_valid' | translate }}
                     </div>
                   </div>
                 </div>
@@ -345,13 +335,13 @@
                 <!--Téléphone-->
                 <div class="mb-3 col-md-3">
                   <label class="form-label" for="telephone">
-                    {{ 'form.telephone' }}
+                    {{ 'form.telephone' | translate }}:
                   </label>
                   <input
                     class="form-control"
                     id="telephone"
                     type="texte"
-                    placeholder="{{ 'form.exp_tel' }}"
+                    placeholder="{{ 'form.exp_tel' | translate }}"
                     formControlName="telephone"
                     name="telephone"
                     [ngClass]="{
@@ -370,24 +360,24 @@
                     <div
                       *ngIf="postulezForm.get('telephone')?.errors?.['required']"
                     >
-                      {{ 'form.champ_oblig' }}
+                      {{ 'form.champ_oblig' | translate }}
                     </div>
                     <div
                       *ngIf="postulezForm.get('telephone')?.errors?.['pattern']"
                     >
-                      {{ 'form.tel_valid' }}
+                      {{ 'form.tel_valid' | translate }}
                     </div>
                     <div
                       *ngIf="postulezForm.get('telephone')?.errors?.['minlength']"
                     >
-                      {{ 'form.champ_10' }}
+                      {{ 'form.champ_10' | translate }}
                     </div>
                   </div>
                 </div>
                 <!--date de naissance-->
                 <div class="mb-3 col-md-3">
                   <label class="form-label" for="dateNaissance">
-                    {{ 'form.dateNaissance' }}
+                    {{ 'form.date_naiss' | translate }}:
                   </label>
                   <input
                     id="dateNaissance"
@@ -406,7 +396,7 @@
                     <div
                       *ngIf="postulezForm.get('dateNaissance')?.errors?.['required']"
                     >
-                      {{ 'form.champ_oblig' }}
+                      {{ 'form.champ_oblig' | translate }}
                     </div>
                   </div>
                 </div>
@@ -417,7 +407,7 @@
                 <!--Métier-->
                 <div class="mb-3 col-md-4">
                   <label for="metier" class="form-label">
-                    {{ 'form.metier' }}
+                    {{ 'form.metier' | translate }}:
                   </label>
                   <select
                     id="metier"
@@ -445,7 +435,7 @@
                     <div
                       *ngIf="postulezForm.get('metier')?.errors?.['required']"
                     >
-                      {{ 'form.champ_oblig' }}
+                      {{ 'form.champ_oblig' | translate }}
                     </div>
                   </div>
                 </div>
@@ -454,7 +444,7 @@
 
                 <div class="mb-3 col-md-4">
                   <label for="niveauEtu" class="form-label">
-                    {{ 'form.niveauEtu' }}
+                    {{ 'form.niveauEtu' | translate }}:
                   </label>
                   <select
                     id="niveauEtu"
@@ -482,7 +472,7 @@
                     <div
                       *ngIf="postulezForm.get('niveauEtu')?.errors?.['required']"
                     >
-                      {{ 'form.champ_oblig' }}
+                      {{ 'form.champ_oblig' | translate }}
                     </div>
                   </div>
                 </div>
@@ -491,7 +481,7 @@
 
                 <div class="mb-3 col-md-4">
                   <label for="niveauExp" class="form-label">
-                    {{ 'form.niveauExp' }}
+                    {{ 'form.niveauExp' | translate }}:
                   </label>
                   <select
                     id="niveauExp"
@@ -519,7 +509,7 @@
                     <div
                       *ngIf="postulezForm.get('niveauExp')?.errors?.['required']"
                     >
-                      {{ 'form.champ_oblig' }}
+                      {{ 'form.champ_oblig' | translate }}
                     </div>
                   </div>
                 </div>
