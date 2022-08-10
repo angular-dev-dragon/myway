@@ -119,7 +119,6 @@ let modules: any = [
   }),
   RatingModule,
 
-  BrowserModule,
   TabViewModule,
   InputTextModule,
   FormsModule,
