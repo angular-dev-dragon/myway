@@ -18,45 +18,51 @@ import { CardMembreComponent } from './components/card-membre/card-membre.compon
 import { HttpClient } from '@angular/common/http'
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 import { HttpClientModule } from '@angular/common/http'
-import {TranslateLoader,TranslateModule,TranslateService,} from '@ngx-translate/core'
+import {
+  TranslateLoader,
+  TranslateModule,
+  TranslateService,
+} from '@ngx-translate/core'
 import { RatingModule } from 'primeng/rating'
 import { DialogModule } from 'primeng/dialog'
+
+import { BrowserModule } from '@angular/platform-browser'
+
 import { CardArticleComponent } from './components/card-article/card-article.component'
 import { CardDocumentComponent } from './components/card-document/card-document.component'
 import { MapComponent } from './components/map/map.component'
-import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import { ToastModule } from 'primeng/toast';
+import { ProgressSpinnerModule } from 'primeng/progressspinner'
+import { ToastModule } from 'primeng/toast'
 
 // form importes
 // form importes
 // form importes
 // form importes
 
-
-import { AutoCompleteModule } from 'primeng/autocomplete';
-import { CalendarModule } from 'primeng/calendar';
-import { ChipsModule } from 'primeng/chips';
-import { DropdownModule } from 'primeng/dropdown';
-import { InputMaskModule } from 'primeng/inputmask';
-import { InputNumberModule } from 'primeng/inputnumber';
-import { CascadeSelectModule } from 'primeng/cascadeselect';
-import { MultiSelectModule } from 'primeng/multiselect';
-import { InputTextareaModule } from 'primeng/inputtextarea';
-import { InputTextModule } from 'primeng/inputtext';
-import { CheckboxModule } from 'primeng/checkbox';
-import { InputSwitchModule } from 'primeng/inputswitch';
-import { TreeSelectModule } from 'primeng/treeselect';
-import { KnobModule } from 'primeng/knob';
-import { KeyFilterModule } from 'primeng/keyfilter';
-import { ListboxModule } from 'primeng/listbox';
-import { SliderModule } from 'primeng/slider';
-import { RadioButtonModule } from 'primeng/radiobutton';
-import { PasswordModule } from 'primeng/password';
-import { SelectButtonModule } from 'primeng/selectbutton';
-import { ToggleButtonModule } from 'primeng/togglebutton';
-import { TriStateCheckboxModule } from 'primeng/tristatecheckbox';
-import { SplitButtonModule } from 'primeng/splitbutton';
-import { SpeedDialModule } from 'primeng/speeddial';
+import { AutoCompleteModule } from 'primeng/autocomplete'
+import { CalendarModule } from 'primeng/calendar'
+import { ChipsModule } from 'primeng/chips'
+import { DropdownModule } from 'primeng/dropdown'
+import { InputMaskModule } from 'primeng/inputmask'
+import { InputNumberModule } from 'primeng/inputnumber'
+import { CascadeSelectModule } from 'primeng/cascadeselect'
+import { MultiSelectModule } from 'primeng/multiselect'
+import { InputTextareaModule } from 'primeng/inputtextarea'
+import { InputTextModule } from 'primeng/inputtext'
+import { CheckboxModule } from 'primeng/checkbox'
+import { InputSwitchModule } from 'primeng/inputswitch'
+import { TreeSelectModule } from 'primeng/treeselect'
+import { KnobModule } from 'primeng/knob'
+import { KeyFilterModule } from 'primeng/keyfilter'
+import { ListboxModule } from 'primeng/listbox'
+import { SliderModule } from 'primeng/slider'
+import { RadioButtonModule } from 'primeng/radiobutton'
+import { PasswordModule } from 'primeng/password'
+import { SelectButtonModule } from 'primeng/selectbutton'
+import { ToggleButtonModule } from 'primeng/togglebutton'
+import { TriStateCheckboxModule } from 'primeng/tristatecheckbox'
+import { SplitButtonModule } from 'primeng/splitbutton'
+import { SpeedDialModule } from 'primeng/speeddial'
 // end form importes
 // end form importes
 // end form importes
@@ -68,22 +74,22 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 let modules: any = [
   ToastModule,
-  ProgressSpinnerModule ,
+  ProgressSpinnerModule,
   // form importes
-  CheckboxModule ,
+  CheckboxModule,
   InputSwitchModule,
   TreeSelectModule,
-  KnobModule ,
-  KeyFilterModule ,
-  ListboxModule ,
+  KnobModule,
+  KeyFilterModule,
+  ListboxModule,
   SliderModule,
-  RadioButtonModule ,
-  PasswordModule ,
-  SelectButtonModule ,
-  ToggleButtonModule ,
-  TriStateCheckboxModule ,
-  SplitButtonModule ,
-  SpeedDialModule ,
+  RadioButtonModule,
+  PasswordModule,
+  SelectButtonModule,
+  ToggleButtonModule,
+  TriStateCheckboxModule,
+  SplitButtonModule,
+  SpeedDialModule,
   AutoCompleteModule,
   CalendarModule,
   ChipsModule,
@@ -112,7 +118,15 @@ let modules: any = [
     },
   }),
   RatingModule,
-];
+
+  TabViewModule,
+  InputTextModule,
+  FormsModule,
+  CalendarModule,
+  DropdownModule,
+  ReactiveFormsModule,
+  AccordionModule,
+]
 
 @NgModule({
   declarations: [

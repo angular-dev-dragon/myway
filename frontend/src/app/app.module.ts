@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { RecruiterModule } from './components/recruiter/recruiter.module'
 import { SharedModule } from './shared/shared.module'
 import { ResumeProfilesModule } from './components/resume-profiles/resume-profiles.module'
+import { OffresModule } from './components/offres/offres.module'
 import { InfoPratiqueModule } from './components/info-pratique/info-pratique.module'
 import { RubriquePostModule } from './components/rubrique-article/rubrique-post.module'
 
@@ -21,6 +22,9 @@ import { RubriquePostModule } from './components/rubrique-article/rubrique-post.
     RecruiterModule,
     SharedModule,
     ResumeProfilesModule,
+
+    OffresModule,
+
     InfoPratiqueModule,
     RubriquePostModule,
   ],

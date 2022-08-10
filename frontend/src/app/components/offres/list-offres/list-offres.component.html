@@ -1,7 +1,3 @@
-<p>cette page va afficher les offres</p>
-<br />
-<br />
-<br />
 <div class="container">
   <div class="card" style="margin-top: 20px;">
     <div class="card-body">
@@ -566,6 +562,7 @@
                   <table class="table table-hover">
                     <tbody>
                       <div
+                        [routerLink]="['/offres/details-offres']"
                         *ngFor="let offre of offres"
                         style="
                           border-bottom: 1px solid #c7c3c3;
