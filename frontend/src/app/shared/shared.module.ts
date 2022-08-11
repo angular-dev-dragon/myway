@@ -5,6 +5,7 @@ import { CardRecruiterComponent } from './components/card-recruiter/card-recruit
 import { ContentLayoutComponent } from './components/layouts/content-layout.component'
 import { RouterModule } from '@angular/router'
 // import { SkeletonModule } from 'primeng/skeleton'
+
 import { ButtonModule } from 'primeng/button'
 import { RippleModule } from 'primeng/ripple'
 import { TabViewModule } from 'primeng/tabview'
@@ -63,19 +64,32 @@ import { ToggleButtonModule } from 'primeng/togglebutton'
 import { TriStateCheckboxModule } from 'primeng/tristatecheckbox'
 import { SplitButtonModule } from 'primeng/splitbutton'
 import { SpeedDialModule } from 'primeng/speeddial'
+import { MatMenuModule } from '@angular/material/menu';
+
 // end form importes
 // end form importes
 // end form importes
 // end form importes
+import { MatSliderModule } from '@angular/material/slider';
+
+
+
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
 }
 
 let modules: any = [
+  // material ui
+  MatSliderModule,
+   MatMenuModule ,
+  // material ui
+
   ToastModule,
   ProgressSpinnerModule,
   // form importes
+
   CheckboxModule,
   InputSwitchModule,
   TreeSelectModule,
@@ -126,7 +140,7 @@ let modules: any = [
   DropdownModule,
   ReactiveFormsModule,
   AccordionModule,
-]
+];
 
 @NgModule({
   declarations: [
@@ -140,7 +154,7 @@ let modules: any = [
     CardDocumentComponent,
     MapComponent,
   ],
-  imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
+  imports: [LazyLoadImageModule, CommonModule, RouterModule , ...modules],
   exports: [
     CardArticleComponent,
 
