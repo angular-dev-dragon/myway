@@ -7,13 +7,11 @@ import { HttpClient } from '@angular/common/http';
 export class CountriesInfoService {
   url: string = 'https://restcountries.com/v3.1/all';
   countries: any;
- Exampel: any;
-  constructor(private http: HttpClient) {
-
-  }
+  Kuwait__Exampel: any;
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.Exampel = [
+    this.Kuwait__Exampel = [
       {
         name: {
           common: 'Kuwait',
@@ -89,12 +87,10 @@ export class CountriesInfoService {
         capitalInfo: { latlng: [29.37, 47.97] },
         postalCode: { format: '#####', regex: '^(\\d{5})$' },
       },
-    ]
-
+    ];
   }
 
   getCountries() {
     return this.http.get(this.url);
   }
-
 }

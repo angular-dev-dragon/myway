@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal, NgbModalConfig, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { CountriesInfoService } from '../../../../shared/Services/Countries-info/countries-info.service';
-
+// import {MessageService} from 'primeng/api';
 
 
 @Component({
@@ -13,18 +13,20 @@ import { CountriesInfoService } from '../../../../shared/Services/Countries-info
 export class HeadProfileComponent implements OnInit {
   date: any;
   online: boolean = false;
-  profileImg: string | undefined;
+
   selectedCountryAdvanced!: any[];
   filteredCountries!: any[];
   selectedCity: any;
   city: any;
+  profileImg: string | undefined;
+  profileImgo: string | undefined;
 
   public headerProfileForm: FormGroup;
   constructor(
     private c: NgbModalConfig,
     private ms: NgbModal,
     private fb: FormBuilder,
-    private Countriesinfo: CountriesInfoService
+    private Countriesinfo: CountriesInfoService // private messageService: MessageService
   ) {
     this.headerProfileForm = this.fb.group({
       name: new FormControl('', [
@@ -49,33 +51,34 @@ export class HeadProfileComponent implements OnInit {
         Validators.pattern('^((\\+212-?)|0)?[0-9]{10}$'),
         Validators.minLength(10),
       ]),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      borthDate: new FormControl('', [
+      ctiy_inpute: new FormControl('', [
         Validators.required,
-        // Validators.pattern('^[0-9]{4}-[0-9]{2}-[0-9]{2}$'),
+        Validators.maxLength(1000),
+        Validators.minLength(2),
       ]),
-
+      zip_code_input: new FormControl('', [
+        Validators.required,
+        Validators.maxLength(100),
+        Validators.minLength(3),
+      ]),
+      State_input: new FormControl('', [
+        Validators.required,
+        Validators.maxLength(1000),
+        Validators.minLength(2),
+      ]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      borthDate: new FormControl('', [Validators.required]),
       countery: new FormControl('', [Validators.required]),
-      // difficulte: new FormControl('', [Validators.required]),
-      // recommandation: new FormControl('', [Validators.required]),
-
-      // note: new FormControl('', [Validators.required]),
-      // salaire: new FormControl('', [Validators.required]),
-      // securite: new FormControl('', [Validators.required]),
     });
   }
-
   ngOnInit() {
-   this.Countriesinfo.getCountries().subscribe(res => {
+    this.Countriesinfo.getCountries().subscribe((res) => {
       this.city = res;
     });
-
   }
-
   open(content: any) {
     this.ms.open(content, { centered: true, size: 'xl' });
   }
-
   sendEntretien() {
     if (this.headerProfileForm.valid) {
       console.log('this.headerProfileForm', this.headerProfileForm);
@@ -83,6 +86,11 @@ export class HeadProfileComponent implements OnInit {
       this.headerProfileForm.markAllAsTouched();
       console.log('not valid');
     }
+  }
+
+
+
+    // this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});
   }
 
   // filterCountry(event: any) {
@@ -99,7 +107,7 @@ export class HeadProfileComponent implements OnInit {
 
   //   this.filteredCountries = filtered;
   // }
-}
+
 
 
 
