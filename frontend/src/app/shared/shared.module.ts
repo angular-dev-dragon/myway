@@ -44,6 +44,7 @@ import { ToastModule } from 'primeng/toast'
 // form importes
 // form importes
 // form importes
+import { FileUploadModule } from 'primeng/fileupload';
 
 import { AutoCompleteModule } from 'primeng/autocomplete'
 import { CalendarModule } from 'primeng/calendar'
@@ -90,7 +91,7 @@ let modules: any = [
   ToastModule,
   ProgressSpinnerModule,
   // form importes
-
+FileUploadModule ,
   CheckboxModule,
   InputSwitchModule,
   TreeSelectModule,
