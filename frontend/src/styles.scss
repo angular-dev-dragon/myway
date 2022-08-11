@@ -37,6 +37,7 @@ a {
 .pull-right {
   float: right;
 }
+
 .card-img {
   height: 200px;
 }
@@ -44,4 +45,12 @@ a {
   border: 0.1rem solid #dcdada;
   border-radius: 0.2rem;
   padding: 1rem;
+}
+
+.p-calendar .p-inputtext {
+  width: 600px !important;
+  height: 55px !important;
+  border-radius: 0.375rem !important;
+  min-width: fit-content !important;
+  margin-top: -3px !important;
 }

@@ -23,6 +23,7 @@ export const content: Routes = [
         (m) => m.ResumeProfilesModule,
       ),
   },
+
   {
     path: 'rubrique',
     loadChildren: () =>

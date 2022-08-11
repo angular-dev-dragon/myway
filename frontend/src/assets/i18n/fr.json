@@ -34,6 +34,9 @@
     "nom": "Nom",
     "prenom": "Prénom",
     "email": "Email",
+    "metier": "Métier",
+    "niveauEtu": "Niveau d'étude",
+    "niveauExp": "Niveau d'expérience",
     "exp_email": "ex : nom.prenom@contact.com",
     "mail_valid": "*Entrer une adresse mail valide",
     "telephone": "Téléphone",
@@ -162,6 +165,7 @@
     "details": "Details",
     "description": "Description",
     "telecharger": "Télécharger",
+
     "commentaires": "Commentaires",
     "faq_Entreprise": "Questions et réponses au sujet de l'entreprise",
     "avis_Entreprise": "Temoignage a propos de l'entreprise",
@@ -204,6 +208,38 @@
   "sondage_historique": {
     "date_debut": "De",
     "date_fin": "à",
-    "nbr_participants": "Nombre de participants:"
+    "nbr_participants": "Nombre de participants:",
+
+    "commentaires": "Commentaires"
+  },
+  "candidat": {
+    "t": {
+      "ed": "Éducation",
+      "ex": "Expérience",
+      "skill": "Compétences",
+      "l": "Langues",
+      "c": "Certificats",
+      "hob": "Loisirs",
+      "conections": "Connexions",
+      "about_me": "À propos de moi",
+      "contact": "contacter",
+      "expe": "Attente",
+      "ach": "Réalisations"
+    },
+    "home": "Maison",
+    "user": "Utilisateur",
+    "candidate": "Candidat",
+    "user_profile": "Profil utilisateur"
+  },
+  "offre": {
+    "details": "Détails de l'offre",
+    "det_entr": "Détail de l'entreprise",
+    "postuler": "Postulez !",
+    "missions": "Missions",
+    "profilR": "Profil recherché",
+    "critere_offre": "Critères de l'offre",
+    "dejaCompte": "J'ai déja un compte",
+    "connect": "se connecter",
+    "entreprise": "L'entreprise"
   }
 }
