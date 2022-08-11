@@ -11,9 +11,11 @@ import { SharedModule } from './shared/shared.module'
 import { ResumeProfilesModule } from './components/resume-profiles/resume-profiles.module'
 import { InfoPratiqueModule } from './components/info-pratique/info-pratique.module'
 import { RubriquePostModule } from './components/rubrique-article/rubrique-post.module'
+import { EspaceCommunautaireModule } from './components/espace-communautaire/espace-communautaire.module';
+import { ListBlogeurComponent } from './components/blog/list-blogeur/list-blogeur.component'
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ListBlogeurComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,6 +25,7 @@ import { RubriquePostModule } from './components/rubrique-article/rubrique-post.
     ResumeProfilesModule,
     InfoPratiqueModule,
     RubriquePostModule,
+    EspaceCommunautaireModule,
   ],
   exports: [],
   providers: [],

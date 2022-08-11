@@ -1,6 +1,6 @@
 import { Inject, NgModule, PLATFORM_ID } from '@angular/core'
 import { CommonModule, isPlatformBrowser } from '@angular/common'
-import { LazyLoadImageModule } from 'ng-lazyload-image' 
+import { LazyLoadImageModule } from 'ng-lazyload-image'
 import { CardRecruiterComponent } from './components/card-recruiter/card-recruiter.component'
 import { ContentLayoutComponent } from './components/layouts/content-layout.component'
 import { RouterModule } from '@angular/router'
@@ -31,6 +31,9 @@ import { CardArticleComponent } from './components/card-article/card-article.com
 import { CardDocumentComponent } from './components/card-document/card-document.component'
 
 import { MapComponent } from './components/map/map.component'
+import { CardForumComponent } from './components/card-forum/card-forum.component'
+import { SondageHistoriqueComponent } from './components/sondage-historique/sondage-historique.component'
+import { CardBlogueurComponent } from './components/card-blogueur/card-blogueur.component'
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
 }
@@ -66,6 +69,9 @@ let modules: any = [
     CardArticleComponent,
     CardDocumentComponent,
     MapComponent,
+    CardForumComponent,
+    SondageHistoriqueComponent,
+    CardBlogueurComponent,
   ],
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
   exports: [
@@ -80,7 +86,9 @@ let modules: any = [
     CommonModule,
     ContentLayoutComponent,
     CardDocumentComponent,
-
+    CardForumComponent,
+    SondageHistoriqueComponent,
+    CardBlogueurComponent,
     MapComponent,
     ...modules,
   ],

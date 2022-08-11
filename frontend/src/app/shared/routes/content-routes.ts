@@ -37,6 +37,18 @@ export const content: Routes = [
         (m) => m.InfoPratiqueModule,
       ),
   },
+  {
+    path: 'espace-communautaire',
+    loadChildren: () =>
+      import(
+        '../../components/espace-communautaire/espace-communautaire.module'
+      ).then((m) => m.EspaceCommunautaireModule),
+  },
+  {
+    path: 'blog',
+    loadChildren: () =>
+      import('../../components/blog/blog.module').then((m) => m.BlogModule),
+  },
   // {
   //   path: 'liens-utiles',
   //   loadChildren: () =>

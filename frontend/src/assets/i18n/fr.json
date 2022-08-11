@@ -163,6 +163,14 @@
     "description": "Description",
     "telecharger": "Télécharger",
     "commentaires": "Commentaires",
+    "faq_Entreprise": "Questions et réponses au sujet de l'entreprise",
+    "avis_Entreprise": "Temoignage a propos de l'entreprise",
+    "membre_Entreprise": "Personnes A Contacter",
+    "entretien": "Entretien",
+    "gallerie": "Gallerie",
+    "list_forum": "Forum de Discussion",
+    "details_forum": "Details de Forum",
+    "sondage": "Sondage",
 
     "candidat": {
       "t": {
@@ -183,5 +191,19 @@
       "candidate": "Candidat",
       "user_profile": "Profil utilisateur"
     }
+  },
+  "sondage": {
+    "sondae_encours": "Sondage en cours",
+    "date_debut": "De",
+    "date_fin": "à",
+    "nbr_participants": "Nombre de participants:",
+    "valider": "Valider",
+    "choix_enregistrer": "Votre choix a été pris en compte!",
+    "historique_sondages": "Historique des Sondages"
+  },
+  "sondage_historique": {
+    "date_debut": "De",
+    "date_fin": "à",
+    "nbr_participants": "Nombre de participants:"
   }
 }

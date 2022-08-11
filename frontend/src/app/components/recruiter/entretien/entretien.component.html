@@ -1,12 +1,14 @@
 <div class="section-recruteur mb-3">
-  <h4>Entretien chez</h4>
+  <h4>{{ 'globale.entretien' | translate }}</h4>
 </div>
 <div class="section-recruteur">
   <p-tabView>
     <p-tabPanel header="Parcourir Les Evaluation">
       <div class="row">
         <div class="col-md-6 mb-3">
-          <label class="form-label">{{ 'form.noteEntretien' }}</label>
+          <label class="form-label">
+            {{ 'form.noteEntretien' | translate }}
+          </label>
           <div class="">
             <p-rating
               [ngModel]="entretien.noteEntretien"
@@ -16,7 +18,7 @@
           </div>
         </div>
         <div class="col-md-6 mb-3">
-          <label class="form-label">{{ 'form.difficulte' }}</label>
+          <label class="form-label">{{ 'form.difficulte' | translate }}</label>
           <div class="">
             <p-rating
               [ngModel]="entretien.difficulte"
@@ -28,7 +30,9 @@
       </div>
       <div class="row">
         <div class="col-md-6 mb-3">
-          <label class="form-label">{{ 'form.recommandation' }}</label>
+          <label class="form-label">
+            {{ 'form.recommandation' | translate }}
+          </label>
           <div class="">
             <p-rating
               [ngModel]="entretien.recommandation"
@@ -38,7 +42,7 @@
           </div>
         </div>
         <div class="col-md-6 mb-3">
-          <label class="form-label">{{ 'form.note' }}</label>
+          <label class="form-label">{{ 'form.note' | translate }}</label>
           <div class="">
             <p-rating
               [ngModel]="entretien.note"
@@ -50,7 +54,7 @@
       </div>
       <div class="row">
         <div class="col-md-6 mb-3">
-          <label class="form-label">{{ 'form.salaire' }}</label>
+          <label class="form-label">{{ 'form.salaire' | translate }}</label>
           <div class="">
             <p-rating
               [ngModel]="entretien.salaire"
@@ -60,7 +64,7 @@
           </div>
         </div>
         <div class="col-md-6 mb-3">
-          <label class="form-label">{{ 'form.securite' }}</label>
+          <label class="form-label">{{ 'form.securite' | translate }}</label>
           <div class="">
             <p-rating
               [ngModel]="entretien.securite"
@@ -79,13 +83,13 @@
 
             <div class="mb-3 col-md-6">
               <label class="form-label" for="name">
-                {{ 'form.nom' }}
+                {{ 'form.nom' | translate }}
               </label>
               <input
                 class="form-control"
                 id="name"
                 type="text"
-                placeholder="{{ 'form.exp_nom' }}"
+                placeholder="{{ 'form.exp_nom' | translate }}"
                 [ngClass]="{
                   'is-invalid':
                     entretienForm.get('name')?.touched &&
@@ -102,13 +106,13 @@
                 class="invalid-feedback mb-2"
               >
                 <div *ngIf="entretienForm.get('name')?.errors?.['required']">
-                  {{ 'form.champ_oblig' }}
+                  {{ 'form.champ_oblig' | translate }}
                 </div>
                 <div *ngIf="entretienForm.get('name')?.errors?.['minlength']">
-                  {{ 'form.champ_3' }}
+                  {{ 'form.champ_3' | translate }}
                 </div>
                 <div *ngIf="entretienForm.get('name')?.errors?.['maxlength']">
-                  {{ 'form.champ_30' }}
+                  {{ 'form.champ_30' | translate }}
                 </div>
               </div>
             </div>
@@ -116,7 +120,7 @@
             <!-- Prenom input -->
             <div class="mb-3 col-md-6">
               <label class="form-label" for="prenom">
-                {{ 'form.prenom' }}
+                {{ 'form.prenom' | translate }}
               </label>
               <input
                 class="form-control"
@@ -139,13 +143,13 @@
                 class="invalid-feedback mb-2"
               >
                 <div *ngIf="entretienForm.get('prenom')?.errors?.['required']">
-                  {{ 'form.champ_oblig' }}
+                  {{ 'form.champ_oblig' | translate }}
                 </div>
                 <div *ngIf="entretienForm.get('prenom')?.errors?.['minlength']">
-                  {{ 'form.champ_3' }}
+                  {{ 'form.champ_3' | translate }}
                 </div>
                 <div *ngIf="entretienForm.get('prenom')?.errors?.['maxlength']">
-                  {{ 'form.champ_30' }}
+                  {{ 'form.champ_30' | translate }}
                 </div>
               </div>
             </div>
@@ -154,13 +158,13 @@
           <div class="row">
             <div class="mb-3 col-md-6">
               <label class="form-label" for="telephone">
-                {{ 'form.telephone' }}
+                {{ 'form.telephone' | translate }}
               </label>
               <input
                 class="form-control"
                 id="telephone"
                 type="texte"
-                placeholder="{{ 'form.exp_tel' }}"
+                placeholder="{{ 'form.exp_tel' | translate }}"
                 formControlName="telephone"
                 name="telephone"
                 [ngClass]="{
@@ -179,24 +183,24 @@
                 <div
                   *ngIf="entretienForm.get('telephone')?.errors?.['required']"
                 >
-                  {{ 'form.champ_oblig' }}
+                  {{ 'form.champ_oblig' | translate }}
                 </div>
                 <div
                   *ngIf="entretienForm.get('telephone')?.errors?.['pattern']"
                 >
-                  {{ 'form.tel_valid' }}
+                  {{ 'form.tel_valid' | translate }}
                 </div>
                 <div
                   *ngIf="entretienForm.get('telephone')?.errors?.['minlength']"
                 >
-                  {{ 'form.champ_10' }}
+                  {{ 'form.champ_10' | translate }}
                 </div>
               </div>
             </div>
             <!-- Email  input -->
             <div class="mb-3 col-md-6">
               <label class="form-label" for="emailAddress">
-                {{ 'form.email' }}
+                {{ 'form.email' | translate }}
               </label>
               <input
                 class="form-control"
@@ -219,10 +223,10 @@
                 class="invalid-feedback"
               >
                 <div *ngIf="entretienForm.get('email')?.errors?.['required']">
-                  {{ 'form.champ_oblig' }}
+                  {{ 'form.champ_oblig' | translate }}
                 </div>
                 <div *ngIf="entretienForm.get('email')?.errors?.['email']">
-                  {{ 'form.mail_valid' }}
+                  {{ 'form.mail_valid' | translate }}
                 </div>
               </div>
             </div>
@@ -233,7 +237,7 @@
 
             <div class="mb-3 col-md-6">
               <label class="form-label" for="noteEntretien">
-                {{ 'form.noteEntretien' }}
+                {{ 'form.noteEntretien' | translate }}
               </label>
               <div
                 class=""
@@ -263,13 +267,13 @@
                 <div
                   *ngIf="entretienForm.get('noteEntretien')?.errors?.['required']"
                 >
-                  {{ 'form.champ_oblig' }}
+                  {{ 'form.champ_oblig' | translate }}
                 </div>
               </div>
             </div>
             <div class="mb-3 col-md-6">
               <label class="form-label" for="difficulte">
-                {{ 'form.difficulte' }}
+                {{ 'form.difficulte' | translate }}
               </label>
               <div
                 class=""
@@ -299,7 +303,7 @@
                 <div
                   *ngIf="entretienForm.get('difficulte')?.errors?.['required']"
                 >
-                  {{ 'form.champ_oblig' }}
+                  {{ 'form.champ_oblig' | translate }}
                 </div>
               </div>
             </div>
@@ -309,7 +313,7 @@
 
             <div class="mb-3 col-md-6">
               <label class="form-label" for="recommandation">
-                {{ 'form.recommandation' }}
+                {{ 'form.recommandation' | translate }}
               </label>
               <div
                 class=""
@@ -339,13 +343,13 @@
                 <div
                   *ngIf="entretienForm.get('recommandation')?.errors?.['required']"
                 >
-                  {{ 'form.champ_oblig' }}
+                  {{ 'form.champ_oblig' | translate }}
                 </div>
               </div>
             </div>
             <div class="mb-3 col-md-6">
               <label class="form-label" for="note">
-                {{ 'form.note' }}
+                {{ 'form.note' | translate }}
               </label>
               <div
                 class=""
@@ -373,7 +377,7 @@
                 class="invalid-feedback mb-2"
               >
                 <div *ngIf="entretienForm.get('note')?.errors?.['required']">
-                  {{ 'form.champ_oblig' }}
+                  {{ 'form.champ_oblig' | translate }}
                 </div>
               </div>
             </div>
@@ -384,7 +388,7 @@
 
             <div class="mb-3 col-md-6">
               <label class="form-label" for="salaire">
-                {{ 'form.salaire' }}
+                {{ 'form.salaire' | translate }}
               </label>
               <div
                 class=""
@@ -412,13 +416,13 @@
                 class="invalid-feedback mb-2"
               >
                 <div *ngIf="entretienForm.get('salaire')?.errors?.['required']">
-                  {{ 'form.champ_oblig' }}
+                  {{ 'form.champ_oblig' | translate }}
                 </div>
               </div>
             </div>
             <div class="mb-3 col-md-6">
               <label class="form-label" for="securite">
-                {{ 'form.securite' }}
+                {{ 'form.securite' | translate }}
               </label>
               <div
                 class=""
@@ -448,7 +452,7 @@
                 <div
                   *ngIf="entretienForm.get('securite')?.errors?.['required']"
                 >
-                  {{ 'form.champ_oblig' }}
+                  {{ 'form.champ_oblig' | translate }}
                 </div>
               </div>
             </div>
