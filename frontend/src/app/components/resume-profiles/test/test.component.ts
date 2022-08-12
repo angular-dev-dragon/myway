@@ -1,12 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+// import {MessageService} from 'primeng/api';
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.scss', '../layouts/layouts.component.scss'],
 })
 export class TestComponent implements OnInit {
-  constructor(config: NgbModalConfig, private modalService: NgbModal) {
+  date: any;
+  online: boolean = false;
+  profileImg: string | undefined;
+  selectedCountryAdvanced!: any[];
+  filteredCountries!: any[];
+  selectedCity: any;
+  city: any;
+  uploadedFiles: any[] = [];
+  constructor(
+    config: NgbModalConfig,
+    private modalService: NgbModal,
+    // private messageService: MessageService
+  ) {
     config.backdrop = 'static';
     config.keyboard = false;
   }
@@ -20,7 +33,6 @@ export class TestComponent implements OnInit {
         scrollable: true,
         modalDialogClass: 'dark-modal transparent-bg',
         centered: true,
-        
       }
     );
   }
@@ -32,4 +44,6 @@ export class TestComponent implements OnInit {
   // open(content) {
   //   this.modalService.open(content);
   // }
-}
+
+  }
+

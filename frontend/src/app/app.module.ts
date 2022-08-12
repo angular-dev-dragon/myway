@@ -12,9 +12,11 @@ import { ResumeProfilesModule } from './components/resume-profiles/resume-profil
 import { OffresModule } from './components/offres/offres.module'
 import { InfoPratiqueModule } from './components/info-pratique/info-pratique.module'
 import { RubriquePostModule } from './components/rubrique-article/rubrique-post.module'
+import { EspaceCommunautaireModule } from './components/espace-communautaire/espace-communautaire.module';
+import { ListBlogeurComponent } from './components/blog/list-blogeur/list-blogeur.component'
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ListBlogeurComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,6 +29,7 @@ import { RubriquePostModule } from './components/rubrique-article/rubrique-post.
 
     InfoPratiqueModule,
     RubriquePostModule,
+    EspaceCommunautaireModule,
   ],
   exports: [],
   providers: [],

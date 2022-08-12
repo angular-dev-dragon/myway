@@ -149,6 +149,11 @@
                 Evénements et actualités
               </a>
             </li>
+            <li>
+              <a class="dropdown-item" href="#" [routerLink]="['/blog']">
+                Blog
+              </a>
+            </li>
           </ul>
         </li>
 
@@ -163,10 +168,38 @@
             Espace communautaire
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Forums de discussions</a></li>
-            <li><a class="dropdown-item" href="#">Sondages</a></li>
-            <li><a class="dropdown-item" href="#">Témoignages</a></li>
-            <li><a class="dropdown-item" href="#">Soutiens</a></li>
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="['/espace-communautaire/list-forum']"
+              >
+                Forums de discussions
+              </a>
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="['/espace-communautaire/sondage']"
+              >
+                Sondages
+              </a>
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="['/espace-communautaire/temoignage']"
+              >
+                Témoignages
+              </a>
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="['/espace-communautaire/soutien']"
+              >
+                Soutiens
+              </a>
+            </li>
           </ul>
         </li>
       </ul>

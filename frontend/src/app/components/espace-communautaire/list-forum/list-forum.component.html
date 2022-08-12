@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="section-recruteur mb-3">
+    <h4>{{ 'globale.list_forum' | translate }}</h4>
+  </div>
+  <div class="row">
+    <div class="my-2 col-md-9">
+      <div class="section-recruteur col-12 mb-3">
+        <div class="row">
+          <app-card-forum
+            class="col-md-6 mb-2"
+            [routerLink]="['/espace-communautaire/details-forum']"
+            *ngFor="let item of forums"
+            [image]="item.image"
+            [designation]="item.designation"
+            [descriptif]="item.descriptif"
+            [nbrTheme]="item.nbrTheme"
+            [nbrParticipants]="item.nbrParticipants"
+            [nbrEchanges]="item.nbrEchanges"
+          ></app-card-forum>
+        </div>
+      </div>
+    </div>
+    <div class="my-2 col-md-3">
+      <div class="section-recruteur col-12"></div>
+    </div>
+  </div>
+</div>

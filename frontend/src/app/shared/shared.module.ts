@@ -5,6 +5,7 @@ import { CardRecruiterComponent } from './components/card-recruiter/card-recruit
 import { ContentLayoutComponent } from './components/layouts/content-layout.component'
 import { RouterModule } from '@angular/router'
 // import { SkeletonModule } from 'primeng/skeleton'
+
 import { ButtonModule } from 'primeng/button'
 import { RippleModule } from 'primeng/ripple'
 import { TabViewModule } from 'primeng/tabview'
@@ -31,6 +32,11 @@ import { BrowserModule } from '@angular/platform-browser'
 import { CardArticleComponent } from './components/card-article/card-article.component'
 import { CardDocumentComponent } from './components/card-document/card-document.component'
 import { MapComponent } from './components/map/map.component'
+
+import { CardForumComponent } from './components/card-forum/card-forum.component'
+import { SondageHistoriqueComponent } from './components/sondage-historique/sondage-historique.component'
+import { CardBlogueurComponent } from './components/card-blogueur/card-blogueur.component'
+
 import { ProgressSpinnerModule } from 'primeng/progressspinner'
 import { ToastModule } from 'primeng/toast'
 
@@ -38,6 +44,7 @@ import { ToastModule } from 'primeng/toast'
 // form importes
 // form importes
 // form importes
+import { FileUploadModule } from 'primeng/fileupload'
 
 import { AutoCompleteModule } from 'primeng/autocomplete'
 import { CalendarModule } from 'primeng/calendar'
@@ -63,20 +70,31 @@ import { ToggleButtonModule } from 'primeng/togglebutton'
 import { TriStateCheckboxModule } from 'primeng/tristatecheckbox'
 import { SplitButtonModule } from 'primeng/splitbutton'
 import { SpeedDialModule } from 'primeng/speeddial'
+
 import { CardOffreComponent } from './components/card-offre/card-offre.component'
+
+import { MatMenuModule } from '@angular/material/menu'
+
 // end form importes
 // end form importes
 // end form importes
 // end form importes
+import { MatSliderModule } from '@angular/material/slider'
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
 }
 
 let modules: any = [
+  // material ui
+  MatSliderModule,
+  MatMenuModule,
+  // material ui
+
   ToastModule,
   ProgressSpinnerModule,
   // form importes
+  FileUploadModule,
   CheckboxModule,
   InputSwitchModule,
   TreeSelectModule,
@@ -140,7 +158,12 @@ let modules: any = [
     CardArticleComponent,
     CardDocumentComponent,
     MapComponent,
+
     CardOffreComponent,
+
+    CardForumComponent,
+    SondageHistoriqueComponent,
+    CardBlogueurComponent,
   ],
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
   exports: [
@@ -156,6 +179,9 @@ let modules: any = [
     ContentLayoutComponent,
     CardDocumentComponent,
     CardOffreComponent,
+    CardForumComponent,
+    SondageHistoriqueComponent,
+    CardBlogueurComponent,
     MapComponent,
     ...modules,
   ],
