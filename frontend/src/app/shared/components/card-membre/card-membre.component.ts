@@ -16,4 +16,6 @@ export class CardMembreComponent implements OnInit {
   @Input() email = ''
   @Input() telephone = ''
   @Input() service = ''
+  @Input() rating = ''
+  @Input() nbBlog = ''
 }

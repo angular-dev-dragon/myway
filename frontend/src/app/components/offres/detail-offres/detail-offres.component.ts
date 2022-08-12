@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-detail-offres',
   templateUrl: './detail-offres.component.html',
-  styleUrls: ['./detail-offres.component.scss']
+  styleUrls: ['./detail-offres.component.scss'],
 })
 export class DetailOffresComponent implements OnInit {
   N_Etude: any[]
@@ -31,6 +31,7 @@ export class DetailOffresComponent implements OnInit {
     Langues: 'Espagnol',
     Salaire: '4000 Dh',
     NombresPoste: '5',
+    Adresse: ' Rue el Zrektouni, Imm wahba Et.4 N°9 Tanger',
     Description: [
       {
         Titre: '',
@@ -100,7 +101,7 @@ export class DetailOffresComponent implements OnInit {
         Validators.maxLength(30),
         Validators.pattern('^[a-zA-Z \u0600-\u06FF]+$'),
       ]),
-  
+
       prenom: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
@@ -108,25 +109,25 @@ export class DetailOffresComponent implements OnInit {
         Validators.pattern('^[a-zA-Z \u0600-\u06FF]+$'),
       ]),
       dateNaissance: new FormControl('', [Validators.required]),
-  
+
       telephone: new FormControl('', [
         Validators.required,
         Validators.pattern('^((\\+212-?)|0)?[0-9]{10}$'),
         Validators.minLength(10),
       ]),
-  
+
       email: new FormControl('', [Validators.required, Validators.email]),
-  
+
       metier: new FormControl('', [Validators.required]),
-  
+
       niveauEtu: new FormControl('', [Validators.required]),
-  
+
       niveauExp: new FormControl('', [Validators.required]),
-  
+
       note: new FormControl('', [Validators.required]),
-  
+
       salaire: new FormControl('', [Validators.required]),
-  
+
       securite: new FormControl('', [Validators.required]),
     })
     this.N_Etude = [
@@ -147,9 +148,8 @@ export class DetailOffresComponent implements OnInit {
     ]
     this.salutation = [{ name: 'Mme' }, { name: 'Mlle' }, { name: 'Mr' }]
   }
-   
-  
-  ngOnInit(): void { }
+
+  ngOnInit(): void {}
 
   sendPostule() {
     if (this.postulezForm.valid) {
@@ -159,4 +159,3 @@ export class DetailOffresComponent implements OnInit {
     }
   }
 }
-
