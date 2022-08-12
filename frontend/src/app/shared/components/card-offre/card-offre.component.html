@@ -40,23 +40,22 @@
             class="text-muted"
             style="list-style: none; display: flex; margin-bottom: 0.5rem;"
           >
-            <div class="col-md-6">
-              <li class="padd">
-                <i class="fa-solid fa-location-dot"></i>
-                {{ Ville }}
-              </li>
+            <li class="padd">
+              <i class="fa-solid fa-location-dot"></i>
+              {{ Ville }}
+            </li>
 
-              <li class="padd">
-                <i class="fa-regular fa-calendar"></i>
-                Publiée il y a:
-                {{ Date }}
-              </li>
+            <li class="padd">
+              <i class="fa-regular fa-calendar"></i>
+              Publiée il y a:
+              {{ Date }}
+            </li>
 
-              <li class="padd">
-                <i class="fa-solid fa-file-contract"></i>
-                {{ TypeContrat }}
-              </li>
-            </div>
+            <li class="padd">
+              <i class="fa-solid fa-file-contract"></i>
+              {{ TypeContrat }}
+            </li>
+
             <li>
               <button
                 [routerLink]="['/offres/details-offres']"
