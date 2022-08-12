@@ -7,6 +7,7 @@ import { filter } from 'rxjs'
   styleUrls: ['./list-offres.component.scss'],
 })
 export class ListOffresComponent implements OnInit {
+  orientation: any = 'verticale'
   offres: any = [
     {
       Intitule: 'Développeur',
@@ -64,7 +65,7 @@ export class ListOffresComponent implements OnInit {
       TypeEntreprise: 'StartUp',
       Image: '',
       Ville: 'Tétouan',
-      Secteur: 'Informatique',
+      Secteur: 'Textile',
       Date: '2022-02-02',
       Competences: 'HTML',
       Pays: 'Maroc',
@@ -80,7 +81,7 @@ export class ListOffresComponent implements OnInit {
       Poste: 'Développeur Back-End',
       Image: '',
       Ville: 'Tanger',
-      Secteur: 'Informatique',
+      Secteur: 'Électronique',
       Date: '2022-02-02',
       Competences: 'HTML',
       Pays: 'Algérie',
@@ -96,6 +97,7 @@ export class ListOffresComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  @ViewChild('secteur') secteurSelect!: any
   @ViewChild('ville') villeSelect!: any
   @ViewChild('region') regionSelect!: any
   @ViewChild('pays') paysSelect!: any
@@ -103,6 +105,7 @@ export class ListOffresComponent implements OnInit {
   @ViewChildren('niveauxEt') niveauxEtBox!: any
   @ViewChildren('niveauxEx') niveauxExBox!: any
   @ViewChildren('langue') langueBox!: any
+  @ViewChild('search') searchInput!: any
 
   filter() {
     this.offres = this.allOffres
@@ -120,8 +123,17 @@ export class ListOffresComponent implements OnInit {
     let niveauxExFiltre = this.niveauxExBox._results
     // console.log('filtre par niveaux experience', niveauxExFiltre)
     let langueFiltre = this.langueBox._results
-    console.log('filtre par langues', langueFiltre)
+    // console.log('filtre par langues', langueFiltre)
+    let secteurFiltre = this.secteurSelect.nativeElement.value
+    console.log('filtre par secteurs', secteurFiltre)
+    let searchFiltre = this.searchInput.nativeElement.value
+    console.log('filtre par search', searchFiltre)
 
+    if (searchFiltre != '') {
+      this.offres = this.offres.filter((offre: any) => {
+        return offre.Intitule.toLowerCase().includes(searchFiltre.toLowerCase())
+      })
+    }
     if (paysFiltre != '') {
       this.offres = this.offres.filter((offre: any) => {
         return offre.Pays == paysFiltre
@@ -133,6 +145,10 @@ export class ListOffresComponent implements OnInit {
     } else if (villeFiltre != '') {
       this.offres = this.offres.filter((offre: any) => {
         return offre.Ville == villeFiltre
+      })
+    } else if (secteurFiltre != '') {
+      this.offres = this.offres.filter((offre: any) => {
+        return offre.Secteur == secteurFiltre
       })
     }
     this.checkboxFiltre(contratFiltre, 'TypeContrat')
@@ -161,5 +177,8 @@ export class ListOffresComponent implements OnInit {
       }
     })
     this.offres = newList3
+  }
+  changeview(or: any) {
+    this.orientation = or
   }
 }

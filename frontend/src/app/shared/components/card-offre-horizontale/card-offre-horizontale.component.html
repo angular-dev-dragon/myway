@@ -1,13 +1,12 @@
 <div
-  [routerLink]="['/offres/details-offres']"
-  class="row align-items-center"
+  class="d-flex flex-column col-12 align-items-center"
   style="
     border-bottom: 1px solid #c7c3c3;
     padding-bottom: 5px;
     margin-bottom: 6px;
   "
 >
-  <div class="col-md-3 image">
+  <div class="image">
     <img
       src="../../../../assets/images/images pour offres/téléchargement.png"
       alt=""
@@ -15,10 +14,7 @@
       style="margin-inline-end: 13px;"
     />
   </div>
-  <div
-    class="product col-md-9"
-    style="line-height: 1.42857143; vertical-align: top;"
-  >
+  <div class="product" style="line-height: 1.42857143; vertical-align: top;">
     <div class="card-body d-flex flex-column">
       <div class="row">
         <h5 class="col-md-10 card-title">{{ Intitule }}</h5>
@@ -34,12 +30,19 @@
         {{ NomEntreprise }}:
         {{ TypeEntreprise }}
       </h6>
-      <div class="row">
-        <ul class="p-0">
-          <small
-            class="text-muted"
-            style="list-style: none; display: flex; margin-bottom: 0.5rem;"
-          >
+
+      <ul class="p-0">
+        <small
+          class="text-muted"
+          style="
+            list-style: none;
+            display: flex;
+            margin-bottom: 0.5rem;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <div class="d-flex">
             <li class="padd">
               <i class="fa-solid fa-location-dot"></i>
               {{ Ville }}
@@ -55,21 +58,14 @@
               <i class="fa-solid fa-file-contract"></i>
               {{ TypeContrat }}
             </li>
-
-            <li>
-              <button
-                [routerLink]="['/offres/details-offres']"
-                type="button"
-                class="btn btn-success"
-              >
-                Voir plus +
-              </button>
-            </li>
-          </small>
-        </ul>
-      </div>
+          </div>
+          <li></li>
+        </small>
+      </ul>
     </div>
-
+    <button type="button" class="btn btn-success">
+      Voir plus +
+    </button>
     <!-- <strong>{{offre.Intitule}}</strong><br>{{offre.Secteur}} -->
   </div>
 
