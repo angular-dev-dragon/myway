@@ -63,6 +63,7 @@ import { ToggleButtonModule } from 'primeng/togglebutton'
 import { TriStateCheckboxModule } from 'primeng/tristatecheckbox'
 import { SplitButtonModule } from 'primeng/splitbutton'
 import { SpeedDialModule } from 'primeng/speeddial'
+import { CardOffreComponent } from './components/card-offre/card-offre.component'
 // end form importes
 // end form importes
 // end form importes
@@ -139,6 +140,7 @@ let modules: any = [
     CardArticleComponent,
     CardDocumentComponent,
     MapComponent,
+    CardOffreComponent,
   ],
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
   exports: [
@@ -153,7 +155,7 @@ let modules: any = [
     CommonModule,
     ContentLayoutComponent,
     CardDocumentComponent,
-
+    CardOffreComponent,
     MapComponent,
     ...modules,
   ],

@@ -45,494 +45,719 @@
   <!--fin de barre de recherche-->
   <br />
   <br />
-  <br />
-  <br />
+
   <div class="container">
     <div class="row">
-      <!-- BEGIN SEARCH RESULT -->
-      <div class="col-md-12">
-        <div class="grid search">
-          <div class="grid-body">
-            <div class="row">
-              <!-- BEGIN FILTERS -->
-              <div class="col-md-3">
-                <h2 class="grid-title" style="font-size: 25px;">
-                  <i class="fa fa-filter"></i>
-                  Filtrer
-                </h2>
-                <hr />
+      <div class="card recherche" style="margin-top: 20px;">
+        <div class="card-body recherche">
+          <div class="container">
+            <div class="input-group rounded">
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Mot clés, titre du poste..."
+                aria-label="Search"
+                aria-describedby="search-addon"
+              />
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Région, ville"
+                aria-label="ville, régions"
+                aria-describedby="search-addon"
+              />
 
-                <!--  début filter par l'emplacement -->
-                <div class="accordion" id="accordionPanelsStayOpenExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                      <button
-                        class="accordion-button"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseOne"
-                        aria-expanded="true"
-                        aria-controls="panelsStayOpen-collapseOne"
+              <select name="secteur" id="secteur-select" class="form-select">
+                <option value="">Sélectionnez un secteur</option>
+                <option value="dog">Tout</option>
+                <option value="cat">Agriculture</option>
+                <option value="hamster">Électronique</option>
+                <option value="parrot">Informatique</option>
+                <option value="spider">Santé</option>
+                <option value="goldfish">Textile</option>
+              </select>
+
+              <span
+                class="input-group-text border-0"
+                id="search-addon"
+                style="color: #5ccfc4;"
+              >
+                <i class="fas fa-search"></i>
+              </span>
+            </div>
+            <!-- <h5 class="card-title">Card title</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Button</a> -->
+          </div>
+        </div>
+        <!-- BEGIN SEARCH RESULT -->
+        <div class="col-md-12">
+          <div class="grid search">
+            <div class="grid-body">
+              <div class="row">
+                <!-- BEGIN FILTERS -->
+                <div class="col-md-3">
+                  <h2 class="grid-title" style="font-size: 25px;">
+                    <i class="fa fa-filter"></i>
+                    Filtrer
+                  </h2>
+                  <hr />
+
+                  <!--  début filter par l'emplacement -->
+                  <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                      <h2
+                        class="accordion-header"
+                        id="panelsStayOpen-headingOne"
                       >
-                        <h4>Emplacements:</h4>
-                      </button>
-                    </h2>
-                    <div
-                      id="panelsStayOpen-collapseOne"
-                      class="accordion-collapse collapse show"
-                      aria-labelledby="panelsStayOpen-headingOne"
-                    >
-                      <div class="accordion-body">
-                        <div>
-                          <ul
-                            style="
-                              padding-left: 5px;
-                              list-style: none;
-                              margin-top: 20px;
-                              line-height: 40px;
-                            "
+                        <button
+                          class="accordion-button"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#panelsStayOpen-collapseOne"
+                          aria-expanded="true"
+                          aria-controls="panelsStayOpen-collapseOne"
+                        >
+                          <h4>Emplacements:</h4>
+                        </button>
+                      </h2>
+                      <div
+                        id="panelsStayOpen-collapseOne"
+                        class="accordion-collapse collapse show"
+                        aria-labelledby="panelsStayOpen-headingOne"
+                      >
+                        <div class="accordion-body emplacementFiltre filtreee">
+                          <div>
+                            <ul class="listFilte1" style="">
+                              <li>
+                                <label class="filter">Pays</label>
+                                <div>
+                                  <select
+                                    (change)="filter()"
+                                    name="secteur"
+                                    id="secteur-select"
+                                    class="form-select"
+                                    #pays
+                                  >
+                                    <option value="">choisissez le pays</option>
+                                    <option value="dog">Tout</option>
+                                    <option value="Maroc">Maroc</option>
+                                    <option value="Algérie">Algérie</option>
+                                    <option value="Tunisie">Tunisie</option>
+                                    <option value="spider">Santé</option>
+                                    <option value="goldfish">Textile</option>
+                                  </select>
+                                </div>
+                              </li>
+                              <li>
+                                <label class="filter">Région</label>
+                                <div>
+                                  <select
+                                    (change)="filter()"
+                                    name="secteur"
+                                    id="secteur-select"
+                                    class="form-select"
+                                    #region
+                                  >
+                                    <option value="">
+                                      choisissez la région
+                                    </option>
+                                    <option value="dog">Tout</option>
+                                    <option value="cat">Agriculture</option>
+                                    <option value="hamster">
+                                      Électronique
+                                    </option>
+                                    <option value="parrot">Informatique</option>
+                                    <option value="spider">Santé</option>
+                                    <option value="goldfish">Textile</option>
+                                  </select>
+                                </div>
+                              </li>
+                              <li>
+                                <label class="filter">Ville</label>
+                                <div>
+                                  <select
+                                    (change)="filter()"
+                                    name="secteur"
+                                    id="secteur-select"
+                                    class="form-select"
+                                    #ville
+                                  >
+                                    <option value="">
+                                      choisissez la ville
+                                    </option>
+                                    <option value="">Tout</option>
+                                    <option value="Tanger">Tanger</option>
+                                    <option value="Tétouan">Tétouan</option>
+                                    <option value="Rabat">Rabat</option>
+                                    <option value="Casablanca">
+                                      Casablanca
+                                    </option>
+                                    <option value="Nador">Nador</option>
+                                  </select>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--fin de filtrage par emplacement-->
+
+                    <!-- BEGIN FILTER BY DATE -->
+                    <div class="accordion-item">
+                      <h2
+                        class="accordion-header"
+                        id="panelsStayOpen-headingTwo"
+                      >
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#panelsStayOpen-collapseTwo"
+                          aria-expanded="false"
+                          aria-controls="panelsStayOpen-collapseTwo"
+                        >
+                          <h4>Par date:</h4>
+                        </button>
+                      </h2>
+                      <div
+                        id="panelsStayOpen-collapseTwo"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingTwo"
+                      >
+                        <div class="accordion-body">
+                          <label class="filter">Début:</label>
+                          <div
+                            class="input-group date form_date"
+                            data-date="2014-06-14T05:25:07Z"
+                            data-date-format="dd-mm-yyyy"
+                            data-link-field="dtp_input2"
                           >
-                            <li>
-                              <label class="filter">Pays</label>
-                              <div>
-                                <select
-                                  name="secteur"
-                                  id="secteur-select"
-                                  class="form-select"
-                                >
-                                  <option value="">choisissez le pays</option>
-                                  <option value="dog">Tout</option>
-                                  <option value="cat">Agriculture</option>
-                                  <option value="hamster">Électronique</option>
-                                  <option value="parrot">Informatique</option>
-                                  <option value="spider">Santé</option>
-                                  <option value="goldfish">Textile</option>
-                                </select>
-                              </div>
-                            </li>
-                            <li>
-                              <label class="filter">Région</label>
-                              <div>
-                                <select
-                                  name="secteur"
-                                  id="secteur-select"
-                                  class="form-select"
-                                >
-                                  <option value="">choisissez la région</option>
-                                  <option value="dog">Tout</option>
-                                  <option value="cat">Agriculture</option>
-                                  <option value="hamster">Électronique</option>
-                                  <option value="parrot">Informatique</option>
-                                  <option value="spider">Santé</option>
-                                  <option value="goldfish">Textile</option>
-                                </select>
-                              </div>
-                            </li>
-                            <li>
-                              <label class="filter">Ville</label>
-                              <div>
-                                <select
-                                  (change)="filterParVille(ville.value)"
-                                  name="secteur"
-                                  id="secteur-select"
-                                  class="form-select"
-                                  #ville
-                                >
-                                  <option value="">choisissez la ville</option>
-                                  <option value="dog">Tout</option>
-                                  <option value="Tanger">Tanger</option>
-                                  <option value="Tétouan">Tétouan</option>
-                                  <option value="Rabat">Rabat</option>
-                                  <option value="Casablanca">Casablanca</option>
-                                  <option value="Nador">Casablanca</option>
-                                </select>
-                              </div>
-                            </li>
-                          </ul>
+                            <input
+                              class="input-group date form_date form-control"
+                              type="date"
+                              id="start"
+                              name="trip-start"
+                            />
+                          </div>
+                          <input type="hidden" id="dtp_input1" value="" />
+
+                          <label class="filter" style="padding-top: 20px;">
+                            Fin:
+                          </label>
+                          <div
+                            class="input-group date form_date"
+                            data-date="2014-06-14T05:25:07Z"
+                            data-date-format="dd-mm-yyyy"
+                            data-link-field="dtp_input2"
+                          >
+                            <input
+                              class="input-group date form_date form-control"
+                              type="date"
+                              id="start"
+                              name="trip-start"
+                            />
+                          </div>
+                          <input type="hidden" id="dtp_input2" value="" />
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <!--fin de filtrage par emplacement-->
+                    <!-- END FILTER BY DATE -->
 
-                  <!-- BEGIN FILTER BY DATE -->
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                      <button
-                        class="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseTwo"
-                        aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseTwo"
+                    <!--début de filtrage par type de contrat-->
+                    <div class="accordion-item">
+                      <h2
+                        class="accordion-header"
+                        id="panelsStayOpen-headingThree"
                       >
-                        <h4>Par date:</h4>
-                      </button>
-                    </h2>
-                    <div
-                      id="panelsStayOpen-collapseTwo"
-                      class="accordion-collapse collapse"
-                      aria-labelledby="panelsStayOpen-headingTwo"
-                    >
-                      <div class="accordion-body">
-                        <label class="filter">Début:</label>
-                        <div
-                          class="input-group date form_date"
-                          data-date="2014-06-14T05:25:07Z"
-                          data-date-format="dd-mm-yyyy"
-                          data-link-field="dtp_input2"
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#panelsStayOpen-collapseThree"
+                          aria-expanded="false"
+                          aria-controls="panelsStayOpen-collapseThree"
                         >
-                          <input
-                            class="input-group date form_date form-control"
-                            type="date"
-                            id="start"
-                            name="trip-start"
-                          />
-                        </div>
-                        <input type="hidden" id="dtp_input1" value="" />
+                          <h4>Type de contrat:</h4>
+                        </button>
+                      </h2>
+                      <div
+                        id="panelsStayOpen-collapseThree"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingThree"
+                      >
+                        <div class="accordion-body filtreee">
+                          <div style="margin-top: 20px; font-size: 20px;">
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  type="checkbox"
+                                  name=" contrat"
+                                  class="icheck"
+                                  value="A discuter"
+                                  #contrat
+                                />
+                                A discuter
+                              </label>
+                            </div>
 
-                        <label class="filter">Fin:</label>
-                        <div
-                          class="input-group date form_date"
-                          data-date="2014-06-14T05:25:07Z"
-                          data-date-format="dd-mm-yyyy"
-                          data-link-field="dtp_input2"
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  type="checkbox"
+                                  name=" contrat"
+                                  class="icheck"
+                                  value="Anapec"
+                                  #contrat
+                                />
+                                Anapec
+                              </label>
+                            </div>
+
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  type="checkbox"
+                                  name=" contrat"
+                                  class="icheck"
+                                  value="CDD"
+                                  #contrat
+                                />
+                                CDD
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  type="checkbox"
+                                  class="icheck"
+                                  name="contrat"
+                                  value="CDI"
+                                  #contrat
+                                />
+                                CDI
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  type="checkbox"
+                                  class="icheck"
+                                  name="contrat"
+                                  value="Freelance"
+                                  #contrat
+                                />
+                                Freelance
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  type="checkbox"
+                                  class="icheck"
+                                  name="contrat"
+                                  value="Intérim"
+                                  #contrat
+                                />
+                                Intérim
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  type="checkbox"
+                                  class="icheck"
+                                  name="contrat"
+                                  value="Stage"
+                                  #contrat
+                                />
+                                Stage
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- fin de filtrage par type de contrat -->
+
+                    <!--début de filtrage par Niveaux d'études-->
+                    <div class="accordion-item">
+                      <h2
+                        class="accordion-header"
+                        id="panelsStayOpen-headingFour"
+                      >
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#panelsStayOpen-collapseFour"
+                          aria-expanded="false"
+                          aria-controls="panelsStayOpen-collapseFour"
                         >
-                          <input
-                            class="input-group date form_date form-control"
-                            type="date"
-                            id="start"
-                            name="trip-start"
-                          />
+                          <h4>Niveau d'étude:</h4>
+                        </button>
+                      </h2>
+                      <div
+                        id="panelsStayOpen-collapseFour"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingFour"
+                      >
+                        <div class="accordion-body filtreee">
+                          <div style="margin-top: 20px; font-size: 20px;">
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  value="qualification avant bac"
+                                  #niveauxEt
+                                  type="checkbox"
+                                  class="icheck"
+                                />
+                                Qualification avant bac
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  value="Bac"
+                                  #niveauxEt
+                                  type="checkbox"
+                                  class="icheck"
+                                />
+                                Bac
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  value="qualification avant bac"
+                                  #niveauxEt
+                                  type="checkbox"
+                                  class="icheck"
+                                />
+                                CDD
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  value="qualification avant bac"
+                                  #niveauxEt
+                                  type="checkbox"
+                                  class="icheck"
+                                />
+                                CDI
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  value="qualification avant bac"
+                                  #niveauxEt
+                                  type="checkbox"
+                                  class="icheck"
+                                />
+                                Freelance
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  value="qualification avant bac"
+                                  #niveauxEt
+                                  type="checkbox"
+                                  class="icheck"
+                                />
+                                Intérim
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  value="qualification avant bac"
+                                  #niveauxEt
+                                  type="checkbox"
+                                  class="icheck"
+                                />
+                                Stage
+                              </label>
+                            </div>
+                          </div>
                         </div>
-                        <input type="hidden" id="dtp_input2" value="" />
                       </div>
                     </div>
-                  </div>
-                  <!-- END FILTER BY DATE -->
+                    <!--fin de filtrage par Niveaux d'études-->
 
-                  <!--début de filtrage par type de contrat-->
-                  <div class="accordion-item">
-                    <h2
-                      class="accordion-header"
-                      id="panelsStayOpen-headingThree"
-                    >
-                      <button
-                        class="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseThree"
-                        aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseThree"
+                    <!--début de filtrage par Niveaux d'expérience-->
+                    <div class="accordion-item">
+                      <h2
+                        class="accordion-header"
+                        id="panelsStayOpen-headingFive"
                       >
-                        <h4>Type de contrat:</h4>
-                      </button>
-                    </h2>
-                    <div
-                      id="panelsStayOpen-collapseThree"
-                      class="accordion-collapse collapse"
-                      aria-labelledby="panelsStayOpen-headingThree"
-                    >
-                      <div class="accordion-body">
-                        <div style="margin-top: 20px; font-size: 20px;">
-                          <div class="checkbox">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#panelsStayOpen-collapseFive"
+                          aria-expanded="false"
+                          aria-controls="panelsStayOpen-collapseFive"
+                        >
+                          <h4>Niveau d'expérience:</h4>
+                        </button>
+                      </h2>
+                      <div
+                        id="panelsStayOpen-collapseFive"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingFive"
+                      >
+                        <div class="accordion-body filtreee">
+                          <div style="margin-top: 20px; font-size: 20px;">
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  value="moins d'un ans"
+                                  #niveauxEx
+                                  type="checkbox"
+                                  class="icheck"
+                                />
+                                Moins d'un ans
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  value="entre 1 et 2"
+                                  #niveauxEx
+                                  type="checkbox"
+                                  class="icheck"
+                                />
+                                entre 1 et 2
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  value="entre 2 et 3"
+                                  #niveauxEx
+                                  type="checkbox"
+                                  class="icheck"
+                                />
+                                entre 2 et 3
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  value="entre 3 et 4"
+                                  #niveauxEx
+                                  type="checkbox"
+                                  class="icheck"
+                                />
+                                entre 3 et 4
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  value="entre 5 et 6"
+                                  #niveauxEx
+                                  type="checkbox"
+                                  class="icheck"
+                                />
+                                entre 5 et 6
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  value="plus de5"
+                                  #niveauxEx
+                                  type="checkbox"
+                                  class="icheck"
+                                />
+                                plus de5
+                              </label>
+                            </div>
+                            <!-- <div class="checkbox">
                             <label>
-                              <input type="checkbox" class="icheck" />
-                              A discuter
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              Anapec
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              CDD
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              CDI
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              Freelance
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              Intérim
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
+                              <input  (change)="filter()"
+                              value="entre 1 et 2"
+                              #niveauxEx
+                              type="checkbox"
+                              class="icheck" />
                               Stage
                             </label>
+                          </div> -->
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <!-- fin de filtrage par type de contrat -->
 
-                  <!--début de filtrage par Niveaux d'études-->
-                  <div class="accordion-item">
-                    <h2
-                      class="accordion-header"
-                      id="panelsStayOpen-headingFour"
-                    >
-                      <button
-                        class="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseFour"
-                        aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseFour"
+                    <!--fin de filtrage par Niveaux d'expérience-->
+
+                    <!--début de filtrage par langues-->
+                    <div class="accordion-item">
+                      <h2
+                        class="accordion-header"
+                        id="panelsStayOpen-headingSix"
                       >
-                        <h4>Niveau d'étude:</h4>
-                      </button>
-                    </h2>
-                    <div
-                      id="panelsStayOpen-collapseFour"
-                      class="accordion-collapse collapse"
-                      aria-labelledby="panelsStayOpen-headingFour"
-                    >
-                      <div class="accordion-body">
-                        <div style="margin-top: 20px; font-size: 20px;">
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              Qualification avant bac
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              Bac
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              CDD
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              CDI
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              Freelance
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              Intérim
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              Stage
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!--fin de filtrage par Niveaux d'études-->
-
-                  <!--début de filtrage par Niveaux d'expérience-->
-                  <div class="accordion-item">
-                    <h2
-                      class="accordion-header"
-                      id="panelsStayOpen-headingFive"
-                    >
-                      <button
-                        class="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseFive"
-                        aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseFive"
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#panelsStayOpen-collapseSix"
+                          aria-expanded="false"
+                          aria-controls="panelsStayOpen-collapseSix"
+                        >
+                          <h4>Langues:</h4>
+                        </button>
+                      </h2>
+                      <div
+                        id="panelsStayOpen-collapseSix"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingSix"
                       >
-                        <h4>Niveau d'expérience:</h4>
-                      </button>
-                    </h2>
-                    <div
-                      id="panelsStayOpen-collapseFive"
-                      class="accordion-collapse collapse"
-                      aria-labelledby="panelsStayOpen-headingFive"
-                    >
-                      <div class="accordion-body">
-                        <div style="margin-top: 20px; font-size: 20px;">
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              Qualification avant bac
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              Bac
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              CDD
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              CDI
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              Freelance
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              Intérim
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              Stage
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!--fin de filtrage par Niveaux d'expérience-->
-
-                  <!--début de filtrage par langues-->
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-headingSix">
-                      <button
-                        class="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseSix"
-                        aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseSix"
-                      >
-                        <h4>Langues:</h4>
-                      </button>
-                    </h2>
-                    <div
-                      id="panelsStayOpen-collapseSix"
-                      class="accordion-collapse collapse"
-                      aria-labelledby="panelsStayOpen-headingSix"
-                    >
-                      <div class="accordion-body">
-                        <div style="margin-top: 20px; font-size: 20px;">
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              Anglais
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              Arabe
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              Français
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              Espagnol
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              Riffienne
-                            </label>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" class="icheck" />
-                              Allemande
-                            </label>
+                        <div class="accordion-body filtreee">
+                          <div style="margin-top: 20px; font-size: 20px;">
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  value="Anglais"
+                                  #langue
+                                  type="checkbox"
+                                  class="icheck"
+                                />
+                                Anglais
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  value="Arabe"
+                                  #langue
+                                  type="checkbox"
+                                  class="icheck"
+                                />
+                                Arabe
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  value="Français"
+                                  #langue
+                                  type="checkbox"
+                                  class="icheck"
+                                />
+                                Français
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  value="Espagnol"
+                                  #langue
+                                  type="checkbox"
+                                  class="icheck"
+                                />
+                                Espagnol
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  value="Riffienne"
+                                  #langue
+                                  type="checkbox"
+                                  class="icheck"
+                                />
+                                Riffienne
+                              </label>
+                            </div>
+                            <div class="checkbox">
+                              <label>
+                                <input
+                                  (change)="filter()"
+                                  value="Allemande"
+                                  #langue
+                                  type="checkbox"
+                                  class="icheck"
+                                />
+                                Allemande
+                              </label>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
+                  <!--fin de filtrage par langues-->
+
+                  <div class="padding"></div>
                 </div>
-                <!--fin de filtrage par langues-->
-
-                <div class="padding"></div>
-              </div>
-              <!-- END FILTERS -->
-              <!-- BEGIN RESULT -->
-              <div class="col-md-9">
-                <h2 style="font-size: 25px;">Résultats des offres</h2>
-                <hr />
-                <!-- BEGIN SEARCH INPUT -->
-                <!-- <div class="input-group">
+                <!-- END FILTERS -->
+                <!-- BEGIN RESULT -->
+                <div class="col-md-9">
+                  <h2 style="font-size: 25px;">Résultats des offres</h2>
+                  <hr />
+                  <!-- BEGIN SEARCH INPUT -->
+                  <!-- <div class="input-group">
               <input type="text" class="form-control" value="web development">
               <span class="input-group-btn">
                 <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
               </span>
             </div> -->
-                <!-- END SEARCH INPUT -->
-                <p></p>
+                  <!-- END SEARCH INPUT -->
 
-                <div class="padding"></div>
+                  <div class="padding"></div>
 
-                <div class="row">
-                  <!-- BEGIN ORDER RESULT -->
-                  <div class="col-sm-6">
-                    <div class="btn-group">
-                      <button
-                        type="button"
-                        class="btn btn-default dropdown-toggle"
-                        data-toggle="dropdown"
-                      >
-                        Order by
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a class="dropdown-item" href="#">Name</a></li>
-                        <li><a class="dropdown-item" href="#">Date</a></li>
-                        <li><a class="dropdown-item" href="#">View</a></li>
-                        <li><a class="dropdown-item" href="#">Rating</a></li>
-                      </ul>
+                  <div class="row">
+                    <!-- BEGIN ORDER RESULT -->
+                    <div class="col-sm-6">
+                      <div class="btn-group">
+                        <button
+                          type="button"
+                          class="btn btn-default dropdown-toggle"
+                          data-toggle="dropdown"
+                        >
+                          Order by
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a class="dropdown-item" href="#">Name</a></li>
+                          <li><a class="dropdown-item" href="#">Date</a></li>
+                          <li><a class="dropdown-item" href="#">View</a></li>
+                          <li><a class="dropdown-item" href="#">Rating</a></li>
+                        </ul>
+                      </div>
                     </div>
-                  </div>
 
-                  <!-- <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" (mouseover)="Showmenu2=true" (mouseout)="Showmenu2=false">
                   Infos pratiques
                 </a>
@@ -545,122 +770,121 @@
                   <li><a class="dropdown-item" href="#">Evénements et actualités</a></li>
                 </ul>
               </li> -->
-                  <!-- END ORDER RESULT -->
+                    <!-- END ORDER RESULT -->
 
-                  <div class="col-md-6 text-right">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-default active">
-                        <i class="fa fa-list"></i>
-                      </button>
-                      <button type="button" class="btn btn-default">
-                        <i class="fa fa-th"></i>
-                      </button>
+                    <div class="col-md-6 text-right">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-default active">
+                          <i class="fa fa-list"></i>
+                        </button>
+                        <button type="button" class="btn btn-default">
+                          <i class="fa fa-th"></i>
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <!-- BEGIN TABLE RESULT -->
-                <div class="table-responsive">
-                  <table class="table table-hover">
-                    <tbody>
-                      <div
-                        [routerLink]="['/offres/details-offres']"
-                        *ngFor="let offre of offres"
-                        style="
-                          border-bottom: 1px solid #c7c3c3;
-                          padding-bottom: 5px;
-                          margin-bottom: 6px;
-                        "
-                      >
-                        <tr style="border: 0;">
-                          <td class="number text-center"></td>
-                          <td class="image">
-                            <img
-                              src="../../../../assets/images/images pour offres/téléchargement.png"
-                              alt=""
-                              class="img-offre"
-                              style="margin-inline-end: 13px;"
-                            />
-                          </td>
-                          <td
-                            class="product"
-                            style="
-                              line-height: 1.42857143;
-                              vertical-align: top;
-                            "
-                          >
-                            <div class="col-md-8">
-                              <div class="card-body">
-                                <h5 class="card-title">
-                                  {{ offre.Intitule }} / {{ offre.Secteur }}
-                                </h5>
+                  <!-- BEGIN TABLE RESULT -->
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <tbody>
+                        <!-- <div [routerLink]="['/offres/details-offres']" *ngFor="let offre of offres" style="
+                            border-bottom: 1px solid #c7c3c3;
+                            padding-bottom: 5px;
+                            margin-bottom: 6px;
+                          ">
+                          <tr style="border: 0;">
+                            <td class="number text-center"></td>
+                            <td class="image">
+                              <img src="../../../../assets/images/images pour offres/téléchargement.png" alt=""
+                                class="img-offre" style="margin-inline-end: 13px;" />
+                            </td>
+                            <td class="product" style="
+                                line-height: 1.42857143;
+                                vertical-align: top;
+                              ">
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <h5 class="card-title">
+                                    {{ offre.Intitule }} / {{ offre.Secteur }}
+                                  </h5>
 
-                                <h6 class="" style="margin-top: 10px;">
-                                  {{ offre.NomEntreprise }}:
-                                  {{ offre.TypeEntreprise }}
-                                </h6>
-                                <p class="card-text">
-                                  Compétences requises:{{ offre.Competences }}
-                                </p>
-                                <ul class="p-0">
-                                  <small
-                                    class="text-muted"
-                                    style="
-                                      list-style: none;
-                                      display: flex;
-                                      justify-content: space-between;
-                                    "
-                                  >
-                                    <li>
-                                      <i class="fa-solid fa-file-contract"></i>
-                                      {{ offre.TypeContrat }}
-                                    </li>
-                                    <li>
-                                      <i class="fa-solid fa-location-dot"></i>
-                                      {{ offre.Ville }}
-                                    </li>
-                                    <li>
-                                      <i class="fa-regular fa-calendar"></i>
-                                      {{ offre.Date }}
-                                    </li>
-                                  </small>
-                                </ul>
+                                  <h6 class="" style="margin-top: 10px;">
+                                    {{ offre.NomEntreprise }}:
+                                    {{ offre.TypeEntreprise }}
+                                  </h6>
+                                  <p class="card-text">
+                                    Compétences requises:{{ offre.Competences }}
+                                  </p>
+                                  <ul class="p-0">
+                                    <small class="text-muted" style="
+                                        list-style: none;
+                                        display: flex;
+                                        justify-content: space-between;
+                                      ">
+                                      <li>
+                                        <i class="fa-solid fa-file-contract"></i>
+                                        {{ offre.TypeContrat }}
+                                      </li>
+                                      <li>
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        {{ offre.Ville }}
+                                      </li>
+                                      <li>
+                                        <i class="fa-regular fa-calendar"></i>
+                                        {{ offre.Date }}
+                                      </li>
+                                    </small>
+                                  </ul>
+                                </div>
                               </div>
-                            </div>
-                            <!-- <strong>{{offre.Intitule}}</strong><br>{{offre.Secteur}} -->
-                          </td>
+                              <strong>{{offre.Intitule}}</strong><br>{{offre.Secteur}}
+                            </td>
 
-                          <td class="favorite-offre">
-                            <button class="btn-fav" style="border-style: none;">
-                              <i class="far fa-heart"></i>
-                            </button>
-                          </td>
-                          <br />
-                        </tr>
-                      </div>
-                    </tbody>
-                  </table>
+                            <td class="favorite-offre">
+                              <button class="btn-fav" style="border-style: none;">
+                                <i class="far fa-heart"></i>
+                              </button>
+                            </td>
+                            <br />
+                          </tr>
+                        </div> -->
+                        <app-card-offre
+                          *ngFor="let offre of offres"
+                          [Intitule]="offre.Intitule"
+                          [Secteur]="offre.Secteur"
+                          [Poste]="offre.Poste"
+                          [NomEntreprise]="offre.NomEntreprise"
+                          [TypeEntreprise]="offre.TypeEntreprise"
+                          [Competences]="offre.Competences"
+                          [TypeContrat]="offre.TypeContrat"
+                          [Ville]="offre.Ville"
+                          [Date]="offre.Date"
+                        ></app-card-offre>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- END TABLE RESULT -->
+
+                  <!-- BEGIN PAGINATION -->
+                  <ul class="pagination">
+                    <li class="disabled"><a href="#">«</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">»</a></li>
+                  </ul>
+                  <!-- END PAGINATION -->
                 </div>
-                <!-- END TABLE RESULT -->
-
-                <!-- BEGIN PAGINATION -->
-                <ul class="pagination">
-                  <li class="disabled"><a href="#">«</a></li>
-                  <li class="active"><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li><a href="#">»</a></li>
-                </ul>
-                <!-- END PAGINATION -->
+                <!-- END RESULT -->
               </div>
-              <!-- END RESULT -->
             </div>
           </div>
         </div>
+        <!-- END SEARCH RESULT -->
       </div>
-      <!-- END SEARCH RESULT -->
     </div>
   </div>
 </div>

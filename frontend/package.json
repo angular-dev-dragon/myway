@@ -23,6 +23,7 @@
     "@ng-bootstrap/ng-bootstrap": "^13.0.0",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
+    "@oracle/addthis-angularjs": "^1.0.4",
     "@popperjs/core": "^2.11.5",
     "bootstrap": "^5.2.0",
     "leaflet": "^1.8.0",
