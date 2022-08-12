@@ -6,10 +6,14 @@ import { SkillsComponent } from './skills/skills.component';
 import { LangougeComponent } from './langouge/langouge.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
-
 import { SharedModule } from 'src/app/shared/shared.module';
 import { LayoutComponent } from './layout/layout.component';
-import { PersonalInformationComponent } from './personal-information/personal-information.component';
+import { HeaderProfileFromComponent } from './head-profile/header-profile-from/header-profile-from.component';
+import { ContactFormComponent } from './contact/contact-form/contact-form.component';
+import { AboutFormComponent } from './about/about-form/about-form.component';
+import { ExpectationsFormComponent } from './expectations/expectations-form/expectations-form.component';
+import { LangougeFormComponent } from './langouge/langouge-form/langouge-form.component';
+import { SkillsFormComponent } from './skills/skills-form/skills-form.component';
 
 
 
@@ -21,8 +25,13 @@ import { PersonalInformationComponent } from './personal-information/personal-in
     LangougeComponent,
     ContactComponent,
     AboutComponent,
-    PersonalInformationComponent,
     LayoutComponent,
+    HeaderProfileFromComponent,
+    ContactFormComponent,
+    AboutFormComponent,
+    ExpectationsFormComponent,
+    LangougeFormComponent,
+    SkillsFormComponent,
   ],
   imports: [CommonModule, SharedModule],
   exports: [LayoutComponent],
