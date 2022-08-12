@@ -240,6 +240,9 @@
     "critere_offre": "Critères de l'offre",
     "dejaCompte": "J'ai déja un compte",
     "connect": "se connecter",
-    "entreprise": "L'entreprise"
+    "entreprise": "L'entreprise",
+    "date_pub": "Date de publication",
+    "date_pos": "Date de postulation",
+    "partager": "Partager sur"
   }
 }

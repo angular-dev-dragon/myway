@@ -44,7 +44,7 @@ import { ToastModule } from 'primeng/toast'
 // form importes
 // form importes
 // form importes
-import { FileUploadModule } from 'primeng/fileupload';
+import { FileUploadModule } from 'primeng/fileupload'
 
 import { AutoCompleteModule } from 'primeng/autocomplete'
 import { CalendarModule } from 'primeng/calendar'
@@ -70,6 +70,9 @@ import { ToggleButtonModule } from 'primeng/togglebutton'
 import { TriStateCheckboxModule } from 'primeng/tristatecheckbox'
 import { SplitButtonModule } from 'primeng/splitbutton'
 import { SpeedDialModule } from 'primeng/speeddial'
+
+import { CardOffreComponent } from './components/card-offre/card-offre.component'
+
 import { MatMenuModule } from '@angular/material/menu'
 
 // end form importes
@@ -91,7 +94,7 @@ let modules: any = [
   ToastModule,
   ProgressSpinnerModule,
   // form importes
-FileUploadModule ,
+  FileUploadModule,
   CheckboxModule,
   InputSwitchModule,
   TreeSelectModule,
@@ -155,6 +158,9 @@ FileUploadModule ,
     CardArticleComponent,
     CardDocumentComponent,
     MapComponent,
+
+    CardOffreComponent,
+
     CardForumComponent,
     SondageHistoriqueComponent,
     CardBlogueurComponent,
@@ -172,6 +178,7 @@ FileUploadModule ,
     CommonModule,
     ContentLayoutComponent,
     CardDocumentComponent,
+    CardOffreComponent,
     CardForumComponent,
     SondageHistoriqueComponent,
     CardBlogueurComponent,

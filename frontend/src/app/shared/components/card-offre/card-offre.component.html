@@ -1,0 +1,65 @@
+<div
+  class="row align-items-center"
+  style="
+    border-bottom: 1px solid #c7c3c3;
+    padding-bottom: 5px;
+    margin-bottom: 6px;
+  "
+>
+  <div class="col-md-3 image">
+    <img
+      src="../../../../assets/images/images pour offres/téléchargement.png"
+      alt=""
+      class="img-fluid"
+      style="margin-inline-end: 13px;"
+    />
+  </div>
+  <div
+    class="product col-md-7"
+    style="line-height: 1.42857143; vertical-align: top;"
+  >
+    <div>
+      <div class="card-body">
+        <h5 class="card-title">{{ Intitule }}</h5>
+        <h5>{{ Secteur }}</h5>
+        <h6>{{ Poste }}</h6>
+        <h6 class="h66" style="margin-top: 10px;">
+          {{ NomEntreprise }}:
+          {{ TypeEntreprise }}
+        </h6>
+        <p class="card-text">Compétences requises:{{ Competences }}</p>
+        <ul class="p-0">
+          <small
+            class="text-muted"
+            style="
+              list-style: none;
+              display: flex;
+              justify-content: space-between;
+            "
+          >
+            <li>
+              <i class="fa-solid fa-file-contract"></i>
+              {{ TypeContrat }}
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              {{ Ville }}
+            </li>
+            <li>
+              <i class="fa-regular fa-calendar"></i>
+              {{ Date }}
+            </li>
+          </small>
+        </ul>
+      </div>
+    </div>
+    <!-- <strong>{{offre.Intitule}}</strong><br>{{offre.Secteur}} -->
+  </div>
+
+  <div class="favorite-offre col-md-2">
+    <button class="btn-fav" style="border-style: none;">
+      <i class="far fa-heart"></i>
+    </button>
+  </div>
+  <br />
+</div>

@@ -34,12 +34,12 @@
           >
             <li style="margin-right: 20px;">
               <i class="fa-regular fa-calendar"></i>
-              Date de publication:{{ details.Date_pub }}
+              {{ 'offre.date_pub' | translate }}: {{ details.Date_pub }}
             </li>
-            <li>
+            <!-- <li>
               <i class="fa-regular fa-calendar"></i>
-              Date de postulation:{{ details.Date_pos }}
-            </li>
+              {{ 'offre.date_pos' | translate }}: {{ details.Date_pos }}
+            </li> -->
           </ul>
           <p class="card-text"></p>
           <p class="card-text"></p>
@@ -51,479 +51,483 @@
               >
                 <li style="padding-right: 20px;">
                   <i class="fa-solid fa-file-contract"></i>
-                  contrat
+                  {{ details.TypeContrat }}
                 </li>
                 <li>
                   <i class="fa-solid fa-location-dot"></i>
-                  adresse complete
+                  {{ details.Adresse }}
                 </li>
               </small>
             </ul>
             <ul class="col-md-6 socialMedia1">
               <li class="socialMedia">
-                <p>Partager sur:</p>
+                <p class="test">{{ 'offre.partager' | translate }}:</p>
               </li>
-
-              <li>
-                <div class="addthis_inline_share_toolbox_hvun"></div>
-              </li>
+              <li><div class="addthis_inline_share_toolbox_hvun"></div></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="card">
-    <div class="card">
-      <!-- <h5>Détails de l'offre</h5> -->
-      <p-tabView>
-        <p-tabPanel header="{{ 'offre.details' | translate }}">
-          <p-accordion>
-            <p-accordionTab
-              header="{{ 'globale.description' | translate }} "
-              [selected]="true"
-            >
-              <div *ngFor="let info of details.Description">
-                <h6 class="criteres-offres" *ngIf="info.Titre">
-                  {{ info.Titre }} {{ details.Intitule }}
-                </h6>
-                <p *ngIf="info.Texte">{{ info.Texte }}</p>
-                <ul *ngIf="info.List">
-                  <li *ngFor="let list of info.List">{{ list }}</li>
+
+  <div class="row">
+    <div class="col-md-9">
+      <div class="card">
+        <!-- <h5>Détails de l'offre</h5> -->
+        <p-tabView>
+          <p-tabPanel header="{{ 'offre.details' | translate }}">
+            <p-accordion>
+              <p-accordionTab
+                header="{{ 'globale.description' | translate }} "
+                [selected]="true"
+              >
+                <div *ngFor="let info of details.Description">
+                  <h6 class="criteres-offres" *ngIf="info.Titre">
+                    {{ info.Titre }} {{ details.Intitule }}
+                  </h6>
+                  <p *ngIf="info.Texte">{{ info.Texte }}</p>
+                  <ul *ngIf="info.List">
+                    <li *ngFor="let list of info.List">{{ list }}</li>
+                  </ul>
+                </div>
+              </p-accordionTab>
+
+              <p-accordionTab header="{{ 'offre.missions' | translate }} ">
+                <div *ngFor="let info of details.Missions">
+                  <h6 class="criteres-offres" *ngIf="info.Titre">
+                    {{ info.Titre }}
+                  </h6>
+                  <p *ngIf="info.Texte">{{ info.Texte }}</p>
+                  <ul *ngIf="info.List">
+                    <li *ngFor="let list of info.List">{{ list }}</li>
+                  </ul>
+                </div>
+              </p-accordionTab>
+
+              <p-accordionTab header="{{ 'offre.profilR' | translate }}">
+                <div *ngFor="let info of details.ProfilRecherche">
+                  <h6 class="criteres-offres" *ngIf="info.Titre">
+                    {{ info.Titre }}
+                  </h6>
+                  <p *ngIf="info.Texte">{{ info.Texte }}</p>
+                  <ul *ngIf="info.List">
+                    <li *ngFor="let list of info.List">{{ list }}</li>
+                  </ul>
+                </div>
+              </p-accordionTab>
+              <p-accordionTab header="{{ 'offre.critere_offre' | translate }}">
+                <ul>
+                  <li>Secteur d'activité: {{ details.Secteur }}</li>
+                  <li>Type de contrat: {{ details.TypeContrat }}</li>
+                  <li>Région: {{ details.Region }}</li>
+                  <li>Ville: {{ details.Ville }}</li>
+                  <li>Niveaux d'études: {{ details.NiveauxEt }}</li>
+                  <li>Niveau d'expérience: {{ details.NiveauxEx }}</li>
+                  <li>langues exigées: {{ details.Langues }}</li>
+                  <li>Salaire: {{ details.Salaire }}</li>
+                  <li>Compétence clés: {{ details.Competences }}</li>
+                  <li>Nombres de poste(s): {{ details.NombresPoste }}</li>
                 </ul>
-              </div>
-            </p-accordionTab>
+              </p-accordionTab>
+            </p-accordion>
+          </p-tabPanel>
 
-            <p-accordionTab header="{{ 'offre.missions' | translate }} ">
-              <div *ngFor="let info of details.Missions">
-                <h6 class="criteres-offres" *ngIf="info.Titre">
-                  {{ info.Titre }}
-                </h6>
-                <p *ngIf="info.Texte">{{ info.Texte }}</p>
-                <ul *ngIf="info.List">
-                  <li *ngFor="let list of info.List">{{ list }}</li>
-                </ul>
-              </div>
-            </p-accordionTab>
+          <!--2-->
+          <p-tabPanel header="{{ 'offre.det_entr' | translate }}">
+            <img
+              src="../../../../assets/images/images pour offres/téléchargement.png"
+              class="rounded float-end"
+              alt="..."
+            />
 
-            <p-accordionTab header="{{ 'offre.profilR' | translate }}">
-              <div *ngFor="let info of details.ProfilRecherche">
-                <h6 class="criteres-offres" *ngIf="info.Titre">
-                  {{ info.Titre }}
-                </h6>
-                <p *ngIf="info.Texte">{{ info.Texte }}</p>
-                <ul *ngIf="info.List">
-                  <li *ngFor="let list of info.List">{{ list }}</li>
-                </ul>
-              </div>
-            </p-accordionTab>
-            <p-accordionTab header="{{ 'offre.critere_offre' | translate }}">
-              <ul>
-                <li>Secteur d'activité: {{ details.Secteur }}</li>
-                <li>Type de contrat: {{ details.TypeContrat }}</li>
-                <li>Région: {{ details.Region }}</li>
-                <li>Ville: {{ details.Ville }}</li>
-                <li>Niveaux d'études: {{ details.NiveauxEt }}</li>
-                <li>Niveau d'expérience: {{ details.NiveauxEx }}</li>
-                <li>langues exigées: {{ details.Langues }}</li>
-                <li>Salaire: {{ details.Salaire }}</li>
-                <li>Compétence clés: {{ details.Competences }}</li>
-                <li>Nombres de poste(s): {{ details.NombresPoste }}</li>
-              </ul>
-            </p-accordionTab>
-          </p-accordion>
-        </p-tabPanel>
+            <h5>
+              {{ 'offre.entreprise' | translate }}:
+              {{ Det_Ent.NomEntreprise }}
+            </h5>
+            <ul>
+              <li>{{ 'form.secteur' | translate }}: {{ Det_Ent.Secteur }}</li>
+              <li>
+                {{ 'adresse.site' | translate }}: {{ Det_Ent.SiteInternet }}
+              </li>
+              <li>
+                {{ 'adresse.description' | translate }}:
+                {{ Det_Ent.Description }}
+              </li>
+            </ul>
+          </p-tabPanel>
+          <!--3-->
+          <p-tabPanel header="{{ 'offre.postuler' | translate }}">
+            <p>
+              {{ 'offre.dejaCompte' | translate }}:
+              <a href="#">{{ 'offre.connect' | translate }}</a>
+            </p>
+            <hr />
+            <!--Formulaire postuler-->
 
-        <!--2-->
-        <p-tabPanel header="{{ 'offre.det_entr' | translate }}">
-          <img
-            src="../../../../assets/images/images pour offres/téléchargement.png"
-            class="rounded float-end"
-            alt="..."
-          />
-
-          <ul>
-            <li>
-              <h5>
-                {{ 'offre.entreprise' | translate }}:
-                {{ Det_Ent.NomEntreprise }}
-              </h5>
-            </li>
-            <li>{{ 'form.secteur' | translate }}: {{ Det_Ent.Secteur }}</li>
-            <li>
-              {{ 'adresse.site' | translate }}: {{ Det_Ent.SiteInternet }}
-            </li>
-            <li>
-              {{ 'adresse.description' | translate }}: {{ Det_Ent.Description }}
-            </li>
-          </ul>
-        </p-tabPanel>
-        <!--3-->
-        <p-tabPanel header="{{ 'offre.postuler' | translate }}">
-          <p>
-            {{ 'offre.dejaCompte' | translate }}:
-            <a href="#">{{ 'offre.connect' | translate }}</a>
-          </p>
-          <hr />
-          <!--Formulaire postuler-->
-
-          <div>
-            <form [formGroup]="postulezForm" (ngSubmit)="sendPostule()">
-              <div class="row">
-                <!--Salutation-->
-                <div class="mb-3 col-md-2">
-                  <label for="salutation" class="form-label">
-                    {{ 'form.salut' | translate }}:
-                  </label>
-                  <select
-                    id="salutation"
-                    class="form-select"
-                    id="salutation"
-                    formControlName="salutation"
-                    [ngClass]="{
-                      'is-invalid':
+            <div>
+              <form [formGroup]="postulezForm" (ngSubmit)="sendPostule()">
+                <div class="row">
+                  <!--Salutation-->
+                  <div class="mb-3 col-md-2">
+                    <label for="salutation" class="form-label">
+                      {{ 'form.salut' | translate }}:
+                    </label>
+                    <select
+                      id="salutation"
+                      class="form-select"
+                      id="salutation"
+                      formControlName="salutation"
+                      [ngClass]="{
+                        'is-invalid':
+                          postulezForm.get('salutation')?.touched &&
+                          postulezForm.get('salutation')?.invalid
+                      }"
+                    >
+                      <option value="" selected disabled>
+                        {{ 'form.salut' | translate }}
+                      </option>
+                      <option>{{ 'form.mme' | translate }}</option>
+                      <option>{{ 'form.mlle' | translate }}</option>
+                      <option>{{ 'form.mr' | translate }}</option>
+                    </select>
+                    <div
+                      *ngIf="
                         postulezForm.get('salutation')?.touched &&
                         postulezForm.get('salutation')?.invalid
-                    }"
-                  >
-                    <option selected disabled>
-                      {{ 'form.salut' | translate }}
-                    </option>
-                    <option>{{ 'form.mme' | translate }}</option>
-                    <option>{{ 'form.mlle' | translate }}</option>
-                    <option>{{ 'form.mr' | translate }}</option>
-                  </select>
-                  <div
-                    *ngIf="
-                      postulezForm.get('salutation')?.touched &&
-                      postulezForm.get('salutation')?.invalid
-                    "
-                    class="invalid-feedback mb-2"
-                  >
-                    <div
-                      *ngIf="postulezForm.get('salutation')?.errors?.['required']"
+                      "
+                      class="invalid-feedback mb-2"
                     >
-                      {{ 'form.champ_oblig' | translate }}
+                      <div
+                        *ngIf="postulezForm.get('salutation')?.errors?.['required']"
+                      >
+                        {{ 'form.champ_oblig' | translate }}
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <!-- Name input -->
+                  <!-- Name input -->
 
-                <div class="mb-3 col-md-5">
-                  <label class="form-label" for="name">
-                    {{ 'form.nom' | translate }}:
-                  </label>
-                  <input
-                    class="form-control"
-                    id="name"
-                    type="text"
-                    placeholder="{{ 'form.exp_nom' | translate }}"
-                    [ngClass]="{
-                      'is-invalid':
+                  <div class="mb-3 col-md-5">
+                    <label class="form-label" for="name">
+                      {{ 'form.nom' | translate }}:
+                    </label>
+                    <input
+                      class="form-control"
+                      id="name"
+                      type="text"
+                      placeholder="{{ 'form.exp_nom' | translate }}"
+                      [ngClass]="{
+                        'is-invalid':
+                          postulezForm.get('name')?.touched &&
+                          postulezForm.get('name')?.invalid
+                      }"
+                      formControlName="name"
+                      name="name"
+                    />
+                    <div
+                      *ngIf="
                         postulezForm.get('name')?.touched &&
                         postulezForm.get('name')?.invalid
-                    }"
-                    formControlName="name"
-                    name="name"
-                  />
-                  <div
-                    *ngIf="
-                      postulezForm.get('name')?.touched &&
-                      postulezForm.get('name')?.invalid
-                    "
-                    class="invalid-feedback mb-2"
-                  >
-                    <div *ngIf="postulezForm.get('name')?.errors?.['required']">
-                      {{ 'form.champ_oblig' | translate }}
-                    </div>
-                    <div
-                      *ngIf="postulezForm.get('name')?.errors?.['minlength']"
+                      "
+                      class="invalid-feedback mb-2"
                     >
-                      {{ 'form.champ_3' | translate }}
-                    </div>
-                    <div
-                      *ngIf="postulezForm.get('name')?.errors?.['maxlength']"
-                    >
-                      {{ 'form.champ_30' | translate }}
+                      <div
+                        *ngIf="postulezForm.get('name')?.errors?.['required']"
+                      >
+                        {{ 'form.champ_oblig' | translate }}
+                      </div>
+                      <div
+                        *ngIf="postulezForm.get('name')?.errors?.['minlength']"
+                      >
+                        {{ 'form.champ_3' | translate }}
+                      </div>
+                      <div
+                        *ngIf="postulezForm.get('name')?.errors?.['maxlength']"
+                      >
+                        {{ 'form.champ_30' | translate }}
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <!-- Prenom input -->
-                <div class="mb-3 col-md-5">
-                  <label class="form-label" for="prenom">
-                    {{ 'form.prenom' | translate }}:
-                  </label>
-                  <input
-                    class="form-control"
-                    id="prenom"
-                    type="prenom"
-                    placeholder="{{ 'form.exp_pre' | translate }}"
-                    formControlName="prenom"
-                    name="prenom"
-                    [ngClass]="{
-                      'is-invalid':
+                  <!-- Prenom input -->
+                  <div class="mb-3 col-md-5">
+                    <label class="form-label" for="prenom">
+                      {{ 'form.prenom' | translate }}:
+                    </label>
+                    <input
+                      class="form-control"
+                      id="prenom"
+                      type="prenom"
+                      placeholder="{{ 'form.exp_pre' | translate }}"
+                      formControlName="prenom"
+                      name="prenom"
+                      [ngClass]="{
+                        'is-invalid':
+                          postulezForm.get('prenom')?.touched &&
+                          postulezForm.get('prenom')?.invalid
+                      }"
+                    />
+                    <div
+                      *ngIf="
                         postulezForm.get('prenom')?.touched &&
                         postulezForm.get('prenom')?.invalid
-                    }"
-                  />
-                  <div
-                    *ngIf="
-                      postulezForm.get('prenom')?.touched &&
-                      postulezForm.get('prenom')?.invalid
-                    "
-                    class="invalid-feedback mb-2"
-                  >
-                    <div
-                      *ngIf="postulezForm.get('prenom')?.errors?.['required']"
+                      "
+                      class="invalid-feedback mb-2"
                     >
-                      {{ 'form.champ_oblig' | translate }}
-                    </div>
-                    <div
-                      *ngIf="postulezForm.get('prenom')?.errors?.['minlength']"
-                    >
-                      {{ 'form.champ_3' | translate }}
-                    </div>
-                    <div
-                      *ngIf="postulezForm.get('prenom')?.errors?.['maxlength']"
-                    >
-                      {{ 'form.champ_30' | translate }}
+                      <div
+                        *ngIf="postulezForm.get('prenom')?.errors?.['required']"
+                      >
+                        {{ 'form.champ_oblig' | translate }}
+                      </div>
+                      <div
+                        *ngIf="postulezForm.get('prenom')?.errors?.['minlength']"
+                      >
+                        {{ 'form.champ_3' | translate }}
+                      </div>
+                      <div
+                        *ngIf="postulezForm.get('prenom')?.errors?.['maxlength']"
+                      >
+                        {{ 'form.champ_30' | translate }}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- Telephone + email address input -->
-              <div class="row">
-                <!-- Email input -->
-                <div class="mb-3 col-md-6">
-                  <label class="form-label" for="emailAddress">
-                    {{ 'form.email' | translate }}:
-                  </label>
-                  <input
-                    class="form-control"
-                    id="emailAddress"
-                    type="email"
-                    placeholder="{{ 'form.exp_email' | translate }}"
-                    formControlName="email"
-                    name="email"
-                    [ngClass]="{
-                      'is-invalid':
+                <!-- Telephone + email address input -->
+                <div class="row">
+                  <!-- Email input -->
+                  <div class="mb-3 col-md-6">
+                    <label class="form-label" for="emailAddress">
+                      {{ 'form.email' | translate }}:
+                    </label>
+                    <input
+                      class="form-control"
+                      id="emailAddress"
+                      type="email"
+                      placeholder="{{ 'form.exp_email' | translate }}"
+                      formControlName="email"
+                      name="email"
+                      [ngClass]="{
+                        'is-invalid':
+                          postulezForm.get('email')?.touched &&
+                          postulezForm.get('email')?.invalid
+                      }"
+                    />
+                    <div
+                      *ngIf="
                         postulezForm.get('email')?.touched &&
                         postulezForm.get('email')?.invalid
-                    }"
-                  />
-                  <div
-                    *ngIf="
-                      postulezForm.get('email')?.touched &&
-                      postulezForm.get('email')?.invalid
-                    "
-                    class="invalid-feedback"
-                  >
-                    <div
-                      *ngIf="postulezForm.get('email')?.errors?.['required']"
+                      "
+                      class="invalid-feedback"
                     >
-                      {{ 'form.champ_oblig' | translate }}
-                    </div>
-                    <div *ngIf="postulezForm.get('email')?.errors?.['email']">
-                      {{ 'form.mail_valid' | translate }}
+                      <div
+                        *ngIf="postulezForm.get('email')?.errors?.['required']"
+                      >
+                        {{ 'form.champ_oblig' | translate }}
+                      </div>
+                      <div *ngIf="postulezForm.get('email')?.errors?.['email']">
+                        {{ 'form.mail_valid' | translate }}
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <!--Téléphone-->
-                <div class="mb-3 col-md-3">
-                  <label class="form-label" for="telephone">
-                    {{ 'form.telephone' | translate }}:
-                  </label>
-                  <input
-                    class="form-control"
-                    id="telephone"
-                    type="texte"
-                    placeholder="{{ 'form.exp_tel' | translate }}"
-                    formControlName="telephone"
-                    name="telephone"
-                    [ngClass]="{
-                      'is-invalid':
+                  <!--Téléphone-->
+                  <div class="mb-3 col-md-3">
+                    <label class="form-label" for="telephone">
+                      {{ 'form.telephone' | translate }}:
+                    </label>
+                    <input
+                      class="form-control"
+                      id="telephone"
+                      type="texte"
+                      placeholder="{{ 'form.exp_tel' | translate }}"
+                      formControlName="telephone"
+                      name="telephone"
+                      [ngClass]="{
+                        'is-invalid':
+                          postulezForm.get('telephone')?.touched &&
+                          postulezForm.get('telephone')?.invalid
+                      }"
+                    />
+                    <div
+                      *ngIf="
                         postulezForm.get('telephone')?.touched &&
                         postulezForm.get('telephone')?.invalid
-                    }"
-                  />
-                  <div
-                    *ngIf="
-                      postulezForm.get('telephone')?.touched &&
-                      postulezForm.get('telephone')?.invalid
-                    "
-                    class="invalid-feedback"
-                  >
-                    <div
-                      *ngIf="postulezForm.get('telephone')?.errors?.['required']"
+                      "
+                      class="invalid-feedback"
                     >
-                      {{ 'form.champ_oblig' | translate }}
+                      <div
+                        *ngIf="postulezForm.get('telephone')?.errors?.['required']"
+                      >
+                        {{ 'form.champ_oblig' | translate }}
+                      </div>
+                      <div
+                        *ngIf="postulezForm.get('telephone')?.errors?.['pattern']"
+                      >
+                        {{ 'form.tel_valid' | translate }}
+                      </div>
+                      <div
+                        *ngIf="postulezForm.get('telephone')?.errors?.['minlength']"
+                      >
+                        {{ 'form.champ_10' | translate }}
+                      </div>
                     </div>
+                  </div>
+                  <!--date de naissance-->
+                  <div class="mb-3 col-md-3">
+                    <label class="form-label" for="dateNaissance">
+                      {{ 'form.date_naiss' | translate }}:
+                    </label>
+                    <input
+                      id="dateNaissance"
+                      class="form-control"
+                      type="date"
+                      formControlName="dateNaissance"
+                    />
+
                     <div
-                      *ngIf="postulezForm.get('telephone')?.errors?.['pattern']"
+                      *ngIf="
+                        postulezForm.get('dateNaissance')?.touched &&
+                        postulezForm.get('dateNaissance')?.invalid
+                      "
+                      class="invalid-feedback mb-2"
                     >
-                      {{ 'form.tel_valid' | translate }}
-                    </div>
-                    <div
-                      *ngIf="postulezForm.get('telephone')?.errors?.['minlength']"
-                    >
-                      {{ 'form.champ_10' | translate }}
+                      <div
+                        *ngIf="postulezForm.get('dateNaissance')?.errors?.['required']"
+                      >
+                        {{ 'form.champ_oblig' | translate }}
+                      </div>
                     </div>
                   </div>
                 </div>
-                <!--date de naissance-->
-                <div class="mb-3 col-md-3">
-                  <label class="form-label" for="dateNaissance">
-                    {{ 'form.date_naiss' | translate }}:
-                  </label>
-                  <input
-                    id="dateNaissance"
-                    class="form-control"
-                    type="date"
-                    formControlName="dateNaissance"
-                  />
 
-                  <div
-                    *ngIf="
-                      postulezForm.get('dateNaissance')?.touched &&
-                      postulezForm.get('dateNaissance')?.invalid
-                    "
-                    class="invalid-feedback mb-2"
-                  >
-                    <div
-                      *ngIf="postulezForm.get('dateNaissance')?.errors?.['required']"
+                <!--N.et N.ex Métier-->
+                <div class="row">
+                  <!--Métier-->
+                  <div class="mb-3 col-md-4">
+                    <label for="metier" class="form-label">
+                      {{ 'form.metier' | translate }}:
+                    </label>
+                    <select
+                      id="metier"
+                      class="form-select"
+                      id="metier"
+                      formControlName="metier"
+                      [ngClass]="{
+                        'is-invalid':
+                          postulezForm.get('metier')?.touched &&
+                          postulezForm.get('metier')?.invalid
+                      }"
                     >
-                      {{ 'form.champ_oblig' | translate }}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!--N.et N.ex Métier-->
-              <div class="row">
-                <!--Métier-->
-                <div class="mb-3 col-md-4">
-                  <label for="metier" class="form-label">
-                    {{ 'form.metier' | translate }}:
-                  </label>
-                  <select
-                    id="metier"
-                    class="form-select"
-                    id="metier"
-                    formControlName="metier"
-                    [ngClass]="{
-                      'is-invalid':
+                      <option value="" selected disabled>Civilité</option>
+                      <option>Mme</option>
+                      <option>Mlle</option>
+                      <option>Mr</option>
+                    </select>
+                    <div
+                      *ngIf="
                         postulezForm.get('metier')?.touched &&
                         postulezForm.get('metier')?.invalid
-                    }"
-                  >
-                    <option selected>Civilité</option>
-                    <option>Mme</option>
-                    <option>Mlle</option>
-                    <option>Mr</option>
-                  </select>
-                  <div
-                    *ngIf="
-                      postulezForm.get('metier')?.touched &&
-                      postulezForm.get('metier')?.invalid
-                    "
-                    class="invalid-feedback mb-2"
-                  >
-                    <div
-                      *ngIf="postulezForm.get('metier')?.errors?.['required']"
+                      "
+                      class="invalid-feedback mb-2"
                     >
-                      {{ 'form.champ_oblig' | translate }}
+                      <div
+                        *ngIf="postulezForm.get('metier')?.errors?.['required']"
+                      >
+                        {{ 'form.champ_oblig' | translate }}
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <!--N.ET-->
+                  <!--N.ET-->
 
-                <div class="mb-3 col-md-4">
-                  <label for="niveauEtu" class="form-label">
-                    {{ 'form.niveauEtu' | translate }}:
-                  </label>
-                  <select
-                    id="niveauEtu"
-                    class="form-select"
-                    id="niveauEtu"
-                    formControlName="niveauEtu"
-                    [ngClass]="{
-                      'is-invalid':
+                  <div class="mb-3 col-md-4">
+                    <label for="niveauEtu" class="form-label">
+                      {{ 'form.niveauEtu' | translate }}:
+                    </label>
+                    <select
+                      id="niveauEtu"
+                      class="form-select"
+                      id="niveauEtu"
+                      formControlName="niveauEtu"
+                      [ngClass]="{
+                        'is-invalid':
+                          postulezForm.get('niveauEtu')?.touched &&
+                          postulezForm.get('niveauEtu')?.invalid
+                      }"
+                    >
+                      <option value="" selected disabled>Civilité</option>
+                      <option>Mme</option>
+                      <option>Mlle</option>
+                      <option>Mr</option>
+                    </select>
+                    <div
+                      *ngIf="
                         postulezForm.get('niveauEtu')?.touched &&
                         postulezForm.get('niveauEtu')?.invalid
-                    }"
-                  >
-                    <option selected>Civilité</option>
-                    <option>Mme</option>
-                    <option>Mlle</option>
-                    <option>Mr</option>
-                  </select>
-                  <div
-                    *ngIf="
-                      postulezForm.get('niveauEtu')?.touched &&
-                      postulezForm.get('niveauEtu')?.invalid
-                    "
-                    class="invalid-feedback mb-2"
-                  >
-                    <div
-                      *ngIf="postulezForm.get('niveauEtu')?.errors?.['required']"
+                      "
+                      class="invalid-feedback mb-2"
                     >
-                      {{ 'form.champ_oblig' | translate }}
+                      <div
+                        *ngIf="postulezForm.get('niveauEtu')?.errors?.['required']"
+                      >
+                        {{ 'form.champ_oblig' | translate }}
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <!--N.EX-->
+                  <!--N.EX-->
 
-                <div class="mb-3 col-md-4">
-                  <label for="niveauExp" class="form-label">
-                    {{ 'form.niveauExp' | translate }}:
-                  </label>
-                  <select
-                    id="niveauExp"
-                    class="form-select"
-                    id="niveauExp"
-                    formControlName="niveauExp"
-                    [ngClass]="{
-                      'is-invalid':
+                  <div class="mb-3 col-md-4">
+                    <label for="niveauExp" class="form-label">
+                      {{ 'form.niveauExp' | translate }}:
+                    </label>
+                    <select
+                      id="niveauExp"
+                      class="form-select"
+                      id="niveauExp"
+                      formControlName="niveauExp"
+                      [ngClass]="{
+                        'is-invalid':
+                          postulezForm.get('niveauExp')?.touched &&
+                          postulezForm.get('niveauExp')?.invalid
+                      }"
+                    >
+                      <option value="" selected disabled>Civilité</option>
+                      <option>Mme</option>
+                      <option>Mlle</option>
+                      <option>Mr</option>
+                    </select>
+                    <div
+                      *ngIf="
                         postulezForm.get('niveauExp')?.touched &&
                         postulezForm.get('niveauExp')?.invalid
-                    }"
-                  >
-                    <option selected>Civilité</option>
-                    <option>Mme</option>
-                    <option>Mlle</option>
-                    <option>Mr</option>
-                  </select>
-                  <div
-                    *ngIf="
-                      postulezForm.get('niveauExp')?.touched &&
-                      postulezForm.get('niveauExp')?.invalid
-                    "
-                    class="invalid-feedback mb-2"
-                  >
-                    <div
-                      *ngIf="postulezForm.get('niveauExp')?.errors?.['required']"
+                      "
+                      class="invalid-feedback mb-2"
                     >
-                      {{ 'form.champ_oblig' | translate }}
+                      <div
+                        *ngIf="postulezForm.get('niveauExp')?.errors?.['required']"
+                      >
+                        {{ 'form.champ_oblig' | translate }}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <button type="submit" class="btn btn-outline-info">
-                Postuler
-              </button>
-            </form>
-          </div>
+                <button type="submit" class="btn btn-outline-info">
+                  Postuler
+                </button>
+              </form>
+            </div>
 
-          <!--Fin Formulaire-->
-        </p-tabPanel>
-      </p-tabView>
+            <!--Fin Formulaire-->
+          </p-tabPanel>
+        </p-tabView>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">test</div>
     </div>
   </div>
 </div>
