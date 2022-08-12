@@ -233,7 +233,7 @@
   },
   "offre": {
     "details": "Détails de l'offre",
-    "det_entr": "Détail de l'entreprise",
+    "det_entr": "Détails de l'entreprise",
     "postuler": "Postulez !",
     "missions": "Missions",
     "profilR": "Profil recherché",
@@ -243,6 +243,7 @@
     "entreprise": "L'entreprise",
     "date_pub": "Date de publication",
     "date_pos": "Date de postulation",
-    "partager": "Partager sur"
+    "partager": "Partager sur",
+    "faq": "Questions/Réponses"
   }
 }

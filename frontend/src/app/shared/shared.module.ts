@@ -71,8 +71,6 @@ import { TriStateCheckboxModule } from 'primeng/tristatecheckbox'
 import { SplitButtonModule } from 'primeng/splitbutton'
 import { SpeedDialModule } from 'primeng/speeddial'
 
-import { CardOffreComponent } from './components/card-offre/card-offre.component'
-
 import { MatMenuModule } from '@angular/material/menu'
 
 // end form importes
@@ -80,6 +78,11 @@ import { MatMenuModule } from '@angular/material/menu'
 // end form importes
 // end form importes
 import { MatSliderModule } from '@angular/material/slider'
+
+import { CardTemoignageComponent } from './components/card-temoignage/card-temoignage.component'
+
+import { CardOffreVerticaleComponent } from './components/card-offre-Verticale/card-offre-Verticale.component'
+import { CardOffreHorizontaleComponent } from './components/card-offre-horizontale/card-offre-horizontale.component'
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -158,17 +161,18 @@ let modules: any = [
     CardArticleComponent,
     CardDocumentComponent,
     MapComponent,
-
-    CardOffreComponent,
-
+    CardOffreVerticaleComponent,
+    CardOffreHorizontaleComponent,
     CardForumComponent,
     SondageHistoriqueComponent,
     CardBlogueurComponent,
+    CardTemoignageComponent,
+    CardTemoignageComponent,
   ],
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
   exports: [
     CardArticleComponent,
-
+    CardOffreHorizontaleComponent,
     CardRecruiterComponent,
     CardMembreComponent,
     CardInfoSmall,
@@ -178,11 +182,12 @@ let modules: any = [
     CommonModule,
     ContentLayoutComponent,
     CardDocumentComponent,
-    CardOffreComponent,
+    CardOffreVerticaleComponent,
     CardForumComponent,
     SondageHistoriqueComponent,
     CardBlogueurComponent,
     MapComponent,
+    CardTemoignageComponent,
     ...modules,
   ],
 })
