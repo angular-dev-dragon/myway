@@ -17,7 +17,7 @@ export class HeadProfileComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  open(content: any) {
+  open_header_profile_form(content: any) {
     this.ms.open(content, { centered: true, size: 'xl' });
   }
   // this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});
