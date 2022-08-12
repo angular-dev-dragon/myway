@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  NgbModal,
-  NgbModalConfig,
-  ModalDismissReasons,
-} from '@ng-bootstrap/ng-bootstrap';
+
 import {
   FormGroup,
   FormBuilder,
   Validators,
   FormControl,
 } from '@angular/forms';
+import { DynamicDialogRef } from 'primeng/dynamicdialog';
 import { CountriesInfoService } from '../../../../../shared/Services/Countries-info/countries-info.service';
 @Component({
   selector: 'header-profile-from',
@@ -32,10 +29,9 @@ export class HeaderProfileFromComponent implements OnInit {
 
   public headerProfileForm: FormGroup;
   constructor(
-    private c: NgbModalConfig,
-    private ms: NgbModal,
     private fb: FormBuilder,
-    private Countriesinfo: CountriesInfoService
+    private Countriesinfo: CountriesInfoService,
+    private ref: DynamicDialogRef
   ) {
     this.headerProfileForm = this.fb.group({
       name: new FormControl('', [
@@ -44,17 +40,17 @@ export class HeaderProfileFromComponent implements OnInit {
         Validators.maxLength(30),
         Validators.pattern('^[a-zA-Z \u0600-\u06FF]+$'),
       ]),
-      fileImg: new FormControl('', [
-        Validators.required,
-        Validators.pattern('^[a-zA-Z \u0600-\u06FF]+$'),
-      ]),
+      // fileImg: new FormControl('', [
+      //   Validators.required,
+      //   Validators.pattern('^[a-zA-Z \u0600-\u06FF]+$'),
+      // ]),
       prenom: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(30),
         Validators.pattern('^[a-zA-Z \u0600-\u06FF]+$'),
       ]),
-      onlineCheckbtn: new FormControl(this.online, []),
+      // onlineCheckbtn: new FormControl(this.online, []),
       telephone: new FormControl('', [
         Validators.required,
         Validators.pattern('^((\\+212-?)|0)?[0-9]{10}$'),
@@ -101,12 +97,20 @@ export class HeaderProfileFromComponent implements OnInit {
     });
   }
 
-  sendEntretien() {
+  save_header_profile_from() {
+
     if (this.headerProfileForm.valid) {
-      console.log('this.headerProfileForm', this.headerProfileForm);
+      this.ref.close();
     } else {
       this.headerProfileForm.markAllAsTouched();
       console.log('not valid');
     }
   }
 }
+
+
+
+
+
+// private ref: DynamicDialogRef
+//  this.ref.close();

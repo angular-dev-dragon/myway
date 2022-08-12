@@ -1,45 +1,73 @@
 import { Component, OnInit } from '@angular/core';
 
-// import {MessageService} from 'primeng/api';
-import {
-  NgbModal,
-  NgbModalConfig,
-  ModalDismissReasons,
-} from '@ng-bootstrap/ng-bootstrap';
+import { MessageService } from 'primeng/api';
+import { DialogService } from 'primeng/dynamicdialog';
+import { DynamicDialogRef } from 'primeng/dynamicdialog';
+import { HeaderProfileFromComponent } from './header-profile-from/header-profile-from.component';
 
 @Component({
   selector: 'Head-Profile',
   templateUrl: './head-profile.component.html',
   styleUrls: ['./head-profile.component.scss', '../../style/main.scss'],
+  providers: [DialogService, MessageService],
 })
 export class HeadProfileComponent implements OnInit {
-  constructor(private ms: NgbModal) {}
+  constructor(
+    public dialogService: DialogService,
+    public messageService: MessageService
+  ) {}
 
   ngOnInit(): void {}
 
-  open_header_profile_form(content: any) {
-    this.ms.open(content, { centered: true, size: 'xl' });
+  ref: DynamicDialogRef | undefined;
+
+  open_header_profile_form() {
+    this.ref = this.dialogService.open(HeaderProfileFromComponent, {
+      header: 'Choose a Product',
+      width: '74%',
+      contentStyle: { 'max-height': '100%', overflow: 'auto' },
+      baseZIndex: 10000,
+    });
   }
-  // this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});
 }
 
-  // filterCountry(event: any) {
-  //   //in a real application, make a request to a remote url with the query and return filtered results, for demo we filter at client side
-  //   let filtered: any[] = [];
-  //   let query = event.query;
-
-  //   for (let i = 0; i < this.countries.length; i++) {
-  //     let country = this.countries[i];
-  //     if (country.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
-  //       filtered.push(country);
-  //     }
-  //   }
-
-  //   this.filteredCountries = filtered;
-  // }
 
 
 
+
+// PERNENT================================================================  ===============================================================================================================================
+
+// providers: [DialogService, MessageService];
+
+// constructor(
+//     public dialogService: DialogService,
+//     public messageService: MessageService
+//   ) {}
+
+//   ngOnInit(): void {}
+
+//   ref: DynamicDialogRef | undefined;
+
+//   show() {
+//     this.ref = this.dialogService.open(ContactFormComponent, {
+//       header: 'Choose a Product',
+//       width: '70%',
+//       contentStyle: { 'max-height': '500px', overflow: 'auto' },
+//       baseZIndex: 10000,
+//     });
+
+//   }
+// ===========================================================================================================================================================================================
+
+// Child ===========================================================================================================================  =========
+// save_contact_from();
+
+// import { DynamicDialogRef } from 'primeng/dynamicdialog';
+
+// private ref: DynamicDialogRef
+//  this.ref.close();
+
+//==============================================================================================================================
 
 
 
