@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core'
 
 @Component({
-  selector: 'app-card-offre',
-  templateUrl: './card-offre.component.html',
-  styleUrls: ['./card-offre.component.scss'],
+  selector: 'app-card-offre-horizontale',
+  templateUrl: './card-offre-horizontale.component.html',
+  styleUrls: ['./card-offre-horizontale.component.scss'],
 })
-export class CardOffreComponent implements OnInit {
+export class CardOffreHorizontaleComponent implements OnInit {
   @Input() Intitule: any = ''
   @Input() Secteur: any = ''
   @Input() Poste: any = ''
@@ -15,7 +15,6 @@ export class CardOffreComponent implements OnInit {
   @Input() TypeContrat: any = ''
   @Input() Ville: any = ''
   @Input() Date: any = ''
-
   constructor() {}
 
   ngOnInit(): void {}

@@ -61,7 +61,7 @@
             </ul>
             <ul class="col-md-6 socialMedia1">
               <li class="socialMedia">
-                <p class="test">{{ 'offre.partager' | translate }}:</p>
+                <p class="">{{ 'offre.partager' | translate }}:</p>
               </li>
               <li><div class="addthis_inline_share_toolbox_hvun"></div></li>
             </ul>
@@ -134,7 +134,7 @@
           </p-tabPanel>
 
           <!--2-->
-          <p-tabPanel header="{{ 'offre.det_entr' | translate }}">
+          <p-tabPanel header="{{ 'offre.faq' | translate }}">
             <img
               src="../../../../assets/images/images pour offres/téléchargement.png"
               class="rounded float-end"
@@ -157,6 +157,29 @@
             </ul>
           </p-tabPanel>
           <!--3-->
+          <p-tabPanel header="{{ 'offre.det_entr' | translate }}">
+            <img
+              src="../../../../assets/images/images pour offres/téléchargement.png"
+              class="rounded float-end"
+              alt="..."
+            />
+
+            <h5>
+              {{ 'offre.entreprise' | translate }}:
+              {{ Det_Ent.NomEntreprise }}
+            </h5>
+            <ul>
+              <li>{{ 'form.secteur' | translate }}: {{ Det_Ent.Secteur }}</li>
+              <li>
+                {{ 'adresse.site' | translate }}: {{ Det_Ent.SiteInternet }}
+              </li>
+              <li>
+                {{ 'adresse.description' | translate }}:
+                {{ Det_Ent.Description }}
+              </li>
+            </ul>
+          </p-tabPanel>
+          <!--4-->
           <p-tabPanel header="{{ 'offre.postuler' | translate }}">
             <p>
               {{ 'offre.dejaCompte' | translate }}:

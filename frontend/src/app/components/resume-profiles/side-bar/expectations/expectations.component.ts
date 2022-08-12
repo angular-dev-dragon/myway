@@ -18,3 +18,13 @@ export class ExpectationsComponent implements OnInit {
     this.creter = true;
   }
 }
+
+
+// import {NgbModal,NgbModalConfig,ModalDismissReasons,}from '@ng-bootstrap/ng-bootstrap';
+
+
+//   constructor(private ms: NgbModal) {}
+//   ngOnInit(): void {}
+//   open_contact_form(content: any) {
+//     this.ms.open(content, { centered: true, size: 'lg' });
+//   }
