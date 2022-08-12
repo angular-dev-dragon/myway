@@ -118,16 +118,16 @@
                     class="rounded-circle p-1 bg-warning"
                     width="160"
                   /> -->
-        <!-- </div>
+  <!-- </div>
       </div>
     </div>
-  </div> --> 
+  </div> -->
   <!-- name and last name -->
   <div class="row">
     <!-- Name input -->
     <div class="mb-3 col-md-6">
       <label class="form-label" for="name">
-        {{ "form.nom" | translate }}
+        {{ 'form.nom' | translate }}
       </label>
       <input
         class="form-control"
@@ -150,26 +150,26 @@
         class="invalid-feedback mb-2"
       >
         <div *ngIf="headerProfileForm.get('name')?.errors?.['required']">
-          {{ "form.champ_oblig" | translate }}
+          {{ 'form.champ_oblig' | translate }}
         </div>
         <div *ngIf="headerProfileForm.get('name')?.errors?.['minlength']">
-          {{ "form.champ_3" | translate }}
+          {{ 'form.champ_3' | translate }}
         </div>
         <div *ngIf="headerProfileForm.get('name')?.errors?.['maxlength']">
-          {{ "form.champ_30" | translate }}
+          {{ 'form.champ_30' | translate }}
         </div>
       </div>
     </div>
     <!-- Prenom input -->
     <div class="mb-3 col-md-6">
       <label class="form-label" for="prenom">
-        {{ "form.prenom" | translate }}
+        {{ 'form.prenom' | translate }}
       </label>
       <input
         class="form-control"
         id="prenom"
         type="prenom"
-        placeholder="{{ 'form.exp_pre' }}"
+        placeholder=" {{ 'form.exp_pre' | translate }}"
         formControlName="prenom"
         name="prenom"
         [ngClass]="{
@@ -186,13 +186,13 @@
         class="invalid-feedback mb-2"
       >
         <div *ngIf="headerProfileForm.get('prenom')?.errors?.['required']">
-          {{ "form.champ_oblig" | translate }}
+          {{ 'form.champ_oblig' | translate }}
         </div>
         <div *ngIf="headerProfileForm.get('prenom')?.errors?.['minlength']">
-          {{ "form.champ_3" | translate }}
+          {{ 'form.champ_3' | translate }}
         </div>
         <div *ngIf="headerProfileForm.get('prenom')?.errors?.['maxlength']">
-          {{ "form.champ_30" | translate }}
+          {{ 'form.champ_30' | translate }}
         </div>
       </div>
     </div>
@@ -201,7 +201,7 @@
   <div class="row">
     <div class="mb-3 col-md-6">
       <label class="form-label" for="telephone">
-        {{ "form.telephone" | translate }}
+        {{ 'form.telephone' | translate }}
       </label>
       <input
         class="form-control"
@@ -224,26 +224,26 @@
         class="invalid-feedback"
       >
         <div *ngIf="headerProfileForm.get('telephone')?.errors?.['required']">
-          {{ "form.champ_oblig" | translate }}
+          {{ 'form.champ_oblig' | translate }}
         </div>
         <div *ngIf="headerProfileForm.get('telephone')?.errors?.['pattern']">
-          {{ "form.tel_valid" | translate }}
+          {{ 'form.tel_valid' | translate }}
         </div>
         <div *ngIf="headerProfileForm.get('telephone')?.errors?.['minlength']">
-          {{ "form.champ_10" | translate }}
+          {{ 'form.champ_10' | translate }}
         </div>
       </div>
     </div>
     <!-- Email  input -->
     <div class="mb-3 col-md-6">
       <label class="form-label" for="emailAddress">
-        {{ "form.email" | translate }}
+        {{ 'form.email' | translate }}
       </label>
       <input
         class="form-control"
         id="emailAddress"
         type="email"
-        placeholder="{{ 'form.exp_email' }}"
+        placeholder=" {{ 'form.exp_email' | translate }}"
         formControlName="email"
         name="email"
         [ngClass]="{
@@ -260,10 +260,10 @@
         class="invalid-feedback"
       >
         <div *ngIf="headerProfileForm.get('email')?.errors?.['required']">
-          {{ "form.champ_oblig" | translate }}
+          {{ 'form.champ_oblig' | translate }}
         </div>
         <div *ngIf="headerProfileForm.get('email')?.errors?.['email']">
-          {{ "form.mail_valid" | translate }}
+          {{ 'form.mail_valid' | translate }}
         </div>
       </div>
     </div>
@@ -272,7 +272,7 @@
   <div class="row">
     <div class="mb-3 col-md-6">
       <label class="form-label" for="borthDate">
-        {{ "borthDate" | translate }}
+        {{ 'borthDate' | translate }}
       </label>
       <input
         class="form-control"
@@ -294,13 +294,13 @@
         class="invalid-feedback"
       >
         <div *ngIf="headerProfileForm.get('borthDate')?.errors?.['required']">
-          {{ "form.champ_oblig" | translate }}
+          {{ 'form.champ_oblig' | translate }}
         </div>
         <div *ngIf="headerProfileForm.get('borthDate')?.errors?.['pattern']">
-          {{ "form.tel_valid" | translate }}
+          {{ 'form.tel_valid' | translate }}
         </div>
         <div *ngIf="headerProfileForm.get('borthDate')?.errors?.['minlength']">
-          {{ "form.champ_10" | translate }}
+          {{ 'form.champ_10' | translate }}
         </div>
       </div>
     </div>
@@ -308,7 +308,7 @@
     <!--date of borthe inpout  input -->
     <div class="mb-3 col-md-6">
       <label class="form-label" for="countery">
-        {{ "countery" | translate }}
+        {{ 'countery' | translate }}
       </label>
       <select
         id="countery"
@@ -340,13 +340,13 @@
         class="invalid-feedback"
       >
         <div *ngIf="headerProfileForm.get('countery')?.errors?.['required']">
-          {{ "form.champ_oblig" | translate }}
+          {{ 'form.champ_oblig' | translate }}
         </div>
         <div *ngIf="headerProfileForm.get('countery')?.errors?.['pattern']">
-          {{ "form.tel_valid" | translate }}
+          {{ 'form.tel_valid' | translate }}
         </div>
         <div *ngIf="headerProfileForm.get('countery')?.errors?.['minlength']">
-          {{ "form.champ_10" | translate }}
+          {{ 'form.champ_10' | translate }}
         </div>
       </div>
     </div>
@@ -355,9 +355,9 @@
   <div class="row">
     <div class="row mb-3">
       <div class="col-md-6">
-        <label for="validationServer03" class="form-label">{{
-          "ctiy" | translate
-        }}</label>
+        <label for="validationServer03" class="form-label">
+          {{ 'ctiy' | translate }}
+        </label>
         <input
           type="text"
           class="form-control"
@@ -380,25 +380,25 @@
           <div
             *ngIf="headerProfileForm.get('ctiy_inpute')?.errors?.['required']"
           >
-            {{ "form.champ_oblig" | translate }}
+            {{ 'form.champ_oblig' | translate }}
           </div>
           <div
             *ngIf="headerProfileForm.get('ctiy_inpute')?.errors?.['pattern']"
           >
-            {{ "form.tel_valid" | translate }}
+            {{ 'form.tel_valid' | translate }}
           </div>
           <div
             *ngIf="headerProfileForm.get('ctiy_inpute')?.errors?.['minlength']"
           >
-            {{ "form.champ_10" | translate }}
+            {{ 'form.champ_10' | translate }}
           </div>
         </div>
       </div>
 
       <div class="col-md-3">
-        <label for="validationServer04" class="form-label">{{
-          "State" | translate
-        }}</label>
+        <label for="validationServer04" class="form-label">
+          {{ 'State' | translate }}
+        </label>
         <select
           class="form-select"
           id="validationServer04"
@@ -424,24 +424,24 @@
           <div
             *ngIf="headerProfileForm.get('State_input')?.errors?.['required']"
           >
-            {{ "form.champ_oblig" | translate }}
+            {{ 'form.champ_oblig' | translate }}
           </div>
           <div
             *ngIf="headerProfileForm.get('State_input')?.errors?.['pattern']"
           >
-            {{ "form.tel_valid" | translate }}
+            {{ 'form.tel_valid' | translate }}
           </div>
           <div
             *ngIf="headerProfileForm.get('State_input')?.errors?.['minlength']"
           >
-            {{ "form.champ_10" | translate }}
+            {{ 'form.champ_10' | translate }}
           </div>
         </div>
       </div>
       <div class="col-md-3">
-        <label for="validationServer05" class="form-label">{{
-          "czip" | translate
-        }}</label>
+        <label for="validationServer05" class="form-label">
+          {{ 'czip' | translate }}
+        </label>
         <input
           type="text"
           class="form-control"
@@ -465,17 +465,17 @@
           <div
             *ngIf="headerProfileForm.get('zip_code_input')?.errors?.['required']"
           >
-            {{ "form.champ_oblig" | translate }}
+            {{ 'form.champ_oblig' | translate }}
           </div>
           <div
             *ngIf="headerProfileForm.get('zip_code_input')?.errors?.['pattern']"
           >
-            {{ "form.tel_valid" | translate }}
+            {{ 'form.tel_valid' | translate }}
           </div>
           <div
             *ngIf="headerProfileForm.get('zip_code_input')?.errors?.['minlength']"
           >
-            {{ "form.champ_10" | translate }}
+            {{ 'form.champ_10' | translate }}
           </div>
         </div>
       </div>
@@ -484,9 +484,9 @@
   <div class="row">
     <div class="row mb-3">
       <div class="col-md-4">
-        <label for="validationServer04" class="form-label">{{
-          "cictor do hroe" | translate
-        }}</label>
+        <label for="validationServer04" class="form-label">
+          {{ 'cictor do hroe' | translate }}
+        </label>
         <select
           class="form-select"
           id="validationServer04"
@@ -517,24 +517,24 @@
           <div
             *ngIf="headerProfileForm.get('job_filde_hero_input')?.errors?.['required']"
           >
-            {{ "form.champ_oblig" | translate }}
+            {{ 'form.champ_oblig' | translate }}
           </div>
           <div
             *ngIf="headerProfileForm.get('job_filde_hero_input')?.errors?.['pattern']"
           >
-            {{ "form.tel_valid" | translate }}
+            {{ 'form.tel_valid' | translate }}
           </div>
           <div
             *ngIf="headerProfileForm.get('job_filde_hero_input')?.errors?.['minlength']"
           >
-            {{ "form.champ_10" | translate }}
+            {{ 'form.champ_10' | translate }}
           </div>
         </div>
       </div>
       <div class="col-md-4">
-        <label for="validationServer04" class="form-label">{{
-          "cictor do hroe" | translate
-        }}</label>
+        <label for="validationServer04" class="form-label">
+          {{ 'cictor do hroe' | translate }}
+        </label>
         <select
           class="form-select"
           id="validationServer04"
@@ -565,24 +565,24 @@
           <div
             *ngIf="headerProfileForm.get('job_filde_sub_input')?.errors?.['required']"
           >
-            {{ "form.champ_oblig" | translate }}
+            {{ 'form.champ_oblig' | translate }}
           </div>
           <div
             *ngIf="headerProfileForm.get('job_filde_sub_input')?.errors?.['pattern']"
           >
-            {{ "form.tel_valid" | translate }}
+            {{ 'form.tel_valid' | translate }}
           </div>
           <div
             *ngIf="headerProfileForm.get('job_filde_sub_input')?.errors?.['minlength']"
           >
-            {{ "form.champ_10" | translate }}
+            {{ 'form.champ_10' | translate }}
           </div>
         </div>
       </div>
       <div class="col-md-4">
-        <label for="validationServer04" class="form-label">{{
-          "cictor do hroe" | translate
-        }}</label>
+        <label for="validationServer04" class="form-label">
+          {{ 'cictor do hroe' | translate }}
+        </label>
         <select
           class="form-select"
           id="validationServer04"
@@ -613,17 +613,17 @@
           <div
             *ngIf="headerProfileForm.get('job_filde_sub_child_input')?.errors?.['required']"
           >
-            {{ "form.champ_oblig" | translate }}
+            {{ 'form.champ_oblig' | translate }}
           </div>
           <div
             *ngIf="headerProfileForm.get('job_filde_sub_child_input')?.errors?.['pattern']"
           >
-            {{ "form.tel_valid" | translate }}
+            {{ 'form.tel_valid' | translate }}
           </div>
           <div
             *ngIf="headerProfileForm.get('job_filde_sub_child_input')?.errors?.['minlength']"
           >
-            {{ "form.champ_10" | translate }}
+            {{ 'form.champ_10' | translate }}
           </div>
         </div>
       </div>

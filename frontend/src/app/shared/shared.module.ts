@@ -80,6 +80,7 @@ import { MatMenuModule } from '@angular/material/menu'
 // end form importes
 // end form importes
 import { MatSliderModule } from '@angular/material/slider'
+import { CardTemoignageComponent } from './components/card-temoignage/card-temoignage.component'
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -164,6 +165,8 @@ let modules: any = [
     CardForumComponent,
     SondageHistoriqueComponent,
     CardBlogueurComponent,
+    CardTemoignageComponent,
+    CardTemoignageComponent,
   ],
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
   exports: [
@@ -183,6 +186,7 @@ let modules: any = [
     SondageHistoriqueComponent,
     CardBlogueurComponent,
     MapComponent,
+    CardTemoignageComponent,
     ...modules,
   ],
 })

@@ -67,7 +67,7 @@
                 class="form-control"
                 id="name"
                 type="text"
-                placeholder="{{ 'form.exp_nom' }}"
+                placeholder="{{ 'form.exp_nom' | translate }}"
                 [ngClass]="{
                   'is-invalid':
                     avisForm.get('name')?.touched &&
@@ -83,16 +83,16 @@
                 class="invalid-feedback mb-2"
               >
                 <div *ngIf="avisForm.get('name')?.errors?.['required']">
-                  {{ 'form.champ_oblig' }}
+                  {{ 'form.champ_oblig' | translate }}
                 </div>
                 <div *ngIf="avisForm.get('name')?.errors?.['minlength']">
-                  {{ 'form.champ_3' }}
+                  {{ 'form.champ_3' | translate }}
                 </div>
                 <div *ngIf="avisForm.get('name')?.errors?.['maxlength']">
-                  {{ 'form.champ_30' }}
+                  {{ 'form.champ_30' | translate }}
                 </div>
                 <div *ngIf="avisForm.get('name')?.errors?.['pattern']">
-                  {{ 'form.champ_lettre' }}
+                  {{ 'form.champ_lettre' | translate }}
                 </div>
               </div>
             </div>
@@ -100,13 +100,13 @@
             <!-- Prenom input -->
             <div class="mb-3 col-md-6">
               <label class="form-label" for="prenom">
-                {{ 'form.prenom' }}
+                {{ 'form.prenom' | translate }}
               </label>
               <input
                 class="form-control"
                 id="prenom"
                 type="prenom"
-                placeholder="{{ 'form.exp_pre' }}"
+                placeholder=" {{ 'form.exp_pre' | translate }}"
                 formControlName="prenom"
                 name="prenom"
                 [ngClass]="{
@@ -123,16 +123,16 @@
                 class="invalid-feedback mb-2"
               >
                 <div *ngIf="avisForm.get('prenom')?.errors?.['required']">
-                  {{ 'form.champ_oblig' }}
+                  {{ 'form.champ_oblig' | translate }}
                 </div>
                 <div *ngIf="avisForm.get('prenom')?.errors?.['minlength']">
-                  {{ 'form.champ_3' }}
+                  {{ 'form.champ_3' | translate }}
                 </div>
                 <div *ngIf="avisForm.get('prenom')?.errors?.['maxlength']">
-                  {{ 'form.champ_30' }}
+                  {{ 'form.champ_30' | translate }}
                 </div>
                 <div *ngIf="avisForm.get('prenom')?.errors?.['pattern']">
-                  {{ 'form.champ_lettre' }}
+                  {{ 'form.champ_lettre' | translate }}
                 </div>
               </div>
             </div>
@@ -141,13 +141,13 @@
           <div class="row">
             <div class="mb-3 col-md-6">
               <label class="form-label" for="telephone">
-                {{ 'form.telephone' }}
+                {{ 'form.telephone' | translate }}
               </label>
               <input
                 class="form-control"
                 id="telephone"
                 type="texte"
-                placeholder="{{ 'form.exp_tel' }}"
+                placeholder=" {{ 'form.exp_tel' | translate }}"
                 formControlName="telephone"
                 name="telephone"
                 [ngClass]="{
@@ -164,7 +164,7 @@
                 class="invalid-feedback"
               >
                 <div *ngIf="avisForm.get('telephone')?.errors?.['required']">
-                  {{ 'form.champ_oblig' }}
+                  {{ 'form.champ_oblig' | translate }}
                 </div>
                 <div *ngIf="avisForm.get('telephone')?.errors?.['pattern']">
                   {{ 'form.tel_valid' }}
@@ -177,13 +177,13 @@
             <!-- Email  input -->
             <div class="mb-3 col-md-6">
               <label class="form-label" for="emailAddress">
-                {{ 'form.email' }}
+                {{ 'form.email' | translate }}
               </label>
               <input
                 class="form-control"
                 id="emailAddress"
                 type="email"
-                placeholder="{{ 'form.exp_email' }}"
+                placeholder=" {{ 'form.exp_email' | translate }}"
                 formControlName="email"
                 name="email"
                 [ngClass]="{
@@ -200,7 +200,7 @@
                 class="invalid-feedback"
               >
                 <div *ngIf="avisForm.get('email')?.errors?.['required']">
-                  {{ 'form.champ_oblig' }}
+                  {{ 'form.champ_oblig' | translate }}
                 </div>
                 <div *ngIf="avisForm.get('email')?.errors?.['email']">
                   {{ 'form.mail_valid' }}
@@ -217,7 +217,7 @@
                 class="form-control"
                 id="avis"
                 type="texte"
-                placeholder="{{ 'form.exp_tel' }}"
+                placeholder=" {{ 'form.exp_avis' | translate }}"
                 formControlName="avis"
                 name="avis"
                 [ngClass]="{
@@ -233,11 +233,11 @@
                 class="invalid-feedback"
               >
                 <div *ngIf="avisForm.get('avis')?.errors?.['required']">
-                  {{ 'form.champ_oblig' }}
+                  {{ 'form.champ_oblig' | translate }}
                 </div>
 
                 <div *ngIf="avisForm.get('avis')?.errors?.['minlength']">
-                  {{ 'form.champ_3' }}
+                  {{ 'form.champ_3' | translate }}
                 </div>
               </div>
             </div>
@@ -245,7 +245,7 @@
           <!-- Form submit button -->
           <div class="mt-5 text-center">
             <button class="btn btn-outline-dark" type="submit">
-              {{ 'form.Envoyer' }}
+              {{ 'form.Envoyer' | translate }}
             </button>
           </div>
         </form>
