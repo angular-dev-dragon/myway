@@ -35,6 +35,27 @@
           </div>
         </div>
       </div>
+      <div class="row about-list">
+        <div class="col-md-6">
+          <div class="media">
+            <label>
+              {{ 'form.rating' | translate }}
+            </label>
+            <p-rating
+              [ngModel]="rating"
+              [disabled]="true"
+              [cancel]="false"
+            ></p-rating>
+            <p>{{ rating }}</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="media">
+            <label>{{ 'form.nbBlog' | translate }}</label>
+            <p>{{ nbBlog }}</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="col-lg-5">
