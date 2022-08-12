@@ -1,7 +1,10 @@
 <div class="card mt-3 mb-3  mt-4 card-body">
   <div class="herder-top-card">
     <h5 class="col about">{{'candidat.t.contact'|translate}}</h5>
-    <div (click)="open_contact_form(content)" class=" icons "></div>
+    <div
+    (click)="show()"
+  class=" icons "
+></div>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
@@ -73,7 +76,27 @@
 
 
 
+<!--
+<ng-template #ahmed let-c="close" let-module>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">contact edite</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="module.close('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <contact-form></contact-form>
+  </div>
+</ng-template> -->
 
+
+
+
+
+
+
+
+
+<!--
+<div (click)="open_contact_form(content)" class=" icons "></div>
 
 <ng-template #content let-c="close" let-d="dismiss">
   <div class="modal-header">
@@ -81,7 +104,7 @@
     <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
   </div>
   <div class="modal-body">
-    <header-profile-from></header-profile-from>
+    <contact-form></contact-form>
   </div>
 
-</ng-template>
+</ng-template> -->

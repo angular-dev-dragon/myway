@@ -1,19 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { PrimeNGConfig } from 'primeng/api';
+import {NgbModal,NgbModalConfig,ModalDismissReasons,}from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'About',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss', '../../style/main.scss'],
 })
 export class AboutComponent implements OnInit {
-  constructor(private primengConfig: PrimeNGConfig) {}
 
-  ngOnInit() {
-    this.primengConfig.ripple = true;
-  }
+  constructor(private ms: NgbModal) {}
+  ngOnInit(): void { }
 
-  About: boolean | undefined;
-  showAbout() {
-    this.About = true;
+  open_about_from(content: any) {
+    this.ms.open(content, { centered: true, size: 'lg' });
   }
 }
