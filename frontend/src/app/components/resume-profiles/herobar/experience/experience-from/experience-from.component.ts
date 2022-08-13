@@ -1,4 +1,6 @@
 
+
+
 import { Component, OnInit } from '@angular/core';
 
 import {
@@ -9,15 +11,21 @@ import {
 } from '@angular/forms';
 
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
+
+
+
+
 @Component({
-  selector: 'app-about-form',
-  templateUrl: './about-form.component.html',
-  styleUrls: ['./about-form.component.scss'],
+  selector: 'app-experience-from',
+  templateUrl: './experience-from.component.html',
+  styleUrls: ['./experience-from.component.scss']
 })
-export class AboutFormComponent implements OnInit {
-  public about_form: FormGroup;
+export class ExperienceFromComponent implements OnInit {
+
+
+  public experience_from: FormGroup;
   constructor(private fb: FormBuilder, private ref: DynamicDialogRef) {
-    this.about_form = this.fb.group({
+  this.experience_from = this.fb.group({
 
       // platform: new FormControl('', [Validators.required]),
       // user_name: new FormControl('', [
@@ -25,17 +33,19 @@ export class AboutFormComponent implements OnInit {
       //   Validators.minLength(3),
       //   Validators.maxLength(150),
       // ]),
+
     });
   }
   ngOnInit() {}
 
-  save_about_from() {
-    if (this.about_form.valid) {
-      console.log('this.c_form', this.about_form);
+  save_experience_from() {
+    if (this.experience_from.valid) {
+      console.log('this.cexperience_from', this.experience_from);
       this.ref.close();
     } else {
-      this.about_form.markAllAsTouched();
+      this.experience_from.markAllAsTouched();
       console.log('not valid');
     }
   }
 }
+//

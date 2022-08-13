@@ -1,5 +1,5 @@
 
-<form [formGroup]="contact_Form" (ngSubmit)="save_contact_from()">
+<form [formGroup]="contact_form" (ngSubmit)="save_contact_from()">
 
   <div class="row">
 
@@ -16,8 +16,8 @@
       <select class="form-select" id="platform" formControlName="platform"  name="platform"
         [ngClass]="{
                 'is-invalid':
-                  contact_Form.get('platform')?.touched &&
-                  contact_Form.get('platform')?.invalid
+                  contact_form.get('platform')?.touched &&
+                  contact_form.get('platform')?.invalid
               }">
         <option selected disabled value="">Choose...</option>
         <option value="">Sélectionnez un secteur</option>
@@ -30,16 +30,16 @@
       </select>
       </div>
       <div *ngIf="
-                contact_Form.get('platform')?.touched &&
-                contact_Form.get('platform')?.invalid
+                contact_form.get('platform')?.touched &&
+                contact_form.get('platform')?.invalid
               " class="invalid-feedback">
-        <div *ngIf="contact_Form.get('platform')?.errors?.['required']">
+        <div *ngIf="contact_form.get('platform')?.errors?.['required']">
           {{ "form.champ_oblig" | translate }}
         </div>
-        <div *ngIf="contact_Form.get('platform')?.errors?.['pattern']">
+        <div *ngIf="contact_form.get('platform')?.errors?.['pattern']">
           {{ "form.tel_valid" | translate }}
         </div>
-        <div *ngIf="contact_Form.get('platform')?.errors?.['minlength']">
+        <div *ngIf="contact_form.get('platform')?.errors?.['minlength']">
           {{ "form.champ_10" | translate }}
         </div>
       </div>
@@ -59,8 +59,8 @@
       placeholder="{{ 'form.exp_nom' | translate }}"
       [ngClass]="{
           'is-invalid':
-            contact_Form.get('user_name')?.touched &&
-            contact_Form.get('user_name')?.invalid
+            contact_form.get('user_name')?.touched &&
+            contact_form.get('user_name')?.invalid
         }"
       formControlName="user_name"
       name="user_name"
@@ -72,16 +72,16 @@
         />
         </div>
       <div *ngIf="
-          contact_Form.get('user_name')?.touched &&
-          contact_Form.get('user_name')?.invalid
+          contact_form.get('user_name')?.touched &&
+          contact_form.get('user_name')?.invalid
         " class="invalid-feedback mb-2">
-        <div *ngIf="contact_Form.get('user_name')?.errors?.['required']">
+        <div *ngIf="contact_form.get('user_name')?.errors?.['required']">
           {{ "form.champ_oblig" | translate }}
         </div>
-        <div *ngIf="contact_Form.get('user_name')?.errors?.['minlength']">
+        <div *ngIf="contact_form.get('user_name')?.errors?.['minlength']">
           {{ "form.champ_3" | translate }}
         </div>
-        <div *ngIf="contact_Form.get('user_name')?.errors?.['maxlength']">
+        <div *ngIf="contact_form.get('user_name')?.errors?.['maxlength']">
           {{ "form.champ_30" | translate }}
         </div>
       </div>
@@ -98,11 +98,13 @@
   <!-- </div>
   <div class="col-md-4"></div> -->
 </div>
-</form>
+
 <div class="modal-footer">
   <div class="row">
     <button type="submit" class="btn btn-info" >
       save
     </button>
   </div>
+
 </div>
+  </form>

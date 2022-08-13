@@ -1,16 +1,12 @@
 <div class="row mb-3" id="list-item-4">
   <div class="col-sm-12">
     <div class="card">
-
       <div class="card-body">
         <div class="herder-top-card">
-
           <h5 class="col"><i class="fa-solid fa-brain"></i> {{'candidat.t.hob'|translate}}</h5>
-          <div (click)="showhobbie()" class=" icons "></div>
-
+          <div (click)="open_hobbies_form()" class=" icons "></div>
         </div>
         <div class="main-container">
-
           <div class="radio-buttons">
             <label class="custom-radio">
               <input type="radio" name="radio" checked />
@@ -18,8 +14,6 @@
                 <div class="hobbies-icon">
                   <i class="fa-solid fa-person-biking"></i>
                   <h3>Biking</h3>
-
-
                 </div>
               </span>
             </label>
@@ -72,19 +66,6 @@
 
 
 
-
-
-
-
-
-
-<p-dialog header="Header" [(visible)]="hobbie" [style]="{width: '50vw'}">
-  <h1>hobbie</h1>
-  <h1></h1>
-  <ng-template pTemplate="footer">
-    <p-button icon="pi pi-check" (click)="hobbie=false" label="Ok" styleClass="p-button-text"></p-button>
-  </ng-template>
-</p-dialog>
 
 
 

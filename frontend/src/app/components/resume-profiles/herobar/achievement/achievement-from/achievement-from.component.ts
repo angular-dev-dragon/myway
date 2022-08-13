@@ -9,16 +9,20 @@ import {
 } from '@angular/forms';
 
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
-@Component({
-  selector: 'app-about-form',
-  templateUrl: './about-form.component.html',
-  styleUrls: ['./about-form.component.scss'],
-})
-export class AboutFormComponent implements OnInit {
-  public about_form: FormGroup;
-  constructor(private fb: FormBuilder, private ref: DynamicDialogRef) {
-    this.about_form = this.fb.group({
 
+
+
+
+
+@Component({
+  selector: 'app-achievement-from',
+  templateUrl: './achievement-from.component.html',
+  styleUrls: ['./achievement-from.component.scss'],
+})
+export class AchievementFromComponent implements OnInit {
+  public achievement_from: FormGroup;
+  constructor(private fb: FormBuilder, private ref: DynamicDialogRef) {
+    this.achievement_from = this.fb.group({
       // platform: new FormControl('', [Validators.required]),
       // user_name: new FormControl('', [
       //   Validators.required,
@@ -29,12 +33,12 @@ export class AboutFormComponent implements OnInit {
   }
   ngOnInit() {}
 
-  save_about_from() {
-    if (this.about_form.valid) {
-      console.log('this.c_form', this.about_form);
+  save_achievement_from() {
+    if (this.achievement_from.valid) {
+      console.log('this.cachievement_from', this.achievement_from);
       this.ref.close();
     } else {
-      this.about_form.markAllAsTouched();
+      this.achievement_from.markAllAsTouched();
       console.log('not valid');
     }
   }

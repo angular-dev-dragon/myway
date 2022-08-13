@@ -8,6 +8,10 @@ import { HobbiesComponent } from './hobbies/hobbies.component';
 import { LayoutComponent } from './layout/layout.component';
 import { CertificatComponent } from '../herobar/certificat/certificat.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { AchievementFromComponent } from './achievement/achievement-from/achievement-from.component';
+import { EducationFromComponent } from './education/education-from/education-from.component';
+import { ExperienceFromComponent } from './experience/experience-from/experience-from.component';
+import { HobbiesFromComponent } from './hobbies/hobbies-from/hobbies-from.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +22,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
     HobbiesComponent,
     LayoutComponent,
     CertificatComponent,
+    AchievementFromComponent,
+    EducationFromComponent,
+    ExperienceFromComponent,
+    HobbiesFromComponent,
   ],
   imports: [CommonModule, SharedModule],
   exports: [LayoutComponent],
