@@ -102,7 +102,16 @@
     "exp6": "Sans objet",
     "image": "Image",
     "password": "Mot de Passe",
-    "exp_password": "************"
+    "exp_password": "************",
+    "rating": "Notation",
+    "nbBlog": "Blogs",
+    "noteEntretien": "Note d'Entretien",
+    "difficulte": "Difficulté",
+    "recommandation": "Recommandation",
+    "note": "Note",
+    "salaire": "Salaire",
+    "securite": "Securité",
+    "avis": "Avis"
   },
 
   "document": {
@@ -167,6 +176,7 @@
     "telecharger": "Télécharger",
 
     "commentaires": "Commentaires",
+    "presentation": "Presentation",
     "faq_Entreprise": "Questions et réponses au sujet de l'entreprise",
     "avis_Entreprise": "Temoignage a propos de l'entreprise",
     "membre_Entreprise": "Personnes A Contacter",
@@ -175,6 +185,13 @@
     "list_forum": "Forum de Discussion",
     "details_forum": "Details de Forum",
     "sondage": "Sondage",
+    "poser_question": "Poser Votre Question",
+    "parcourir_question": "Parcourir les Questions",
+    "donner_avis": "Donner Votre Avis",
+    "parcourir_avis": "Parcourir les Avis",
+    "list_avis": "Liste des Avis",
+    "list_temoignage": "Liste des Temoignages",
+    "list_qr": "Liste des Questions / Reponses",
 
     "candidat": {
       "t": {

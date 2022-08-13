@@ -1,4 +1,4 @@
-<form [formGroup]="headerProfileForm" (ngSubmit)="sendEntretien()">
+<form [formGroup]="header_profile_form" (ngSubmit)="save_header_profile_from()">
   <!-- hreader online input + uploadimg inpute -->
   <!-- <div class="row">
     <div class="col-md-6">
@@ -16,29 +16,29 @@
               name="onlineCheckbtn"
               [ngClass]="{
                 'is-invalid':
-                  headerProfileForm.get('onlineCheckbtn')?.touched &&
-                  headerProfileForm.get('onlineCheckbtn')?.invalid
+                  header_profile_form.get('onlineCheckbtn')?.touched &&
+                  header_profile_form.get('onlineCheckbtn')?.invalid
               }"
             />
             <div
               *ngIf="
-                headerProfileForm.get('onlineCheckbtn')?.touched &&
-                headerProfileForm.get('onlineCheckbtn')?.invalid
+                header_profile_form.get('onlineCheckbtn')?.touched &&
+                header_profile_form.get('onlineCheckbtn')?.invalid
               "
               class="invalid-feedback"
             >
               <div
-                *ngIf="headerProfileForm.get('onlineCheckbtn')?.errors?.['required']"
+                *ngIf="header_profile_form.get('onlineCheckbtn')?.errors?.['required']"
               >
                 {{ "onlineCheckbtn" | translate }}
               </div>
               <div
-                *ngIf="headerProfileForm.get('onlineCheckbtn')?.errors?.['pattern']"
+                *ngIf="header_profile_form.get('onlineCheckbtn')?.errors?.['pattern']"
               >
                 {{ "onlineCheckbtn" | translate }}
               </div>
               <div
-                *ngIf="headerProfileForm.get('onlineCheckbtn')?.errors?.['minlength']"
+                *ngIf="header_profile_form.get('onlineCheckbtn')?.errors?.['minlength']"
               >
                 {{ "onlineCheckbtn" | translate }}
               </div>
@@ -81,29 +81,29 @@
             [ngModel]="profileImg"
             [ngClass]="{
               'is-invalid':
-                headerProfileForm.get('fileImg')?.touched &&
-                headerProfileForm.get('fileImg')?.invalid
+                header_profile_form.get('fileImg')?.touched &&
+                header_profile_form.get('fileImg')?.invalid
             }"
             formControlName="fileImg"
             name="fileImg"
           />
           <div
             *ngIf="
-              headerProfileForm.get('fileImg')?.touched &&
-              headerProfileForm.get('fileImg')?.invalid
+              header_profile_form.get('fileImg')?.touched &&
+              header_profile_form.get('fileImg')?.invalid
             "
             class="invalid-feedback mb-2"
           >
-            <div *ngIf="headerProfileForm.get('fileImg')?.errors?.['required']">
+            <div *ngIf="header_profile_form.get('fileImg')?.errors?.['required']">
               {{ "form.champ_oblig" | translate }}
             </div>
             <div
-              *ngIf="headerProfileForm.get('fileImg')?.errors?.['minlength']"
+              *ngIf="header_profile_form.get('fileImg')?.errors?.['minlength']"
             >
               {{ "form.champ_3" | translate }}
             </div>
             <div
-              *ngIf="headerProfileForm.get('fileImg')?.errors?.['maxlength']"
+              *ngIf="header_profile_form.get('fileImg')?.errors?.['maxlength']"
             >
               {{ "form.champ_30" | translate }}
             </div>
@@ -118,16 +118,16 @@
                     class="rounded-circle p-1 bg-warning"
                     width="160"
                   /> -->
-        <!-- </div>
+  <!-- </div>
       </div>
     </div>
-  </div> --> 
+  </div> -->
   <!-- name and last name -->
   <div class="row">
     <!-- Name input -->
     <div class="mb-3 col-md-6">
       <label class="form-label" for="name">
-        {{ "form.nom" | translate }}
+        {{ 'form.nom' | translate }}
       </label>
       <input
         class="form-control"
@@ -136,63 +136,63 @@
         placeholder="{{ 'form.exp_nom' | translate }}"
         [ngClass]="{
           'is-invalid':
-            headerProfileForm.get('name')?.touched &&
-            headerProfileForm.get('name')?.invalid
+            header_profile_form.get('name')?.touched &&
+            header_profile_form.get('name')?.invalid
         }"
         formControlName="name"
         name="name"
       />
       <div
         *ngIf="
-          headerProfileForm.get('name')?.touched &&
-          headerProfileForm.get('name')?.invalid
+          header_profile_form.get('name')?.touched &&
+          header_profile_form.get('name')?.invalid
         "
         class="invalid-feedback mb-2"
       >
-        <div *ngIf="headerProfileForm.get('name')?.errors?.['required']">
-          {{ "form.champ_oblig" | translate }}
+        <div *ngIf="header_profile_form.get('name')?.errors?.['required']">
+          {{ 'form.champ_oblig' | translate }}
         </div>
-        <div *ngIf="headerProfileForm.get('name')?.errors?.['minlength']">
-          {{ "form.champ_3" | translate }}
+        <div *ngIf="header_profile_form.get('name')?.errors?.['minlength']">
+          {{ 'form.champ_3' | translate }}
         </div>
-        <div *ngIf="headerProfileForm.get('name')?.errors?.['maxlength']">
-          {{ "form.champ_30" | translate }}
+        <div *ngIf="header_profile_form.get('name')?.errors?.['maxlength']">
+          {{ 'form.champ_30' | translate }}
         </div>
       </div>
     </div>
     <!-- Prenom input -->
     <div class="mb-3 col-md-6">
       <label class="form-label" for="prenom">
-        {{ "form.prenom" | translate }}
+        {{ 'form.prenom' | translate }}
       </label>
       <input
         class="form-control"
         id="prenom"
         type="prenom"
-        placeholder="{{ 'form.exp_pre' }}"
+        placeholder=" {{ 'form.exp_pre' | translate }}"
         formControlName="prenom"
         name="prenom"
         [ngClass]="{
           'is-invalid':
-            headerProfileForm.get('prenom')?.touched &&
-            headerProfileForm.get('prenom')?.invalid
+            header_profile_form.get('prenom')?.touched &&
+            header_profile_form.get('prenom')?.invalid
         }"
       />
       <div
         *ngIf="
-          headerProfileForm.get('prenom')?.touched &&
-          headerProfileForm.get('prenom')?.invalid
+          header_profile_form.get('prenom')?.touched &&
+          header_profile_form.get('prenom')?.invalid
         "
         class="invalid-feedback mb-2"
       >
-        <div *ngIf="headerProfileForm.get('prenom')?.errors?.['required']">
-          {{ "form.champ_oblig" | translate }}
+        <div *ngIf="header_profile_form.get('prenom')?.errors?.['required']">
+          {{ 'form.champ_oblig' | translate }}
         </div>
-        <div *ngIf="headerProfileForm.get('prenom')?.errors?.['minlength']">
-          {{ "form.champ_3" | translate }}
+        <div *ngIf="header_profile_form.get('prenom')?.errors?.['minlength']">
+          {{ 'form.champ_3' | translate }}
         </div>
-        <div *ngIf="headerProfileForm.get('prenom')?.errors?.['maxlength']">
-          {{ "form.champ_30" | translate }}
+        <div *ngIf="header_profile_form.get('prenom')?.errors?.['maxlength']">
+          {{ 'form.champ_30' | translate }}
         </div>
       </div>
     </div>
@@ -201,7 +201,7 @@
   <div class="row">
     <div class="mb-3 col-md-6">
       <label class="form-label" for="telephone">
-        {{ "form.telephone" | translate }}
+        {{ 'form.telephone' | translate }}
       </label>
       <input
         class="form-control"
@@ -212,58 +212,58 @@
         name="telephone"
         [ngClass]="{
           'is-invalid':
-            headerProfileForm.get('telephone')?.touched &&
-            headerProfileForm.get('telephone')?.invalid
+            header_profile_form.get('telephone')?.touched &&
+            header_profile_form.get('telephone')?.invalid
         }"
       />
       <div
         *ngIf="
-          headerProfileForm.get('telephone')?.touched &&
-          headerProfileForm.get('telephone')?.invalid
+          header_profile_form.get('telephone')?.touched &&
+          header_profile_form.get('telephone')?.invalid
         "
         class="invalid-feedback"
       >
-        <div *ngIf="headerProfileForm.get('telephone')?.errors?.['required']">
-          {{ "form.champ_oblig" | translate }}
+        <div *ngIf="header_profile_form.get('telephone')?.errors?.['required']">
+          {{ 'form.champ_oblig' | translate }}
         </div>
-        <div *ngIf="headerProfileForm.get('telephone')?.errors?.['pattern']">
-          {{ "form.tel_valid" | translate }}
+        <div *ngIf="header_profile_form.get('telephone')?.errors?.['pattern']">
+          {{ 'form.tel_valid' | translate }}
         </div>
-        <div *ngIf="headerProfileForm.get('telephone')?.errors?.['minlength']">
-          {{ "form.champ_10" | translate }}
+        <div *ngIf="header_profile_form.get('telephone')?.errors?.['minlength']">
+          {{ 'form.champ_10' | translate }}
         </div>
       </div>
     </div>
     <!-- Email  input -->
     <div class="mb-3 col-md-6">
       <label class="form-label" for="emailAddress">
-        {{ "form.email" | translate }}
+        {{ 'form.email' | translate }}
       </label>
       <input
         class="form-control"
         id="emailAddress"
         type="email"
-        placeholder="{{ 'form.exp_email' }}"
+        placeholder=" {{ 'form.exp_email' | translate }}"
         formControlName="email"
         name="email"
         [ngClass]="{
           'is-invalid':
-            headerProfileForm.get('email')?.touched &&
-            headerProfileForm.get('email')?.invalid
+            header_profile_form.get('email')?.touched &&
+            header_profile_form.get('email')?.invalid
         }"
       />
       <div
         *ngIf="
-          headerProfileForm.get('email')?.touched &&
-          headerProfileForm.get('email')?.invalid
+          header_profile_form.get('email')?.touched &&
+          header_profile_form.get('email')?.invalid
         "
         class="invalid-feedback"
       >
-        <div *ngIf="headerProfileForm.get('email')?.errors?.['required']">
-          {{ "form.champ_oblig" | translate }}
+        <div *ngIf="header_profile_form.get('email')?.errors?.['required']">
+          {{ 'form.champ_oblig' | translate }}
         </div>
-        <div *ngIf="headerProfileForm.get('email')?.errors?.['email']">
-          {{ "form.mail_valid" | translate }}
+        <div *ngIf="header_profile_form.get('email')?.errors?.['email']">
+          {{ 'form.mail_valid' | translate }}
         </div>
       </div>
     </div>
@@ -272,7 +272,7 @@
   <div class="row">
     <div class="mb-3 col-md-6">
       <label class="form-label" for="borthDate">
-        {{ "borthDate" | translate }}
+        {{ 'borthDate' | translate }}
       </label>
       <input
         class="form-control"
@@ -282,25 +282,25 @@
         name="borthDate"
         [ngClass]="{
           'is-invalid':
-            headerProfileForm.get('borthDate')?.touched &&
-            headerProfileForm.get('borthDate')?.invalid
+            header_profile_form.get('borthDate')?.touched &&
+            header_profile_form.get('borthDate')?.invalid
         }"
       />
       <div
         *ngIf="
-          headerProfileForm.get('borthDate')?.touched &&
-          headerProfileForm.get('borthDate')?.invalid
+          header_profile_form.get('borthDate')?.touched &&
+          header_profile_form.get('borthDate')?.invalid
         "
         class="invalid-feedback"
       >
-        <div *ngIf="headerProfileForm.get('borthDate')?.errors?.['required']">
-          {{ "form.champ_oblig" | translate }}
+        <div *ngIf="header_profile_form.get('borthDate')?.errors?.['required']">
+          {{ 'form.champ_oblig' | translate }}
         </div>
-        <div *ngIf="headerProfileForm.get('borthDate')?.errors?.['pattern']">
-          {{ "form.tel_valid" | translate }}
+        <div *ngIf="header_profile_form.get('borthDate')?.errors?.['pattern']">
+          {{ 'form.tel_valid' | translate }}
         </div>
-        <div *ngIf="headerProfileForm.get('borthDate')?.errors?.['minlength']">
-          {{ "form.champ_10" | translate }}
+        <div *ngIf="header_profile_form.get('borthDate')?.errors?.['minlength']">
+          {{ 'form.champ_10' | translate }}
         </div>
       </div>
     </div>
@@ -308,7 +308,7 @@
     <!--date of borthe inpout  input -->
     <div class="mb-3 col-md-6">
       <label class="form-label" for="countery">
-        {{ "countery" | translate }}
+        {{ 'countery' | translate }}
       </label>
       <select
         id="countery"
@@ -318,8 +318,8 @@
         name="countery"
         [ngClass]="{
           'is-invalid':
-            headerProfileForm.get('countery')?.touched &&
-            headerProfileForm.get('countery')?.invalid
+            header_profile_form.get('countery')?.touched &&
+            header_profile_form.get('countery')?.invalid
         }"
       >
         <option selected>select your countery</option>
@@ -334,30 +334,30 @@
 
       <div
         *ngIf="
-          headerProfileForm.get('countery')?.touched &&
-          headerProfileForm.get('countery')?.invalid
+          header_profile_form.get('countery')?.touched &&
+          header_profile_form.get('countery')?.invalid
         "
         class="invalid-feedback"
       >
-        <div *ngIf="headerProfileForm.get('countery')?.errors?.['required']">
-          {{ "form.champ_oblig" | translate }}
+        <div *ngIf="header_profile_form.get('countery')?.errors?.['required']">
+          {{ 'form.champ_oblig' | translate }}
         </div>
-        <div *ngIf="headerProfileForm.get('countery')?.errors?.['pattern']">
-          {{ "form.tel_valid" | translate }}
+        <div *ngIf="header_profile_form.get('countery')?.errors?.['pattern']">
+          {{ 'form.tel_valid' | translate }}
         </div>
-        <div *ngIf="headerProfileForm.get('countery')?.errors?.['minlength']">
-          {{ "form.champ_10" | translate }}
+        <div *ngIf="header_profile_form.get('countery')?.errors?.['minlength']">
+          {{ 'form.champ_10' | translate }}
         </div>
       </div>
     </div>
   </div>
   <!--adriss  -->
   <div class="row">
-    <div class="row mb-3">
+
       <div class="col-md-6">
-        <label for="validationServer03" class="form-label">{{
-          "ctiy" | translate
-        }}</label>
+        <label for="validationServer03" class="form-label">
+          {{ 'ctiy' | translate }}
+        </label>
         <input
           type="text"
           class="form-control"
@@ -366,39 +366,39 @@
           name="ctiy_inpute"
           [ngClass]="{
             'is-invalid':
-              headerProfileForm.get('ctiy_inpute')?.touched &&
-              headerProfileForm.get('ctiy_inpute')?.invalid
+              header_profile_form.get('ctiy_inpute')?.touched &&
+              header_profile_form.get('ctiy_inpute')?.invalid
           }"
         />
         <div
           *ngIf="
-            headerProfileForm.get('ctiy_inpute')?.touched &&
-            headerProfileForm.get('ctiy_inpute')?.invalid
+            header_profile_form.get('ctiy_inpute')?.touched &&
+            header_profile_form.get('ctiy_inpute')?.invalid
           "
           class="invalid-feedback"
         >
           <div
-            *ngIf="headerProfileForm.get('ctiy_inpute')?.errors?.['required']"
+            *ngIf="header_profile_form.get('ctiy_inpute')?.errors?.['required']"
           >
-            {{ "form.champ_oblig" | translate }}
+            {{ 'form.champ_oblig' | translate }}
           </div>
           <div
-            *ngIf="headerProfileForm.get('ctiy_inpute')?.errors?.['pattern']"
+            *ngIf="header_profile_form.get('ctiy_inpute')?.errors?.['pattern']"
           >
-            {{ "form.tel_valid" | translate }}
+            {{ 'form.tel_valid' | translate }}
           </div>
           <div
-            *ngIf="headerProfileForm.get('ctiy_inpute')?.errors?.['minlength']"
+            *ngIf="header_profile_form.get('ctiy_inpute')?.errors?.['minlength']"
           >
-            {{ "form.champ_10" | translate }}
+            {{ 'form.champ_10' | translate }}
           </div>
         </div>
       </div>
 
       <div class="col-md-3">
-        <label for="validationServer04" class="form-label">{{
-          "State" | translate
-        }}</label>
+        <label for="validationServer04" class="form-label">
+          {{ 'State' | translate }}
+        </label>
         <select
           class="form-select"
           id="validationServer04"
@@ -406,8 +406,8 @@
           name="State_input"
           [ngClass]="{
             'is-invalid':
-              headerProfileForm.get('State_input')?.touched &&
-              headerProfileForm.get('State_input')?.invalid
+              header_profile_form.get('State_input')?.touched &&
+              header_profile_form.get('State_input')?.invalid
           }"
         >
           <option selected disabled value="">Choose...</option>
@@ -416,32 +416,32 @@
 
         <div
           *ngIf="
-            headerProfileForm.get('State_input')?.touched &&
-            headerProfileForm.get('State_input')?.invalid
+            header_profile_form.get('State_input')?.touched &&
+            header_profile_form.get('State_input')?.invalid
           "
           class="invalid-feedback"
         >
           <div
-            *ngIf="headerProfileForm.get('State_input')?.errors?.['required']"
+            *ngIf="header_profile_form.get('State_input')?.errors?.['required']"
           >
-            {{ "form.champ_oblig" | translate }}
+            {{ 'form.champ_oblig' | translate }}
           </div>
           <div
-            *ngIf="headerProfileForm.get('State_input')?.errors?.['pattern']"
+            *ngIf="header_profile_form.get('State_input')?.errors?.['pattern']"
           >
-            {{ "form.tel_valid" | translate }}
+            {{ 'form.tel_valid' | translate }}
           </div>
           <div
-            *ngIf="headerProfileForm.get('State_input')?.errors?.['minlength']"
+            *ngIf="header_profile_form.get('State_input')?.errors?.['minlength']"
           >
-            {{ "form.champ_10" | translate }}
+            {{ 'form.champ_10' | translate }}
           </div>
         </div>
       </div>
       <div class="col-md-3">
-        <label for="validationServer05" class="form-label">{{
-          "czip" | translate
-        }}</label>
+        <label for="validationServer05" class="form-label">
+          {{ 'czip' | translate }}
+        </label>
         <input
           type="text"
           class="form-control"
@@ -450,43 +450,43 @@
           name="zip_code_input"
           [ngClass]="{
             'is-invalid':
-              headerProfileForm.get('zip_code_input')?.touched &&
-              headerProfileForm.get('zip_code_input')?.invalid
+              header_profile_form.get('zip_code_input')?.touched &&
+              header_profile_form.get('zip_code_input')?.invalid
           }"
         />
 
         <div
           *ngIf="
-            headerProfileForm.get('zip_code_input')?.touched &&
-            headerProfileForm.get('zip_code_input')?.invalid
+            header_profile_form.get('zip_code_input')?.touched &&
+            header_profile_form.get('zip_code_input')?.invalid
           "
           class="invalid-feedback"
         >
           <div
-            *ngIf="headerProfileForm.get('zip_code_input')?.errors?.['required']"
+            *ngIf="header_profile_form.get('zip_code_input')?.errors?.['required']"
           >
-            {{ "form.champ_oblig" | translate }}
+            {{ 'form.champ_oblig' | translate }}
           </div>
           <div
-            *ngIf="headerProfileForm.get('zip_code_input')?.errors?.['pattern']"
+            *ngIf="header_profile_form.get('zip_code_input')?.errors?.['pattern']"
           >
-            {{ "form.tel_valid" | translate }}
+            {{ 'form.tel_valid' | translate }}
           </div>
           <div
-            *ngIf="headerProfileForm.get('zip_code_input')?.errors?.['minlength']"
+            *ngIf="header_profile_form.get('zip_code_input')?.errors?.['minlength']"
           >
-            {{ "form.champ_10" | translate }}
+            {{ 'form.champ_10' | translate }}
           </div>
         </div>
       </div>
-    </div>
-  </div>
+ </div>
+
   <div class="row">
-    <div class="row mb-3">
+
       <div class="col-md-4">
-        <label for="validationServer04" class="form-label">{{
-          "cictor do hroe" | translate
-        }}</label>
+        <label for="validationServer04" class="form-label">
+          {{ 'cictor do hroe' | translate }}
+        </label>
         <select
           class="form-select"
           id="validationServer04"
@@ -494,8 +494,8 @@
           name="job_filde_hero_input"
           [ngClass]="{
             'is-invalid':
-              headerProfileForm.get('job_filde_hero_input')?.touched &&
-              headerProfileForm.get('job_filde_hero_input')?.invalid
+              header_profile_form.get('job_filde_hero_input')?.touched &&
+              header_profile_form.get('job_filde_hero_input')?.invalid
           }"
         >
           <option selected disabled value="">Choose...</option>
@@ -509,32 +509,32 @@
         </select>
         <div
           *ngIf="
-            headerProfileForm.get('job_filde_hero_input')?.touched &&
-            headerProfileForm.get('job_filde_hero_input')?.invalid
+            header_profile_form.get('job_filde_hero_input')?.touched &&
+            header_profile_form.get('job_filde_hero_input')?.invalid
           "
           class="invalid-feedback"
         >
           <div
-            *ngIf="headerProfileForm.get('job_filde_hero_input')?.errors?.['required']"
+            *ngIf="header_profile_form.get('job_filde_hero_input')?.errors?.['required']"
           >
-            {{ "form.champ_oblig" | translate }}
+            {{ 'form.champ_oblig' | translate }}
           </div>
           <div
-            *ngIf="headerProfileForm.get('job_filde_hero_input')?.errors?.['pattern']"
+            *ngIf="header_profile_form.get('job_filde_hero_input')?.errors?.['pattern']"
           >
-            {{ "form.tel_valid" | translate }}
+            {{ 'form.tel_valid' | translate }}
           </div>
           <div
-            *ngIf="headerProfileForm.get('job_filde_hero_input')?.errors?.['minlength']"
+            *ngIf="header_profile_form.get('job_filde_hero_input')?.errors?.['minlength']"
           >
-            {{ "form.champ_10" | translate }}
+            {{ 'form.champ_10' | translate }}
           </div>
         </div>
       </div>
       <div class="col-md-4">
-        <label for="validationServer04" class="form-label">{{
-          "cictor do hroe" | translate
-        }}</label>
+        <label for="validationServer04" class="form-label">
+          {{ 'cictor do hroe' | translate }}
+        </label>
         <select
           class="form-select"
           id="validationServer04"
@@ -542,8 +542,8 @@
           name="job_filde_sub_input"
           [ngClass]="{
             'is-invalid':
-              headerProfileForm.get('job_filde_sub_input')?.touched &&
-              headerProfileForm.get('job_filde_sub_input')?.invalid
+              header_profile_form.get('job_filde_sub_input')?.touched &&
+              header_profile_form.get('job_filde_sub_input')?.invalid
           }"
         >
           <option selected disabled value="">job_filde_sub_input</option>
@@ -557,32 +557,32 @@
         </select>
         <div
           *ngIf="
-            headerProfileForm.get('job_filde_sub_input')?.touched &&
-            headerProfileForm.get('job_filde_sub_input')?.invalid
+            header_profile_form.get('job_filde_sub_input')?.touched &&
+            header_profile_form.get('job_filde_sub_input')?.invalid
           "
           class="invalid-feedback"
         >
           <div
-            *ngIf="headerProfileForm.get('job_filde_sub_input')?.errors?.['required']"
+            *ngIf="header_profile_form.get('job_filde_sub_input')?.errors?.['required']"
           >
-            {{ "form.champ_oblig" | translate }}
+            {{ 'form.champ_oblig' | translate }}
           </div>
           <div
-            *ngIf="headerProfileForm.get('job_filde_sub_input')?.errors?.['pattern']"
+            *ngIf="header_profile_form.get('job_filde_sub_input')?.errors?.['pattern']"
           >
-            {{ "form.tel_valid" | translate }}
+            {{ 'form.tel_valid' | translate }}
           </div>
           <div
-            *ngIf="headerProfileForm.get('job_filde_sub_input')?.errors?.['minlength']"
+            *ngIf="header_profile_form.get('job_filde_sub_input')?.errors?.['minlength']"
           >
-            {{ "form.champ_10" | translate }}
+            {{ 'form.champ_10' | translate }}
           </div>
         </div>
       </div>
       <div class="col-md-4">
-        <label for="validationServer04" class="form-label">{{
-          "cictor do hroe" | translate
-        }}</label>
+        <label for="validationServer04" class="form-label">
+          {{ 'cictor do hroe' | translate }}
+        </label>
         <select
           class="form-select"
           id="validationServer04"
@@ -590,8 +590,8 @@
           name="job_filde_sub_child_input"
           [ngClass]="{
             'is-invalid':
-              headerProfileForm.get('job_filde_sub_child_input')?.touched &&
-              headerProfileForm.get('job_filde_sub_child_input')?.invalid
+              header_profile_form.get('job_filde_sub_child_input')?.touched &&
+              header_profile_form.get('job_filde_sub_child_input')?.invalid
           }"
         >
           <option selected disabled value="">job_filde_sub_child_input</option>
@@ -605,40 +605,35 @@
         </select>
         <div
           *ngIf="
-            headerProfileForm.get('job_filde_sub_child_input')?.touched &&
-            headerProfileForm.get('job_filde_sub_child_input')?.invalid
+            header_profile_form.get('job_filde_sub_child_input')?.touched &&
+            header_profile_form.get('job_filde_sub_child_input')?.invalid
           "
           class="invalid-feedback"
         >
           <div
-            *ngIf="headerProfileForm.get('job_filde_sub_child_input')?.errors?.['required']"
+            *ngIf="header_profile_form.get('job_filde_sub_child_input')?.errors?.['required']"
           >
-            {{ "form.champ_oblig" | translate }}
+            {{ 'form.champ_oblig' | translate }}
           </div>
           <div
-            *ngIf="headerProfileForm.get('job_filde_sub_child_input')?.errors?.['pattern']"
+            *ngIf="header_profile_form.get('job_filde_sub_child_input')?.errors?.['pattern']"
           >
-            {{ "form.tel_valid" | translate }}
+            {{ 'form.tel_valid' | translate }}
           </div>
           <div
-            *ngIf="headerProfileForm.get('job_filde_sub_child_input')?.errors?.['minlength']"
+            *ngIf="header_profile_form.get('job_filde_sub_child_input')?.errors?.['minlength']"
           >
-            {{ "form.champ_10" | translate }}
+            {{ 'form.champ_10' | translate }}
           </div>
         </div>
       </div>
-    </div>
+
   </div>
+    <div class="  modal-footer">
+      <button type="submit" class="btn btn-info">
+        save
+      </button>
+    </div>
 </form>
 
-<div class="modal-footer">
-  <!-- <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">
-      close
-    </button> -->
 
-  <div class="row">
-    <button type="button" class="btn btn-info" (click)="sendEntretien()">
-      save
-    </button>
-  </div>
-</div>

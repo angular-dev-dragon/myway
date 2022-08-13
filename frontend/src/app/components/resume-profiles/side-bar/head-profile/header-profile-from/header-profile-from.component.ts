@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  NgbModal,
-  NgbModalConfig,
-  ModalDismissReasons,
-} from '@ng-bootstrap/ng-bootstrap';
+
 import {
   FormGroup,
   FormBuilder,
   Validators,
   FormControl,
 } from '@angular/forms';
+import { DynamicDialogRef } from 'primeng/dynamicdialog';
 import { CountriesInfoService } from '../../../../../shared/Services/Countries-info/countries-info.service';
 @Component({
   selector: 'header-profile-from',
@@ -30,31 +27,30 @@ export class HeaderProfileFromComponent implements OnInit {
   profileImg: string | undefined;
   profileImgo: string | undefined;
 
-  public headerProfileForm: FormGroup;
+  public header_profile_form: FormGroup;
   constructor(
-    private c: NgbModalConfig,
-    private ms: NgbModal,
     private fb: FormBuilder,
-    private Countriesinfo: CountriesInfoService
+    private Countriesinfo: CountriesInfoService,
+    private ref: DynamicDialogRef
   ) {
-    this.headerProfileForm = this.fb.group({
+    this.header_profile_form = this.fb.group({
       name: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(30),
         Validators.pattern('^[a-zA-Z \u0600-\u06FF]+$'),
       ]),
-      fileImg: new FormControl('', [
-        Validators.required,
-        Validators.pattern('^[a-zA-Z \u0600-\u06FF]+$'),
-      ]),
+      // fileImg: new FormControl('', [
+      //   Validators.required,
+      //   Validators.pattern('^[a-zA-Z \u0600-\u06FF]+$'),
+      // ]),
       prenom: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(30),
         Validators.pattern('^[a-zA-Z \u0600-\u06FF]+$'),
       ]),
-      onlineCheckbtn: new FormControl(this.online, []),
+      // onlineCheckbtn: new FormControl(this.online, []),
       telephone: new FormControl('', [
         Validators.required,
         Validators.pattern('^((\\+212-?)|0)?[0-9]{10}$'),
@@ -101,12 +97,20 @@ export class HeaderProfileFromComponent implements OnInit {
     });
   }
 
-  sendEntretien() {
-    if (this.headerProfileForm.valid) {
-      console.log('this.headerProfileForm', this.headerProfileForm);
+  save_header_profile_from() {
+
+    if (this.header_profile_form.valid) {
+      this.ref.close();
     } else {
-      this.headerProfileForm.markAllAsTouched();
+      this.header_profile_form.markAllAsTouched();
       console.log('not valid');
     }
   }
 }
+
+
+
+
+
+// private ref: DynamicDialogRef
+//  this.ref.close();

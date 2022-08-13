@@ -4,7 +4,7 @@
       <div class="card-body">
         <div class="herder-top-card">
           <h5 class="col"><i class="fa-solid fa-vial"></i> {{'candidat.t.ex'|translate}}</h5>
-          <div (click)="showachievement()" class=" icons "></div>
+          <div (click)="open_achievement_form()" class=" icons "></div>
         </div>
         <div class="container ">
           <div class="row justify-content-center">
@@ -129,12 +129,3 @@
 
 
 
-
-
-<p-dialog header="Header" [(visible)]="achievement" [style]="{width: '50vw'}">
-  <h1>Achievement</h1>
-  <h1></h1>
-  <ng-template pTemplate="footer">
-    <p-button icon="pi pi-check" (click)="achievement=false" label="Ok" styleClass="p-button-text"></p-button>
-  </ng-template>
-</p-dialog>

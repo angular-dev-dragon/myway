@@ -6,6 +6,8 @@ import {
   Validators,
   FormControl,
 } from '@angular/forms';
+
+import { DynamicDialogRef } from 'primeng/dynamicdialog';
 @Component({
   selector: 'contact-form',
   templateUrl: './contact-form.component.html',
@@ -13,37 +15,12 @@ import {
 })
 export class ContactFormComponent implements OnInit {
 
-
-
-
-
-
-
-
-
-
-
-
-  date: any;
-  online: boolean = false;
-
-  selectedCountryAdvanced!: any[];
-  filteredCountries!: any[];
-  selectedCity: any;
-  city: any;
-  profileImg: string | undefined;
-  profileImgo: string | undefined;
-
-
-
-
-
-
-  public contact_Form: FormGroup;
+  public contact_form: FormGroup;
   constructor(
     private fb: FormBuilder,
+    private ref: DynamicDialogRef
   ) {
-    this.contact_Form = this.fb.group({
+    this.contact_form = this.fb.group({
       platform: new FormControl('', [Validators.required]),
       user_name: new FormControl('', [
         Validators.required,
@@ -55,11 +32,30 @@ export class ContactFormComponent implements OnInit {
   ngOnInit() { }
 
   save_contact_from() {
-    if (this.contact_Form.valid) {
-      console.log('this.contact_Form', this.contact_Form);
+
+    if (this.contact_form.valid) {
+      console.log('this.contact_form', this.contact_form);
+       this.ref.close();
     } else {
-      this.contact_Form.markAllAsTouched();
+      this.contact_form.markAllAsTouched();
       console.log('not valid');
     }
   }
 }
+
+
+
+
+
+
+
+
+
+// import { DynamicDialogRef } from 'primeng/dynamicdialog';
+
+
+
+
+
+
+

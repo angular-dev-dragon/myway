@@ -1,48 +1,39 @@
-// import { Component, OnInit } from '@angular/core';
-// import { PrimeNGConfig } from 'primeng/api';
-// @Component({
-//   selector: 'left-side-bar',
-//   templateUrl: './left-side-bar.component.html',
-//   styleUrls: ['../layouts/layouts.component.scss'],
-// })
-// export class LeftSideBarComponent implements OnInit {
-//   constructor(private primengConfig: PrimeNGConfig) {}
+// PERNENT================================================================  ===============================================================================================================================
+//  click = 'show()';
 
-//   ngOnInit() {
-//     this.primengConfig.ripple = true;
+// import { MessageService } from 'primeng/api';
+// import { DialogService } from 'primeng/dynamicdialog';
+// import { DynamicDialogRef } from 'primeng/dynamicdialog';
+// // import { ContactFormComponent } from './contact-form/contact-form.component';
+
+// providers: [DialogService, MessageService];
+
+// constructor(
+//     public dialogService: DialogService,
+//     public messageService: MessageService
+//   ) {}
+
+//   ngOnInit(): void {}
+
+//   ref: DynamicDialogRef | undefined;
+
+//   show() {
+//     this.ref = this.dialogService.open(ContactFormComponent, {
+//       header: 'Choose a Product',
+//       width: '70%',
+//       contentStyle: { 'max-height': '500px', overflow: 'auto' },
+//       baseZIndex: 10000,
+//     });
+
 //   }
+// ===========================================================================================================================================================================================
 
-  // conect: boolean | undefined;
+// Child ===========================================================================================================================  =========
+// save_contact_from();
 
-  // About: boolean | undefined;
+// import { DynamicDialogRef } from 'primeng/dynamicdialog';
 
-  // creter: boolean | undefined;
+// private ref: DynamicDialogRef
+//  this.ref.close();
 
-  // Langouge: boolean | undefined;
-
-  // Skils: boolean | undefined;
-
-  // hero: boolean | undefined;
-
-  // showconect() {
-  //   this.conect = true;
-  // }
-
-  // showAbout() {
-  //   this.About = true;
-  // }
-
-  // showcreter() {
-  //   this.creter = true;
-  // }
-
-  // showSkils() {
-  //   this.Skils = true;
-  // }
-  // showLangouge() {
-  //   this.Langouge = true;
-  // }
-  // showhero() {
-  //   this.hero = true;
-  // }
-// }
+//==============================================================================================================================

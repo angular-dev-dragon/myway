@@ -3,57 +3,34 @@
 </div>
 <div class="section-recruteur">
   <p-tabView>
-    <p-tabPanel header="Parcourir Les Temoignages">
-      <h2 class="title-md bold my-3 blue-color">
-        Liste des Temoignages
-      </h2>
+    <p-tabPanel header="{{ 'globale.parcourir_avis' | translate }}">
+      <h4 class="my-3">
+        {{ 'globale.list_temoignage' | translate }}
+      </h4>
       <div class="" *ngIf="comments.length == 0">
         <p>Auncun Comments trouvés</p>
       </div>
 
-      <ol class="commentlist p-0 m-0" *ngIf="comments.length > 0">
-        <li
-          *ngFor="let comment of comments"
-          class="row align-items-center justify-content-center mb-5"
-        >
-          <figure class="comment-figure">
-            <img
-              alt=""
-              [defaultImage]="'assets/images/user.png'"
-              [lazyLoad]="comments.img"
-              class="avatar-rounded"
-              height="70"
-              width="70"
-            />
-          </figure>
-          <div class="comment-content col-sm-10 p-3">
-            <div class="">
-              <h6 class="comment-info j-c-v-sm-container">
-                {{ comment.nom_ou_pseudo }}
-                ( {{ comment.fonction }})
-              </h6>
-            </div>
-
-            <div class="">
-              <p class="j-resume-sm p-0 m-0">
-                {{ comment.commentaire_intervenent }}
-              </p>
-            </div>
-            <span class="comment-info small-text">
-              {{ comment.date }}
-            </span>
-          </div>
-        </li>
-      </ol>
+      <div *ngIf="comments.length > 0">
+        <div class="mb-3" *ngFor="let comment of comments">
+          <app-card-temoignage
+            [image]="comment.img"
+            [nom]="comment.nom_ou_pseudo"
+            [fonction]="comment.fonction"
+            [commentaire]="comment.commentaire_intervenent"
+            [date]="comment.date"
+          ></app-card-temoignage>
+        </div>
+      </div>
     </p-tabPanel>
-    <p-tabPanel header="Poser Un Temoignages">
+    <p-tabPanel header="{{ 'globale.donner_avis' | translate }}">
       <form
         id="contactForm"
         (ngSubmit)="sendAvis()"
         [formGroup]="avisForm"
         #form2
       >
-        <h4 class="">Poser Votre Question</h4>
+        <h4 class="">{{ 'globale.donner_avis' | translate }}</h4>
 
         <div class="row">
           <!-- Name input -->
@@ -66,7 +43,7 @@
               class="form-control"
               id="name"
               type="text"
-              placeholder="{{ 'form.exp_nom' }}"
+              placeholder="{{ 'form.exp_nom' | translate }}"
               [ngClass]="{
                 'is-invalid':
                   avisForm.get('name')?.touched && avisForm.get('name')?.invalid
@@ -81,16 +58,16 @@
               class="invalid-feedback mb-2"
             >
               <div *ngIf="avisForm.get('name')?.errors?.['required']">
-                {{ 'form.champ_oblig' }}
+                {{ 'form.champ_oblig' | translate }}
               </div>
               <div *ngIf="avisForm.get('name')?.errors?.['minlength']">
-                {{ 'form.champ_3' }}
+                {{ 'form.champ_3' | translate }}
               </div>
               <div *ngIf="avisForm.get('name')?.errors?.['maxlength']">
-                {{ 'form.champ_30' }}
+                {{ 'form.champ_30' | translate }}
               </div>
               <div *ngIf="avisForm.get('name')?.errors?.['pattern']">
-                {{ 'form.champ_lettre' }}
+                {{ 'form.champ_lettre' | translate }}
               </div>
             </div>
           </div>
@@ -98,13 +75,13 @@
           <!-- Prenom input -->
           <div class="mb-3 col-md-6">
             <label class="form-label" for="prenom">
-              {{ 'form.prenom' }}
+              {{ 'form.prenom' | translate }}
             </label>
             <input
               class="form-control"
               id="prenom"
               type="prenom"
-              placeholder="{{ 'form.exp_pre' }}"
+              placeholder=" {{ 'form.exp_pre' | translate }}"
               formControlName="prenom"
               name="prenom"
               [ngClass]="{
@@ -121,16 +98,16 @@
               class="invalid-feedback mb-2"
             >
               <div *ngIf="avisForm.get('prenom')?.errors?.['required']">
-                {{ 'form.champ_oblig' }}
+                {{ 'form.champ_oblig' | translate }}
               </div>
               <div *ngIf="avisForm.get('prenom')?.errors?.['minlength']">
-                {{ 'form.champ_3' }}
+                {{ 'form.champ_3' | translate }}
               </div>
               <div *ngIf="avisForm.get('prenom')?.errors?.['maxlength']">
-                {{ 'form.champ_30' }}
+                {{ 'form.champ_30' | translate }}
               </div>
               <div *ngIf="avisForm.get('prenom')?.errors?.['pattern']">
-                {{ 'form.champ_lettre' }}
+                {{ 'form.champ_lettre' | translate }}
               </div>
             </div>
           </div>
@@ -139,13 +116,13 @@
         <div class="row">
           <div class="mb-3 col-md-6">
             <label class="form-label" for="telephone">
-              {{ 'form.telephone' }}
+              {{ 'form.telephone' | translate }}
             </label>
             <input
               class="form-control"
               id="telephone"
               type="texte"
-              placeholder="{{ 'form.exp_tel' }}"
+              placeholder=" {{ 'form.exp_tel' | translate }}"
               formControlName="telephone"
               name="telephone"
               [ngClass]="{
@@ -162,7 +139,7 @@
               class="invalid-feedback"
             >
               <div *ngIf="avisForm.get('telephone')?.errors?.['required']">
-                {{ 'form.champ_oblig' }}
+                {{ 'form.champ_oblig' | translate }}
               </div>
               <div *ngIf="avisForm.get('telephone')?.errors?.['pattern']">
                 {{ 'form.tel_valid' }}
@@ -175,13 +152,13 @@
           <!-- Email  input -->
           <div class="mb-3 col-md-6">
             <label class="form-label" for="emailAddress">
-              {{ 'form.email' }}
+              {{ 'form.email' | translate }}
             </label>
             <input
               class="form-control"
               id="emailAddress"
               type="email"
-              placeholder="{{ 'form.exp_email' }}"
+              placeholder=" {{ 'form.exp_email' | translate }}"
               formControlName="email"
               name="email"
               [ngClass]="{
@@ -197,7 +174,7 @@
               class="invalid-feedback"
             >
               <div *ngIf="avisForm.get('email')?.errors?.['required']">
-                {{ 'form.champ_oblig' }}
+                {{ 'form.champ_oblig' | translate }}
               </div>
               <div *ngIf="avisForm.get('email')?.errors?.['email']">
                 {{ 'form.mail_valid' }}
@@ -214,7 +191,7 @@
               class="form-control"
               id="avis"
               type="texte"
-              placeholder="{{ 'form.exp_tel' }}"
+              placeholder=" {{ 'form.exp_tel' | translate }}"
               formControlName="avis"
               name="avis"
               [ngClass]="{
@@ -229,11 +206,11 @@
               class="invalid-feedback"
             >
               <div *ngIf="avisForm.get('avis')?.errors?.['required']">
-                {{ 'form.champ_oblig' }}
+                {{ 'form.champ_oblig' | translate }}
               </div>
 
               <div *ngIf="avisForm.get('avis')?.errors?.['minlength']">
-                {{ 'form.champ_3' }}
+                {{ 'form.champ_3' | translate }}
               </div>
             </div>
           </div>
@@ -241,7 +218,7 @@
         <!-- Form submit button -->
         <div class="mt-5 text-center">
           <button class="btn btn-outline-dark" type="submit">
-            {{ 'form.Envoyer' }}
+            {{ 'form.Envoyer' | translate }}
           </button>
         </div>
       </form>

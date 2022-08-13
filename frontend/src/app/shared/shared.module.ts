@@ -78,8 +78,13 @@ import { MatMenuModule } from '@angular/material/menu'
 // end form importes
 // end form importes
 import { MatSliderModule } from '@angular/material/slider'
+
+import { CardTemoignageComponent } from './components/card-temoignage/card-temoignage.component'
+
 import { CardOffreVerticaleComponent } from './components/card-offre-Verticale/card-offre-Verticale.component'
 import { CardOffreHorizontaleComponent } from './components/card-offre-horizontale/card-offre-horizontale.component'
+import { CardQuestionReponseComponent } from './components/card-question-reponse/card-question-reponse.component'
+import { NgxPaginationModule } from 'ngx-pagination'
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -119,6 +124,7 @@ let modules: any = [
   MultiSelectModule,
   InputTextareaModule,
   InputTextModule,
+  NgxPaginationModule,
   // end form importes
   AccordionModule,
   ButtonModule,
@@ -163,6 +169,9 @@ let modules: any = [
     CardForumComponent,
     SondageHistoriqueComponent,
     CardBlogueurComponent,
+    CardTemoignageComponent,
+    CardTemoignageComponent,
+    CardQuestionReponseComponent,
   ],
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
   exports: [
@@ -182,6 +191,9 @@ let modules: any = [
     SondageHistoriqueComponent,
     CardBlogueurComponent,
     MapComponent,
+    CardTemoignageComponent,
+    CardQuestionReponseComponent,
+
     ...modules,
   ],
 })

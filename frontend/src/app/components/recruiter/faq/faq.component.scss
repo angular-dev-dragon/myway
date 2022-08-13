@@ -1,7 +1,9 @@
 .p-tabview .p-tabview-nav li {
   width: 50% !important;
 }
-.spacing-article-divider:not(:first-child) {
+.spacing-article-divider {
   padding: 20px 0;
-  border-top: 1px solid #ccc;
+  &:not(:first-child) {
+    border-top: 1px solid #ccc;
+  }
 }
