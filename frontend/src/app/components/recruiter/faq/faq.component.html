@@ -3,22 +3,26 @@
 </div>
 <div class="section-recruteur">
   <p-tabView>
-    <p-tabPanel header="Parcourir Les Questions">
+    <p-tabPanel header="{{ 'globale.parcourir_question' | translate }}">
+      <h4 class="">{{ 'globale.list_qr' | translate }}</h4>
+
       <div class="">
         <div class="spacing-article-divider" *ngFor="let qr of questionReponse">
-          <h5>{{ qr.question }}</h5>
-          <p>{{ qr.reponse }}</p>
+          <app-card-question-reponse
+            [question]="qr.question"
+            [reponse]="qr.reponse"
+          ></app-card-question-reponse>
         </div>
       </div>
     </p-tabPanel>
-    <p-tabPanel header="Poser Une Question">
+    <p-tabPanel header="{{ 'globale.poser_question' | translate }}">
       <form
         id="contactForm"
         (ngSubmit)="sendQuestion()"
         [formGroup]="FaqForm"
         #form2
       >
-        <h4 class="">Poser Votre Question</h4>
+        <h4 class="">{{ 'globale.poser_question' | translate }}</h4>
 
         <div class="row">
           <!-- Name input -->

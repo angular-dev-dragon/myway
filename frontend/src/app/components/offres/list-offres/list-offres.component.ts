@@ -10,7 +10,7 @@ export class ListOffresComponent implements OnInit {
   orientation: any = 'verticale'
   offres: any = [
     {
-      Intitule: 'Développeur',
+      Intitule: 'Développeur1',
       TypeContrat: 'CDI',
       Poste: 'Développeur Front-End',
       NomEntreprise: 'Jumia',
@@ -18,7 +18,7 @@ export class ListOffresComponent implements OnInit {
       Image: '',
       Ville: 'Tanger',
       Secteur: 'Informatique',
-      Date: '2022-02-02',
+      Date: '2023-02-02',
       Competences: 'HTML',
       Pays: 'Maroc',
       NiveauxEtude: 'Bac',
@@ -28,7 +28,7 @@ export class ListOffresComponent implements OnInit {
     {
       Intitule: 'Ingénieur génie civil et minier ',
       TypeContrat: 'Anapec',
-      Poste: 'technicien en mécanique et électrique: des chefs de chantier',
+      Poste: 'technicien en mécanique et électrique mécanique et électrique',
       NomEntreprise: 'Smart automation technologies',
       TypeEntreprise: 'StartUp',
       Image: '',
@@ -42,7 +42,7 @@ export class ListOffresComponent implements OnInit {
       langue: 'Français',
     },
     {
-      Intitule: 'Développeur',
+      Intitule: 'développeur3',
       TypeContrat: 'CDD',
       Poste: 'Développeur Front-End',
       NomEntreprise: 'Jumia',
@@ -50,7 +50,7 @@ export class ListOffresComponent implements OnInit {
       Image: '',
       Ville: 'Tanger',
       Secteur: 'Informatique',
-      Date: '2022-02-02',
+      Date: '2000-02-02',
       Competences: 'HTML',
       Pays: 'Algérie',
       NiveauxEtude: 'Bac',
@@ -66,7 +66,7 @@ export class ListOffresComponent implements OnInit {
       Image: '',
       Ville: 'Tétouan',
       Secteur: 'Textile',
-      Date: '2022-02-02',
+      Date: '2022-05-02',
       Competences: 'HTML',
       Pays: 'Maroc',
       NiveauxEtude: 'qualification avant bac',
@@ -74,7 +74,7 @@ export class ListOffresComponent implements OnInit {
       langue: 'Arabe',
     },
     {
-      Intitule: 'Développeur',
+      Intitule: 'Développeur4',
       TypeContrat: 'CDI',
       NomEntreprise: 'Jumia',
       TypeEntreprise: 'StartUp',
@@ -106,6 +106,7 @@ export class ListOffresComponent implements OnInit {
   @ViewChildren('niveauxEx') niveauxExBox!: any
   @ViewChildren('langue') langueBox!: any
   @ViewChild('search') searchInput!: any
+  @ViewChild('date') dateInput!: any
 
   filter() {
     this.offres = this.allOffres
@@ -125,9 +126,11 @@ export class ListOffresComponent implements OnInit {
     let langueFiltre = this.langueBox._results
     // console.log('filtre par langues', langueFiltre)
     let secteurFiltre = this.secteurSelect.nativeElement.value
-    console.log('filtre par secteurs', secteurFiltre)
+    // console.log('filtre par secteurs', secteurFiltre)
     let searchFiltre = this.searchInput.nativeElement.value
-    console.log('filtre par search', searchFiltre)
+    // console.log('filtre par search', searchFiltre)
+    let dateFiltre = this.dateInput.nativeElement.value
+    console.log('filtre par date', dateFiltre)
 
     if (searchFiltre != '') {
       this.offres = this.offres.filter((offre: any) => {
@@ -151,11 +154,17 @@ export class ListOffresComponent implements OnInit {
         return offre.Secteur == secteurFiltre
       })
     }
+    if (dateFiltre != '') {
+      this.offres = this.offres.filter((offre: any) => {
+        return offre.Date == dateFiltre
+      })
+    }
     this.checkboxFiltre(contratFiltre, 'TypeContrat')
     this.checkboxFiltre(niveauxEtFiltre, 'NiveauxEtude')
     this.checkboxFiltre(niveauxExFiltre, 'NiveauxExperience')
     this.checkboxFiltre(langueFiltre, 'langue')
   }
+
   checkboxFiltre(CheckboxList: any, label: any) {
     let newList2
     let newList3: any = this.offres
@@ -180,5 +189,13 @@ export class ListOffresComponent implements OnInit {
   }
   changeview(or: any) {
     this.orientation = or
+  }
+  sort(type: any) {
+    this.offres.sort((a: any, b: any) =>
+      a[type].toLowerCase() > b[type].toLowerCase() ? 1 : -1,
+    )
+  }
+  sortbyDate() {
+    this.offres.sort((a: any, b: any) => (a.Date < b.Date ? 1 : -1))
   }
 }

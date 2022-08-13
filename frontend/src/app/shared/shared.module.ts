@@ -83,6 +83,8 @@ import { CardTemoignageComponent } from './components/card-temoignage/card-temoi
 
 import { CardOffreVerticaleComponent } from './components/card-offre-Verticale/card-offre-Verticale.component'
 import { CardOffreHorizontaleComponent } from './components/card-offre-horizontale/card-offre-horizontale.component'
+import { CardQuestionReponseComponent } from './components/card-question-reponse/card-question-reponse.component'
+import { NgxPaginationModule } from 'ngx-pagination'
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -122,6 +124,7 @@ let modules: any = [
   MultiSelectModule,
   InputTextareaModule,
   InputTextModule,
+  NgxPaginationModule,
   // end form importes
   AccordionModule,
   ButtonModule,
@@ -168,6 +171,7 @@ let modules: any = [
     CardBlogueurComponent,
     CardTemoignageComponent,
     CardTemoignageComponent,
+    CardQuestionReponseComponent,
   ],
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
   exports: [
@@ -188,6 +192,8 @@ let modules: any = [
     CardBlogueurComponent,
     MapComponent,
     CardTemoignageComponent,
+    CardQuestionReponseComponent,
+
     ...modules,
   ],
 })

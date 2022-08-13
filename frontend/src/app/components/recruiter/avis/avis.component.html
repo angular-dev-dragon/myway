@@ -3,34 +3,34 @@
 </div>
 <div class="section-recruteur">
   <p-tabView>
-    <p-tabPanel header="Parcourir Les Temoignages">
-      <h2 class="title-md bold my-3 blue-color">
-        Liste des Temoignages
-      </h2>
+    <p-tabPanel header="{{ 'globale.parcourir_avis' | translate }}">
+      <h4 class="my-3">
+        {{ 'globale.list_temoignage' | translate }}
+      </h4>
       <div class="" *ngIf="comments.length == 0">
         <p>Auncun Comments trouvés</p>
       </div>
 
       <div *ngIf="comments.length > 0">
-        <app-card-temoignage
-          *ngFor="let comment of comments"
-          class="mb-5"
-          [image]="comment.img"
-          [nom]="comment.nom_ou_pseudo"
-          [fonction]="comment.fonction"
-          [commentaire]="comment.commentaire_intervenent"
-          [date]="comment.date"
-        ></app-card-temoignage>
+        <div class="mb-3" *ngFor="let comment of comments">
+          <app-card-temoignage
+            [image]="comment.img"
+            [nom]="comment.nom_ou_pseudo"
+            [fonction]="comment.fonction"
+            [commentaire]="comment.commentaire_intervenent"
+            [date]="comment.date"
+          ></app-card-temoignage>
+        </div>
       </div>
     </p-tabPanel>
-    <p-tabPanel header="Poser Un Temoignages">
+    <p-tabPanel header="{{ 'globale.donner_avis' | translate }}">
       <form
         id="contactForm"
         (ngSubmit)="sendAvis()"
         [formGroup]="avisForm"
         #form2
       >
-        <h4 class="">Poser Votre Question</h4>
+        <h4 class="">{{ 'globale.donner_avis' | translate }}</h4>
 
         <div class="row">
           <!-- Name input -->

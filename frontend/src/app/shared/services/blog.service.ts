@@ -5,14 +5,13 @@ import { API } from './api.service'
 @Injectable({
   providedIn: 'root',
 })
-export class DocumentService {
+export class BlogService {
   constructor(private http: HttpClient) {}
 
-  getDocuments() {
-    return this.http.get<any[]>(`${API}/doc/document`)
+  getBlogueur() {
+    return this.http.get(API + '/blogueur')
   }
-
-  getDocument_by_id(docId: any) {
-    return this.http.get(`${API}/doc/document/${docId}`)
+  getBlogueurById(id: any) {
+    return this.http.get(API + '/blogueur+' + id)
   }
 }

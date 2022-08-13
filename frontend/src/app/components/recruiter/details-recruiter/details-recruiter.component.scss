@@ -4,24 +4,6 @@
     width: 100%;
     position: relative;
     z-index: 0;
-
-    &::before {
-      content: '';
-      background: linear-gradient(#e66465, #9198e5);
-      //   background: linear-gradient(
-      //     180deg,
-      //     rgba(20, 20, 20, 0) 40%,
-      //     #141414 170%
-      //   );
-      position: absolute;
-      width: 100%;
-      z-index: 10;
-      height: 100%;
-      left: 0;
-      top: 0;
-
-      display: block;
-    }
   }
   .recruteur-info-general {
     width: 100%;
@@ -29,28 +11,11 @@
     /// background-color: rgba(0, 0, 0, 0.5);
     top: -100px;
     height: 100%;
-    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row-reverse;
-    // &::before {
-    //   content: '';
-    //   //background: linear-gradient(#e66465, #9198e5);
-    //   background: linear-gradient(
-    //     180deg,
-    //     rgba(20, 20, 20, 0) 40%,
-    //     #141414 170%
-    //   );
-    //   position: absolute;
-    //   width: 100%;
-
-    //   height: 100%;
-    //   left: 0;
-    //   top: 0;
-
-    //   display: block;
-    // }
+    z-index: 10;
   }
   .header-recruiter-logo {
     height: 115px;
@@ -71,4 +36,21 @@
   position: relative;
 
   top: -100px;
+}
+.top-img-container {
+  position: relative;
+  &::before {
+    content: '';
+    // background: linear-gradient(#e66465, #9198e5);
+    background: linear-gradient(180deg, rgba(20, 20, 20, 0) 30%, #141414 170%);
+    position: absolute;
+    width: 100%;
+
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 5;
+
+    display: block;
+  }
 }

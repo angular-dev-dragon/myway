@@ -25,7 +25,7 @@
                       <input
                         (keyup)="filter()"
                         #search
-                        type="search"
+                        type="text"
                         class="form-control"
                         placeholder="Mot clés, titre du poste..."
                         aria-label="Search"
@@ -39,7 +39,13 @@
                         <i class="fas fa-search"></i>
                       </span>
                     </div>
-                    <h4>test</h4>
+                    <div class="">
+                      <h4 class="grid-title" style="font-size: 25px;">
+                        <i class="fa-solid fa-filter"></i>
+                        Filtrer:
+                      </h4>
+                    </div>
+                    <hr />
                     <div class="accordion-item">
                       <h2
                         class="accordion-header"
@@ -73,10 +79,10 @@
                                     class="form-select"
                                     #secteur
                                   >
-                                    <option value="">
+                                    <option value="" disabled selected>
                                       Sélectionnez un secteur
                                     </option>
-                                    <option value="dog">Tout</option>
+                                    <option value="">Tout</option>
                                     <option value="Agriculture">
                                       Agriculture
                                     </option>
@@ -131,8 +137,10 @@
                                     class="form-select"
                                     #pays
                                   >
-                                    <option value="">choisissez le pays</option>
-                                    <option value="dog">Tout</option>
+                                    <option value="" disabled selected>
+                                      choisissez le pays
+                                    </option>
+                                    <option value="">Tout</option>
                                     <option value="Maroc">Maroc</option>
                                     <option value="Algérie">Algérie</option>
                                     <option value="Tunisie">Tunisie</option>
@@ -151,10 +159,10 @@
                                     class="form-select"
                                     #region
                                   >
-                                    <option value="">
+                                    <option value="" disabled selected>
                                       choisissez la région
                                     </option>
-                                    <option value="dog">Tout</option>
+                                    <option value="">Tout</option>
                                     <option value="cat">Agriculture</option>
                                     <option value="hamster">
                                       Électronique
@@ -175,7 +183,7 @@
                                     class="form-select"
                                     #ville
                                   >
-                                    <option value="">
+                                    <option value="" disabled selected>
                                       choisissez la ville
                                     </option>
                                     <option value="">Tout</option>
@@ -219,7 +227,7 @@
                         aria-labelledby="panelsStayOpen-headingThree"
                       >
                         <div class="accordion-body">
-                          <label class="filter">Début:</label>
+                          <label class="filter">Date de publication:</label>
                           <div
                             class="input-group date form_date"
                             data-date="2014-06-14T05:25:07Z"
@@ -227,6 +235,8 @@
                             data-link-field="dtp_input2"
                           >
                             <input
+                              (change)="filter()"
+                              #date
                               class="input-group date form_date form-control"
                               type="date"
                               id="start"
@@ -234,24 +244,6 @@
                             />
                           </div>
                           <input type="hidden" id="dtp_input1" value="" />
-
-                          <label class="filter" style="padding-top: 20px;">
-                            Fin:
-                          </label>
-                          <div
-                            class="input-group date form_date"
-                            data-date="2014-06-14T05:25:07Z"
-                            data-date-format="dd-mm-yyyy"
-                            data-link-field="dtp_input2"
-                          >
-                            <input
-                              class="input-group date form_date form-control"
-                              type="date"
-                              id="start"
-                              name="trip-start"
-                            />
-                          </div>
-                          <input type="hidden" id="dtp_input2" value="" />
                         </div>
                       </div>
                     </div>
@@ -782,20 +774,24 @@
                           aria-labelledby="navbarDropdown"
                           id="navbarDropdown"
                         >
-                          <li><a class="dropdown-item" href="#">Name</a></li>
-                          <li><a class="dropdown-item" href="#">Date</a></li>
-                          <li><a class="dropdown-item" href="#">View</a></li>
-                          <li><a class="dropdown-item" href="#">Rating</a></li>
+                          <li>
+                            <a class="dropdown-item" (click)="sort('Intitule')">
+                              Name
+                            </a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" (click)="sortbyDate()">
+                              Date
+                            </a>
+                          </li>
                         </ul>
                       </div>
                     </div>
                   </div>
 
                   <!-- BEGIN TABLE RESULT -->
-                  <div class="table-responsive">
-                    <table class="table table-hover">
-                      <tbody>
-                        <!-- <div [routerLink]="['/offres/details-offres']" *ngFor="let offre of offres" style="
+                  <div class="row col-12">
+                    <!-- <div [routerLink]="['/offres/details-offres']" *ngFor="let offre of offres" style="
                             border-bottom: 1px solid #c7c3c3;
                             padding-bottom: 5px;
                             margin-bottom: 6px;
@@ -856,37 +852,35 @@
                             <br />
                           </tr>
                         </div> -->
-                        <div *ngIf="orientation == 'verticale'">
-                          <app-card-offre-Verticale
-                            [routerLink]="['/offres/details-offres']"
-                            *ngFor="let offre of offres"
-                            [Intitule]="offre.Intitule"
-                            [Secteur]="offre.Secteur"
-                            [Poste]="offre.Poste"
-                            [NomEntreprise]="offre.NomEntreprise"
-                            [TypeEntreprise]="offre.TypeEntreprise"
-                            [TypeContrat]="offre.TypeContrat"
-                            [Ville]="offre.Ville"
-                            [Date]="offre.Date"
-                          ></app-card-offre-Verticale>
-                        </div>
-                        <div class="row" *ngIf="orientation == 'horizontale'">
-                          <app-card-offre-horizontale
-                            class="col-md-6"
-                            [routerLink]="['/offres/details-offres']"
-                            *ngFor="let offre of offres"
-                            [Intitule]="offre.Intitule"
-                            [Secteur]="offre.Secteur"
-                            [Poste]="offre.Poste"
-                            [NomEntreprise]="offre.NomEntreprise"
-                            [TypeEntreprise]="offre.TypeEntreprise"
-                            [TypeContrat]="offre.TypeContrat"
-                            [Ville]="offre.Ville"
-                            [Date]="offre.Date"
-                          ></app-card-offre-horizontale>
-                        </div>
-                      </tbody>
-                    </table>
+                    <div *ngIf="orientation == 'verticale'">
+                      <app-card-offre-Verticale
+                        [routerLink]="['/offres/details-offres']"
+                        *ngFor="let offre of offres"
+                        [Intitule]="offre.Intitule"
+                        [Secteur]="offre.Secteur"
+                        [Poste]="offre.Poste"
+                        [NomEntreprise]="offre.NomEntreprise"
+                        [TypeEntreprise]="offre.TypeEntreprise"
+                        [TypeContrat]="offre.TypeContrat"
+                        [Ville]="offre.Ville"
+                        [Date]="offre.Date"
+                      ></app-card-offre-Verticale>
+                    </div>
+                    <div class="row" *ngIf="orientation == 'horizontale'">
+                      <app-card-offre-horizontale
+                        class="col-md-6 mb-3"
+                        [routerLink]="['/offres/details-offres']"
+                        *ngFor="let offre of offres"
+                        [Intitule]="offre.Intitule"
+                        [Secteur]="offre.Secteur"
+                        [Poste]="offre.Poste"
+                        [NomEntreprise]="offre.NomEntreprise"
+                        [TypeEntreprise]="offre.TypeEntreprise"
+                        [TypeContrat]="offre.TypeContrat"
+                        [Ville]="offre.Ville"
+                        [Date]="offre.Date"
+                      ></app-card-offre-horizontale>
+                    </div>
                   </div>
                   <!-- END TABLE RESULT -->
 

@@ -35,8 +35,8 @@
           </div>
         </div>
       </div>
-      <div class="row about-list">
-        <div class="col-md-6">
+      <div class="row about-list" *ngIf="rating || nbBlog">
+        <div class="col-md-6" *ngIf="rating">
           <div class="media">
             <label>
               {{ 'form.rating' | translate }}
@@ -46,10 +46,9 @@
               [disabled]="true"
               [cancel]="false"
             ></p-rating>
-            <p>{{ rating }}</p>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" *ngIf="nbBlog">
           <div class="media">
             <label>{{ 'form.nbBlog' | translate }}</label>
             <p>{{ nbBlog }}</p>

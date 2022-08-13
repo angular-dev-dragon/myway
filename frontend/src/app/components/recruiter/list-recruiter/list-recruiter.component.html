@@ -1,7 +1,10 @@
 <div class="container mt-5">
   <div class="row col-12">
     <app-card-recruiter
-      *ngFor="let recruiter of recruiterList"
+      *ngFor="
+        let recruiter of recruiterList
+          | paginate: { itemsPerPage: 6, currentPage: paginate }
+      "
       [routerLink]="['/recruteur/details-recruteur/presentation']"
       class="col-md-4 col-sm-6"
       [imageBg]="recruiter.imageBg"
@@ -11,6 +14,10 @@
       [salaries]="recruiter.salaries"
       [caption]="recruiter.caption"
     ></app-card-recruiter>
+    <pagination-controls
+      class="text-center"
+      (pageChange)="paginate = $event"
+    ></pagination-controls>
   </div>
 
   <!-- <div class="col-md-4 flex justify-center items-center h-screen">
