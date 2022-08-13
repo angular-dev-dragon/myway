@@ -24,7 +24,7 @@
           <app-card-article
             [routerLink]="['/rubrique/details-article']"
             class="col-md-6 mb-3"
-            *ngFor="let article of articles"
+            *ngFor="let article of membre.articles"
             [image]="article.image"
             [titre]="article.titre"
             [sousTitre]="article.sousTitre"

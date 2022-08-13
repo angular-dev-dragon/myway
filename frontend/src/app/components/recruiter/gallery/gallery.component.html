@@ -1,7 +1,7 @@
 <div class="section-recruteur mb-3">
   <h4>{{ 'globale.gallerie' | translate }}</h4>
 </div>
-<div class="section-recruteur">
+<div class="section-recruteur mb-3">
   <div class="row">
     <div
       class="col-md-6 col-lg-4"
@@ -13,12 +13,12 @@
         [lazyLoad]="gallery"
         [defaultImage]="'assets/images/img-article.webp'"
         alt=""
-        class="img-gallerie"
+        class="img-gallerie border-media"
       />
 
       <video
         *ngIf="gallery?.type_contenu === 'video'"
-        class="img-gallerie"
+        class="img-gallerie border-media"
         src=""
         controls
         type="video/mp4"

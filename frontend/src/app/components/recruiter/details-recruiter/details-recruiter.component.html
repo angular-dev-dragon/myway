@@ -1,12 +1,14 @@
 <div class="mt-5">
   <div class="header-recruiter">
-    <img
-      class="header-recruiter-image"
-      [lazyLoad]="recruiter.imageBg"
-      [defaultImage]="'assets/images/bg-recruiter.jpg'"
-    />
+    <div class="top-img-container">
+      <img
+        class="header-recruiter-image"
+        [lazyLoad]="recruiter.imageBg"
+        [defaultImage]="'assets/images/bg-recruiter.jpg'"
+      />
+    </div>
     <div class="recruteur-info-general container">
-      <div class="logo-societe-container px-3">
+      <div class="logo-societe-container">
         <img
           [lazyLoad]="recruiter.logo"
           [defaultImage]="'assets/images/logo.jpg'"
