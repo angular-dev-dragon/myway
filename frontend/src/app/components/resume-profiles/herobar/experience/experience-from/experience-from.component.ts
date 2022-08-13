@@ -39,8 +39,10 @@ export class ExperienceFromComponent implements OnInit {
   ngOnInit() {}
 
   save_experience_from() {
+     console.log('this.cexperience_from', this.experience_from);
     if (this.experience_from.valid) {
       console.log('this.cexperience_from', this.experience_from);
+
       this.ref.close();
     } else {
       this.experience_from.markAllAsTouched();
