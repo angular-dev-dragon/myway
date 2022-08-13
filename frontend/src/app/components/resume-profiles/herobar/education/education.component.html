@@ -6,7 +6,7 @@
         <div class="herder-top-card">
 
           <h5 class="col"> <i class="fa-solid fa-building-columns"></i> {{'candidat.t.ed'|translate}} </h5>
-          <div (click)="showEdcucation()" class=" icons "></div>
+          <div (click)="open_education_form()" class=" icons "></div>
 
         </div>
         <section class="timeline_area section_padding_130">
@@ -165,11 +165,3 @@
 
 
 
-
-<p-dialog header="Header" [(visible)]=" Edcucation" [style]="{width: '50vw'}">
-  <h1>Edcucation</h1>
-  <h1></h1>
-  <ng-template pTemplate="footer">
-    <p-button icon="pi pi-check" (click)=" Edcucation=false" label="Ok" styleClass="p-button-text"></p-button>
-  </ng-template>
-</p-dialog>

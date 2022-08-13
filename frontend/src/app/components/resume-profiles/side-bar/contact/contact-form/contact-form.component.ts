@@ -15,12 +15,12 @@ import { DynamicDialogRef } from 'primeng/dynamicdialog';
 })
 export class ContactFormComponent implements OnInit {
 
-  public contact_Form: FormGroup;
+  public contact_form: FormGroup;
   constructor(
     private fb: FormBuilder,
     private ref: DynamicDialogRef
   ) {
-    this.contact_Form = this.fb.group({
+    this.contact_form = this.fb.group({
       platform: new FormControl('', [Validators.required]),
       user_name: new FormControl('', [
         Validators.required,
@@ -33,11 +33,11 @@ export class ContactFormComponent implements OnInit {
 
   save_contact_from() {
 
-    if (this.contact_Form.valid) {
-      console.log('this.contact_Form', this.contact_Form);
+    if (this.contact_form.valid) {
+      console.log('this.contact_form', this.contact_form);
        this.ref.close();
     } else {
-      this.contact_Form.markAllAsTouched();
+      this.contact_form.markAllAsTouched();
       console.log('not valid');
     }
   }

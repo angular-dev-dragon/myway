@@ -1,1 +1,11 @@
-<p>langouge-form works!</p>
+<form [formGroup]="langouge_form" (ngSubmit)="save_langouge_from()">
+  <h1>langouge</h1>
+  <div class="modal-footer">
+    <div class="row">
+      <button type="submit" class="btn btn-info">
+        save
+      </button>
+    </div>
+
+  </div>
+</form>

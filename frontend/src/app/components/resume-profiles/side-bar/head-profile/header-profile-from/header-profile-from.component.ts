@@ -27,13 +27,13 @@ export class HeaderProfileFromComponent implements OnInit {
   profileImg: string | undefined;
   profileImgo: string | undefined;
 
-  public headerProfileForm: FormGroup;
+  public header_profile_form: FormGroup;
   constructor(
     private fb: FormBuilder,
     private Countriesinfo: CountriesInfoService,
     private ref: DynamicDialogRef
   ) {
-    this.headerProfileForm = this.fb.group({
+    this.header_profile_form = this.fb.group({
       name: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
@@ -99,10 +99,10 @@ export class HeaderProfileFromComponent implements OnInit {
 
   save_header_profile_from() {
 
-    if (this.headerProfileForm.valid) {
+    if (this.header_profile_form.valid) {
       this.ref.close();
     } else {
-      this.headerProfileForm.markAllAsTouched();
+      this.header_profile_form.markAllAsTouched();
       console.log('not valid');
     }
   }
