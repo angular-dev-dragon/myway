@@ -15,12 +15,23 @@ import { DynamicDialogRef } from 'primeng/dynamicdialog';
 })
 export class CertificatsFromComponent implements OnInit {
 public certificat_form: FormGroup;
-
+certificat_form_certificat_discription_input_value='';
   constructor(private fb: FormBuilder, private ref: DynamicDialogRef){
     this.certificat_form = this.fb.group({
-      //   langouge_form_langouge_name_input: new FormControl('', [
-      //     Validators.required,
-      //   ]),
+
+      certificat_form_certificat_date_input: new FormControl('', [
+        Validators.required,
+      ]),
+
+      certificat_form_certificat_titale_input: new FormControl('', [
+        Validators.required,
+      ]),
+      certificat_form_certificat_type_input: new FormControl('', [
+        Validators.required,
+      ]),
+      certificat_form_certificat_discription_input: new FormControl('', [
+        Validators.required
+      ]),
     });
   }
   ngOnInit(): void {

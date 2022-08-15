@@ -23,12 +23,28 @@ import { DynamicDialogRef } from 'primeng/dynamicdialog';
 })
 export class EducationFromComponent implements OnInit {
   public education_form: FormGroup;
-  active = 1;
+
   constructor(private fb: FormBuilder, private ref: DynamicDialogRef) {
     this.education_form = this.fb.group({
-      //   langouge_form_langouge_name_input: new FormControl('', [
-      //     Validators.required,
-      //   ]),
+      education_form_start_date_input: new FormControl('', [
+        Validators.required,
+      ]),
+      education_form_end_date_input: new FormControl('', [Validators.required]),
+      education_form_not_end__checkbox: new FormControl('', [
+        Validators.required,
+      ]),
+      education_form_education_fiield_input: new FormControl('', [
+        Validators.required,
+      ]),
+      education_form_education_school_input: new FormControl('', [
+        Validators.required,
+      ]),
+      education_form_education_contry_input: new FormControl('', [
+        Validators.required,
+      ]),
+      education_form_education_ctiy_input: new FormControl('',
+        [Validators.required]),
+ 
     });
   }
   ngOnInit() {}
