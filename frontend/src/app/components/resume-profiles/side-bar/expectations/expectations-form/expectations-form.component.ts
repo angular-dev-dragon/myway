@@ -20,12 +20,14 @@ export class ExpectationsFormComponent implements OnInit {
   public expectations_form: FormGroup;
   constructor(private fb: FormBuilder, private ref: DynamicDialogRef) {
     this.expectations_form = this.fb.group({
-      platform: new FormControl('', [Validators.required]),
-      user_name: new FormControl('', [
-        Validators.required,
-        Validators.minLength(3),
-        Validators.maxLength(150),
-      ]),
+      expectations_form_job_fild_1_input: new FormControl('', [Validators.required,]),
+      expectations_form_job_fild_2_input: new FormControl('', [Validators.required,]),
+      expectations_form_job_fild_3_input: new FormControl('', [Validators.required,]),
+      expectations_form_contry_input: new FormControl('',     [Validators.required,]),
+      expectations_form_ctiy_input: new FormControl('',       [Validators.required,]),
+      expectations_form_time_input: new FormControl('',       [Validators.required,]),
+      expectations_form_conteract_type_input: new FormControl('',[Validators.required,]),
+      expectations_form_saliry_input: new FormControl('',        [Validators.required,]),
     });
   }
   ngOnInit() {}

@@ -1,4 +1,4 @@
-import { ExpectationsFormComponent } from './../../side-bar/expectations/expectations-form/expectations-form.component';
+
 
 
 
@@ -6,6 +6,7 @@ import { Component,  OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
+import { ExperienceFromComponent } from './experience-from/experience-from.component';
 
 
 @Component({
@@ -69,7 +70,7 @@ export class ExperienceComponent implements OnInit {
       this.f_w = '70%';
     }
 
-    this.ref = this.dialogService.open(ExpectationsFormComponent, {
+    this.ref = this.dialogService.open(ExperienceFromComponent, {
       header: 'Choose a Product',
       width: this.f_w,
       contentStyle: { 'max-height': '500px', overflow: 'auto' },

@@ -1,3 +1,4 @@
+import { EducationCerificatLayoutComponent } from './education-cerificat-layout/education-cerificat-layout.component';
 
 
 import { Component, OnInit } from '@angular/core';
@@ -68,10 +69,10 @@ export class EducationComponent implements OnInit {
       this.f_w = '70%';
     }
 
-    this.ref = this.dialogService.open(EducationFromComponent, {
+    this.ref = this.dialogService.open(EducationCerificatLayoutComponent, {
       header: 'Choose a Product',
       width: this.f_w,
-      contentStyle: { 'max-height': '500px', overflow: 'auto' },
+      contentStyle: { 'max-height': '700px', overflow: 'auto' },
       baseZIndex: 10000,
     });
   }

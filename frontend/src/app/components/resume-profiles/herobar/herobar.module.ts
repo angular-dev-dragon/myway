@@ -12,6 +12,9 @@ import { AchievementFromComponent } from './achievement/achievement-from/achieve
 import { EducationFromComponent } from './education/education-from/education-from.component';
 import { ExperienceFromComponent } from './experience/experience-from/experience-from.component';
 import { HobbiesFromComponent } from './hobbies/hobbies-from/hobbies-from.component';
+import { CertificatsFromComponent } from './certificat/certificats-from/certificats-from.component';
+import { EducationCerificatLayoutComponent } from './education/education-cerificat-layout/education-cerificat-layout.component';
+
 
 @NgModule({
   declarations: [
@@ -26,8 +29,12 @@ import { HobbiesFromComponent } from './hobbies/hobbies-from/hobbies-from.compon
     EducationFromComponent,
     ExperienceFromComponent,
     HobbiesFromComponent,
+    CertificatsFromComponent,
+    EducationCerificatLayoutComponent,
   ],
-  imports: [CommonModule, SharedModule],
-  exports: [LayoutComponent],
+  imports: [CommonModule, SharedModule,],
+  exports: [LayoutComponent,],
+
+
 })
 export class HerobarModule {}

@@ -5,7 +5,6 @@ import { CardRecruiterComponent } from './components/card-recruiter/card-recruit
 import { ContentLayoutComponent } from './components/layouts/content-layout.component'
 import { RouterModule } from '@angular/router'
 // import { SkeletonModule } from 'primeng/skeleton'
-
 import { ButtonModule } from 'primeng/button'
 import { RippleModule } from 'primeng/ripple'
 import { TabViewModule } from 'primeng/tabview'
@@ -26,26 +25,20 @@ import {
 } from '@ngx-translate/core'
 import { RatingModule } from 'primeng/rating'
 import { DialogModule } from 'primeng/dialog'
-
 import { BrowserModule } from '@angular/platform-browser'
-
 import { CardArticleComponent } from './components/card-article/card-article.component'
 import { CardDocumentComponent } from './components/card-document/card-document.component'
 import { MapComponent } from './components/map/map.component'
-
 import { CardForumComponent } from './components/card-forum/card-forum.component'
 import { SondageHistoriqueComponent } from './components/sondage-historique/sondage-historique.component'
 import { CardBlogueurComponent } from './components/card-blogueur/card-blogueur.component'
-
 import { ProgressSpinnerModule } from 'primeng/progressspinner'
 import { ToastModule } from 'primeng/toast'
-
 // form importes
 // form importes
 // form importes
 // form importes
 import { FileUploadModule } from 'primeng/fileupload'
-
 import { AutoCompleteModule } from 'primeng/autocomplete'
 import { CalendarModule } from 'primeng/calendar'
 import { ChipsModule } from 'primeng/chips'
@@ -70,24 +63,22 @@ import { ToggleButtonModule } from 'primeng/togglebutton'
 import { TriStateCheckboxModule } from 'primeng/tristatecheckbox'
 import { SplitButtonModule } from 'primeng/splitbutton'
 import { SpeedDialModule } from 'primeng/speeddial'
-
 import { MatMenuModule } from '@angular/material/menu'
+// end form importes
+// end form importes
+// end form importes
+// end form importes
 
-// end form importes
-// end form importes
-// end form importes
-// end form importes
 import { MatSliderModule } from '@angular/material/slider'
-
 import { CardTemoignageComponent } from './components/card-temoignage/card-temoignage.component'
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CardOffreVerticaleComponent } from './components/card-offre-Verticale/card-offre-Verticale.component'
 import { CardOffreHorizontaleComponent } from './components/card-offre-horizontale/card-offre-horizontale.component'
 import { CardQuestionReponseComponent } from './components/card-question-reponse/card-question-reponse.component'
 import { NgxPaginationModule } from 'ngx-pagination'
-
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
+
 }
 
 let modules: any = [
@@ -99,6 +90,7 @@ let modules: any = [
   ToastModule,
   ProgressSpinnerModule,
   // form importes
+ NgbModule,
   FileUploadModule,
   CheckboxModule,
   InputSwitchModule,
