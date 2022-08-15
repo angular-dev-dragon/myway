@@ -8,11 +8,13 @@ import { filter } from 'rxjs'
 })
 export class ListOffresComponent implements OnInit {
   orientation: any = 'verticale'
+  paginate: any = ''
   offres: any = [
     {
       Intitule: 'Développeur1',
       TypeContrat: 'CDI',
-      Poste: 'Développeur Front-End',
+      Poste:
+        ' Développeur Front-End Développeur Front-End Développeur Front-End',
       NomEntreprise: 'Jumia',
       TypeEntreprise: 'StartUp',
       Image: '',

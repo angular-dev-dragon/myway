@@ -12,7 +12,7 @@
             <div class="grid-body">
               <div class="row">
                 <!-- BEGIN FILTERS -->
-                <div class="col-md-3">
+                <div class="col-md-3 test">
                   <h2 class="grid-title" style="font-size: 25px;">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     Recherche :
@@ -855,7 +855,11 @@
                     <div *ngIf="orientation == 'verticale'">
                       <app-card-offre-Verticale
                         [routerLink]="['/offres/details-offres']"
-                        *ngFor="let offre of offres"
+                        *ngFor="
+                          let offre of offres
+                            | paginate
+                              : { itemsPerPage: 20, currentPage: paginate }
+                        "
                         [Intitule]="offre.Intitule"
                         [Secteur]="offre.Secteur"
                         [Poste]="offre.Poste"
@@ -865,12 +869,20 @@
                         [Ville]="offre.Ville"
                         [Date]="offre.Date"
                       ></app-card-offre-Verticale>
+                      <pagination-controls
+                        class="text-center"
+                        (pageChange)="paginate = $event"
+                      ></pagination-controls>
                     </div>
                     <div class="row" *ngIf="orientation == 'horizontale'">
                       <app-card-offre-horizontale
                         class="col-md-6 mb-3"
                         [routerLink]="['/offres/details-offres']"
-                        *ngFor="let offre of offres"
+                        *ngFor="
+                          let offre of offres
+                            | paginate
+                              : { itemsPerPage: 20, currentPage: paginate }
+                        "
                         [Intitule]="offre.Intitule"
                         [Secteur]="offre.Secteur"
                         [Poste]="offre.Poste"
@@ -880,21 +892,13 @@
                         [Ville]="offre.Ville"
                         [Date]="offre.Date"
                       ></app-card-offre-horizontale>
+                      <pagination-controls
+                        class="text-center"
+                        (pageChange)="paginate = $event"
+                      ></pagination-controls>
                     </div>
                   </div>
                   <!-- END TABLE RESULT -->
-
-                  <!-- BEGIN PAGINATION -->
-                  <ul class="pagination">
-                    <li class="disabled"><a href="#">«</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">»</a></li>
-                  </ul>
-                  <!-- END PAGINATION -->
                 </div>
                 <!-- END RESULT -->
               </div>

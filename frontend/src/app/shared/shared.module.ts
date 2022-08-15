@@ -107,6 +107,7 @@ let modules: any = [
   KeyFilterModule,
   ListboxModule,
   SliderModule,
+  NgxPaginationModule,
   RadioButtonModule,
   PasswordModule,
   SelectButtonModule,
@@ -124,7 +125,7 @@ let modules: any = [
   MultiSelectModule,
   InputTextareaModule,
   InputTextModule,
-  NgxPaginationModule,
+
   // end form importes
   AccordionModule,
   ButtonModule,

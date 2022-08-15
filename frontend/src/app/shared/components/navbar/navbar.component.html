@@ -54,15 +54,39 @@
             <li><a class="dropdown-item" href="#">Offres de stage</a></li>
             <li><a class="dropdown-item" href="#">Demande spécifique</a></li>
             <li>
-              <a  class="dropdown-item" [routerLink]="['/resume-profiles/cv']">
+              <a class="dropdown-item" [routerLink]="['/resume-profiles/cv']">
                 condidateurs
               </a>
             </li>
           </ul>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="#">Compétences</a>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link"
+            class="nav-link dropdown-toggle"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            href="#"
+          >
+            Compétences
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" [routerLink]="['/recruteur']">
+                Candidats
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Bilan de compétences</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                Candidatures spontanées
+              </a>
+            </li>
+          </ul>
         </li>
 
         <li class="nav-item dropdown">
@@ -210,6 +234,8 @@
             </li>
           </ul>
         </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
         <li class="nav-item dropdown">
           <a
             class="dropdown-toggle"
@@ -219,15 +245,9 @@
             aria-expanded="false"
             style="padding-left: 30px;"
           >
-            <img
-              src=""
-              alt="mdo"
-              width="32"
-              height="32"
-              class="rounded-circle"
-            />
+            <i class="fa-solid fa-user"></i>
           </a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu" style="transform: translate(-100px, 5px);">
             <li><a class="dropdown-item" href="#">Se connecter</a></li>
             <li><a class="dropdown-item" href="#">S'inscrire</a></li>
             <!-- <li><a class="dropdown-item" href="#">Profile</a></li> -->
