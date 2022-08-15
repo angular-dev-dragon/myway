@@ -24,12 +24,12 @@ export class HobbiesFromComponent implements OnInit {
   public hobbies_from: FormGroup;
   constructor(private fb: FormBuilder, private ref: DynamicDialogRef) {
     this.hobbies_from = this.fb.group({
-      // platform: new FormControl('', [Validators.required]),
-      // user_name: new FormControl('', [
-      //   Validators.required,
-      //   Validators.minLength(3),
-      //   Validators.maxLength(150),
-      // ]),
+      hobbies_from_hobbies_name_inpute: new FormControl('', [
+        Validators.required
+      ]),
+      hobbies_from_hobbies_icon_inpute: new FormControl('', [
+        Validators.required,
+      ]),
     });
   }
   ngOnInit() {}
