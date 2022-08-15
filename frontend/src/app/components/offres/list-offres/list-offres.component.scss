@@ -107,3 +107,9 @@ body {
 .custom-navbar {
   right: 0;
 }
+
+@media (max-width: 991px) {
+  .test {
+    display: none;
+  }
+}
