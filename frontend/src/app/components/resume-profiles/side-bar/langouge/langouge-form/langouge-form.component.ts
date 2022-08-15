@@ -23,13 +23,12 @@ export class LangougeFormComponent implements OnInit {
   public langouge_form: FormGroup;
   constructor(private fb: FormBuilder, private ref: DynamicDialogRef) {
     this.langouge_form = this.fb.group({
-
-      // platform: new FormControl('', [Validators.required]),
-      // user_name: new FormControl('', [
-      //   Validators.required,
-      //   Validators.minLength(3),
-      //   Validators.maxLength(150),
-      // ]),
+      langouge_form_langouge_name_input: new FormControl('', [
+        Validators.required,
+      ]),
+      langouge_form_langouge_lavel_input: new FormControl('', [
+        Validators.required,
+      ]),
     });
   }
   ngOnInit() {}

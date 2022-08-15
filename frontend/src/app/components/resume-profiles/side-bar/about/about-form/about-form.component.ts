@@ -16,15 +16,10 @@ import { DynamicDialogRef } from 'primeng/dynamicdialog';
 })
 export class AboutFormComponent implements OnInit {
   public about_form: FormGroup;
+  about_form_input_value: string = '';
   constructor(private fb: FormBuilder, private ref: DynamicDialogRef) {
     this.about_form = this.fb.group({
-
-      // platform: new FormControl('', [Validators.required]),
-      // user_name: new FormControl('', [
-      //   Validators.required,
-      //   Validators.minLength(3),
-      //   Validators.maxLength(150),
-      // ]),
+      about_form_input: new FormControl('', [Validators.required]),
     });
   }
   ngOnInit() {}

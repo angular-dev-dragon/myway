@@ -1,0 +1,243 @@
+<form [formGroup]="certificat_form" (ngSubmit)="save_certificat_form()">
+  <div class="row">
+    <!-- numer -->
+    <div class="mb-3 col-md-5">
+      <label class="form-label" for="certificat_form_saliry_input">
+        {{ "salery" | translate }}
+      </label>
+      <input
+        class="form-control"
+        id="certificat_form_saliry_input"
+        type="number"
+        placeholder="{{ 'salery' | translate }}"
+        formControlName="certificat_form_saliry_input"
+        name="certificat_form_saliry_input"
+        [ngClass]="{
+          'is-invalid':
+            certificat_form.get('certificat_form_saliry_input')?.touched &&
+            certificat_form.get('certificat_form_saliry_input')?.invalid
+        }"
+      />
+      <div
+        *ngIf="
+          certificat_form.get('certificat_form_saliry_input')?.touched &&
+          certificat_form.get('certificat_form_saliry_input')?.invalid
+        "
+        class="invalid-feedback mb-2"
+      >
+        <div
+          *ngIf="certificat_form.get('certificat_form_saliry_input')?.errors?.['required']"
+        >
+          {{ "form.champ_oblig" | translate }}
+        </div>
+      </div>
+    </div>
+
+    <!-- numer -->
+    <div class="mb-3 col-md-5">
+      <label class="form-label" for="certificat_form_saliry_input">
+        {{ "salery" | translate }}
+      </label>
+      <input
+        class="form-control"
+        id="certificat_form_saliry_input"
+        type="number"
+        placeholder="{{ 'salery' | translate }}"
+        formControlName="certificat_form_saliry_input"
+        name="certificat_form_saliry_input"
+        [ngClass]="{
+          'is-invalid':
+            certificat_form.get('certificat_form_saliry_input')?.touched &&
+            certificat_form.get('certificat_form_saliry_input')?.invalid
+        }"
+      />
+      <div
+        *ngIf="
+          certificat_form.get('certificat_form_saliry_input')?.touched &&
+          certificat_form.get('certificat_form_saliry_input')?.invalid
+        "
+        class="invalid-feedback mb-2"
+      >
+        <div
+          *ngIf="certificat_form.get('certificat_form_saliry_input')?.errors?.['required']"
+        >
+          {{ "form.champ_oblig" | translate }}
+        </div>
+      </div>
+    </div>
+
+    <!-- chack box -->
+    <div class="form-check mb-3 mt-4-5 col-md-2">
+      <input
+        class="form-check-input ch-w"
+        type="checkbox"
+        value=""
+        id="flexCheckIndeterminate"
+      />
+      <label class="form-check-label" for="flexCheckIndeterminate">
+        checkbox
+      </label>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Name input -->
+    <div class="mb-3 col-md-6">
+      <label class="form-label" for="name">
+        {{ "form.nom" | translate }}
+      </label>
+      <input
+        class="form-control"
+        id="name"
+        type="text"
+        placeholder="{{ 'form.exp_nom' | translate }}"
+        [ngClass]="{
+          'is-invalid':
+            certificat_form.get('name')?.touched &&
+            certificat_form.get('name')?.invalid
+        }"
+        formControlName="name"
+        name="name"
+      />
+      <div
+        *ngIf="
+          certificat_form.get('name')?.touched &&
+          certificat_form.get('name')?.invalid
+        "
+        class="invalid-feedback mb-2"
+      >
+        <div *ngIf="certificat_form.get('name')?.errors?.['required']">
+          {{ "form.champ_oblig" | translate }}
+        </div>
+        <div *ngIf="certificat_form.get('name')?.errors?.['minlength']">
+          {{ "form.champ_3" | translate }}
+        </div>
+        <div *ngIf="certificat_form.get('name')?.errors?.['maxlength']">
+          {{ "form.champ_30" | translate }}
+        </div>
+      </div>
+    </div>
+
+    <!-- Name input -->
+    <div class="mb-3 col-md-6">
+      <label class="form-label" for="name">
+        {{ "form.nom" | translate }}
+      </label>
+      <input
+        class="form-control"
+        id="name"
+        type="text"
+        placeholder="{{ 'form.exp_nom' | translate }}"
+        [ngClass]="{
+          'is-invalid':
+            certificat_form.get('name')?.touched &&
+            certificat_form.get('name')?.invalid
+        }"
+        formControlName="name"
+        name="name"
+      />
+      <div
+        *ngIf="
+          certificat_form.get('name')?.touched &&
+          certificat_form.get('name')?.invalid
+        "
+        class="invalid-feedback mb-2"
+      >
+        <div *ngIf="certificat_form.get('name')?.errors?.['required']">
+          {{ "form.champ_oblig" | translate }}
+        </div>
+        <div *ngIf="certificat_form.get('name')?.errors?.['minlength']">
+          {{ "form.champ_3" | translate }}
+        </div>
+        <div *ngIf="certificat_form.get('name')?.errors?.['maxlength']">
+          {{ "form.champ_30" | translate }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- adriss -->
+  <div class="row">
+    <!-- contry -->
+    <div class="col-md-6">
+      <label for="certificat_form_contry_input" class="form-label">
+        {{ "certificat_form_contry_input" | translate }}
+      </label>
+      <select
+        class="form-select"
+        id="certificat_form_contry_input"
+        formControlName="certificat_form_contry_input"
+        name="certificat_form_contry_input"
+        [ngClass]="{
+          'is-invalid':
+            certificat_form.get('certificat_form_contry_input')?.touched &&
+            certificat_form.get('certificat_form_contry_input')?.invalid
+        }"
+      >
+        <option selected disabled value="">Choose...</option>
+        <option>...</option>
+      </select>
+
+      <div
+        *ngIf="
+          certificat_form.get('certificat_form_contry_input')?.touched &&
+          certificat_form.get('certificat_form_contry_input')?.invalid
+        "
+        class="invalid-feedback"
+      >
+        <div
+          *ngIf="certificat_form.get('certificat_form_contry_input')?.errors?.['required']"
+        >
+          {{ "certificat_form_contry_input not valid" | translate }}
+        </div>
+      </div>
+    </div>
+    <!-- ctiy -->
+    <div class="col-md-6">
+      <label for="certificat_form_ctiy_input" class="form-label">
+        {{ "certificat_form_ctiy_input" | translate }}
+      </label>
+      <select
+        class="form-select"
+        id="certificat_form_ctiy_input"
+        formControlName="certificat_form_ctiy_input"
+        name="certificat_form_ctiy_input"
+        [ngClass]="{
+          'is-invalid':
+            certificat_form.get('certificat_form_ctiy_input')?.touched &&
+            certificat_form.get('certificat_form_ctiy_input')?.invalid
+        }"
+      >
+        <option selected disabled value="">Choose...</option>
+        <option>...</option>
+      </select>
+
+      <div
+        *ngIf="
+          certificat_form.get('certificat_form_ctiy_input')?.touched &&
+          certificat_form.get('certificat_form_ctiy_input')?.invalid
+        "
+        class="invalid-feedback"
+      >
+        <div
+          *ngIf="certificat_form.get('certificat_form_ctiy_input')?.errors?.['required']"
+        >
+          {{ "certificat_form_ctiy_input not valid" | translate }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <button type="button" class="btn btn-warning px-5 addbtn">
+      <i class="fa-solid fa-circle-plus"></i>
+      add
+    </button>
+  </div>
+
+  <div class="modal-footer">
+    <div class="row">
+      <button type="submit" class="btn btn-info">save cersteficat form</button>
+    </div>
+  </div>
+</form>
