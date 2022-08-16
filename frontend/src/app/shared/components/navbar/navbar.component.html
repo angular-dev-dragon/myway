@@ -53,11 +53,7 @@
             </li>
             <li><a class="dropdown-item" href="#">Offres de stage</a></li>
             <li><a class="dropdown-item" href="#">Demande spécifique</a></li>
-            <li>
-              <a class="dropdown-item" [routerLink]="['/resume-profiles/cv']">
-                condidateurs
-              </a>
-            </li>
+
           </ul>
         </li>
 
@@ -245,12 +241,16 @@
             aria-expanded="false"
             style="padding-left: 30px;"
           >
-            <i class="fa-solid fa-user"></i>
+          <img src="https://avatars.githubusercontent.com/u/71600486?v=4" alt="mdo" width="32" height="32" class="rounded-circle" />
           </a>
           <ul class="dropdown-menu" style="transform: translate(-100px, 5px);">
-            <li><a class="dropdown-item" href="#">Se connecter</a></li>
-            <li><a class="dropdown-item" href="#">S'inscrire</a></li>
-            <!-- <li><a class="dropdown-item" href="#">Profile</a></li> -->
+            <!-- <li><a class="dropdown-item" href="#">Se connecter</a></li> -->
+            <!-- <li><a class="dropdown-item" href="#">S'inscrire</a></li> -->
+            <li>
+              <a class="dropdown-item" [routerLink]="['/resume-profiles/cv']">
+                view Profile
+              </a>
+            </li>
             <li>
               <hr class="dropdown-divider" />
             </li>
