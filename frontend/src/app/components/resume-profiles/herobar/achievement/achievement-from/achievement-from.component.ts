@@ -20,10 +20,19 @@ import { DynamicDialogRef } from 'primeng/dynamicdialog';
   styleUrls: ['./achievement-from.component.scss'],
 })
 export class AchievementFromComponent implements OnInit {
+  achievement_from_achievement_discription_input_value: string = '';
   public achievement_from: FormGroup;
   constructor(private fb: FormBuilder, private ref: DynamicDialogRef) {
     this.achievement_from = this.fb.group({
-      // platform: new FormControl('', [Validators.required]),
+      achievement_from_achievement_date_input: new FormControl('', [
+        Validators.required,
+      ]),
+      achievement_from_achievement_titale_input: new FormControl('', [
+        Validators.required,
+      ]),
+      achievement_from_achievement_discription_input: new FormControl('', [
+        Validators.required,
+      ]),
       // user_name: new FormControl('', [
       //   Validators.required,
       //   Validators.minLength(3),

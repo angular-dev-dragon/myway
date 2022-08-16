@@ -1,20 +1,18 @@
 
 <form [formGroup]="contact_form" (ngSubmit)="save_contact_from()">
-
-  <div class="row">
+<div class="row">
 
   <!-- platform inute -->
-    <div class="col-md-4">
+  <div class="col-md-4">
 
-      <label for="platform" class="form-label">{{
+    <label for="platform" class="form-label">{{
               "platform" | translate
             }}</label>
     <div class="input-group mb-4">
       <span class="input-group-text" id="basic-addon1">
         <i class="fa-solid fa-notes-medical"></i>
       </span>
-      <select class="form-select" id="platform" formControlName="platform"  name="platform"
-        [ngClass]="{
+      <select class="form-select" id="platform" formControlName="platform" name="platform" [ngClass]="{
                 'is-invalid':
                   contact_form.get('platform')?.touched &&
                   contact_form.get('platform')?.invalid
@@ -28,67 +26,61 @@
         <option value="spider">Santé</option>
         <option value="goldfish">Textile</option>
       </select>
-      </div>
-      <div *ngIf="
+    </div>
+    <div *ngIf="
                 contact_form.get('platform')?.touched &&
                 contact_form.get('platform')?.invalid
               " class="invalid-feedback">
-        <div *ngIf="contact_form.get('platform')?.errors?.['required']">
-          {{ "form.champ_oblig" | translate }}
-        </div>
-        <div *ngIf="contact_form.get('platform')?.errors?.['pattern']">
-          {{ "form.tel_valid" | translate }}
-        </div>
-        <div *ngIf="contact_form.get('platform')?.errors?.['minlength']">
-          {{ "form.champ_10" | translate }}
-        </div>
+      <div *ngIf="contact_form.get('platform')?.errors?.['required']">
+        {{ "form.champ_oblig" | translate }}
+      </div>
+      <div *ngIf="contact_form.get('platform')?.errors?.['pattern']">
+        {{ "form.tel_valid" | translate }}
+      </div>
+      <div *ngIf="contact_form.get('platform')?.errors?.['minlength']">
+        {{ "form.champ_10" | translate }}
       </div>
     </div>
-    <!-- user name input-->
+  </div>
+  <!-- user name input-->
 
-    <div class="mb-3 col-md-8">
-      <label class="form-label" for="user_name">
-        {{ "user_name" | translate }}
-      </label>
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">@</span>
-      <input
-      class="form-control"
-      id="user_name"
-      type="text"
-      placeholder="{{ 'form.exp_nom' | translate }}"
-      [ngClass]="{
+  <div class="mb-3 col-md-8">
+    <label class="form-label" for="user_name">
+      {{ "user_name" | translate }}
+    </label>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">@</span>
+      <input class="form-control" id="user_name" type="text" placeholder="{{ 'form.exp_nom' | translate }}" [ngClass]="{
           'is-invalid':
             contact_form.get('user_name')?.touched &&
             contact_form.get('user_name')?.invalid
-        }"
-      formControlName="user_name"
-      name="user_name"
-      aria-label="Username"
-      aria-describedby="basic-addon1"
-
-
-
-        />
-        </div>
-      <div *ngIf="
+        }" formControlName="user_name" name="user_name" aria-label="Username" aria-describedby="basic-addon1" />
+    </div>
+    <div *ngIf="
           contact_form.get('user_name')?.touched &&
           contact_form.get('user_name')?.invalid
         " class="invalid-feedback mb-2">
-        <div *ngIf="contact_form.get('user_name')?.errors?.['required']">
-          {{ "form.champ_oblig" | translate }}
-        </div>
-        <div *ngIf="contact_form.get('user_name')?.errors?.['minlength']">
-          {{ "form.champ_3" | translate }}
-        </div>
-        <div *ngIf="contact_form.get('user_name')?.errors?.['maxlength']">
-          {{ "form.champ_30" | translate }}
-        </div>
+      <div *ngIf="contact_form.get('user_name')?.errors?.['required']">
+        {{ "form.champ_oblig" | translate }}
+      </div>
+      <div *ngIf="contact_form.get('user_name')?.errors?.['minlength']">
+        {{ "form.champ_3" | translate }}
+      </div>
+      <div *ngIf="contact_form.get('user_name')?.errors?.['maxlength']">
+        {{ "form.champ_30" | translate }}
       </div>
     </div>
-
   </div>
 
+</div>
+<div class="row">
+
+  <button type="button" class="btn btn-warning px-5 addbtn  ">
+    <i class="fa-solid fa-circle-plus"></i>
+    add
+  </button>
+
+</div>
 
 <div class="modal-footer">
   <div class="row">
