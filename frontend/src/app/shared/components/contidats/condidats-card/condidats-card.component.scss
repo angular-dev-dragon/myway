@@ -5,15 +5,7 @@
 
   .bg-info {
 
-
-background: radial-gradient(circle, rgba(238, 174, 174, 1) 0%, rgba(176, 179, 225, 1) 14%, rgba(171, 209, 193, 1) 64%, rgba(195, 207, 173, 1) 85%, rgba(148, 233, 231, 1) 100%);
-
-
-
-
-
-
-
+          background-color: #f9f9f9 !important;
 }
 
   .bg-primary {
@@ -33,35 +25,67 @@ body {
 }
 $a:#11e279;
 $b: #e21111;
-$card-hover-bg:  linear-gradient(90deg, rgba(58, 173, 180, 1) 0%, rgba(253, 29, 29, 1) 75%, rgba(252, 176, 69, 1) 100%);
+$card-hover-bg_7: linear-gradient(90deg, rgba(58, 173, 180, 1) 0%, rgba(253, 29, 29, 1) 75%, rgba(252, 176, 69, 1) 100%);
+$card-hover-bg:  #ffffff;
 .rounded-circle{
   background-color:$a;
   border-radius: 50%;
 
 }
-card-imgg{
-  background-color:$b;
+.card-imgg{
+
   border-radius: 50%;
   margin: auto;
+        &:hover {
+
+
+            margin-top: -2px;
+            margin-bottom: 2px;
+            box-shadow: 10px 1px 10px 10px rgba(255, 255, 255, 0.75);
+
+          }
 }
 
 .card-namee{
 
   font-size: 1.4rem;
   font-weight: 900;
+        &:hover {
 
+
+            margin-top: -2px;
+            margin-bottom: 18px;
+            color: #fff;
+
+          }
 }
 .address{
   font-size: .8rem;
     font-weight: 800;
     color: #888686;
     margin-top: -0.8rem;
+            &:hover {
+
+
+                margin-top: -15px;
+                margin-bottom: 18px;
+                color: #fff;
+
+              }
 }
 .age{
   font-size: .8rem;
   font-weight: 800;
   color: #888686;
   margin-top: -0.8rem;
+              &:hover {
+
+
+                  margin-top: -15px;
+                  margin-bottom: 18px;
+                  color: #fff;
+
+                }
 }
 .feature-box-1 {
   padding: 10px;
@@ -77,6 +101,121 @@ card-imgg{
   transition: ease all 0.35s;
   top: 0;
 }
+.job_type{
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #888686;
+  background-color: #13ec6d;
+  margin-top: -0.8rem;
+  width: 60px;
+  padding-inline-start: 3px;
+  border-radius: 30px;
+  border: #6b6b6b solid 1px;
+  margin: 10px 30px;
+      &:hover {
+
+
+          margin-top: 8px;
+          margin-bottom: 12px;
+
+        }
+
+}
+.more{
+  &:hover {
+    color: #fff;
+    background: #23e67e;
+      -moz-transition: ease all 0.35s;
+        -o-transition: ease all 0.35s;
+        -webkit-transition: ease all 0.35s;
+        transition: ease all 0.35s;
+  }
+}
+
+ .tags{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  .badge{
+    margin-right: 10px;
+
+  }
+  .badge_bg{
+    background-color:#f3f1ee;
+    border-radius: 30px;
+    border: #6b6b6b solid 1px;
+    color: #a3a3a3;
+
+    &:hover {
+      background-color: #23e67e;
+      color: #ffffff;
+
+  -moz-transition: ease all 0.35s;
+    -o-transition: ease all 0.35s;
+    -webkit-transition: ease all 0.35s;
+    transition: ease all 0.35s;
+  }
+ }
+ }
+.job_type_in{
+  margin:auto;
+}
+.tital_job{
+  font-weight: 700;
+    color: #20247b;
+    font-size: 20px;
+    margin: 0 0 8px;
+    border-left: 5px solid #fc5356;
+    padding-left: 15px;
+
+     &:hover {
+
+
+        margin-right: -5px;
+        margin-left: 5px;
+
+      }
+}
+
+.years_of_ex{
+  font-weight: 700;
+    color: #20247b;
+      font-size: 20px;
+    margin: 0 0 8px;
+    border-left: 5px solid #fc5356;
+    padding-left: 15px;
+        &:hover {
+
+
+            margin-right: -5px;
+            margin-left: 5px;
+
+          }
+}
+.ed_lavel{
+    font-weight: 700;
+      color: #20247b;
+      font-size: 20px;
+      margin: 0 0 8px;
+      border-left: 5px solid #fc5356;
+      padding-left: 15px;
+          &:hover {
+
+
+              margin-right: -5px;
+              margin-left: 5px;
+
+            }
+}
+
+
+
+
+
+
+
+
+
+
 
 .feature-box-1 * {
   -moz-transition: ease all 0.35s;
@@ -94,12 +233,13 @@ card-imgg{
   right: 0;
   border-radius: 10px;
   width: 0;
+
   background: $card-hover-bg;
   z-index: -1;
-  -moz-transition: ease all 0.35s;
-  -o-transition: ease all 0.35s;
-  -webkit-transition: ease all 0.35s;
-  transition: ease all 0.35s;
+  // -moz-transition: ease all 0.35s;
+  // -o-transition: ease all 0.35s;
+  // -webkit-transition: ease all 0.35s;
+  // transition: ease all 0.35s;
 }
 
 .feature-box-1:hover {
@@ -108,7 +248,7 @@ card-imgg{
 }
 
 .feature-box-1:hover p {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(42, 20, 100, 0.8);
 }
 
 .feature-box-1:hover:after {
@@ -133,22 +273,16 @@ card-imgg{
   padding-left: 15px;}
 
 .height_light {
-  background-color: #bababa43;
-  -webkit-backdrop-filter: blur(9px);
+  // background-color: #bababa43;
+
   backdrop-filter: blur(15px);
   border: 1px solid rgba(234, 234, 235, 0.2);
   padding: 15px 15px;
-  border-radius: 10px;
+  border-radius: 10px 0px 0px 10px;
   border: none;
+
 }
-.height_light p {
-  font-weight: 700;
-  color: #20247b;
-  font-size: 20px;
-  margin: 0 0 8px;
-  border-left: 5px solid #fc5356;
-  padding-left: 15px;
-}
+
 
 
 .btn-white {

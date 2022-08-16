@@ -77,6 +77,7 @@ import { CardOffreHorizontaleComponent } from './components/card-offre-horizonta
 import { CardQuestionReponseComponent } from './components/card-question-reponse/card-question-reponse.component'
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CondidatsCardComponent } from './components/contidats/condidats-card/condidats-card.component'
+import { TagModule } from 'primeng/tag';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
 
@@ -91,6 +92,7 @@ let modules: any = [
   ToastModule,
   ProgressSpinnerModule,
   // form importes
+  TagModule ,
   NgbModule,
   FileUploadModule,
   CheckboxModule,
