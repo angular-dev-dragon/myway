@@ -75,7 +75,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CardOffreVerticaleComponent } from './components/card-offre-Verticale/card-offre-Verticale.component'
 import { CardOffreHorizontaleComponent } from './components/card-offre-horizontale/card-offre-horizontale.component'
 import { CardQuestionReponseComponent } from './components/card-question-reponse/card-question-reponse.component'
-import { NgxPaginationModule } from 'ngx-pagination'
+import { NgxPaginationModule } from 'ngx-pagination';
+import { CondidatsCardComponent } from './components/contidats/condidats-card/condidats-card.component'
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
 
@@ -90,7 +91,7 @@ let modules: any = [
   ToastModule,
   ProgressSpinnerModule,
   // form importes
- NgbModule,
+  NgbModule,
   FileUploadModule,
   CheckboxModule,
   InputSwitchModule,
@@ -144,7 +145,8 @@ let modules: any = [
   DropdownModule,
   ReactiveFormsModule,
   AccordionModule,
-]
+
+];
 
 @NgModule({
   declarations: [
@@ -165,6 +167,8 @@ let modules: any = [
     CardTemoignageComponent,
     CardTemoignageComponent,
     CardQuestionReponseComponent,
+    // condidats cards
+    CondidatsCardComponent,
   ],
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
   exports: [
@@ -186,6 +190,8 @@ let modules: any = [
     MapComponent,
     CardTemoignageComponent,
     CardQuestionReponseComponent,
+    // condidats cards
+    CondidatsCardComponent,
 
     ...modules,
   ],
@@ -193,15 +199,15 @@ let modules: any = [
 export class SharedModule {
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    translate: TranslateService,
+    translate: TranslateService
   ) {
     if (isPlatformBrowser(this.platformId)) {
-      document.body.classList.add('ltr')
-      localStorage.setItem('lang', 'fr')
+      document.body.classList.add('ltr');
+      localStorage.setItem('lang', 'fr');
 
-      var lang = 'fr'
-      translate.setDefaultLang(lang)
-      translate.addLangs(['en', 'fr'])
+      var lang = 'fr';
+      translate.setDefaultLang(lang);
+      translate.addLangs(['en', 'fr']);
     }
   }
 }
