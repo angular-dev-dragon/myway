@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PresentationComponent } from './presentation.component';
+import { CondidaAdminComponent } from './condida-admin.component';
 
-describe('PresentationComponent', () => {
-  let component: PresentationComponent;
-  let fixture: ComponentFixture<PresentationComponent>;
+describe('CondidaAdminComponent', () => {
+  let component: CondidaAdminComponent;
+  let fixture: ComponentFixture<CondidaAdminComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PresentationComponent ]
+      declarations: [ CondidaAdminComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PresentationComponent);
+    fixture = TestBed.createComponent(CondidaAdminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-list-recruiter',
-  templateUrl: './list-recruiter.component.html',
-  styleUrls: ['./list-recruiter.component.scss'],
+  selector: 'app-list-condidats',
+  templateUrl: './list-condidats.component.html',
+  styleUrls: ['./list-condidats.component.scss'],
 })
-export class ListRecruiterComponent implements OnInit {
+export class ListCondidatsComponent implements OnInit {
   constructor() {}
   paginate: any = '';
-
   ngOnInit(): void {}
 
   condidatsList: any = [
@@ -22,7 +21,6 @@ export class ListRecruiterComponent implements OnInit {
       years_of_ex: '2 years',
       ed_lavel: 'bac + 3',
       tag: ['web', 'developer'],
-      
     },
     {
       avalilaible: false,

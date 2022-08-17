@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class CountriesInfoService {
-  url: string = 'https://restcountries.com/v3.1/all';
+  url: string ='https://github.com/Ahmed-dev-dragon/all-Countries-info-IPA/blob/main/db.json';
   countries: any;
   Kuwait__Exampel: any;
   constructor(private http: HttpClient) {}

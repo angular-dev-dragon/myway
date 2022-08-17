@@ -1,36 +1,30 @@
+import { CondidatDetailsComponent } from './condidat-details/condidat-details.component';
+import { ListCondidatsComponent } from './list-condidats/list-condidats.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-// import { AvisComponent } from './avis/avis.component';
-import { DetailsRecruiterComponent } from './details-recruiter/details-recruiter.component';
-//import { EntretienComponent } from './entretien/entretien.component';
-//import { FaqComponent } from './faq/faq.component';
-//import { GalleryComponent } from './gallery/gallery.component';
-import { ListRecruiterComponent } from './list-recruiter/list-recruiter.component';
-
-import { PresentationComponent } from './presentation/presentation.component';
-
 const routes: Routes = [
   {
     path: '',
-    component: ListRecruiterComponent,
+    component: ListCondidatsComponent
   },
   {
-    path: 'list-recruteur',
-    component: ListRecruiterComponent,
+    path: 'list-condidats',
+    component: ListCondidatsComponent
   },
   {
-    path: 'details-recruteur',
-    component: DetailsRecruiterComponent,
-    children: [
-      {
-        path: '',
-        redirectTo: 'presentation',
-        pathMatch: 'full',
-      },
-      {
-        path: 'presentation',
-        component: PresentationComponent,
-      },
+    path: 'condida-details',
+    component:CondidatDetailsComponent
+  }
+  //   // children: [
+  //     // {
+      //   path: '',
+      //   redirectTo: 'presentation',
+      //   pathMatch: 'full',
+      // },
+      // {
+      //   path: 'presentation',
+      //   component: PresentationComponent,
+      // },
 
       // {
       //   path: 'avis',
@@ -48,8 +42,8 @@ const routes: Routes = [
       //   path: 'gallerie',
       //   component: GalleryComponent,
       // },
-    ],
-  },
+  //   ],
+  // },
 ];
 
 

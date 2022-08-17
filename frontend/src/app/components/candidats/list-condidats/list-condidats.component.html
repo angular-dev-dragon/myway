@@ -8,9 +8,7 @@
         let condidat of condidatsList
           | paginate: { itemsPerPage: 8, currentPage: paginate }
       "
-
-
-      [routerLink]="['/candidats/details-recruteur/presentation']"
+      [routerLink]="['/candidats/condida-details']"
       class="col-md-3 col-sm-3 col-xs-3 col-lg-3 mb-3"
       [available]="condidat.available"
       [img]=" condidat.img"
@@ -28,12 +26,4 @@
       (pageChange)="paginate = $event"
     ></pagination-controls>
   </div>
-
-
-
-
-
-
-
-
 </div>
