@@ -2,10 +2,10 @@ import { Routes } from '@angular/router'
 
 export const content: Routes = [
   {
-    path: 'candidats',
+    path: 'candida',
     loadChildren: () =>
-      import('../../components/candidats/candidats.module').then(
-        (m) => m.CandidatsModule
+      import('../../components/condida/condida.module').then(
+        (m) => m.CondidaModule
       ),
   },
   {

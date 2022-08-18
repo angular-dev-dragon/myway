@@ -20,3 +20,4 @@ import { ResumeProfilesModule } from '../resume-profiles/resume-profiles.module'
   exports: [CandidatsRoutingModule],
 })
 export class CandidatsModule {}
+
