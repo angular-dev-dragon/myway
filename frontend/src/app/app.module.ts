@@ -10,10 +10,12 @@ import { RecruiterModule } from './components/recruiter/recruiter.module'
 import { SharedModule } from './shared/shared.module'
 import { ResumeProfilesModule } from './components/resume-profiles/resume-profiles.module'
 import { OffresModule } from './components/offres/offres.module'
+
 import { InfoPratiqueModule } from './components/info-pratique/info-pratique.module'
 import { RubriquePostModule } from './components/rubrique-article/rubrique-post.module'
 import { EspaceCommunautaireModule } from './components/espace-communautaire/espace-communautaire.module';
 import { ListBlogeurComponent } from './components/blog/list-blogeur/list-blogeur.component'
+import { CondidaModule } from './components/condida/condida.module'
 
 @NgModule({
   declarations: [AppComponent, ListBlogeurComponent],
@@ -26,6 +28,7 @@ import { ListBlogeurComponent } from './components/blog/list-blogeur/list-blogeu
     ResumeProfilesModule,
 
     OffresModule,
+    CondidaModule,
 
     InfoPratiqueModule,
     RubriquePostModule,
