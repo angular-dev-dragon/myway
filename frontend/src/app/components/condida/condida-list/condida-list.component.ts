@@ -9,156 +9,225 @@ import { filter } from 'rxjs';
   styleUrls: ['./condida-list.component.scss'],
 })
 export class CondidaListComponent implements OnInit {
-  orientation: any = 'verticale';
   paginate: any = '';
-  offres: any = [
-    {
-      Intitule: 'Développeur1',
-      TypeContrat: 'CDI',
-      Poste:
-        ' Développeur Front-End Développeur Front-End Développeur Front-End',
-      NomEntreprise: 'Jumia',
-      TypeEntreprise: 'StartUp',
-      Image: '',
-      Ville: 'Tanger',
-      Secteur: 'Informatique',
-      Date: '2023-02-02',
-      Competences: 'HTML',
-      Pays: 'Maroc',
-      NiveauxEtude: 'Bac',
-      NiveauxExperience: 'entre 3 et 4',
-      langue: 'Français',
-    },
-    {
-      Intitule: 'Ingénieur génie civil et minier ',
-      TypeContrat: 'Anapec',
-      Poste: 'technicien en mécanique et électrique mécanique et électrique',
-      NomEntreprise: 'Smart automation technologies',
-      TypeEntreprise: 'StartUp',
-      Image: '',
-      Ville: 'Tétouan',
-      Secteur: 'Informatique',
-      Date: '2022-02-02',
-      Competences: 'HTML',
-      Pays: 'Maroc',
-      NiveauxEtude: 'Bac',
-      NiveauxExperience: 'entre 3 et 4',
-      langue: 'Français',
-    },
-    {
-      Intitule: 'Ingénieur génie civil et minier ',
-      TypeContrat: 'Anapec',
-      Poste: 'technicien en mécanique et électrique mécanique et électrique',
-      NomEntreprise: 'Smart automation technologies',
-      TypeEntreprise: 'StartUp',
-      Image: '',
-      Ville: 'Tétouan',
-      Secteur: 'Informatique',
-      Date: '2022-02-02',
-      Competences: 'HTML',
-      Pays: 'Maroc',
-      NiveauxEtude: 'Bac',
-      NiveauxExperience: 'entre 3 et 4',
-      langue: 'Français',
-    },
-    {
-      Intitule: 'Ingénieur génie civil et minier ',
-      TypeContrat: 'Anapec',
-      Poste: 'technicien en mécanique et électrique mécanique et électrique',
-      NomEntreprise: 'Smart automation technologies',
-      TypeEntreprise: 'StartUp',
-      Image: '',
-      Ville: 'Tétouan',
-      Secteur: 'Informatique',
-      Date: '2022-02-02',
-      Competences: 'HTML',
-      Pays: 'Maroc',
-      NiveauxEtude: 'Bac',
-      NiveauxExperience: 'entre 3 et 4',
-      langue: 'Français',
-    },
-    {
-      Intitule: 'Ingénieur génie civil et minier ',
-      TypeContrat: 'Anapec',
-      Poste: 'technicien en mécanique et électrique mécanique et électrique',
-      NomEntreprise: 'Smart automation technologies',
-      TypeEntreprise: 'StartUp',
-      Image: '',
-      Ville: 'Tétouan',
-      Secteur: 'Informatique',
-      Date: '2022-02-02',
-      Competences: 'HTML',
-      Pays: 'Maroc',
-      NiveauxEtude: 'Bac',
-      NiveauxExperience: 'entre 3 et 4',
-      langue: 'Français',
-    },
-    {
-      Intitule: 'développeur3',
-      TypeContrat: 'CDD',
-      Poste: 'Développeur Front-End',
-      NomEntreprise: 'Jumia',
-      TypeEntreprise: 'StartUp',
-      Image: '',
-      Ville: 'Tanger',
-      Secteur: 'Informatique',
-      Date: '2000-02-02',
-      Competences: 'HTML',
-      Pays: 'Algérie',
-      NiveauxEtude: 'Bac',
-      NiveauxExperience: 'entre 1 et 2',
-      langue: 'Espagnol',
-    },
-    {
-      Intitule: 'Développeur',
-      TypeContrat: 'A discuter',
-      NomEntreprise: 'Jumia',
-      Poste: 'Développeur Back-End',
-      TypeEntreprise: 'StartUp',
-      Image: '',
-      Ville: 'Tétouan',
-      Secteur: 'Textile',
-      Date: '2022-05-02',
-      Competences: 'HTML',
-      Pays: 'Maroc',
-      NiveauxEtude: 'qualification avant bac',
-      NiveauxExperience: 'entre 1 et 2',
-      langue: 'Arabe',
-    },
-    {
-      Intitule: 'Développeur4',
-      TypeContrat: 'CDI',
-      NomEntreprise: 'Jumia',
-      TypeEntreprise: 'StartUp',
-      Poste: 'Développeur Back-End',
-      Image: '',
-      Ville: 'Tanger',
-      Secteur: 'Électronique',
-      Date: '2022-02-02',
-      Competences: 'HTML',
-      Pays: 'Algérie',
-      NiveauxEtude: 'qualification avant bac',
-      NiveauxExperience: "moins d'un ans",
-      langue: 'Espagnol',
-    },
-  ];
+  condidatsList: any;
+  allcondidates: any;
+  offres: any;
+  niveauxExBox: any;
+  contratBox: any;
+  villeSelect: any;
+  regionSelect: any;
+  paysSelect: any;
   allOffres: any;
+  langueBox: any;
+  secteurSelect: any;
+  dateInput: any;
+  searchInput: any;
+  orientation: any;
   constructor() {
-    this.allOffres = this.offres;
+    this.condidatsList = [
+      {
+        avalilaible: true,
+        img: 'https://avatars.githubusercontent.com/u/71600486?v=4',
+        name: 'Ahmed Aoulad Amar',
+        age: '25',
+        address: 'tanger/morococ',
+        tital_job: 'web developer',
+        years_of_ex: '2 years',
+        ed_lavel: 'bac + 3',
+        tag: ['web', 'developer'],
+      },
+      {
+        avalilaible: false,
+        img: 'https://www.bootdey.com/img/Content/avatar/avatar2.png',
+        name: 'ahmed aoulad amr',
+        age: '25',
+        address: 'tanger/morococ',
+        tital_job: 'web developer',
+        years_of_ex: '2 years',
+        ed_lavel: 'bac + 3',
+        tag: ['web', 'developer'],
+      },
+      {
+        avalilaible: true,
+        img: 'https://www.bootdey.com/img/Content/avatar/avatar3.png',
+        name: 'ahmed aoulad amr',
+        age: '25',
+        address: 'tanger/morococ',
+        tital_job: 'web developer',
+        years_of_ex: '2 years',
+        ed_lavel: 'bac + 3',
+        tag: ['web', 'developer'],
+      },
+      {
+        avalilaible: true,
+        img: 'https://www.bootdey.com/img/Content/avatar/avatar4.png',
+        name: 'ahmed aoulad amr',
+        age: '25',
+        address: 'tanger/morococ',
+        tital_job: 'web developer',
+        years_of_ex: '2 years',
+        ed_lavel: 'bac + 3',
+        tag: ['web', 'developer'],
+      },
+      {
+        avalilaible: true,
+        img: 'https://www.bootdey.com/img/Content/avatar/avatar5.png',
+        name: 'ahmed aoulad amr',
+        age: '25',
+        address: 'tanger/morococ',
+        tital_job: 'web developer',
+        years_of_ex: '2 years',
+        ed_lavel: 'bac + 3',
+        tag: ['web', 'developer'],
+      },
+      {
+        avalilaible: true,
+        img: 'https://www.bootdey.com/img/Content/avatar/avatar6.png',
+        name: 'ahmed aoulad amr',
+        age: '25',
+        address: 'tanger/morococ',
+        tital_job: 'web developer',
+        years_of_ex: '2 years',
+        ed_lavel: 'bac + 3',
+        tag: ['web', 'developer'],
+      },
+      {
+        avalilaible: true,
+        img: 'https://www.bootdey.com/img/Content/avatar/avatar7.png',
+        name: 'ahmed aoulad amr',
+        age: '25',
+        address: 'tanger/morococ',
+        tital_job: 'web developer',
+        years_of_ex: '2 years',
+        ed_lavel: 'bac + 3',
+        tag: ['web', 'developer'],
+      },
+      {
+        avalilaible: true,
+        img: 'https://www.bootdey.com/img/Content/avatar/avatar8.png',
+        name: 'ahmed aoulad amr',
+        age: '25',
+        address: 'tanger/morococ',
+        tital_job: 'web developer',
+        years_of_ex: '2 years',
+        ed_lavel: 'bac + 3',
+        tag: ['web', 'developer'],
+      },
+      {
+        avalilaible: true,
+        img: 'https://www.bootdey.com/img/Content/avatar/avatar9.png',
+        name: 'ahmed aoulad amr',
+        age: '25',
+        address: 'tanger/morococ',
+        tital_job: 'web developer',
+        years_of_ex: '2 years',
+        ed_lavel: 'bac + 3',
+        tag: ['web', 'developer'],
+      },
+      {
+        avalilaible: true,
+        img: 'https://www.bootdey.com/img/Content/avatar/avatar10.png',
+        name: 'ahmed aoulad amr',
+        age: '25',
+        address: 'tanger/morococ',
+        tital_job: 'web developer',
+        years_of_ex: '2 years',
+        ed_lavel: 'bac + 3',
+        tag: ['web', 'developer'],
+      },
+      {
+        avalilaible: true,
+        img: 'https://www.bootdey.com/img/Content/avatar/avatar3.png',
+        name: 'ahmed aoulad amr',
+        age: '25',
+        address: 'tanger/morococ',
+        tital_job: 'web developer',
+        years_of_ex: '2 years',
+        ed_lavel: 'bac + 3',
+        tag: ['web', 'developer'],
+      },
+      {
+        avalilaible: true,
+        img: 'https://www.bootdey.com/img/Content/avatar/avatar3.png',
+        name: 'ahmed aoulad amr',
+        age: '25',
+        address: 'tanger/morococ',
+        tital_job: 'web developer',
+        years_of_ex: '2 years',
+        ed_lavel: 'bac + 3',
+        tag: ['web', 'developer'],
+      },
+      {
+        avalilaible: true,
+        img: 'https://www.bootdey.com/img/Content/avatar/avatar3.png',
+        name: 'ahmed aoulad amr',
+        age: '25',
+        address: 'tanger/morococ',
+        tital_job: 'web developer',
+        years_of_ex: '2 years',
+        ed_lavel: 'bac + 3',
+        tag: ['web', 'developer'],
+      },
+      {
+        avalilaible: true,
+        img: 'https://www.bootdey.com/img/Content/avatar/avatar3.png',
+        name: 'ahmed aoulad amr',
+        age: '25',
+        address: 'tanger/morococ',
+        tital_job: 'web developer',
+        years_of_ex: '2 years',
+        ed_lavel: 'bac + 3',
+        tag: ['web', 'developer'],
+      },
+      {
+        avalilaible: true,
+        img: 'https://www.bootdey.com/img/Content/avatar/avatar3.png',
+        name: 'ahmed aoulad amr',
+        age: '25',
+        address: 'tanger/morococ',
+        tital_job: 'web developer',
+        years_of_ex: '2 years',
+        ed_lavel: 'bac + 3',
+        tag: ['web', 'developer'],
+      },
+      {
+        avalilaible: true,
+        img: 'https://www.bootdey.com/img/Content/avatar/avatar3.png',
+        name: 'ahmed aoulad amr',
+        age: '25',
+        address: 'tanger/morococ',
+        tital_job: 'web developer',
+        years_of_ex: '2 years',
+        ed_lavel: 'bac + 3',
+        tag: ['web', 'developer'],
+      },
+      {
+        avalilaible: true,
+        img: 'https://www.bootdey.com/img/Content/avatar/avatar3.png',
+        name: 'ahmed aoulad amr',
+        age: '25',
+        address: 'tanger/morococ',
+        tital_job: 'web developer',
+        years_of_ex: '2 years',
+        ed_lavel: 'bac + 3',
+        tag: ['web', 'developer'],
+      },
+      {
+        avalilaible: true,
+        img: 'https://www.bootdey.com/img/Content/avatar/avatar3.png',
+        name: 'ahmed aoulad amr',
+        age: '25',
+        address: 'tanger/morococ',
+        tital_job: 'web developer',
+        years_of_ex: '2 years',
+        ed_lavel: 'bac + 3',
+        tag: ['web', 'developer'],
+      },
+    ];
   }
 
   ngOnInit(): void {}
-
-  @ViewChild('secteur') secteurSelect!: any;
-  @ViewChild('ville') villeSelect!: any;
-  @ViewChild('region') regionSelect!: any;
-  @ViewChild('pays') paysSelect!: any;
-  @ViewChildren('contrat') contratBox!: any;
-  @ViewChildren('niveauxEt') niveauxEtBox!: any;
-  @ViewChildren('niveauxEx') niveauxExBox!: any;
-  @ViewChildren('langue') langueBox!: any;
-  @ViewChild('search') searchInput!: any;
-  @ViewChild('date') dateInput!: any;
 
   filter() {
     this.offres = this.allOffres;
@@ -171,7 +240,7 @@ export class CondidaListComponent implements OnInit {
     let contratFiltre = this.contratBox._results;
     // console.log('filtre par contrat', contratFiltre)
 
-    let niveauxEtFiltre = this.niveauxEtBox._results;
+    let niveauxEtFiltre = this.niveauxExBox._results;
     // console.log('filtre par niveaux etude', niveauxEtFiltre)
     let niveauxExFiltre = this.niveauxExBox._results;
     // console.log('filtre par niveaux experience', niveauxExFiltre)
