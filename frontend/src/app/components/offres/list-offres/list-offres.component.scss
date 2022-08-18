@@ -107,9 +107,55 @@ body {
 .custom-navbar {
   right: 0;
 }
+.accordion-button {
+  align-items: baseline;
+  padding-left: 10px;
+}
+.icone-filter {
+  margin-right: 10px;
+}
 
 @media (max-width: 991px) {
   .test {
     display: none;
   }
+  .icone {
+    display: block !important;
+  }
+}
+@media (min-width: 992px) {
+  .icone {
+    display: none !important;
+  }
+}
+.side {
+  font-size: 20px;
+}
+.icone:hover {
+  .test {
+    display: block;
+  }
+}
+.popover {
+  position: absolute;
+  background-color: #a8a59f;
+  top: 0px;
+  left: 50px;
+  width: 500px;
+  height: 600px;
+  z-index: 100;
+}
+.popli {
+  position: relative;
+  transition: 0.7s;
+}
+.sideS {
+  margin-top: 25px;
+  color: rgb(40, 165, 238);
+}
+.OpenSidebar {
+  display: block;
+}
+.CloseSidebar {
+  display: none;
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core'
 import { filter } from 'rxjs'
+import { NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
   selector: 'app-list-offres',
@@ -7,6 +8,8 @@ import { filter } from 'rxjs'
   styleUrls: ['./list-offres.component.scss'],
 })
 export class ListOffresComponent implements OnInit {
+  collapsed = false
+  showSidebar: boolean = false
   orientation: any = 'verticale'
   paginate: any = ''
   offres: any = [
@@ -93,8 +96,10 @@ export class ListOffresComponent implements OnInit {
     },
   ]
   allOffres: any
-  constructor() {
+  constructor(config: NgbPopoverConfig) {
     this.allOffres = this.offres
+    config.placement = 'end'
+    config.triggers = 'hover'
   }
 
   ngOnInit(): void {}
@@ -199,5 +204,9 @@ export class ListOffresComponent implements OnInit {
   }
   sortbyDate() {
     this.offres.sort((a: any, b: any) => (a.Date < b.Date ? 1 : -1))
+  }
+
+  showFilter() {
+    this.showSidebar = !this.showSidebar
   }
 }
