@@ -22,6 +22,6 @@ import { UrlPathNavComponent } from './url-path-nav/url-path-nav.component'
     AssistantBarModule,
   ],
 
-  exports: [ResumeProfilesRoutingModule],
+  exports: [ResumeProfilesRoutingModule, LayoutsComponent],
 })
 export class ResumeProfilesModule {}

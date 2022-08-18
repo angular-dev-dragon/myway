@@ -1,18 +1,26 @@
-import { Component, Input, OnInit } from '@angular/core';
 
+
+
+
+
+
+
+
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
-import { HeaderProfileFromComponent } from './header-profile-from/header-profile-from.component';
-
+import{ContactFormComponent} from'../../../../components/resume-profiles/side-bar/contact/contact-form/contact-form.component';
+// import { HeaderProfileFromComponent } from './header-profile-from/header-profile-from.component';
+// import { ExpectationsFormComponent } from './expectations-form/expectations-form.component';
 @Component({
-  selector: 'Head-Profile',
-  templateUrl: './head-profile.component.html',
-  styleUrls: ['./head-profile.component.scss', '../../style/main.scss'],
+  selector: 'app-condida-admin',
+  templateUrl: './condida-admin.component.html',
+  styleUrls: ['./condida-admin.component.scss', '../style/main.scss'],
   providers: [DialogService, MessageService],
 })
-export class HeadProfileComponent implements OnInit {
-  @Input() img: string = '';
+export class CondidaAdminComponent implements OnInit {
+  active = 1;
 
   constructor(
     public dialogService: DialogService,
@@ -20,34 +28,28 @@ export class HeadProfileComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
-
+  // @HostListener('window:resize', ['$event'])
+  // w(w: any) {
+  //   return (this.popup_w = w.target.innerWidth);
+  // }
   ref: DynamicDialogRef | undefined;
-
   popup_w: number = window.innerWidth;
   f_w: string = '';
-  f_h: string = '';
-  open_header_profile_form() {
+  open_contact_form(Component: any) {
     if (this.popup_w >= 600) {
       this.f_w = '70%';
-      this.f_h = '500px';
       if (this.popup_w >= 1500) {
         this.f_w = '65%';
-        this.f_h = '520px';
         if (this.popup_w >= 2000) {
           this.f_w = '60%';
-          this.f_h = '540px';
           if (this.popup_w >= 2500) {
             this.f_w = '55%';
-            this.f_h = '560px';
             if (this.popup_w >= 3000) {
               this.f_w = '52%';
-              this.f_h = '580px';
               if (this.popup_w >= 3500) {
                 this.f_w = '50%';
-                this.f_h = '600px';
                 if (this.popup_w >= 4500) {
                   this.f_w = '48%';
-                  this.f_h = '650px';
                 }
               }
             }
@@ -57,22 +59,16 @@ export class HeadProfileComponent implements OnInit {
     }
     if (this.popup_w <= 600) {
       this.f_w = '75%';
-      this.f_h = '500px';
       if (this.popup_w <= 550) {
         this.f_w = '80%';
-        this.f_h = '480px';
         if (this.popup_w <= 500) {
           this.f_w = '85%';
-          this.f_h = '460px';
           if (this.popup_w <= 450) {
             this.f_w = '90%';
-            this.f_h = '440px';
             if (this.popup_w <= 400) {
               this.f_w = '95%';
-              this.f_h = '420px';
               if (this.popup_w <= 350) {
                 this.f_w = '100%';
-                this.f_h = '300px';
               }
             }
           }
@@ -82,14 +78,34 @@ export class HeadProfileComponent implements OnInit {
       this.f_w = '70%';
     }
 
-    this.ref = this.dialogService.open(HeaderProfileFromComponent, {
+    this.ref = this.dialogService.open(Component, {
       header: 'Choose a Product',
       width: this.f_w,
-      contentStyle: { 'max-height': this.f_w, overflow: 'auto' },
+      contentStyle: { 'max-height': '500px', overflow: 'auto' },
       baseZIndex: 10000,
     });
   }
+
+  open_header_profile_form() {}
+  open_about_form() {}
+  open_expectations_form() {}
+  open_skills_form() {}
+  open_langouge_form() {}
+  open_education_form() {}
+  open_experience_form() {}
+  open_achievement_form() {}
+  open_hobbies_form() {}
 }
+
+
+
+
+
+
+
+
+
+
 
 
 

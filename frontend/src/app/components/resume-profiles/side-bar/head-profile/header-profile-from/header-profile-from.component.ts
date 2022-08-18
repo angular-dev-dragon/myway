@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import {
   FormGroup,
@@ -17,6 +17,7 @@ import { CountriesInfoService } from '../../../../../shared/Services/Countries-i
   ],
 })
 export class HeaderProfileFromComponent implements OnInit {
+  @Input() img: string = '';
   date: any;
   online: boolean = false;
 
@@ -98,7 +99,6 @@ export class HeaderProfileFromComponent implements OnInit {
   }
 
   save_header_profile_from() {
-
     if (this.header_profile_form.valid) {
       this.ref.close();
     } else {

@@ -1,0 +1,70 @@
+<!-- class="col-sm-6 col-lg-4" -->
+
+<!-- feaure box -->
+<div class="">
+  <div class="feature-box-1 bg-info">
+    <div class="row">
+      <div class="col-5">
+        <div class="m-1">
+          <img
+            [lazyLoad]="img"
+            [defaultImage]="'assets/images/bg-recruiter'"
+            width="110"
+            height="110"
+            class="rounded-circle card-imgg shadow p-1"
+            alt="Logo Recruiter"
+          />
+        </div>
+        <div class="job_type">
+          <span class="job_type_in">Full time</span>
+        </div>
+      </div>
+      <div class="col-7">
+        <p class="card-namee">
+          {{ name }}
+        </p>
+        <p class="address">
+          <i class="fa-solid fa-location-dot"></i>
+           {{ address }}
+        </p>
+        <p
+         class="age"
+         >{{ age }} years old
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10 height_light ">
+
+
+
+        <div class="col-9">
+          <p class="tital_job">{{ tital_job }}</p>
+          <p class="years_of_ex">{{ years_of_ex }}</p>
+          <p class="ed_lavel">{{ ed_lavel }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+
+        <div class=" tags">
+            <span class="badge badge_bg">Primary</span>
+            <span class="badge badge_bg">Secondary</span>
+            <span class="badge badge_bg">Success</span>
+            <span class="badge badge_bg">Danger</span>
+            <span class="badge badge_bg">Warning</span>
+            <span class="badge badge_bg">Info</span>
+            <span class="badge badge_bg">Light</span>
+            <span class="badge badge_bg">Dark</span>
+        </div>
+
+
+        <div class="d-grid">
+          <a  class="btn more btn-white radius-15">more</a>
+        </div>
+
+    </div>
+  </div>
+</div>
