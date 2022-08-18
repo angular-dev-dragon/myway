@@ -18,6 +18,7 @@ export class ListOffresComponent implements OnInit {
       TypeContrat: 'CDI',
       Poste:
         ' Développeur Front-End Développeur Front-End Développeur Front-End',
+      TypePoste: 'Emploi',
       NomEntreprise: 'Jumia',
       TypeEntreprise: 'StartUp',
       Image: '',
@@ -34,6 +35,7 @@ export class ListOffresComponent implements OnInit {
       Intitule: 'Ingénieur génie civil et minier ',
       TypeContrat: 'Anapec',
       Poste: 'technicien en mécanique et électrique mécanique et électrique',
+      TypePoste: 'Stage',
       NomEntreprise: 'Smart automation technologies',
       TypeEntreprise: 'StartUp',
       Image: '',
@@ -50,6 +52,7 @@ export class ListOffresComponent implements OnInit {
       Intitule: 'développeur3',
       TypeContrat: 'CDD',
       Poste: 'Développeur Front-End',
+      TypePoste: 'Alternance',
       NomEntreprise: 'Jumia',
       TypeEntreprise: 'StartUp',
       Image: '',
@@ -67,6 +70,7 @@ export class ListOffresComponent implements OnInit {
       TypeContrat: 'A discuter',
       NomEntreprise: 'Jumia',
       Poste: 'Développeur Back-End',
+      TypePoste: 'extra',
       TypeEntreprise: 'StartUp',
       Image: '',
       Ville: 'Tétouan',
@@ -84,6 +88,7 @@ export class ListOffresComponent implements OnInit {
       NomEntreprise: 'Jumia',
       TypeEntreprise: 'StartUp',
       Poste: 'Développeur Back-End',
+      TypePoste: 'Emploi',
       Image: '',
       Ville: 'Tanger',
       Secteur: 'Électronique',
@@ -105,6 +110,7 @@ export class ListOffresComponent implements OnInit {
   ngOnInit(): void {}
 
   @ViewChild('secteur') secteurSelect!: any
+  @ViewChild('TypePoste') TypePostSelect!: any
   @ViewChild('ville') villeSelect!: any
   @ViewChild('region') regionSelect!: any
   @ViewChild('pays') paysSelect!: any
@@ -134,10 +140,11 @@ export class ListOffresComponent implements OnInit {
     // console.log('filtre par langues', langueFiltre)
     let secteurFiltre = this.secteurSelect.nativeElement.value
     // console.log('filtre par secteurs', secteurFiltre)
+
     let searchFiltre = this.searchInput.nativeElement.value
     // console.log('filtre par search', searchFiltre)
     let dateFiltre = this.dateInput.nativeElement.value
-    console.log('filtre par date', dateFiltre)
+    // console.log('filtre par date', dateFiltre)
 
     if (searchFiltre != '') {
       this.offres = this.offres.filter((offre: any) => {
