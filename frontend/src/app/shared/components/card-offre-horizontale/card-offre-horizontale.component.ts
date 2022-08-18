@@ -9,6 +9,7 @@ export class CardOffreHorizontaleComponent implements OnInit {
   @Input() Intitule: any = ''
   @Input() Secteur: any = ''
   @Input() Poste: any = ''
+  @Input() TypePoste: any = ''
   @Input() NomEntreprise: any = ''
   @Input() TypeEntreprise: any = ''
   @Input() Competences: any = ''

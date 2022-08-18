@@ -52,8 +52,8 @@
               </a>
             </li>
             <li><a class="dropdown-item" href="#">Offres de stage</a></li>
-            <li><a class="dropdown-item" href="#">Demande spécifique</a></li>
-
+            <li><a class="dropdown-item" href="#">Offres d'alternance</a></li>
+            <li><a class="dropdown-item" href="#">Offres d'extra</a></li>
           </ul>
         </li>
 
@@ -76,6 +76,9 @@
             </li>
             <li>
               <a class="dropdown-item" href="#">Bilan de compétences</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Demandes spécifiques</a>
             </li>
             <li>
               <a class="dropdown-item" href="#">
@@ -110,8 +113,13 @@
                 Associations d'insertion économique
               </a>
             </li>
-            <li>
+            <!-- <li>
               <a class="dropdown-item" href="#">Etablissements de formations</a>
+            </li> -->
+            <li>
+              <a class="dropdown-item" href="#">
+                Formations spécifique à l'emploi
+              </a>
             </li>
           </ul>
         </li>
@@ -177,11 +185,6 @@
                 Evénements et actualités
               </a>
             </li>
-            <li>
-              <a class="dropdown-item" href="#" [routerLink]="['/blog']">
-                Blog
-              </a>
-            </li>
           </ul>
         </li>
 
@@ -221,13 +224,40 @@
               </a>
             </li>
             <li>
-              <a
-                class="dropdown-item"
-                [routerLink]="['/espace-communautaire/soutien']"
-              >
-                Soutiens
+              <a class="dropdown-item" href="#" [routerLink]="['/blog']">
+                Blog
               </a>
             </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            [routerLink]="['/rubrique/details-rubrique']"
+          >
+            Evénements et actualités
+          </a>
+          <ul class="dropdown-menu">
+            <!-- <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="['/espace-communautaire/sondage']"
+              >
+                Sondages
+              </a>
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="['/espace-communautaire/temoignage']"
+              >
+                Témoignages
+              </a>
+            </li> -->
           </ul>
         </li>
       </ul>
@@ -241,7 +271,13 @@
             aria-expanded="false"
             style="padding-left: 30px;"
           >
-          <img src="https://avatars.githubusercontent.com/u/71600486?v=4" alt="mdo" width="32" height="32" class="rounded-circle" />
+            <img
+              src="https://avatars.githubusercontent.com/u/71600486?v=4"
+              alt="mdo"
+              width="32"
+              height="32"
+              class="rounded-circle"
+            />
           </a>
 
           <ul class="dropdown-menu" style="transform: translate(-100px, 5px);">
@@ -252,8 +288,6 @@
                 view Profile
               </a>
             </li>
-
-
 
             <li>
               <hr class="dropdown-divider" />
