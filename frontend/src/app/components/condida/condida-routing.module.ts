@@ -17,12 +17,9 @@ const routes: Routes = [
   {
     path: 'details-condidat',
     component: CondidatDetailsComponent,
-  },
-  {
-    path: '**',
-    component: CondidaListComponent,
-  },
-];
+  }
+]
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
