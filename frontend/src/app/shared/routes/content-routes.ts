@@ -2,6 +2,13 @@ import { Routes } from '@angular/router'
 
 export const content: Routes = [
   {
+    path: 'c',
+    loadChildren: () =>
+      import('../../components/condida-c/condida-c.module').then(
+        (m) => m.CondidaCModule
+      ),
+  },
+  {
     path: 'candida',
     loadChildren: () =>
       import('../../components/condida/condida.module').then(

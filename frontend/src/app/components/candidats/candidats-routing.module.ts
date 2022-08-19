@@ -5,43 +5,43 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    component: ListCondidatsComponent
+    component: ListCondidatsComponent,
   },
   {
     path: 'list-condidats',
-    component: ListCondidatsComponent
+    component: ListCondidatsComponent,
   },
   {
     path: 'condida-details',
-    component:CondidatDetailsComponent
-  }
+    component: CondidatDetailsComponent,
+  },
   //   // children: [
   //     // {
-      //   path: '',
-      //   redirectTo: 'presentation',
-      //   pathMatch: 'full',
-      // },
-      // {
-      //   path: 'presentation',
-      //   component: PresentationComponent,
-      // },
+  //   path: '',
+  //   redirectTo: 'presentation',
+  //   pathMatch: 'full',
+  // },
+  // {
+  //   path: 'presentation',
+  //   component: PresentationComponent,
+  // },
 
-      // {
-      //   path: 'avis',
-      //   component: AvisComponent,
-      // },
-      // {
-      //   path: 'membre',
-      //   component: MembreComponent,
-      // },
-      // {
-      //   path: 'entretien',
-      //   component: EntretienComponent,
-      // },
-      // {
-      //   path: 'gallerie',
-      //   component: GalleryComponent,
-      // },
+  // {
+  //   path: 'avis',
+  //   component: AvisComponent,
+  // },
+  // {
+  //   path: 'membre',
+  //   component: MembreComponent,
+  // },
+  // {
+  //   path: 'entretien',
+  //   component: EntretienComponent,
+  // },
+  // {
+  //   path: 'gallerie',
+  //   component: GalleryComponent,
+  // },
   //   ],
   // },
 ];
