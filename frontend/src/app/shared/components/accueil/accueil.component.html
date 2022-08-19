@@ -1,129 +1,29 @@
 <main>
-  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button
-        type="button"
-        data-bs-target="#myCarousel"
-        data-bs-slide-to="0"
-        class="active"
-        aria-current="true"
-        aria-label="Slide 1"
-      ></button>
-      <button
-        type="button"
-        data-bs-target="#myCarousel"
-        data-bs-slide-to="1"
-        aria-label="Slide 2"
-      ></button>
-      <button
-        type="button"
-        data-bs-target="#myCarousel"
-        data-bs-slide-to="2"
-        aria-label="Slide 3"
-      ></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <svg
-          class="bd-placeholder-img"
-          width="100%"
-          height="100%"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-          preserveAspectRatio="xMidYMid slice"
-          focusable="false"
-        >
-          <rect width="100%" height="100%" fill="#777" />
-        </svg>
-
-        <div class="container">
-          <div class="carousel-caption text-start">
-            <h1>Example headline.</h1>
-            <p>
-              Some representative placeholder content for the first slide of the
-              carousel.
-            </p>
-            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <svg
-          class="bd-placeholder-img"
-          width="100%"
-          height="100%"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-          preserveAspectRatio="xMidYMid slice"
-          focusable="false"
-        >
-          <rect width="100%" height="100%" fill="#777" />
-        </svg>
-
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>
-              Some representative placeholder content for the second slide of
-              the carousel.
-            </p>
-            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <svg
-          class="bd-placeholder-img"
-          width="100%"
-          height="100%"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-          preserveAspectRatio="xMidYMid slice"
-          focusable="false"
-        >
-          <rect width="100%" height="100%" fill="#777" />
-        </svg>
-
-        <div class="container">
-          <div class="carousel-caption text-end">
-            <h1>One more for good measure.</h1>
-            <p>
-              Some representative placeholder content for the third slide of
-              this carousel.
-            </p>
-            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <button
-      class="carousel-control-prev"
-      type="button"
-      data-bs-target="#myCarousel"
-      data-bs-slide="prev"
-    >
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button
-      class="carousel-control-next"
-      type="button"
-      data-bs-target="#myCarousel"
-      data-bs-slide="next"
-    >
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-
-  <!-- Marketing messaging and featurettes
-    ================================================== -->
-  <!-- Wrap the rest of the page in another container to center all the content. -->
-
   <div class="container marketing">
+    <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
+      <div class="col-md-6 px-0">
+        <h1 class="display-4 fst-italic">
+          Trouver votre emploi
+        </h1>
+        <p class="lead my-3">
+          Multiple lines of text that form the lede, informing new readers
+          quickly and efficiently about what’s most interesting in this post’s
+          contents.
+        </p>
+        <p class="lead mb-0">
+          <a href="#" class="text-white fw-bold"></a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
     <!-- Three columns of text below the carousel -->
+    <!--peut etre candidat-->
     <div class="row">
-      <div class="col-lg-4">
+      <!-- <div class="col-lg-4">
         <svg
           class="bd-placeholder-img rounded-circle"
           width="140"
@@ -145,9 +45,9 @@
           below the carousel. This is the first column.
         </p>
         <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-      </div>
+      </div> -->
       <!-- /.col-lg-4 -->
-      <div class="col-lg-4">
+      <!-- <div class="col-lg-4">
         <svg
           class="bd-placeholder-img rounded-circle"
           width="140"
@@ -169,9 +69,9 @@
           we've moved on to the second column.
         </p>
         <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-      </div>
+      </div> -->
       <!-- /.col-lg-4 -->
-      <div class="col-lg-4">
+      <!-- <div class="col-lg-4">
         <svg
           class="bd-placeholder-img rounded-circle"
           width="140"
@@ -193,8 +93,9 @@
           content.
         </p>
         <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-      </div>
+      </div> -->
       <!-- /.col-lg-4 -->
+      <!--fin candidat-->
     </div>
     <!-- /.row -->
 
@@ -203,7 +104,281 @@
     <hr class="featurette-divider" />
 
     <div class="row featurette">
-      <div class="col-md-7">
+      <div>
+        <ul class="nav" style="list-style: none;">
+          <li>
+            <h4><a [routerLink]="'/offres'">Offres ></a></h4>
+          </li>
+          <li><a href="/home">Home</a></li>
+          <li><a href="/home">About</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+      <!-- #region card_acceuil-->
+      <div class="container">
+        <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
+          <!-- product -->
+          <div class="product-content product-wrap clearfix">
+            <div class="row">
+              <div class="col-md-5 col-sm-12 col-xs-12">
+                <div class="product-image">
+                  <img
+                    src="https://via.placeholder.com/194x228/87CEFA"
+                    alt="194x228"
+                    class="img-responsive"
+                  />
+                  <span class="tag2 hot">
+                    HOT
+                  </span>
+                </div>
+              </div>
+              <div class="col-md-7 col-sm-12 col-xs-12">
+                <div class="product-deatil">
+                  <h5 class="name">
+                    <a href="#">
+                      Product Name Title Here
+                      <span>Category</span>
+                    </a>
+                  </h5>
+                  <p class="price-container">
+                    <span>$99</span>
+                  </p>
+                  <span class="tag1"></span>
+                </div>
+                <div class="description">
+                  <p>Proin in ullamcorper lorem. Maecenas eu ipsum</p>
+                </div>
+                <div class="product-info smart-form">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                      <a href="javascript:void(0);" class="btn btn-success">
+                        Add to cart
+                      </a>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                      <div class="rating">
+                        <label for="stars-rating-5">
+                          <i class="fa fa-star"></i>
+                        </label>
+                        <label for="stars-rating-4">
+                          <i class="fa fa-star"></i>
+                        </label>
+                        <label for="stars-rating-3">
+                          <i class="fa fa-star text-primary"></i>
+                        </label>
+                        <label for="stars-rating-2">
+                          <i class="fa fa-star text-primary"></i>
+                        </label>
+                        <label for="stars-rating-1">
+                          <i class="fa fa-star text-primary"></i>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end product -->
+        </div>
+        <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
+          <!-- product -->
+          <div class="product-content product-wrap clearfix">
+            <div class="row">
+              <div class="col-md-5 col-sm-12 col-xs-12">
+                <div class="product-image">
+                  <img
+                    src="https://via.placeholder.com/194x228/B0C4DE"
+                    alt="194x228"
+                    class="img-responsive"
+                  />
+                  <span class="tag2 hot">
+                    HOT
+                  </span>
+                </div>
+              </div>
+              <div class="col-md-7 col-sm-12 col-xs-12">
+                <div class="product-deatil">
+                  <h5 class="name">
+                    <a href="#">
+                      Product Name Title Here
+                      <span>Category</span>
+                    </a>
+                  </h5>
+                  <p class="price-container">
+                    <span>$99</span>
+                  </p>
+                  <span class="tag1"></span>
+                </div>
+                <div class="description">
+                  <p>Proin in ullamcorper lorem. Maecenas eu ipsum</p>
+                </div>
+                <div class="product-info smart-form">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                      <a href="javascript:void(0);" class="btn btn-success">
+                        Add to cart
+                      </a>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                      <div class="rating">
+                        <label for="stars-rating-5">
+                          <i class="fa fa-star"></i>
+                        </label>
+                        <label for="stars-rating-4">
+                          <i class="fa fa-star"></i>
+                        </label>
+                        <label for="stars-rating-3">
+                          <i class="fa fa-star text-primary"></i>
+                        </label>
+                        <label for="stars-rating-2">
+                          <i class="fa fa-star text-primary"></i>
+                        </label>
+                        <label for="stars-rating-1">
+                          <i class="fa fa-star text-primary"></i>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end product -->
+        </div>
+        <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
+          <!-- product -->
+          <div class="product-content product-wrap clearfix">
+            <div class="row">
+              <div class="col-md-5 col-sm-12 col-xs-12">
+                <div class="product-image">
+                  <img
+                    src="https://via.placeholder.com/194x228/D3D3D3"
+                    alt="194x228"
+                    class="img-responsive"
+                  />
+                  <span class="tag2 hot">
+                    HOT
+                  </span>
+                </div>
+              </div>
+              <div class="col-md-7 col-sm-12 col-xs-12">
+                <div class="product-deatil">
+                  <h5 class="name">
+                    <a href="#">
+                      Product Name Title Here
+                      <span>Category</span>
+                    </a>
+                  </h5>
+                  <p class="price-container">
+                    <span>$99</span>
+                  </p>
+                  <span class="tag1"></span>
+                </div>
+                <div class="description">
+                  <p>Proin in ullamcorper lorem. Maecenas eu ipsum</p>
+                </div>
+                <div class="product-info smart-form">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                      <a href="javascript:void(0);" class="btn btn-success">
+                        Add to cart
+                      </a>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                      <div class="rating">
+                        <label for="stars-rating-5">
+                          <i class="fa fa-star"></i>
+                        </label>
+                        <label for="stars-rating-4">
+                          <i class="fa fa-star"></i>
+                        </label>
+                        <label for="stars-rating-3">
+                          <i class="fa fa-star text-primary"></i>
+                        </label>
+                        <label for="stars-rating-2">
+                          <i class="fa fa-star text-primary"></i>
+                        </label>
+                        <label for="stars-rating-1">
+                          <i class="fa fa-star text-primary"></i>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end product -->
+        </div>
+        <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
+          <!-- product -->
+          <div class="product-content product-wrap clearfix">
+            <div class="row">
+              <div class="col-md-5 col-sm-12 col-xs-12">
+                <div class="product-image">
+                  <img
+                    src="https://via.placeholder.com/194x228/48D1CC"
+                    alt="194x228"
+                    class="img-responsive"
+                  />
+                  <span class="tag2 hot">
+                    HOT
+                  </span>
+                </div>
+              </div>
+              <div class="col-md-7 col-sm-12 col-xs-12">
+                <div class="product-deatil">
+                  <h5 class="name">
+                    <a href="#">
+                      Product Name Title Here
+                      <span>Category</span>
+                    </a>
+                  </h5>
+                  <p class="price-container">
+                    <span>$99</span>
+                  </p>
+                  <span class="tag1"></span>
+                </div>
+                <div class="description">
+                  <p>Proin in ullamcorper lorem. Maecenas eu ipsum</p>
+                </div>
+                <div class="product-info smart-form">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                      <a href="javascript:void(0);" class="btn btn-success">
+                        Add to cart
+                      </a>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                      <div class="rating">
+                        <label for="stars-rating-5">
+                          <i class="fa fa-star"></i>
+                        </label>
+                        <label for="stars-rating-4">
+                          <i class="fa fa-star"></i>
+                        </label>
+                        <label for="stars-rating-3">
+                          <i class="fa fa-star text-primary"></i>
+                        </label>
+                        <label for="stars-rating-2">
+                          <i class="fa fa-star text-primary"></i>
+                        </label>
+                        <label for="stars-rating-1">
+                          <i class="fa fa-star text-primary"></i>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end product -->
+        </div>
+      </div>
+      <!-- #endregion -->
+      <!-- <div class="col-md-7">
         <h2 class="featurette-heading fw-normal lh-1">
           First featurette heading.
           <span class="text-muted">It’ll blow your mind.</span>
@@ -212,9 +387,9 @@
           Some great placeholder content for the first featurette here. Imagine
           some exciting prose here.
         </p>
-      </div>
+      </div> -->
       <div class="col-md-5">
-        <svg
+        <!-- <svg
           class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
           width="500"
           height="500"
@@ -227,7 +402,7 @@
           <title>Placeholder</title>
           <rect width="100%" height="100%" fill="#eee" />
           <text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-        </svg>
+        </svg> -->
       </div>
     </div>
 
