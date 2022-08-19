@@ -79,7 +79,12 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { CondidatsCardComponent } from './components/contidats/condidats-card/condidats-card.component'
 import { TagModule } from 'primeng/tag';
 import { CondidaAdminComponent } from './components/contidats/condida-admin/condida-admin.component';
+
+import { CondidaCardComponent } from './components/condida-card/condida-card.component';
+import { CondidaCartTowComponent } from './components/condida-cart-tow/condida-cart-tow.component';
+
 import { AccueilComponent } from './components/accueil/accueil.component';
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -175,6 +180,8 @@ let modules: any = [
     // condidats cards
     CondidatsCardComponent,
     CondidaAdminComponent,
+    CondidaCardComponent,
+    CondidaCartTowComponent,
     AccueilComponent,
   ],
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
@@ -200,6 +207,8 @@ let modules: any = [
     // condidats cards
     CondidatsCardComponent,
     CondidaAdminComponent,
+    CondidaCardComponent,
+    CondidaCartTowComponent,
     ...modules,
   ],
 })

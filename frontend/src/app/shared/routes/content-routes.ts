@@ -1,30 +1,32 @@
 import { Routes } from '@angular/router'
-import { AccueilComponent } from '../components/accueil/accueil.component'
 
 export const content: Routes = [
   {
-    path: 'accueil',
-    component: AccueilComponent,
+    path: 'c',
+    loadChildren: () =>
+      import('../../components/condida-c/condida-c.module').then(
+        (m) => m.CondidaCModule
+      ),
   },
   {
     path: 'candida',
     loadChildren: () =>
       import('../../components/condida/condida.module').then(
-        (m) => m.CondidaModule,
+        (m) => m.CondidaModule
       ),
   },
   {
     path: 'recruteur',
     loadChildren: () =>
       import('../../components/recruiter/recruiter.module').then(
-        (m) => m.RecruiterModule,
+        (m) => m.RecruiterModule
       ),
   },
   {
     path: 'offres',
     loadChildren: () =>
       import('./../../components/offres/offres.module').then(
-        (m) => m.OffresModule,
+        (m) => m.OffresModule
       ),
   },
 
@@ -32,7 +34,7 @@ export const content: Routes = [
     path: 'resume-profiles',
     loadChildren: () =>
       import('../../components/resume-profiles/resume-profiles.module').then(
-        (m) => m.ResumeProfilesModule,
+        (m) => m.ResumeProfilesModule
       ),
   },
 
@@ -40,14 +42,14 @@ export const content: Routes = [
     path: 'rubrique',
     loadChildren: () =>
       import('../../components/rubrique-article/rubrique-post.module').then(
-        (m) => m.RubriquePostModule,
+        (m) => m.RubriquePostModule
       ),
   },
   {
     path: 'info-pratique',
     loadChildren: () =>
       import('../../components/info-pratique/info-pratique.module').then(
-        (m) => m.InfoPratiqueModule,
+        (m) => m.InfoPratiqueModule
       ),
   },
   {
@@ -159,4 +161,4 @@ export const content: Routes = [
   //   pathMatch: 'full',
   //   redirectTo: 'PageNotFound',
   // },
-]
+];
