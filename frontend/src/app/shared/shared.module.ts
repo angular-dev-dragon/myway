@@ -84,6 +84,7 @@ import { CondidaCardComponent } from './components/condida-card/condida-card.com
 import { CondidaCartTowComponent } from './components/condida-cart-tow/condida-cart-tow.component';
 
 import { AccueilComponent } from './components/accueil/accueil.component';
+import { LandingPageModule } from '../components/landing-page/landing-page.module'
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -96,7 +97,7 @@ let modules: any = [
   MatSliderModule,
   MatMenuModule,
   // material ui
-
+LandingPageModule,
   ToastModule,
   ProgressSpinnerModule,
   // form importes
