@@ -109,8 +109,8 @@ export class ListOffresComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  @ViewChild('typePoste') typePosteSelect!: any
   @ViewChild('secteur') secteurSelect!: any
-  @ViewChild('TypePoste') TypePostSelect!: any
   @ViewChild('ville') villeSelect!: any
   @ViewChild('region') regionSelect!: any
   @ViewChild('pays') paysSelect!: any
