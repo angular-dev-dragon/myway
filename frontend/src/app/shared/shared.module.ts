@@ -202,6 +202,8 @@ let modules: any = [
     // condidats cards
     CondidatsCardComponent,
     CondidaAdminComponent,
+    CondidaCardComponent,
+    CondidaCartTowComponent,
     ...modules,
   ],
 })

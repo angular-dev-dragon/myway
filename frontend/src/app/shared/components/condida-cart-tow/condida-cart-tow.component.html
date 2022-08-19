@@ -1,55 +1,58 @@
-<div class="d-flex flex-column col-12 align-items-center h-100 card-container">
-  <div class="image">
-    <img src="../../../../assets/images/images pour offres/téléchargement.png" alt="" class="img-fluid"
+<div class="row col-12 align-items-center" style="
+    border-bottom: 1px solid #c7c3c3;
+    padding-bottom: 5px;
+    margin-bottom: 6px;
+  ">
+  <div class="col-md-3 image">
+    <img src="{{imgt}}" alt="" class="img-fluid"
       style="margin-inline-end: 13px;" />
   </div>
-  <div class="product h-100" style="line-height: 1.42857143; vertical-align: top;">
-    <div class="card-body d-flex flex-column justify-content-between h-100">
+  <div class="product col-md-9 p-5 " style="line-height: 1.42857143; vertical-align: top;">
+    <div class="">
       <div class="row">
-        <h5 class="col-md-12 card-title"></h5>
-        <!-- <div class="favorite-offre col-md-2">
+        <h5 class="col-md-9 card-title"> {{namet}}</h5>
+        <div class="favorite-offre col-md-3">
           <button class="btn-fav" style="border-style: none;">
             <i class="far fa-heart"></i>
           </button>
-        </div> -->
+        </div>
       </div>
-      <h5></h5>
-      <h6 class="text-justify"></h6>
-      <h6 class="h66">
+      <div class="row">
+        <div class="col-9">
+              <h6 class="h6">
+                {{tital_jobt}}
+              </h6>
+              {{years_of_ext}}: yearsof experince <br>
+              {{ed_lavelt}}
+              {{aget}} yeas old
 
-      </h6>
+              <ul class="p-0">
+                <small class="text-muted" style="
+                          list-style: none;
+                          display: flex;
+                          margin-bottom: 0.5rem;
+                          justify-content: space-between;
+                          align-items: center;
+                        ">
+                  <div class="d-flex">
+                    <li class="padd">
+                      <i class="fa-solid fa-location-dot"></i>
+                      {{addresst}}
+                    </li>
+                  </div>
 
-      <ul class="p-0">
-        <small class="text-muted" style="
-            list-style: none;
-            display: flex;
-            margin-bottom: 0.5rem;
-            justify-content: space-between;
-            align-items: center;
-          ">
-          <div class="d-flex">
-            <li class="padd">
-              <i class="fa-solid fa-location-dot"></i>
+                </small>
+              </ul>
+        </div>
+        <div class="col-3">
+                    <button type="button" class="btn btn-success">
+                      Voir plus +
+                    </button>
+        </div>
+      </div>
 
-            </li>
-
-            <li class="padd">
-              <i class="fa-regular fa-calendar"></i>
-              Publiée il y a:
-
-            </li>
-
-            <li class="padd">
-              <i class="fa-solid fa-file-contract"></i>
-              
-            </li>
-          </div>
-          <li></li>
-        </small>
-      </ul>
-      <button type="button" class="btn btn-success">
-        Voir plus +
-      </button>
     </div>
   </div>
+
+  <br />
 </div>
