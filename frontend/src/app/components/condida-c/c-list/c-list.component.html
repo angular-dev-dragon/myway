@@ -619,12 +619,12 @@
 
 
                     </div>
-                    <div class="row" *ngIf="orientation == 'horizontale'">
+                    <div class="row m-1" *ngIf="orientation == 'horizontale'">
 
                       <condida-c-card
                         *ngFor="let condidat of condidatsList| paginate: { itemsPerPage: 4, currentPage: paginate }"
                         [routerLink]="['/candidats/condida-details']"
-                        class=""
+                        class="col-md-6"
                         [available]="condidat.available"
                         [img]=" condidat.img"
                         [name]="condidat.name"

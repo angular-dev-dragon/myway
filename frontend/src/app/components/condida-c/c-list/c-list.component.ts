@@ -7,13 +7,9 @@ import { NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-c-list',
   templateUrl: './c-list.component.html',
-  styleUrls: ['./c-list.component.scss']
+  styleUrls: ['./c-list.component.scss'],
 })
 export class CListComponent implements OnInit {
-
-
-
-
   paginate: any = '';
   condidatsList: any;
   allcondidates: any;
@@ -28,7 +24,7 @@ export class CListComponent implements OnInit {
   secteurSelect: any;
   dateInput: any;
   searchInput: any;
-  orientation: any;
+  orientation: any = 'horizontale';
   constructor() {
     this.condidatsList = [
       {

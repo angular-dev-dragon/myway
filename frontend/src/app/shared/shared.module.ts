@@ -1,3 +1,4 @@
+import { MenuItem } from 'primeng/api';
 import { Inject, NgModule, PLATFORM_ID } from '@angular/core'
 import { CommonModule, isPlatformBrowser } from '@angular/common'
 import { LazyLoadImageModule } from 'ng-lazyload-image'
@@ -84,6 +85,20 @@ import { CondidaCardComponent } from './components/condida-card/condida-card.com
 import { CondidaCartTowComponent } from './components/condida-cart-tow/condida-cart-tow.component';
 
 import { AccueilComponent } from './components/accueil/accueil.component';
+// import { LandingPageModule } from '../components/landing-page/landing-page.module'
+import { TieredMenuModule } from 'primeng/tieredmenu';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
+
+import { MegaMenuModule } from 'primeng/megamenu';
+import { CardModule } from 'primeng/card';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
+
+
+
+
+
+
+
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -95,11 +110,15 @@ let modules: any = [
   // material ui
   MatSliderModule,
   MatMenuModule,
+  BreadcrumbModule,
   // material ui
-
+   ScrollPanelModule,
+TieredMenuModule,
   ToastModule,
   ProgressSpinnerModule,
+   CardModule,
   // form importes
+   MegaMenuModule ,
   TagModule ,
   NgbModule,
   FileUploadModule,

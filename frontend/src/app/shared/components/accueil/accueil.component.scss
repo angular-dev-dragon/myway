@@ -337,3 +337,28 @@ body {
     position: relative;
   }
 }
+
+
+// #region test body 1
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+.sub-info {
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: #004975;
+}
+
+.display-30 {
+  font-size: 0.9rem;
+}
+
+// #endregion
