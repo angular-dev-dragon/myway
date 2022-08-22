@@ -24,6 +24,7 @@ import {
   TranslateModule,
   TranslateService,
 } from '@ngx-translate/core'
+
 import { RatingModule } from 'primeng/rating'
 import { DialogModule } from 'primeng/dialog'
 import { BrowserModule } from '@angular/platform-browser'
@@ -90,7 +91,9 @@ import { BreadcrumbModule } from 'primeng/breadcrumb'
 
 import { MegaMenuModule } from 'primeng/megamenu'
 import { CardModule } from 'primeng/card'
-import { ScrollPanelModule } from 'primeng/scrollpanel'
+import { ScrollPanelModule } from 'primeng/scrollpanel';
+
+import { SliderComponent } from './components/slider/slider.component'
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -101,13 +104,16 @@ let modules: any = [
   MatSliderModule,
   MatMenuModule,
   BreadcrumbModule,
+
   // material ui
+
   ScrollPanelModule,
   TieredMenuModule,
   ToastModule,
   ProgressSpinnerModule,
   CardModule,
   // form importes
+
   MegaMenuModule,
   TagModule,
   NgbModule,
@@ -190,9 +196,11 @@ let modules: any = [
     CondidaAdminComponent,
     CondidaCardComponent,
     CondidaCartTowComponent,
+    SliderComponent,
   ],
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
   exports: [
+    SliderComponent,
     CardArticleComponent,
     CardOffreHorizontaleComponent,
     CardRecruiterComponent,
@@ -202,7 +210,6 @@ let modules: any = [
     FooterComponent,
     LazyLoadImageModule,
     CommonModule,
-    ContentLayoutComponent,
     CardDocumentComponent,
     CardOffreVerticaleComponent,
     CardForumComponent,
@@ -222,15 +229,15 @@ let modules: any = [
 export class SharedModule {
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    translate: TranslateService,
+    translate: TranslateService
   ) {
     if (isPlatformBrowser(this.platformId)) {
-      document.body.classList.add('ltr')
-      localStorage.setItem('lang', 'fr')
+      document.body.classList.add('ltr');
+      localStorage.setItem('lang', 'fr');
 
-      var lang = 'fr'
-      translate.setDefaultLang(lang)
-      translate.addLangs(['en', 'fr'])
+      var lang = 'fr';
+      translate.setDefaultLang(lang);
+      translate.addLangs(['en', 'fr']);
     }
   }
 }
