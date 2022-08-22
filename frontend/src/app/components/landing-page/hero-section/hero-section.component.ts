@@ -12,17 +12,18 @@ export class HeroSectionComponent implements OnInit {
   showNavigationArrows = false;
   showNavigationIndicators = false;
   slide_info:any;
-  constructor(config: NgbCarouselConfig, slide: SliderService) {
-  //  this.slide_info = slide.find_slide_by_name(
-  //    'slide for hero section in the landing page'
-  //  );
-  //   console.log(
-  //     this.slide_info
-  //   )
+  constructor(config: NgbCarouselConfig, public slide: SliderService) {
+
+   this.slide_info = slide.find_slide_by_name(
+     'slide for hero section in the landing page'
+   );
+
+
 
     // customize default values of carousels used by this component tree
     config.showNavigationArrows = true;
     config.showNavigationIndicators = true;
   }
+
   ngOnInit(): void {}
 }

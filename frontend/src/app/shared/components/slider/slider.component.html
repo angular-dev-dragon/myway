@@ -1,19 +1,18 @@
-<!-- 
+
+
 <ngb-carousel
-*ngIf="info"
-[showNavigationArrows]="Arrows_btns"
-[showNavigationIndicators]="footer"
-[animation]="animation"
-[keyboard]="keybourd_arrows_for_switching_slides"
-[interval]="time_btwn_slide"
+
 >
-  <ng-template ngbSlide *ngFor="let s of info">
+  <ng-template ngbSlide *ngFor="let s of  info">
     <div class="picsum-img-wrapper">
       <img
       [src]="s.url"
       alt="{{s.alt}}"
-      width="{{width}}"
-      height="{{height}}"
+
+      style="
+         height:'60px';
+         width: '{{width}}'
+      "
       >
     </div>
     <div class="carousel-caption">
@@ -22,7 +21,7 @@
     </div>
   </ng-template>
 </ngb-carousel>
- -->
+
 
 
 

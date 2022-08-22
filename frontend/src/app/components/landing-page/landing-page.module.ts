@@ -29,9 +29,10 @@ import { ShowServesLandingPageCardsComponent } from './show-serves-landing-page-
     LayoutsComponent,
     HeroSectionComponent,
     ShowServesLandingPageCardsComponent,
-   
+  
   ],
 
   imports: [SharedModule, CommonModule, LandingPageRoutingModule],
+  exports: [LandingPageRoutingModule],
 })
 export class LandingPageModule {}
