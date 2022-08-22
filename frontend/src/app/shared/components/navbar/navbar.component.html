@@ -178,7 +178,62 @@
             </li>
           </ul>
         </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Métiers et formations
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item">
+                Formations relatives à l'emploi
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item">
+                Métiers
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item">
+                Expertises
+              </a>
+            </li>
+          </ul>
+        </li>
 
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            [routerLink]="['/rubrique/details-rubrique']"
+          >
+            Evénements et actualités
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item">
+                Actualités d'emploi
+              </a>
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="['/rubrique/details-rubrique']"
+              >
+                Evénement
+              </a>
+            </li>
+          </ul>
+        </li>
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
@@ -221,37 +276,8 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            [routerLink]="['/rubrique/details-rubrique']"
-          >
-            Evénements et actualités
-          </a>
-          <ul class="dropdown-menu">
-            <!-- <li>
-              <a
-                class="dropdown-item"
-                [routerLink]="['/espace-communautaire/sondage']"
-              >
-                Sondages
-              </a>
-            </li>
-            <li>
-              <a
-                class="dropdown-item"
-                [routerLink]="['/espace-communautaire/temoignage']"
-              >
-                Témoignages
-              </a>
-            </li> -->
-          </ul>
-        </li>
       </ul>
+
       <ul class="nav navbar-nav navbar-right">
         <li class="nav-item dropdown">
           <a
