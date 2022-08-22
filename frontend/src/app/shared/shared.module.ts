@@ -1,4 +1,4 @@
-import { MenuItem } from 'primeng/api';
+import { MenuItem } from 'primeng/api'
 import { Inject, NgModule, PLATFORM_ID } from '@angular/core'
 import { CommonModule, isPlatformBrowser } from '@angular/common'
 import { LazyLoadImageModule } from 'ng-lazyload-image'
@@ -72,38 +72,28 @@ import { MatMenuModule } from '@angular/material/menu'
 
 import { MatSliderModule } from '@angular/material/slider'
 import { CardTemoignageComponent } from './components/card-temoignage/card-temoignage.component'
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { CardOffreVerticaleComponent } from './components/card-offre-Verticale/card-offre-Verticale.component'
 import { CardOffreHorizontaleComponent } from './components/card-offre-horizontale/card-offre-horizontale.component'
 import { CardQuestionReponseComponent } from './components/card-question-reponse/card-question-reponse.component'
-import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination'
 import { CondidatsCardComponent } from './components/contidats/condidats-card/condidats-card.component'
-import { TagModule } from 'primeng/tag';
-import { CondidaAdminComponent } from './components/contidats/condida-admin/condida-admin.component';
+import { TagModule } from 'primeng/tag'
+import { CondidaAdminComponent } from './components/contidats/condida-admin/condida-admin.component'
 
-import { CondidaCardComponent } from './components/condida-card/condida-card.component';
-import { CondidaCartTowComponent } from './components/condida-cart-tow/condida-cart-tow.component';
+import { CondidaCardComponent } from './components/condida-card/condida-card.component'
+import { CondidaCartTowComponent } from './components/condida-cart-tow/condida-cart-tow.component'
 
-import { AccueilComponent } from './components/accueil/accueil.component';
 // import { LandingPageModule } from '../components/landing-page/landing-page.module'
-import { TieredMenuModule } from 'primeng/tieredmenu';
-import { BreadcrumbModule } from 'primeng/breadcrumb';
+import { TieredMenuModule } from 'primeng/tieredmenu'
+import { BreadcrumbModule } from 'primeng/breadcrumb'
 
-import { MegaMenuModule } from 'primeng/megamenu';
-import { CardModule } from 'primeng/card';
-import { ScrollPanelModule } from 'primeng/scrollpanel';
-
-
-
-
-
-
-
-
+import { MegaMenuModule } from 'primeng/megamenu'
+import { CardModule } from 'primeng/card'
+import { ScrollPanelModule } from 'primeng/scrollpanel'
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
-
 }
 
 let modules: any = [
@@ -112,14 +102,14 @@ let modules: any = [
   MatMenuModule,
   BreadcrumbModule,
   // material ui
-   ScrollPanelModule,
-TieredMenuModule,
+  ScrollPanelModule,
+  TieredMenuModule,
   ToastModule,
   ProgressSpinnerModule,
-   CardModule,
+  CardModule,
   // form importes
-   MegaMenuModule ,
-  TagModule ,
+  MegaMenuModule,
+  TagModule,
   NgbModule,
   FileUploadModule,
   CheckboxModule,
@@ -174,8 +164,7 @@ TieredMenuModule,
   DropdownModule,
   ReactiveFormsModule,
   AccordionModule,
-
-];
+]
 
 @NgModule({
   declarations: [
@@ -201,7 +190,6 @@ TieredMenuModule,
     CondidaAdminComponent,
     CondidaCardComponent,
     CondidaCartTowComponent,
-    AccueilComponent,
   ],
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
   exports: [
@@ -234,15 +222,15 @@ TieredMenuModule,
 export class SharedModule {
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    translate: TranslateService
+    translate: TranslateService,
   ) {
     if (isPlatformBrowser(this.platformId)) {
-      document.body.classList.add('ltr');
-      localStorage.setItem('lang', 'fr');
+      document.body.classList.add('ltr')
+      localStorage.setItem('lang', 'fr')
 
-      var lang = 'fr';
-      translate.setDefaultLang(lang);
-      translate.addLangs(['en', 'fr']);
+      var lang = 'fr'
+      translate.setDefaultLang(lang)
+      translate.addLangs(['en', 'fr'])
     }
   }
 }

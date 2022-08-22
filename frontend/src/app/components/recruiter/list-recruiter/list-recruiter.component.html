@@ -3,7 +3,7 @@
     <app-card-recruiter
       *ngFor="
         let recruiter of recruiterList
-          | paginate: { itemsPerPage: 6, currentPage: paginate }
+          | paginate: { itemsPerPage: 6, currentPage: p }
       "
       [routerLink]="['/recruteur/details-recruteur/presentation']"
       class="col-md-4 col-sm-6"
@@ -16,7 +16,7 @@
     ></app-card-recruiter>
     <pagination-controls
       class="text-center"
-      (pageChange)="paginate = $event"
+      (pageChange)="p = $event"
     ></pagination-controls>
   </div>
 

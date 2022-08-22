@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core'
 })
 export class ListRecruiterComponent implements OnInit {
   constructor() {}
-  paginate: any = ''
+  p: any = ''
   ngOnInit(): void {}
   recruiterList: any = [
     {
