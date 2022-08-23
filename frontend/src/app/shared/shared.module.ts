@@ -74,6 +74,7 @@ import { MatMenuModule } from '@angular/material/menu'
 import { MatSliderModule } from '@angular/material/slider'
 import { CardTemoignageComponent } from './components/card-temoignage/card-temoignage.component'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+
 import { CardOffreVerticaleComponent } from './components/card-offre-Verticale/card-offre-Verticale.component'
 import { CardOffreHorizontaleComponent } from './components/card-offre-horizontale/card-offre-horizontale.component'
 import { CardQuestionReponseComponent } from './components/card-question-reponse/card-question-reponse.component'
@@ -91,9 +92,12 @@ import { BreadcrumbModule } from 'primeng/breadcrumb'
 
 import { MegaMenuModule } from 'primeng/megamenu'
 import { CardModule } from 'primeng/card'
-import { ScrollPanelModule } from 'primeng/scrollpanel';
+import { ScrollPanelModule } from 'primeng/scrollpanel'
 
 import { SliderComponent } from './components/slider/slider.component'
+
+import { SCardInfoGComponent } from './components/s-card-info-g/s-card-info-g.component'
+import { ListOffresComponent } from './components/list-offres/list-offres.component'
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -192,14 +196,18 @@ let modules: any = [
     CardTemoignageComponent,
     CardQuestionReponseComponent,
     // condidats cards
+
     CondidatsCardComponent,
     CondidaAdminComponent,
     CondidaCardComponent,
     CondidaCartTowComponent,
     SliderComponent,
+    SCardInfoGComponent,
+    ListOffresComponent,
   ],
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
   exports: [
+    SCardInfoGComponent,
     SliderComponent,
     CardArticleComponent,
     CardOffreHorizontaleComponent,
@@ -223,21 +231,22 @@ let modules: any = [
     CondidaAdminComponent,
     CondidaCardComponent,
     CondidaCartTowComponent,
+    ListOffresComponent,
     ...modules,
   ],
 })
 export class SharedModule {
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    translate: TranslateService
+    translate: TranslateService,
   ) {
     if (isPlatformBrowser(this.platformId)) {
-      document.body.classList.add('ltr');
-      localStorage.setItem('lang', 'fr');
+      document.body.classList.add('ltr')
+      localStorage.setItem('lang', 'fr')
 
-      var lang = 'fr';
-      translate.setDefaultLang(lang);
-      translate.addLangs(['en', 'fr']);
+      var lang = 'fr'
+      translate.setDefaultLang(lang)
+      translate.addLangs(['en', 'fr'])
     }
   }
 }

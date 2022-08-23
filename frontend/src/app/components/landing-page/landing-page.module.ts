@@ -11,25 +11,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ShowServesLandingPageCardsComponent } from './show-serves-landing-page-cards/show-serves-landing-page-cards.component';
 
-
-
-
-
-
-
-// @NgModule({
-//   imports: [BrowserModule, NgbModule],
-//   declarations: [NgbdCarouselNavigation],
-//   exports: [NgbdCarouselNavigation],
-//   bootstrap: [NgbdCarouselNavigation],
-// })
-
 @NgModule({
   declarations: [
     LayoutsComponent,
     HeroSectionComponent,
     ShowServesLandingPageCardsComponent,
-  
+
   ],
 
   imports: [SharedModule, CommonModule, LandingPageRoutingModule],

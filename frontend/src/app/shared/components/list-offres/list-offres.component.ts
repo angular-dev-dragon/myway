@@ -1,4 +1,10 @@
-import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core'
+import {
+  Component,
+  Input,
+  OnInit,
+  ViewChild,
+  ViewChildren,
+} from '@angular/core'
 import { filter } from 'rxjs'
 import { NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap'
 
@@ -8,11 +14,7 @@ import { NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap'
   styleUrls: ['./list-offres.component.scss'],
 })
 export class ListOffresComponent implements OnInit {
-  collapsed = false
-  showSidebar: boolean = false
-  orientation: any = 'verticale'
-  paginate: any = ''
-  offres: any = [
+  @Input() offres: any = [
     {
       Intitule: 'Développeur1',
       TypeContrat: 'CDI',
@@ -100,11 +102,105 @@ export class ListOffresComponent implements OnInit {
       langue: 'Espagnol',
     },
   ]
+  collapsed = false
+  showSidebar: boolean = false
+  epingledSidebar: boolean = false
+  orientation: any = 'verticale'
+  paginate: any = ''
+
   allOffres: any
   constructor(config: NgbPopoverConfig) {
     this.allOffres = this.offres
     config.placement = 'end'
     config.triggers = 'hover'
+    // this.offres = [
+    //   {
+    //     Intitule: 'Développeur1',
+    //     TypeContrat: 'CDI',
+    //     Poste:
+    //       ' Développeur Front-End Développeur Front-End Développeur Front-End',
+    //     TypePoste: 'Emploi',
+    //     NomEntreprise: 'Jumia',
+    //     TypeEntreprise: 'StartUp',
+    //     Image: '',
+    //     Ville: 'Tanger',
+    //     Secteur: 'Informatique',
+    //     Date: '2023-02-02',
+    //     Competences: 'HTML',
+    //     Pays: 'Maroc',
+    //     NiveauxEtude: 'Bac',
+    //     NiveauxExperience: 'entre 3 et 4',
+    //     langue: 'Français',
+    //   },
+    //   {
+    //     Intitule: 'Ingénieur génie civil et minier ',
+    //     TypeContrat: 'Anapec',
+    //     Poste: 'technicien en mécanique et électrique mécanique et électrique',
+    //     TypePoste: 'Stage',
+    //     NomEntreprise: 'Smart automation technologies',
+    //     TypeEntreprise: 'StartUp',
+    //     Image: '',
+    //     Ville: 'Tétouan',
+    //     Secteur: 'Informatique',
+    //     Date: '2022-02-02',
+    //     Competences: 'HTML',
+    //     Pays: 'Maroc',
+    //     NiveauxEtude: 'Bac',
+    //     NiveauxExperience: 'entre 3 et 4',
+    //     langue: 'Français',
+    //   },
+    //   {
+    //     Intitule: 'développeur3',
+    //     TypeContrat: 'CDD',
+    //     Poste: 'Développeur Front-End',
+    //     TypePoste: 'Alternance',
+    //     NomEntreprise: 'Jumia',
+    //     TypeEntreprise: 'StartUp',
+    //     Image: '',
+    //     Ville: 'Tanger',
+    //     Secteur: 'Informatique',
+    //     Date: '2000-02-02',
+    //     Competences: 'HTML',
+    //     Pays: 'Algérie',
+    //     NiveauxEtude: 'Bac',
+    //     NiveauxExperience: 'entre 1 et 2',
+    //     langue: 'Espagnol',
+    //   },
+    //   {
+    //     Intitule: 'Développeur',
+    //     TypeContrat: 'A discuter',
+    //     NomEntreprise: 'Jumia',
+    //     Poste: 'Développeur Back-End',
+    //     TypePoste: 'extra',
+    //     TypeEntreprise: 'StartUp',
+    //     Image: '',
+    //     Ville: 'Tétouan',
+    //     Secteur: 'Textile',
+    //     Date: '2022-05-02',
+    //     Competences: 'HTML',
+    //     Pays: 'Maroc',
+    //     NiveauxEtude: 'qualification avant bac',
+    //     NiveauxExperience: 'entre 1 et 2',
+    //     langue: 'Arabe',
+    //   },
+    //   {
+    //     Intitule: 'Développeur4',
+    //     TypeContrat: 'CDI',
+    //     NomEntreprise: 'Jumia',
+    //     TypeEntreprise: 'StartUp',
+    //     Poste: 'Développeur Back-End',
+    //     TypePoste: 'Emploi',
+    //     Image: '',
+    //     Ville: 'Tanger',
+    //     Secteur: 'Électronique',
+    //     Date: '2022-02-02',
+    //     Competences: 'HTML',
+    //     Pays: 'Algérie',
+    //     NiveauxEtude: 'qualification avant bac',
+    //     NiveauxExperience: "moins d'un ans",
+    //     langue: 'Espagnol',
+    //   },
+    // ]
   }
 
   ngOnInit(): void {}
@@ -142,7 +238,7 @@ export class ListOffresComponent implements OnInit {
     // console.log('filtre par secteurs', secteurFiltre)
 
     let searchFiltre = this.searchInput.nativeElement.value
-    // console.log('filtre par search', searchFiltre)
+    console.log('filtre par search', searchFiltre)
     let dateFiltre = this.dateInput.nativeElement.value
     // console.log('filtre par date', dateFiltre)
 

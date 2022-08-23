@@ -16,6 +16,8 @@ export class CardOffreHorizontaleComponent implements OnInit {
   @Input() TypeContrat: any = ''
   @Input() Ville: any = ''
   @Input() Date: any = ''
+  @Input() image: any = ''
+
   constructor() {}
 
   ngOnInit(): void {}

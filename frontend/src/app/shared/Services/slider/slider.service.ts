@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -6,14 +6,14 @@ import { Injectable } from '@angular/core';
 })
 export class SliderService {
   slider: any;
-  constructor(private http: HttpClient) {
+  constructor() {
         this.slider = [
           {
             name: 'slide for hero section in the landing page',
             id: '1',
             details: {
-              width: '10%',
-              height: '8vh',
+              width: '100%',
+              height: '85vh',
               time_btwn_slide: 5000,
               Arrows_btns: true,
               keybourd_arrows_for_switching_slides: true,

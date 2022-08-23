@@ -111,7 +111,10 @@
     "note": "Note",
     "salaire": "Salaire",
     "securite": "Securité",
-    "avis": "Avis"
+    "avis": "Avis",
+    "cv": "Cv",
+    "lettreMotivation": "Lettre De Motivation",
+    "poste": "Poste"
   },
 
   "document": {

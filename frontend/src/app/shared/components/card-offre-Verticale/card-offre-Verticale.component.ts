@@ -16,6 +16,7 @@ export class CardOffreVerticaleComponent implements OnInit {
   @Input() TypeContrat: any = ''
   @Input() Ville: any = ''
   @Input() Date: any = ''
+  @Input() image: any = ''
 
   constructor() {}
 
