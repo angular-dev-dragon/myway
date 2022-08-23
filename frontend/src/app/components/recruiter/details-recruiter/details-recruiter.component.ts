@@ -29,7 +29,12 @@ export class DetailsRecruiterComponent implements OnInit {
     { label: 'Avis', icon: 'pi pi-fw pi-pencil', routerLink: ['avis'] },
     { label: 'Membre', icon: 'pi pi-fw pi-user', routerLink: ['membre'] },
     { label: 'Entretien', icon: 'pi pi-fw pi-cog', routerLink: ['entretien'] },
-    { label: 'Gallerie', icon: 'pi pi-fw pi-cog', routerLink: ['gallerie'] },
+    { label: 'Gallerie', icon: 'pi pi-fw pi-images', routerLink: ['gallerie'] },
+    {
+      label: 'Condidateure Spontannée',
+      icon: 'pi pi-fw pi-file',
+      routerLink: ['condidature-spontanee'],
+    },
   ]
   recruteurInfo: any = {
     paragraphes: [

@@ -1,0 +1,350 @@
+<div class="section-recruteur mb-3">
+  <h4>{{ 'globale.condidature' | translate }}</h4>
+</div>
+
+<div class="section-recruteur">
+  <form
+    id="contactForm"
+    (ngSubmit)="sendAvis()"
+    [formGroup]="CondidatureForm"
+    #form2
+  >
+    <h4 class="">{{ 'globale.condidature' | translate }}</h4>
+
+    <div class="row">
+      <!-- Name input -->
+
+      <div class="mb-3 col-md-6">
+        <label class="form-label" for="name">
+          {{ 'form.nom' | translate }}
+        </label>
+        <input
+          class="form-control"
+          id="name"
+          type="text"
+          placeholder="{{ 'form.exp_nom' | translate }}"
+          [ngClass]="{
+            'is-invalid':
+              CondidatureForm.get('name')?.touched &&
+              CondidatureForm.get('name')?.invalid
+          }"
+          formControlName="name"
+          name="name"
+        />
+        <div
+          *ngIf="
+            CondidatureForm.get('name')?.touched &&
+            CondidatureForm.get('name')?.invalid
+          "
+          class="invalid-feedback mb-2"
+        >
+          <div *ngIf="CondidatureForm.get('name')?.errors?.['required']">
+            {{ 'form.champ_oblig' | translate }}
+          </div>
+          <div *ngIf="CondidatureForm.get('name')?.errors?.['minlength']">
+            {{ 'form.champ_3' | translate }}
+          </div>
+          <div *ngIf="CondidatureForm.get('name')?.errors?.['maxlength']">
+            {{ 'form.champ_30' | translate }}
+          </div>
+          <div *ngIf="CondidatureForm.get('name')?.errors?.['pattern']">
+            {{ 'form.champ_lettre' | translate }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Prenom input -->
+      <div class="mb-3 col-md-6">
+        <label class="form-label" for="prenom">
+          {{ 'form.prenom' | translate }}
+        </label>
+        <input
+          class="form-control"
+          id="prenom"
+          type="prenom"
+          placeholder=" {{ 'form.exp_pre' | translate }}"
+          formControlName="prenom"
+          name="prenom"
+          [ngClass]="{
+            'is-invalid':
+              CondidatureForm.get('prenom')?.touched &&
+              CondidatureForm.get('prenom')?.invalid
+          }"
+        />
+        <div
+          *ngIf="
+            CondidatureForm.get('prenom')?.touched &&
+            CondidatureForm.get('prenom')?.invalid
+          "
+          class="invalid-feedback mb-2"
+        >
+          <div *ngIf="CondidatureForm.get('prenom')?.errors?.['required']">
+            {{ 'form.champ_oblig' | translate }}
+          </div>
+          <div *ngIf="CondidatureForm.get('prenom')?.errors?.['minlength']">
+            {{ 'form.champ_3' | translate }}
+          </div>
+          <div *ngIf="CondidatureForm.get('prenom')?.errors?.['maxlength']">
+            {{ 'form.champ_30' | translate }}
+          </div>
+          <div *ngIf="CondidatureForm.get('prenom')?.errors?.['pattern']">
+            {{ 'form.champ_lettre' | translate }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Telephone + email address input -->
+    <div class="row">
+      <div class="mb-3 col-md-6">
+        <label class="form-label" for="telephone">
+          {{ 'form.telephone' | translate }}
+        </label>
+        <input
+          class="form-control"
+          id="telephone"
+          type="texte"
+          placeholder=" {{ 'form.exp_tel' | translate }}"
+          formControlName="telephone"
+          name="telephone"
+          [ngClass]="{
+            'is-invalid':
+              CondidatureForm.get('telephone')?.touched &&
+              CondidatureForm.get('telephone')?.invalid
+          }"
+        />
+        <div
+          *ngIf="
+            CondidatureForm.get('telephone')?.touched &&
+            CondidatureForm.get('telephone')?.invalid
+          "
+          class="invalid-feedback"
+        >
+          <div *ngIf="CondidatureForm.get('telephone')?.errors?.['required']">
+            {{ 'form.champ_oblig' | translate }}
+          </div>
+          <div *ngIf="CondidatureForm.get('telephone')?.errors?.['pattern']">
+            {{ 'form.tel_valid' }}
+          </div>
+          <div *ngIf="CondidatureForm.get('telephone')?.errors?.['minlength']">
+            {{ 'form.champ_10' }}
+          </div>
+        </div>
+      </div>
+      <!-- Email  input -->
+      <div class="mb-3 col-md-6">
+        <label class="form-label" for="emailAddress">
+          {{ 'form.email' | translate }}
+        </label>
+        <input
+          class="form-control"
+          id="emailAddress"
+          type="email"
+          placeholder=" {{ 'form.exp_email' | translate }}"
+          formControlName="email"
+          name="email"
+          [ngClass]="{
+            'is-invalid':
+              CondidatureForm.get('email')?.touched &&
+              CondidatureForm.get('email')?.invalid
+          }"
+        />
+        <div
+          *ngIf="
+            CondidatureForm.get('email')?.touched &&
+            CondidatureForm.get('email')?.invalid
+          "
+          class="invalid-feedback"
+        >
+          <div *ngIf="CondidatureForm.get('email')?.errors?.['required']">
+            {{ 'form.champ_oblig' | translate }}
+          </div>
+          <div *ngIf="CondidatureForm.get('email')?.errors?.['email']">
+            {{ 'form.mail_valid' | translate }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ville + Poste -->
+    <div class="row">
+      <div class="mb-3 col-md-6">
+        <label class="form-label" for="ville">
+          {{ 'form.ville' | translate }}
+        </label>
+        <input
+          class="form-control"
+          id="ville"
+          type="texte"
+          placeholder=" {{ 'form.exp_tel' | translate }}"
+          formControlName="ville"
+          name="ville"
+          [ngClass]="{
+            'is-invalid':
+              CondidatureForm.get('ville')?.touched &&
+              CondidatureForm.get('ville')?.invalid
+          }"
+        />
+        <div
+          *ngIf="
+            CondidatureForm.get('ville')?.touched &&
+            CondidatureForm.get('ville')?.invalid
+          "
+          class="invalid-feedback"
+        >
+          <div *ngIf="CondidatureForm.get('ville')?.errors?.['required']">
+            {{ 'form.champ_oblig' | translate }}
+          </div>
+
+          <div *ngIf="CondidatureForm.get('ville')?.errors?.['minlength']">
+            {{ 'form.champ_3' | translate }}
+          </div>
+        </div>
+      </div>
+      <!-- Email  input -->
+      <div class="mb-3 col-md-6">
+        <label class="form-label" for="poste">
+          {{ 'form.poste' | translate }}
+        </label>
+        <select
+          class="form-select"
+          id="poste"
+          type="poste"
+          formControlName="poste"
+          name="poste"
+          [ngClass]="{
+            'is-invalid':
+              CondidatureForm.get('poste')?.touched &&
+              CondidatureForm.get('poste')?.invalid
+          }"
+        ></select>
+        <div
+          *ngIf="
+            CondidatureForm.get('poste')?.touched &&
+            CondidatureForm.get('poste')?.invalid
+          "
+          class="invalid-feedback"
+        >
+          <div *ngIf="CondidatureForm.get('poste')?.errors?.['required']">
+            {{ 'form.champ_oblig' | translate }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cv + Lettre de motivation -->
+    <div class="row">
+      <!-- Name input -->
+
+      <div class="mb-4 col-md-6">
+        <div class="file-upload-wrapper">
+          <label class="form-label" for="cv">
+            {{ 'form.cv' | translate }}
+          </label>
+          <input
+            class="form-control"
+            id="cv"
+            #cv
+            type="file"
+            name="cv"
+            formControlName="cv"
+            (change)="onCvSelected($event)"
+            [ngClass]="{
+              'is-invalid':
+                CondidatureForm.get('cv')?.touched &&
+                CondidatureForm.get('cv')?.invalid
+            }"
+          />
+          <span class="span-preuve">{{ cvFile }}</span>
+          <div
+            *ngIf="
+              CondidatureForm.get('cv')?.touched &&
+              CondidatureForm.get('cv')?.invalid
+            "
+            class="invalid-feedback mb-2"
+          >
+            <div *ngIf="CondidatureForm.get('cv')?.errors?.['required']">
+              {{ 'form.champ_oblig' | translate }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prenom input -->
+      <div class="mb-4 col-md-6">
+        <div class="file-upload-wrapper">
+          <label class="form-label" for="lettreMotivation">
+            {{ 'form.lettreMotivation' | translate }}
+          </label>
+          <input
+            class="form-control"
+            id="lettreMotivation"
+            #lettreMotivation
+            type="file"
+            name="lettreMotivation"
+            formControlName="lettreMotivation"
+            (change)="onLettrteSelected($event)"
+            [ngClass]="{
+              'is-invalid':
+                CondidatureForm.get('lettreMotivation')?.touched &&
+                CondidatureForm.get('lettreMotivation')?.invalid
+            }"
+          />
+          <span class="span-preuve">{{ lettreFile }}</span>
+          <div
+            *ngIf="
+              CondidatureForm.get('lettreMotivation')?.touched &&
+              CondidatureForm.get('lettreMotivation')?.invalid
+            "
+            class="invalid-feedback mb-2"
+          >
+            <div
+              *ngIf="CondidatureForm.get('lettreMotivation')?.errors?.['required']"
+            >
+              {{ 'form.champ_oblig' | translate }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="mb-3 col-md-12">
+        <label class="form-label" for="message">
+          {{ 'form.message' | translate }}
+        </label>
+        <textarea
+          class="form-control"
+          id="message"
+          type="texte"
+          formControlName="message"
+          name="message"
+          [ngClass]="{
+            'is-invalid':
+              CondidatureForm.get('message')?.touched &&
+              CondidatureForm.get('message')?.invalid
+          }"
+        ></textarea>
+        <div
+          *ngIf="
+            CondidatureForm.get('message')?.touched &&
+            CondidatureForm.get('message')?.invalid
+          "
+          class="invalid-feedback"
+        >
+          <div *ngIf="CondidatureForm.get('message')?.errors?.['required']">
+            {{ 'form.champ_oblig' | translate }}
+          </div>
+
+          <div *ngIf="CondidatureForm.get('message')?.errors?.['minlength']">
+            {{ 'form.champ_3' | translate }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Form submit button -->
+    <div class="mt-3 text-center">
+      <button class="btn btn-outline-dark" type="submit">
+        {{ 'form.Envoyer' | translate }}
+      </button>
+    </div>
+  </form>
+</div>

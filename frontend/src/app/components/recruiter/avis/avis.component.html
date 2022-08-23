@@ -142,10 +142,10 @@
                 {{ 'form.champ_oblig' | translate }}
               </div>
               <div *ngIf="avisForm.get('telephone')?.errors?.['pattern']">
-                {{ 'form.tel_valid' }}
+                {{ 'form.tel_valid' | translate }}
               </div>
               <div *ngIf="avisForm.get('telephone')?.errors?.['minlength']">
-                {{ 'form.champ_10' }}
+                {{ 'form.champ_10' | translate }}
               </div>
             </div>
           </div>
@@ -177,7 +177,7 @@
                 {{ 'form.champ_oblig' | translate }}
               </div>
               <div *ngIf="avisForm.get('email')?.errors?.['email']">
-                {{ 'form.mail_valid' }}
+                {{ 'form.mail_valid' | translate }}
               </div>
             </div>
           </div>
@@ -185,7 +185,7 @@
         <div class="row">
           <div class="mb-3 col-md-12">
             <label class="form-label" for="avis">
-              {{ 'form.avis' }}
+              {{ 'form.avis' | translate }}
             </label>
             <textarea
               class="form-control"
