@@ -96,7 +96,8 @@ import { ScrollPanelModule } from 'primeng/scrollpanel'
 
 import { SliderComponent } from './components/slider/slider.component';
 
-import { SCardInfoGComponent } from './components/s-card-info-g/s-card-info-g.component'
+import { SCardInfoGComponent } from './components/s-card-info-g/s-card-info-g.component';
+import { CardLibraryComponent } from './components/card-library/card-library.component'
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -202,6 +203,7 @@ let modules: any = [
     CondidaCartTowComponent,
     SliderComponent,
     SCardInfoGComponent,
+    CardLibraryComponent,
   ],
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
   exports: [

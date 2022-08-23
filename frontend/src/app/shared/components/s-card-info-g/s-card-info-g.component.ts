@@ -41,70 +41,133 @@ export class SCardInfoGComponent implements OnInit {
         filter: false,
         row: [
           {
-            colum: 6,
-            id: 'd342',
+            colum: 4,
             cards_we_need: [
               {
-                name: 'card_3',
+                name: 'card_1',
+                id: 'id45235',
               },
               {
-                name: 'card_3',
+                name: 'card_1',
+                id: 'id45235',
               },
               {
-                name: 'card_3',
+                name: 'card_1',
+                id: 'id45235',
               },
               {
-                name: 'card_3',
+                name: 'card_1',
+                id: 'id45235',
               },
               {
-                name: 'card_3',
+                name: 'card_1',
+                id: 'id45235',
               },
             ],
           },
           {
-            colum: 3,
-            id: 'd42',
+            colum: 4,
             cards_we_need: [
               {
                 name: 'card_1',
+                id: 'id45235',
               },
               {
                 name: 'card_1',
+                id: 'id45235',
               },
               {
                 name: 'card_1',
+                id: 'id45235',
               },
               {
                 name: 'card_1',
+                id: 'id45235',
               },
               {
                 name: 'card_1',
+                id: 'id45235',
               },
             ],
           },
           {
-            colum: 3,
-            id: 'd42',
+            colum: 4,
             cards_we_need: [
               {
                 name: 'card_1',
-              },
-              {
-                name: 'card_1',
-              },
-              {
-                name: 'card_1',
-              },
-              {
-                name: 'card_1',
-              },
-              {
-                name: 'card_1',
+                id: 'id45235',
               },
             ],
           },
         ],
-        info: {},
+      },
+    },
+    {
+      name: 'show 1',
+      id: 'd342',
+      detail: {
+        filter:  false,
+        row: [
+          {
+            colum: 4,
+            cards_we_need: [
+              {
+                name: 'card_1',
+                id: 'id45235',
+              },
+              {
+                name: 'card_4',
+                id: 'id45235',
+              },
+              {
+                name: 'card_1',
+                id: 'id45235',
+              },
+              {
+                name: 'card_1',
+                id: 'id45235',
+              },
+              {
+                name: 'card_1',
+                id: 'id45235',
+              },
+            ],
+          },
+          {
+            colum: 4,
+            cards_we_need: [
+              {
+                name: 'card_1',
+                id: 'id45235',
+              },
+              {
+                name: 'card_1',
+                id: 'id45235',
+              },
+              {
+                name: 'card_1',
+                id: 'id45235',
+              },
+              {
+                name: 'card_1',
+                id: 'id45235',
+              },
+              {
+                name: 'card_1',
+                id: 'id45235',
+              },
+            ],
+          },
+          {
+            colum: 4,
+            cards_we_need: [
+              {
+                name: 'card_1',
+                id: 'id45235',
+              },
+            ],
+          },
+        ],
       },
     },
   ];
