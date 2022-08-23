@@ -10,6 +10,6 @@ import { CDetailsComponent } from './c-details/c-details.component';
 @NgModule({
   declarations: [CListComponent, CDetailsComponent],
   imports: [SharedModule, CommonModule, CondidaCRoutingModule],
-  exports: [CondidaCRoutingModule]
+  exports: []
 })
 export class CondidaCModule {}
