@@ -1,3 +1,4 @@
+     // #region glubal
     .bd-placeholder-img {
       font-size: 1.125rem;
       text-anchor: middle;
@@ -50,34 +51,20 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
+// #endregion
 
     // #region in card
 
     .p-scrollpanel {
-      p {
-        padding: .5rem;
-        line-height: 1.5;
-        margin: 0;
-      }
 
       &.custombar1 {
         .p-scrollpanel-wrapper {
-          border-right: 9px solid var(--layer-1);
+          border-right: 9px solid ;
         }
 
         .p-scrollpanel-bar {
-          background-color: var(--primary-color);
-          opacity: 1;
+          background-color: #1de9b6;
+
           transition: background-color .2s;
 
           &:hover {
@@ -113,12 +100,7 @@
 
 
 
-    .filter-btn {
-      position: absolute;
 
-
-
-    }
 
     // #endregion
 
@@ -555,3 +537,156 @@
 
 
     // #endregion
+
+  // #region  filter
+
+
+
+
+
+
+.hed{
+overflow: hidden;
+}
+
+
+
+
+    .filter-btn {
+      display: block;
+
+      width: 50px;
+      height: 40px;
+      margin: 4px;
+
+
+
+    }
+
+
+
+.sideBar-Main{
+position: absolute;
+max-height: 3001px;
+margin: 30px;
+
+}
+
+
+
+
+
+
+.sidebar-offre {
+  padding-inline-end: 1em;
+
+  white-space: nowrap;
+
+  h4,
+  button {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .close {
+    width: 350px;
+  }
+
+  button::after {
+    display: block;
+  }
+
+  .listFilte1 {
+    margin-top: 0 !important;
+  }
+
+  .filtreee {
+    display: none;
+  }
+
+  &:hover {
+    width: 350px;
+
+    .accordion-button {
+      padding: 1.25rem 1rem !important;
+    }
+
+    .listFilte1 {
+      margin-top: 20px !important;
+    }
+
+    .filtreee {
+      display: block;
+    }
+
+    button::after {
+      display: block;
+    }
+  }
+}
+
+* {
+  transition: all 0.35s ease-in-out;
+}
+
+.accordion-button {
+  // padding: 0 0 !important;
+  // padding-inline-start: 10px !important;
+}
+
+.sidebar-offre {
+  padding-inline-end: 1em;
+  width: 65px;
+  white-space: nowrap;
+
+  h4,
+  button {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  button::after {
+    display: none;
+  }
+
+  &.open {
+    width: 350px;
+
+    .accordion-button {
+      padding: 1.25rem 1rem !important;
+    }
+
+    .listFilte1 {
+      margin-top: 20px !important;
+    }
+
+    .filtreee {
+      display: block;
+    }
+
+    button::after {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .sidebar-offre {
+    display: none;
+  }
+
+  .sidebar-offre.open {
+    display: block;
+    z-index: 200;
+    width: 100%;
+  }
+}
+
+.sideBar-text {
+  width: 0;
+}
+// #endregion
+
+
+
+
