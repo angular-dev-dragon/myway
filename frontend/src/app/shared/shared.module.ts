@@ -93,7 +93,9 @@ import { MegaMenuModule } from 'primeng/megamenu'
 import { CardModule } from 'primeng/card'
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 
-import { SliderComponent } from './components/slider/slider.component'
+import { SliderComponent } from './components/slider/slider.component';
+
+import { SCardInfoGComponent } from './components/s-card-info-g/s-card-info-g.component'
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -192,14 +194,18 @@ let modules: any = [
     CardTemoignageComponent,
     CardQuestionReponseComponent,
     // condidats cards
+
     CondidatsCardComponent,
     CondidaAdminComponent,
     CondidaCardComponent,
     CondidaCartTowComponent,
     SliderComponent,
+    SCardInfoGComponent,
   ],
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
   exports: [
+
+    SCardInfoGComponent,
     SliderComponent,
     CardArticleComponent,
     CardOffreHorizontaleComponent,
