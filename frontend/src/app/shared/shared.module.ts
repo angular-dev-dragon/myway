@@ -73,6 +73,7 @@ import { MatMenuModule } from '@angular/material/menu'
 import { MatSliderModule } from '@angular/material/slider'
 import { CardTemoignageComponent } from './components/card-temoignage/card-temoignage.component'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+
 import { CardOffreVerticaleComponent } from './components/card-offre-Verticale/card-offre-Verticale.component'
 import { CardOffreHorizontaleComponent } from './components/card-offre-horizontale/card-offre-horizontale.component'
 import { CardQuestionReponseComponent } from './components/card-question-reponse/card-question-reponse.component'

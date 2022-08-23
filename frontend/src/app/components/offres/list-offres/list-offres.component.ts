@@ -10,6 +10,7 @@ import { NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap'
 export class ListOffresComponent implements OnInit {
   collapsed = false
   showSidebar: boolean = false
+  epingledSidebar: boolean = false
   orientation: any = 'verticale'
   paginate: any = ''
   offres: any = [
@@ -142,7 +143,7 @@ export class ListOffresComponent implements OnInit {
     // console.log('filtre par secteurs', secteurFiltre)
 
     let searchFiltre = this.searchInput.nativeElement.value
-    // console.log('filtre par search', searchFiltre)
+    console.log('filtre par search', searchFiltre)
     let dateFiltre = this.dateInput.nativeElement.value
     // console.log('filtre par date', dateFiltre)
 
