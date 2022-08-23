@@ -92,7 +92,7 @@ import { BreadcrumbModule } from 'primeng/breadcrumb'
 
 import { MegaMenuModule } from 'primeng/megamenu'
 import { CardModule } from 'primeng/card'
-import { ScrollPanelModule } from 'primeng/scrollpanel';
+import { ScrollPanelModule } from 'primeng/scrollpanel'
 
 import { SliderComponent } from './components/slider/slider.component';
 
@@ -236,15 +236,15 @@ let modules: any = [
 export class SharedModule {
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    translate: TranslateService
+    translate: TranslateService,
   ) {
     if (isPlatformBrowser(this.platformId)) {
-      document.body.classList.add('ltr');
-      localStorage.setItem('lang', 'fr');
+      document.body.classList.add('ltr')
+      localStorage.setItem('lang', 'fr')
 
-      var lang = 'fr';
-      translate.setDefaultLang(lang);
-      translate.addLangs(['en', 'fr']);
+      var lang = 'fr'
+      translate.setDefaultLang(lang)
+      translate.addLangs(['en', 'fr'])
     }
   }
 }

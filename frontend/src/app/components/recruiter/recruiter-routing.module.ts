@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { AvisComponent } from './avis/avis.component'
+import { CondidatureSpontaneeComponent } from './condidature-spontanee/condidature-spontanee.component'
 import { DetailsRecruiterComponent } from './details-recruiter/details-recruiter.component'
 import { EntretienComponent } from './entretien/entretien.component'
 import { FaqComponent } from './faq/faq.component'
@@ -50,6 +51,10 @@ const routes: Routes = [
       {
         path: 'gallerie',
         component: GalleryComponent,
+      },
+      {
+        path: 'condidature-spontanee',
+        component: CondidatureSpontaneeComponent,
       },
     ],
   },
