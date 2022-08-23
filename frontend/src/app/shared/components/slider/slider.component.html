@@ -4,15 +4,12 @@
 
 >
   <ng-template ngbSlide *ngFor="let s of  info">
-    <div class="picsum-img-wrapper">
+    <div class="picsum-img-wrapper aa">
       <img
       [src]="s.url"
       alt="{{s.alt}}"
-
-      style="
-         height:'60px';
-         width: '{{width}}'
-      "
+      [style.width]="width"
+      [style.height]=" height"
       >
     </div>
     <div class="carousel-caption">
@@ -21,7 +18,6 @@
     </div>
   </ng-template>
 </ngb-carousel>
-
 
 
 
