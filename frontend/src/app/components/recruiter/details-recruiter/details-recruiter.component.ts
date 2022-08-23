@@ -31,6 +31,11 @@ export class DetailsRecruiterComponent implements OnInit {
     { label: 'Entretien', icon: 'pi pi-fw pi-cog', routerLink: ['entretien'] },
     { label: 'Gallerie', icon: 'pi pi-fw pi-images', routerLink: ['gallerie'] },
     {
+      label: 'offres',
+      icon: 'pi pi-fw pi-list',
+      routerLink: ['offre-emploi'],
+    },
+    {
       label: 'Condidateure Spontannée',
       icon: 'pi pi-fw pi-file',
       routerLink: ['condidature-spontanee'],

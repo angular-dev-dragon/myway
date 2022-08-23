@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
+import { OffreEmploiRecruiterComponent } from './offre-emploi-recruiter/offre-emploi-recruiter.component'
 import { AvisComponent } from './avis/avis.component'
 import { CondidatureSpontaneeComponent } from './condidature-spontanee/condidature-spontanee.component'
 import { DetailsRecruiterComponent } from './details-recruiter/details-recruiter.component'
@@ -55,6 +56,10 @@ const routes: Routes = [
       {
         path: 'condidature-spontanee',
         component: CondidatureSpontaneeComponent,
+      },
+      {
+        path: 'offre-emploi',
+        component: OffreEmploiRecruiterComponent,
       },
     ],
   },
