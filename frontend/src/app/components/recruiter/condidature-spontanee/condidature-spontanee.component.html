@@ -171,11 +171,10 @@
         <label class="form-label" for="ville">
           {{ 'form.ville' | translate }}
         </label>
-        <input
-          class="form-control"
+        <select
+          class="form-select"
           id="ville"
           type="texte"
-          placeholder=" {{ 'form.exp_tel' | translate }}"
           formControlName="ville"
           name="ville"
           [ngClass]="{
@@ -183,7 +182,12 @@
               CondidatureForm.get('ville')?.touched &&
               CondidatureForm.get('ville')?.invalid
           }"
-        />
+        >
+          <option selected disabled value="">Choisir une Ville</option>
+
+          <option>Casalanca</option>
+          <option>Marrakech</option>
+        </select>
         <div
           *ngIf="
             CondidatureForm.get('ville')?.touched &&
@@ -216,7 +220,14 @@
               CondidatureForm.get('poste')?.touched &&
               CondidatureForm.get('poste')?.invalid
           }"
-        ></select>
+        >
+          <option selected disabled value="">Choisir un Domaine</option>
+
+          <option>Informatique</option>
+          <option>Comptabilité</option>
+          <option>Gestion</option>
+          <option>Commerce</option>
+        </select>
         <div
           *ngIf="
             CondidatureForm.get('poste')?.touched &&
