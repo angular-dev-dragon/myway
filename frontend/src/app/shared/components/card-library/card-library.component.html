@@ -1,200 +1,243 @@
+<div *ngFor="let i of info" class="row">
+  <div
+    *ngIf="i.name === 'card_1'"
+    id="{{ i.id }}"
+    class="carbon-example flex-wrapper"
+  >
+    <img
+      src="https://via.placeholder.com/200x200/48D1CC/000000"
+      alt="example business logo"
+    />
+    <div class="inner-wrapper">
+      <p>
+        Understand user behavior &amp; ship product faster. Try Amplitude free
+        today.
+      </p>
+      <p class="fine-print">block via Carbon</p>
+    </div>
+  </div>
 
-
-
-
-  <div *ngFor="let i of info" class="row">
-
-          <div *ngIf="i.name === 'card_1'" id="{{i.id}}" class="carbon-example flex-wrapper">
-            <img src="https://via.placeholder.com/200x200/48D1CC/000000" alt="example business logo" />
-            <div class="inner-wrapper">
-              <p>
-                Understand user behavior &amp; ship product faster.
-                Try Amplitude free today.
-              </p>
-              <p class="fine-print">block via Carbon</p>
+  <div *ngIf="i.name === 'card_3'" id="{{ i.id }}">
+    <div class="text-center mb-2-8 mb-lg-6">
+      <h2 class="display-18 display-md-16 display-lg-14 font-weight-700">
+        Why choose
+        <strong class="text-primary font-weight-700">Us</strong>
+      </h2>
+      <span>The trusted source for why choose us</span>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-sm-6 col-lg-4 mb-2-9 mb-sm-0">
+        <div class="pr-md-3">
+          <div class="text-center text-sm-right mb-2-9">
+            <div class="mb-4">
+              <img
+                src="https://via.placeholder.com/80x80/FFB6C1/000000"
+                alt="..."
+                class="rounded-circle"
+              />
             </div>
+            <h4 class="sub-i">Residential Cleaning</h4>
+            <p class="display-30 mb-0">
+              Roin gravida nibh vel velit auctor aliquetenean sollicitudin,
+              lorem qui bibendum auctor.
+            </p>
+          </div>
+          <div class="text-center text-sm-right">
+            <div class="mb-4">
+              <img
+                src="https://via.placeholder.com/80x80/87CEFA/000000"
+                alt="..."
+                class="rounded-circle"
+              />
+            </div>
+            <h4 class="sub-i">Commercial Cleaning</h4>
+            <p class="display-30 mb-0">
+              Gravida roin nibh vel velit auctor aliquetenean sollicitudin,
+              lorem qui bibendum auctor.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 d-none d-lg-block">
+        <div class="why-choose-center-image">
+          <img
+            src="https://via.placeholder.com/350x350/FF7F50/000000"
+            alt="..."
+            class="rounded-circle"
+          />
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <div class="pl-md-3">
+          <div class="text-center text-sm-left mb-5">
+            <div class="mb-4">
+              <img
+                src="https://via.placeholder.com/80x80/8A2BE2/000000"
+                alt="..."
+                class="rounded-circle"
+              />
+            </div>
+            <h4 class="sub-i">Washing services</h4>
+            <p class="display-30 mb-0">auctor.</p>
           </div>
 
-          <div *ngIf="i.name === 'card_3'" id="{{i.id}}">
-            <div class="text-center mb-2-8 mb-lg-6">
-              <h2 class="display-18 display-md-16 display-lg-14 font-weight-700">
-                Why choose
-                <strong class="text-primary font-weight-700">Us</strong>
-              </h2>
-              <span>The trusted source for why choose us</span>
+          <div class="text-center text-sm-left">
+            <div class="mb-4">
+              <img
+                src="https://via.placeholder.com/80x80/20B2AA/000000"
+                alt="..."
+                class="rounded-circle"
+              />
             </div>
-            <div class="row align-items-center">
-              <div class="col-sm-6 col-lg-4 mb-2-9 mb-sm-0">
-                <div class="pr-md-3">
-                  <div class="text-center text-sm-right mb-2-9">
-                    <div class="mb-4">
-                      <img src="https://via.placeholder.com/80x80/FFB6C1/000000" alt="..." class="rounded-circle" />
-                    </div>
-                    <h4 class="sub-i">Residential Cleaning</h4>
-                    <p class="display-30 mb-0">
-                      Roin gravida nibh vel velit auctor aliquetenean
-                      sollicitudin, lorem qui bibendum auctor.
-                    </p>
-                  </div>
-                  <div class="text-center text-sm-right">
-                    <div class="mb-4">
-                      <img src="https://via.placeholder.com/80x80/87CEFA/000000" alt="..." class="rounded-circle" />
-                    </div>
-                    <h4 class="sub-i">Commercial Cleaning</h4>
-                    <p class="display-30 mb-0">
-                      Gravida roin nibh vel velit auctor aliquetenean
-                      sollicitudin, lorem qui bibendum auctor.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 d-none d-lg-block">
-                <div class="why-choose-center-image">
-                  <img src="https://via.placeholder.com/350x350/FF7F50/000000" alt="..." class="rounded-circle" />
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4">
-                <div class="pl-md-3">
-                  <div class="text-center text-sm-left mb-5">
-                    <div class="mb-4">
-                      <img src="https://via.placeholder.com/80x80/8A2BE2/000000" alt="..." class="rounded-circle" />
-                    </div>
-                    <h4 class="sub-i">Washing services</h4>
-                    <p class="display-30 mb-0">auctor.</p>
-                  </div>
+            <h4 class="sub-i">Carpet cleaning</h4>
+            <p class="display-30 mb-0">
+              Vel proin gravida nibh velit auctor aliquetenean sollicitudin,
+              lorem qui bibendum auctor.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-                  <div class="text-center text-sm-left">
-                    <div class="mb-4">
-                      <img src="https://via.placeholder.com/80x80/20B2AA/000000" alt="..." class="rounded-circle" />
-                    </div>
-                    <h4 class="sub-i">Carpet cleaning</h4>
-                    <p class="display-30 mb-0">
-                      Vel proin gravida nibh velit auctor aliquetenean
-                      sollicitudin, lorem qui bibendum auctor.
-                    </p>
-                  </div>
-                </div>
-              </div>
+  <div *ngIf="i.name === 'card_4'" class="row" id="{{ i.id }}">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-block">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-auto">
+              <img
+                class="img-fluid rounded-circle"
+                style="width: 70px;"
+                src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                alt="dashboard-user"
+              />
+            </div>
+            <div class="col">
+              <h5>John Doe</h5>
+              <span>UX Designer</span>
             </div>
           </div>
-
-          <div *ngIf="i.name === 'card_4'" class="row" id="{{i.id}}">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-block">
-                  <div class="row align-items-center justify-content-center">
-                    <div class="col-auto">
-                      <img class="img-fluid rounded-circle" style="width: 70px"
-                        src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="dashboard-user" />
-                    </div>
-                    <div class="col">
-                      <h5>John Doe</h5>
-                      <span>UX Designer</span>
-                    </div>
-                  </div>
-                  <ul class="task-list">
-                    <li>
-                      <i class="task-icon bg-c-green"></i>
-                      <h6>
-                        Anton Knudsen<span class="float-right text-muted">14 MAY</span>
-                      </h6>
-                      <p class="text-muted">Lorem ipsum is dolorem…</p>
-                    </li>
-                    <li>
-                      <i class="task-icon bg-c-green"></i>
-                      <h6>
-                        Anton Knudsen<span class="float-right text-muted">14 MAY</span>
-                      </h6>
-                      <p class="text-muted">Lorem ipsum is dolorem…</p>
-                    </li>
-                    <li>
-                      <i class="task-icon bg-c-green"></i>
-                      <h6>
-                        Anton Knudsen<span class="float-right text-muted">14 MAY</span>
-                      </h6>
-                      <p class="text-muted">Lorem ipsum is dolorem…</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+          <ul class="task-list">
+            <li>
+              <i class="task-icon bg-c-green"></i>
+              <h6>
+                Anton Knudsen
+                <span class="float-right text-muted">14 MAY</span>
+              </h6>
+              <p class="text-muted">Lorem ipsum is dolorem…</p>
+            </li>
+            <li>
+              <i class="task-icon bg-c-green"></i>
+              <h6>
+                Anton Knudsen
+                <span class="float-right text-muted">14 MAY</span>
+              </h6>
+              <p class="text-muted">Lorem ipsum is dolorem…</p>
+            </li>
+            <li>
+              <i class="task-icon bg-c-green"></i>
+              <h6>
+                Anton Knudsen
+                <span class="float-right text-muted">14 MAY</span>
+              </h6>
+              <p class="text-muted">Lorem ipsum is dolorem…</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-block">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-auto">
+              <img
+                class="img-fluid rounded-circle"
+                style="width: 70px;"
+                src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                alt="dashboard-user"
+              />
             </div>
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-block">
-                  <div class="row align-items-center justify-content-center">
-                    <div class="col-auto">
-                      <img class="img-fluid rounded-circle" style="width: 70px"
-                        src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="dashboard-user" />
-                    </div>
-                    <div class="col">
-                      <h5>User Doe</h5>
-                      <span>UX Designer</span>
-                    </div>
-                  </div>
-                  <ul class="task-list">
-                    <li>
-                      <i class="task-icon bg-c-green"></i>
-                      <h6>
-                        Anton Knudsen<span class="float-right text-muted">14 MAY</span>
-                      </h6>
-                      <p class="text-muted">Lorem ipsum is dolorem…</p>
-                    </li>
-                    <li>
-                      <i class="task-icon bg-c-green"></i>
-                      <h6>
-                        Anton Knudsen<span class="float-right text-muted">14 MAY</span>
-                      </h6>
-                      <p class="text-muted">Lorem ipsum is dolorem…</p>
-                    </li>
-                    <li>
-                      <i class="task-icon bg-c-green"></i>
-                      <h6>
-                        Anton Knudsen<span class="float-right text-muted">14 MAY</span>
-                      </h6>
-                      <p class="text-muted">Lorem ipsum is dolorem…</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-block">
-                  <div class="row align-items-center justify-content-center">
-                    <div class="col-auto">
-                      <img class="img-fluid rounded-circle" style="width: 70px"
-                        src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="dashboard-user" />
-                    </div>
-                    <div class="col">
-                      <h5>John Doe</h5>
-                      <span>UX Designer</span>
-                    </div>
-                  </div>
-                  <ul class="task-list">
-                    <li>
-                      <i class="task-icon bg-c-green"></i>
-                      <h6>
-                        Anton Knudsen<span class="float-right text-muted">14 MAY</span>
-                      </h6>
-                      <p class="text-muted">Lorem ipsum is dolorem…</p>
-                    </li>
-                    <li>
-                      <i class="task-icon bg-c-green"></i>
-                      <h6>
-                        Anton Knudsen<span class="float-right text-muted">14 MAY</span>
-                      </h6>
-                      <p class="text-muted">Lorem ipsum is dolorem…</p>
-                    </li>
-                    <li>
-                      <i class="task-icon bg-c-green"></i>
-                      <h6>
-                        Anton Knudsen<span class="float-right text-muted">14 MAY</span>
-                      </h6>
-                      <p class="text-muted">Lorem ipsum is dolorem…</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+            <div class="col">
+              <h5>User Doe</h5>
+              <span>UX Designer</span>
             </div>
           </div>
+          <ul class="task-list">
+            <li>
+              <i class="task-icon bg-c-green"></i>
+              <h6>
+                Anton Knudsen
+                <span class="float-right text-muted">14 MAY</span>
+              </h6>
+              <p class="text-muted">Lorem ipsum is dolorem…</p>
+            </li>
+            <li>
+              <i class="task-icon bg-c-green"></i>
+              <h6>
+                Anton Knudsen
+                <span class="float-right text-muted">14 MAY</span>
+              </h6>
+              <p class="text-muted">Lorem ipsum is dolorem…</p>
+            </li>
+            <li>
+              <i class="task-icon bg-c-green"></i>
+              <h6>
+                Anton Knudsen
+                <span class="float-right text-muted">14 MAY</span>
+              </h6>
+              <p class="text-muted">Lorem ipsum is dolorem…</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-block">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-auto">
+              <img
+                class="img-fluid rounded-circle"
+                style="width: 70px;"
+                src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                alt="dashboard-user"
+              />
+            </div>
+            <div class="col">
+              <h5>John Doe</h5>
+              <span>UX Designer</span>
+            </div>
+          </div>
+          <ul class="task-list">
+            <li>
+              <i class="task-icon bg-c-green"></i>
+              <h6>
+                Anton Knudsen
+                <span class="float-right text-muted">14 MAY</span>
+              </h6>
+              <p class="text-muted">Lorem ipsum is dolorem…</p>
+            </li>
+            <li>
+              <i class="task-icon bg-c-green"></i>
+              <h6>
+                Anton Knudsen
+                <span class="float-right text-muted">14 MAY</span>
+              </h6>
+              <p class="text-muted">Lorem ipsum is dolorem…</p>
+            </li>
+            <li>
+              <i class="task-icon bg-c-green"></i>
+              <h6>
+                Anton Knudsen
+                <span class="float-right text-muted">14 MAY</span>
+              </h6>
+              <p class="text-muted">Lorem ipsum is dolorem…</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

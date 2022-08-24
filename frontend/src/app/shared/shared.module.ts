@@ -91,10 +91,12 @@ import { BreadcrumbModule } from 'primeng/breadcrumb'
 
 import { MegaMenuModule } from 'primeng/megamenu'
 import { CardModule } from 'primeng/card'
-import { ScrollPanelModule } from 'primeng/scrollpanel';
+import { ScrollPanelModule } from 'primeng/scrollpanel'
 
-import { SliderComponent } from './components/slider/slider.component';
-import { CardComponent } from './components/card/card.component'
+import { SliderComponent } from './components/slider/slider.component'
+import { ListOffresComponent } from './components/list-offres/list-offres.component'
+import { SCardInfoGComponent } from './components/s-card-info-g/s-card-info-g.component'
+import { CardLibraryComponent } from './components/card-library/card-library.component'
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -198,7 +200,9 @@ let modules: any = [
     CondidaCardComponent,
     CondidaCartTowComponent,
     SliderComponent,
-    CardComponent,
+    ListOffresComponent,
+    SCardInfoGComponent,
+    CardLibraryComponent,
   ],
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
   exports: [
@@ -225,21 +229,25 @@ let modules: any = [
     CondidaAdminComponent,
     CondidaCardComponent,
     CondidaCartTowComponent,
+    ListOffresComponent,
+    SCardInfoGComponent,
+    CardLibraryComponent,
+
     ...modules,
   ],
 })
 export class SharedModule {
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    translate: TranslateService
+    translate: TranslateService,
   ) {
     if (isPlatformBrowser(this.platformId)) {
-      document.body.classList.add('ltr');
-      localStorage.setItem('lang', 'fr');
+      document.body.classList.add('ltr')
+      localStorage.setItem('lang', 'fr')
 
-      var lang = 'fr';
-      translate.setDefaultLang(lang);
-      translate.addLangs(['en', 'fr']);
+      var lang = 'fr'
+      translate.setDefaultLang(lang)
+      translate.addLangs(['en', 'fr'])
     }
   }
 }
