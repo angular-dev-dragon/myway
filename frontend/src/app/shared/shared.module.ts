@@ -177,6 +177,7 @@ let modules: any = [
 
 @NgModule({
   declarations: [
+    ListOffresComponent,
     CardRecruiterComponent,
     CardInfoSmall,
     ContentLayoutComponent,
@@ -206,6 +207,7 @@ let modules: any = [
   ],
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
   exports: [
+    ListOffresComponent,
     SliderComponent,
     CardArticleComponent,
     CardOffreHorizontaleComponent,
