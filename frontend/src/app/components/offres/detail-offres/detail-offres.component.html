@@ -154,7 +154,9 @@
                   </li>
                   <li>
                     <span class="offre-critere-label">Compétence clés:</span>
-                    {{ details.Competences }}
+                    <span *ngFor="let comptence of details.Competences">
+                      {{ comptence }}
+                    </span>
                   </li>
                   <li>
                     <span class="offre-critere-label">
