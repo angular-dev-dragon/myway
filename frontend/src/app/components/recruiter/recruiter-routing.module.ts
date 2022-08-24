@@ -17,7 +17,19 @@ const routes: Routes = [
     component: ListRecruiterComponent,
   },
   {
-    path: 'list-recruteur',
+    path: 'recruteurs',
+    component: ListRecruiterComponent,
+  },
+  {
+    path: 'cabinets-recrutements',
+    component: ListRecruiterComponent,
+  },
+  {
+    path: 'associations',
+    component: ListRecruiterComponent,
+  },
+  {
+    path: 'etablissements',
     component: ListRecruiterComponent,
   },
   {

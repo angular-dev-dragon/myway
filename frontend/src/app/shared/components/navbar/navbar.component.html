@@ -98,15 +98,23 @@
 
           <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item" [routerLink]="['/recruteur']">
+              <a class="dropdown-item" [routerLink]="['/recruteurs']">
                 Recruteurs
               </a>
             </li>
             <li>
-              <a class="dropdown-item" href="#">Cabinets de recrutement</a>
+              <a
+                class="dropdown-item"
+                [routerLink]="['recruteurs/cabinets-recrutements']"
+              >
+                Cabinets de recrutement
+              </a>
             </li>
             <li>
-              <a class="dropdown-item" href="#">
+              <a
+                class="dropdown-item"
+                [routerLink]="['recruteurs/associations']"
+              >
                 Associations d'insertion économique
               </a>
             </li>
@@ -114,7 +122,10 @@
               <a class="dropdown-item" href="#">Etablissements de formations</a>
             </li> -->
             <li>
-              <a class="dropdown-item" href="#">
+              <a
+                class="dropdown-item"
+                [routerLink]="['/recruteursetablissements']"
+              >
                 Etablissements de formation
               </a>
             </li>
@@ -293,7 +304,6 @@
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
-            style="padding-left: 30px;"
           >
             <img
               src="https://avatars.githubusercontent.com/u/71600486?v=4"
