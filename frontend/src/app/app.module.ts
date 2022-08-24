@@ -16,6 +16,7 @@ import { RubriquePostModule } from './components/rubrique-article/rubrique-post.
 import { EspaceCommunautaireModule } from './components/espace-communautaire/espace-communautaire.module'
 import { ListBlogeurComponent } from './components/blog/list-blogeur/list-blogeur.component'
 import { CondidaModule } from './components/condida/condida.module'
+import { CompetencesModule } from './components/competences/competences.module'
 
 @NgModule({
   declarations: [AppComponent, ListBlogeurComponent],
@@ -33,6 +34,7 @@ import { CondidaModule } from './components/condida/condida.module'
     InfoPratiqueModule,
     RubriquePostModule,
     EspaceCommunautaireModule,
+    CompetencesModule,
   ],
   exports: [],
   providers: [],

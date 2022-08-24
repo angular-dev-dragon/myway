@@ -12,7 +12,7 @@ export const content: Routes = [
   {
     path: 'Candidats',
     loadChildren: () =>
-      import('../../components/condida-c/condida-c.module').then(
+      import('../../components/competences/condida-c/condida-c.module').then(
         (m) => m.CondidaCModule,
       ),
   },
@@ -71,6 +71,13 @@ export const content: Routes = [
     path: 'blog',
     loadChildren: () =>
       import('../../components/blog/blog.module').then((m) => m.BlogModule),
+  },
+  {
+    path: 'competences',
+    loadChildren: () =>
+      import('../../components/competences/competences.module').then(
+        (m) => m.CompetencesModule,
+      ),
   },
   // {
   //   path: 'liens-utiles',
