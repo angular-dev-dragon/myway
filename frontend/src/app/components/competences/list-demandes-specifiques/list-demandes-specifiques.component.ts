@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core'
 
 @Component({
-  selector: 'app-list-condidatures-spontanees',
-  templateUrl: './list-condidatures-spontanees.component.html',
-  styleUrls: ['./list-condidatures-spontanees.component.scss'],
+  selector: 'app-list-demandes-specifiques',
+  templateUrl: './list-demandes-specifiques.component.html',
+  styleUrls: ['./list-demandes-specifiques.component.scss'],
 })
-export class ListCondidaturesSpontaneesComponent implements OnInit {
+export class ListDemandesSpecifiquesComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}

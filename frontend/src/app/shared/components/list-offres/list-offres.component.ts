@@ -14,6 +14,7 @@ import { NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap'
   styleUrls: ['./list-offres.component.scss'],
 })
 export class ListOffresComponent implements OnInit {
+  @Input() link = ''
   @Input() offres: any = [
     {
       Intitule: 'Développeur1',

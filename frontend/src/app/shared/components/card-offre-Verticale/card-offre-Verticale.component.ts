@@ -17,6 +17,8 @@ export class CardOffreVerticaleComponent implements OnInit {
   @Input() Ville: any = ''
   @Input() Date: any = ''
   @Input() image: any = ''
+  @Input() dateDisponibilite: any = ''
+  @Input() showBtn: any = true
 
   constructor() {}
 

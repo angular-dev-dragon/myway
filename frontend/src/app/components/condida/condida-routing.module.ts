@@ -1,8 +1,8 @@
-import { CondidaListComponent } from './condida-list/condida-list.component';
+import { CondidaListComponent } from './condida-list/condida-list.component'
 
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { CondidatDetailsComponent } from '../candidats/condidat-details/condidat-details.component';
+import { NgModule } from '@angular/core'
+import { RouterModule, Routes } from '@angular/router'
+import { CondidatDetailsComponent } from '../candidats/condidat-details/condidat-details.component'
 
 const routes: Routes = [
   {
@@ -17,9 +17,8 @@ const routes: Routes = [
   {
     path: 'details-condidat',
     component: CondidatDetailsComponent,
-  }
+  },
 ]
-
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
