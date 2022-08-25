@@ -2,15 +2,16 @@ import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { DetailOffresComponent } from './detail-offres/detail-offres.component'
 import { ListOffresComponent } from '../../shared/components/list-offres/list-offres.component'
+import { ListOffresEmploiComponent } from './list-offres-emploi/list-offres-emploi.component'
 
 const routes: Routes = [
   {
     path: '',
-    component: ListOffresComponent,
+    component: ListOffresEmploiComponent,
   },
   {
     path: 'list-offres',
-    component: ListOffresComponent,
+    component: ListOffresEmploiComponent,
   },
   {
     path: 'details-offres',
