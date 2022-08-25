@@ -206,22 +206,22 @@
       </div>
       <!-- Email  input -->
       <div class="mb-3 col-md-6">
-        <label class="form-label" for="Pays">
+        <label class="form-label" for="pays">
           {{ 'form.pays' | translate }}
         </label>
         <select
           class="form-select"
-          id="Pays"
+          id="pays"
           type="text"
-          formControlName="Pays"
-          name="Pays"
+          formControlName="pays"
+          name="pays"
           [ngClass]="{
             'is-invalid':
-              CondidatureForm.get('Pays')?.touched &&
-              CondidatureForm.get('Pays')?.invalid
+              CondidatureForm.get('pays')?.touched &&
+              CondidatureForm.get('pays')?.invalid
           }"
         >
-          <option selected disabled value="">Choisir un Pays</option>
+          <option selected disabled value="">Choisir un pays</option>
           <option value="Informatique">Informatique</option>
           <option value="Comptabilité">Comptabilité</option>
           <option value="Gestion">Gestion</option>
@@ -229,12 +229,12 @@
         </select>
         <div
           *ngIf="
-            CondidatureForm.get('Pays')?.touched &&
-            CondidatureForm.get('Pays')?.invalid
+            CondidatureForm.get('pays')?.touched &&
+            CondidatureForm.get('pays')?.invalid
           "
           class="invalid-feedback"
         >
-          <div *ngIf="CondidatureForm.get('Pays')?.errors?.['required']">
+          <div *ngIf="CondidatureForm.get('pays')?.errors?.['required']">
             {{ 'form.champ_oblig' | translate }}
           </div>
         </div>
