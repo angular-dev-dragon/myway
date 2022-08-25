@@ -26,9 +26,13 @@
       </div>
       <h5>{{ Secteur }}</h5>
       <h6 class="text-justify">{{ TypePoste }}: {{ Poste }}</h6>
-      <h6 class="h66">
+      <h6 class="h66" *ngIf="NomEntreprise && TypeEntreprise">
         {{ NomEntreprise }}:
         {{ TypeEntreprise }}
+      </h6>
+      <h6 *ngIf="dateDisponibilite">
+        Disponible à partir de:
+        {{ dateDisponibilite }}
       </h6>
 
       <ul class="p-0">

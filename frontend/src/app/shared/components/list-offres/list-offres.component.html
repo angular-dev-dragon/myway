@@ -866,7 +866,7 @@
               <div class="row" *ngIf="orientation == 'horizontale'">
                 <app-card-offre-horizontale
                   class="col-md-6 mb-3"
-                  [routerLink]="['/offres/details-offres']"
+                  [routerLink]="[link]"
                   *ngFor="
                     let offre of offres
                       | paginate: { itemsPerPage: 20, currentPage: paginate }
@@ -880,6 +880,7 @@
                   [TypeContrat]="offre.TypeContrat"
                   [Ville]="offre.Ville"
                   [Date]="offre.Date"
+                  [dateDisponibilite]="offre.dateDisponibilite"
                   [image]="offre.Image"
                 ></app-card-offre-horizontale>
                 <pagination-controls
