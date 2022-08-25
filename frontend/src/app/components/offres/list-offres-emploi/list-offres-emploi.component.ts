@@ -27,6 +27,7 @@ export class ListOffresEmploiComponent implements OnInit {
       NiveauxExperience: 'entre 3 et 4',
       langue: 'Français',
     },
+    // #region data shwo jus one
     {
       Intitule: ' Lorem Ipsum Quis nostrud',
       TypeContrat: 'Anapec',
@@ -95,5 +96,6 @@ export class ListOffresEmploiComponent implements OnInit {
       NiveauxExperience: "moins d'un ans",
       langue: 'Espagnol',
     },
+    // #endregion
   ]
 }
