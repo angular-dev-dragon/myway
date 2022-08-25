@@ -181,6 +181,7 @@ let modules: any = [
 
 @NgModule({
   declarations: [
+    ListSocieteComponent,
     ListOffresComponent,
     CardRecruiterComponent,
     CardInfoSmall,
@@ -205,7 +206,7 @@ let modules: any = [
     CondidaCardComponent,
     CondidaCartTowComponent,
     SliderComponent,
-    ListOffresComponent,
+
     SCardInfoGComponent,
     CardLibraryComponent,
 
