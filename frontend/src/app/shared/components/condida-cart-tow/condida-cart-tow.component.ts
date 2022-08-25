@@ -7,15 +7,17 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./condida-cart-tow.component.scss'],
 })
 export class CondidaCartTowComponent implements OnInit {
-  @Input() availablet: boolean = true;
-  @Input() imgt: string = '';
-  @Input() namet: string = '';
-  @Input() aget: number = 0;
-  @Input() addresst: string = '';
-  @Input() tital_jobt: string = '';
-  @Input() years_of_ext: number = 0;
-  @Input() ed_lavelt: string = '';
-  @Input() tagt: any[] = [];
+  @Input() available: boolean = true;
+  @Input() img: string = '';
+  @Input() last_name: string = '';
+  @Input() first_name: string = '';
+  @Input() age: number = 0;
+  @Input() city: string = '';
+  @Input() countrie: string = '';
+  @Input() tital_job: string = '';
+  @Input() years_of_ex: number = 0;
+  @Input() ed_lavel: string = '';
+  @Input() tag: any[] = [];
 
   constructor() {}
 

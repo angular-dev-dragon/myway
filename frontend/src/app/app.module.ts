@@ -15,7 +15,7 @@ import { InfoPratiqueModule } from './components/info-pratique/info-pratique.mod
 import { RubriquePostModule } from './components/rubrique-article/rubrique-post.module'
 import { EspaceCommunautaireModule } from './components/espace-communautaire/espace-communautaire.module'
 import { ListBlogeurComponent } from './components/blog/list-blogeur/list-blogeur.component'
-import { CondidaModule } from './components/condida/condida.module'
+
 import { CompetencesModule } from './components/competences/competences.module'
 import { MetiersModule } from './components/metiers/metiers.module'
 
@@ -30,7 +30,7 @@ import { MetiersModule } from './components/metiers/metiers.module'
     ResumeProfilesModule,
     MetiersModule,
     OffresModule,
-    CondidaModule,
+   
 
     InfoPratiqueModule,
     RubriquePostModule,

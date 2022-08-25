@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CondidaListComponent } from './condida-list.component';
+import { CondidatListComponent } from './condidat-list.component';
 
-describe('CondidaListComponent', () => {
-  let component: CondidaListComponent;
-  let fixture: ComponentFixture<CondidaListComponent>;
+describe('CondidatListComponent', () => {
+  let component: CondidatListComponent;
+  let fixture: ComponentFixture<CondidatListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CondidaListComponent ]
+      declarations: [ CondidatListComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CondidaListComponent);
+    fixture = TestBed.createComponent(CondidatListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core'
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
+import {
+  FormGroup,
+  FormBuilder,
+  FormControl,
+  Validators,
+  FormArray,
+} from '@angular/forms'
 
 @Component({
   selector: 'app-condidature-spontanee',
@@ -29,18 +35,67 @@ export class CondidatureSpontaneeComponent implements OnInit {
         Validators.minLength(3),
         Validators.maxLength(30),
       ]),
+      pays: new FormControl('', [Validators.required]),
       poste: new FormControl('', [Validators.required]),
       telephone: new FormControl('', [
         Validators.required,
         Validators.pattern('^((\\+212-?)|0)?[0-9]{10}$'),
         Validators.minLength(10),
       ]),
-      cv: new FormControl('', [Validators.required]),
-      lettreMotivation: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
+
+      cv: new FormControl('', [Validators.required]),
+      niveauExperience: new FormControl('', [Validators.required]),
+      disponibility: new FormControl('', [Validators.required]),
+      secteur: new FormControl('', [Validators.required]),
+      domaine: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(30),
+      ]),
+      ecole: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(30),
+      ]),
+      diplome: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(30),
+      ]),
+      specialite: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(30),
+      ]),
+      posteOccupe: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(30),
+      ]),
+      anneeObtention: new FormControl('', [Validators.required]),
+
+      lettreMotivation: new FormControl('', [Validators.required]),
+      langue: new FormControl('', [Validators.required]),
+
+      niveauLangue: new FormControl('', [Validators.required]),
+
       message: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
+      ]),
+      langues: this.fb.array([
+        this.fb.group({
+          langue: [
+            '',
+            [
+              Validators.required,
+              Validators.minLength(3),
+              Validators.maxLength(30),
+            ],
+          ],
+          niveau: new FormControl('', [Validators.required]),
+        }),
       ]),
     })
   }
@@ -68,4 +123,37 @@ export class CondidatureSpontaneeComponent implements OnInit {
     //this.currentInput = event.target.files[i].name
     console.log(this.lettreFile)
   }
+
+  get langues(): FormArray {
+    return this.CondidatureForm.get('langues') as FormArray
+  }
+  newLangue() {
+    // console.log(this.preuves)
+    if (this.langues.valid) {
+      this.langues.push(
+        this.fb.group({
+          langue: [
+            '',
+            [
+              Validators.required,
+              Validators.minLength(3),
+              Validators.maxLength(30),
+            ],
+          ],
+          niveau: new FormControl('', [Validators.required]),
+        }),
+      )
+    } else {
+      this.langues.markAllAsTouched()
+    }
+    // console.log(this.preuves)
+  }
+  deleteLangue(i: any) {
+    this.langues.removeAt(i)
+    this.listInputs.splice(i, 1)
+
+    console.log(this.listInputs)
+  }
+
+  listInputs: any = []
 }
