@@ -97,6 +97,7 @@ import { SliderComponent } from './components/slider/slider.component'
 import { ListOffresComponent } from './components/list-offres/list-offres.component'
 import { SCardInfoGComponent } from './components/s-card-info-g/s-card-info-g.component'
 import { CardLibraryComponent } from './components/card-library/card-library.component'
+import { ListSocieteComponent } from './components/list-societe/list-societe.component'
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -204,10 +205,11 @@ let modules: any = [
     ListOffresComponent,
     SCardInfoGComponent,
     CardLibraryComponent,
+
+    ListSocieteComponent,
   ],
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
   exports: [
-    ListOffresComponent,
     SliderComponent,
     CardArticleComponent,
     CardOffreHorizontaleComponent,
@@ -231,9 +233,12 @@ let modules: any = [
     CondidaAdminComponent,
     CondidaCardComponent,
     CondidaCartTowComponent,
-    ListOffresComponent,
+
     SCardInfoGComponent,
     CardLibraryComponent,
+    ListOffresComponent,
+
+    ListSocieteComponent,
 
     ...modules,
   ],
