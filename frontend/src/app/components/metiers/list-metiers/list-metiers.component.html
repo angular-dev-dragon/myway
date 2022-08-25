@@ -1,0 +1,152 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="d-flex flex-main">
+        <div class="section-recruteur spacing-inline-end mb-3">
+          <div class="sideBar-Main">
+            <div
+              class="btn btn-outline-secondary"
+              #btnSideBar
+              (click)="sidebarOffre.classList.toggle('open')"
+            >
+              <i class="fa fa-filter"></i>
+            </div>
+            <div
+              class="sidebar-offre open"
+              #sidebarOffre
+              (mouseenter)="sidebarOffre.classList.remove('closed')"
+              (mouseleave)="sidebarOffre.classList.add('closed')"
+            >
+              <div class="sideBarContainer">
+                <!--  début filter par l'emplacement -->
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+                  <hr />
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                      <button
+                        class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne"
+                        aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne"
+                      >
+                        <i class="fa-solid fa-network-wired icone-filter"></i>
+                        <h4>Secteur d'activité:</h4>
+                      </button>
+                    </h2>
+                    <div
+                      id="panelsStayOpen-collapseOne"
+                      class="accordion-collapse collapse show"
+                      aria-labelledby="panelsStayOpen-headingOne"
+                    >
+                      <div class="accordion-body emplacementFiltre filtreee">
+                        <div>
+                          <ul class="listFilte1">
+                            <li>
+                              <div>
+                                <select
+                                  (change)="filter()"
+                                  name="secteur"
+                                  id="secteur-select"
+                                  class="form-select"
+                                  #secteur
+                                >
+                                  <option value="" disabled selected>
+                                    Sélectionnez un secteur
+                                  </option>
+                                  <option value="">Tout</option>
+                                  <option value="Agriculture">
+                                    Agriculture
+                                  </option>
+                                  <option value="Électronique">
+                                    Électronique
+                                  </option>
+                                  <option value="Informatique">
+                                    Informatique
+                                  </option>
+                                  <option value="Santé">Santé</option>
+                                  <option value="Textile">Textile</option>
+                                </select>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-100">
+          <div class="section-recruteur mb-3 w-100">
+            <h2 class="px-1" style="font-size: 25px;">
+              Résultats des offres
+            </h2>
+          </div>
+          <div class="section-recruteur mb-3 w-100">
+            <div class="flex-grow-1">
+              <div class="row px-2">
+                <div class="col-md-6">
+                  <div class="my-2">
+                    <div class="form__group field" style="margin-top: -15px;">
+                      <input
+                        (keyup)="filter()"
+                        #search
+                        class="form__field"
+                        type="text"
+                        id="saerchBar"
+                        placeholder="Mot clés, titre du poste..."
+                        aria-label="Search"
+                        aria-describedby="search-addon"
+                      />
+                      <label for="saerchBar" class="form__label">
+                        Mot clés, titre du poste...
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 order">
+                  <div class="my-2 d-flex">
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-default dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarDropdown"
+                        aria-controls="navbarDropdown"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                      >
+                        Order by
+                      </button>
+                      <ul
+                        class="dropdown-menu custom-navbar"
+                        aria-labelledby="navbarDropdown"
+                        id="navbarDropdown"
+                      >
+                        <li>
+                          <a class="dropdown-item" (click)="sort('Intitule')">
+                            Name
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- BEGIN TABLE RESULT -->
+              <hr />
+
+              <div class="row"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

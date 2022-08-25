@@ -17,6 +17,7 @@ import { EspaceCommunautaireModule } from './components/espace-communautaire/esp
 import { ListBlogeurComponent } from './components/blog/list-blogeur/list-blogeur.component'
 import { CondidaModule } from './components/condida/condida.module'
 import { CompetencesModule } from './components/competences/competences.module'
+import { MetiersModule } from './components/metiers/metiers.module'
 
 @NgModule({
   declarations: [AppComponent, ListBlogeurComponent],
@@ -27,7 +28,7 @@ import { CompetencesModule } from './components/competences/competences.module'
     RecruiterModule,
     SharedModule,
     ResumeProfilesModule,
-
+    MetiersModule,
     OffresModule,
     CondidaModule,
 

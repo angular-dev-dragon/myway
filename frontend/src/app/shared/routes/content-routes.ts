@@ -79,6 +79,14 @@ export const content: Routes = [
         (m) => m.CompetencesModule,
       ),
   },
+  {
+    path: 'metiers',
+
+    loadChildren: () =>
+      import('../../components/metiers/metiers.module').then(
+        (m) => m.MetiersModule,
+      ),
+  },
   // {
   //   path: 'liens-utiles',
   //   loadChildren: () =>

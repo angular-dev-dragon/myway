@@ -16,6 +16,7 @@ const routes: Routes = [
     path: '',
     component: ListRecruiterComponent,
   },
+
   {
     path: 'recruteurs',
     component: ListRecruiterComponent,

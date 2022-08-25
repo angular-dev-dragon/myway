@@ -777,68 +777,6 @@
               <hr />
 
               <div class="row" *ngIf="orientation == 'verticale'">
-                <!-- <div [routerLink]="['/offres/details-offres']" *ngFor="let offre of offres" style="
-                            border-bottom: 1px solid #c7c3c3;
-                            padding-bottom: 5px;
-                            margin-bottom: 6px;
-                          ">
-                          <tr style="border: 0;">
-                            <td class="number text-center"></td>
-                            <td class="image">
-                              <img src="../../../../assets/images/images pour offres/téléchargement.png" alt=""
-                                class="img-offre" style="margin-inline-end: 13px;" />
-                            </td>
-                            <td class="product" style="
-                                line-height: 1.42857143;
-                                vertical-align: top;
-                              ">
-                              <div class="col-md-8">
-                                <div class="card-body">
-                                  <h5 class="card-title">
-                                    {{ offre.Intitule }} / {{ offre.Secteur }}
-                                  </h5>
-
-                                  <h6 class="" style="margin-top: 10px;">
-                                    {{ offre.NomEntreprise }}:
-                                    {{ offre.TypeEntreprise }}
-                                  </h6>
-                                  <p class="card-text">
-                                    Compétences requises:{{ offre.Competences }}
-                                  </p>
-                                  <ul class="p-0">
-                                    <small class="text-muted" style="
-                                        list-style: none;
-                                        display: flex;
-                                        justify-content: space-between;
-                                      ">
-                                      <li>
-                                        <i class="fa-solid fa-file-contract"></i>
-                                        {{ offre.TypeContrat }}
-                                      </li>
-                                      <li>
-                                        <i class="fa-solid fa-location-dot"></i>
-                                        {{ offre.Ville }}
-                                      </li>
-                                      <li>
-                                        <i class="fa-regular fa-calendar"></i>
-                                        {{ offre.Date }}
-                                      </li>
-                                    </small>
-                                  </ul>
-                                </div>
-                              </div>
-                              <strong>{{offre.Intitule}}</strong><br>{{offre.Secteur}}
-                            </td>
-
-                            <td class="favorite-offre">
-                              <button class="btn-fav" style="border-style: none;">
-                                <i class="far fa-heart"></i>
-                              </button>
-                            </td>
-                            <br />
-                          </tr>
-                        </div> -->
-
                 <app-card-offre-Verticale
                   [routerLink]="[link]"
                   *ngFor="
