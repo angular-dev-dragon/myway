@@ -16,13 +16,7 @@ export const content: Routes = [
         (m) => m.CondidaCModule,
       ),
   },
-  {
-    path: 'candida',
-    loadChildren: () =>
-      import('../../components/condida/condida.module').then(
-        (m) => m.CondidaModule,
-      ),
-  },
+
   {
     path: 'recruteurs',
     loadChildren: () =>

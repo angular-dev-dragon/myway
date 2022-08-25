@@ -96,7 +96,8 @@ import { ScrollPanelModule } from 'primeng/scrollpanel'
 import { SliderComponent } from './components/slider/slider.component'
 import { ListOffresComponent } from './components/list-offres/list-offres.component'
 import { SCardInfoGComponent } from './components/s-card-info-g/s-card-info-g.component'
-import { CardLibraryComponent } from './components/card-library/card-library.component'
+import { CardLibraryComponent } from './components/card-library/card-library.component';
+import { CondidatListComponent } from './components/condidat-list/condidat-list.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -204,9 +205,12 @@ let modules: any = [
     ListOffresComponent,
     SCardInfoGComponent,
     CardLibraryComponent,
+    CondidatListComponent,
+
   ],
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
   exports: [
+     CondidatListComponent,
     ListOffresComponent,
     SliderComponent,
     CardArticleComponent,

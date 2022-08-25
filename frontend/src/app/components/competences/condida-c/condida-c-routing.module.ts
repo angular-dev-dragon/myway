@@ -14,7 +14,7 @@ const routes: Routes = [
     component: CListComponent,
   },
   {
-    path: 'details',
+    path: 'details/:id',
     component: CDetailsComponent
   },
 ];
