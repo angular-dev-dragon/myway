@@ -28,7 +28,7 @@ export class DetailOffresComponent implements OnInit {
     Competences: ['HTML', 'CSS', 'Javascript'],
     NiveauxEt: 'Bac+5',
     NiveauxEx: '2 à 5 ans',
-    Langues: 'Espagnol',
+    Langues: ['Espagnol', 'Arabe'],
     Salaire: '4000 Dh',
     NombresPoste: '5',
     Adresse: ' Rue el Zrektouni, Imm wahba Et.4 N°9 Tanger',
