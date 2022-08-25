@@ -60,3 +60,11 @@
     justify-content: center;
   }
 }
+.dropdown:hover {
+  .dropdown-menu {
+    display: block;
+  }
+}
+.smallImg {
+  max-height: 90px;
+}

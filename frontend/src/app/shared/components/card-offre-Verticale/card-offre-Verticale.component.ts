@@ -23,4 +23,5 @@ export class CardOffreVerticaleComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+  reduireCard: boolean = false
 }
