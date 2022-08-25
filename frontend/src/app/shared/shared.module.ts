@@ -215,6 +215,7 @@ let modules: any = [
 
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
   exports: [
+    CondidatListComponent,
     SliderComponent,
     CardArticleComponent,
     CardOffreHorizontaleComponent,

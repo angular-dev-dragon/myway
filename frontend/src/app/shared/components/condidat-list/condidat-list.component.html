@@ -498,7 +498,6 @@
               <!-- BEGIN TABLE RESULT -->
               <hr />
 
-              <div class="row" *ngIf="orientation == 'verticale'">
                   <div *ngIf="orientation == 'verticale'">
 
                     <condida-c-cart-tow *ngFor="let c of condidatsList| paginate: { itemsPerPage: 8, currentPage: paginate }"
@@ -522,7 +521,7 @@
                     <pagination-controls class="text-center" (pageChange)="paginate = $event"></pagination-controls>
 
                   </div>
-              </div>
+          
             </div>
           </div>
         </div>
