@@ -13,7 +13,8 @@ import { MembreComponent } from './membre/membre.component'
 import { EntretienComponent } from './entretien/entretien.component'
 import { GalleryComponent } from './gallery/gallery.component'
 import { CondidatureSpontaneeComponent } from './condidature-spontanee/condidature-spontanee.component'
-import { OffreEmploiRecruiterComponent } from './offre-emploi-recruiter/offre-emploi-recruiter.component'
+import { OffreEmploiRecruiterComponent } from './offre-emploi-recruiter/offre-emploi-recruiter.component';
+import { CabinetsRecrutementsComponent } from './cabinets-recrutements/cabinets-recrutements.component'
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { OffreEmploiRecruiterComponent } from './offre-emploi-recruiter/offre-em
     GalleryComponent,
     CondidatureSpontaneeComponent,
     OffreEmploiRecruiterComponent,
+    CabinetsRecrutementsComponent,
   ],
   imports: [SharedModule, RouterModule],
   exports: [RecruiterRoutingModule],

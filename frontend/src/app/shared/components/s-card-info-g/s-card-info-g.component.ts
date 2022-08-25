@@ -32,10 +32,115 @@ export class SCardInfoGComponent implements OnInit {
   filter_show: boolean = false;
   filter_show_all: boolean = false;
 
+  recriter_list: any[] = [
+    {
+      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/3195090/logo.png?1587552503',
+      imageBg:
+        'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/5310523/index.png?1640179035',
+      title: 'Total Energies',
+      type: 'Grande Societe',
+      salaries: '',
+      caption: 'Une Compagnie intégrée multi-énergies',
+    },
+    {
+      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/4537715/logo.png?1622715420',
+      imageBg:
+        'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/4548600/index.png?1623058769',
+      title: 'Total Energies',
+      type: 'Grande Societe',
+      salaries: '',
+      caption: 'Une Compagnie intégrée multi-énergies',
+    },
+    {
+      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/8124/logo.png?1469002464',
+      imageBg:
+        'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/6192405/index.png?1659520006',
+      title: 'Total Energies',
+      type: 'Grande Societe',
+      salaries: '',
+      caption: 'Une Compagnie intégrée multi-énergies',
+    },
+    {
+      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/1007848/logo.png?1558457886',
+      imageBg:
+        'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/5027463/index.png?1634721315',
+      title: 'Total Energies',
+      type: 'Grande Societe',
+      salaries: '',
+      caption: 'Une Compagnie intégrée multi-énergies',
+    },
+    {
+      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/69883/logo.png?1621953434',
+      imageBg:
+        'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/6179891/index.png?1659017908',
+      title: 'Total Energies',
+      type: 'Grande Societe',
+      salaries: '',
+      caption: 'Une Compagnie intégrée multi-énergies',
+    },
+    {
+      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/3195090/logo.png?1587552503',
+      imageBg:
+        'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/5310523/index.png?1640179035',
+      title: 'Total Energies',
+      type: 'Grande Societe',
+      salaries: '',
+      caption: 'Une Compagnie intégrée multi-énergies',
+    },
+    {
+      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/3195090/logo.png?1587552503',
+      imageBg:
+        'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/5310523/index.png?1640179035',
+      title: 'Total Energies',
+      type: 'Grande Societe',
+      salaries: '',
+      caption: 'Une Compagnie intégrée multi-énergies',
+    },
+  ];
   // #region  start_dabe
   info_slids = [
+    // #region card-w1-h2-v-hot
+
+    // {
+    //   name: 'show 2',
+    //   id: 'd342',
+    //   detail: {
+    //     filter: false,
+    //     row: [
+    //       {
+    //         colum: 4,
+    //         cards_we_need: [
+    //           {
+    //             name: 'card-w1-h2-v-hot',
+    //             id: 'id45235',
+    //             title: 'hii is the tilet',
+    //             title_style: {
+    //                   color: "#3ff",
+    //                   textDecoration: "none",
+    //             },
+    //             p: 'ducimu expedita ad ratione temporibus',
+    //             img: {
+    //               src: 'https://upload.wikimedia.org/wikipedia/commons/3/3c/IMG_logo_%282017%29.svg',
+    //               width: '100%',
+    //               height: '200px',
+    //               alt: 'thi is blabla',
+    //             },
+    //             hot: {
+    //               one: '20%',
+    //               tow: 'off',
+    //               border: '#1fe4f5 2px solid',
+    //             },
+    //             border: '#3ff 1px solid',
+    //           },
+    //         ],
+    //       },
+    //     ],
+    //   },
+    // },
+    // #endregion
+
     {
-      name: 'show 1',
+      name: 'show 2',
       id: 'd342',
       detail: {
         filter: false,
@@ -44,126 +149,31 @@ export class SCardInfoGComponent implements OnInit {
             colum: 4,
             cards_we_need: [
               {
-                name: 'card_1',
-                id: 'id45235',
-              },
-              {
-                name: 'card_1',
-                id: 'id45235',
-              },
-              {
-                name: 'card_1',
-                id: 'id45235',
-              },
-              {
-                name: 'card_1',
-                id: 'id45235',
-              },
-              {
-                name: 'card_1',
-                id: 'id45235',
+                name: 'reicritar',
+                id: 'pk',
+                info:[ {
+                  logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/3195090/logo.png?1587552503',
+                  imageBg:
+                    'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/5310523/index.png?1640179035',
+                  title: 'Total Energies',
+                  type: 'Grande Societe',
+                  salaries: '',
+                  caption: 'Une Compagnie intégrée multi-énergies',
+                }
+
+
+                  ,]
               },
             ],
           },
+
           {
-            colum: 4,
+            colum: 8,
             cards_we_need: [
               {
-                name: 'card_1',
-                id: 'id45235',
-              },
-              {
-                name: 'card_1',
-                id: 'id45235',
-              },
-              {
-                name: 'card_1',
-                id: 'id45235',
-              },
-              {
-                name: 'card_1',
-                id: 'id45235',
-              },
-              {
-                name: 'card_1',
-                id: 'id45235',
-              },
-            ],
-          },
-          {
-            colum: 4,
-            cards_we_need: [
-              {
-                name: 'card_1',
-                id: 'id45235',
-              },
-            ],
-          },
-        ],
-      },
-    },
-    {
-      name: 'show 1',
-      id: 'd342',
-      detail: {
-        filter:  false,
-        row: [
-          {
-            colum: 4,
-            cards_we_need: [
-              {
-                name: 'card_1',
-                id: 'id45235',
-              },
-              {
-                name: 'card_4',
-                id: 'id45235',
-              },
-              {
-                name: 'card_1',
-                id: 'id45235',
-              },
-              {
-                name: 'card_1',
-                id: 'id45235',
-              },
-              {
-                name: 'card_1',
-                id: 'id45235',
-              },
-            ],
-          },
-          {
-            colum: 4,
-            cards_we_need: [
-              {
-                name: 'card_1',
-                id: 'id45235',
-              },
-              {
-                name: 'card_1',
-                id: 'id45235',
-              },
-              {
-                name: 'card_1',
-                id: 'id45235',
-              },
-              {
-                name: 'card_1',
-                id: 'id45235',
-              },
-              {
-                name: 'card_1',
-                id: 'id45235',
-              },
-            ],
-          },
-          {
-            colum: 4,
-            cards_we_need: [
-              {
-                name: 'card_1',
-                id: 'id45235',
+                name: 'mini_companiy',
+                id: 'p432523452k',
+                info: this.recriter_list,
               },
             ],
           },
@@ -286,40 +296,7 @@ export class SCardInfoGComponent implements OnInit {
     config.triggers = 'hover';
   }
 
-  ngOnInit() {
-    this.items = [
-      { label: 'Computer' },
-      { label: 'Notebook' },
-      { label: 'Accessories' },
-      { label: 'Backpacks' },
-      { label: 'Item' },
-    ];
-
-    this.home = { icon: 'pi pi-home' };
-
-    this.itemss = [
-      {
-        label: 'File',
-        items: [
-          {
-            label: 'New',
-            icon: 'pi pi-fw pi-plus',
-            items: [{ label: 'Project' }, { label: 'Other' }],
-          },
-          { label: 'Open' },
-          { label: 'Quit' },
-        ],
-      },
-      {
-        label: 'Edit',
-        icon: 'pi pi-fw pi-pencil',
-        items: [
-          { label: 'Delete', icon: 'pi pi-fw pi-trash' },
-          { label: 'Refresh', icon: 'pi pi-fw pi-refresh' },
-        ],
-      },
-    ];
-  }
+  ngOnInit() {}
 
   // #region fitter fuctioanlity
   showfilter() {

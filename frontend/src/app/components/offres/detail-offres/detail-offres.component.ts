@@ -25,7 +25,7 @@ export class DetailOffresComponent implements OnInit {
     Secteur: 'Informatique',
     Date_pub: '2022-02-02',
     Date_pos: '2022-02-02',
-    Competences: 'HTML',
+    Competences: ['HTML', 'CSS', 'Javascript'],
     NiveauxEt: 'Bac+5',
     NiveauxEx: '2 à 5 ans',
     Langues: 'Espagnol',

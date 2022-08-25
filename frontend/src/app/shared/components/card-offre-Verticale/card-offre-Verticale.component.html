@@ -30,12 +30,14 @@
       </div>
       <h5>{{ Secteur }}</h5>
       <h6>{{ TypePoste }}: {{ Poste }}</h6>
-      <h6 class="h66">
+      <h6 class="h66" *ngIf="NomEntreprise && TypeEntreprise">
         {{ NomEntreprise }}:
         {{ TypeEntreprise }}
       </h6>
-
-      <ul class="p-0">
+      <h6 class="" *ngIf="dateDisponibilite">
+        Disponile a partir de : {{ dateDisponibilite }}
+      </h6>
+      <ul class="p-0 m-0">
         <small class="text-muted">
           <div class="d-flex">
             <li class="padd">
@@ -43,7 +45,7 @@
               {{ Ville }}
             </li>
 
-            <li class="padd">
+            <li class="padd" *ngIf="Date">
               <i class="fa-regular fa-calendar"></i>
               Publiée il y a:
               {{ Date }}
@@ -54,7 +56,7 @@
               {{ TypeContrat }}
             </li>
           </div>
-          <div class="btn-container">
+          <div class="btn-container" *ngIf="showBtn">
             <button type="button" class="btn btn-success">
               Voir plus +
             </button>
