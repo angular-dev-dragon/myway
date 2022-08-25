@@ -114,7 +114,22 @@
     "avis": "Avis",
     "cv": "Cv",
     "lettreMotivation": "Lettre De Motivation",
-    "poste": "Poste"
+    "poste": "Poste",
+    "niveau-exp": "Niveau d'expérience",
+    "disponibility": "Disponibilité",
+    "ecole": "Ecole",
+    "exp_ecole": "Universite YYY",
+    "diplome": "Diplome",
+    "exp_diplome": "Bachelore",
+    "specialite": "Specialité",
+    "exp_specialite": "Informatique",
+    "anneeObtention": "Année d'Obtention",
+    "exp_anneeObtention": "ex : 1990",
+    "langue": "Langue",
+    "exp_langue": "ex : Anglais",
+    "niveau": "Niveau",
+    "posteOccupe": "Post Occupé",
+    "exp_posteOccupe": "ex: Chauffeur"
   },
 
   "document": {
@@ -194,7 +209,7 @@
     "list_avis": "Liste des Avis",
     "list_temoignage": "Liste des Temoignages",
     "list_qr": "Liste des Questions / Reponses",
-
+    "list-recru": "List Recruteurs",
     "candidat": {
       "t": {
         "ed": "Éducation",
