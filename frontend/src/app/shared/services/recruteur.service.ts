@@ -10,6 +10,9 @@ export class RecruteurService {
   getAllRecruteurs() {
     return this.http.get(API + '/recruteur')
   }
+  getRecruteurCondidaturesSpontanees() {
+    return this.http.get(API + '/recruteur/condidatures-spontanees')
+  }
   getRecruteurById(id: any) {
     return this.http.get(API + '/recruteur/' + id)
   }
@@ -18,5 +21,11 @@ export class RecruteurService {
   }
   public postEntretien(entretien: any, id: any) {
     return this.http.post(API + '/recruteur/entretien/' + id, entretien)
+  }
+  public postCondidatureSpontanee(condidature: any, id: any) {
+    return this.http.post(
+      API + '/recruteur/condidature-spontanee/' + id,
+      condidature,
+    )
   }
 }
