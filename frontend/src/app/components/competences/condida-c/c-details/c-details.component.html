@@ -107,7 +107,7 @@
                   <ul class="ul-one">
                     <li class="li-one ">
                       <P class="top-t" >{{i.education_school | titlecase}} </P>
-                      <p class="top-ctiy">®️  {{i.education_city | titlecase}}</p>
+                      <p class="top-ctiy">®️ {{i.education_city | titlecase}}</p>
                     </li>
                     <li class="li-one">
                       <p class="li_one_init_h" > From</p>
@@ -124,8 +124,7 @@
                           <div class="" *ngFor="let k of i.deplome">
                             <p class="ed-sub-t">{{'deplome'| titlecase |translate }}</p>
                             <ul class="none_list   sub_ul_col">
-
-
+                               <h3 class="name_deplom">{{k.deplome_name}}</h3>
                               <li class="sub_li " *ngIf="k.deplome_description">
                                 <P class="sub_li_d">{{k.deplome_description}}</P>
                               </li>
@@ -147,20 +146,20 @@
                         </li>
                         <li>
                           <div class="ed_sub_box" *ngFor="let k of i.srtificate">
-                            <p class="ed-sub-t">{{'deplome'| titlecase |translate }}</p>
+                            <p class="ed-sub-t">{{'srtificate'| titlecase |translate }}</p>
                             <ul class=" none_list sub_ul_col">
-
+                              <h3 class="name_deplom">{{k.srtificate_name}}</h3>
                               <li class="sub_li" *ngIf="k.srtificate_description">
                                 <P class="sub_li_d">{{k.srtificate_description}}</P>
                               </li>
                             <li>
                               <ul class=" none_list li-one">
 
-                                <li class="d-flexx  " *ngIf="k.srtificate_img">
+                                <li class="d-flexx"  *ngIf="k.srtificate_img">
                                   <a  class="  btnn btn btn-secondary"href="#">view doc</a>
 
                                 </li>
-                                <li class="sub_li " *ngIf="k.srtificate_url">
+                                <li class="sub_li" *ngIf="k.srtificate_url">
                                   <a class=" btnn btn btn-secondary" href="#">view onlin</a>
 
                                 </li>
@@ -205,12 +204,12 @@
                       <ul class="init-ul-col none_list">
                         <li>
                           <div class="" >
-<p class="ed-sub-t">{{'my rouls at '+ i.experience_company| titlecase |translate }}</p>
-<ul *ngFor="let k of i.experience_roul" class="st li-one">
-  <li class="d-flexx  ">
-    {{k}}
-  </li>
-</ul>
+                        <p class="ed-sub-t">{{'my rouls at '+ i.experience_company| titlecase |translate }}</p>
+                         <ul *ngFor="let k of i.experience_roul" class="st li-one">
+                              <li class="d-flexx  ">
+                                 {{k}}
+                              </li>
+                        </ul>
                          <p class="ed-sub-t">{{'what i learn'| titlecase |translate }}</p>
                                 <ul *ngFor="let k of i.experience_he_gine" class="st li-one">
                                   <li class="d-flexx  " >

@@ -85,7 +85,7 @@ export class CondidaInfoService {
             education_city: 'tanger',
             srtificate: [
               {
-                srtificate_name: 'name',
+                srtificate_name: 'js bootcamp',
                 srtificate_description:
                   ' This snippet was created to help web designers, front-end and back-end developThis snippet was created to help web designers, front-end and back-end developThis snippet was created to help web designers, front-end and back-end develop',
                 srtificate_img:
@@ -96,7 +96,7 @@ export class CondidaInfoService {
             ],
             deplome: [
               {
-                deplome_name: 'naem',
+                deplome_name: 'full stack devloper',
                 deplome_description:
                   'help web designers, front-end and back-end de',
                 deplome_img:
