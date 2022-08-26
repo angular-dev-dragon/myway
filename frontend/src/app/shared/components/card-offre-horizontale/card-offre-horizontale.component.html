@@ -19,7 +19,7 @@
         <h5 class="col-md-10 card-title cursor-pointer" [routerLink]="link">
           {{ Intitule }}
         </h5>
-        <div class="dropdown">
+        <div class="dropdown" *ngIf="Showbtn">
           <button
             class="btn btn-secondary dropdown-toggle"
             type="button"
@@ -49,10 +49,12 @@
           </div>
         </div>
       </div>
-      <h5>{{ Secteur }}</h5>
-      <h6 class="text-justify" *ngIf="!reduireCard">
-        {{ TypePoste }}: {{ Poste }}
-      </h6>
+      <h5 *ngIf="Secteur">{{ Secteur }}</h5>
+      <div *ngIf="TypePoste && Poste">
+        <h6 class="text-justify" *ngIf="!reduireCard">
+          {{ TypePoste }}: {{ Poste }}
+        </h6>
+      </div>
       <div class="" *ngIf="!reduireCard">
         <h6 class="h66" *ngIf="NomEntreprise && TypeEntreprise">
           {{ NomEntreprise }}:
@@ -65,37 +67,39 @@
           {{ dateDisponibilite }}
         </h6>
       </div>
-      <ul class="p-0" *ngIf="!reduireCard">
-        <small
-          class="text-muted"
-          style="
-            list-style: none;
-            display: flex;
-            margin-bottom: 0.5rem;
-            justify-content: space-between;
-            align-items: center;
-          "
-        >
-          <div class="d-flex">
-            <li class="padd">
-              <i class="fa-solid fa-location-dot"></i>
-              {{ Ville }}
-            </li>
+      <div *ngIf="Ville && Date && TypeContrat">
+        <ul class="p-0" *ngIf="!reduireCard">
+          <small
+            class="text-muted"
+            style="
+              list-style: none;
+              display: flex;
+              margin-bottom: 0.5rem;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <div class="d-flex">
+              <li class="padd">
+                <i class="fa-solid fa-location-dot"></i>
+                {{ Ville }}
+              </li>
 
-            <li class="padd">
-              <i class="fa-regular fa-calendar"></i>
-              Publiée il y a:
-              {{ Date }}
-            </li>
+              <li class="padd">
+                <i class="fa-regular fa-calendar"></i>
+                Publiée il y a:
+                {{ Date }}
+              </li>
 
-            <li class="padd">
-              <i class="fa-solid fa-file-contract"></i>
-              {{ TypeContrat }}
-            </li>
-          </div>
-          <li></li>
-        </small>
-      </ul>
+              <li class="padd">
+                <i class="fa-solid fa-file-contract"></i>
+                {{ TypeContrat }}
+              </li>
+            </div>
+            <li></li>
+          </small>
+        </ul>
+      </div>
       <button [routerLink]="link" type="button" class="btn btn-success">
         Voir plus +
       </button>
