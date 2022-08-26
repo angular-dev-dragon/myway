@@ -103,12 +103,12 @@
               <p-accordionTab header="{{ condida_data.info.education.education_name | translate }}">
 
                 <div>
-                  <h6 class="criteres-offres" *ngIf="info.Titre">
-                    {{ info.Titre }}
+                  <h6 class="criteres-offres" *ngIf="condida_data.info.img">
+                    {{ condida_data.info.img}}
                   </h6>
-                  <p *ngIf="info.Texte">{{ info.Texte }}</p>
-                  <ul *ngIf="info.List">
-                    <li *ngFor="let list of info.List">{{ list }}</li>
+                  <p *ngIf="condida_data.info.imgTexte">{{ condida_data.info.img}}</p>
+                  <ul *ngIf="condida_data.info.img.List">
+                    <li *ngFor="let list of condida_data.info.img">{{ list }}</li>
                   </ul>
                 </div>
 
