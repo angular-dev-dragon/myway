@@ -1,74 +1,15 @@
 <div class="container" style="margin-top: 131px;">
   <div class="section-recruteur mb-3">
-    <div class="row g-0">
-      <div class="col-md-3">
-        <img
-          src="../../../../assets/images/images pour offres/téléchargement.png"
-          class="img-fluid rounded-start"
-          alt="..."
-        />
-      </div>
-      <div class="col-md-8">
-        <div class="card-body p-0" style="margin-top: 18px;">
-          <h5
-            class="card-title"
-            style="font-size: 25px; margin-top: 22px; margin-bottom: 13px;"
-          >
-            {{ details.Titre }} / {{ details.Secteur }}
-          </h5>
-          <h5 class="poste">{{ details.Poste }}</h5>
-          <h6
-            style="color: #4c4a4a; font-size: 20px; margin-bottom: 13px;"
-            class="card-text"
-          >
-            {{ details.NomEntreprise }} : {{ details.TypeEntreprise }}
-          </h6>
-          <ul
-            style="
-              list-style: none;
-              display: flex;
-              padding: 0;
-              margin-bottom: 13px;
-              color: #6e6b6b;
-            "
-          >
-            <li style="margin-right: 20px;">
-              <i class="fa-regular fa-calendar"></i>
-              {{ 'offre.date_pub' | translate }}: {{ details.Date_pub }}
-            </li>
-            <!-- <li>
-              <i class="fa-regular fa-calendar"></i>
-              {{ 'offre.date_pos' | translate }}: {{ details.Date_pos }}
-            </li> -->
-          </ul>
-          <p class="card-text"></p>
-          <p class="card-text"></p>
-          <div class="row fiche1">
-            <ul class="p-0 col-md-6">
-              <small
-                class="text-muted"
-                style="list-style: none; display: flex; font-size: 15px;"
-              >
-                <li style="padding-right: 20px;">
-                  <i class="fa-solid fa-file-contract"></i>
-                  {{ details.TypeContrat }}
-                </li>
-                <li>
-                  <i class="fa-solid fa-location-dot"></i>
-                  {{ details.Adresse }}
-                </li>
-              </small>
-            </ul>
-            <ul class="col-md-6 socialMedia1">
-              <li class="socialMedia">
-                <p class="">{{ 'offre.partager' | translate }}:</p>
-              </li>
-              <li><div class="addthis_inline_share_toolbox_hvun"></div></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    <app-card-offre-details-verticale
+      [titre]="details.Titre"
+      [secteur]="details.Secteur"
+      [poste]="details.Poste"
+      [nomEntreprise]="details.NomEntreprise"
+      [typeEntreprise]="details.TypeEntreprise"
+      [datePublication]="details.Date_pub"
+      [typeContrat]="details.TypeContrat"
+      [adresse]="details.Adresse"
+    ></app-card-offre-details-verticale>
   </div>
 
   <div class="row">

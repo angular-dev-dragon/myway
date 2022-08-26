@@ -18,6 +18,7 @@ import { ListBlogeurComponent } from './components/blog/list-blogeur/list-blogeu
 
 import { CompetencesModule } from './components/competences/competences.module'
 import { MetiersModule } from './components/metiers/metiers.module'
+import { QuizModule } from './components/quiz/quiz.module'
 
 @NgModule({
   declarations: [AppComponent, ListBlogeurComponent],
@@ -30,12 +31,12 @@ import { MetiersModule } from './components/metiers/metiers.module'
     ResumeProfilesModule,
     MetiersModule,
     OffresModule,
-   
 
     InfoPratiqueModule,
     RubriquePostModule,
     EspaceCommunautaireModule,
     CompetencesModule,
+    QuizModule,
   ],
   exports: [],
   providers: [],

@@ -24,3 +24,8 @@
 .row {
   align-items: baseline;
 }
+.dropdown:hover {
+  .dropdown-menu {
+    display: block;
+  }
+}

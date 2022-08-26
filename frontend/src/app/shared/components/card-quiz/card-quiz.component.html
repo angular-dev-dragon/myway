@@ -1,0 +1,51 @@
+<!-- <div class="quiz-card bg-white card-article-container">
+  <div class="quiz-media text-center">
+    <img
+      alt="img-quiz"
+      class="img-quiz img-fluid"
+      [lazyLoad]="image"
+      [defaultImage]="'assets/images/quiz.jpg'"
+    />
+  </div>
+  <div class="quiz-content">
+    <div class="quiz-glimpse__wrapper">
+      <h5 class="quiz-title my-3 cursor-pointer text-center">
+        {{ titre }}
+      </h5>
+
+      <div class="quiz-description mb-3 truncate truncate-3-line small">
+        <span>
+          {{ resume }}
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="cours-footer"></div>
+</div> -->
+
+<div class="card-quiz">
+  <div class="header-card">
+    <h6>{{ domaine }}</h6>
+    <h5>{{ specialisation }}</h5>
+  </div>
+
+  <div class="body-card">
+    <p class="d-flex align-items-center">
+      <p-rating [ngModel]="note" [readonly]="true" [cancel]="false"></p-rating>
+      <span>&nbsp; {{ note }}</span>
+      <!-- <ngb-rating [(rate)]="{{note| number}}" [readonly]="true" [max]="5"></ngb-rating> -->
+    </p>
+    <p>
+      <i class="fa-regular fa-file-lines"></i>
+      {{ nbQuestions }}&nbsp; Questions
+    </p>
+    <p>
+      <i class="fa-brands fa-connectdevelop"></i>
+      {{ niveau }}
+    </p>
+    <p>
+      <i class="fa-solid fa-calendar-day"></i>
+      {{ date | date: 'MMMM YYYY' }}
+    </p>
+  </div>
+</div>

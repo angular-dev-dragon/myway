@@ -1,0 +1,24 @@
+<div class="container mt-3">
+  <div class="section-recruteur mb-3">
+    <h4>List des Tests</h4>
+  </div>
+  <div class="section-recruteur mb-3">
+    <div class="row">
+      <app-card-quiz
+        class="col-md-4 mb-3"
+        *ngFor="let quiz of listQuiz"
+        [routerLink]="['/quiz/quiz-details']"
+        [image]="quiz.image"
+        [titre]="quiz.titre"
+        [resume]="quiz.resume"
+        [link]="quiz?.link"
+        [domaine]="quiz.domaine"
+        [specialisation]="quiz.specialisation"
+        [nbQuestions]="quiz.nbQuestions"
+        [date]="quiz?.date"
+        [niveau]="quiz?.niveau"
+        [note]="quiz?.note"
+      ></app-card-quiz>
+    </div>
+  </div>
+</div>

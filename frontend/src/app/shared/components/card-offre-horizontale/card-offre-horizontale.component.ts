@@ -6,6 +6,7 @@ import { Component, Input, OnInit } from '@angular/core'
   styleUrls: ['./card-offre-horizontale.component.scss'],
 })
 export class CardOffreHorizontaleComponent implements OnInit {
+  @Input() Showbtn: boolean = true
   @Input() Intitule: any = ''
   @Input() Secteur: any = ''
   @Input() Poste: any = ''
@@ -18,8 +19,10 @@ export class CardOffreHorizontaleComponent implements OnInit {
   @Input() Date: any = ''
   @Input() dateDisponibilite: any = ''
   @Input() image: any = ''
+  @Input() link: any = ''
 
   constructor() {}
+  reduireCard: boolean = false
 
   ngOnInit(): void {}
 }

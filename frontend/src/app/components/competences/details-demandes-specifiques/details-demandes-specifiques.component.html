@@ -1,21 +1,20 @@
 <div class="container mt-5">
   <div class="row">
+    <div class="section-recruteur mb-3">
+      <app-card-offre-details-verticale
+        [titre]="demande.Titre"
+        [secteur]="demande.Secteur"
+        [poste]="demande.Poste"
+        [nomEntreprise]="demande.NomEntreprise"
+        [typeEntreprise]="demande.TypeEntreprise"
+        [datePublication]="demande.Date_pub"
+        [typeContrat]="demande.TypeContrat"
+        [adresse]="demande.Adresse"
+        [image]="demande.Adresse"
+        [typePoste]="demande.TypePoste"
+      ></app-card-offre-details-verticale>
+    </div>
     <div class="col-md-9">
-      <div class="section-recruteur mb-3">
-        <app-card-offre-Verticale
-          [showBtn]="false"
-          [Intitule]="demande.Titre"
-          [Secteur]="demande.Secteur"
-          [Poste]="demande.Poste"
-          [TypePoste]="demande.TypePoste"
-          [NomEntreprise]="demande.NomEntreprise"
-          [TypeEntreprise]="demande.TypeEntreprise"
-          [TypeContrat]="demande.TypeContrat"
-          [Ville]="demande.Ville"
-          [Date]="demande.Date"
-          [image]="demande.Image"
-        ></app-card-offre-Verticale>
-      </div>
       <div class="section-recruteur mb-3">
         <p-accordion>
           <p-accordionTab
