@@ -144,10 +144,13 @@
               <!-- BEGIN TABLE RESULT -->
               <hr />
 
-              <div class="">
-                <app-card-offre-horizontale>
-                  [offres]="offres" [link]="'/offres/details-offres'"
-                </app-card-offre-horizontale>
+              <div class="row">
+                <app-card-offre-horizontale
+                  *ngFor="let metiers of offres"
+                  class="col-md-4"
+                  [Intitule]="metiers.Intitule"
+                  [Secteur]="metiers.Secteur"
+                ></app-card-offre-horizontale>
               </div>
             </div>
           </div>

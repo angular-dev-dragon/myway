@@ -12,25 +12,22 @@ import {
   styleUrls: ['./list-metiers.component.scss'],
 })
 export class ListMetiersComponent implements OnInit {
-  @Input() offres: any = [
+  @Input()
+  offres: any = [
     {
       Intitule: 'Développeur1',
-
       Secteur: 'Informatique',
     },
     {
       Intitule: 'Ingénieur génie civil et minier ',
-
       Secteur: 'Informatique',
     },
     {
       Intitule: 'développeur3',
-
       Secteur: 'Informatique',
     },
     {
       Intitule: 'Développeur',
-
       Secteur: 'Textile',
     },
     {
