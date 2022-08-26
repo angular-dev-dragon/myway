@@ -41,11 +41,47 @@ export class CondidaInfoService {
         contact: [
           {
             url: 'https://github.com/Ahmed-dev-dragon',
-            platrorm: 'facebook',
+            platfrom: 'github',
           },
           {
             url: 'https://www.facebook.com/ahmed.dev.dragon',
-            platrorm: 'facebook',
+            platfrom: 'facebook',
+          },
+          {
+            platfrom: 'gmail',
+            url: 'https://mail.google.com/mail/u/0/?tab=rm',
+          },
+          {
+            platfrom: 'linkedin',
+            url: 'https://www.linkedin.com/posts/scottdresden_next-generation-silent-drone-achieves-major-activity-6885948728314736640-eH9i/',
+          },
+          {
+            platfrom: 'stack-overflow',
+            url: 'https://stackoverflow.com/users/edit/14317728',
+          },
+          {
+            platfrom: 'instagram',
+            url: 'https://www.instagram.com/ahmed_dev_dragon/',
+          },
+          {
+            platfrom: 'twitter',
+            url: 'https://twitter.com/Ahmd_dev_dragon',
+          },
+          {
+            platfrom: 'gitlab',
+            url: 'https://github.com/Ahmed-dev-dragon',
+          },
+          {
+            platfrom: 'youtube',
+            url: 'https://www.youtube.com/channel/UCl52lNdNprhpfF15-6QwPAA',
+          },
+          {
+            platfrom: 'telegram',
+            url: 'https://web.telegram.org/z/#1460645651',
+          },
+          {
+            platfrom: 'discord',
+            url: 'https://discord.com/channels/@me',
           },
         ],
 
@@ -60,17 +96,36 @@ export class CondidaInfoService {
           salier: 'salier',
           avalibal: 'avalibal_time',
         },
-        skills: [
+        skills_tach: [
           {
-            skill_name: 'skill_name',
-            persant: '60%',
+            skill_name: 'Paython',
+            persant: '90%',
+          },
+          {
+            skill_name: 'javascript',
+            persant: '90%',
+          },
+          {
+            skill_name: 'ruby',
+            persant: '50%',
           },
         ],
+        soft_skills: ['travil on group', 'manger a project', ' aj lksd dikd '],
         languages: [
           {
-            language_name: 'language_name',
-            language_description: 'language_description',
-            language_img: 'assets/images/condida.jpg',
+            language_name: 'englidh',
+            persant: '60%',
+          },
+          {
+            language_name: 'arabic',
+            persant: '60%',
+          },
+          {
+            language_name: 'franch',
+            persant: '60%',
+          },
+          {
+            language_name: 'eespan',
             persant: '60%',
           },
         ],
@@ -141,6 +196,27 @@ export class CondidaInfoService {
 
         experience: [
           {
+            experience_job_title: 'full stack devoper',
+            experience_company: 'netflix',
+            experience_start_date: '2022/7',
+            experience_end_date: '2026/7',
+            experience_city: 'tanger',
+
+            experience_job_description:
+              'exper ience_job_ desc ription exp  erience_job_descripti onexperience _job_des criptionexper ience_j ob_descrip tionexperience_ job_descripti onexperien ce_job _descri ptionex  pe rience_job_  descrip tionexperience_job_desc ription',
+            experience_job_type: 'experience_job_type',
+            experience_he_gine: [
+              'time orginistion',
+              'project ourgisiion',
+              'work on group',
+            ],
+            experience_roul: [
+              'team manager',
+              ' fullstack devloper',
+              ' contant manager',
+            ],
+          },
+          {
             experience_job_title: 'web devloper',
             experience_company: 'sat',
             experience_start_date: '2022/7',
@@ -162,29 +238,8 @@ export class CondidaInfoService {
             ],
           },
           {
-            experience_job_title: 'full stack devoper',
-            experience_company: 'sat',
-            experience_start_date: '2022/7',
-            experience_end_date: '2026/7',
-            experience_city: 'tanger',
-
-            experience_job_description:
-              'exper ience_job_ desc ription exp  erience_job_descripti onexperience _job_des criptionexper ience_j ob_descrip tionexperience_ job_descripti onexperien ce_job _descri ptionex  pe rience_job_  descrip tionexperience_job_desc ription',
-            experience_job_type: 'experience_job_type',
-            experience_he_gine: [
-              'time orginistion',
-              'project ourgisiion',
-              'work on group',
-            ],
-            experience_roul: [
-              'team manager',
-              ' fullstack devloper',
-              ' contant manager',
-            ],
-          },
-          {
             experience_job_title: 'manger',
-            experience_company: 'sat',
+            experience_company: 'google',
             experience_start_date: '2022/7',
             experience_end_date: '2026/7',
             experience_city: 'tanger',
@@ -215,7 +270,14 @@ export class CondidaInfoService {
             project_url: 'prject_url',
           },
         ],
-        hobbies: ['hobby_name'],
+        hobbies: [
+          'sport',
+          'programing',
+          ' dsingen',
+          'sport',
+          'programing',
+          ' dsingen',
+        ],
       },
       style: [
         {
@@ -246,7 +308,6 @@ export class CondidaInfoService {
         },
         age: 23,
         borthday: '1999/03/5',
-
         email: 'condida@gamil.com',
         phone: '+212 658 987 658',
         address: {
