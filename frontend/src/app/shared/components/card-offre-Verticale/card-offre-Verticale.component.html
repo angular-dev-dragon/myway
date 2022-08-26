@@ -6,7 +6,7 @@
     margin-bottom: 6px;
   "
 >
-  <div class="col-md-3 image">
+  <div class="col-md-3 image text-center">
     <img
       [lazyLoad]="image"
       [defaultImage]="'assets/images/images pour offres/téléchargement.png'"
@@ -32,14 +32,14 @@
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a
               class="dropdown-item"
-              *ngIf="reduireCard"
+              *ngIf="!reduireCard"
               (click)="reduireCard = !reduireCard"
             >
               Reduire
             </a>
             <a
               class="dropdown-item"
-              *ngIf="!reduireCard"
+              *ngIf="reduireCard"
               (click)="reduireCard = !reduireCard"
             >
               Etendre
@@ -56,15 +56,20 @@
           </button>
         </div> -->
       </div>
-      <h5 *ngIf="!reduireCard">{{ Secteur }}</h5>
+      <h5>{{ Secteur }}</h5>
       <h6 *ngIf="!reduireCard">{{ TypePoste }}: {{ Poste }}</h6>
-      <h6 class="h66" *ngIf="(NomEntreprise && TypeEntreprise) || !reduireCard">
-        {{ NomEntreprise }}:
-        {{ TypeEntreprise }}
-      </h6>
-      <h6 class="" *ngIf="dateDisponibilite || !reduireCard">
-        Disponible a partir de : {{ dateDisponibilite }}
-      </h6>
+      <div class="" *ngIf="!reduireCard">
+        <h6 class="h66" *ngIf="NomEntreprise && TypeEntreprise">
+          {{ NomEntreprise }}:
+          {{ TypeEntreprise }}
+        </h6>
+      </div>
+      <div class="" *ngIf="!reduireCard">
+        <h6 class="" *ngIf="dateDisponibilite">
+          Disponible a partir de : {{ dateDisponibilite }}
+        </h6>
+      </div>
+
       <ul class="p-0 m-0" *ngIf="!reduireCard">
         <small class="text-muted">
           <div class="d-flex">
