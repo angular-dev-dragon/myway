@@ -18,8 +18,10 @@ export class CardOffreHorizontaleComponent implements OnInit {
   @Input() Date: any = ''
   @Input() dateDisponibilite: any = ''
   @Input() image: any = ''
+  @Input() link: any = ''
 
   constructor() {}
+  reduireCard: boolean = false
 
   ngOnInit(): void {}
 }

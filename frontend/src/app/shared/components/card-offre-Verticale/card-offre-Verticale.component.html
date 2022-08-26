@@ -8,17 +8,20 @@
 >
   <div class="col-md-3 image text-center">
     <img
+      [routerLink]="link"
       [lazyLoad]="image"
       [defaultImage]="'assets/images/images pour offres/téléchargement.png'"
       alt=""
-      class="img-fluid"
+      class="img-fluid cursor-pointer"
       [class.smallImg]="reduireCard"
     />
   </div>
   <div class="product col-md-9">
     <div class="d-flex flex-column" style="margin-inline: 0.5em;">
       <div class="flexible-title">
-        <h5 class="card-title">{{ Intitule }}</h5>
+        <h5 [routerLink]="link" class="card-title cursor-pointer">
+          {{ Intitule }}
+        </h5>
 
         <div class="dropdown">
           <button
@@ -89,7 +92,7 @@
               {{ TypeContrat }}
             </li>
           </div>
-          <div class="btn-container" *ngIf="showBtn">
+          <div class="btn-container" *ngIf="showBtn" [routerLink]="link">
             <button type="button" class="btn btn-success">
               Voir plus +
             </button>

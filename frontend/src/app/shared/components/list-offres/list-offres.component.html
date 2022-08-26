@@ -782,6 +782,7 @@
                     let offre of offres
                       | paginate: { itemsPerPage: 20, currentPage: paginate }
                   "
+                  [link]="link"
                   [Intitule]="offre.Intitule"
                   [Secteur]="offre.Secteur"
                   [Poste]="offre.Poste"
@@ -803,11 +804,11 @@
               <div class="row" *ngIf="orientation == 'horizontale'">
                 <app-card-offre-horizontale
                   class="col-md-6 mb-3"
-                  [routerLink]="[link]"
                   *ngFor="
                     let offre of offres
                       | paginate: { itemsPerPage: 20, currentPage: paginate }
                   "
+                  [link]="link"
                   [Intitule]="offre.Intitule"
                   [Secteur]="offre.Secteur"
                   [Poste]="offre.Poste"
