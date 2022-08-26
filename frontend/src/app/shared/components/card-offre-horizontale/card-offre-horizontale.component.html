@@ -1,10 +1,11 @@
 <div class="d-flex flex-column col-12 align-items-center h-100 card-container">
   <div class="image">
     <img
+      [routerLink]="link"
       [lazyLoad]="image"
       [defaultImage]="'assets/images/images pour offres/téléchargement.png'"
       alt="img-card"
-      class="img-fluid"
+      class="img-fluid cursor-pointer"
       style="margin-inline-end: 13px;"
     />
   </div>
@@ -15,27 +16,56 @@
   >
     <div class="card-body d-flex flex-column justify-content-between h-100">
       <div class="row">
-        <h5 class="col-md-10 card-title">
+        <h5 class="col-md-10 card-title cursor-pointer" [routerLink]="link">
           {{ Intitule }}
         </h5>
-        <div class="favorite-offre col-md-2">
-          <button class="btn-fav" style="border-style: none;">
-            <i class="far fa-heart"></i>
-          </button>
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          ></button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a
+              class="dropdown-item"
+              *ngIf="!reduireCard"
+              (click)="reduireCard = !reduireCard"
+            >
+              Reduire
+            </a>
+            <a
+              class="dropdown-item"
+              *ngIf="reduireCard"
+              (click)="reduireCard = !reduireCard"
+            >
+              Etendre
+            </a>
+
+            <a class="dropdown-item">Ajouter Au Favoris</a>
+            <a class="dropdown-item">Partager</a>
+          </div>
         </div>
       </div>
       <h5>{{ Secteur }}</h5>
-      <h6 class="text-justify">{{ TypePoste }}: {{ Poste }}</h6>
-      <h6 class="h66" *ngIf="NomEntreprise && TypeEntreprise">
-        {{ NomEntreprise }}:
-        {{ TypeEntreprise }}
+      <h6 class="text-justify" *ngIf="!reduireCard">
+        {{ TypePoste }}: {{ Poste }}
       </h6>
-      <h6 *ngIf="dateDisponibilite">
-        Disponible à partir de:
-        {{ dateDisponibilite }}
-      </h6>
-
-      <ul class="p-0">
+      <div class="" *ngIf="!reduireCard">
+        <h6 class="h66" *ngIf="NomEntreprise && TypeEntreprise">
+          {{ NomEntreprise }}:
+          {{ TypeEntreprise }}
+        </h6>
+      </div>
+      <div class="" *ngIf="!reduireCard">
+        <h6 *ngIf="dateDisponibilite">
+          Disponible à partir de:
+          {{ dateDisponibilite }}
+        </h6>
+      </div>
+      <ul class="p-0" *ngIf="!reduireCard">
         <small
           class="text-muted"
           style="
@@ -66,7 +96,7 @@
           <li></li>
         </small>
       </ul>
-      <button type="button" class="btn btn-success">
+      <button [routerLink]="link" type="button" class="btn btn-success">
         Voir plus +
       </button>
     </div>

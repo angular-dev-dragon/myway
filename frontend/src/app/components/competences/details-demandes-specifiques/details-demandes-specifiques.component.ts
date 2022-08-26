@@ -25,7 +25,7 @@ export class DetailsDemandesSpecifiquesComponent implements OnInit {
   demande: any = {
     Titre: 'Développeur',
     Poste: 'Développeur full-stack',
-    TypeContrat: 'CDI',
+    TypeContrat: 'Anapec',
     TypePoste: 'Stage Alternance',
 
     Image: '',
@@ -40,7 +40,7 @@ export class DetailsDemandesSpecifiquesComponent implements OnInit {
     Langues: 'Espagnol',
     Salaire: '4000 Dh',
     NombresPoste: '5',
-    Adresse: ' Rue el Zrektouni, Imm wahba Et.4 N°9 Tanger',
+    Adresse: 'Tanger',
     Description: [
       {
         Titre: '',
