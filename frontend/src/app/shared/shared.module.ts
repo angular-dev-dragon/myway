@@ -102,6 +102,7 @@ import { CondidatListComponent } from './components/condidat-list/condidat-list.
 
 import { ListSocieteComponent } from './components/list-societe/list-societe.component'
 import { CardOffreDetailsVerticaleComponent } from './components/card-offre-details-verticale/card-offre-details-verticale.component'
+import { CardQuizComponent } from './components/card-quiz/card-quiz.component'
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -214,6 +215,7 @@ let modules: any = [
     CondidatListComponent,
 
     CardOffreDetailsVerticaleComponent,
+    CardQuizComponent,
   ],
 
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
@@ -249,6 +251,7 @@ let modules: any = [
 
     ListSocieteComponent,
     CardOffreDetailsVerticaleComponent,
+    CardQuizComponent,
 
     ...modules,
   ],

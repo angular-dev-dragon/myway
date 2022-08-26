@@ -81,6 +81,12 @@ export const content: Routes = [
         (m) => m.MetiersModule,
       ),
   },
+  {
+    path: 'quiz',
+
+    loadChildren: () =>
+      import('../../components/quiz/quiz.module').then((m) => m.QuizModule),
+  },
   // {
   //   path: 'liens-utiles',
   //   loadChildren: () =>
