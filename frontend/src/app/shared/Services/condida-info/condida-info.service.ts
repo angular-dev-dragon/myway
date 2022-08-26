@@ -85,6 +85,39 @@ export class CondidaInfoService {
           },
         ],
         education: [
+
+          {
+            ed_lavel: 'bac + 3',
+            education_name: 'english lteter',
+            education_description: 'education_description',
+            education_school: 'education_school',
+            education_start_date: 'education_start_date',
+            education_end_date: 'education_end_date',
+            srtificate: [
+              {
+                srtificate_name: 'srtificate_name',
+                srtificate_description: 'srtificate_description',
+                srtificate_img: 'assets/images/condida.jpg',
+                srtificate_date: 'srtificate_date',
+                srtificate_url: 'srtificate_url',
+                srtificate_type: 'srtificate_type',
+                setifacate_school: 'setifacate_school',
+              },
+            ],
+            deplome: [
+              {
+                deplome_name: 'deplome_name',
+                deplome_description: 'deplome_description',
+                deplome_img: 'assets/images/condida.jpg',
+                deplome_date: 'deplome_date',
+                deplome_url: 'deplome_url',
+                deplome_type: 'deplome_type',
+                deplome_school: 'deplome_school',
+                deplome_country: 'deplome_country',
+                deplome_fild: 'deplome_fild',
+              },
+            ],
+          },
           {
             ed_lavel: 'bac + 3',
             education_name: 'education_name',
@@ -117,6 +150,7 @@ export class CondidaInfoService {
               },
             ],
           },
+
         ],
 
         experience: [

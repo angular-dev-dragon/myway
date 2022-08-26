@@ -15,15 +15,18 @@
             class="card-title"
             style="font-size: 25px; margin-top: 22px; margin-bottom: 13px"
           >
-          &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;
+          <i class="fa-solid fa-user"></i>
           {{ condida_data.info.name.first_name }}
            {{ condida_data.info.name.last_name}}
            |
-            <span style="font-size: 3067px;" >
+            <span style="font-size: 20px; padding-bottom: 0px;" >
               {{ condida_data.info.address.countrie}}
             </span>
           </h1>
-          <h5 class="poste">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <h5 class="poste">
+        &nbsp;&nbsp;&nbsp;
+            <i class="fa-solid fa-briefcase"></i>
             {{ condida_data.info.job_post.job_title }}
           </h5>
           <h6
@@ -42,31 +45,37 @@
               color: #6e6b6b;
             "
           >
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <li style="margin-right: 20px">
-              <i class="fa-regular fa-calendar"></i>
-              {{ "offre.date_pub" | translate }}:&nbsp;&nbsp;&nbsp;
-              {{ condida_data.info}}
+            <i class="fa-solid fa-envelope"></i>
+
+
+              {{ condida_data.info.email}}
             </li>
-            <!-- <li>
-              <i class="fa-regular fa-calendar"></i>
-              {{ 'offre.date_pos' | translate }}: {{ condida_data.info.Date_pos }}
-            </li> -->
+            <li style="margin-right: 20px">
+              <i class="fa-solid fa-phone"></i>
+
+
+              {{ condida_data.info.phone}}
+            </li>
+
           </ul>
-          <p class="card-text"></p>
-          <p class="card-text"></p>
+
           <div class="row fiche1">
             <ul class="p-0 col-md-6">
               <small
                 class="text-muted"
                 style="list-style: none; display: flex; font-size: 15px"
               >
-                <li style="padding-right: 20px">
-                  <i class="fa-solid fa-file-contract"></i>
-                  {{ condida_data.info.TypeContrat }}
-                </li>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <li>
                   <i class="fa-solid fa-location-dot"></i>
-                  {{ condida_data.info.Adresse }}
+                  {{ condida_data.info.address.street }}N
+                  {{ condida_data.info.address.building }}
+                  {{ condida_data.info.address.city }}
+                  {{ condida_data.info.address.postalCode }}|
+                  {{ condida_data.info.address.countrie }}
+
                 </li>
               </small>
             </ul>
@@ -89,97 +98,25 @@
       <div class="section-recruteur">
         <!-- <h5>Détails de l'offre</h5> -->
         <p-tabView>
-          <p-tabPanel header="{{ 'offre.condida_data' | translate }}">
-            <p-accordion>
-              <p-accordionTab
-                header="{{ 'globale.description' | translate }} "
-                [selected]="true"
-              >
-                <div *ngFor="let info of condida_data.info.Description">
-                  <h6 class="criteres-offres" *ngIf="info.Titre">
-                    {{ info.Titre }} {{ condida_data.info.Intitule }}
+          <p-tabPanel header="{{ 'Education' | translate }}">
+            <p-accordion *ngFor=" let i of condida_data.info.education">
+              <p-accordionTab header="{{ condida_data.info.education.education_name | translate }}">
+
+                <div>
+                  <h6 class="criteres-offres" *ngIf="condida_data.info.img">
+                    {{ condida_data.info.img}}
                   </h6>
-                  <p *ngIf="info.Texte">{{ info.Texte }}</p>
-                  <ul *ngIf="info.List">
-                    <li *ngFor="let list of info.List">{{ list }}</li>
+                  <p *ngIf="condida_data.info.imgTexte">{{ condida_data.info.img}}</p>
+                  <ul *ngIf="condida_data.info.img.List">
+                    <li *ngFor="let list of condida_data.info.img">{{ list }}</li>
                   </ul>
                 </div>
+
               </p-accordionTab>
 
-              <p-accordionTab header="{{ 'offre.missions' | translate }} ">
-                <div *ngFor="let info of condida_data.info.Missions">
-                  <h6 class="criteres-offres" *ngIf="info.Titre">
-                    {{ info.Titre }}
-                  </h6>
-                  <p *ngIf="info.Texte">{{ info.Texte }}</p>
-                  <ul *ngIf="info.List">
-                    <li *ngFor="let list of info.List">{{ list }}</li>
-                  </ul>
-                </div>
-              </p-accordionTab>
-
-              <p-accordionTab header="{{ 'offre.profilR' | translate }}">
-                <div *ngFor="let info of condida_data.info.ProfilRecherche">
-                  <h6 class="criteres-offres" *ngIf="info.Titre">
-                    {{ info.Titre }}
-                  </h6>
-                  <p *ngIf="info.Texte">{{ info.Texte }}</p>
-                  <ul *ngIf="info.List">
-                    <li *ngFor="let list of info.List">{{ list }}</li>
-                  </ul>
-                </div>
-              </p-accordionTab>
-              <p-accordionTab header="{{ 'offre.critere_offre' | translate }}">
-                <ul>
-                  <li>
-                    <span class="offre-critere-label">Secteur d'activité:</span>
-                    {{ condida_data.info.Secteur }}
-                  </li>
-                  <li>
-                    <span class="offre-critere-label">Type de contrat:</span>
-                    {{ condida_data.info.TypeContrat }}
-                  </li>
-                  <li>
-                    <span class="offre-critere-label">Région:</span>
-                    {{ condida_data.info.Region }}
-                  </li>
-                  <li>
-                    <span class="offre-critere-label">Ville:</span>
-                    {{ condida_data.info.Ville }}
-                  </li>
-                  <li>
-                    <span class="offre-critere-label">Niveaux d'études:</span>
-                    {{ condida_data.info.NiveauxEt }}
-                  </li>
-                  <li>
-                    <span class="offre-critere-label">
-                      Niveau d'expérience:
-                    </span>
-                    {{ condida_data.info.NiveauxEx }}
-                  </li>
-                  <li>
-                    <span class="offre-critere-label">langues exigées:</span>
-                    {{ condida_data.info.Langues }}
-                  </li>
-                  <li>
-                    <span class="offre-critere-label">Salaire:</span>
-                    {{ condida_data.info.Salaire }}
-                  </li>
-                  <li>
-                    <span class="offre-critere-label">Compétence clés:</span>
-                    <span *ngFor="let comptence of condida_data.info.Competences">
-                      {{ comptence }}
-                    </span>
-                  </li>
-                  <li>
-                    <span class="offre-critere-label">
-                      Nombres de poste(s):
-                    </span>
-                    {{ condida_data.info.NombresPoste }}
-                  </li>
-                </ul>
-              </p-accordionTab>
             </p-accordion>
+
+
           </p-tabPanel>
 
           <!--2-->
@@ -599,7 +536,9 @@
       </div>
     </div>
     <div class="col-md-3">
-      <div class="card">test</div>
+      <img width="100%" src="https://i1.hespress.com/wp-content/uploads/2022/06/Sidi_Ali.jpg" alt="">
+      <img width="100%" src="https://i1.hespress.com/wp-content/uploads/2022/06/Sidi_Ali.jpg" alt="">
+      <img width="100%" src="https://i1.hespress.com/wp-content/uploads/2022/06/Sidi_Ali.jpg" alt="">
     </div>
   </div>
 </div>
