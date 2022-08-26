@@ -5,7 +5,7 @@
         <img
          [lazyLoad]="condida_data.info.img"
          [defaultImage]=""
-          class="img-fluid rounded-start"
+          class="img_profile"
           alt="..."
         />
       </div>
@@ -98,20 +98,83 @@
       <div class="section-recruteur">
         <!-- <h5>Détails de l'offre</h5> -->
         <p-tabView>
-          <p-tabPanel header="{{ 'Education' | translate }}">
+          <p-tabPanel  header="{{ 'Education' | translate }}">
             <p-accordion *ngFor=" let i of condida_data.info.education">
-              <p-accordionTab header="{{ condida_data.info.education.education_name | translate }}">
-
+              <p-accordionTab
+              [selected]="true"
+              header="{{i.education_name }}">
                 <div>
-                  <h6 class="criteres-offres" *ngIf="condida_data.info.img">
-                    {{ condida_data.info.img}}
-                  </h6>
-                  <p *ngIf="condida_data.info.imgTexte">{{ condida_data.info.img}}</p>
-                  <ul *ngIf="condida_data.info.img.List">
-                    <li *ngFor="let list of condida_data.info.img">{{ list }}</li>
+                  <ul class="ul-one">
+                    <li class="li-one ">
+                      <P class="top-t" >{{i.education_school | titlecase}} </P>
+                      <p class="top-ctiy">®️  {{i.education_city | titlecase}}</p>
+                    </li>
+                    <li class="li-one">
+                      <p class="li_one_init_h" > From</p>
+                      <P class="li_one_init">{{i.education_start_date}}</P>
+                      <p class="li_one_init_h">,To</p>
+                      <p class="li_one_init">{{i.education_end_date}}</p>
+                    </li>
+                    <li class="li-one  education_descriptionli">
+                      <p class="education_description">{{i.education_description}}</p>
+                    </li>
+                    <li class="li-one">
+                      <ul class="init-ul-col none_list">
+                        <li  >
+                          <div class="" *ngFor="let k of i.deplome">
+                            <p class="ed-sub-t">{{'deplome'| titlecase |translate }}</p>
+                            <ul class="none_list   sub_ul_col">
+
+
+                              <li class="sub_li " *ngIf="k.deplome_description">
+                                <P class="sub_li_d">{{k.deplome_description}}</P>
+                              </li>
+                              <li>
+                                <ul class=" none_list li-one">
+                                  <li class="d-flexx  " *ngIf="k.deplome_img">
+                                    <a class=" btnn btn btn-secondary"  href="#">view doc</a>
+
+                                  </li>
+                                  <li class="sub_li " *ngIf="k.deplome_url">
+                                    <a class="  btnn btn btn-secondary" href="#">view onlin</a>
+
+                                  </li>
+
+                                </ul>
+                              </li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="ed_sub_box" *ngFor="let k of i.srtificate">
+                            <p class="ed-sub-t">{{'deplome'| titlecase |translate }}</p>
+                            <ul class=" none_list sub_ul_col">
+
+                              <li class="sub_li" *ngIf="k.srtificate_description">
+                                <P class="sub_li_d">{{k.srtificate_description}}</P>
+                              </li>
+                            <li>
+                              <ul class=" none_list li-one">
+
+                                <li class="d-flexx  " *ngIf="k.srtificate_img">
+                                  <a  class="  btnn btn btn-secondary"href="#">view doc</a>
+
+                                </li>
+                                <li class="sub_li " *ngIf="k.srtificate_url">
+                                  <a class=" btnn btn btn-secondary" href="#">view onlin</a>
+
+                                </li>
+                              </ul>
+                            </li>
+                            </ul>
+                          </div>
+                        </li>
+
+
+                      </ul>
+                    </li>
                   </ul>
                 </div>
-
               </p-accordionTab>
 
             </p-accordion>
@@ -120,27 +183,76 @@
           </p-tabPanel>
 
           <!--2-->
-          <p-tabPanel header="{{ 'offre.faq' | translate }}">
-            <img
-              src="../../../../assets/images/images pour offres/téléchargement.png"
-              class="rounded float-end"
-              alt="..."
-            />
+          <p-tabPanel header="{{ 'Experience' | translate }}">
+            <p-accordion *ngFor=" let i of condida_data.info.experience">
+              <p-accordionTab [selected]="true" header="{{i.experience_job_title}}">
+                <div>
+                  <ul class="ul-one">
+                    <li class="li-one ">
+                      <P class="top-t">{{i.experience_company | titlecase}} </P>
+                      <p class="top-ctiy">®️ {{i.experience_city | titlecase}}</p>
+                    </li>
+                    <li class="li-one">
+                      <p class="li_one_init_h"> From</p>
+                      <P class="li_one_init">{{i.experience_start_date}}</P>
+                      <p class="li_one_init_h">,To</p>
+                      <p class="li_one_init">{{i.experience_end_date}}</p>
+                    </li>
+                    <li class="li-one  education_descriptionli">
+                      <p class="education_description">{{i.experience_job_description}}</p>
+                    </li>
+                    <li class="li-one">
+                      <ul class="init-ul-col none_list">
+                        <li>
+                          <div class="" >
+<p class="ed-sub-t">{{'my rouls at '+ i.experience_company| titlecase |translate }}</p>
+<ul *ngFor="let k of i.experience_roul" class="st li-one">
+  <li class="d-flexx  ">
+    {{k}}
+  </li>
+</ul>
+                         <p class="ed-sub-t">{{'what i learn'| titlecase |translate }}</p>
+                                <ul *ngFor="let k of i.experience_he_gine" class="st li-one">
+                                  <li class="d-flexx  " >
+                                     {{k}}
+                                  </li>
+                                </ul>
 
-            <h5>
-              {{ "offre.entreprise" | translate }}:
-              {{ Det_Ent.NomEntreprise }}
-            </h5>
-            <ul>
-              <li>{{ "form.secteur" | translate }}: {{ Det_Ent.Secteur }}</li>
-              <li>
-                {{ "adresse.site" | translate }}: {{ Det_Ent.SiteInternet }}
-              </li>
-              <li>
-                {{ "adresse.description" | translate }}:
-                {{ Det_Ent.Description }}
-              </li>
-            </ul>
+
+                          </div>
+                        </li>
+                        <li>
+                          <div class="ed_sub_box" *ngFor="let k of i.srtificate">
+                            <p class="ed-sub-t">{{'deplome'| titlecase |translate }}</p>
+                            <ul class=" none_list sub_ul_col">
+
+                              <li class="sub_li" *ngIf="k.srtificate_description">
+                                <P class="sub_li_d">{{k.srtificate_description}}</P>
+                              </li>
+
+                              <li>
+                                <ul class=" none_list li-one">
+                                  <li class="d-flexx  " *ngIf="k.srtificate_img">
+                                    <a class="  btnn btn btn-secondary" href="#">view doc</a>
+                                  </li>
+                                  <li class="sub_li " *ngIf="k.srtificate_url">
+                                    <a class=" btnn btn btn-secondary" href="#">view onlin</a>
+                                  </li>
+                                </ul>
+                              </li>
+
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </p-accordionTab>
+
+            </p-accordion>
+
+
           </p-tabPanel>
           <!--3-->
           <p-tabPanel header="{{ 'offre.det_entr' | translate }}">
