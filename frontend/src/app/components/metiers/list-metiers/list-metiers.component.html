@@ -3,6 +3,7 @@
     <div class="col-md-12">
       <div class="d-flex flex-main">
         <div class="section-recruteur spacing-inline-end mb-3">
+          <!--Filtrage-->
           <div class="sideBar-Main">
             <div
               class="btn btn-outline-secondary"
@@ -80,6 +81,7 @@
               </div>
             </div>
           </div>
+          <!--Fin Filtrage-->
         </div>
         <div class="w-100">
           <div class="section-recruteur mb-3 w-100">
@@ -142,7 +144,11 @@
               <!-- BEGIN TABLE RESULT -->
               <hr />
 
-              <div class="row"></div>
+              <div class="">
+                <app-card-offre-horizontale>
+                  [offres]="offres" [link]="'/offres/details-offres'"
+                </app-card-offre-horizontale>
+              </div>
             </div>
           </div>
         </div>
