@@ -334,6 +334,100 @@
           <!--4-->
           <p-tabPanel header="{{ 'contact' | translate }}">
 
+
+
+                      <div class="row">
+                        <ul class="d-flexV">
+                          <li class="lili">
+                            <h1 class="h11" >
+                               {{ 'contact me' | titlecase | translate }}
+                            </h1>
+                          </li>
+                        </ul>
+                      </div>
+              <form [formGroup]="condida_contact" (ngSubmit)="sendMissage()">
+                <div class="row">
+                  <!--misag_type-->
+                  <div class="mb-63 col-md-6">
+                    <label for="misag_type" class="form-label">
+                      {{ "taype misage" | titlecase| translate }}:
+                    </label>
+                    <select id="misag_type" class="form-select" id="misag_type" formControlName="misag_type" [ngClass]="{
+                                      'is-invalid':
+                                        condida_contact.get('misag_type')?.touched &&
+                                        condida_contact.get('misag_type')?.invalid
+                                    }">
+                      <option value="" selected disabled>
+                        {{ "select one" | translate }}
+                      </option>
+                      <option *ngFor="let i of misag_type">
+                        {{ i | titlecase| translate }}
+                      </option>
+
+                    </select>
+                    <div *ngIf="
+                                      condida_contact.get('misag_type')?.touched &&
+                                      condida_contact.get('misag_type')?.invalid
+                                    " class="invalid-feedback mb-2">
+                      <div *ngIf="condida_contact.get('misag_type')?.errors?.['required']">
+                        {{ "form.champ_oblig" | translate }}
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- name input -->
+                  <div class="mb-3 col-md-6">
+                    <label class="form-label" for="name">
+                      {{ "form.name" | translate }}:
+                    </label>
+                    <input class="form-control" id="name" type="text" placeholder="{{ 'enter your name' | translate }}"
+                      formControlName="name" name="name" [ngClass]="{
+                                      'is-invalid':
+                                        condida_contact.get('name')?.touched &&
+                                        condida_contact.get('name')?.invalid
+                                    }" />
+                    <div *ngIf="
+                                      condida_contact.get('name')?.touched &&
+                                      condida_contact.get('name')?.invalid
+                                    " class="invalid-feedback">
+                      <div *ngIf="condida_contact.get('name')?.errors?.['required']">
+                        {{ "form.champ_oblig" | translate }}
+                      </div>
+                      <div *ngIf="condida_contact.get('name')?.errors?.['name']">
+                        {{ "form.mail_valid" | translate }}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-floating">
+                  <textarea formControlName="missage" [ngClass]="{
+                                      'is-invalid':
+                                        condida_contact.get('missage')?.touched &&
+                                        condida_contact.get('missage')?.invalid
+                                    }" class="form-control textarea" placeholder="Leave a comment here"
+                    id="floatingTextarea"></textarea>
+
+                  <label for="floatingTextarea">{{ "missage" | translate }}:</label>
+                  <div *ngIf="
+                                                          condida_contact.get('missage')?.touched &&
+                                                          condida_contact.get('missage')?.invalid
+                                                        " class="invalid-feedback">
+                    <div *ngIf="condida_contact.get('missage')?.errors?.['required']">
+                      {{ "form.champ_oblig" | translate }}
+                    </div>
+                    <div *ngIf="condida_contact.get('missage')?.errors?.['name']">
+                      {{ "form.mail_valid" | translate }}
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+              </form>
+
            <div class="row">
                   <ul class="d-flexV">
                     <li *ngFor="let i of condida_data.info.contact"class="lili">
@@ -350,124 +444,12 @@
                         <i *ngIf="i.platfrom === 'youtube'" class="fa-brands fa-youtube"></i>
                         <i *ngIf="i.platfrom === 'telegram'" class="fa-brands fa-telegram"></i>
                         <i *ngIf="i.platfrom === 'discord'" class=" CLAS fa-brands fa-discord"></i>
-
                     </a>
                   </li>
                   </ul>
            </div>
 
 
-              <form [formGroup]="condida_contact" (ngSubmit)="sendMissage()">
-             <div class="row">
-                  <!--misag_type-->
-                  <div class="mb-63 col-md-6">
-                    <label for="misag_type" class="form-label">
-                      {{ "taype misage" | titlecase| translate }}:
-                    </label>
-                    <select
-                      id="misag_type"
-                      class="form-select"
-                      id="misag_type"
-                      formControlName="misag_type"
-                      [ngClass]="{
-                        'is-invalid':
-                          condida_contact.get('misag_type')?.touched &&
-                          condida_contact.get('misag_type')?.invalid
-                      }"
-
-                    >
-                      <option value="" selected disabled>
-                        {{ "select one" | translate }}
-                      </option>
-                      <option   *ngFor="let i of misag_type">
-                        {{ i | titlecase| translate }}
-                      </option>
-
-                    </select>
-                    <div
-                      *ngIf="
-                        condida_contact.get('misag_type')?.touched &&
-                        condida_contact.get('misag_type')?.invalid
-                      "
-                      class="invalid-feedback mb-2"
-                    >
-                      <div
-                        *ngIf="condida_contact.get('misag_type')?.errors?.['required']"
-                      >
-                        {{ "form.champ_oblig" | translate }}
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- name input -->
-                  <div class="mb-3 col-md-6">
-                    <label class="form-label" for="name">
-                      {{ "form.name" | translate }}:
-                    </label>
-                    <input
-                      class="form-control"
-                      id="name"
-                      type="text"
-                      placeholder="{{ 'enter your name' | translate }}"
-                      formControlName="name"
-                      name="name"
-                      [ngClass]="{
-                        'is-invalid':
-                          condida_contact.get('name')?.touched &&
-                          condida_contact.get('name')?.invalid
-                      }"
-                    />
-                    <div
-                      *ngIf="
-                        condida_contact.get('name')?.touched &&
-                        condida_contact.get('name')?.invalid
-                      "
-                      class="invalid-feedback"
-                    >
-                      <div
-                        *ngIf="condida_contact.get('name')?.errors?.['required']"
-                      >
-                        {{ "form.champ_oblig" | translate }}
-                      </div>
-                      <div *ngIf="condida_contact.get('name')?.errors?.['name']">
-                        {{ "form.mail_valid" | translate }}
-                      </div>
-                    </div>
-                  </div>
-               </div>
-
-            <div class="form-floating">
-              <textarea
-              formControlName="missage"
-              [ngClass]="{
-                        'is-invalid':
-                          condida_contact.get('missage')?.touched &&
-                          condida_contact.get('missage')?.invalid
-                      }"
-              class="form-control textarea"
-               placeholder="Leave a comment here"
-                id="floatingTextarea"
-                ></textarea>
-
-              <label for="floatingTextarea">{{ "missage" | translate }}:</label>
-                    <div *ngIf="
-                                            condida_contact.get('missage')?.touched &&
-                                            condida_contact.get('missage')?.invalid
-                                          " class="invalid-feedback">
-                      <div *ngIf="condida_contact.get('missage')?.errors?.['required']">
-                        {{ "form.champ_oblig" | translate }}
-                      </div>
-                      <div *ngIf="condida_contact.get('missage')?.errors?.['name']">
-                        {{ "form.mail_valid" | translate }}
-                      </div>
-                    </div>
-            </div>
-
-
-
-
-
-              </form>
             <!--Fin Formulaire-->
           </p-tabPanel>
         </p-tabView>

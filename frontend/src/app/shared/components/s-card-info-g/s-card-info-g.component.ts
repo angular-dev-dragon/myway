@@ -146,10 +146,10 @@ export class SCardInfoGComponent implements OnInit {
         filter: false,
         row: [
           {
-            colum: 4,
+            colum: 12,
             cards_we_need: [
               {
-                name: 'reicritar',
+                name: '',
                 id: 'pk',
                 info:[ {
                   logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/3195090/logo.png?1587552503',
@@ -167,16 +167,7 @@ export class SCardInfoGComponent implements OnInit {
             ],
           },
 
-          {
-            colum: 8,
-            cards_we_need: [
-              {
-                name: 'mini_companiy',
-                id: 'p432523452k',
-                info: this.recriter_list,
-              },
-            ],
-          },
+        
         ],
       },
     },

@@ -301,7 +301,7 @@
                          class="  a-card-w1-h2-v-hot stretched-link text-reset-card-w1-h2-v-hott">
                           {{i.title}}
                         </a>
-                        </h3>
+                      </h3>
 
                         <div class="row">
                            <p>
@@ -310,8 +310,8 @@
                         </div>
                     </div>
                     <div
-                    [style.border]="i.hot.border"
-                    class="
+                     [style.border]="i.hot.border"
+                     class="
 
                       bg-danger
                       text-white
@@ -475,22 +475,7 @@
 
 
 <!-- #region mini compani -->
-<div *ngIf="i.name === 'mini_companiy'" class="row  mini_companiy_continer">
 
-
-      <div *ngFor="let c of i.info" id="{{ i.id }}"  class="mini_companiy col-2 logo-card-container">
-        <img
-        [lazyLoad]="c.logo"
-        [defaultImage]="'assets/images/bg-recruiter'"
-        class="logo-card mini_companiy_img"
-        alt="Logo Recruiter" />
-      </div>
-
-
-
-
-
-</div>
 <!-- #endregion -->
 
 

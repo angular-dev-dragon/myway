@@ -184,18 +184,26 @@ font-size: 13px;
   text-decoration: none;
 }
 .lili{
-
+margin: auto;
 }
 .d-flexV{
   display: flex;
   flex-direction: row;
   list-style: none;
   gap: 10PX;
-  justify-content: center;
+
+  justify-content: space-around;
   margin:30PX;
 }
 .CLAS
 {
   width: 50PX;
   height: 60PX;
+}.h11{
+  font-weight: 700;
+  margin-right: auto;
+  font-size: 25px;
+  margin-left: -30px;
 }
+
+

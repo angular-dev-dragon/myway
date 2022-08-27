@@ -55,34 +55,34 @@ export class CondidaInfoService {
             platfrom: 'linkedin',
             url: 'https://www.linkedin.com/posts/scottdresden_next-generation-silent-drone-achieves-major-activity-6885948728314736640-eH9i/',
           },
-          {
-            platfrom: 'stack-overflow',
-            url: 'https://stackoverflow.com/users/edit/14317728',
-          },
-          {
-            platfrom: 'instagram',
-            url: 'https://www.instagram.com/ahmed_dev_dragon/',
-          },
-          {
-            platfrom: 'twitter',
-            url: 'https://twitter.com/Ahmd_dev_dragon',
-          },
-          {
-            platfrom: 'gitlab',
-            url: 'https://github.com/Ahmed-dev-dragon',
-          },
-          {
-            platfrom: 'youtube',
-            url: 'https://www.youtube.com/channel/UCl52lNdNprhpfF15-6QwPAA',
-          },
-          {
-            platfrom: 'telegram',
-            url: 'https://web.telegram.org/z/#1460645651',
-          },
-          {
-            platfrom: 'discord',
-            url: 'https://discord.com/channels/@me',
-          },
+          // {
+          //   platfrom: 'stack-overflow',
+          //   url: 'https://stackoverflow.com/users/edit/14317728',
+          // },
+          // {
+          //   platfrom: 'instagram',
+          //   url: 'https://www.instagram.com/ahmed_dev_dragon/',
+          // },
+          // {
+          //   platfrom: 'twitter',
+          //   url: 'https://twitter.com/Ahmd_dev_dragon',
+          // },
+          // {
+          //   platfrom: 'gitlab',
+          //   url: 'https://github.com/Ahmed-dev-dragon',
+          // },
+          // {
+          //   platfrom: 'youtube',
+          //   url: 'https://www.youtube.com/channel/UCl52lNdNprhpfF15-6QwPAA',
+          // },
+          // {
+          //   platfrom: 'telegram',
+          //   url: 'https://web.telegram.org/z/#1460645651',
+          // },
+          // {
+          //   platfrom: 'discord',
+          //   url: 'https://discord.com/channels/@me',
+          // },
         ],
 
         about_me: {
