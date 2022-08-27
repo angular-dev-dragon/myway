@@ -2,46 +2,38 @@
 
 
         <!-- #region card   -->
-          <div *ngIf="i.name === 'card-w1-h1-v2'"id="{{ i.id }}"
-            class="carbon-example flex-wrapper"
-          >
-
-          <img
-           *ngIf="i.img"
-           [ngStyle]="i.img.style"
-           [lazyLoad]="i.img.src"
-           [defaultImage]="i.img.defaultImage"
-           [style.width]="i.img.width"
-           [style.height]="i.img.height"
-           alt="{{i.img.alt}}"
-           />
-
-            <div  class="inner-wrapper">
 
 
 
+<div *ngIf="i.name === 'card-w1-h1-v2'"id="{{ i.id }}" class="carbon-example flex-wrapper" >
 
-              <p *ngIf="i.p "
-              [ngStyle]="i.p.style">
-              <span *ngIf="i.p.span"
-               [ngStyle]="i.p.span.style">
-                {{i.p.span.text}}
-              </span>
-                 {{i.p.text}}
-              </p>
-              <footer
-              *ngIf="i.footer"
-              [ngStyle]="i.footer.style"
-              class="fine-print">
-              <p
-              *ngIf="i.footer.p"
-              >
-                {{i.footer.p.text}}
+  <div >
+    <div class="card card-default p-4">
+      <a href="javascript:0" class="media text-secondary" data-toggle="modal" data-target="#modal-contact">
+        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 img-fluid rounded"
+          alt="Avatar Image" />
+        <div class="media-body">
+          <h5 class="mt-0 mb-2 text-dark">Emma Smith</h5>
+          <ul class="list-unstyled text-smoke text-smoke">
+            <li class="d-flex">
+              <i class="mdi mdi-map mr-1"></i>
+              <span>Nulla vel metus 15/178</span>
+            </li>
+            <li class="d-flex">
+              <i class="mdi mdi-email mr-1"></i>
+              <span>exmaple@email.com</span>
+            </li>
+            <li class="d-flex">
+              <i class="mdi mdi-phone mr-1"></i>
+              <span>(123) 888 777 632</span>
+            </li>
+          </ul>
+        </div>
+      </a>
 
-              </p>
-             </footer>
-            </div>
-          </div>
+
+
+ </div>
         <!-- #endregion -->
 
         <!-- #region card  -->
@@ -480,14 +472,6 @@
 
 
 </div>
-
-
-
-
-
-
-
-
 <!--
           <img
            *ngIf="i.img"

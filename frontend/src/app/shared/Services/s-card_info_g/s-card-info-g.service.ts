@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { find, of } from 'rxjs';
+import { find, of, filter } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,14 +11,15 @@ export class SCardInfoGService {
       {
         name: 'show 2',
         id: 'd342',
+
         detail: {
           filter: false,
           row: [
             {
               colum: 12,
-              cards_we_need: [
+              all_cards: [
                 {
-                  name: '',
+                  name: 'sdfasd',
                   id: 'pk',
                   info: [
                     {
@@ -39,19 +40,33 @@ export class SCardInfoGService {
       },
     ];
   }
+  get_all_s_card()
 
-
-
-
-  get_all_s_card() {
+   {
     return this.s_card_info;
+   }
+
+  // get_a_col_in_a_show(show_name: string, coll_name: string, row_name: number = 1) {
+  //   return of(
+  //     this.s_card_info
+  //       .find((i: any) => i.name === show_name)
+  //       ?.detail.row[row_name].all_cards.find((i: any) => i.info === coll_name)
+  //   );
+  // }
+
+  get_a_card_0_in_a_show(show: string, card: string, row: number = 1) {
+    return of(
+      this.s_card_info
+        .find((i: any) => i.name === show)
+        ?.detail.row[row].all_cards.find((i: any) => i.name === card)
+    );
   }
 
-  get_show_by_name(name:string) {
 
-    return  of (this.s_card_info.find((i)=>i.name === name))
 
-  }
+
+
+
 }
 
 

@@ -146,28 +146,25 @@ export class SCardInfoGComponent implements OnInit {
         filter: false,
         row: [
           {
-            colum: 12,
+            colum: 6,
             cards_we_need: [
               {
-                name: '',
+                name: 'card-w1-h1-v2',
                 id: 'pk',
-                info:[ {
-                  logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/3195090/logo.png?1587552503',
-                  imageBg:
-                    'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/5310523/index.png?1640179035',
-                  title: 'Total Energies',
-                  type: 'Grande Societe',
-                  salaries: '',
-                  caption: 'Une Compagnie intégrée multi-énergies',
-                }
-
-
-                  ,]
+                info: [
+                  {
+                    logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/3195090/logo.png?1587552503',
+                    imageBg:
+                      'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/5310523/index.png?1640179035',
+                    title: 'Total Energies',
+                    type: 'Grande Societe',
+                    salaries: '',
+                    caption: 'Une Compagnie intégrée multi-énergies',
+                  },
+                ],
               },
             ],
           },
-
-        
         ],
       },
     },
