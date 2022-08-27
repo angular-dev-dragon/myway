@@ -72,6 +72,10 @@ import { MatMenuModule } from '@angular/material/menu'
 // end form importes
 
 import { MatSliderModule } from '@angular/material/slider'
+import { MatRadioModule } from '@angular/material/radio'
+import { MatCheckboxModule } from '@angular/material/checkbox'
+import { MatListModule } from '@angular/material/list'
+
 import { CardTemoignageComponent } from './components/card-temoignage/card-temoignage.component'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { CardOffreVerticaleComponent } from './components/card-offre-Verticale/card-offre-Verticale.component'
@@ -113,7 +117,9 @@ let modules: any = [
   MatSliderModule,
   MatMenuModule,
   BreadcrumbModule,
-
+  MatRadioModule,
+  MatCheckboxModule,
+  MatListModule,
   // material ui
 
   ScrollPanelModule,

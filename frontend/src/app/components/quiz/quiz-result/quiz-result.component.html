@@ -1,0 +1,273 @@
+<ng-container>
+  <div class="inner-container section-gap-lg">
+    <div class="container">
+      <div class="mx-3">
+        <div class="row px-2">
+          <div class="title1 col-sm-12">
+            <h2 class="title-inner11">
+              {{ 'resultat.resultat' | translate }}
+            </h2>
+          </div>
+          <div class="col-md-7">
+            <div class="row">
+              <h2
+                class="title-custom-details my-3"
+                style="border-bottom: 2px solid rgba(var(--mauve-color));"
+              >
+                {{ quiz?.ref_quiz }} -
+                {{ (quiz?.translations)['fr']?.__designation }}
+              </h2>
+              <div class="col-md-12 mb-4">
+                <!-- <div class="mb-2" fxLayout="row wrap" fxLayoutAlign="space-between center"> -->
+                <div class="row">
+                  <div class="col-md-12 mb-2">
+                    <div fxFlex.xs="100" fxFlex.sm="100">
+                      <div fxLayoutAlign="space-between">
+                        <p class="j-description j-resume-lg">
+                          <strong>{{ 'resultat.juste' | translate }}</strong>
+                        </p>
+                        <p class="j-description j-resume-lg">
+                          <strong>{{ rJuste }}</strong>
+                        </p>
+                      </div>
+                      <div fxLayoutAlign="space-between">
+                        <p class="j-description j-resume-lg">
+                          <strong>{{ 'resultat.fause' | translate }}</strong>
+                        </p>
+                        <p class="j-description j-resume-lg">
+                          <strong>{{ rFausse }}</strong>
+                        </p>
+                      </div>
+                      <div fxLayoutAlign="space-between">
+                        <p class="j-description j-resume-lg">
+                          <strong>{{ 'resultat.resultat' | translate }}</strong>
+                        </p>
+                        <p class="j-description j-resume-lg">
+                          <strong>
+                            {{ rJuste }} / {{ quiz?.question_quiz?.length }}
+                          </strong>
+                        </p>
+                      </div>
+                      <div fxLayoutAlign="space-between">
+                        <p class="j-description j-resume-lg">
+                          <strong>{{ 'resultat.class' | translate }}</strong>
+                        </p>
+                        <p class="j-description j-resume-lg">
+                          <strong>{{ classement_participation }}</strong>
+                        </p>
+                      </div>
+                      <div fxLayoutAlign="space-between">
+                        <p class="j-description j-resume-lg">
+                          <strong>
+                            {{ 'resultat.meme_note' | translate }}
+                          </strong>
+                        </p>
+                        <p class="j-description j-resume-lg">
+                          <strong>
+                            {{ nbr_personnes_ayant_la_meme_note }}
+                          </strong>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <br />
+                  <div class="col-md-12">
+                    <div
+                      *ngIf="rJuste < quiz.question_quiz.length"
+                      class="border text-accent p-2 text-center bg-result text-white"
+                      fxFlex.xs="100"
+                      fxFlex.sm="100"
+                    >
+                      {{ 'resultat.mieux' | translate }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <section
+                class="bg-grey p-3 mb-3 col-md-12"
+                fxLayoutAlign="space-between"
+              >
+                <mat-checkbox class="example-margin" [(ngModel)]="brep">
+                  &nbsp;{{ 'resultat.bonnes' | translate }}
+                </mat-checkbox>
+                <mat-checkbox
+                  class="example-margin"
+                  [(ngModel)]="indic"
+                  (change)="tes()"
+                >
+                  &nbsp;{{ 'resultat.indic' | translate }}
+                </mat-checkbox>
+              </section>
+              <div
+                fxLayout="row wrap"
+                *ngFor="let rep of reponses; let i = index"
+                class="mb-4 col-md-12"
+              >
+                <div class="mb-3 col-md-12">
+                  <div fxLayoutAlign="space-between col-md-12">
+                    <div>
+                      <h2 class="py-2">
+                        {{ 'resultat.quest' | translate }} {{ i + 1 }}/{{
+                          quiz?.question_quiz?.length
+                        }}
+                      </h2>
+                      <p class="j-description j-resume-lg">
+                        {{ (rep?.translations)['fr']?.__label_question }}
+                      </p>
+                      <p
+                        class="j-description j-resume-lg"
+                        class="m-0"
+                        *ngIf="
+                          rep?.userReponse?.__valeur_reponse_juste == false
+                        "
+                      >
+                        {{ 'resultat.votre_rep' | translate }} :
+                        <span class="text-red" style="font-weight: 600;">
+                          {{
+                            (rep?.userReponse?.translations)['fr']
+                              ?.__texte_reponse
+                          }}
+                        </span>
+                      </p>
+                      <p
+                        class="j-description j-resume-lg"
+                        class="m-0"
+                        *ngIf="rep?.userReponse?.__valeur_reponse_juste == true"
+                      >
+                        {{ 'resultat.votre_rep' | translate }} :
+                        <span class="text-white" style="font-weight: 600;">
+                          {{
+                            (rep?.userReponse?.translations)['fr']
+                              ?.__texte_reponse
+                          }}
+                        </span>
+                      </p>
+                      <p
+                        class="j-description j-resume-lg"
+                        class="m-0 mt-2"
+                        *ngIf="brep"
+                      >
+                        {{ 'resultat.bon' | translate }} :
+                        <span
+                          class="text-white"
+                          style="color: green; font-weight: 600;"
+                        >
+                          {{
+                            (rep?.bonneReponse?.translations)['fr']
+                              ?.__texte_reponse
+                          }}
+                        </span>
+                      </p>
+                    </div>
+                    <span
+                      *ngIf="rep?.userReponse?.__valeur_reponse_juste === false"
+                      class="text-center"
+                    >
+                      <i class="fa-solid fa-circle-xmark"></i>
+                      <!-- highlight_off -->
+                    </span>
+                    <span
+                      *ngIf="rep?.userReponse?.__valeur_reponse_juste == true"
+                      class="text-center"
+                    >
+                      <i class="fa-solid fa-check"></i>
+                      <!-- check_circle -->
+                    </span>
+                    <span
+                      *ngIf="rep?.userReponse?.__valeur_reponse_juste == null"
+                      class="text-center"
+                    >
+                      <p
+                        class="j-description j-resume-lg"
+                        class="pull-right"
+                        style="font-size: 15px; color: rgb(35, 89, 236);"
+                      >
+                        {{ 'resultat.no' | translate }}
+                      </p>
+                    </span>
+                  </div>
+                  <div></div>
+                  <div
+                    *ngIf="
+                      indic &&
+                      (rep?.translations)['fr']?.__indicateur &&
+                      (rep?.translations)['fr']?.__indicateur != ''
+                    "
+                  >
+                    <p class="blue-color j-description j-resume-lg">
+                      {{ (rep?.translations)['fr']?.__indicateur }}
+                    </p>
+                  </div>
+                  <div
+                    *ngIf="
+                      indic &&
+                      (!(rep?.translations)['fr']?.__indicateur ||
+                        (rep?.translations)['fr']?.__indicateur == '')
+                    "
+                  >
+                    <p class="blue-color j-description j-resume-lg">
+                      {{ 'detailQuiz.noIndication' | translate }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-12 mb-3">
+                <!-- resultat -->
+                <div fxLayout="row" fxLayoutAlign="center center">
+                  <div
+                    fxFlex.xs="100"
+                    fxLayoutAlign="center center"
+                    fxFlex.sm="100"
+                    fxFlex.md="50"
+                    fxFlex.lg="50"
+                    fxFlex.xl="50"
+                  >
+                    <button
+                      class="btn btn-solid"
+                      [routerLink]="[
+                        '/Prise-de-conscience/testez-vous-connaissances/quiz/Question/',
+                        quiz._id
+                      ]"
+                    >
+                      {{ 'resultat.recommencer' | translate }}
+                    </button>
+                  </div>
+                  <div
+                    fxFlex.xs="100"
+                    fxFlex.sm="100"
+                    fxLayoutAlign="center center"
+                    fxFlex.md="50"
+                    fxFlex.lg="50"
+                    fxFlex.xl="50"
+                  >
+                    <button
+                      class="btn btn-solid"
+                      [routerLink]="[
+                        '/Prise-de-conscience/testez-vous-connaissances/quiz'
+                      ]"
+                    >
+                      {{ 'resultat.autre_quiz' | translate }}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-md-3" style="border-left: 4px solid #8e3064;">
+            <div class="test mb-2">
+              <h4><strong>{{'resultat.autre'| translate}}</strong> </h4>
+            </div>
+            <div class="hover text-center rtlCenter" *ngFor="let q of autres_quizzes">
+              <img style="height: 150px;width: 100%" [defaultImage]="'assets/images/quiz.jpg'" [lazyLoad]="q?.image"
+                alt="post">
+              <h4><strong>{{q?.translations['fr']?.__designation}}</strong></h4>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
