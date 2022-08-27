@@ -5,7 +5,7 @@
         <img
          [lazyLoad]="condida_data.info.img"
          [defaultImage]=""
-          class="img-fluid rounded-start"
+          class="img_profile"
           alt="..."
         />
       </div>
@@ -50,7 +50,7 @@
             <i class="fa-solid fa-envelope"></i>
 
 
-              {{ condida_data.info.email}}
+              {{ condida_data.info.name}}
             </li>
             <li style="margin-right: 20px">
               <i class="fa-solid fa-phone"></i>
@@ -98,20 +98,82 @@
       <div class="section-recruteur">
         <!-- <h5>Détails de l'offre</h5> -->
         <p-tabView>
-          <p-tabPanel header="{{ 'Education' | translate }}">
+          <p-tabPanel  header="{{ 'Education' | translate }}">
             <p-accordion *ngFor=" let i of condida_data.info.education">
-              <p-accordionTab header="{{ condida_data.info.education.education_name | translate }}">
-
+              <p-accordionTab
+              [selected]="true"
+              header="{{i.education_name }}">
                 <div>
-                  <h6 class="criteres-offres" *ngIf="condida_data.info.img">
-                    {{ condida_data.info.img}}
-                  </h6>
-                  <p *ngIf="condida_data.info.imgTexte">{{ condida_data.info.img}}</p>
-                  <ul *ngIf="condida_data.info.img.List">
-                    <li *ngFor="let list of condida_data.info.img">{{ list }}</li>
+                  <ul class="ul-one">
+                    <li class="li-one ">
+                      <P class="top-t" >{{i.education_school | titlecase}} </P>
+                      <p class="top-ctiy">®️ {{i.education_city | titlecase}}</p>
+                    </li>
+                    <li class="li-one">
+                      <p class="li_one_init_h" > From</p>
+                      <P class="li_one_init">{{i.education_start_date}}</P>
+                      <p class="li_one_init_h">,To</p>
+                      <p class="li_one_init">{{i.education_end_date}}</p>
+                    </li>
+                    <li class="li-one  education_descriptionli">
+                      <p class="education_description">{{i.education_description}}</p>
+                    </li>
+                    <li class="li-one">
+                      <ul class="init-ul-col none_list">
+                        <li  >
+                          <div class="" *ngFor="let k of i.deplome">
+                            <p class="ed-sub-t">{{'deplome'| titlecase |translate }}</p>
+                            <ul class="none_list   sub_ul_col">
+                               <h3 class="name_deplom">{{k.deplome_name}}</h3>
+                              <li class="sub_li " *ngIf="k.deplome_description">
+                                <P class="sub_li_d">{{k.deplome_description}}</P>
+                              </li>
+                              <li>
+                                <ul class=" none_list li-one">
+                                  <li class="d-flexx  " *ngIf="k.deplome_img">
+                                    <a class=" btnn btn btn-secondary"  href="#">view doc</a>
+
+                                  </li>
+                                  <li class="sub_li " *ngIf="k.deplome_url">
+                                    <a class="  btnn btn btn-secondary" href="#">view onlin</a>
+
+                                  </li>
+
+                                </ul>
+                              </li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="ed_sub_box" *ngFor="let k of i.srtificate">
+                            <p class="ed-sub-t">{{'srtificate'| titlecase |translate }}</p>
+                            <ul class=" none_list sub_ul_col">
+                              <h3 class="name_deplom">{{k.srtificate_name}}</h3>
+                              <li class="sub_li" *ngIf="k.srtificate_description">
+                                <P class="sub_li_d">{{k.srtificate_description}}</P>
+                              </li>
+                            <li>
+                              <ul class=" none_list li-one">
+
+                                <li class="d-flexx"  *ngIf="k.srtificate_img">
+                                  <a  class="  btnn btn btn-secondary"href="#">view doc</a>
+
+                                </li>
+                                <li class="sub_li" *ngIf="k.srtificate_url">
+                                  <a class=" btnn btn btn-secondary" href="#">view onlin</a>
+
+                                </li>
+                              </ul>
+                            </li>
+                            </ul>
+                          </div>
+                        </li>
+
+
+                      </ul>
+                    </li>
                   </ul>
                 </div>
-
               </p-accordionTab>
 
             </p-accordion>
@@ -120,415 +182,273 @@
           </p-tabPanel>
 
           <!--2-->
-          <p-tabPanel header="{{ 'offre.faq' | translate }}">
-            <img
-              src="../../../../assets/images/images pour offres/téléchargement.png"
-              class="rounded float-end"
-              alt="..."
-            />
+          <p-tabPanel header="{{ 'Experience' | translate }}">
+            <p-accordion *ngFor=" let i of condida_data.info.experience">
+              <p-accordionTab [selected]="true" header="{{i.experience_job_title}}">
+                <div>
+                  <ul class="ul-one">
+                    <li class="li-one ">
+                      <P class="top-t">{{i.experience_company | titlecase}} </P>
+                      <p class="top-ctiy">®️ {{i.experience_city | titlecase}}</p>
+                    </li>
+                    <li class="li-one">
+                      <p class="li_one_init_h"> From</p>
+                      <P class="li_one_init">{{i.experience_start_date}}</P>
+                      <p class="li_one_init_h">,To</p>
+                      <p class="li_one_init">{{i.experience_end_date}}</p>
+                    </li>
+                    <li class="li-one  education_descriptionli">
+                      <p class="education_description">{{i.experience_job_description}}</p>
+                    </li>
+                    <li class="li-one">
+                      <ul class="init-ul-col none_list">
+                        <li>
+                          <div class="row" >
+                            <div class="col">
+                        <p class="ed-sub-t">{{'my rouls at '+ i.experience_company| titlecase |translate }}</p>
+                         <ul *ngFor="let k of i.experience_roul" class="st li-one">
+                              <li class="d-flexx lista ">
+                                 {{k}}
+                              </li>
+                        </ul>
+                        </div>
+                        <div class="col">
+                         <p class="ed-sub-t">{{'what i learn'| titlecase |translate }}</p>
+                                <ul *ngFor="let k of i.experience_he_gine" class="st li-one">
+                                  <li class="d-flexx  lista  " >
+                                     {{k}}
+                                  </li>
+                                </ul>
+                        </div>
 
-            <h5>
-              {{ "offre.entreprise" | translate }}:
-              {{ Det_Ent.NomEntreprise }}
-            </h5>
-            <ul>
-              <li>{{ "form.secteur" | translate }}: {{ Det_Ent.Secteur }}</li>
-              <li>
-                {{ "adresse.site" | translate }}: {{ Det_Ent.SiteInternet }}
-              </li>
-              <li>
-                {{ "adresse.description" | translate }}:
-                {{ Det_Ent.Description }}
-              </li>
-            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="ed_sub_box" *ngFor="let k of i.srtificate">
+                            <p class="ed-sub-t">{{'deplome'| titlecase |translate }}</p>
+                            <ul class=" none_list sub_ul_col">
+
+                              <li class="sub_li" *ngIf="k.srtificate_description">
+                                <P class="sub_li_d">{{k.srtificate_description}}</P>
+                              </li>
+
+                              <li>
+                                <ul class=" none_list li-one">
+                                  <li class="d-flexx  " *ngIf="k.srtificate_img">
+                                    <a class="  btnn btn btn-secondary" href="#">view doc</a>
+                                  </li>
+                                  <li class="sub_li " *ngIf="k.srtificate_url">
+                                    <a class=" btnn btn btn-secondary" href="#">view onlin</a>
+                                  </li>
+                                </ul>
+                              </li>
+
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </p-accordionTab>
+
+            </p-accordion>
+
+
           </p-tabPanel>
           <!--3-->
-          <p-tabPanel header="{{ 'offre.det_entr' | translate }}">
-            <img
-              src="../../../../assets/images/images pour offres/téléchargement.png"
-              class="rounded float-end"
-              alt="..."
-            />
 
-            <h5>
-              {{ "offre.entreprise" | translate }}:
-              {{ Det_Ent.NomEntreprise }}
-            </h5>
-            <ul>
-              <li>{{ "form.secteur" | translate }}: {{ Det_Ent.Secteur }}</li>
-              <li>
-                {{ "adresse.site" | translate }}: {{ Det_Ent.SiteInternet }}
-              </li>
-              <li>
-                {{ "adresse.description" | translate }}:
-                {{ Det_Ent.Description }}
-              </li>
-            </ul>
-          </p-tabPanel>
-          <!--4-->
-          <p-tabPanel header="{{ 'offre.postuler' | translate }}">
-            <p>
-              {{ "offre.dejaCompte" | translate }}:
-              <a href="#">{{ "offre.connect" | translate }}</a>
-            </p>
-            <hr />
-            <!--Formulaire postuler-->
 
-            <div>
-              <form [formGroup]="postulezForm" (ngSubmit)="sendPostule()">
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <p-tabPanel header="{{ 'skilss' | titlecase| translate }}">
+
                 <div class="row">
-                  <!--Salutation-->
-                  <div class="mb-3 col-md-2">
-                    <label for="salutation" class="form-label">
-                      {{ "form.salut" | translate }}:
-                    </label>
-                    <select
-                      id="salutation"
-                      class="form-select"
-                      id="salutation"
-                      formControlName="salutation"
-                      [ngClass]="{
-                        'is-invalid':
-                          postulezForm.get('salutation')?.touched &&
-                          postulezForm.get('salutation')?.invalid
-                      }"
-                    >
-                      <option value="" selected disabled>
-                        {{ "form.salut" | translate }}
-                      </option>
-                      <option>{{ "form.mme" | translate }}</option>
-                      <option>{{ "form.mlle" | translate }}</option>
-                      <option>{{ "form.mr" | translate }}</option>
-                    </select>
-                    <div
-                      *ngIf="
-                        postulezForm.get('salutation')?.touched &&
-                        postulezForm.get('salutation')?.invalid
-                      "
-                      class="invalid-feedback mb-2"
-                    >
-                      <div
-                        *ngIf="postulezForm.get('salutation')?.errors?.['required']"
-                      >
-                        {{ "form.champ_oblig" | translate }}
-                      </div>
-                    </div>
+                  <div class="col-md-6">
+                    <p class="skills_titale">
+                      {{ ' soft skils' | titlecase  | translate}}
+                    </p>
+                    <ul *ngFor="let k of condida_data.info.soft_skills " class="flexx">
+                      <li class=" li_skils">
+                        {{k}}
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <p class="skills_titale">
+                      {{ 'sikils tchnic' | titlecase  | translate }}
+                    </p>
+                    <ul *ngFor="let k of condida_data.info.skills_tach " class="flexx" >
+                          <li class=" li_skils">
+                            {{k.skill_name}}
+                          </li>
+                    </ul>
                   </div>
 
-                  <!-- Name input -->
 
-                  <div class="mb-3 col-md-5">
-                    <label class="form-label" for="name">
-                      {{ "form.nom" | translate }}:
-                    </label>
-                    <input
-                      class="form-control"
-                      id="name"
-                      type="text"
-                      placeholder="{{ 'form.exp_nom' | translate }}"
-                      [ngClass]="{
-                        'is-invalid':
-                          postulezForm.get('name')?.touched &&
-                          postulezForm.get('name')?.invalid
-                      }"
-                      formControlName="name"
-                      name="name"
-                    />
-                    <div
-                      *ngIf="
-                        postulezForm.get('name')?.touched &&
-                        postulezForm.get('name')?.invalid
-                      "
-                      class="invalid-feedback mb-2"
-                    >
-                      <div
-                        *ngIf="postulezForm.get('name')?.errors?.['required']"
-                      >
-                        {{ "form.champ_oblig" | translate }}
-                      </div>
-                      <div
-                        *ngIf="postulezForm.get('name')?.errors?.['minlength']"
-                      >
-                        {{ "form.champ_3" | translate }}
-                      </div>
-                      <div
-                        *ngIf="postulezForm.get('name')?.errors?.['maxlength']"
-                      >
-                        {{ "form.champ_30" | translate }}
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Prenom input -->
-                  <div class="mb-3 col-md-5">
-                    <label class="form-label" for="prenom">
-                      {{ "form.prenom" | translate }}:
-                    </label>
-                    <input
-                      class="form-control"
-                      id="prenom"
-                      type="prenom"
-                      placeholder="{{ 'form.exp_pre' | translate }}"
-                      formControlName="prenom"
-                      name="prenom"
-                      [ngClass]="{
-                        'is-invalid':
-                          postulezForm.get('prenom')?.touched &&
-                          postulezForm.get('prenom')?.invalid
-                      }"
-                    />
-                    <div
-                      *ngIf="
-                        postulezForm.get('prenom')?.touched &&
-                        postulezForm.get('prenom')?.invalid
-                      "
-                      class="invalid-feedback mb-2"
-                    >
-                      <div
-                        *ngIf="postulezForm.get('prenom')?.errors?.['required']"
-                      >
-                        {{ "form.champ_oblig" | translate }}
-                      </div>
-                      <div
-                        *ngIf="postulezForm.get('prenom')?.errors?.['minlength']"
-                      >
-                        {{ "form.champ_3" | translate }}
-                      </div>
-                      <div
-                        *ngIf="postulezForm.get('prenom')?.errors?.['maxlength']"
-                      >
-                        {{ "form.champ_30" | translate }}
-                      </div>
-                    </div>
+                  <div class="col-md-6">
+                    <p class="skills_titale">
+                      {{ ' langouge skilss' | titlecase  | translate }}
+                    </p>
+                    <ul *ngFor="let k of  condida_data.info.languages " class="flexx" >
+                          <li class=" li_skils">
+                            {{k.language_name}}
+                          </li>
+                    </ul>
                   </div>
                 </div>
 
-                <!-- Telephone + email address input -->
+
+          </p-tabPanel>
+
+
+
+
+
+          <p-tabPanel header="{{ 'hobbis' | titlecase | translate }}">
+            <p class="skills_titale">
+              {{ 'hobbies list' | titlecase  | translate }}
+            </p>
+            <ul *ngFor="let i of condida_data.info.hobbies">
+              <li class=" li_skils">
+               {{i}}
+              </li>
+            </ul>
+
+          </p-tabPanel>
+
+
+
+
+          <!--4-->
+          <p-tabPanel header="{{ 'contact' | translate }}">
+
+
+
+                      <div class="row">
+                        <ul class="d-flexV">
+                          <li class="lili">
+                            <h1 class="h11" >
+                               {{ 'contact me' | titlecase | translate }}
+                            </h1>
+                          </li>
+                        </ul>
+                      </div>
+              <form [formGroup]="condida_contact" (ngSubmit)="sendMissage()">
                 <div class="row">
-                  <!-- Email input -->
-                  <div class="mb-3 col-md-6">
-                    <label class="form-label" for="emailAddress">
-                      {{ "form.email" | translate }}:
+                  <!--misag_type-->
+                  <div class="mb-63 col-md-6">
+                    <label for="misag_type" class="form-label">
+                      {{ "taype misage" | titlecase| translate }}:
                     </label>
-                    <input
-                      class="form-control"
-                      id="emailAddress"
-                      type="email"
-                      placeholder="{{ 'form.exp_email' | translate }}"
-                      formControlName="email"
-                      name="email"
-                      [ngClass]="{
-                        'is-invalid':
-                          postulezForm.get('email')?.touched &&
-                          postulezForm.get('email')?.invalid
-                      }"
-                    />
-                    <div
-                      *ngIf="
-                        postulezForm.get('email')?.touched &&
-                        postulezForm.get('email')?.invalid
-                      "
-                      class="invalid-feedback"
-                    >
-                      <div
-                        *ngIf="postulezForm.get('email')?.errors?.['required']"
-                      >
+                    <select id="misag_type" class="form-select" id="misag_type" formControlName="misag_type" [ngClass]="{
+                                      'is-invalid':
+                                        condida_contact.get('misag_type')?.touched &&
+                                        condida_contact.get('misag_type')?.invalid
+                                    }">
+                      <option value="" selected disabled>
+                        {{ "select one" | translate }}
+                      </option>
+                      <option *ngFor="let i of misag_type">
+                        {{ i | titlecase| translate }}
+                      </option>
+
+                    </select>
+                    <div *ngIf="
+                                      condida_contact.get('misag_type')?.touched &&
+                                      condida_contact.get('misag_type')?.invalid
+                                    " class="invalid-feedback mb-2">
+                      <div *ngIf="condida_contact.get('misag_type')?.errors?.['required']">
                         {{ "form.champ_oblig" | translate }}
                       </div>
-                      <div *ngIf="postulezForm.get('email')?.errors?.['email']">
+                    </div>
+                  </div>
+
+                  <!-- name input -->
+                  <div class="mb-3 col-md-6">
+                    <label class="form-label" for="name">
+                      {{ "form.name" | translate }}:
+                    </label>
+                    <input class="form-control" id="name" type="text" placeholder="{{ 'enter your name' | translate }}"
+                      formControlName="name" name="name" [ngClass]="{
+                                      'is-invalid':
+                                        condida_contact.get('name')?.touched &&
+                                        condida_contact.get('name')?.invalid
+                                    }" />
+                    <div *ngIf="
+                                      condida_contact.get('name')?.touched &&
+                                      condida_contact.get('name')?.invalid
+                                    " class="invalid-feedback">
+                      <div *ngIf="condida_contact.get('name')?.errors?.['required']">
+                        {{ "form.champ_oblig" | translate }}
+                      </div>
+                      <div *ngIf="condida_contact.get('name')?.errors?.['name']">
                         {{ "form.mail_valid" | translate }}
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  <!--Téléphone-->
-                  <div class="mb-3 col-md-3">
-                    <label class="form-label" for="telephone">
-                      {{ "form.telephone" | translate }}:
-                    </label>
-                    <input
-                      class="form-control"
-                      id="telephone"
-                      type="texte"
-                      placeholder="{{ 'form.exp_tel' | translate }}"
-                      formControlName="telephone"
-                      name="telephone"
-                      [ngClass]="{
-                        'is-invalid':
-                          postulezForm.get('telephone')?.touched &&
-                          postulezForm.get('telephone')?.invalid
-                      }"
-                    />
-                    <div
-                      *ngIf="
-                        postulezForm.get('telephone')?.touched &&
-                        postulezForm.get('telephone')?.invalid
-                      "
-                      class="invalid-feedback"
-                    >
-                      <div
-                        *ngIf="postulezForm.get('telephone')?.errors?.['required']"
-                      >
-                        {{ "form.champ_oblig" | translate }}
-                      </div>
-                      <div
-                        *ngIf="postulezForm.get('telephone')?.errors?.['pattern']"
-                      >
-                        {{ "form.tel_valid" | translate }}
-                      </div>
-                      <div
-                        *ngIf="postulezForm.get('telephone')?.errors?.['minlength']"
-                      >
-                        {{ "form.champ_10" | translate }}
-                      </div>
+                <div class="form-floating">
+                  <textarea formControlName="missage" [ngClass]="{
+                                      'is-invalid':
+                                        condida_contact.get('missage')?.touched &&
+                                        condida_contact.get('missage')?.invalid
+                                    }" class="form-control textarea" placeholder="Leave a comment here"
+                    id="floatingTextarea"></textarea>
+
+                  <label for="floatingTextarea">{{ "missage" | translate }}:</label>
+                  <div *ngIf="
+                                                          condida_contact.get('missage')?.touched &&
+                                                          condida_contact.get('missage')?.invalid
+                                                        " class="invalid-feedback">
+                    <div *ngIf="condida_contact.get('missage')?.errors?.['required']">
+                      {{ "form.champ_oblig" | translate }}
                     </div>
-                  </div>
-                  <!--date de naissance-->
-                  <div class="mb-3 col-md-3">
-                    <label class="form-label" for="dateNaissance">
-                      {{ "form.date_naiss" | translate }}:
-                    </label>
-                    <input
-                      id="dateNaissance"
-                      class="form-control"
-                      type="date"
-                      formControlName="dateNaissance"
-                    />
-
-                    <div
-                      *ngIf="
-                        postulezForm.get('dateNaissance')?.touched &&
-                        postulezForm.get('dateNaissance')?.invalid
-                      "
-                      class="invalid-feedback mb-2"
-                    >
-                      <div
-                        *ngIf="postulezForm.get('dateNaissance')?.errors?.['required']"
-                      >
-                        {{ "form.champ_oblig" | translate }}
-                      </div>
+                    <div *ngIf="condida_contact.get('missage')?.errors?.['name']">
+                      {{ "form.mail_valid" | translate }}
                     </div>
                   </div>
                 </div>
 
-                <!--N.et N.ex Métier-->
-                <div class="row">
-                  <!--Métier-->
-                  <div class="mb-3 col-md-4">
-                    <label for="metier" class="form-label">
-                      {{ "form.metier" | translate }}:
-                    </label>
-                    <select
-                      id="metier"
-                      class="form-select"
-                      id="metier"
-                      formControlName="metier"
-                      [ngClass]="{
-                        'is-invalid':
-                          postulezForm.get('metier')?.touched &&
-                          postulezForm.get('metier')?.invalid
-                      }"
-                    >
-                      <option value="" selected disabled>Civilité</option>
-                      <option>Mme</option>
-                      <option>Mlle</option>
-                      <option>Mr</option>
-                    </select>
-                    <div
-                      *ngIf="
-                        postulezForm.get('metier')?.touched &&
-                        postulezForm.get('metier')?.invalid
-                      "
-                      class="invalid-feedback mb-2"
-                    >
-                      <div
-                        *ngIf="postulezForm.get('metier')?.errors?.['required']"
-                      >
-                        {{ "form.champ_oblig" | translate }}
-                      </div>
-                    </div>
-                  </div>
 
-                  <!--N.ET-->
 
-                  <div class="mb-3 col-md-4">
-                    <label for="niveauEtu" class="form-label">
-                      {{ "form.niveauEtu" | translate }}:
-                    </label>
-                    <select
-                      id="niveauEtu"
-                      class="form-select"
-                      id="niveauEtu"
-                      formControlName="niveauEtu"
-                      [ngClass]="{
-                        'is-invalid':
-                          postulezForm.get('niveauEtu')?.touched &&
-                          postulezForm.get('niveauEtu')?.invalid
-                      }"
-                    >
-                      <option value="" selected disabled>Civilité</option>
-                      <option>Mme</option>
-                      <option>Mlle</option>
-                      <option>Mr</option>
-                    </select>
-                    <div
-                      *ngIf="
-                        postulezForm.get('niveauEtu')?.touched &&
-                        postulezForm.get('niveauEtu')?.invalid
-                      "
-                      class="invalid-feedback mb-2"
-                    >
-                      <div
-                        *ngIf="postulezForm.get('niveauEtu')?.errors?.['required']"
-                      >
-                        {{ "form.champ_oblig" | translate }}
-                      </div>
-                    </div>
-                  </div>
 
-                  <!--N.EX-->
 
-                  <div class="mb-3 col-md-4">
-                    <label for="niveauExp" class="form-label">
-                      {{ "form.niveauExp" | translate }}:
-                    </label>
-                    <select
-                      id="niveauExp"
-                      class="form-select"
-                      id="niveauExp"
-                      formControlName="niveauExp"
-                      [ngClass]="{
-                        'is-invalid':
-                          postulezForm.get('niveauExp')?.touched &&
-                          postulezForm.get('niveauExp')?.invalid
-                      }"
-                    >
-                      <option value="" selected disabled>Civilité</option>
-                      <option>Mme</option>
-                      <option>Mlle</option>
-                      <option>Mr</option>
-                    </select>
-                    <div
-                      *ngIf="
-                        postulezForm.get('niveauExp')?.touched &&
-                        postulezForm.get('niveauExp')?.invalid
-                      "
-                      class="invalid-feedback mb-2"
-                    >
-                      <div
-                        *ngIf="postulezForm.get('niveauExp')?.errors?.['required']"
-                      >
-                        {{ "form.champ_oblig" | translate }}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <button type="submit" class="btn btn-outline-info">
-                  Postuler
-                </button>
               </form>
-            </div>
+
+           <div class="row">
+                  <ul class="d-flexV">
+                    <li *ngFor="let i of condida_data.info.contact"class="lili">
+                      <a class="AAA"   href="{{i.url}}">
+                        <i *ngIf="i.platfrom === 'facebook'" class="fa-brands fa-facebook"></i>
+                        <i *ngIf="i.platfrom === 'github'" class="fa-brands fa-github"></i>
+                        <i *ngIf="i.platfrom === 'gmail'" class="fa-solid fa-envelope"></i>
+                        <i *ngIf="i.platfrom === 'linkedin'" class="fa-brands fa-linkedin"></i>
+                        <i *ngIf="i.platfrom === 'stack-overflow'" class="fa-brands fa-stack-overflow"></i>
+                        <i *ngIf="i.platfrom === 'codepen'" class="fa-brands fa-codepen"></i>
+                        <i *ngIf="i.platfrom === 'instagram'" class="fa-brands fa-instagram"></i>
+                        <i *ngIf="i.platfrom === 'twitter'" class="fa-brands fa-twitter"></i>
+                        <i *ngIf="i.platfrom === 'gitlab'" class="fa-brands fa-gitlab"></i>
+                        <i *ngIf="i.platfrom === 'youtube'" class="fa-brands fa-youtube"></i>
+                        <i *ngIf="i.platfrom === 'telegram'" class="fa-brands fa-telegram"></i>
+                        <i *ngIf="i.platfrom === 'discord'" class=" CLAS fa-brands fa-discord"></i>
+                    </a>
+                  </li>
+                  </ul>
+           </div>
+
 
             <!--Fin Formulaire-->
           </p-tabPanel>

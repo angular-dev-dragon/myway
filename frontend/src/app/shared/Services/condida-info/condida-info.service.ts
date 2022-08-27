@@ -34,136 +34,229 @@ export class CondidaInfoService {
           job_title: 'web developer',
           job_description: 'job_description',
           job_type: 'job_type',
-          job_needed_experience: 'job_experience',
           job_salary: 'job_salary',
           job_salary_type: 'job_salary_type',
-          job_salary_currency: 'job_salary_currency',
           contaract_type: 'contaract_type',
-          contaract_period: 'contaract_period',
-          contaract_description: 'contaract_duration',
-          are_you_ready: {
-            avalibal: true,
-            avalibal_description: 'avalibal_description',
-            avalibal_time: 'avalibal_time',
-          },
         },
         contact: [
           {
-            patform: 'github',
             url: 'https://github.com/Ahmed-dev-dragon',
-            icon: 'fa fa-github',
+            platfrom: 'github',
           },
           {
-            patform: 'facebook',
             url: 'https://www.facebook.com/ahmed.dev.dragon',
-            icon: 'fa fa-facebook',
+            platfrom: 'facebook',
           },
+          {
+            platfrom: 'gmail',
+            url: 'https://mail.google.com/mail/u/0/?tab=rm',
+          },
+          {
+            platfrom: 'linkedin',
+            url: 'https://www.linkedin.com/posts/scottdresden_next-generation-silent-drone-achieves-major-activity-6885948728314736640-eH9i/',
+          },
+          // {
+          //   platfrom: 'stack-overflow',
+          //   url: 'https://stackoverflow.com/users/edit/14317728',
+          // },
+          // {
+          //   platfrom: 'instagram',
+          //   url: 'https://www.instagram.com/ahmed_dev_dragon/',
+          // },
+          // {
+          //   platfrom: 'twitter',
+          //   url: 'https://twitter.com/Ahmd_dev_dragon',
+          // },
+          // {
+          //   platfrom: 'gitlab',
+          //   url: 'https://github.com/Ahmed-dev-dragon',
+          // },
+          // {
+          //   platfrom: 'youtube',
+          //   url: 'https://www.youtube.com/channel/UCl52lNdNprhpfF15-6QwPAA',
+          // },
+          // {
+          //   platfrom: 'telegram',
+          //   url: 'https://web.telegram.org/z/#1460645651',
+          // },
+          // {
+          //   platfrom: 'discord',
+          //   url: 'https://discord.com/channels/@me',
+          // },
         ],
+
         about_me: {
           about_me_title: 'about_me_title',
           about_me_description: 'about_me_description',
         },
         expectations: {
           fild_description: 'fild_description',
-          plaise: 'plaise',
-          plaise_description: 'plaise_description',
+
           contaract_type: 'contaract_type',
           salier: 'salier',
+          avalibal: 'avalibal_time',
         },
-        skills: [
+        skills_tach: [
           {
-            skill_name: 'skill_name',
-            persant: '60%',
+            skill_name: 'Paython',
+            persant: '90%',
+          },
+          {
+            skill_name: 'javascript',
+            persant: '90%',
+          },
+          {
+            skill_name: 'ruby',
+            persant: '50%',
           },
         ],
+        soft_skills: ['travil on group', 'manger a project', ' aj lksd dikd '],
         languages: [
           {
-            language_name: 'language_name',
-            language_description: 'language_description',
-            language_img: 'assets/images/condida.jpg',
+            language_name: 'englidh',
+            persant: '60%',
+          },
+          {
+            language_name: 'arabic',
+            persant: '60%',
+          },
+          {
+            language_name: 'franch',
+            persant: '60%',
+          },
+          {
+            language_name: 'eespan',
             persant: '60%',
           },
         ],
         education: [
-
           {
-            ed_lavel: 'bac + 3',
-            education_name: 'english lteter',
-            education_description: 'education_description',
-            education_school: 'education_school',
-            education_start_date: 'education_start_date',
-            education_end_date: 'education_end_date',
+            education_name: ' frotntend devlopment',
+            education_description:
+              'kja ppet was creaand back-end develThis snippet was creaand back-end devels creaand back-end develop',
+            education_school: 'solicode',
+            education_start_date: '2018',
+            education_end_date: '2020',
+            education_city: 'tanger',
             srtificate: [
               {
-                srtificate_name: 'srtificate_name',
-                srtificate_description: 'srtificate_description',
-                srtificate_img: 'assets/images/condida.jpg',
-                srtificate_date: 'srtificate_date',
-                srtificate_url: 'srtificate_url',
-                srtificate_type: 'srtificate_type',
-                setifacate_school: 'setifacate_school',
+                srtificate_name: 'js bootcamp',
+                srtificate_description:
+                  ' This snippet was created to help web designers, front-end and back-end developThis snippet was created to help web designers, front-end and back-end developThis snippet was created to help web designers, front-end and back-end develop',
+                srtificate_img:
+                  'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/certificate-of-appreciation-design-template-c46b6dc447f94b068a04728bd695cc4c_screen.jpg?ts=1608659484',
+                srtificate_url:
+                  'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/certificate-of-appreciation-design-template-c46b6dc447f94b068a04728bd695cc4c_screen.jpg?ts=1608659484',
+              },
+            ],
+            deplome: [
+              {
+                deplome_name: 'full stack devloper',
+                deplome_description:
+                  'help web designers, front-end and back-end de',
+                deplome_img:
+                  'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/certificate-of-appreciation-design-template-c46b6dc447f94b068a04728bd695cc4c_screen.jpg?ts=1608659484',
+                deplome_url:
+                  'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/certificate-of-appreciation-design-template-c46b6dc447f94b068a04728bd695cc4c_screen.jpg?ts=1608659484',
+              },
+            ],
+          },
+          {
+            education_name: 'english literater',
+            education_description:
+              'This snippet was created to help web designers, front-end and back-end developThis snippet was created to help web designers, front-end and back-end developThis snippet was created to help web designers, front-end and back-end develop',
+            education_school: 'abd malik saidi',
+            education_start_date: '2017',
+            education_end_date: '2018',
+            education_city: 'titwan',
+            srtificate: [
+              {
+                srtificate_name: 'web dervloper',
+                srtificate_description:
+                  ' This snippet was created to help web designers, front-end and back-end developThis snippet was created to help web designers, front-end and back-end developThis snippet was created to help web designers, front-end and back-end develop',
+                srtificate_img:
+                  'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/certificate-of-appreciation-design-template-c46b6dc447f94b068a04728bd695cc4c_screen.jpg?ts=1608659484',
+                srtificate_url:
+                  'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/certificate-of-appreciation-design-template-c46b6dc447f94b068a04728bd695cc4c_screen.jpg?ts=1608659484',
               },
             ],
             deplome: [
               {
                 deplome_name: 'deplome_name',
-                deplome_description: 'deplome_description',
-                deplome_img: 'assets/images/condida.jpg',
-                deplome_date: 'deplome_date',
-                deplome_url: 'deplome_url',
-                deplome_type: 'deplome_type',
-                deplome_school: 'deplome_school',
-                deplome_country: 'deplome_country',
-                deplome_fild: 'deplome_fild',
+                deplome_description:
+                  'help web designers, front-end and back-end de',
+                deplome_img:
+                  'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/certificate-of-appreciation-design-template-c46b6dc447f94b068a04728bd695cc4c_screen.jpg?ts=1608659484',
+                deplome_url:
+                  'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/certificate-of-appreciation-design-template-c46b6dc447f94b068a04728bd695cc4c_screen.jpg?ts=1608659484',
               },
             ],
           },
-          {
-            ed_lavel: 'bac + 3',
-            education_name: 'education_name',
-            education_description: 'education_description',
-            education_school: 'education_school',
-            education_start_date: 'education_start_date',
-            education_end_date: 'education_end_date',
-            srtificate: [
-              {
-                srtificate_name: 'srtificate_name',
-                srtificate_description: 'srtificate_description',
-                srtificate_img: 'assets/images/condida.jpg',
-                srtificate_date: 'srtificate_date',
-                srtificate_url: 'srtificate_url',
-                srtificate_type: 'srtificate_type',
-                setifacate_school: 'setifacate_school',
-              },
-            ],
-            deplome: [
-              {
-                deplome_name: 'deplome_name',
-                deplome_description: 'deplome_description',
-                deplome_img: 'assets/images/condida.jpg',
-                deplome_date: 'deplome_date',
-                deplome_url: 'deplome_url',
-                deplome_type: 'deplome_type',
-                deplome_school: 'deplome_school',
-                deplome_country: 'deplome_country',
-                deplome_fild: 'deplome_fild',
-              },
-            ],
-          },
-
         ],
 
         experience: [
           {
-            experience_description: 'experience_description',
-            experience_start_date: 'experience_start_date',
-            experience_end_date: 'experience_end_date',
-            experience_company: 'experience_company',
-            experience_job_title: 'experience_job_title',
-            experience_job_description: 'experience_job_description',
+            experience_job_title: 'full stack devoper',
+            experience_company: 'netflix',
+            experience_start_date: '2022/7',
+            experience_end_date: '2026/7',
+            experience_city: 'tanger',
+
+            experience_job_description:
+              'exper ience_job_ desc ription exp  erience_job_descripti onexperience _job_des criptionexper ience_j ob_descrip tionexperience_ job_descripti onexperien ce_job _descri ptionex  pe rience_job_  descrip tionexperience_job_desc ription',
             experience_job_type: 'experience_job_type',
-            experience_job_salary: 'experience_job_salary',
-            experience_job_salary_type: 'experience_job_salary_type',
+            experience_he_gine: [
+              'time orginistion',
+              'project ourgisiion',
+              'work on group',
+            ],
+            experience_roul: [
+              'team manager',
+              ' fullstack devloper',
+              ' contant manager',
+            ],
+          },
+          {
+            experience_job_title: 'web devloper',
+            experience_company: 'sat',
+            experience_start_date: '2022/7',
+            experience_end_date: '2026/7',
+            experience_city: 'tanger',
+
+            experience_job_description:
+              'exper ience_job_ desc ription exp  erience_job_descripti onexperience _job_des criptionexper ience_j ob_descrip tionexperience_ job_descripti onexperien ce_job _descri ptionex  pe rience_job_  descrip tionexperience_job_desc ription',
+            experience_job_type: 'experience_job_type',
+            experience_he_gine: [
+              'time orginistion',
+              'project ourgisiion',
+              'work on group',
+            ],
+            experience_roul: [
+              'team manager',
+              ' fullstack devloper',
+              ' contant manager',
+            ],
+          },
+          {
+            experience_job_title: 'manger',
+            experience_company: 'google',
+            experience_start_date: '2022/7',
+            experience_end_date: '2026/7',
+            experience_city: 'tanger',
+
+            experience_job_description:
+              'exper ience_job_ desc ription exp  erience_job_descripti onexperience _job_des criptionexper ience_j ob_descrip tionexperience_ job_descripti onexperien ce_job _descri ptionex  pe rience_job_  descrip tionexperience_job_desc ription',
+            experience_job_type: 'experience_job_type',
+            experience_he_gine: [
+              'time orginistion',
+              'project ourgisiion',
+              'work on group',
+            ],
+            experience_roul: [
+              'team manager',
+              ' fullstack devloper',
+              ' contant manager',
+            ],
           },
         ],
         Achievements: {
@@ -178,11 +271,12 @@ export class CondidaInfoService {
           },
         ],
         hobbies: [
-          {
-            hobby_name: 'hobby_name',
-            hobby_description: 'hobby_description',
-            hobby_icon: 'assets/images/condida.jpg',
-          },
+          'sport',
+          'programing',
+          ' dsingen',
+          'sport',
+          'programing',
+          ' dsingen',
         ],
       },
       style: [
@@ -192,15 +286,15 @@ export class CondidaInfoService {
           coler_three: '#f5f5f5',
         },
       ],
-      history: {
-        created_at: '2020-05-06T00:00:00.000Z',
-        updateds: [
-          {
-            updated_at: '2020-05-06T00:00:00.000Z',
-            img: 'assets/images/condida.jpg',
-          },
-        ],
-      },
+      // history: {
+      //   created_at: '2020-05-06T00:00:00.000Z',
+      //   updateds: [
+      //     {
+      //       updated_at: '2020-05-06T00:00:00.000Z',
+      //       img: 'assets/images/condida.jpg',
+      //     },
+      //   ],
+      // },
 
       tag: ['web', 'developer', 'art', 'kldin'],
     },
@@ -214,7 +308,6 @@ export class CondidaInfoService {
         },
         age: 23,
         borthday: '1999/03/5',
-
         email: 'condida@gamil.com',
         phone: '+212 658 987 658',
         address: {
@@ -3285,7 +3378,7 @@ export class CondidaInfoService {
     },
     {
       info: {
-       id:'5y656t',
+        id: '5y656t',
         name: {
           first_name: 'ahmd',
           last_name: 'omar',

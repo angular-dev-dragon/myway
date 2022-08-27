@@ -146,34 +146,22 @@ export class SCardInfoGComponent implements OnInit {
         filter: false,
         row: [
           {
-            colum: 4,
+            colum: 6,
             cards_we_need: [
               {
-                name: 'reicritar',
+                name: 'card-w1-h1-v2',
                 id: 'pk',
-                info:[ {
-                  logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/3195090/logo.png?1587552503',
-                  imageBg:
-                    'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/5310523/index.png?1640179035',
-                  title: 'Total Energies',
-                  type: 'Grande Societe',
-                  salaries: '',
-                  caption: 'Une Compagnie intégrée multi-énergies',
-                }
-
-
-                  ,]
-              },
-            ],
-          },
-
-          {
-            colum: 8,
-            cards_we_need: [
-              {
-                name: 'mini_companiy',
-                id: 'p432523452k',
-                info: this.recriter_list,
+                info: [
+                  {
+                    logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/3195090/logo.png?1587552503',
+                    imageBg:
+                      'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/5310523/index.png?1640179035',
+                    title: 'Total Energies',
+                    type: 'Grande Societe',
+                    salaries: '',
+                    caption: 'Une Compagnie intégrée multi-énergies',
+                  },
+                ],
               },
             ],
           },
