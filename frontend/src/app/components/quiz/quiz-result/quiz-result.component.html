@@ -156,44 +156,50 @@
                   </ng-container>
                 </div>
                 <div class="" *ngIf="rep.type == 'multiple'">
-                  <ul class="j-description j-resume-lg" class="m-0">
-                    {{
-                      'resultat.votre_rep' | translate
-                    }}
-                    :
+                  <div class="d-flex flex-row">
+                    <p class="j-description j-resume-lg" class="m-0">
+                      {{ 'resultat.votre_rep' | translate }}
+                      :
+                    </p>
 
-                    <ng-container
-                      class=""
-                      *ngFor="let response of rep.userReponse"
-                    >
-                      <li
-                        class="j-description j-resume-lg"
-                        class="m-0"
-                        *ngIf="response?.__valeur_reponse_juste == false"
+                    <ul class="no-style-list">
+                      <ng-container
+                        class=""
+                        *ngFor="let response of rep.userReponse"
                       >
-                        <span class="text-red" style="font-weight: 600;">
-                          {{ (response?.translations)['fr']?.__texte_reponse }}
-                        </span>
-                      </li>
-                      <li
-                        class="j-description j-resume-lg"
-                        class="m-0"
-                        *ngIf="response?.__valeur_reponse_juste == true"
-                      >
-                        <span class=" " style="font-weight: 600;">
-                          {{ (response?.translations)['fr']?.__texte_reponse }}
-                        </span>
-                      </li>
-                    </ng-container>
-                  </ul>
-
+                        <li
+                          class="j-description j-resume-lg"
+                          class="m-0"
+                          *ngIf="response?.__valeur_reponse_juste == false"
+                        >
+                          <span class="text-red" style="font-weight: 600;">
+                            {{
+                              (response?.translations)['fr']?.__texte_reponse
+                            }}
+                          </span>
+                        </li>
+                        <li
+                          class="j-description j-resume-lg"
+                          class="m-0"
+                          *ngIf="response?.__valeur_reponse_juste == true"
+                        >
+                          <span class=" " style="font-weight: 600;">
+                            {{
+                              (response?.translations)['fr']?.__texte_reponse
+                            }}
+                          </span>
+                        </li>
+                      </ng-container>
+                    </ul>
+                  </div>
                   <ng-container *ngIf="brep">
                     <div class="d-flex flex-row flex-wrap mt-2">
-                      <ul class="no-style-list">
-                        {{
-                          'resultat.bon' | translate
-                        }}
+                      <p class="m-0">
+                        {{ 'resultat.bon' | translate }}
                         :
+                      </p>
+
+                      <ul class="no-style-list">
                         <ng-container *ngFor="let response of rep.reponse_quiz">
                           <li
                             class="j-description j-resume-lg"
