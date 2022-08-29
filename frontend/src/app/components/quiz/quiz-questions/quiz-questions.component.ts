@@ -261,7 +261,7 @@ export class QuizQuestionsComponent implements OnInit {
       console.log('this.currentQuestion', this.currentQuestion)
       // this.choixs = this.choix = this.currentQuestion.reponse_quiz
 
-      this.choix = this.currentQuestion.reponse_quiz
+      this.choix = []
       // this.currentQuestion.bonneReponse = _.find(this.choixs, [
       //   '__valeur_reponse_juste',
       //   true,

@@ -9,8 +9,8 @@ import { QuizService } from 'src/app/shared/services/quiz.service'
 export class QuizResultComponent implements OnInit {
   constructor(public quizService: QuizService) {}
   reponses: any = []
-  rFausse: any
-  rJuste: any = 0
+  rFausse: number = 0
+  rJuste: number = 0
   participation: any
   nbr_personnes_ayant_la_meme_note: number = 0
   nbr_personne_ayant_une_note_superior: number = 0
@@ -34,14 +34,19 @@ export class QuizResultComponent implements OnInit {
     console.log('this.reponses', this.reponses)
     let userResponse: any = []
     this.reponses.forEach((rp: any) => {
-      console.log('userResponse', rp)
-      if (this.reponses.type == 'simple') {
+      if (rp.type == 'simple') {
         rp.userReponse.__valeur_reponse_juste == false ||
         rp.userReponse.__valeur_reponse_juste == null
           ? (this.rFausse += 1)
           : (this.rJuste += 1)
-        userResponse.push({ qst: rp._id, response: rp.userReponse })
-      } else if (this.reponses.type == 'multiple') {
+        console.log('🚀 ~ simple this.rJuste', this.rJuste)
+        console.log('🚀 ~ simple this.rFausse', this.rFausse)
+        userResponse.push({
+          type: 'simple',
+          qst: rp._id,
+          response: rp.userReponse,
+        })
+      } else if (rp.type == 'multiple') {
         let filterdResponse = rp.userReponse.filter(
           (response: any) => response.__valeur_reponse_juste == true,
         )
@@ -49,15 +54,20 @@ export class QuizResultComponent implements OnInit {
         let filterdResponseQuiz = rp.reponse_quiz.filter(
           (response: any) => response.__valeur_reponse_juste == true,
         )
-        if (filterdResponse.lenght == filterdResponseQuiz.length) {
-          // rp.userReponse.__valeur_reponse_juste == false ||
-          // rp.userReponse.__valeur_reponse_juste == null
-          //   ? (this.rFausse += 1)
-          //   : (this.rJuste += 1)
-          // userResponse.push({ qst: rp._id, response: rp.userReponse })
-        }
+
+        filterdResponse.length == filterdResponseQuiz.length
+          ? (this.rJuste += 1)
+          : (this.rFausse += 1)
+        console.log('🚀 ~ multiple this.rJuste', this.rJuste)
+        console.log('🚀 ~ multiple this.rFausse', this.rFausse)
+        userResponse.push({
+          type: 'multiple',
+          qst: rp._id,
+          response: rp.userReponse,
+        })
       }
     })
+
     if (this.reponses.length > 0) {
       const participation = {
         score_obtenu: this.rJuste,
@@ -201,6 +211,9 @@ export class QuizResultComponent implements OnInit {
         ].Classement_Participation
       }
     }
+    if (this.reponses.length) {
+      this.calculStatistique(this.quiz)
+    }
   }
   brep: any
   indic: any
@@ -213,7 +226,8 @@ export class QuizResultComponent implements OnInit {
       fr: {
         __titre: 'Quiz HTML CSS',
         __nom_responsable: 'fdsfsfs',
-        __description: 'qfsfsfsf',
+        __description:
+          "Consequat NesciuntUne organisation est en sciences sociales un groupe social formé d'individus en interaction, ayant un but collectif, mais dont les préférences, les informations, les intérêts et les connaissances peuvent diverger1 : une entreprise, une administration publique, un syndicat, un parti politique, une association, etc.\n\nL'organisation de quelque chose désigne l'action d'organiser (structurer, délimiter, agencer, répartir ou articuler). En ce sens, il s'agit d'un processus social.\n\nUne organisation est le résultat d'actions réglementées (une entreprise, un service public, une administration, une association, une armée, un événement.).",
       },
       ar: { __designation: '', __nom_responsable: '', __description: '' },
       en: { __designation: '', __nom_responsable: '', __description: '' },
@@ -398,4 +412,67 @@ export class QuizResultComponent implements OnInit {
     ],
   }
   tes() {}
+  statistique_score = []
+  statistique_qst: any = []
+  table_question: any = []
+  scores: any = {}
+  notes: any = {}
+  nb_participant = 0
+  calculStatistique(success: any) {
+    this.table_question = this.quiz.question_quiz
+
+    success.participation_quiz.push(this.participation)
+    this.nb_participant = success.participation_quiz.length
+    if (success && success.participation_quiz && this.nb_participant) {
+      this.statistique_score = this.quiz_modifie.statistique_score
+      var scores = success.participation_quiz.map(
+        (elt: any) => elt.score_obtenu,
+      )
+      var notes = success.participation_quiz.map((elt: any) => elt.note_obtenue)
+
+      var i = 0,
+        j = 0,
+        summScore = 0,
+        summNotes = 0
+      while (i < notes.length) {
+        summNotes = summNotes + Number(notes[i++])
+      }
+
+      while (j < scores.length) {
+        summScore = summScore + Number(scores[j++])
+      }
+      this.scores['minScore'] = Math.min.apply(null, scores)
+      this.scores['maxScore'] = Math.max.apply(null, scores)
+      this.notes['minNote'] = Math.min.apply(null, notes) * 10
+      this.notes['maxNote'] = Math.max.apply(null, notes) * 10
+      this.notes['moyenneNote'] = (summNotes / this.nb_participant) * 10
+      this.scores['moyenScore'] = summScore / this.nb_participant
+
+      for (let participation of success.participation_quiz) {
+        if (participation.reponse) {
+          for (let reponse of participation.reponse)
+            this.statistique_qst.push(reponse)
+        }
+      }
+
+      let res = []
+
+      for (let qst of this.table_question) {
+        let data = this.statistique_qst.filter((s: any) => s.qst == qst._id)
+
+        let nb_j = data.filter(
+          (d: any) => d.response.__valeur_reponse_juste == true,
+        ).length
+        let nb_f = data.filter(
+          (d: any) => d.response.__valeur_reponse_juste == false,
+        ).length
+        res.push({
+          qst: qst.translations['fr']?.__label_question,
+          nb_j: nb_j,
+          nb_f: nb_f,
+        })
+      }
+      this.statistique_qst = res
+    }
+  }
 }

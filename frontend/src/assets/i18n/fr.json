@@ -1,7 +1,4 @@
 {
-  "question": {
-    "quest": "Question "
-  },
   "resultat": {
     "autre": "Autre Quizzes",
     "statis": "Statistiques",
@@ -10,6 +7,8 @@
     "nbr_juste": "Nombre de réponses juste",
     "bonnes": "Voir les bonnes Réponses",
     "indic": "Voir les indications",
+    "indications": "Indications",
+
     "quest": "Question",
     "soit": "soit",
     "votre_rep": "Votre Reponse",
@@ -25,6 +24,34 @@
     "mieux": "Vous Pouvez Mieux Faire",
     "recommencer": "Recommencer",
     "autre_quiz": "Faire un autre Quize"
+  },
+  "statistique_quiz": {
+    "nbr_personne": "Nombre de personne ayant : ",
+    "reponse_juste": "réponse(s) juste(s) est : ",
+    "reponse_juste2": "réponses justes est : ",
+    "res_adter": "Résultat obtenu aprés : ",
+    "participation": " participation(s)",
+    "meilleur_score": "Meilleur score : ",
+    "dernier_score": "Dernièr score : ",
+    "score_moyen": "Score moyen : ",
+    "meilleur_note": "Meilleure note : ",
+    "dernier_note": "Dernière note : ",
+    "note_moyen": "Note moyenne : ",
+    "res_quiz": "Résultat du Quiz",
+    "res_qst": "Résultat des Questions",
+    "nb_j": "Nombre de réponse(s) juste(s) :"
+  },
+  "question": {
+    "nbr_participations": "Nombre de participations:",
+    "de": "De",
+    "à": "à",
+    "participer": "Participer",
+
+    "statis": "Statistiques",
+    "nbr_quest": "Nombre de questions",
+    "nbr_partici": "Nombre de participations",
+    "nbr_juste": "Nombre de réponses juste",
+    "quest": "Question "
   },
   "form": {
     "salut": "Salutation",
