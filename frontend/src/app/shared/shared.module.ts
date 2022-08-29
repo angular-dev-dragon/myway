@@ -106,7 +106,11 @@ import { CondidatListComponent } from './components/condidat-list/condidat-list.
 
 import { ListSocieteComponent } from './components/list-societe/list-societe.component'
 import { CardOffreDetailsVerticaleComponent } from './components/card-offre-details-verticale/card-offre-details-verticale.component'
+
 import { CardQuizComponent } from './components/card-quiz/card-quiz.component'
+
+import { CardMetiersComponent } from './components/card-metiers/card-metiers.component'
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -197,6 +201,7 @@ let modules: any = [
     NavbarComponent,
     FooterComponent,
     CardMembreComponent,
+    CardMetiersComponent,
     CardArticleComponent,
     CardDocumentComponent,
     MapComponent,
@@ -221,7 +226,11 @@ let modules: any = [
     CondidatListComponent,
 
     CardOffreDetailsVerticaleComponent,
+
     CardQuizComponent,
+
+    CardMetiersComponent,
+
   ],
 
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
@@ -240,6 +249,7 @@ let modules: any = [
     CommonModule,
     CardDocumentComponent,
     CardOffreVerticaleComponent,
+    CardMetiersComponent,
     CardForumComponent,
     SondageHistoriqueComponent,
     CardBlogueurComponent,

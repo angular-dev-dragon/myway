@@ -7,6 +7,7 @@ import { DetailsMetierComponent } from './details-metier/details-metier.componen
 
 import { RouterModule } from '@angular/router'
 import { SharedModule } from 'src/app/shared/shared.module'
+import { CardMetiersComponent } from 'src/app/shared/components/card-metiers/card-metiers.component'
 
 @NgModule({
   declarations: [ListMetiersComponent, DetailsMetierComponent],
