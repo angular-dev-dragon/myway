@@ -12,27 +12,31 @@ import {
   styleUrls: ['./list-metiers.component.scss'],
 })
 export class ListMetiersComponent implements OnInit {
-  @Input()
-  offres: any = [
+  @Input() Image = ''
+  metiers: any = [
     {
+      Image: '',
       Intitule: 'Développeur1',
       Secteur: 'Informatique',
     },
     {
+      Image: '',
       Intitule: 'Ingénieur génie civil et minier ',
       Secteur: 'Informatique',
     },
     {
+      Image: '',
       Intitule: 'développeur3',
       Secteur: 'Informatique',
     },
     {
+      Image: '',
       Intitule: 'Développeur',
       Secteur: 'Textile',
     },
     {
+      Image: '',
       Intitule: 'Développeur4',
-
       Secteur: 'Électronique',
     },
   ]
@@ -46,7 +50,7 @@ export class ListMetiersComponent implements OnInit {
   @ViewChild('search') searchInput!: any
 
   filter() {
-    this.offres = this.allOffres
+    this.metiers = this.allOffres
 
     let secteurFiltre = this.secteurSelect.nativeElement.value
     // console.log('filtre par secteurs', secteurFiltre)
@@ -55,18 +59,18 @@ export class ListMetiersComponent implements OnInit {
     console.log('filtre par search', searchFiltre)
 
     if (searchFiltre != '') {
-      this.offres = this.offres.filter((offre: any) => {
+      this.metiers = this.metiers.filter((offre: any) => {
         return offre.Intitule.toLowerCase().includes(searchFiltre.toLowerCase())
       })
     }
     if (secteurFiltre != '') {
-      this.offres = this.offres.filter((offre: any) => {
+      this.metiers = this.metiers.filter((offre: any) => {
         return offre.Secteur == secteurFiltre
       })
     }
   }
   sort(type: any) {
-    this.offres.sort((a: any, b: any) =>
+    this.metiers.sort((a: any, b: any) =>
       a[type].toLowerCase() > b[type].toLowerCase() ? 1 : -1,
     )
   }
