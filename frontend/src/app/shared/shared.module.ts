@@ -106,11 +106,11 @@ import { CondidatListComponent } from './components/condidat-list/condidat-list.
 
 import { ListSocieteComponent } from './components/list-societe/list-societe.component'
 import { CardOffreDetailsVerticaleComponent } from './components/card-offre-details-verticale/card-offre-details-verticale.component'
-<<<<<<< Updated upstream
+
 import { CardQuizComponent } from './components/card-quiz/card-quiz.component'
-=======
+
 import { CardMetiersComponent } from './components/card-metiers/card-metiers.component'
->>>>>>> Stashed changes
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -226,11 +226,11 @@ let modules: any = [
     CondidatListComponent,
 
     CardOffreDetailsVerticaleComponent,
-<<<<<<< Updated upstream
+
     CardQuizComponent,
-=======
+
     CardMetiersComponent,
->>>>>>> Stashed changes
+
   ],
 
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
