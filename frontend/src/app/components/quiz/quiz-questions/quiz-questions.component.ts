@@ -283,7 +283,7 @@ export class QuizQuestionsComponent implements OnInit {
       )
       this.selectedChoise.splice(i, 1)
     }
-
+    this.choix = [...this.selectedChoise]
     console.log('Choix Selected', this.selectedChoise)
   }
 }

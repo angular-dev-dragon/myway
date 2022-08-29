@@ -34,6 +34,7 @@ export class QuizResultComponent implements OnInit {
     console.log('this.reponses', this.reponses)
     let userResponse: any = []
     this.reponses.forEach((rp: any) => {
+      console.log('userResponse', rp)
       if (this.reponses.type == 'simple') {
         rp.userReponse.__valeur_reponse_juste == false ||
         rp.userReponse.__valeur_reponse_juste == null
@@ -41,11 +42,20 @@ export class QuizResultComponent implements OnInit {
           : (this.rJuste += 1)
         userResponse.push({ qst: rp._id, response: rp.userReponse })
       } else if (this.reponses.type == 'multiple') {
-        rp.userReponse.__valeur_reponse_juste == false ||
-        rp.userReponse.__valeur_reponse_juste == null
-          ? (this.rFausse += 1)
-          : (this.rJuste += 1)
-        userResponse.push({ qst: rp._id, response: rp.userReponse })
+        let filterdResponse = rp.userReponse.filter(
+          (response: any) => response.__valeur_reponse_juste == true,
+        )
+
+        let filterdResponseQuiz = rp.reponse_quiz.filter(
+          (response: any) => response.__valeur_reponse_juste == true,
+        )
+        if (filterdResponse.lenght == filterdResponseQuiz.length) {
+          // rp.userReponse.__valeur_reponse_juste == false ||
+          // rp.userReponse.__valeur_reponse_juste == null
+          //   ? (this.rFausse += 1)
+          //   : (this.rJuste += 1)
+          // userResponse.push({ qst: rp._id, response: rp.userReponse })
+        }
       }
     })
     if (this.reponses.length > 0) {
