@@ -34,7 +34,7 @@ const routes: Routes = [
     component: ListRecruiterComponent,
   },
   {
-    path: 'details-recruteur',
+    path: 'details-recruteur/:id',
     component: DetailsRecruiterComponent,
     children: [
       {
@@ -76,7 +76,7 @@ const routes: Routes = [
       },
     ],
   },
-]
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

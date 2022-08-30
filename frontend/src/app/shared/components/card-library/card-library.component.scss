@@ -1,9 +1,3 @@
-
-
-
-
-
-
 // #region glubal
 .bd-placeholder-img {
   font-size: 1.125rem;
@@ -32,7 +26,7 @@
   font-size: 50px;
   color: #fff;
   font-weight: bold;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .ba {
@@ -89,8 +83,6 @@
 }
 
 // #endregion
-
-
 
 @media (min-width: 992px) {
   .card-default {
@@ -191,8 +183,6 @@ a {
   justify-content: space-between;
 }
 
-
-
 // #endregion
 
 // #region body 3
@@ -205,7 +195,7 @@ a {
 }
 
 .task-list:after {
-  content: '';
+  content: "";
   position: absolute;
   background: #ecedef;
   height: 100%;
@@ -267,7 +257,7 @@ a {
 }
 
 .card .card-header h5:after {
-  content: '';
+  content: "";
   background-color: #04a9f5;
   position: absolute;
   left: -25px;
@@ -414,8 +404,6 @@ a {
   text-decoration: none;
 }
 
-
-
 .card {
   box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
 }
@@ -443,56 +431,46 @@ a {
 
 // #region
 
-
-
-
-
-
 .text-center-card-w1-h2-v-hot {
-    text-align: center !important;
-    border-radius:0px 50% 0px 2px;
-
-
+  text-align: center !important;
+  border-radius: 0px 50% 0px 2px;
 }
 
-.text-reset-card-w1-h2-v-hot{
-    --bs-text-opacity: 1;
-    color: inherit !important;
-
+.text-reset-card-w1-h2-v-hot {
+  --bs-text-opacity: 1;
+  color: inherit !important;
 }
 .a-card-w1-h2-v-hot {
-    color: #5465ff;
-    text-decoration: none;
+  color: #5465ff;
+  text-decoration: none;
 }
 .body-card-w1-h2-v-hot {
-    background: rgba(248, 248, 248, 0.388);
+  background: rgba(248, 248, 248, 0.388);
 }
 .card-card-w1-h2-v-hot {
-    box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
+  box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
 }
 .card-card-w1-h2-v-hot {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 0 solid rgba(0, 0, 0, 0.125);
-    border-radius: 1rem 60px 1rem 1rem ;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid rgba(0, 0, 0, 0.125);
+  border-radius: 1rem 60px 1rem 1rem;
 }
 .card-body-card-w1-h2-v-hot {
-    -webkit-box-flex: 1;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    padding: 1.5rem 1.5rem;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.5rem 1.5rem;
 }
-
 
 // #endregion
 
 // #region
-
 
 .text-center {
   text-align: center !important;
@@ -559,7 +537,7 @@ body {
 
 .hover-scale,
 .hover-scale:hover {
-  transition: transform .2s ease-in;
+  transition: transform 0.2s ease-in;
 }
 
 .card {
@@ -570,8 +548,8 @@ body {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, .125);
-  border-radius: .4rem;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.4rem;
   box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
 }
 
@@ -590,7 +568,7 @@ body {
   background-position: center;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .contact {
     margin-bottom: 60px;
   }
@@ -607,7 +585,7 @@ body {
   height: 60px;
   padding: 10px;
   width: 100%;
-  font-family: 'poppins', sans-serif;
+  font-family: "poppins", sans-serif;
   padding-left: 30px;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -624,7 +602,7 @@ body {
   font-size: 16px;
   padding: 10px;
   width: 100%;
-  font-family: 'poppins', sans-serif;
+  font-family: "poppins", sans-serif;
   padding-left: 30px;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -664,7 +642,7 @@ body {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   background: #7564e5;
-  font-family: 'poppins', sans-serif;
+  font-family: "poppins", sans-serif;
   cursor: pointer;
   width: 100%;
 }
@@ -683,7 +661,7 @@ body {
   padding-left: 40px;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .single_address {
     padding-left: 0px;
   }
@@ -755,8 +733,6 @@ body {
 .main-container {
   padding: 30px;
 }
-
-
 
 .heading {
   text-align: center;
@@ -882,10 +858,7 @@ body {
 
 // #endregion
 
-
-
 // #region recruiter
-
 
 .card-recruiter {
   margin-bottom: 1.5em;
@@ -967,28 +940,23 @@ body {
   }
 }
 
-
 // #endregion
 
 // #region mini companiy
 
-
-.mini_companiy{
-
-margin-top: 10px;
-margin-left: 10px;
-border-radius: 40px;
-background-color: rgb(243, 243, 243);
-box-shadow:
- rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
- rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+.mini_companiy {
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 40px;
+  background-color: rgb(243, 243, 243);
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 }
 
-.mini_companiy_continer{
+.mini_companiy_continer {
   padding: 20px;
-
 }
-.mini_companiy_img{
+.mini_companiy_img {
   border-radius: 10px;
   width: 100%;
   margin: 0px;
@@ -998,4 +966,64 @@ box-shadow:
 }
 // #endregion
 
+// #region w1-h1
 
+.w1_h1_card {
+  box-shadow:
+    rgba(61, 61, 61, 0.3) 0px 30px 60px -30px,
+    rgba(87, 87, 87, 0.35) 0px -2px 6px 0px inset;
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  margin: 2px;
+  padding: 4px;
+
+
+  .w1-h1-img {
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    margin-left: -11px;
+    border-radius: 5px 0px 0px 5px;
+
+
+  }
+  .all-the-w1-h1-detail {
+    flex-direction: column;
+    margin: -1px;
+    margin: 0;
+    padding: 0;
+    .w1-h1-tiltel {
+      font-size: 17px;
+      font-weight: 600;
+
+
+    }
+    .w1-h1-sub-tiltel {
+      font-size: 15px;
+      font-weight: 400;
+
+    }
+    .w1-h1-detail {
+      font-size: 12px;
+      font-weight: 300;
+
+
+    }
+  }
+    &:hover {
+      padding-top: 4px;
+      box-shadow: rgba(125, 125, 125, 0.25) 0px 50px 100px -20px,
+        rgba(61, 61, 61, 0.3) 0px 30px 60px -30px;
+
+      background: white;
+      border-radius: 5px;
+      border:  #8f8f8f49 solid 1px;
+
+      margin: 2px;
+      padding: 6px;
+
+    }
+}
+
+// #endregion

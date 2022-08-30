@@ -2,6 +2,8 @@
 import { MegaMenuItem, MenuItem } from 'primeng/api';
 import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap';
+import { style } from '@angular/animations';
+import { SCardInfoGService } from '../../Services/s-card_info_g/s-card-info-g.service';
 
 
 @Component({
@@ -32,143 +34,9 @@ export class SCardInfoGComponent implements OnInit {
   filter_show: boolean = false;
   filter_show_all: boolean = false;
 
-  recriter_list: any[] = [
-    {
-      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/3195090/logo.png?1587552503',
-      imageBg:
-        'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/5310523/index.png?1640179035',
-      title: 'Total Energies',
-      type: 'Grande Societe',
-      salaries: '',
-      caption: 'Une Compagnie intégrée multi-énergies',
-    },
-    {
-      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/4537715/logo.png?1622715420',
-      imageBg:
-        'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/4548600/index.png?1623058769',
-      title: 'Total Energies',
-      type: 'Grande Societe',
-      salaries: '',
-      caption: 'Une Compagnie intégrée multi-énergies',
-    },
-    {
-      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/8124/logo.png?1469002464',
-      imageBg:
-        'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/6192405/index.png?1659520006',
-      title: 'Total Energies',
-      type: 'Grande Societe',
-      salaries: '',
-      caption: 'Une Compagnie intégrée multi-énergies',
-    },
-    {
-      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/1007848/logo.png?1558457886',
-      imageBg:
-        'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/5027463/index.png?1634721315',
-      title: 'Total Energies',
-      type: 'Grande Societe',
-      salaries: '',
-      caption: 'Une Compagnie intégrée multi-énergies',
-    },
-    {
-      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/69883/logo.png?1621953434',
-      imageBg:
-        'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/6179891/index.png?1659017908',
-      title: 'Total Energies',
-      type: 'Grande Societe',
-      salaries: '',
-      caption: 'Une Compagnie intégrée multi-énergies',
-    },
-    {
-      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/3195090/logo.png?1587552503',
-      imageBg:
-        'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/5310523/index.png?1640179035',
-      title: 'Total Energies',
-      type: 'Grande Societe',
-      salaries: '',
-      caption: 'Une Compagnie intégrée multi-énergies',
-    },
-    {
-      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/3195090/logo.png?1587552503',
-      imageBg:
-        'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/5310523/index.png?1640179035',
-      title: 'Total Energies',
-      type: 'Grande Societe',
-      salaries: '',
-      caption: 'Une Compagnie intégrée multi-énergies',
-    },
-  ];
-  // #region  start_dabe
-  info_slids = [
-    // #region card-w1-h2-v-hot
 
-    // {
-    //   name: 'show 2',
-    //   id: 'd342',
-    //   detail: {
-    //     filter: false,
-    //     row: [
-    //       {
-    //         colum: 4,
-    //         cards_we_need: [
-    //           {
-    //             name: 'card-w1-h2-v-hot',
-    //             id: 'id45235',
-    //             title: 'hii is the tilet',
-    //             title_style: {
-    //                   color: "#3ff",
-    //                   textDecoration: "none",
-    //             },
-    //             p: 'ducimu expedita ad ratione temporibus',
-    //             img: {
-    //               src: 'https://upload.wikimedia.org/wikipedia/commons/3/3c/IMG_logo_%282017%29.svg',
-    //               width: '100%',
-    //               height: '200px',
-    //               alt: 'thi is blabla',
-    //             },
-    //             hot: {
-    //               one: '20%',
-    //               tow: 'off',
-    //               border: '#1fe4f5 2px solid',
-    //             },
-    //             border: '#3ff 1px solid',
-    //           },
-    //         ],
-    //       },
-    //     ],
-    //   },
-    // },
-    // #endregion
 
-    {
-      name: 'show 2',
-      id: 'd342',
-      detail: {
-        filter: false,
-        row: [
-          {
-            colum: 6,
-            cards_we_need: [
-              {
-                name: 'card-w1-h1-v2',
-                id: 'pk',
-                info: [
-                  {
-                    logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/3195090/logo.png?1587552503',
-                    imageBg:
-                      'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/5310523/index.png?1640179035',
-                    title: 'Total Energies',
-                    type: 'Grande Societe',
-                    salaries: '',
-                    caption: 'Une Compagnie intégrée multi-énergies',
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-    },
-  ];
+  info_slids :any = [];
   // #endregion
   // #endregion
   // #region filtter databes
@@ -278,17 +146,21 @@ export class SCardInfoGComponent implements OnInit {
 
   // #endregion
 
-  constructor(config: NgbPopoverConfig) {
+  constructor(config: NgbPopoverConfig, private data : SCardInfoGService) {
     this.allOffres = this.offres;
     config.placement = 'end';
     config.triggers = 'hover';
+   this.info_slids = this.data.get_all_s_card()
   }
 
   ngOnInit() {}
 
   // #region fitter fuctioanlity
   showfilter() {
-    this.filter_show = !this.filter_show;
+
+
+      this.filter_show = !this.filter_show;
+
   }
   filter() {
     this.offres = this.allOffres;
@@ -400,4 +272,8 @@ export class SCardInfoGComponent implements OnInit {
 
 
 
+
+function elseif(arg0: boolean) {
+  throw new Error('Function not implemented.');
+}
 
