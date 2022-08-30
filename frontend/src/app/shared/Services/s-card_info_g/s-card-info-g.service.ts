@@ -7,13 +7,14 @@ import { find, of, filter } from 'rxjs';
 export class SCardInfoGService {
   s_card_info: any[];
   info: any;
+  condidats_list: any;
   constructor() {
     this.s_card_info = [
       {
         name: 'hpi',
         id: 'd342',
         detail: {
-          filter: false,
+          filter: true,
           row: [
             {
               colum: 3,
@@ -22,39 +23,7 @@ export class SCardInfoGService {
                   name: 'adds',
                   id: 'pk',
                   info: [
-                    {
-                      img: {
-                        src: 'https://i1.hespress.com/wp-content/uploads/2022/06/Sidi_Ali.jpg',
-                        alt: ' THIS IS BLABLA',
-                        width: '100%',
-                        height: '',
-                        style: {
-                          width: '100%',
-                        },
-                      },
-                    },
-                    {
-                      img: {
-                        src: 'https://i1.hespress.com/wp-content/uploads/2022/06/Sidi_Ali.jpg',
-                        alt: ' THIS IS BLABLA',
-                        width: '100%',
-                        height: '',
-                        style: {
-                          width: '100%',
-                        },
-                      },
-                    },
-                    {
-                      img: {
-                        src: 'https://i1.hespress.com/wp-content/uploads/2022/06/Sidi_Ali.jpg',
-                        alt: ' THIS IS BLABLA',
-                        width: '100%',
-                        height: '',
-                        style: {
-                          width: '100%',
-                        },
-                      },
-                    },
+                    
                   ],
                 },
               ],

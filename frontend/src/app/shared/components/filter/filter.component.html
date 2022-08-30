@@ -1,4 +1,4 @@
-<div class="sideBar-Main">
+<div  *ngIf="pfilterType=='detail'" class="sideBar-Main">
   <div
     class="btn btn-outline-secondary"
     #btnSideBar
@@ -881,3 +881,26 @@
     </div>
   </div>
 </div>
+
+
+
+
+<div *ngIf="pfilterType=='name'" class="col-md-6">
+
+
+
+              <div class="my-2">
+                <div class="form__group field" style="margin-top: -15px;">
+                  <input (keyup)="filter()" #search class="form__field" type="text" id="saerchBar"
+                    placeholder="Mot clés, titre du poste..." aria-label="Search" aria-describedby="search-addon" />
+                  <label for="saerchBar" class="form__label">
+                    Mot clés, titre du poste...
+                  </label>
+                </div>
+              </div>
+
+
+
+</div>
+
+
