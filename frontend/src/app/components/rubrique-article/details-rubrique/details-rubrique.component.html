@@ -3,18 +3,75 @@
     <h4>Conseils Pratique</h4>
   </div>
   <div class="section-recruteur">
-    <div class="row">
-      <app-card-article
-        [routerLink]="['/rubrique/details-article']"
-        class="col-md-6 mb-3"
-        *ngFor="let article of articles"
-        [image]="article.image"
-        [titre]="article.titre"
-        [sousTitre]="article.sousTitre"
-        [resume]="article.resume"
-        [etiquette]="article.etiquette"
-        [motsCles]="article.motsCles"
-      ></app-card-article>
+    <div class="flex-grow-1">
+      <div class="row justify-content-between px-2 w-100">
+        <div class="col-md-6">
+          <div class="my-2">
+            <div class="form__group field" style="margin-top: -15px;">
+              <input
+                (keyup)="filter()"
+                #search
+                class="form__field"
+                type="text"
+                id="saerchBar"
+                placeholder="Mot clés, titre du poste..."
+                aria-label="Search"
+                aria-describedby="search-addon"
+              />
+              <label for="saerchBar" class="form__label">
+                Mot clés, titre du poste...
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 order">
+          <div class="my-2 d-flex">
+            <div class="dropdown">
+              <button
+                class="btn btn-default dropdown-toggle"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarDropdown"
+                aria-controls="navbarDropdown"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                Order by
+              </button>
+              <ul
+                class="dropdown-menu custom-navbar"
+                aria-labelledby="navbarDropdown"
+                id="navbarDropdown"
+              >
+                <li>
+                  <a class="dropdown-item" (click)="sort('titre')">
+                    Name
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" (click)="sortbyDate()">
+                    Date
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <app-card-article
+          [routerLink]="['/rubrique/details-article']"
+          class="col-md-6 mb-3"
+          *ngFor="let article of articles"
+          [image]="article.image"
+          [titre]="article.titre"
+          [sousTitre]="article.sousTitre"
+          [resume]="article.resume"
+          [etiquette]="article.etiquette"
+          [motsCles]="article.motsCles"
+        ></app-card-article>
+      </div>
     </div>
   </div>
 </div>

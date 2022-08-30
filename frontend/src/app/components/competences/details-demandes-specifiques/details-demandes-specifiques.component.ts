@@ -9,20 +9,23 @@ export class DetailsDemandesSpecifiquesComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-  membre: any = {
-    nom: 'Hicham',
-    prenom: 'Berdouki',
-    fonction: 'Mean Stack Developper',
-    service: 'Departement It',
-    email: 'testEamil@gmail.com',
-    telephone: '0600223366',
-    nbBlog: 12,
-    rating: 4,
 
-    resume:
-      'I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores. My passion is to design digital user experiences through the bold interface and meaningful interactions.',
-  }
   demande: any = {
+    membre: {
+      nom: 'Hicham',
+      prenom: 'Berdouki',
+      fonction: 'Mean Stack Developper',
+      service: 'Departement It',
+      email: 'testEamil@gmail.com',
+      telephone: '0600223366',
+      nbBlog: 12,
+      rating: 4,
+      id: '341324',
+
+      resume:
+        'I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores. My passion is to design digital user experiences through the bold interface and meaningful interactions.',
+    },
+
     Titre: 'Développeur',
     Poste: 'Développeur full-stack',
     TypeContrat: 'Anapec',

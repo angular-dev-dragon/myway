@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core'
+import { QuizService } from 'src/app/shared/services/quiz.service'
 
 @Component({
   selector: 'app-list-quiz',
@@ -6,7 +7,10 @@ import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core'
   styleUrls: ['./list-quiz.component.scss'],
 })
 export class ListQuizComponent implements OnInit {
-  constructor() {
+  constructor(public quizService: QuizService) {
+    this.listQuiz = this.allListQuiz
+
+    this.allListQuiz = this.quizService.getQuiz()
     this.listQuiz = this.allListQuiz
   }
 
@@ -78,69 +82,63 @@ export class ListQuizComponent implements OnInit {
   ]
   listQuiz: any = []
 
-  @ViewChildren('metier') metierBox!: any
+  // @ViewChildren('metier') metierBox!: any
 
-  @ViewChild('secteur') secteurSelect!: any
+  // @ViewChild('secteurFilter') secteurSelect!: any
 
-  @ViewChild('search') searchInput!: any
+  // @ViewChild('search') searchInput!: any
 
-  filter() {
-    this.listQuiz = this.allListQuiz
+  // filter() {
+  //   this.listQuiz = this.allListQuiz
 
-    let secteurFiltre = this.secteurSelect.nativeElement.value
-    console.log('filtre par secteurs', secteurFiltre)
+  //   let searchInput = this.searchInput.nativeElement.value
+  //   console.log('searchInput', searchInput)
 
-    let searchFiltre = this.searchInput.nativeElement.value
+  //   let metierFiltre = this.metierBox._results
 
-    let metierFiltre = this.metierBox._results
-    // console.log('filtre par contrat', contratFiltre)
+  //   let secteurFiltre = this.secteurSelect.nativeElement.value
 
-    // console.log('filtre par date', dateFiltre)
-    //let metierFilter = this.metierSelect.nativeElement.value
+  //   if (searchInput != '') {
+  //     this.listQuiz = this.listQuiz.filter((quiz: any) => {
+  //       return quiz.titre.toLowerCase().includes(searchInput.toLowerCase())
+  //     })
+  //   }
 
-    if (searchFiltre != '') {
-      this.listQuiz = this.listQuiz.filter((recruteur: any) => {
-        return recruteur.title
-          .toLowerCase()
-          .includes(searchFiltre.toLowerCase())
-      })
-    }
+  //   if (secteurFiltre != '') {
+  //     this.listQuiz = this.listQuiz.filter((quiz: any) => {
+  //       return quiz.secteur == secteurFiltre
+  //     })
+  //   }
+  //   this.checkboxFiltre(metierFiltre, 'metier')
+  // }
 
-    if (secteurFiltre != '') {
-      this.listQuiz = this.listQuiz.filter((recruteur: any) => {
-        return recruteur.secteur == secteurFiltre
-      })
-    }
-    this.checkboxFiltre(metierFiltre, 'metier')
-  }
+  // checkboxFiltre(CheckboxList: any, label: any) {
+  //   let newList2
+  //   let newList3: any = this.listQuiz
+  //   let isFirstTime: Boolean = true
+  //   CheckboxList.map((filtre: any) => {
+  //     if (filtre.nativeElement.checked) {
+  //       if (isFirstTime == true) {
+  //         isFirstTime = false
+  //         newList3 = []
+  //       }
 
-  checkboxFiltre(CheckboxList: any, label: any) {
-    let newList2
-    let newList3: any = this.listQuiz
-    let isFirstTime: Boolean = true
-    CheckboxList.map((filtre: any) => {
-      if (filtre.nativeElement.checked) {
-        if (isFirstTime == true) {
-          isFirstTime = false
-          newList3 = []
-        }
+  //       newList2 = this.listQuiz
+  //       newList2 = newList2.filter((quiz: any) => {
+  //         return quiz.metier.includes(filtre.nativeElement.value)
+  //       })
 
-        newList2 = this.listQuiz
-        newList2 = newList2.filter((quiz: any) => {
-          return quiz.metier.includes(filtre.nativeElement.value)
-        })
-
-        newList2.map((list: any) => {
-          newList3.push(list)
-        })
-      }
-    })
-    this.listQuiz = newList3
-    console.log(
-      '🚀 ~ file: list-quiz.component.ts ~ line 140 ~ ListQuizComponent ~ checkboxFiltre ~   this.listQuiz',
-      this.listQuiz,
-    )
-  }
+  //       newList2.map((list: any) => {
+  //         newList3.push(list)
+  //       })
+  //     }
+  //   })
+  //   this.listQuiz = newList3
+  //   console.log(
+  //     '🚀 ~ file: list-quiz.component.ts ~ line 140 ~ ListQuizComponent ~ checkboxFiltre ~   this.listQuiz',
+  //     this.listQuiz,
+  //   )
+  // }
 
   sort(type: any) {
     this.listQuiz.sort((a: any, b: any) =>
