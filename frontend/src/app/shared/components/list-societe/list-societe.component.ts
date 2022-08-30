@@ -13,7 +13,9 @@ import {
 })
 export class ListSocieteComponent implements OnInit {
   @Input() link: any = ''
-  @Input() allRecruiterList: any = [
+  @Input() pageName: any = ''
+
+  @Input() dataList: any = [
     {
       logo:
         'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/3195090/logo.png?1587552503',
@@ -94,87 +96,9 @@ export class ListSocieteComponent implements OnInit {
   ]
   images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`)
   listRecruteur: any = []
-  constructor() {
-    this.listRecruteur = this.allRecruiterList
-  }
+  constructor() {}
   p: any = ''
   ngOnInit(): void {}
-
-  @ViewChildren('typeSociete') typeSocieteBox!: any
-  @ViewChild('ville') villeSelect!: any
-  @ViewChild('region') regionSelect!: any
-  @ViewChild('pays') paysSelect!: any
-  @ViewChild('secteur') secteurSelect!: any
-
-  @ViewChild('search') searchInput!: any
-
-  filter() {
-    this.listRecruteur = this.allRecruiterList
-    let villeFiltre = this.villeSelect.nativeElement.value
-    // console.log('filtreParVille', villeFiltre)
-    let regionFiltre = this.regionSelect.nativeElement.value
-    // console.log('filtre par region', regionFiltre)
-    let paysFiltre = this.paysSelect.nativeElement.value
-    // console.log('filtre par pays', paysFiltre)
-
-    let secteurFiltre = this.secteurSelect.nativeElement.value
-    // console.log('filtre par secteurs', secteurFiltre)
-
-    let searchFiltre = this.searchInput.nativeElement.value
-
-    // console.log('filtre par date', dateFiltre)
-    let typeSocieteFilter = this.typeSocieteBox._results
-
-    if (searchFiltre != '') {
-      this.listRecruteur = this.listRecruteur.filter((recruteur: any) => {
-        return recruteur.title
-          .toLowerCase()
-          .includes(searchFiltre.toLowerCase())
-      })
-    }
-    if (paysFiltre != '') {
-      this.listRecruteur = this.listRecruteur.filter((recruteur: any) => {
-        return recruteur.Pays == paysFiltre
-      })
-    } else if (regionFiltre != '') {
-      this.listRecruteur = this.listRecruteur.filter((recruteur: any) => {
-        return recruteur.Region == regionFiltre
-      })
-    } else if (villeFiltre != '') {
-      this.listRecruteur = this.listRecruteur.filter((recruteur: any) => {
-        return recruteur.Ville == villeFiltre
-      })
-    } else if (secteurFiltre != '') {
-      this.listRecruteur = this.listRecruteur.filter((recruteur: any) => {
-        return recruteur.secteur == secteurFiltre
-      })
-    }
-
-    this.checkboxFiltre(typeSocieteFilter, 'type')
-  }
-
-  checkboxFiltre(CheckboxList: any, label: any) {
-    let newList2
-    let newList3: any = this.listRecruteur
-    let isFirstTime: Boolean = true
-    CheckboxList.map((filtre: any) => {
-      if (filtre.nativeElement.checked) {
-        if (isFirstTime == true) {
-          isFirstTime = false
-          newList3 = []
-        }
-        newList2 = this.listRecruteur
-        newList2 = newList2.filter((recruteur: any) => {
-          return recruteur[label] == filtre.nativeElement.value
-        })
-
-        newList2.map((list: any) => {
-          newList3.push(list)
-        })
-      }
-    })
-    this.listRecruteur = newList3
-  }
 
   sort(type: any) {
     this.listRecruteur.sort((a: any, b: any) =>

@@ -7,7 +7,7 @@
       <div class="d-flex flex-main">
         <!-- BEGIN FILTERS -->
         <div class="section-recruteur spacing-inline-end mb-3">
-          <app-filter [pageName]="'offre'"></app-filter>
+          <app-filter [pageName]="pageName"></app-filter>
         </div>
         <!-- END FILTERS -->
         <!-- BEGIN RESULT -->
@@ -97,7 +97,7 @@
               <div class="row" *ngIf="orientation == 'verticale'">
                 <app-card-offre-Verticale
                   *ngFor="
-                    let offre of offreService.listOffres
+                    let offre of offres
                       | paginate: { itemsPerPage: 20, currentPage: paginate }
                   "
                   [link]="link"

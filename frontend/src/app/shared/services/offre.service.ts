@@ -89,15 +89,16 @@ export class OffreService {
       Poste: 'Développeur Back-End',
       TypePoste: 'Emploi',
       Image: '',
-      Ville: 'Tanger',
       Secteur: 'Électronique',
       Date: '2022-02-02',
       Competences: 'HTML',
       Pays: 'Algérie',
+      Ville: 'Tanger',
+      Region: 'Grand Casablanca',
+
       NiveauxEtude: 'qualification avant bac',
       NiveauxExperience: "moins d'un ans",
       langue: 'Espagnol',
-      Region: 'Grand Casablanca',
     },
   ]
   listOffres: any = []

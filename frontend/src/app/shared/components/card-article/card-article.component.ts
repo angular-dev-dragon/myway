@@ -14,6 +14,12 @@ export class CardArticleComponent implements OnInit {
   @Input() motsCles = ''
   @Input() titre = ''
   @Input() sousTitre = ''
+  @Input() dateDebut = ''
+  @Input() dateFin = ''
 
+  @Input() heureDebut = ''
+  @Input() heureFin = ''
   @Input() resume = ''
+  @Input() isArticle: boolean = true
+  @Input() typeEvent: any = ''
 }

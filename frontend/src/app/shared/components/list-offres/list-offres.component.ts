@@ -16,6 +16,8 @@ import { OffreService } from '../../services/offre.service'
 })
 export class ListOffresComponent implements OnInit {
   @Input() link = ''
+  @Input() pageName: string = ''
+
   @Input() offres: any = []
   collapsed = false
   showSidebar: boolean = false

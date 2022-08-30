@@ -7,9 +7,12 @@ import {
   ViewChildren,
 } from '@angular/core'
 import { CondidaInfoService } from '../../Services/condida-info/condida-info.service'
+import { CondidatureSpontaneeService } from '../../services/condidature-spontanee.service'
+import { DemandeSpecifiqueService } from '../../services/demande-specifique.service'
 import { MetierService } from '../../services/metier.service'
 import { OffreService } from '../../services/offre.service'
 import { QuizService } from '../../services/quiz.service'
+import { RecruteurService } from '../../services/recruteur.service'
 
 @Component({
   selector: 'app-filter',
@@ -22,6 +25,9 @@ export class FilterComponent implements OnInit {
     private metierService: MetierService,
     private offreService: OffreService,
     private candidatService: CondidaInfoService,
+    private demandeSpecifiqueService: DemandeSpecifiqueService,
+    private condidatureSpontaneeService: CondidatureSpontaneeService,
+    private recurteurService: RecruteurService,
   ) {}
   @Input() pageName: string = ''
   ngOnInit(): void {
@@ -48,6 +54,9 @@ export class FilterComponent implements OnInit {
     let langueFiltre = this.langueBox?._results || ''
     // console.log('filtre par langues', langueFiltre)
     let secteurFiltre = this.secteurSelect?.nativeElement.value || ''
+
+    let typeFiltre = this.typeSocieteBox?._results || ''
+
     if (this.pageName == 'quiz') {
       this.quizService.filter('', metiertValue, secteurFiltre)
     }
@@ -66,6 +75,40 @@ export class FilterComponent implements OnInit {
         niveauxEtFiltre,
         niveauxExFiltre,
         langueFiltre,
+      )
+    }
+    if (this.pageName == 'demande specifique') {
+      this.demandeSpecifiqueService.filter(
+        '',
+        secteurFiltre,
+        paysFiltre,
+        regionFiltre,
+        villeFiltre,
+        dateFilter,
+        contratFiltre,
+        niveauxEtFiltre,
+        niveauxExFiltre,
+      )
+    }
+    if (this.pageName == 'candidature spontanee') {
+      this.condidatureSpontaneeService.filter(
+        '',
+        secteurFiltre,
+        paysFiltre,
+        regionFiltre,
+        villeFiltre,
+        typeFiltre,
+      )
+    }
+
+    if (this.pageName == 'recruteur') {
+      this.recurteurService.filter(
+        '',
+        secteurFiltre,
+        paysFiltre,
+        regionFiltre,
+        villeFiltre,
+        typeFiltre,
       )
     }
     if (this.pageName == 'candidat') {

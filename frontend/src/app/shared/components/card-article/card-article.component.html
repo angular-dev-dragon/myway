@@ -19,19 +19,37 @@
         <h4 class="">
           {{ titre }}
         </h4>
-        <h6 class="">
+        <h6 class="" *ngIf="isArticle">
           {{ sousTitre }}
         </h6>
+        <div
+          class="d-flex align-items-center justify-content-between"
+          *ngIf="!isArticle"
+        >
+          <div class="">
+            <i class="fa-regular fa-calendar"></i>
+            <span>{{ dateDebut }} &nbsp;{{ heureDebut }}</span>
+          </div>
+          <div class="">
+            <i class="fa-regular fa-calendar"></i>
+            <span>{{ dateFin }}&nbsp;{{ heureFin }}</span>
+          </div>
+        </div>
       </div>
-      <p class="card-article-etiquette m-0">
+      <p class="card-article-etiquette m-0" *ngIf="isArticle">
         {{ etiquette }}
       </p>
+      <p class="card-article-etiquette m-0" *ngIf="!isArticle">
+        {{ typeEvent }}
+      </p>
       <div class="card-article-motCle">
-        <span class="motCle" *ngFor="let motCle of motsCles">
-          <span class="tag small me-2 p-1 text-secondary bg-light">
-            #{{ motCle }}
+        <ng-container *ngIf="isArticle">
+          <span class="motCle" *ngFor="let motCle of motsCles">
+            <span class="tag small me-2 p-1 text-secondary bg-light">
+              #{{ motCle }}
+            </span>
           </span>
-        </span>
+        </ng-container>
       </div>
       <span
         class="teaser-content__wrapper__link link-underlined link-underlined--pink"

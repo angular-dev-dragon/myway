@@ -1,4 +1,5 @@
 <app-list-offres
-  [offres]="listDemandes"
+  [pageName]="'demande specifique'"
+  [offres]="demandeSpecifiqueService.listDemandes"
   [link]="'/competences/details-demandes-specifiques'"
 ></app-list-offres>
