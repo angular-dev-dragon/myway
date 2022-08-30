@@ -31,6 +31,7 @@ export class FilterComponent implements OnInit {
   }
 
   filter() {
+    let nameFilter = this.searchInput.nativeElement.value || '';
     let metiertValue = this.metierBox._results || '';
 
     let villeFiltre = this.villeSelect?.nativeElement.value || '';
@@ -50,15 +51,16 @@ export class FilterComponent implements OnInit {
     let langueFiltre = this.langueBox?._results || '';
     // console.log('filtre par langues', langueFiltre)
     let secteurFiltre = this.secteurSelect?.nativeElement.value || '';
+
     if (this.pageName == 'quiz') {
-      this.quizService.filter('', metiertValue, secteurFiltre);
+      this.quizService.filter(nameFilter, metiertValue, secteurFiltre);
     }
     if (this.pageName == 'metier') {
-      this.metierService.filter('', metiertValue);
+      this.metierService.filter(nameFilter, metiertValue);
     }
     if (this.pageName == 'offre') {
       this.offreService.filter(
-        '',
+        nameFilter,
         secteurFiltre,
         paysFiltre,
         regionFiltre,
@@ -72,7 +74,7 @@ export class FilterComponent implements OnInit {
     }
     if (this.pageName == 'candidat') {
       this.candidatService.filter(
-        '',
+         nameFilter,
         secteurFiltre,
         paysFiltre,
         regionFiltre,
@@ -82,6 +84,8 @@ export class FilterComponent implements OnInit {
         langueFiltre
       );
     }
+
+
   }
 
   @ViewChild('typePoste') typePosteSelect!: any;
