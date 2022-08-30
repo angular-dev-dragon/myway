@@ -24,12 +24,15 @@ export class FilterComponent implements OnInit {
     private quizService: QuizService,
     private metierService: MetierService,
     private offreService: OffreService,
+
     private candidatService: CondidaInfoService,
     private demandeSpecifiqueService: DemandeSpecifiqueService,
     private condidatureSpontaneeService: CondidatureSpontaneeService,
     private recurteurService: RecruteurService,
   ) {}
   @Input() pageName: string = ''
+  @Input() pfilterType: string = 'detail'
+
   ngOnInit(): void {
     console.log(this.pageName)
   }
@@ -53,6 +56,7 @@ export class FilterComponent implements OnInit {
     // console.log('filtre par niveaux experience', niveauxExFiltre)
     let langueFiltre = this.langueBox?._results || ''
     // console.log('filtre par langues', langueFiltre)
+
     let secteurFiltre = this.secteurSelect?.nativeElement.value || ''
 
     let typeFiltre = this.typeSocieteBox?._results || ''
@@ -118,7 +122,6 @@ export class FilterComponent implements OnInit {
         paysFiltre,
         regionFiltre,
         villeFiltre,
-
         niveauxEtFiltre,
         niveauxExFiltre,
         langueFiltre,
@@ -139,6 +142,4 @@ export class FilterComponent implements OnInit {
   @ViewChild('date') dateInput!: any
   @ViewChildren('typeSociete') typeSocieteBox!: any
   @ViewChildren('metier') metierBox!: any
-
-  //searchInputValue = this.searchInput.nativeElement.value
 }

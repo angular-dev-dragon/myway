@@ -23,7 +23,7 @@ export class CDetailsComponent implements OnInit {
     private fb: FormBuilder,
     private activatedRoute: ActivatedRoute,
   ) {
-    console.log('🚀 ~  CDetailsComponent ~ isPrincipale', this.isPrincipale)
+
 
     if (this.idPassed != '') {
       this.TrackEventroute(this.idPassed)

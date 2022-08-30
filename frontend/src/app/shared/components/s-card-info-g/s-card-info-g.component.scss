@@ -3,7 +3,9 @@
 .hed {
   overflow: hidden;
 }
-
+.t-filter{
+  font-size: 30px
+}
 .filter-btn {
   display: block;
 
@@ -15,8 +17,10 @@
 
 .sideBar-Main {
   position: absolute;
-  max-height: 3001px;
-  margin: 30px;
+  max-height: 200px;
+  margin:-8px 30px 30px -40px;
+  z-index: 20;
+
 }
 
 .sidebar-offre {
@@ -126,5 +130,40 @@
 
 .sideBar-text {
   width: 0;
+
 }
 // #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

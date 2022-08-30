@@ -23,7 +23,7 @@ export class CondidaInfoService {
         email: 'condida@gamil.com',
         phone: '+212 658 987 658',
         address: {
-          countrie: 'morocco',
+          countrie: 'Maroc',
           city: 'tanger',
           street: 'bni aourgal 4 ',
           building: '40',
@@ -316,7 +316,7 @@ export class CondidaInfoService {
         email: 'condida@gamil.com',
         phone: '+212 658 987 658',
         address: {
-          countrie: 'morocco',
+          countrie: 'Algérie',
           city: 'tanger',
           street: 'bni aourgal 4 ',
           building: '40',
@@ -480,13 +480,13 @@ export class CondidaInfoService {
         email: 'condida@gamil.com',
         phone: '+212 658 987 658',
         address: {
-          countrie: 'morocco',
+          countrie: 'Algérie',
           city: 'tanger',
           street: 'bni aourgal 4 ',
           building: '40',
           postalCode: '92000',
           secteur: 'Agriculture',
-          region: 'Grand Casablanca',
+          region: 'Tanger-Tetouan',
         },
         description: 'i am a web developer',
         img: 'https://www.bootdey.com/img/Content/avatar/avatar4.png',
@@ -644,12 +644,12 @@ export class CondidaInfoService {
         email: 'condida@gamil.com',
         phone: '+212 658 987 658',
         address: {
-          countrie: 'morocco',
+          countrie: 'Maroc',
           city: 'tanger',
           street: 'bni aourgal 4 ',
           building: '40',
           postalCode: '92000',
-          region: 'Grand Casablanca',
+          region: 'goldfish',
           secteur: 'Agriculturre',
         },
         description: 'i am a web developer',
@@ -808,7 +808,7 @@ export class CondidaInfoService {
         email: 'condida@gamil.com',
         phone: '+212 658 987 658',
         address: {
-          countrie: 'morocco',
+          countrie: 'Maroc',
           city: 'tanger',
           street: 'bni aourgal 4 ',
           building: '40',
@@ -959,7 +959,7 @@ export class CondidaInfoService {
 
       tag: ['web', 'developer', 'art', 'kldin'],
     },
-
+    // #region more data
     // {
     //   info: {
     //     id: '1111',
@@ -973,7 +973,7 @@ export class CondidaInfoService {
     //     email: 'condida@gamil.com',
     //     phone: '+212 658 987 658',
     //     address: {
-    //       countrie: 'morocco',
+    //       countrie: 'Maroc',
     //       city: 'tanger',
     //       street: 'bni aourgal 4 ',
     //       building: '40',
@@ -1137,7 +1137,7 @@ export class CondidaInfoService {
     //     email: 'condida@gamil.com',
     //     phone: '+212 658 987 658',
     //     address: {
-    //       countrie: 'morocco',
+    //       countrie: 'Maroc',
     //       city: 'tanger',
     //       street: 'bni aourgal 4 ',
     //       building: '40',
@@ -1301,7 +1301,7 @@ export class CondidaInfoService {
     //     email: 'condida@gamil.com',
     //     phone: '+212 658 987 658',
     //     address: {
-    //       countrie: 'morocco',
+    //       countrie: 'Tunisie',
     //       city: 'tanger',
     //       street: 'bni aourgal 4 ',
     //       building: '40',
@@ -1463,7 +1463,7 @@ export class CondidaInfoService {
     //     email: 'condida@gamil.com',
     //     phone: '+212 658 987 658',
     //     address: {
-    //       countrie: 'morocco',
+    //       countrie: 'Tunisie',
     //       city: 'tanger',
     //       street: 'bni aourgal 4 ',
     //       building: '40',
@@ -1625,7 +1625,7 @@ export class CondidaInfoService {
     //     email: 'condida@gamil.com',
     //     phone: '+212 658 987 658',
     //     address: {
-    //       countrie: 'morocco',
+    //       countrie: 'Tunisie',
     //       city: 'tanger',
     //       street: 'bni aourgal 4 ',
     //       building: '40',
@@ -1787,7 +1787,7 @@ export class CondidaInfoService {
     //     email: 'condida@gamil.com',
     //     phone: '+212 658 987 658',
     //     address: {
-    //       countrie: 'morocco',
+    //       countrie: 'Tunisie',
     //       city: 'tanger',
     //       street: 'bni aourgal 4 ',
     //       building: '40',
@@ -1949,7 +1949,7 @@ export class CondidaInfoService {
     //     email: 'condida@gamil.com',
     //     phone: '+212 658 987 658',
     //     address: {
-    //       countrie: 'morocco',
+    //       countrie: 'Tunisie',
     //       city: 'tanger',
     //       street: 'bni aourgal 4 ',
     //       building: '40',
@@ -2111,7 +2111,7 @@ export class CondidaInfoService {
     //     email: 'condida@gamil.com',
     //     phone: '+212 658 987 658',
     //     address: {
-    //       countrie: 'morocco',
+    //       countrie: 'spider',
     //       city: 'tanger',
     //       street: 'bni aourgal 4 ',
     //       building: '40',
@@ -2273,7 +2273,7 @@ export class CondidaInfoService {
     //     email: 'condida@gamil.com',
     //     phone: '+212 658 987 658',
     //     address: {
-    //       countrie: 'morocco',
+    //       countrie: 'spider',
     //       city: 'tanger',
     //       street: 'bni aourgal 4 ',
     //       building: '40',
@@ -2435,7 +2435,7 @@ export class CondidaInfoService {
     //     email: 'condida@gamil.com',
     //     phone: '+212 658 987 658',
     //     address: {
-    //       countrie: 'morocco',
+    //       countrie: 'spider',
     //       city: 'tanger',
     //       street: 'bni aourgal 4 ',
     //       building: '40',
@@ -2597,7 +2597,7 @@ export class CondidaInfoService {
     //     email: 'condida@gamil.com',
     //     phone: '+212 658 987 658',
     //     address: {
-    //       countrie: 'morocco',
+    //       countrie: 'spider',
     //       city: 'tanger',
     //       street: 'bni aourgal 4 ',
     //       building: '40',
@@ -2759,7 +2759,7 @@ export class CondidaInfoService {
     //     email: 'condida@gamil.com',
     //     phone: '+212 658 987 658',
     //     address: {
-    //       countrie: 'morocco',
+    //       countrie: 'spider',
     //       city: 'tanger',
     //       street: 'bni aourgal 4 ',
     //       building: '40',
@@ -2921,7 +2921,7 @@ export class CondidaInfoService {
     //     email: 'condida@gamil.com',
     //     phone: '+212 658 987 658',
     //     address: {
-    //       countrie: 'morocco',
+    //       countrie: 'spider',
     //       city: 'tanger',
     //       street: 'bni aourgal 4 ',
     //       building: '40',
@@ -3083,7 +3083,7 @@ export class CondidaInfoService {
     //     email: 'condida@gamil.com',
     //     phone: '+212 658 987 658',
     //     address: {
-    //       countrie: 'morocco',
+    //       countrie: 'spider',
     //       city: 'tanger',
     //       street: 'bni aourgal 4 ',
     //       building: '40',
@@ -3245,7 +3245,7 @@ export class CondidaInfoService {
     //     email: 'condida@gamil.com',
     //     phone: '+212 658 987 658',
     //     address: {
-    //       countrie: 'morocco',
+    //       countrie: 'spider',
     //       city: 'tanger',
     //       street: 'bni aourgal 4 ',
     //       building: '40',
@@ -3558,6 +3558,7 @@ export class CondidaInfoService {
     // },
 
     // #endregion
+    // #endregion
   ]
   constructor() {
     console.log(this.a)
@@ -3567,15 +3568,14 @@ export class CondidaInfoService {
   ngOnInit() {}
 
   filter(
-    searchFiltre: string = '',
-    secteurFiltre: string,
-    paysFiltre: string,
-    regionFiltre: string,
-    villeFiltre: string,
-
-    niveauxEtFiltre: any,
-    niveauxExFiltre: any,
-    langueFiltre: any,
+        searchFiltre: string = '',
+        secteurFiltre:any,
+        paysFiltre:any,
+        regionFiltre:any,
+        villeFiltre:any,
+        niveauxEtFiltre:any,
+        niveauxExFiltre:any,
+        langueFiltre:any,
   ) {
     this.condidats_list = this.allCondidat
 
@@ -3597,7 +3597,7 @@ export class CondidaInfoService {
       })
     } else if (regionFiltre != '') {
       this.condidats_list = this.condidats_list.filter((candidat: any) => {
-        return candidat.info.address.region == regionFiltre
+        return candidat.info.address.region== regionFiltre
       })
     } else if (villeFiltre != '') {
       this.condidats_list = this.condidats_list.filter((candidat: any) => {
@@ -3605,7 +3605,7 @@ export class CondidaInfoService {
       })
     } else if (secteurFiltre != '') {
       this.condidats_list = this.condidats_list.filter((candidat: any) => {
-        return candidat.secteur == secteurFiltre
+        return candidat.info.job_post.secteur == secteurFiltre
       })
     }
 
@@ -3626,9 +3626,9 @@ export class CondidaInfoService {
         }
         newList2 = this.condidats_list
         newList2 = newList2.filter((candidat: any) => {
-          return candidat[label] == filtre.nativeElement.value
-        })
+          // return candidat[label] == filtre.nativeElement.value;
 
+        })
         newList2.map((list: any) => {
           newList3.push(list)
         })
@@ -3642,7 +3642,7 @@ export class CondidaInfoService {
   }
 
   get_condidats_by_id(id: string) {
-    console.log('🚀CondidaInfoService ~ get_condidats_by_id ~ id', id)
+    console.log('', id)
 
     return of(this.condidats_list.find((i) => i.info.id === id))
   }
