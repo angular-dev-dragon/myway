@@ -160,4 +160,59 @@ export class EvenementService {
       translations: { fr: { __titre: 'Débat' } },
     },
   }
+
+  filter(
+    searchFiltre: string = '',
+    secteurFiltre: string,
+    typeEvent: any,
+    dateDebut: any,
+    dateFin: any,
+  ) {
+    this.listEvents = this.allEvents
+
+    if (searchFiltre != '') {
+      this.listEvents = this.listEvents.filter((event: any) => {
+        return event.titre.toLowerCase().includes(searchFiltre.toLowerCase())
+      })
+    } else if (secteurFiltre != '') {
+      this.listEvents = this.listEvents.filter((event: any) => {
+        return event.secteur == secteurFiltre
+      })
+    } else if (dateDebut != '') {
+      this.listEvents = this.listEvents.filter((event: any) => {
+        return event.dateDebut > dateDebut ? -1 : 1
+      })
+    } else if (dateFin != '') {
+      this.listEvents = this.listEvents.filter((event: any) => {
+        return event.dateFin < dateFin ? -1 : 1
+      })
+    }
+    console.log(dateDebut)
+    console.log(dateFin)
+
+    this.checkboxFiltre(typeEvent, 'typeEvent')
+  }
+
+  checkboxFiltre(CheckboxList: any, label: any) {
+    let newList2
+    let newList3: any = this.listEvents
+    let isFirstTime: Boolean = true
+    CheckboxList.map((filtre: any) => {
+      if (filtre.nativeElement.checked) {
+        if (isFirstTime == true) {
+          isFirstTime = false
+          newList3 = []
+        }
+        newList2 = this.listEvents
+        newList2 = newList2.filter((offre: any) => {
+          return offre[label] == filtre.nativeElement.value
+        })
+
+        newList2.map((list: any) => {
+          newList3.push(list)
+        })
+      }
+    })
+    this.listEvents = newList3
+  }
 }
