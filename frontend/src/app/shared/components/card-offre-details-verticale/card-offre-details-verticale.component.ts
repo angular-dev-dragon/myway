@@ -7,7 +7,8 @@ import { Component, Input, OnInit } from '@angular/core'
 })
 export class CardOffreDetailsVerticaleComponent implements OnInit {
   @Input() image: any = ''
-
+  @Input() ShowBTN: boolean = false
+  @Input() niveauEt: any = ''
   @Input() titre: any = ''
   @Input() secteur: any = ''
   @Input() poste: any = ''
@@ -15,7 +16,7 @@ export class CardOffreDetailsVerticaleComponent implements OnInit {
   @Input() typeEntreprise: any = ''
   @Input() typeContrat: any = ''
   @Input() typePoste: any = ''
-
+  @Input() PerspectiveEmploi: any = ''
   @Input() datePublication: any = ''
   @Input() adresse: any = ''
 

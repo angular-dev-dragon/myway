@@ -13,6 +13,7 @@ import {
 })
 export class ListMetiersComponent implements OnInit {
   @Input() Image = ''
+
   metiers: any = [
     {
       Image: '',
