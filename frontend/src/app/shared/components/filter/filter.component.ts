@@ -33,7 +33,7 @@ export class FilterComponent implements OnInit {
   @ViewChild('date') dateInput!: any;
   @ViewChildren('typeSociete') typeSocieteBox!: any;
   @ViewChildren('metier') metierBox!: any;
-
+  orientation: any = 'verticale';
   constructor(
     private quizService: QuizService,
     private metierService: MetierService,
@@ -43,14 +43,17 @@ export class FilterComponent implements OnInit {
     private condidatureSpontaneeService: CondidatureSpontaneeService,
     private recurteurService: RecruteurService
   ) {}
-  @Input() pageName: string = '';
+  @Input() pageName: string = 'sort';
   @Input() pfilterType: string = 'detail';
-
+  sort_by_name: string = '';
+  sort_by_date: string = 'sort';
   ngOnInit(): void {
     console.log(this.pageName);
   }
 
   filter() {
+    let sort_by_name = this.sort_by_name;
+    let sort_by_date = this.sort_by_date;
     let nameFilter = this.searchInput.nativeElement.value || '';
     let metiertValue = this.metierBox._results || '';
 
@@ -81,6 +84,7 @@ export class FilterComponent implements OnInit {
     if (this.pageName == 'metier') {
       this.metierService.filter(nameFilter, metiertValue);
     }
+
     if (this.pageName == 'offre') {
       this.offreService.filter(
         nameFilter,
@@ -92,12 +96,14 @@ export class FilterComponent implements OnInit {
         contratFiltre,
         niveauxEtFiltre,
         niveauxExFiltre,
-        langueFiltre
+        langueFiltre,
+        sort_by_name,
+        sort_by_date
       );
     }
     if (this.pageName == 'demande specifique') {
       this.demandeSpecifiqueService.filter(
-       nameFilter,
+        nameFilter,
         secteurFiltre,
         paysFiltre,
         regionFiltre,
@@ -141,5 +147,25 @@ export class FilterComponent implements OnInit {
         langueFiltre
       );
     }
+  }
+
+  sortByNmae(i: number) {
+    let a: number = 0;
+    a + i;
+    if (a == 1) {
+      this.sort_by_name = 'sort-up';
+    }
+    if (a == 2) {
+      this.sort_by_name = 'sort-down';
+      a = 0;
+    }
+  }
+
+  sortByDate(i: string) {
+    this.sort_by_date = i;
+  }
+
+  changeview(or: any) {
+    this.orientation = or;
   }
 }
