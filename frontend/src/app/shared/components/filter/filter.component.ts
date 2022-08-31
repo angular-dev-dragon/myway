@@ -38,6 +38,7 @@ export class FilterComponent implements OnInit {
   }
 
   filter() {
+    let nameFilter = this.searchInput.nativeElement.value || ''
     let metiertValue = this.metierBox._results || ''
 
     let villeFiltre = this.villeSelect?.nativeElement.value || ''
@@ -67,9 +68,15 @@ export class FilterComponent implements OnInit {
     if (this.pageName == 'metier') {
       this.metierService.filter('', metiertValue)
     }
+    if (this.pageName == 'quiz') {
+      this.quizService.filter(nameFilter, metiertValue, secteurFiltre)
+    }
+    if (this.pageName == 'metier') {
+      this.metierService.filter(nameFilter, metiertValue)
+    }
     if (this.pageName == 'offre') {
       this.offreService.filter(
-        '',
+        nameFilter,
         secteurFiltre,
         paysFiltre,
         regionFiltre,
@@ -117,7 +124,7 @@ export class FilterComponent implements OnInit {
     }
     if (this.pageName == 'candidat') {
       this.candidatService.filter(
-        '',
+        nameFilter,
         secteurFiltre,
         paysFiltre,
         regionFiltre,
