@@ -13,9 +13,14 @@
         class="card-body p-0"
         style="margin-top: 18px; margin-inline: 0.5em;"
       >
-        <h5 class="card-title" style="font-size: 25px; margin-bottom: 13px;">
-          {{ titre }}
-        </h5>
+        <div class="metier">
+          <h5 class="card-title" style="font-size: 25px; margin-bottom: 13px;">
+            {{ titre }}
+          </h5>
+          <button type="button" *ngIf="ShowBTN" class="btn btn-outline-success">
+            Offres de ce métier
+          </button>
+        </div>
         <h5 class="poste">{{ secteur }}</h5>
         <h6
           *ngIf="typePoste && poste"
@@ -31,6 +36,20 @@
         >
           {{ nomEntreprise }} : {{ typeEntreprise }}
         </h6>
+        <h6
+          *ngIf="niveauEt"
+          style="color: #4c4a4a; font-size: 20px; margin-bottom: 13px;"
+          class="card-text"
+        >
+          {{ 'offre.nivEtNece' | translate }} : {{ niveauEt }}
+        </h6>
+        <h6
+          *ngIf="PerspectiveEmploi"
+          style="color: #4c4a4a; font-size: 20px; margin-bottom: 13px;"
+          class="card-text"
+        >
+          {{ 'offre.PerspectiveEmploi' | translate }} : {{ PerspectiveEmploi }}
+        </h6>
         <ul
           style="
             list-style: none;
@@ -40,7 +59,7 @@
             color: #6e6b6b;
           "
         >
-          <li style="margin-right: 20px;">
+          <li style="margin-right: 20px;" *ngIf="datePublication">
             <i class="fa-regular fa-calendar"></i>
             {{ 'offre.date_pub' | translate }}: {{ datePublication }}
           </li>
@@ -52,7 +71,7 @@
         <p class="card-text"></p>
         <p class="card-text"></p>
         <div class="row fiche1">
-          <ul class="p-0 col-md-6">
+          <ul class="p-0 col-md-6" *ngIf="typeContrat && adresse">
             <small
               class="text-muted"
               style="list-style: none; display: flex; font-size: 15px;"
@@ -67,12 +86,12 @@
               </li>
             </small>
           </ul>
-          <ul class="col-md-6 socialMedia1">
+          <!-- <ul class="col-md-6 socialMedia1">
             <li class="socialMedia">
               <p class="">{{ 'offre.partager' | translate }}:</p>
             </li>
             <li><div class="addthis_inline_share_toolbox_hvun"></div></li>
-          </ul>
+          </ul> -->
         </div>
       </div>
     </div>
