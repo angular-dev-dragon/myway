@@ -7,80 +7,9 @@ import { QuizService } from 'src/app/shared/services/quiz.service'
   styleUrls: ['./list-quiz.component.scss'],
 })
 export class ListQuizComponent implements OnInit {
-  constructor(public quizService: QuizService) {
-    this.listQuiz = this.allListQuiz
-
-    this.allListQuiz = this.quizService.getQuiz()
-    this.listQuiz = this.allListQuiz
-  }
+  constructor(public quizService: QuizService) {}
 
   ngOnInit(): void {}
-  allListQuiz: any = [
-    {
-      image:
-        'https://wegate.eu/sites/default/files/styles/resize_750x450/public/coursera.jpg?itok=5dhpuGwQ',
-      titre: 'Quiz HTML CSS',
-      resume:
-        'Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They’re made interactive with the included Bootstrap dropdown JavaScript plugin. They’re toggled by clicking, not by hovering; this is an intentional design decision.',
-      domaine: 'Front-End Developpement',
-      specialisation: 'Bootstrap Html CSS',
-      nbQuestions: 10,
-      date: '2022-05-15',
-      niveau: 'Avancé',
-      note: 5,
-      secteur: 'Informatique',
-      metier: ['Developpeur', 'Developpeur Front-End'],
-    },
-    {
-      image:
-        'https://wegate.eu/sites/all/themes/wegate_foundation/images/logo-footer.svg',
-      titre: 'Quiz Backend Developpement',
-      resume:
-        'Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They’re made interactive with the included Bootstrap dropdown JavaScript plugin. They’re toggled by clicking, not by hovering; this is an intentional design decision.',
-
-      domaine: 'Front-End Developpement',
-      specialisation: 'Bootstrap Html CSS',
-      nbQuestions: 10,
-      date: '2022-05-15',
-      niveau: 'Avancé',
-      note: 4.5,
-      secteur: 'Informatique',
-      metier: ['Developpeur'],
-    },
-    {
-      image:
-        'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/ba/e14875b76f4e799e067d3551076e8c/1200x600_DA.png?auto=format%2Ccompress&dpr=1&w=268',
-      titre: 'Quiz Marketing Digitale',
-      resume:
-        'Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They’re made interactive with the included Bootstrap dropdown JavaScript plugin. They’re toggled by clicking, not by hovering; this is an intentional design decision.',
-
-      domaine: 'Front-End Developpement',
-      specialisation: 'Bootstrap Html CSS',
-      nbQuestions: 10,
-      date: '2022-05-15',
-      niveau: 'Débutant',
-      note: 3.5,
-      secteur: 'Agriculture',
-      metier: ['DevOps'],
-    },
-    {
-      image:
-        'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/14/b2d530f1ad11e7ab380fc0c6c817a8/Search-Thumbnail.jpg?auto=format%2Ccompress&dpr=1&w=268',
-      titre: 'Quiz React JS',
-      resume:
-        'Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They’re made interactive with the included Bootstrap dropdown JavaScript plugin. They’re toggled by clicking, not by hovering; this is an intentional design decision.',
-      niveau: 'Intermediare',
-
-      domaine: 'Front-End Developpement',
-      specialisation: 'Bootstrap Html CSS',
-      nbQuestions: 10,
-      date: '2022-05-15',
-      note: 4,
-      secteur: 'Électronique',
-      metier: ['DevOps'],
-    },
-  ]
-  listQuiz: any = []
 
   // @ViewChildren('metier') metierBox!: any
 
@@ -139,6 +68,10 @@ export class ListQuizComponent implements OnInit {
   //     this.listQuiz,
   //   )
   // }
+  listQuiz: any = []
+  filtredData(value: any) {
+    this.listQuiz = value
+  }
 
   sort(type: any) {
     this.listQuiz.sort((a: any, b: any) =>

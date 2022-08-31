@@ -195,21 +195,16 @@
           <div class="row px-2">
             <div class="col-md-6">
               <div class="my-2">
-                <!-- <div class="form__group field" style="margin-top: -15px;">
-                  <input
-                    (keyup)="filter()"
-                    #search
-                    class="form__field"
-                    type="text"
-                    id="saerchBar"
-                    placeholder="Mot clés, titre du poste..."
-                    aria-label="Search"
-                    aria-describedby="search-addon"
-                  />
-                  <label for="saerchBar" class="form__label">
-                    Mot clés, titre du poste...
-                  </label>
-                </div> -->
+                <app-filter-by-text
+                  [pageName]="'quiz'"
+                  [data]="this.quizService.listQuiz"
+                  (filtredData)="filtredData($event)"
+                ></app-filter-by-text>
+                <app-sort
+                  [data]="listQuiz"
+                  [pageName]="'quiz'"
+                  [type]="'titre'"
+                ></app-sort>
               </div>
             </div>
             <div class="col-md-6 order">
@@ -251,7 +246,7 @@
           <div class="row">
             <app-card-quiz
               class="col-md-4 mb-3"
-              *ngFor="let quiz of this.quizService.listQuiz"
+              *ngFor="let quiz of listQuiz"
               [routerLink]="['/quiz/quiz-details']"
               [image]="quiz.image"
               [titre]="quiz.titre"
