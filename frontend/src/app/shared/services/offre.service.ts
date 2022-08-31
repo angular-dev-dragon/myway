@@ -115,8 +115,8 @@ export class OffreService {
     niveauxEtFiltre: any,
     niveauxExFiltre: any,
     langueFiltre: any,
-    sort_by_name: string,
-    sort_by_date: string,
+    // sort_by_name: string,
+    // sort_by_date: string,
 
   ) {
     this.listOffres = this.allOffres;
@@ -206,13 +206,13 @@ export class OffreService {
 
 
 
-  sort_by_name(type: string , i : string) {
-    this.listOffres.sort((a: any, b: any) => a[type].toLowerCase() > b[type].toLowerCase() ? 1 : -1);
-  }
+  // sort_by_name(type: string , i : string) {
+  //   this.listOffres.sort((a: any, b: any) => a[type].toLowerCase() > b[type].toLowerCase() ? 1 : -1);
+  // }
 
-  sort_by_date(type: string, i : string) {
-     this.listOffres.sort((a: any, b: any) => (a.Date > b.Date ? 1 : -1));
-  }
+  // sort_by_date(type: string, i : string) {
+  //    this.listOffres.sort((a: any, b: any) => (a.Date > b.Date ? 1 : -1));
+  // }
 
 
 
