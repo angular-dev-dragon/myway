@@ -47,8 +47,9 @@ export class FilterComponent implements OnInit {
     private demandeSpecifiqueService: DemandeSpecifiqueService,
     private condidatureSpontaneeService: CondidatureSpontaneeService,
     private recurteurService: RecruteurService,
-    private evenemenetService: EvenementService,
+    public evenementService: EvenementService,
   ) {}
+
   @Input() pageName: string = 'sort'
   @Input() pfilterType: string = 'detail'
   sort_by_name: string = ''
@@ -60,8 +61,10 @@ export class FilterComponent implements OnInit {
   filter() {
     let sort_by_name = this.sort_by_name
     let sort_by_date = this.sort_by_date
+
     let nameFilter = this.searchInput.nativeElement.value || ''
 
+    console.log(nameFilter)
     let metiertValue = this.metierBox._results || ''
 
     let villeFiltre = this.villeSelect?.nativeElement.value || ''
@@ -85,8 +88,6 @@ export class FilterComponent implements OnInit {
 
     let typeFiltre = this.typeSocieteBox?._results || ''
     let typeEvent = this.typeEventBox?._results || ''
-
-    console.log(this.dateDebutInput)
 
     let dateDebut = this.dateDebutInput?.nativeElement.value || ''
     let dateFin = this.dateFinInput?.nativeElement.value || ''
@@ -161,9 +162,9 @@ export class FilterComponent implements OnInit {
       )
     }
     if (this.pageName == 'evenement') {
-      this.evenemenetService.filter(
+      this.evenementService.filter(
         nameFilter,
-        secteurFiltre,
+
         typeEvent,
         dateDebut,
         dateFin,

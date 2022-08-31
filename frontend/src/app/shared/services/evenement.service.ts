@@ -163,20 +163,17 @@ export class EvenementService {
 
   filter(
     searchFiltre: string = '',
-    secteurFiltre: string,
+
     typeEvent: any,
     dateDebut: any,
     dateFin: any,
   ) {
     this.listEvents = this.allEvents
+    console.log(typeEvent)
 
     if (searchFiltre != '') {
       this.listEvents = this.listEvents.filter((event: any) => {
         return event.titre.toLowerCase().includes(searchFiltre.toLowerCase())
-      })
-    } else if (secteurFiltre != '') {
-      this.listEvents = this.listEvents.filter((event: any) => {
-        return event.secteur == secteurFiltre
       })
     } else if (dateDebut != '') {
       this.listEvents = this.listEvents.filter((event: any) => {
@@ -187,10 +184,8 @@ export class EvenementService {
         return event.dateFin < dateFin ? -1 : 1
       })
     }
-    console.log(dateDebut)
-    console.log(dateFin)
 
-    this.checkboxFiltre(typeEvent, 'typeEvent')
+    this.checkboxFiltre(typeEvent, 'TypeEvenement')
   }
 
   checkboxFiltre(CheckboxList: any, label: any) {
@@ -203,6 +198,8 @@ export class EvenementService {
           isFirstTime = false
           newList3 = []
         }
+        console.log()
+
         newList2 = this.listEvents
         newList2 = newList2.filter((offre: any) => {
           return offre[label] == filtre.nativeElement.value

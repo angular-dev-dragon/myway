@@ -111,7 +111,8 @@ import { CardQuizComponent } from './components/card-quiz/card-quiz.component'
 
 import { CardMetiersComponent } from './components/card-metiers/card-metiers.component'
 import { CDetailsComponent } from './components/c-details/c-details.component'
-import { FilterComponent } from './components/filter/filter.component'
+import { FilterComponent } from './components/filter/filter.component';
+import { FilterByTextComponent } from './filter-by-text/filter-by-text.component'
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -235,6 +236,7 @@ let modules: any = [
     CardMetiersComponent,
 
     FilterComponent,
+     FilterByTextComponent,
   ],
 
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
