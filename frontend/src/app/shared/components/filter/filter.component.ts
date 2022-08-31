@@ -45,10 +45,21 @@ export class FilterComponent implements OnInit {
   ) {}
   @Input() pageName: string = 'sort';
   @Input() pfilterType: string = 'detail';
-  sort_by_name: string = '';
+  sort_by_name: string = 'sort';
   sort_by_date: string = 'sort';
+
   ngOnInit(): void {
     console.log(this.pageName);
+  }
+
+  sortByName(i: string) {
+    this.sort_by_name = i;
+  }
+  sortByDate(i: string) {
+    this.sort_by_date = i;
+  }
+  changeview(or: any) {
+    this.orientation = or;
   }
 
   filter() {
@@ -56,7 +67,6 @@ export class FilterComponent implements OnInit {
     let sort_by_date = this.sort_by_date;
     let nameFilter = this.searchInput.nativeElement.value || '';
     let metiertValue = this.metierBox._results || '';
-
     let villeFiltre = this.villeSelect?.nativeElement.value || '';
     // console.log('filtreParVille', villeFiltre)
     let regionFiltre = this.regionSelect?.nativeElement.value || '';
@@ -147,25 +157,5 @@ export class FilterComponent implements OnInit {
         langueFiltre
       );
     }
-  }
-
-  sortByNmae(i: number) {
-    let a: number = 0;
-    a + i;
-    if (a == 1) {
-      this.sort_by_name = 'sort-up';
-    }
-    if (a == 2) {
-      this.sort_by_name = 'sort-down';
-      a = 0;
-    }
-  }
-
-  sortByDate(i: string) {
-    this.sort_by_date = i;
-  }
-
-  changeview(or: any) {
-    this.orientation = or;
   }
 }
