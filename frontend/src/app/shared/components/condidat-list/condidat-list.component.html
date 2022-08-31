@@ -19,26 +19,15 @@
           <div class="section-recruteur mb-3 w-100">
             <div class="flex-grow-1">
               <div class="row px-2">
-                <div class="col-md-6">
+                <div class="col-md-8">
                   <div class="my-2">
                     <div class="form__group field" style="margin-top: -15px;">
-                      <!-- <input
-                        (keyup)="filter()"
-                        #search
-                        class="form__field"
-                        type="text"
-                        id="saerchBar"
-                        placeholder="Mot clés, titre du poste..."
-                        aria-label="Search"
-                        aria-describedby="search-addon"
-                      /> -->
-                      <label for="saerchBar" class="form__label">
-                        Mot clés, titre du poste...
-                      </label>
+                        <app-filter [pfilterType]="'name'" [pageName]="'candidat'"></app-filter>
+                        
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6 order">
+                <div class="col-md-4 order">
                   <div class="my-2 d-flex">
                     <div class="btn-group">
                       <button

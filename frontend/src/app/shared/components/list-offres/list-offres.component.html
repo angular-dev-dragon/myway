@@ -19,77 +19,9 @@
           </div>
           <div class="section-recruteur mb-3 w-100">
             <div class="flex-grow-1">
-              <div class="row px-2">
-                <div class="col-md-6">
-                  <div class="my-2">
-                    <!-- <div class="form__group field" style="margin-top: -15px;">
-                      <input
-                        (keyup)="filter()"
-                        #search
-                        class="form__field"
-                        type="text"
-                        id="saerchBar"
-                        placeholder="Mot clés, titre du poste..."
-                        aria-label="Search"
-                        aria-describedby="search-addon"
-                      />
-                      <label for="saerchBar" class="form__label">
-                        Mot clés, titre du poste...
-                      </label>
-                    </div> -->
-                  </div>
-                </div>
-                <div class="col-md-6 order">
-                  <div class="my-2 d-flex">
-                    <div class="btn-group">
-                      <button
-                        (click)="changeview('verticale')"
-                        type="button"
-                        class="btn btn-default active"
-                      >
-                        <i class="fa fa-list"></i>
-                      </button>
-                      <button
-                        (click)="changeview('horizontale')"
-                        type="button"
-                        class="btn btn-default"
-                      >
-                        <i class="fa fa-th"></i>
-                      </button>
-                    </div>
 
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-default dropdown-toggle"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarDropdown"
-                        aria-controls="navbarDropdown"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                      >
-                        Order by
-                      </button>
-                      <ul
-                        class="dropdown-menu custom-navbar"
-                        aria-labelledby="navbarDropdown"
-                        id="navbarDropdown"
-                      >
-                        <li>
-                          <a class="dropdown-item" (click)="sort('Intitule')">
-                            Name
-                          </a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" (click)="sortbyDate()">
-                            Date
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
+                    <app-filter [pfilterType]="'name'" [pageName]="'offre'"></app-filter>
 
               <!-- BEGIN TABLE RESULT -->
               <hr />

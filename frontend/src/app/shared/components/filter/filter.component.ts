@@ -20,60 +20,71 @@ import { RecruteurService } from '../../services/recruteur.service'
   styleUrls: ['./filter.component.scss'],
 })
 export class FilterComponent implements OnInit {
+  @ViewChild('typePoste') typePosteSelect!: any;
+  @ViewChild('secteur') secteurSelect!: any;
+  @ViewChild('ville') villeSelect!: any;
+  @ViewChild('region') regionSelect!: any;
+  @ViewChild('pays') paysSelect!: any;
+  @ViewChildren('contrat') contratBox!: any;
+  @ViewChildren('niveauxEt') niveauxEtBox!: any;
+  @ViewChildren('niveauxEx') niveauxExBox!: any;
+  @ViewChildren('langue') langueBox!: any;
+  @ViewChild('search') searchInput!: any;
+  @ViewChild('date') dateInput!: any;
+  @ViewChildren('typeSociete') typeSocieteBox!: any;
+  @ViewChildren('metier') metierBox!: any;
+  orientation: any = 'verticale';
   constructor(
     private quizService: QuizService,
     private metierService: MetierService,
     private offreService: OffreService,
-
     private candidatService: CondidaInfoService,
     private demandeSpecifiqueService: DemandeSpecifiqueService,
     private condidatureSpontaneeService: CondidatureSpontaneeService,
-    private recurteurService: RecruteurService,
+    private recurteurService: RecruteurService
   ) {}
-  @Input() pageName: string = ''
-  @Input() pfilterType: string = 'detail'
-
+  @Input() pageName: string = 'sort';
+  @Input() pfilterType: string = 'detail';
+  sort_by_name: string = '';
+  sort_by_date: string = 'sort';
   ngOnInit(): void {
-    console.log(this.pageName)
+    console.log(this.pageName);
   }
 
   filter() {
-    let nameFilter = this.searchInput.nativeElement.value || ''
-    let metiertValue = this.metierBox._results || ''
+    let sort_by_name = this.sort_by_name;
+    let sort_by_date = this.sort_by_date;
+    let nameFilter = this.searchInput.nativeElement.value || '';
+    let metiertValue = this.metierBox._results || '';
 
-    let villeFiltre = this.villeSelect?.nativeElement.value || ''
+    let villeFiltre = this.villeSelect?.nativeElement.value || '';
     // console.log('filtreParVille', villeFiltre)
-    let regionFiltre = this.regionSelect?.nativeElement.value || ''
+    let regionFiltre = this.regionSelect?.nativeElement.value || '';
     // console.log('filtre par region', regionFiltre)
-    let paysFiltre = this.paysSelect?.nativeElement.value || ''
+    let paysFiltre = this.paysSelect?.nativeElement.value || '';
     // console.log('filtre par pays', paysFiltre)
-    let contratFiltre = this.contratBox?._results || ''
+    let contratFiltre = this.contratBox?._results || '';
     // console.log('filtre par contrat', contratFiltre)
-    let dateFilter = this.dateInput?.nativeElement.value || ''
+    let dateFilter = this.dateInput?.nativeElement.value || '';
 
-    let niveauxEtFiltre = this.niveauxEtBox?._results || ''
+    let niveauxEtFiltre = this.niveauxEtBox?._results || '';
     // console.log('filtre par niveaux etude', niveauxEtFiltre)
-    let niveauxExFiltre = this.niveauxExBox?._results || ''
+    let niveauxExFiltre = this.niveauxExBox?._results || '';
     // console.log('filtre par niveaux experience', niveauxExFiltre)
-    let langueFiltre = this.langueBox?._results || ''
+    let langueFiltre = this.langueBox?._results || '';
     // console.log('filtre par langues', langueFiltre)
 
-    let secteurFiltre = this.secteurSelect?.nativeElement.value || ''
+    let secteurFiltre = this.secteurSelect?.nativeElement.value || '';
 
-    let typeFiltre = this.typeSocieteBox?._results || ''
+    let typeFiltre = this.typeSocieteBox?._results || '';
 
     if (this.pageName == 'quiz') {
-      this.quizService.filter('', metiertValue, secteurFiltre)
+      this.quizService.filter(nameFilter, metiertValue, secteurFiltre);
     }
     if (this.pageName == 'metier') {
-      this.metierService.filter('', metiertValue)
+      this.metierService.filter(nameFilter, metiertValue);
     }
-    if (this.pageName == 'quiz') {
-      this.quizService.filter(nameFilter, metiertValue, secteurFiltre)
-    }
-    if (this.pageName == 'metier') {
-      this.metierService.filter(nameFilter, metiertValue)
-    }
+
     if (this.pageName == 'offre') {
       this.offreService.filter(
         nameFilter,
@@ -86,11 +97,13 @@ export class FilterComponent implements OnInit {
         niveauxEtFiltre,
         niveauxExFiltre,
         langueFiltre,
-      )
+        sort_by_name,
+        sort_by_date
+      );
     }
     if (this.pageName == 'demande specifique') {
       this.demandeSpecifiqueService.filter(
-        '',
+        nameFilter,
         secteurFiltre,
         paysFiltre,
         regionFiltre,
@@ -98,29 +111,29 @@ export class FilterComponent implements OnInit {
         dateFilter,
         contratFiltre,
         niveauxEtFiltre,
-        niveauxExFiltre,
-      )
+        niveauxExFiltre
+      );
     }
     if (this.pageName == 'candidature spontanee') {
       this.condidatureSpontaneeService.filter(
-        '',
+        nameFilter,
         secteurFiltre,
         paysFiltre,
         regionFiltre,
         villeFiltre,
-        typeFiltre,
-      )
+        typeFiltre
+      );
     }
 
     if (this.pageName == 'recruteur') {
       this.recurteurService.filter(
-        '',
+        nameFilter,
         secteurFiltre,
         paysFiltre,
         regionFiltre,
         villeFiltre,
-        typeFiltre,
-      )
+        typeFiltre
+      );
     }
     if (this.pageName == 'candidat') {
       this.candidatService.filter(
@@ -131,22 +144,28 @@ export class FilterComponent implements OnInit {
         villeFiltre,
         niveauxEtFiltre,
         niveauxExFiltre,
-        langueFiltre,
-      )
+        langueFiltre
+      );
     }
   }
 
-  @ViewChild('typePoste') typePosteSelect!: any
-  @ViewChild('secteur') secteurSelect!: any
-  @ViewChild('ville') villeSelect!: any
-  @ViewChild('region') regionSelect!: any
-  @ViewChild('pays') paysSelect!: any
-  @ViewChildren('contrat') contratBox!: any
-  @ViewChildren('niveauxEt') niveauxEtBox!: any
-  @ViewChildren('niveauxEx') niveauxExBox!: any
-  @ViewChildren('langue') langueBox!: any
-  @ViewChild('search') searchInput!: any
-  @ViewChild('date') dateInput!: any
-  @ViewChildren('typeSociete') typeSocieteBox!: any
-  @ViewChildren('metier') metierBox!: any
+  sortByNmae(i: number) {
+    let a: number = 0;
+    a + i;
+    if (a == 1) {
+      this.sort_by_name = 'sort-up';
+    }
+    if (a == 2) {
+      this.sort_by_name = 'sort-down';
+      a = 0;
+    }
+  }
+
+  sortByDate(i: string) {
+    this.sort_by_date = i;
+  }
+
+  changeview(or: any) {
+    this.orientation = or;
+  }
 }

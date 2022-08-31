@@ -30,8 +30,12 @@ export class RecruteurService {
       condidature,
     )
   }
+
+
   allRecruteur: any = [
+   // #region just one
     {
+
       logo:
         'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/8124/logo.png?1469002464',
       imageBg:
@@ -157,6 +161,8 @@ export class RecruteurService {
       Ville: 'Casablanca',
       Region: 'Grand Casablanca',
     },
+   // #endregion
+
     {
       logo:
         'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/69883/logo.png?1621953434',
@@ -172,6 +178,9 @@ export class RecruteurService {
       Region: 'Tanger-Tetouan',
     },
   ]
+
+
+
   listRecruteur: any[] = []
   filter(
     searchFiltre: string = '',
@@ -182,11 +191,10 @@ export class RecruteurService {
     typeSociete: any,
   ) {
     this.listRecruteur = this.allRecruteur
-    console.log('enytrerezsfxc ')
 
     if (searchFiltre != '') {
       this.listRecruteur = this.listRecruteur.filter((offre: any) => {
-        return offre.Intitule.toLowerCase().includes(searchFiltre.toLowerCase())
+        return offre.title.toLowerCase().includes(searchFiltre.toLowerCase());
       })
     }
     if (paysFiltre != '') {

@@ -107,7 +107,7 @@ import { CondidatListComponent } from './components/condidat-list/condidat-list.
 import { ListSocieteComponent } from './components/list-societe/list-societe.component'
 import { CardOffreDetailsVerticaleComponent } from './components/card-offre-details-verticale/card-offre-details-verticale.component'
 
-import { CardQuizComponent } from './components/list-offres/card-quiz/card-quiz.component'
+import { CardQuizComponent } from './components/card-quiz/card-quiz.component'
 
 import { CardMetiersComponent } from './components/card-metiers/card-metiers.component'
 import { CDetailsComponent } from './components/c-details/c-details.component'
