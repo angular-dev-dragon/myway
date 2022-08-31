@@ -16,6 +16,8 @@ export class CardArticleComponent implements OnInit {
   @Input() sousTitre = ''
   @Input() dateDebut = ''
   @Input() dateFin = ''
+  @Input() link: any = ''
+  @Input() organisateur = ''
 
   @Input() heureDebut = ''
   @Input() heureFin = ''
