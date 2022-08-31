@@ -9,6 +9,7 @@ export class CardMetiersComponent implements OnInit {
   @Input() Image = ''
   @Input() Intitule = ''
   @Input() Secteur = ''
+  @Input() link: any = ''
   constructor() {}
 
   ngOnInit(): void {}

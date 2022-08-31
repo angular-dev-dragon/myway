@@ -10,7 +10,7 @@ export class OffreService {
   }
   allOffres: any = [
     {
-      Intitule: 'Développeur1',
+      Intitule: 'AHMED',
       TypeContrat: 'CDI',
       Poste:
         ' Développeur Front-End Développeur Front-End Développeur Front-End',
@@ -115,33 +115,21 @@ export class OffreService {
     niveauxEtFiltre: any,
     niveauxExFiltre: any,
     langueFiltre: any,
-    sort_by_name: string,
-    sort_by_date: string,
+    // sort_by_name: string,
+    // sort_by_date: string,
 
   ) {
     this.listOffres = this.allOffres;
 
     if (searchFiltre != '') {
-      if (sort_by_name == 'true') {
-
-        this.listOffres = this.listOffres.filter((offre: any) => {
-          offre.Intitule.toLowerCase().includes(
-            searchFiltre.toLowerCase()
-          );
-        });
-
-      return this.sort_by_name(this.listOffres.Intitule);
-      }
 
 
-        this.listOffres = this.listOffres.filter(
-          (offre: any) => {
-            offre.Intitule.toLowerCase().includes(
-              searchFiltre.toLowerCase()
-            )
-          })
-        return this.allOffres
-
+                this.listOffres = this.listOffres.filter((offre: any) => {
+                  offre.Intitule.toLowerCase().includes(
+                    searchFiltre.toLowerCase()
+                  );
+                });
+                return this.allOffres;
     }
 
     if (paysFiltre != '') {
@@ -218,15 +206,13 @@ export class OffreService {
 
 
 
-  sort_by_name(type: string) {
-    this.listOffres.sort((a: any, b: any) => a[type].toLowerCase() > b[type].toLowerCase() ? 1 : -1);
-  }
+  // sort_by_name(type: string , i : string) {
+  //   this.listOffres.sort((a: any, b: any) => a[type].toLowerCase() > b[type].toLowerCase() ? 1 : -1);
+  // }
 
-  sort_by_date(type: string) {
-     this.listOffres.sort((a: any, b: any) => (a.Date > b.Date ? 1 : -1));
-  }
-
-
+  // sort_by_date(type: string, i : string) {
+  //    this.listOffres.sort((a: any, b: any) => (a.Date > b.Date ? 1 : -1));
+  // }
 
 
 
@@ -236,5 +222,11 @@ export class OffreService {
 
 
 
+
+
+}
+
+function elseif(arg0: boolean) {
+  throw new Error('Function not implemented.');
 }
 
