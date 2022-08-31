@@ -1,4 +1,4 @@
-<div  *ngIf="pfilterType=='detail'" class="sideBar-Main">
+<div *ngIf="pfilterType == 'detail'" class="sideBar-Main">
   <div
     class="btn btn-outline-secondary"
     #btnSideBar
@@ -877,6 +877,154 @@
           </div>
         </div>
         <!-- #endregion -->
+        <!-- #region TypeEvent -->
+        <div class="accordion-item" *ngIf="pageName == 'evenement'">
+          <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseTypeEvent"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseTypeEvent"
+            >
+              <i class="fa-solid fa-graduation-cap icone-filter"></i>
+              <h4>Type Event:</h4>
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseTypeEvent"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingFive"
+          >
+            <div class="accordion-body filtreee">
+              <div style="margin-top: 20px; font-size: 20px;">
+                <div class="checkbox">
+                  <label>
+                    <input
+                      (change)="filter()"
+                      value="Presentiel"
+                      #typeEvent
+                      type="checkbox"
+                      class="icheck"
+                    />
+                    Presentiel
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input
+                      (change)="filter()"
+                      value="En Ligne"
+                      #typeEvent
+                      type="checkbox"
+                      class="icheck"
+                    />
+                    En Ligne
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input
+                      (change)="filter()"
+                      value="Presentiel avec couverture el ligne"
+                      #typeEvent
+                      type="checkbox"
+                      class="icheck"
+                    />
+                    Presentiel avec couverture el ligne
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- #endregion -->
+        <!-- #region Date Debut -->
+        <div class="accordion-item" *ngIf="pageName == 'evenement'">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseDateDebut"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseDateDebut"
+            >
+              <i class="fa-solid fa-calendar icone-filter"></i>
+              <h4>Par date Debut:</h4>
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseDateDebut"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingThree"
+          >
+            <div class="accordion-body filtreee">
+              <label class="filter filtreee my-2">
+                Date de Debut:
+              </label>
+              <div
+                class="input-group date form_date"
+                data-date="2014-06-14T05:25:07Z"
+                data-date-format="dd-mm-yyyy"
+                data-link-field="dtp_input2"
+              >
+                <input
+                  (change)="filter()"
+                  #dateDebutEvent
+                  class="input-group date form_date form-control"
+                  type="date"
+                  id="start"
+                  name="dateDebut"
+                />
+              </div>
+              <input type="hidden" id="dateDebut" value="" />
+            </div>
+          </div>
+        </div>
+        <!-- #endregion -->
+        <!-- #region DateFin -->
+        <div class="accordion-item" *ngIf="pageName == 'evenement'">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseDateFin"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseDateFin"
+            >
+              <i class="fa-solid fa-calendar icone-filter"></i>
+              <h4>Par date Fin:</h4>
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseDateFin"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingThree"
+          >
+            <div class="accordion-body filtreee">
+              <label class="filter filtreee my-2">
+                Date de fin:
+              </label>
+              <div class="input-group date form_date">
+                <input
+                  (change)="filter()"
+                  #dateFinEvent
+                  class="input-group date form_date form-control"
+                  type="date"
+                  id="start"
+                  name="dateFin"
+                />
+              </div>
+              <input type="hidden" id="dateFin" value="" />
+            </div>
+          </div>
+        </div>
+
+        <!-- #endregion -->
       </div>
     </div>
   </div>
@@ -885,94 +1033,107 @@
 
 
 
-<div *ngIf="pfilterType=='name'" class="row px-2">
-                <div class="col-md-8">
-                  <div class="my-2">
-                    <div class="my-2">
-                      <div class="form__group field" style="margin-top: -15px;">
-                        <input (keyup)="filter()" #search class="form__field" type="text" id="saerchBar"
-                          placeholder="Mot clés, titre du poste..." aria-label="Search" aria-describedby="search-addon" />
-                        <label for="saerchBar" class="form__label">
-                          Mot clés, titre du poste...
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 order">
-                  <div class="my-2 d-flex">
-                    <div class="dropdown">
-                      <button class="btn btn-default dropdown-toggle" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarDropdown" aria-controls="navbarDropdown" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        Order by
-                      </button>
-                      <ul class="dropdown-menu custom-navbar" aria-labelledby="navbarDropdown" id="navbarDropdown">
-                        <li>
-                          <div class="row">
-                            <div class="col-2"></div>
-                            <div class="col-6"> Name</div>
 
-                            <div class="col-4">
+<div *ngIf="pfilterType == 'name'" class="row px-2">
+  <div class="col-md-8">
+    <div class="my-2">
+      <div class="my-2">
+        <div class="form__group field" style="margin-top: -15px;">
+          <input
+            (keyup)="filter()"
+            #search
+            class="form__field"
+            type="text"
+            id="saerchBar"
+            placeholder="Mot clés, titre du poste..."
+            aria-label="Search"
+            aria-describedby="search-addon"
+          />
+          <label for="saerchBar" class="form__label">
+            Mot clés, titre du poste...
+          </label>
+        </div>
+      </div>
+    </div>
 
-                                  <a *ngIf="sort_by_name== 'sort'" class="dropdown-item" (click)="sortByName('sort-down')">
-                                    <i class="fa-solid fa-sort"></i>
-                                  </a>
-                                  <a *ngIf="sort_by_name== 'sort-up'" class="dropdown-item" (click)="sortByName('sort-down')">
-                                    <i class="fa-solid fa-sort-up"></i>
-                                  </a>
-                                  <a *ngIf="sort_by_name== 'sort-down'" class="dropdown-item" (click)="sortByName('sort-up')">
-                                <i class="fa-solid fa-sort-down"></i>
-                                  </a>
-
-                                    </div>
-                          </div>
-
-                        </li>
-                        <li>
-                          <div class="col-2"></div>
-                                <div class="row">
-                                  <div class="col-6"> Date </div>
-
-                                  <div class="col-4" >
-                                     <a *ngIf="sort_by_date== 'sort'"
-                                     class="dropdown-item"
-                                     (click)="sortByDate('sort-down')"
-                                     >
-                                    <i class="fa-solid fa-sort"></i>
-                                      </a>
-                                    <a *ngIf="sort_by_date== 'sort-up'"
-                                    class="dropdown-item"
-                                    (click)="sortByDate('sort-down')"
-                                    >
-                                      <i class="fa-solid fa-sort-up"></i>
-                                    </a>
-                                    <a *ngIf="sort_by_date== 'sort-down'"
-                                    class="dropdown-item"
-                                    (click)="sortByDate('sort-up')">
-                                      <i class="fa-solid fa-sort-down"
-                                      ></i>
-                                    </a>
-                                  </div>
-                                </div>
-                        </li>
-                      </ul>
-                    </div>
-
-                  </div>
-                </div>
-                <div class="btn-group">
-                  <button (click)="changeview('verticale')" type="button" class="btn btn-default active">
-                    <i class="fa fa-list"></i>
-                  </button>
-                  <button (click)="changeview('horizontale')" type="button" class="btn btn-default">
-                    <i class="fa fa-th"></i>
-                  </button>
-                </div>
   </div>
+  <div class="col-md-4 order">
+    <div class="my-2 d-flex">
+      <!-- <div class="dropdown">
+        <button
+          class="btn btn-default dropdown-toggle"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarDropdown"
+          aria-controls="navbarDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Order by
+        </button>
+        <ul
+          class="dropdown-menu custom-navbar"
+          aria-labelledby="navbarDropdown"
+          id="navbarDropdown"
+        >
+          <li>
+            <div class="row">
+              <div class="col-6">Name</div>
 
-
-
-
-
+              <div class="col-4">
+                <a class="dropdown-item" (click)="sortByNmae(1)">
+                  <i class="fa-solid fa-{{ sort_by_name }}"></i>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="row">
+              <div class="col-6">Date</div>
+ -->
+              <!-- <div class="col-4">
+                <a
+                  *ngIf="sort_by_date == 'sort'"
+                  class="dropdown-item"
+                  (click)="sortByDate('sort-down')"
+                >
+                  <i class="fa-solid fa-sort"></i>
+                </a>
+                <a
+                  *ngIf="sort_by_date == 'sort-up'"
+                  class="dropdown-item"
+                  (click)="sortByDate('sort-down')"
+                >
+                  <i class="fa-solid fa-sort-up"></i>
+                </a>
+                <a
+                  *ngIf="sort_by_date == 'sort-down'"
+                  class="dropdown-item"
+                  (click)="sortByDate('sort-up')"
+                >
+                  <i class="fa-solid fa-sort-down"></i>
+                </a>
+              <!-- </div> -->
+            <!-- </div>
+          </li>
+        </ul> -->
+      </div>
+    </div>
+  </div>
+  <!-- <div class="btn-group">
+    <button
+      (click)="changeview('verticale')"
+      type="button"
+      class="btn btn-default active"
+    >
+      <i class="fa fa-list"></i>
+    </button>
+    <button
+      (click)="changeview('horizontale')"
+      type="button"
+      class="btn btn-default"
+    >
+      <i class="fa fa-th"></i>
+    </button>
+  </div> -->
 

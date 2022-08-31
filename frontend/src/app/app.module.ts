@@ -19,6 +19,7 @@ import { ListBlogeurComponent } from './components/blog/list-blogeur/list-blogeu
 import { CompetencesModule } from './components/competences/competences.module'
 import { MetiersModule } from './components/metiers/metiers.module'
 import { QuizModule } from './components/quiz/quiz.module'
+import { EvenementModule } from './components/evenement/evenement.module'
 
 @NgModule({
   declarations: [AppComponent, ListBlogeurComponent],
@@ -37,6 +38,7 @@ import { QuizModule } from './components/quiz/quiz.module'
     EspaceCommunautaireModule,
     CompetencesModule,
     QuizModule,
+    EvenementModule,
   ],
   exports: [],
   providers: [],

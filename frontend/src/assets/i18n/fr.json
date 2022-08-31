@@ -308,5 +308,25 @@
     "date_pos": "Date de postulation",
     "partager": "Partager sur",
     "faq": "Questions/Réponses"
+  },
+  "evenement": {
+    "nbr_place": "Nombre de places",
+    "nbr_particip": "Nombre de participations:",
+    "particip": "Participation",
+    "cordon_N": "Coordonnees Numeriques",
+    "nbr_participant": "Nombre de participants en ligne",
+    "inscrire": "Pour s'inscrire:",
+    "participer": "Participer",
+    "nbr_place_assises": "Nombre max place assises",
+    "nbr_place_en_ligne": "Nombre reels des participants en Ligne",
+    "nbr_reel_participant": "Nombre reels des participants",
+    "ouverte": "Ouverte",
+    "lieux": "Lieux Event",
+    "lien_en_ligne": "Lien Pour Suivre En Ligne",
+    "indication": "Indications",
+    "indic_supp": "Indications supplémentaires",
+    "description": "Description",
+    "acteur": "Les acteurs de l'événement",
+    "programme": "Programme"
   }
 }
