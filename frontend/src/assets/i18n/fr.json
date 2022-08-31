@@ -1,7 +1,4 @@
 {
-  "question": {
-    "quest": "Question "
-  },
   "resultat": {
     "autre": "Autre Quizzes",
     "statis": "Statistiques",
@@ -10,6 +7,8 @@
     "nbr_juste": "Nombre de réponses juste",
     "bonnes": "Voir les bonnes Réponses",
     "indic": "Voir les indications",
+    "indications": "Indications",
+
     "quest": "Question",
     "soit": "soit",
     "votre_rep": "Votre Reponse",
@@ -25,6 +24,34 @@
     "mieux": "Vous Pouvez Mieux Faire",
     "recommencer": "Recommencer",
     "autre_quiz": "Faire un autre Quize"
+  },
+  "statistique_quiz": {
+    "nbr_personne": "Nombre de personne ayant : ",
+    "reponse_juste": "réponse(s) juste(s) est : ",
+    "reponse_juste2": "réponses justes est : ",
+    "res_adter": "Résultat obtenu aprés : ",
+    "participation": " participation(s)",
+    "meilleur_score": "Meilleur score : ",
+    "dernier_score": "Dernièr score : ",
+    "score_moyen": "Score moyen : ",
+    "meilleur_note": "Meilleure note : ",
+    "dernier_note": "Dernière note : ",
+    "note_moyen": "Note moyenne : ",
+    "res_quiz": "Résultat du Quiz",
+    "res_qst": "Résultat des Questions",
+    "nb_j": "Nombre de réponse(s) juste(s) :"
+  },
+  "question": {
+    "nbr_participations": "Nombre de participations:",
+    "de": "De",
+    "à": "à",
+    "participer": "Participer",
+
+    "statis": "Statistiques",
+    "nbr_quest": "Nombre de questions",
+    "nbr_partici": "Nombre de participations",
+    "nbr_juste": "Nombre de réponses juste",
+    "quest": "Question "
   },
   "form": {
     "salut": "Salutation",
@@ -207,6 +234,8 @@
     "donner_avis": "Donner Votre Avis",
     "parcourir_avis": "Parcourir les Avis",
     "list_avis": "Liste des Avis",
+    "list_quiz": "Liste des Quiz",
+
     "list_temoignage": "Liste des Temoignages",
     "list_qr": "Liste des Questions / Reponses",
     "list-recru": "List Recruteurs",
@@ -283,5 +312,25 @@
     "PerspectiveEmploi": "Perspectives d'emploi",
     "detail_met": "Détails de métiers",
     "formations": "Formations"
+  },
+  "evenement": {
+    "nbr_place": "Nombre de places",
+    "nbr_particip": "Nombre de participations:",
+    "particip": "Participation",
+    "cordon_N": "Coordonnees Numeriques",
+    "nbr_participant": "Nombre de participants en ligne",
+    "inscrire": "Pour s'inscrire:",
+    "participer": "Participer",
+    "nbr_place_assises": "Nombre max place assises",
+    "nbr_place_en_ligne": "Nombre reels des participants en Ligne",
+    "nbr_reel_participant": "Nombre reels des participants",
+    "ouverte": "Ouverte",
+    "lieux": "Lieux Event",
+    "lien_en_ligne": "Lien Pour Suivre En Ligne",
+    "indication": "Indications",
+    "indic_supp": "Indications supplémentaires",
+    "description": "Description",
+    "acteur": "Les acteurs de l'événement",
+    "programme": "Programme"
   }
 }

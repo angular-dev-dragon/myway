@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
+import { OffreService } from 'src/app/shared/services/offre.service'
 
 @Component({
   selector: 'app-list-offres-emploi',
@@ -6,96 +7,7 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./list-offres-emploi.component.scss'],
 })
 export class ListOffresEmploiComponent implements OnInit {
-  constructor() {}
+  constructor(public offreService: OffreService) {}
 
   ngOnInit(): void {}
-  offres: any = [
-    {
-      Intitule: 'Ingénieur génie civil et minier ',
-      TypeContrat: 'Anapec',
-      Poste: 'technicien en mécanique et électrique mécanique et électrique',
-      TypePoste: 'Stage',
-      NomEntreprise: 'Smart automation technologies',
-      TypeEntreprise: 'StartUp',
-      Image: 'https://www.pauletjose.ma/images/catalogue/medium/52.jpg',
-      Ville: 'Tétouan',
-      Secteur: 'Informatique',
-      Date: '2022-02-02',
-      Competences: 'HTML',
-      Pays: 'Maroc',
-      NiveauxEtude: 'Bac',
-      NiveauxExperience: 'entre 3 et 4',
-      langue: 'Français',
-    },
-    // #region data shwo jus one
-    {
-      Intitule: ' Lorem Ipsum Quis nostrud',
-      TypeContrat: 'Anapec',
-      Poste: 'technicien en mécanique et électrique mécanique et électrique',
-      TypePoste: 'Stage',
-      NomEntreprise: 'Smart automation technologies',
-      TypeEntreprise: 'StartUp',
-      Image: 'https://www.pauletjose.ma/images/catalogue/medium/3.jpg',
-      Ville: 'Tétouan',
-      Secteur: 'Informatique',
-      Date: '2022-02-02',
-      Competences: 'HTML',
-      Pays: 'Maroc',
-      NiveauxEtude: 'Bac',
-      NiveauxExperience: 'entre 3 et 4',
-      langue: 'Français',
-    },
-    {
-      Intitule: 'développeur3',
-      TypeContrat: 'CDD',
-      Poste: 'Développeur Front-End',
-      TypePoste: 'Alternance',
-      NomEntreprise: 'Jumia',
-      TypeEntreprise: 'StartUp',
-      Image: 'https://www.pauletjose.ma/images/services/medium/3-1.jpg',
-      Ville: 'Tanger',
-      Secteur: 'Informatique',
-      Date: '2000-02-02',
-      Competences: 'HTML',
-      Pays: 'Algérie',
-      NiveauxEtude: 'Bac',
-      NiveauxExperience: 'entre 1 et 2',
-      langue: 'Espagnol',
-    },
-    {
-      Intitule: 'Développeur',
-      TypeContrat: 'A discuter',
-      NomEntreprise: 'Jumia',
-      Poste: 'Développeur Back-End',
-      TypePoste: 'extra',
-      TypeEntreprise: 'StartUp',
-      Image: '',
-      Ville: 'Tétouan',
-      Secteur: 'Textile',
-      Date: '2022-05-02',
-      Competences: 'HTML',
-      Pays: 'Maroc',
-      NiveauxEtude: 'qualification avant bac',
-      NiveauxExperience: 'entre 1 et 2',
-      langue: 'Arabe',
-    },
-    {
-      Intitule: 'Développeur4',
-      TypeContrat: 'CDI',
-      NomEntreprise: 'Jumia',
-      TypeEntreprise: 'StartUp',
-      Poste: 'Développeur Back-End',
-      TypePoste: 'Emploi',
-      Image: '',
-      Ville: 'Tanger',
-      Secteur: 'Électronique',
-      Date: '2022-02-02',
-      Competences: 'HTML',
-      Pays: 'Algérie',
-      NiveauxEtude: 'qualification avant bac',
-      NiveauxExperience: "moins d'un ans",
-      langue: 'Espagnol',
-    },
-    // #endregion
-  ]
 }

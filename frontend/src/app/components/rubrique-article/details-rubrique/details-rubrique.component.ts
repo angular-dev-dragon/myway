@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ViewChild } from '@angular/core'
 
 @Component({
   selector: 'app-details-rubrique',
@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./details-rubrique.component.scss'],
 })
 export class DetailsRubriqueComponent implements OnInit {
-  constructor() {}
-
+  constructor() {
+    this.articles = this.allArticles
+  }
+  articles: any = []
   ngOnInit(): void {}
-  articles: any = [
+  allArticles: any = [
     {
       titre: 'B2B Engagement Platform with SAP CX',
       sousTitre: "Sous titre de l'article",
@@ -70,4 +72,28 @@ export class DetailsRubriqueComponent implements OnInit {
       motsCles: ['motCle', 'motCle2'],
     },
   ]
+
+  @ViewChild('search') searchInput!: any
+
+  filter() {
+    this.articles = this.allArticles
+    let searchFiltre = this.searchInput.nativeElement.value
+
+    if (searchFiltre != '') {
+      this.articles = this.articles.filter((recruteur: any) => {
+        return recruteur.titre
+          .toLowerCase()
+          .includes(searchFiltre.toLowerCase())
+      })
+    }
+  }
+
+  sort(type: any) {
+    this.articles.sort((a: any, b: any) =>
+      a[type].toLowerCase() > b[type].toLowerCase() ? 1 : -1,
+    )
+  }
+  sortbyDate() {
+    this.articles.sort((a: any, b: any) => (a.Date < b.Date ? 1 : -1))
+  }
 }

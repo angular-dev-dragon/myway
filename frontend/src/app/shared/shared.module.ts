@@ -110,7 +110,8 @@ import { CardOffreDetailsVerticaleComponent } from './components/card-offre-deta
 import { CardQuizComponent } from './components/card-quiz/card-quiz.component'
 
 import { CardMetiersComponent } from './components/card-metiers/card-metiers.component'
-
+import { CDetailsComponent } from './components/c-details/c-details.component'
+import { FilterComponent } from './components/filter/filter.component'
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -193,6 +194,8 @@ let modules: any = [
 
 @NgModule({
   declarations: [
+    CDetailsComponent,
+
     ListSocieteComponent,
     ListOffresComponent,
     CardRecruiterComponent,
@@ -231,11 +234,14 @@ let modules: any = [
 
     CardMetiersComponent,
 
+    FilterComponent,
   ],
 
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
   exports: [
+    FilterComponent,
 
+    CDetailsComponent,
     CondidatListComponent,
     SliderComponent,
     CardArticleComponent,

@@ -5,6 +5,7 @@ import {
   ViewChild,
   Input,
 } from '@angular/core'
+import { MetierService } from 'src/app/shared/services/metier.service'
 
 @Component({
   selector: 'app-list-metiers',
@@ -41,37 +42,15 @@ export class ListMetiersComponent implements OnInit {
       Secteur: 'Électronique',
     },
   ]
+
   paginate: any = ''
   allOffres: any
-  constructor() {}
+  constructor(public metierService: MetierService) {}
 
   ngOnInit(): void {}
 
-  @ViewChild('secteur') secteurSelect!: any
-  @ViewChild('search') searchInput!: any
-
-  filter() {
-    this.metiers = this.allOffres
-
-    let secteurFiltre = this.secteurSelect.nativeElement.value
-    // console.log('filtre par secteurs', secteurFiltre)
-
-    let searchFiltre = this.searchInput.nativeElement.value
-    console.log('filtre par search', searchFiltre)
-
-    if (searchFiltre != '') {
-      this.metiers = this.metiers.filter((offre: any) => {
-        return offre.Intitule.toLowerCase().includes(searchFiltre.toLowerCase())
-      })
-    }
-    if (secteurFiltre != '') {
-      this.metiers = this.metiers.filter((offre: any) => {
-        return offre.Secteur == secteurFiltre
-      })
-    }
-  }
   sort(type: any) {
-    this.metiers.sort((a: any, b: any) =>
+    this.metierService.listMetiers.sort((a: any, b: any) =>
       a[type].toLowerCase() > b[type].toLowerCase() ? 1 : -1,
     )
   }

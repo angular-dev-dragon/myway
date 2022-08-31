@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { DemandeSpecifiqueService } from 'src/app/shared/services/demande-specifique.service'
 
 @Component({
   selector: 'app-list-demandes-specifiques',
@@ -6,25 +7,7 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./list-demandes-specifiques.component.scss'],
 })
 export class ListDemandesSpecifiquesComponent implements OnInit {
-  constructor() {}
+  constructor(public demandeSpecifiqueService: DemandeSpecifiqueService) {}
 
   ngOnInit(): void {}
-  listDemandes: any = [
-    {
-      Intitule: 'Développeur',
-      TypeContrat: 'Stage',
-      Poste: 'Developpeur Full Stack (MEAN) ',
-      TypePoste: 'Stage Alternance',
-
-      Image: '',
-      Ville: 'Tanger',
-      Secteur: 'Informatique',
-      dateDisponibilite: '2023-02-02',
-
-      Pays: 'Maroc',
-      NiveauxEtude: 'Bac',
-      NiveauxExperience: 'entre 3 et 4',
-      langue: 'Français',
-    },
-  ]
 }

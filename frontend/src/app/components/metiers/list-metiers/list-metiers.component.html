@@ -4,83 +4,7 @@
       <div class="d-flex flex-main">
         <div class="section-recruteur spacing-inline-end mb-3">
           <!--Filtrage-->
-          <div class="sideBar-Main">
-            <div
-              class="btn btn-outline-secondary"
-              #btnSideBar
-              (click)="sidebarOffre.classList.toggle('open')"
-            >
-              <i class="fa fa-filter"></i>
-            </div>
-            <div
-              class="sidebar-offre open"
-              #sidebarOffre
-              (mouseenter)="sidebarOffre.classList.remove('closed')"
-              (mouseleave)="sidebarOffre.classList.add('closed')"
-            >
-              <div class="sideBarContainer">
-                <!--  début filter par l'emplacement -->
-                <div class="accordion" id="accordionPanelsStayOpenExample">
-                  <hr />
-
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                      <button
-                        class="accordion-button"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseOne"
-                        aria-expanded="true"
-                        aria-controls="panelsStayOpen-collapseOne"
-                      >
-                        <i class="fa-solid fa-network-wired icone-filter"></i>
-                        <h4>Secteur d'activité:</h4>
-                      </button>
-                    </h2>
-                    <div
-                      id="panelsStayOpen-collapseOne"
-                      class="accordion-collapse collapse show"
-                      aria-labelledby="panelsStayOpen-headingOne"
-                    >
-                      <div class="accordion-body emplacementFiltre filtreee">
-                        <div>
-                          <ul class="listFilte1">
-                            <li>
-                              <div>
-                                <select
-                                  (change)="filter()"
-                                  name="secteur"
-                                  id="secteur-select"
-                                  class="form-select"
-                                  #secteur
-                                >
-                                  <option value="" disabled selected>
-                                    Sélectionnez un secteur
-                                  </option>
-                                  <option value="">Tout</option>
-                                  <option value="Agriculture">
-                                    Agriculture
-                                  </option>
-                                  <option value="Électronique">
-                                    Électronique
-                                  </option>
-                                  <option value="Informatique">
-                                    Informatique
-                                  </option>
-                                  <option value="Santé">Santé</option>
-                                  <option value="Textile">Textile</option>
-                                </select>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <app-filter [pageName]="'metier'"></app-filter>
           <!--Fin Filtrage-->
         </div>
         <div class="w-100">
@@ -95,7 +19,7 @@
                 <div class="col-md-6">
                   <div class="my-2">
                     <div class="form__group field" style="margin-top: -15px;">
-                      <input
+                      <!-- <input
                         (keyup)="filter()"
                         #search
                         class="form__field"
@@ -104,7 +28,7 @@
                         placeholder="Mot clés, titre du poste..."
                         aria-label="Search"
                         aria-describedby="search-addon"
-                      />
+                      /> -->
                       <label for="saerchBar" class="form__label">
                         Mot clés, titre du poste...
                       </label>
@@ -147,7 +71,7 @@
                 <div class="row">
                   <app-card-metiers
                     class="col-md-3"
-                    *ngFor="let metier of metiers"
+                    *ngFor="let metier of metierService.listMetiers"
                     [Image]="metier.Image"
                     [Secteur]="metier.Secteur"
                     [Intitule]="metier.Intitule"

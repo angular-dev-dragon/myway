@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core'
+import { QuizService } from 'src/app/shared/services/quiz.service'
 
 @Component({
   selector: 'app-list-quiz',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./list-quiz.component.scss'],
 })
 export class ListQuizComponent implements OnInit {
-  constructor() {}
+  constructor(public quizService: QuizService) {
+    this.listQuiz = this.allListQuiz
+
+    this.allListQuiz = this.quizService.getQuiz()
+    this.listQuiz = this.allListQuiz
+  }
 
   ngOnInit(): void {}
-  listQuiz: any = [
+  allListQuiz: any = [
     {
       image:
         'https://wegate.eu/sites/default/files/styles/resize_750x450/public/coursera.jpg?itok=5dhpuGwQ',
@@ -22,6 +28,8 @@ export class ListQuizComponent implements OnInit {
       date: '2022-05-15',
       niveau: 'Avancé',
       note: 5,
+      secteur: 'Informatique',
+      metier: ['Developpeur', 'Developpeur Front-End'],
     },
     {
       image:
@@ -36,6 +44,8 @@ export class ListQuizComponent implements OnInit {
       date: '2022-05-15',
       niveau: 'Avancé',
       note: 4.5,
+      secteur: 'Informatique',
+      metier: ['Developpeur'],
     },
     {
       image:
@@ -50,6 +60,8 @@ export class ListQuizComponent implements OnInit {
       date: '2022-05-15',
       niveau: 'Débutant',
       note: 3.5,
+      secteur: 'Agriculture',
+      metier: ['DevOps'],
     },
     {
       image:
@@ -64,6 +76,82 @@ export class ListQuizComponent implements OnInit {
       nbQuestions: 10,
       date: '2022-05-15',
       note: 4,
+      secteur: 'Électronique',
+      metier: ['DevOps'],
     },
   ]
+  listQuiz: any = []
+
+  // @ViewChildren('metier') metierBox!: any
+
+  // @ViewChild('secteurFilter') secteurSelect!: any
+
+  // @ViewChild('search') searchInput!: any
+
+  // filter() {
+  //   this.listQuiz = this.allListQuiz
+
+  //   let searchInput = this.searchInput.nativeElement.value
+  //   console.log('searchInput', searchInput)
+
+  //   let metierFiltre = this.metierBox._results
+
+  //   let secteurFiltre = this.secteurSelect.nativeElement.value
+
+  //   if (searchInput != '') {
+  //     this.listQuiz = this.listQuiz.filter((quiz: any) => {
+  //       return quiz.titre.toLowerCase().includes(searchInput.toLowerCase())
+  //     })
+  //   }
+
+  //   if (secteurFiltre != '') {
+  //     this.listQuiz = this.listQuiz.filter((quiz: any) => {
+  //       return quiz.secteur == secteurFiltre
+  //     })
+  //   }
+  //   this.checkboxFiltre(metierFiltre, 'metier')
+  // }
+
+  // checkboxFiltre(CheckboxList: any, label: any) {
+  //   let newList2
+  //   let newList3: any = this.listQuiz
+  //   let isFirstTime: Boolean = true
+  //   CheckboxList.map((filtre: any) => {
+  //     if (filtre.nativeElement.checked) {
+  //       if (isFirstTime == true) {
+  //         isFirstTime = false
+  //         newList3 = []
+  //       }
+
+  //       newList2 = this.listQuiz
+  //       newList2 = newList2.filter((quiz: any) => {
+  //         return quiz.metier.includes(filtre.nativeElement.value)
+  //       })
+
+  //       newList2.map((list: any) => {
+  //         newList3.push(list)
+  //       })
+  //     }
+  //   })
+  //   this.listQuiz = newList3
+  //   console.log(
+  //     '🚀 ~ file: list-quiz.component.ts ~ line 140 ~ ListQuizComponent ~ checkboxFiltre ~   this.listQuiz',
+  //     this.listQuiz,
+  //   )
+  // }
+
+  sort(type: any) {
+    this.listQuiz.sort((a: any, b: any) =>
+      a[type].toLowerCase() > b[type].toLowerCase() ? 1 : -1,
+    )
+  }
+  sortbyDate() {
+    this.listQuiz.sort((a: any, b: any) => (a.Date < b.Date ? 1 : -1))
+  }
+  showSidebar: boolean = false
+
+  showFilter() {
+    this.showSidebar = !this.showSidebar
+  }
+  sideBarValue: string = 'ads'
 }

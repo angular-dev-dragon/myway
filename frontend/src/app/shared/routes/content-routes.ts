@@ -87,6 +87,14 @@ export const content: Routes = [
     loadChildren: () =>
       import('../../components/quiz/quiz.module').then((m) => m.QuizModule),
   },
+  {
+    path: 'evenement',
+
+    loadChildren: () =>
+      import('../../components/evenement/evenement.module').then(
+        (m) => m.EvenementModule,
+      ),
+  },
   // {
   //   path: 'liens-utiles',
   //   loadChildren: () =>
