@@ -22,13 +22,12 @@
 
           <div class="col-4">
             <a
-              *ngIf="sort_by_name_value == 'sort'"
               class="dropdown-item"
               (click)="sortByNameFunction()"
             >
-              <i class="fa-solid fa-sort"></i>
+              <i class="fa-solid fa-{{sort_by_name_value}}"></i>
             </a>
-            <a
+            <!-- <a
               *ngIf="sort_by_name_value == 'sort-up'"
               class="dropdown-item"
               (click)="sortByNameFunction()"
@@ -41,7 +40,7 @@
               (click)="sortByNameFunction()"
             >
               <i class="fa-solid fa-sort-down"></i>
-            </a>
+            </a> -->
           </div>
         </div>
       </li>
