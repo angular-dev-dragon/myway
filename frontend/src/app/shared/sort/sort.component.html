@@ -27,20 +27,7 @@
             >
               <i class="fa-solid fa-{{sort_by_name_value}}"></i>
             </a>
-            <!-- <a
-              *ngIf="sort_by_name_value == 'sort-up'"
-              class="dropdown-item"
-              (click)="sortByNameFunction()"
-            >
-              <i class="fa-solid fa-sort-up"></i>
-            </a>
-            <a
-              *ngIf="sort_by_name_value == 'sort-down'"
-              class="dropdown-item"
-              (click)="sortByNameFunction()"
-            >
-              <i class="fa-solid fa-sort-down"></i>
-            </a> -->
+
           </div>
         </div>
       </li>
@@ -50,26 +37,12 @@
 
           <div class="col-4">
             <a
-              *ngIf="sort_by_date_value == 'sort'"
               class="dropdown-item"
-              (click)="sort_by_date('sort-down')"
+              (click)=" sortByDateFunction()"
             >
-              <i class="fa-solid fa-sort"></i>
+              <i class="fa-solid fa-{{sort_by_date_value}}"></i>
             </a>
-            <a
-              *ngIf="sort_by_date_value == 'sort-down'"
-              class="dropdown-item"
-              (click)="sort_by_date('sort-down')"
-            >
-              <i class="fa-solid fa-sort-up"></i>
-            </a>
-            <a
-              *ngIf="sort_by_date_value == 'sort-up'"
-              class="dropdown-item"
-              (click)="sort_by_date('sort-up')"
-            >
-              <i class="fa-solid fa-sort-down"></i>
-            </a>
+
           </div>
         </div>
       </li> -->
