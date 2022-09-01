@@ -18,65 +18,14 @@
           </div>
           <div class="section-recruteur mb-3 w-100">
             <div class="flex-grow-1">
-              <div class="row px-2">
-                <div class="col-md-8">
-                  <div class="my-2">
-                    <div class="form__group field" style="margin-top: -15px;">
-                        <app-filter [pfilterType]="'name'" [pageName]="'candidat'"></app-filter>
-                        
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 order">
-                  <div class="my-2 d-flex">
-                    <div class="btn-group">
-                      <button
-                        (click)="changeview('verticale')"
-                        type="button"
-                        class="btn btn-default active"
-                      >
-                        <i class="fa fa-list"></i>
-                      </button>
-                      <button
-                        (click)="changeview('horizontale')"
-                        type="button"
-                        class="btn btn-default"
-                      >
-                        <i class="fa fa-th"></i>
-                      </button>
-                    </div>
-
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-default dropdown-toggle"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarDropdown"
-                        aria-controls="navbarDropdown"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                      >
-                        Order by
-                      </button>
-                      <ul
-                        class="dropdown-menu custom-navbar"
-                        aria-labelledby="navbarDropdown"
-                        id="navbarDropdown"
-                      >
-                        <li>
-                          <a class="dropdown-item" (click)="sort('Intitule')">
-                            Name
-                          </a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" (click)="sortbyDate()">
-                            Date
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+              <div class="">
+                <app-top-bar
+                  [pageName]="'candidat'"
+                  [showOrientation]="true"
+                  [data]="candidatService.condidats_list"
+                  (filtredData)="filtredData($event)"
+                  (orientationView)="getOrientaion($event)"
+                ></app-top-bar>
               </div>
 
               <!-- BEGIN TABLE RESULT -->
@@ -85,7 +34,7 @@
               <div *ngIf="orientation == 'verticale'">
                 <condida-c-cart-tow
                   *ngFor="
-                    let c of candidatService.condidats_list
+                    let c of resultData
                       | paginate: { itemsPerPage: 8, currentPage: paginate }
                   "
                   [routerLink]="['/Candidats/details', c.info.id]"
@@ -110,7 +59,7 @@
               <div class="row m-1" *ngIf="orientation == 'horizontale'">
                 <condida-c-card
                   *ngFor="
-                    let c of candidatService.condidats_list
+                    let c of resultData
                       | paginate: { itemsPerPage: 4, currentPage: paginate }
                   "
                   [routerLink]="['/Candidats/details', c.info.id]"

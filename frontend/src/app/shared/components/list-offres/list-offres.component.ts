@@ -24,28 +24,23 @@ export class ListOffresComponent implements OnInit {
   orientation: any = 'verticale'
   paginate: any = ''
 
-  allOffres: any
   constructor(public offreService: OffreService) {
     // this.allOffres = this.offres
     // config.placement = 'end'
     // config.triggers = 'hover'
   }
-
+  listOffres: any = []
   ngOnInit(): void {}
 
-  changeview(or: any) {
-    this.orientation = or
-  }
-  sort(type: any) {
-    this.offres.sort((a: any, b: any) =>
-      a[type].toLowerCase() > b[type].toLowerCase() ? 1 : -1,
-    )
-  }
-  sortbyDate() {
-    this.offres.sort((a: any, b: any) => (a.Date < b.Date ? 1 : -1))
+  filtredData(value: any) {
+    console.log(value)
+
+    this.listOffres = value
   }
 
-  showFilter() {
-    this.showSidebar = !this.showSidebar
+  getOrientaion(value: any) {
+    console.log(value)
+
+    this.orientation = value
   }
 }

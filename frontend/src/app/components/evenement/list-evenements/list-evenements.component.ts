@@ -10,14 +10,16 @@ export class ListEvenementsComponent implements OnInit {
   constructor(public evenementService: EvenementService) {}
   paginate: number = 0
   ngOnInit(): void {}
-  sort(type: any) {
-    this.evenementService.listEvents.sort((a: any, b: any) =>
-      a[type].toLowerCase() > b[type].toLowerCase() ? 1 : -1,
-    )
+
+  resultData: any = []
+  orientation: string = ''
+  filtredData(value: any) {
+    this.resultData = value
   }
-  sortbyDate() {
-    this.evenementService.listEvents.sort((a: any, b: any) =>
-      a.Date < b.Date ? 1 : -1,
-    )
+
+  getOrientaion(value: any) {
+    console.log(value)
+
+    this.orientation = value
   }
 }

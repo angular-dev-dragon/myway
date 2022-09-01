@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core'
-import { TreeModule } from 'primeng/tree';
+import { TreeModule } from 'primeng/tree'
 
 @Injectable({
   providedIn: 'root',
 })
 export class OffreService {
   constructor() {
-    this.listOffres = this.allOffres;
+    this.listOffres = this.allOffres
   }
+
   allOffres: any = [
     {
       Intitule: 'AHMED',
@@ -101,8 +102,8 @@ export class OffreService {
       NiveauxExperience: "moins d'un ans",
       langue: 'Espagnol',
     },
-  ];
-  listOffres: any = [];
+  ]
+  listOffres: any = []
 
   filter(
     searchFiltre: string = '',
@@ -117,94 +118,67 @@ export class OffreService {
     langueFiltre: any,
     // sort_by_name: string,
     // sort_by_date: string,
-
   ) {
-    this.listOffres = this.allOffres;
+    this.listOffres = this.allOffres
 
     if (searchFiltre != '') {
-
-
-                this.listOffres = this.listOffres.filter((offre: any) => {
-                  offre.Intitule.toLowerCase().includes(
-                    searchFiltre.toLowerCase()
-                  );
-                });
-                return this.allOffres;
+      this.listOffres = this.listOffres.filter((offre: any) => {
+        offre.Intitule.toLowerCase().includes(searchFiltre.toLowerCase())
+      })
+      return this.allOffres
     }
 
     if (paysFiltre != '') {
       this.listOffres = this.listOffres.filter((offre: any) => {
-        return offre.Pays == paysFiltre;
-      });
+        return offre.Pays == paysFiltre
+      })
     } else if (regionFiltre != '') {
       this.listOffres = this.listOffres.filter((offre: any) => {
-        return offre.Region == regionFiltre;
-      });
+        return offre.Region == regionFiltre
+      })
     } else if (villeFiltre != '') {
       this.listOffres = this.listOffres.filter((offre: any) => {
-        return offre.Ville == villeFiltre;
-      });
+        return offre.Ville == villeFiltre
+      })
     } else if (secteurFiltre != '') {
       this.listOffres = this.listOffres.filter((offre: any) => {
-        return offre.Secteur == secteurFiltre;
-      });
+        return offre.Secteur == secteurFiltre
+      })
     }
 
     if (dateFiltre != '') {
       this.listOffres = this.listOffres.filter((offre: any) => {
-        return offre.Date == dateFiltre;
-      });
+        return offre.Date == dateFiltre
+      })
     }
-    this.checkboxFiltre(contratFiltre, 'TypeContrat');
-    this.checkboxFiltre(niveauxEtFiltre, 'NiveauxEtude');
-    this.checkboxFiltre(niveauxExFiltre, 'NiveauxExperience');
-    this.checkboxFiltre(langueFiltre, 'langue');
-
-
-
-
-
+    this.checkboxFiltre(contratFiltre, 'TypeContrat')
+    this.checkboxFiltre(niveauxEtFiltre, 'NiveauxEtude')
+    this.checkboxFiltre(niveauxExFiltre, 'NiveauxExperience')
+    this.checkboxFiltre(langueFiltre, 'langue')
   }
 
   checkboxFiltre(CheckboxList: any, label: any) {
-    let newList2;
-    let newList3: any = this.listOffres;
-    let isFirstTime: Boolean = true;
+    let newList2
+    let newList3: any = this.listOffres
+    let isFirstTime: Boolean = true
     CheckboxList.map((filtre: any) => {
       if (filtre.nativeElement.checked) {
         if (isFirstTime == true) {
-          isFirstTime = false;
-          newList3 = [];
+          isFirstTime = false
+          newList3 = []
         }
-        newList2 = this.listOffres;
+        newList2 = this.listOffres
         newList2 = newList2.filter((offre: any) => {
-          return offre[label] == filtre.nativeElement.value;
-        });
+          return offre[label] == filtre.nativeElement.value
+        })
 
         newList2.map((list: any) => {
-          newList3.push(list);
-        });
+          newList3.push(list)
+        })
       }
-    });
-    this.listOffres = newList3;
+    })
+    this.listOffres = newList3
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   // sort_by_name(type: string , i : string) {
   //   this.listOffres.sort((a: any, b: any) => a[type].toLowerCase() > b[type].toLowerCase() ? 1 : -1);
@@ -213,20 +187,8 @@ export class OffreService {
   // sort_by_date(type: string, i : string) {
   //    this.listOffres.sort((a: any, b: any) => (a.Date > b.Date ? 1 : -1));
   // }
-
-
-
-
-
-
-
-
-
-
-
 }
 
 function elseif(arg0: boolean) {
-  throw new Error('Function not implemented.');
+  throw new Error('Function not implemented.')
 }
-

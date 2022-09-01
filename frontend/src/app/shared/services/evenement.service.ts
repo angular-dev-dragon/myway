@@ -161,21 +161,10 @@ export class EvenementService {
     },
   }
 
-  filter(
-    searchFiltre: string = '',
-
-    typeEvent: any,
-    dateDebut: any,
-    dateFin: any,
-  ) {
+  filter(typeEvent: any, dateDebut: any, dateFin: any) {
     this.listEvents = this.allEvents
-    console.log(typeEvent)
 
-    if (searchFiltre != '') {
-      this.listEvents = this.listEvents.filter((event: any) => {
-        return event.titre.toLowerCase().includes(searchFiltre.toLowerCase())
-      })
-    } else if (dateDebut != '') {
+    if (dateDebut != '') {
       this.listEvents = this.listEvents.filter((event: any) => {
         return event.dateDebut > dateDebut ? -1 : 1
       })
@@ -198,7 +187,6 @@ export class EvenementService {
           isFirstTime = false
           newList3 = []
         }
-        console.log()
 
         newList2 = this.listEvents
         newList2 = newList2.filter((offre: any) => {

@@ -84,16 +84,8 @@ export class QuizService {
     return this.allListQuiz
   }
 
-  filter(searchInputValue: string, metierBox: any, secteurSelect: any) {
+  filter(metierBox: any, secteurSelect: any) {
     this.listQuiz = this.allListQuiz
-
-    console.log('searchInput', searchInputValue)
-
-    if (searchInputValue != '') {
-      this.listQuiz = this.listQuiz.filter((quiz: any) => {
-        return quiz.titre.toLowerCase().includes(searchInputValue.toLowerCase())
-      })
-    }
 
     if (secteurSelect != '') {
       this.listQuiz = this.listQuiz.filter((quiz: any) => {
@@ -101,6 +93,7 @@ export class QuizService {
       })
     }
     this.checkboxFiltre(metierBox, 'metier')
+
     return this.listQuiz
   }
 

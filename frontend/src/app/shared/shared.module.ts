@@ -114,6 +114,7 @@ import { CDetailsComponent } from './components/c-details/c-details.component'
 import { FilterComponent } from './components/filter/filter.component'
 import { FilterByTextComponent } from './filter-by-text/filter-by-text.component'
 import { SortComponent } from './sort/sort.component'
+import { TopBarComponent } from './top-bar/top-bar.component'
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -239,6 +240,7 @@ let modules: any = [
     FilterComponent,
     FilterByTextComponent,
     SortComponent,
+    TopBarComponent,
   ],
 
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
@@ -281,7 +283,7 @@ let modules: any = [
     CardQuizComponent,
     FilterByTextComponent,
     SortComponent,
-
+    TopBarComponent,
     ...modules,
   ],
 })

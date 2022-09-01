@@ -1,12 +1,5 @@
-import {
-  Component,
-  Input,
-  OnInit,
-  ViewChild,
-  ViewChildren,
-} from '@angular/core'
-import { filter } from 'rxjs'
-import { NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap'
+import { Component, Input, OnInit } from '@angular/core'
+
 import { CondidaInfoService } from '../../Services/condida-info/condida-info.service'
 
 @Component({
@@ -20,34 +13,23 @@ export class CondidatListComponent implements OnInit {
   collapsed = false
   showSidebar: boolean = false
   epingledSidebar: boolean = false
-  orientation: any = 'verticale'
+
   paginate: any = ''
 
-  allallcondidats: any
-  constructor(
-    config: NgbPopoverConfig,
-    public candidatService: CondidaInfoService,
-  ) {
-    this.allallcondidats = this.condidatsList
-    config.placement = 'end'
-    config.triggers = 'hover'
-  }
+  constructor(public candidatService: CondidaInfoService) {}
 
   ngOnInit(): void {}
-
-  changeview(or: any) {
-    this.orientation = or
+  resultData: any = []
+  orientation: string = ''
+  filtredData(value: any) {
+    this.resultData = value
   }
-  sort(type: any) {
-    this.condidatsList.sort((a: any, b: any) =>
-      a[type].toLowerCase() > b[type].toLowerCase() ? 1 : -1,
+
+  getOrientaion(value: any) {
+    console.log(value)
+    console.log(
+      '-----------------------------filtredData-------------------------------',
     )
-  }
-  sortbyDate() {
-    this.condidatsList.sort((a: any, b: any) => (a.Date < b.Date ? 1 : -1))
-  }
-
-  showFilter() {
-    this.showSidebar = !this.showSidebar
+    this.orientation = value
   }
 }

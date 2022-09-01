@@ -4,12 +4,18 @@
   </div>
   <div class="row">
     <div class="col-md-9">
+      <app-top-bar
+        [pageName]="'blogeurs'"
+        [data]="blogeurService.listBlogueurs"
+        (filtredData)="filtredData($event)"
+        (orientationView)="getOrientaion($event)"
+      ></app-top-bar>
       <div class="section-recruteur">
         <div class="row">
           <app-card-blogueur
             [routerLink]="['/blog/details-blogeur']"
             class="col-md-4 mb-3"
-            *ngFor="let membre of listBlogueurs"
+            *ngFor="let membre of resultData"
             [nom]="membre.nom"
             [prenom]="membre.prenom"
             [fonction]="membre.fonction"

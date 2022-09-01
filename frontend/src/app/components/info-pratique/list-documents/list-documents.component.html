@@ -3,11 +3,20 @@
     <h4>Documents a Telecharger</h4>
   </div>
   <div class="section-recruteur">
+    <div class="flex-grow-1">
+      <app-top-bar
+        [pageName]="'documents'"
+        [data]="documentsService.documents"
+        (filtredData)="filtredData($event)"
+        (orientationView)="getOrientaion($event)"
+      ></app-top-bar>
+    </div>
+    <hr />
     <div class="row">
       <app-card-document
         class="col-md-3 col-sm-6 mb-2"
         [routerLink]="['/info-pratique/document-details']"
-        *ngFor="let doc of documents"
+        *ngFor="let doc of resultData"
         [dateEdition]="doc?.date_edition"
         [titre]="(doc?.translations)['fr']?.__titre"
         [sousTitre]="(doc?.translations)['fr']?.__sous_titre"

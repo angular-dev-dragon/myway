@@ -78,7 +78,7 @@ export class CondidatureSpontaneeService {
       Region: 'Tanger-Tetouan',
     },
   ]
-  listSocieteCondidature
+  listSocieteCondidature: any = []
   filter(
     searchFiltre: string = '',
     secteurFiltre: string,

@@ -192,54 +192,14 @@
 
       <div class="section-recruteur mb-3">
         <div class="flex-grow-1">
-          <div class="row px-2">
-            <div class="col-md-6">
-              <div class="my-2">
-                <app-filter-by-text
-                  [pageName]="'quiz'"
-                  [data]="this.quizService.listQuiz"
-                  (filtredData)="filtredData($event)"
-                ></app-filter-by-text>
-                <app-sort
-                  [data]="listQuiz"
-                  [pageName]="'quiz'"
-                  [type]="'titre'"
-                ></app-sort>
-              </div>
-            </div>
-            <div class="col-md-6 order">
-              <div class="my-2 d-flex">
-                <div class="dropdown">
-                  <button
-                    class="btn btn-default dropdown-toggle"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarDropdown"
-                    aria-controls="navbarDropdown"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                  >
-                    Order by
-                  </button>
-                  <ul
-                    class="dropdown-menu custom-navbar"
-                    aria-labelledby="navbarDropdown"
-                    id="navbarDropdown"
-                  >
-                    <li>
-                      <a class="dropdown-item" (click)="sort('title')">
-                        Name
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" (click)="sortbyDate()">
-                        Date
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+          <div class="">
+            <app-top-bar
+              [pageName]="'quiz'"
+              [showTextInput]="true"
+              [data]="quizService.listQuiz"
+              (filtredData)="filtredData($event)"
+              (orientationView)="getOrientaion($event)"
+            ></app-top-bar>
           </div>
           <hr />
 

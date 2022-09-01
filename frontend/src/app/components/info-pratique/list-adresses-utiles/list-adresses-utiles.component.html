@@ -2,50 +2,61 @@
   <div class="section-recruteur">
     <h4>Adresses Utiles</h4>
   </div>
-
-  <div class="row my-3">
-    <div class="col-md-9">
-      <div class="section-recruteur">
-        <ul class="row list-adresse">
-          <li
-            class="col-lg-4 col-md-6 mb-3"
-            *ngFor="let p of adressesUtiles"
-            (click)="_open(detailLien, p)"
-          >
-            <div class="card-container bg-white">
-              <div
-                class="imgwrap"
-                style="display: flex; justify-content: center;"
-              >
-                <img
-                  class="lien-logo img-fluid mb-2"
-                  [defaultImage]="'assets/images/lien-utile.jpg'"
-                  [lazyLoad]="p?.image"
-                  alt=""
-                  style="max-height: 200px;"
-                />
-              </div>
-              <h4 class="">
-                {{ (p?.translations)['fr']?.__designation | titlecase }}
-              </h4>
-
-              <p class="my-3">
-                {{ (p?.translations)['fr']?.__descriptif | titlecase }}
-              </p>
-              <div class="bt">
-                <a href="{{ p?.siteweb }}" target="_blank">
-                  <p class="ellipsis-text text-center mt-2 mb-0">
-                    {{ p?.siteweb }}
-                  </p>
-                </a>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
+  <div class="section-recruteur">
+    <div class="flex-grow-1">
+      <app-top-bar
+        [pageName]="'adresses utiles'"
+        [data]="adressesUtilesService.adressesUtiles"
+        (filtredData)="filtredData($event)"
+        (orientationView)="getOrientaion($event)"
+      ></app-top-bar>
     </div>
-    <div class="col-md-3 col-lg-3">
-      <div class="section-recruteur"></div>
+    <hr />
+
+    <div class="row my-3">
+      <div class="col-md-9">
+        <div class="section-recruteur">
+          <ul class="row list-adresse">
+            <li
+              class="col-lg-4 col-md-6 mb-3"
+              *ngFor="let p of resultData"
+              (click)="_open(detailLien, p)"
+            >
+              <div class="card-container bg-white">
+                <div
+                  class="imgwrap"
+                  style="display: flex; justify-content: center;"
+                >
+                  <img
+                    class="lien-logo img-fluid mb-2"
+                    [defaultImage]="'assets/images/lien-utile.jpg'"
+                    [lazyLoad]="p?.image"
+                    alt=""
+                    style="max-height: 200px;"
+                  />
+                </div>
+                <h4 class="">
+                  {{ (p?.translations)['fr']?.__designation | titlecase }}
+                </h4>
+
+                <p class="my-3">
+                  {{ (p?.translations)['fr']?.__descriptif | titlecase }}
+                </p>
+                <div class="bt">
+                  <a href="{{ p?.siteweb }}" target="_blank">
+                    <p class="ellipsis-text text-center mt-2 mb-0">
+                      {{ p?.siteweb }}
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3 col-lg-3">
+        <div class="section-recruteur"></div>
+      </div>
     </div>
   </div>
 </div>

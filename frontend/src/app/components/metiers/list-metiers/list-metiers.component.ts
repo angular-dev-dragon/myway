@@ -49,9 +49,17 @@ export class ListMetiersComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  sort(type: any) {
-    this.metierService.listMetiers.sort((a: any, b: any) =>
-      a[type].toLowerCase() > b[type].toLowerCase() ? 1 : -1,
-    )
+  resultData: any = []
+  orientation: string = ''
+  filtredData(value: any) {
+    console.log(value)
+
+    this.resultData = value
+  }
+
+  getOrientaion(value: any) {
+    console.log(value)
+
+    this.orientation = value
   }
 }

@@ -19,82 +19,44 @@
           </div>
           <div class="section-recruteur mb-3 w-100">
             <div class="flex-grow-1">
-              <div class="row px-2">
-                <div class="col-md-6">
-                  <div class="my-2">
-                    <app-filter
-                      [pageName]="'evenement'"
-                      [pfilterType]="'name'"
-                    ></app-filter>
-                  </div>
-                </div>
-                <div class="col-md-6 order">
-                  <div class="my-2 d-flex">
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-default dropdown-toggle"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarDropdown"
-                        aria-controls="navbarDropdown"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                      >
-                        Order by
-                      </button>
-                      <ul
-                        class="dropdown-menu custom-navbar"
-                        aria-labelledby="navbarDropdown"
-                        id="navbarDropdown"
-                      >
-                        <li>
-                          <a class="dropdown-item" (click)="sort('titre')">
-                            Name
-                          </a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" (click)="sortbyDate()">
-                            Date
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <app-top-bar
+                [pageName]="'evenement'"
+                [data]="evenementService.listEvents"
+                (filtredData)="filtredData($event)"
+                (orientationView)="getOrientaion($event)"
+              ></app-top-bar>
+            </div>
+            <!-- BEGIN TABLE RESULT -->
+            <hr />
 
-              <!-- BEGIN TABLE RESULT -->
-              <hr />
-
-              <div class="row">
-                <app-card-article
-                  class="col-md-6 mb-3"
-                  *ngFor="
-                    let event of evenementService.listEvents
-                      | paginate: { itemsPerPage: 20, currentPage: paginate }
-                  "
-                  [isArticle]="false"
-                  [link]="['/evenement/details-event']"
-                  [image]="event.image"
-                  [titre]="event.titre"
-                  [dateDebut]="event.dateDebut"
-                  [dateFin]="event.dateFin"
-                  [heureDebut]="event.heureDebut"
-                  [heureFin]="event.heureFin"
-                  [typeEvent]="event.TypeEvenement"
-                  [organisateur]="event.organisateur"
-                ></app-card-article>
-                <pagination-controls
-                  class="text-center"
-                  (pageChange)="paginate = $event"
-                ></pagination-controls>
-              </div>
+            <div class="row">
+              <app-card-article
+                class="col-md-6 mb-3"
+                *ngFor="
+                  let event of resultData
+                    | paginate: { itemsPerPage: 20, currentPage: paginate }
+                "
+                [isArticle]="false"
+                [link]="['/evenement/details-event']"
+                [image]="event.image"
+                [titre]="event.titre"
+                [dateDebut]="event.dateDebut"
+                [dateFin]="event.dateFin"
+                [heureDebut]="event.heureDebut"
+                [heureFin]="event.heureFin"
+                [typeEvent]="event.TypeEvenement"
+                [organisateur]="event.organisateur"
+              ></app-card-article>
+              <pagination-controls
+                class="text-center"
+                (pageChange)="paginate = $event"
+              ></pagination-controls>
             </div>
           </div>
         </div>
       </div>
-      <!-- END RESULT -->
     </div>
+    <!-- END RESULT -->
   </div>
-  <!-- END SEARCH RESULT -->
 </div>
+<!-- END SEARCH RESULT -->

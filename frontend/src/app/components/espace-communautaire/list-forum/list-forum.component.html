@@ -5,11 +5,17 @@
   <div class="row">
     <div class="my-2 col-md-9">
       <div class="section-recruteur col-12 mb-3">
+        <app-top-bar
+          [pageName]="'forums'"
+          [data]="forumService.forums"
+          (filtredData)="filtredData($event)"
+          (orientationView)="getOrientaion($event)"
+        ></app-top-bar>
         <div class="row">
           <app-card-forum
             class="col-md-6 mb-2"
             [routerLink]="['/espace-communautaire/details-forum']"
-            *ngFor="let item of forums"
+            *ngFor="let item of resultData"
             [image]="item.image"
             [designation]="item.designation"
             [descriptif]="item.descriptif"

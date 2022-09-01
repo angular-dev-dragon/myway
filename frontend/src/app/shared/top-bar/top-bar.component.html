@@ -1,0 +1,31 @@
+<div class="top-bar">
+  <app-filter-by-text
+    *ngIf="showTextInput"
+    [pageName]="pageName"
+    [data]="data"
+    (filtredData)="filtredDataFunction($event)"
+  ></app-filter-by-text>
+
+  <div class="btn-group" *ngIf="showOrientation">
+    <button
+      (click)="toggleOrientation('verticale')"
+      type="button"
+      class="btn btn-default active"
+    >
+      <i class="fa fa-list"></i>
+    </button>
+    <button
+      (click)="toggleOrientation('horizontale')"
+      type="button"
+      class="btn btn-default"
+    >
+      <i class="fa fa-th"></i>
+    </button>
+  </div>
+  <app-sort
+    *ngIf="showSort"
+    [data]="dataFiltrer"
+    [pageName]="pageName"
+    [type]="'titre'"
+  ></app-sort>
+</div>

@@ -72,7 +72,9 @@ export class FilterComponent implements OnInit {
   filter() {
     // let sort_by_name = this.sort_by_name
     // let sort_by_date = this.sort_by_date
-    let nameFilter = this.searchInput.nativeElement.value || ''
+    //let nameFilter = this.searchInput.nativeElement.value || ''
+    let nameFilter = this.villeSelect?.nativeElement.value || ''
+
     let metiertValue = this.metierBox._results || ''
     let villeFiltre = this.villeSelect?.nativeElement.value || ''
     // console.log('filtreParVille', villeFiltre)
@@ -100,7 +102,7 @@ export class FilterComponent implements OnInit {
     let dateFin = this.dateFinInput?.nativeElement.value || ''
 
     if (this.pageName == 'quiz') {
-      this.quizService.filter(nameFilter, metiertValue, secteurFiltre)
+      this.quizService.filter(metiertValue, secteurFiltre)
     }
     if (this.pageName == 'metier') {
       this.metierService.filter(nameFilter, metiertValue)
@@ -167,13 +169,7 @@ export class FilterComponent implements OnInit {
       )
     }
     if (this.pageName == 'evenement') {
-      this.evenementService.filter(
-        nameFilter,
-
-        typeEvent,
-        dateDebut,
-        dateFin,
-      )
+      this.evenementService.filter(typeEvent, dateDebut, dateFin)
     }
   }
 

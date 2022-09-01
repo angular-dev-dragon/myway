@@ -15,54 +15,14 @@
           </div>
           <div class="section-recruteur mb-3 w-100">
             <div class="flex-grow-1">
-              <div class="row px-2">
-                <div class="col-md-6">
-                  <div class="my-2">
-                    <div class="form__group field" style="margin-top: -15px;">
-                      <!-- <input
-                        (keyup)="filter()"
-                        #search
-                        class="form__field"
-                        type="text"
-                        id="saerchBar"
-                        placeholder="Mot clés, titre du poste..."
-                        aria-label="Search"
-                        aria-describedby="search-addon"
-                      /> -->
-                      <label for="saerchBar" class="form__label">
-                        Mot clés, titre du poste...
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 order">
-                  <div class="my-2 d-flex">
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-default dropdown-toggle"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarDropdown"
-                        aria-controls="navbarDropdown"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                      >
-                        Order by
-                      </button>
-                      <ul
-                        class="dropdown-menu custom-navbar"
-                        aria-labelledby="navbarDropdown"
-                        id="navbarDropdown"
-                      >
-                        <li>
-                          <a class="dropdown-item" (click)="sort('Intitule')">
-                            Name
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+              <div class="">
+                <app-top-bar
+                  [pageName]="'quiz'"
+                  [showTextInput]="true"
+                  [data]="metierService.listMetiers"
+                  (filtredData)="filtredData($event)"
+                  (orientationView)="getOrientaion($event)"
+                ></app-top-bar>
               </div>
 
               <!-- BEGIN TABLE RESULT -->
@@ -71,7 +31,7 @@
                 <div class="row">
                   <app-card-metiers
                     class="col-md-3"
-                    *ngFor="let metier of metierService.listMetiers"
+                    *ngFor="let metier of resultData"
                     [Image]="metier.Image"
                     [Secteur]="metier.Secteur"
                     [Intitule]="metier.Intitule"

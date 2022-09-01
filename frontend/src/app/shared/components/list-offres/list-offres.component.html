@@ -19,17 +19,22 @@
           </div>
           <div class="section-recruteur mb-3 w-100">
             <div class="flex-grow-1">
-
-
-                    <app-filter [pfilterType]="'name'" [pageName]="'offre'"></app-filter>
-
+              <div class="">
+                <app-top-bar
+                  [pageName]="pageName"
+                  [showTextInput]="true"
+                  [data]="offreService.listOffres"
+                  (filtredData)="filtredData($event)"
+                  (orientationView)="getOrientaion($event)"
+                ></app-top-bar>
+              </div>
               <!-- BEGIN TABLE RESULT -->
               <hr />
 
               <div class="row" *ngIf="orientation == 'verticale'">
                 <app-card-offre-Verticale
                   *ngFor="
-                    let offre of offres
+                    let offre of listOffres
                       | paginate: { itemsPerPage: 20, currentPage: paginate }
                   "
                   [link]="link"
