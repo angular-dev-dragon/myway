@@ -45,25 +45,24 @@ export class SortComponent implements OnInit {
     // #endregion
     // #region condidat
     else if (this.pageName == 'condidat') {
-      if (this.sort_by_name_value == 'sort-up') {
-        this.data.sort((a: any, b: any) =>
-          a.info.name.first_name.toLowerCase() >
-          b.info.name.first_name.toLowerCase()
-            ? 1
-            : -1
-        );
-        this.sort_by_name_value = 'sort-down';
-      } else if (this.sort_by_name_value == 'sort-down') {
-        this.data.sort((a: any, b: any) =>
-          a.info.name.first_name.toLowerCase() <
-          b.info.name.first_name.toLowerCase()
-            ? 1
-            : -1
-        );
-        this.sort_by_name_value = 'sort-up';
-      } else if (this.sort_by_name_value == 'sort') {
-        this.sort_by_name_value = 'sort-down';
-      }
+
+
+       if (this.sort_by_name_value == 'sort-up') {
+         this.data.sort((a: any, b: any) =>
+           a.info.name.first_name.toLowerCase() > b.info.name.first_name.toLowerCase() ? 1 : -1
+         );
+         this.sort_by_name_value = 'sort-down';
+       } else if (this.sort_by_name_value == 'sort-down') {
+         this.data.sort((a: any, b: any) =>
+           a.info.name.first_name.toLowerCase() < b.info.name.first_name.toLowerCase() ? 1 : -1
+         );
+         this.sort_by_name_value = 'sort-up';
+       } else if (this.sort_by_name_value == 'sort') {
+         this.sort_by_name_value = 'sort-down';
+       }
+
+
+
     }
     // #endregion
     // #region metier
