@@ -153,7 +153,6 @@ export class DetailOffresComponent implements OnInit {
 
   sendPostule() {
     if (this.postulezForm.valid) {
-      console.log('this.postulezForm', this.postulezForm)
     } else {
       this.postulezForm.markAllAsTouched()
     }

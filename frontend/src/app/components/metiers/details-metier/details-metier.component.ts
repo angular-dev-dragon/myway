@@ -232,7 +232,6 @@ export class DetailsMetierComponent implements OnInit {
     }
   }
   newQuestion() {
-    console.log(this.questions.valid)
     if (this.questions.valid) {
       this.questions.push(
         this.fb.group({
@@ -246,7 +245,7 @@ export class DetailsMetierComponent implements OnInit {
     } else {
       this.questions.markAllAsTouched()
     }
-    //  console.log(this.questions)
+    //
   }
 
   get questions(): FormArray {
@@ -257,7 +256,6 @@ export class DetailsMetierComponent implements OnInit {
   }
   sendPostule() {
     if (this.postulezForm.valid) {
-      console.log('this.postulezForm', this.postulezForm)
     } else {
       this.postulezForm.markAllAsTouched()
     }

@@ -17,8 +17,6 @@ export class ListDocumentsComponent implements OnInit {
   }
 
   getOrientaion(value: any) {
-    console.log(value)
-
     this.orientation = value
   }
 }

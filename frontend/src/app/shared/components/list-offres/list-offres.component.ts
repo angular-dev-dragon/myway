@@ -1,12 +1,5 @@
-import {
-  Component,
-  Input,
-  OnInit,
-  ViewChild,
-  ViewChildren,
-} from '@angular/core'
-import { filter } from 'rxjs'
-import { NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap'
+import { Component, Input, OnInit } from '@angular/core'
+
 import { OffreService } from '../../services/offre.service'
 
 @Component({
@@ -24,23 +17,15 @@ export class ListOffresComponent implements OnInit {
   orientation: any = 'verticale'
   paginate: any = ''
 
-  constructor(public offreService: OffreService) {
-    // this.allOffres = this.offres
-    // config.placement = 'end'
-    // config.triggers = 'hover'
-  }
+  constructor(public offreService: OffreService) {}
   listOffres: any = []
   ngOnInit(): void {}
 
   filtredData(value: any) {
-    console.log(value)
-
     this.listOffres = value
   }
 
   getOrientaion(value: any) {
-    console.log(value)
-
     this.orientation = value
   }
 }

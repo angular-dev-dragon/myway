@@ -284,6 +284,7 @@ let modules: any = [
     FilterByTextComponent,
     SortComponent,
     TopBarComponent,
+
     ...modules,
   ],
 })

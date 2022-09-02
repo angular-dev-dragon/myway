@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router'
 import { SharedModule } from 'src/app/shared/shared.module'
-import { DetailsRubriqueComponent } from './details-rubrique/details-rubrique.component'
 import { RubriquePostRoutingModule } from './rubrique-post-routing.module'
 import { DetailsArticleComponent } from './details-article/details-article.component'
+import { DetailsRubriqueComponent } from './details-rubrique/details-rubrique.component'
 
 @NgModule({
-  declarations: [DetailsRubriqueComponent, DetailsArticleComponent],
+  declarations: [DetailsArticleComponent, DetailsRubriqueComponent],
   imports: [SharedModule, RouterModule],
   exports: [RubriquePostRoutingModule],
 })

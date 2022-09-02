@@ -14,14 +14,10 @@ export class ListQuizComponent implements OnInit {
   listQuiz: any = []
   orientation: string = ''
   filtredData(value: any) {
-    console.log(value)
-
     this.listQuiz = value
   }
 
   getOrientaion(value: any) {
-    console.log(value)
-
     this.orientation = value
   }
 }

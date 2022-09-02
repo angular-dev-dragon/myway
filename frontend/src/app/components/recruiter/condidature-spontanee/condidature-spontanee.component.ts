@@ -112,23 +112,19 @@ export class CondidatureSpontaneeComponent implements OnInit {
   lettreFile: any = ''
 
   onCvSelected(event: any) {
-    console.log(event.target.files)
     if (event.target.files) this.cvFile = event.target.files[0].name
     //this.currentInput = event.target.files[i].name
-    console.log(this.cvFile)
   }
   onLettrteSelected(event: any) {
-    console.log(event.target.files)
     if (event.target.files) this.lettreFile = event.target.files[0].name
     //this.currentInput = event.target.files[i].name
-    console.log(this.lettreFile)
   }
 
   get langues(): FormArray {
     return this.CondidatureForm.get('langues') as FormArray
   }
   newLangue() {
-    // console.log(this.preuves)
+    //
     if (this.langues.valid) {
       this.langues.push(
         this.fb.group({
@@ -146,13 +142,11 @@ export class CondidatureSpontaneeComponent implements OnInit {
     } else {
       this.langues.markAllAsTouched()
     }
-    // console.log(this.preuves)
+    //
   }
   deleteLangue(i: any) {
     this.langues.removeAt(i)
     this.listInputs.splice(i, 1)
-
-    console.log(this.listInputs)
   }
 
   listInputs: any = []

@@ -199,7 +199,7 @@ export class DetailsArticleComponent implements OnInit {
 
     // this.postService.incrementerImpressionArticle(this.article._id).subscribe(
     //   (res) => {
-    //     // console.log('response', res)
+    //     //
     //   },
     //   (err) => {
     //     console.log(err)
@@ -209,7 +209,7 @@ export class DetailsArticleComponent implements OnInit {
   incrementerPartage() {
     // this.postService.incrementerPartage(this.article._id).subscribe(
     //   (res) => {
-    //     //  console.log('response', res)
+    //     //
     //   },
     //   (err) => {
     //     console.log(err)
@@ -261,7 +261,7 @@ export class DetailsArticleComponent implements OnInit {
     // this.like = false
     // this.post.like--
     // this.postService.decrementerLikeArticle(this.post._id).subscribe((res) => {
-    //   // //console.log('nombre de like ======= ',res.like);
+    //   // //  ;
     // })
   }
 
@@ -273,7 +273,7 @@ export class DetailsArticleComponent implements OnInit {
     // this.postService
     //   .incrementerUnlikeArticle(this.post._id)
     //   .subscribe((res) => {
-    //     // //console.log('nombre de like ======= ',res.like);
+    //     // //  ;
     //   })
   }
 
@@ -283,7 +283,7 @@ export class DetailsArticleComponent implements OnInit {
     // this.postService
     //   .decrementerUnlikeArticle(this.post._id)
     //   .subscribe((res) => {
-    //     // //console.log('nombre de like ======= ',res.like);
+    //     // //  ;
     //   })
   }
   public sendAvis() {

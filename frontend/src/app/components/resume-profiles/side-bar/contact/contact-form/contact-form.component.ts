@@ -1,25 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
-import {
-  FormGroup,
-  FormBuilder,
-  Validators,
-  FormControl,
-} from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 
-import { DynamicDialogRef } from 'primeng/dynamicdialog';
+import { DynamicDialogRef } from 'primeng/dynamicdialog'
 @Component({
   selector: 'contact-form',
   templateUrl: './contact-form.component.html',
-  styleUrls: ['./contact-form.component.scss']
+  styleUrls: ['./contact-form.component.scss'],
 })
 export class ContactFormComponent implements OnInit {
-
-  public contact_form: FormGroup;
-  constructor(
-    private fb: FormBuilder,
-    private ref: DynamicDialogRef
-  ) {
+  public contact_form: FormGroup
+  constructor(private fb: FormBuilder, private ref: DynamicDialogRef) {
     this.contact_form = this.fb.group({
       platform: new FormControl('', [Validators.required]),
       user_name: new FormControl('', [
@@ -27,35 +18,17 @@ export class ContactFormComponent implements OnInit {
         Validators.minLength(3),
         Validators.maxLength(150),
       ]),
-    });
+    })
   }
-  ngOnInit() { }
+  ngOnInit() {}
 
   save_contact_from() {
-
     if (this.contact_form.valid) {
-      console.log('this.contact_form', this.contact_form);
-       this.ref.close();
+      this.ref.close()
     } else {
-      this.contact_form.markAllAsTouched();
-      console.log('not valid');
+      this.contact_form.markAllAsTouched()
     }
   }
 }
 
-
-
-
-
-
-
-
-
 // import { DynamicDialogRef } from 'primeng/dynamicdialog';
-
-
-
-
-
-
-

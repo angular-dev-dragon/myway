@@ -37,9 +37,6 @@ export class FilterByTextComponent implements OnInit, AfterViewInit, OnChanges {
 
   filterByText() {
     let searchValue = this.searchInput?.nativeElement.value || ''
-    console.log('filterByText', searchValue)
-    console.log('data', this.data)
-    console.log('pageName', this.pageName)
 
     if (this.pageName == 'quiz') {
       let dataFiltred = this.data.filter((data: any) => {
@@ -114,6 +111,11 @@ export class FilterByTextComponent implements OnInit, AfterViewInit, OnChanges {
     } else if (this.pageName == 'blogeurs') {
       let dataFiltred = this.data.filter((data: any) => {
         return data.nom.toLowerCase().includes(searchValue.toLowerCase())
+      })
+      this.filtredData.emit(dataFiltred)
+    } else if (this.pageName == 'metier') {
+      let dataFiltred = this.data.filter((data: any) => {
+        return data.Intitule.toLowerCase().includes(searchValue.toLowerCase())
       })
       this.filtredData.emit(dataFiltred)
     }

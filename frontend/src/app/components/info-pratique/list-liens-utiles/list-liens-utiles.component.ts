@@ -26,8 +26,6 @@ export class ListLiensUtilesComponent implements OnInit {
   }
 
   getOrientaion(value: any) {
-    console.log(value)
-
     this.orientation = value
   }
 

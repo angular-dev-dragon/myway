@@ -31,11 +31,9 @@ export class RecruteurService {
     )
   }
 
-
   allRecruteur: any = [
-   // #region just one
+    // #region just one
     {
-
       logo:
         'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/8124/logo.png?1469002464',
       imageBg:
@@ -161,7 +159,7 @@ export class RecruteurService {
       Ville: 'Casablanca',
       Region: 'Grand Casablanca',
     },
-   // #endregion
+    // #endregion
 
     {
       logo:
@@ -179,8 +177,6 @@ export class RecruteurService {
     },
   ]
 
-
-
   listRecruteur: any[] = []
   filter(
     searchFiltre: string = '',
@@ -194,12 +190,10 @@ export class RecruteurService {
 
     if (searchFiltre != '') {
       this.listRecruteur = this.listRecruteur.filter((offre: any) => {
-        return offre.title.toLowerCase().includes(searchFiltre.toLowerCase());
+        return offre.title.toLowerCase().includes(searchFiltre.toLowerCase())
       })
     }
     if (paysFiltre != '') {
-      console.log('entred', paysFiltre)
-
       this.listRecruteur = this.listRecruteur.filter((offre: any) => {
         return offre.Pays.toLowerCase() == paysFiltre.toLowerCase()
       })

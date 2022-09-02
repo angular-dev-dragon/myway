@@ -14,14 +14,10 @@ export class ListDemandesSpecifiquesComponent implements OnInit {
   resultData: any = []
 
   filtredData(value: any) {
-    console.log(value)
-
     this.resultData = value
   }
 
   getOrientaion(value: any) {
-    console.log(value)
-
     this.orientation = value
   }
 }

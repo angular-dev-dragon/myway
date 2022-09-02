@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core'
-import { TreeModule } from 'primeng/tree'
 
 @Injectable({
   providedIn: 'root',
@@ -179,14 +178,6 @@ export class OffreService {
     })
     this.listOffres = newList3
   }
-
-  // sort_by_name(type: string , i : string) {
-  //   this.listOffres.sort((a: any, b: any) => a[type].toLowerCase() > b[type].toLowerCase() ? 1 : -1);
-  // }
-
-  // sort_by_date(type: string, i : string) {
-  //    this.listOffres.sort((a: any, b: any) => (a.Date > b.Date ? 1 : -1));
-  // }
 }
 
 function elseif(arg0: boolean) {

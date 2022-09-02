@@ -271,19 +271,15 @@ export class SortComponent implements OnInit {
     // #region Blogeurs
     else if (this.pageName == 'blogeurs') {
       if ((this.sort_by_name_value = 'sort-up')) {
-        console.log('before', this.sort_by_name_value)
-
         this.data.sort((a: any, b: any) =>
           a.nom.toLowerCase() > b.nom.toLowerCase() ? 1 : -1,
         )
         this.sort_by_name_value = 'sort-down'
-        console.log('after', this.sort_by_name_value)
       } else {
         this.data.sort((a: any, b: any) =>
           a.nom.toLowerCase() < b.nom.toLowerCase() ? 1 : -1,
         )
         this.sort_by_name_value = 'sort-up'
-        console.log('down')
       }
     }
     // #endregion

@@ -4,13 +4,15 @@
   </div>
   <div class="row">
     <div class="col-md-9">
-      <app-top-bar
-        [pageName]="'blogeurs'"
-        [data]="blogeurService.listBlogueurs"
-        (filtredData)="filtredData($event)"
-        (orientationView)="getOrientaion($event)"
-      ></app-top-bar>
       <div class="section-recruteur">
+        <div class="my-2">
+          <app-top-bar
+            [pageName]="'blogeurs'"
+            [data]="blogeurService.listBlogueurs"
+            (filtredData)="filtredData($event)"
+            (orientationView)="getOrientaion($event)"
+          ></app-top-bar>
+        </div>
         <div class="row">
           <app-card-blogueur
             [routerLink]="['/blog/details-blogeur']"

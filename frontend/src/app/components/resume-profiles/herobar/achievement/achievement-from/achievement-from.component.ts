@@ -1,18 +1,8 @@
+import { Component, OnInit } from '@angular/core'
 
-import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 
-import {
-  FormGroup,
-  FormBuilder,
-  Validators,
-  FormControl,
-} from '@angular/forms';
-
-import { DynamicDialogRef } from 'primeng/dynamicdialog';
-
-
-
-
+import { DynamicDialogRef } from 'primeng/dynamicdialog'
 
 @Component({
   selector: 'app-achievement-from',
@@ -20,8 +10,8 @@ import { DynamicDialogRef } from 'primeng/dynamicdialog';
   styleUrls: ['./achievement-from.component.scss'],
 })
 export class AchievementFromComponent implements OnInit {
-  achievement_from_achievement_discription_input_value: string = '';
-  public achievement_from: FormGroup;
+  achievement_from_achievement_discription_input_value: string = ''
+  public achievement_from: FormGroup
   constructor(private fb: FormBuilder, private ref: DynamicDialogRef) {
     this.achievement_from = this.fb.group({
       achievement_from_achievement_date_input: new FormControl('', [
@@ -38,17 +28,15 @@ export class AchievementFromComponent implements OnInit {
       //   Validators.minLength(3),
       //   Validators.maxLength(150),
       // ]),
-    });
+    })
   }
   ngOnInit() {}
 
   save_achievement_from() {
     if (this.achievement_from.valid) {
-      console.log('this.cachievement_from', this.achievement_from);
-      this.ref.close();
+      this.ref.close()
     } else {
-      this.achievement_from.markAllAsTouched();
-      console.log('not valid');
+      this.achievement_from.markAllAsTouched()
     }
   }
 }

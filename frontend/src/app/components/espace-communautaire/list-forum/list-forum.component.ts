@@ -19,7 +19,6 @@ export class ListForumComponent implements OnInit {
         this.nbrParticipants = this.nbrParticipants + theme.nbre_participants
         this.nbrEchanges = this.nbrEchanges + theme.nbre_echanges
       })
-      console.log(forum.theme.length)
 
       forum.nbrParticipants = this.nbrParticipants
       forum.nbrEchanges = this.nbrEchanges
@@ -33,8 +32,6 @@ export class ListForumComponent implements OnInit {
   }
 
   getOrientaion(value: any) {
-    console.log(value)
-
     this.orientation = value
   }
 }

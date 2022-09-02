@@ -23,8 +23,6 @@ export class CDetailsComponent implements OnInit {
     private fb: FormBuilder,
     private activatedRoute: ActivatedRoute,
   ) {
-
-
     if (this.idPassed != '') {
       this.TrackEventroute(this.idPassed)
     } else {
@@ -56,14 +54,11 @@ export class CDetailsComponent implements OnInit {
       },
     })
   }
-  TrackEventroute_error(id: string) {
-    console.log('9adiya hamda a hamdiy' + id)
-  }
+  TrackEventroute_error(id: string) {}
   ngOnInit(): void {}
 
   sendMissage() {
     if (this.condida_contact.valid) {
-      console.log('this.condida_contact', this.condida_contact)
     } else {
       this.condida_contact.markAllAsTouched()
     }

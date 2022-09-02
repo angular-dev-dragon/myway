@@ -244,26 +244,25 @@ export class CListComponent implements OnInit {
   filter() {
     this.offres = this.allOffres
     let villeFiltre = this.villeSelect.nativeElement.value
-    // console.log('filtreParVille', villeFiltre)
+    //
     let regionFiltre = this.regionSelect.nativeElement.value
-    // console.log('filtre par region', regionFiltre)
+    //
     let paysFiltre = this.paysSelect.nativeElement.value
-    // console.log('filtre par pays', paysFiltre)
+    //
     let contratFiltre = this.contratBox._results
-    // console.log('filtre par contrat', contratFiltre)
+    //
 
     let niveauxEtFiltre = this.niveauxExBox._results
-    // console.log('filtre par niveaux etude', niveauxEtFiltre)
+    //
     let niveauxExFiltre = this.niveauxExBox._results
-    // console.log('filtre par niveaux experience', niveauxExFiltre)
+    //
     let langueFiltre = this.langueBox._results
-    // console.log('filtre par langues', langueFiltre)
+    //
     let secteurFiltre = this.secteurSelect.nativeElement.value
-    // console.log('filtre par secteurs', secteurFiltre)
+    //
     let searchFiltre = this.searchInput.nativeElement.value
-    // console.log('filtre par search', searchFiltre)
+    //
     let dateFiltre = this.dateInput.nativeElement.value
-    console.log('filtre par date', dateFiltre)
 
     if (searchFiltre != '') {
       this.offres = this.offres.filter((offre: any) => {
