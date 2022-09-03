@@ -1,10 +1,4 @@
-import {
-  Component,
-  OnInit,
-  ViewChildren,
-  ViewChild,
-  Input,
-} from '@angular/core'
+import { Component, OnInit, Input } from '@angular/core'
 import { MetierService } from 'src/app/shared/services/metier.service'
 
 @Component({
@@ -52,14 +46,10 @@ export class ListMetiersComponent implements OnInit {
   resultData: any = []
   orientation: string = ''
   filtredData(value: any) {
-    console.log(value)
-
     this.resultData = value
   }
 
   getOrientaion(value: any) {
-    console.log(value)
-
     this.orientation = value
   }
 }

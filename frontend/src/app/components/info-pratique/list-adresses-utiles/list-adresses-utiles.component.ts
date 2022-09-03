@@ -21,8 +21,6 @@ export class ListAdressesUtilesComponent implements OnInit {
   }
 
   getOrientaion(value: any) {
-    console.log(value)
-
     this.orientation = value
   }
   adresse: any = {}

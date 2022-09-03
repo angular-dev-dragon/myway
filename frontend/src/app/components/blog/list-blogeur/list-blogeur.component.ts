@@ -17,8 +17,6 @@ export class ListBlogeurComponent implements OnInit {
   }
 
   getOrientaion(value: any) {
-    console.log(value)
-
     this.orientation = value
   }
 }

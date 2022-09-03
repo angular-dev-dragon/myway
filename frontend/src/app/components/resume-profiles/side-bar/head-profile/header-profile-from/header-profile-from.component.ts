@@ -1,13 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core'
 
-import {
-  FormGroup,
-  FormBuilder,
-  Validators,
-  FormControl,
-} from '@angular/forms';
-import { DynamicDialogRef } from 'primeng/dynamicdialog';
-import { CountriesInfoService } from '../../../../../shared/Services/Countries-info/countries-info.service';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
+import { DynamicDialogRef } from 'primeng/dynamicdialog'
+import { CountriesInfoService } from '../../../../../shared/Services/Countries-info/countries-info.service'
 @Component({
   selector: 'header-profile-from',
   templateUrl: './header-profile-from.component.html',
@@ -17,22 +12,22 @@ import { CountriesInfoService } from '../../../../../shared/Services/Countries-i
   ],
 })
 export class HeaderProfileFromComponent implements OnInit {
-  @Input() img: string = '';
-  date: any;
-  online: boolean = false;
+  @Input() img: string = ''
+  date: any
+  online: boolean = false
 
-  selectedCountryAdvanced!: any[];
-  filteredCountries!: any[];
-  selectedCity: any;
-  city: any;
-  profileImg: string | undefined;
-  profileImgo: string | undefined;
+  selectedCountryAdvanced!: any[]
+  filteredCountries!: any[]
+  selectedCity: any
+  city: any
+  profileImg: string | undefined
+  profileImgo: string | undefined
 
-  public header_profile_form: FormGroup;
+  public header_profile_form: FormGroup
   constructor(
     private fb: FormBuilder,
     private Countriesinfo: CountriesInfoService,
-    private ref: DynamicDialogRef
+    private ref: DynamicDialogRef,
   ) {
     this.header_profile_form = this.fb.group({
       name: new FormControl('', [
@@ -90,27 +85,22 @@ export class HeaderProfileFromComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       borthDate: new FormControl('', [Validators.required]),
       countery: new FormControl('', [Validators.required]),
-    });
+    })
   }
   ngOnInit() {
     this.Countriesinfo.getCountries().subscribe((res) => {
-      this.city = res;
-    });
+      this.city = res
+    })
   }
 
   save_header_profile_from() {
     if (this.header_profile_form.valid) {
-      this.ref.close();
+      this.ref.close()
     } else {
-      this.header_profile_form.markAllAsTouched();
-      console.log('not valid');
+      this.header_profile_form.markAllAsTouched()
     }
   }
 }
-
-
-
-
 
 // private ref: DynamicDialogRef
 //  this.ref.close();

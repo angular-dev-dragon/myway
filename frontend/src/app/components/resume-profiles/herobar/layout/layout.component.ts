@@ -1,62 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'herobar-index',
   templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.scss','../../style/main.scss']
+  styleUrls: ['./layout.component.scss', '../../style/main.scss'],
 })
 export class LayoutComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import { Component, HostListener, OnInit } from '@angular/core';
 // import { MessageService } from 'primeng/api';
 // import { DialogService } from 'primeng/dynamicdialog';
 // import { DynamicDialogRef } from 'primeng/dynamicdialog';
 
-
 // @Component({
-
-
-
 
 //   providers: [DialogService, MessageService],
 // })
-
-
-
-
 
 //   constructor(
 //     public dialogService: DialogService,
@@ -120,10 +83,6 @@ export class LayoutComponent implements OnInit {
 //   }
 // }
 
-
-
-
-
 // import { Component, OnInit } from '@angular/core';
 
 // import {
@@ -134,11 +93,6 @@ export class LayoutComponent implements OnInit {
 // } from '@angular/forms';
 
 // import { DynamicDialogRef } from 'primeng/dynamicdialog';
-
-
-
-
-
 
 //   public _form: FormGroup;
 //   constructor(private fb: FormBuilder, private ref: DynamicDialogRef) {
@@ -157,11 +111,11 @@ export class LayoutComponent implements OnInit {
 
 //   save__from() {
 //     if (this._form.valid) {
-//       console.log('this.c_form', this._form);
+//         ;
 //       this.ref.close();
 //     } else {
 //       this._form.markAllAsTouched();
-//       console.log('not valid');
+//         ;
 //     }
 //   }
 // }

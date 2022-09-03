@@ -94,7 +94,6 @@ export class CondidatureSpontaneeService {
       );
     }
     if (paysFiltre != '') {
-      console.log('entred', paysFiltre);
 
       this.listSocieteCondidature = this.listSocieteCondidature.filter(
         (offre: any) => {

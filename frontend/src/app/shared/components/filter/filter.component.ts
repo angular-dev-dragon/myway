@@ -55,9 +55,7 @@ export class FilterComponent implements OnInit {
   // sort_by_name: string = 'sort';
   // sort_by_date: string = 'sort';
 
-  ngOnInit(): void {
-    console.log(this.pageName)
-  }
+  ngOnInit(): void {}
 
   // sortByName(i: string) {
   //   this.sort_by_name = i;
@@ -77,21 +75,21 @@ export class FilterComponent implements OnInit {
 
     let metiertValue = this.metierBox._results || ''
     let villeFiltre = this.villeSelect?.nativeElement.value || ''
-    // console.log('filtreParVille', villeFiltre)
+    //
     let regionFiltre = this.regionSelect?.nativeElement.value || ''
-    // console.log('filtre par region', regionFiltre)
+    //
     let paysFiltre = this.paysSelect?.nativeElement.value || ''
-    // console.log('filtre par pays', paysFiltre)
+    //
     let contratFiltre = this.contratBox?._results || ''
-    // console.log('filtre par contrat', contratFiltre)
+    //
     let dateFilter = this.dateInput?.nativeElement.value || ''
 
     let niveauxEtFiltre = this.niveauxEtBox?._results || ''
-    // console.log('filtre par niveaux etude', niveauxEtFiltre)
+    //
     let niveauxExFiltre = this.niveauxExBox?._results || ''
-    // console.log('filtre par niveaux experience', niveauxExFiltre)
+    //
     let langueFiltre = this.langueBox?._results || ''
-    // console.log('filtre par langues', langueFiltre)
+    //
 
     let secteurFiltre = this.secteurSelect?.nativeElement.value || ''
 
@@ -105,7 +103,7 @@ export class FilterComponent implements OnInit {
       this.quizService.filter(metiertValue, secteurFiltre)
     }
     if (this.pageName == 'metier') {
-      this.metierService.filter(nameFilter, metiertValue)
+      this.metierService.filter(secteurFiltre, metiertValue)
     }
 
     if (this.pageName == 'offre') {

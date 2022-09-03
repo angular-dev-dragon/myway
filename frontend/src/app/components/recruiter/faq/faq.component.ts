@@ -97,7 +97,6 @@ export class FaqComponent implements OnInit {
     }
   }
   newQuestion() {
-    console.log(this.questions.valid)
     if (this.questions.valid) {
       this.questions.push(
         this.fb.group({
@@ -111,7 +110,7 @@ export class FaqComponent implements OnInit {
     } else {
       this.questions.markAllAsTouched()
     }
-    //  console.log(this.questions)
+    //
   }
 
   get questions(): FormArray {

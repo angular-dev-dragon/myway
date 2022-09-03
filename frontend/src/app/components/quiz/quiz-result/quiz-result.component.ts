@@ -31,7 +31,6 @@ export class QuizResultComponent implements OnInit {
   ngOnInit(): void {
     this.reponses = this.quizService.reponses
 
-    console.log('this.reponses', this.reponses)
     let userResponse: any = []
     this.reponses.forEach((rp: any) => {
       if (rp.type == 'simple') {
@@ -39,8 +38,7 @@ export class QuizResultComponent implements OnInit {
         rp.userReponse.__valeur_reponse_juste == null
           ? (this.rFausse += 1)
           : (this.rJuste += 1)
-        console.log('🚀 ~ simple this.rJuste', this.rJuste)
-        console.log('🚀 ~ simple this.rFausse', this.rFausse)
+
         userResponse.push({
           type: 'simple',
           qst: rp._id,
@@ -58,8 +56,7 @@ export class QuizResultComponent implements OnInit {
         filterdResponse.length == filterdResponseQuiz.length
           ? (this.rJuste += 1)
           : (this.rFausse += 1)
-        console.log('🚀 ~ multiple this.rJuste', this.rJuste)
-        console.log('🚀 ~ multiple this.rFausse', this.rFausse)
+
         userResponse.push({
           type: 'multiple',
           qst: rp._id,

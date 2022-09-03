@@ -220,8 +220,6 @@ export class QuizQuestionsComponent implements OnInit {
     }
     this.quizService.reponses = []
 
-    console.log('quiz', this.quiz.question_quiz)
-
     this.currentQuestion = this.quiz.question_quiz[0]
     this.table_question = this.quiz.question_quiz
 
@@ -234,7 +232,7 @@ export class QuizQuestionsComponent implements OnInit {
     // ])
     // this.quizService.getOneQuiz(this.id).subscribe((quiz) => {
     //   this.quiz = quiz
-    //   console.log('quiz', this.quiz)
+    //
 
     //   this.currentQuestion = this.quiz.question_quiz[0]
     //   this.table_question = this.quiz.question_quiz
@@ -258,7 +256,7 @@ export class QuizQuestionsComponent implements OnInit {
 
     if (this.questionNbr < this.quiz.question_quiz.length) {
       this.currentQuestion = this.quiz.question_quiz[this.questionNbr]
-      console.log('this.currentQuestion', this.currentQuestion)
+
       // this.choixs = this.choix = this.currentQuestion.reponse_quiz
 
       this.choix = []
@@ -284,6 +282,5 @@ export class QuizQuestionsComponent implements OnInit {
       this.selectedChoise.splice(i, 1)
     }
     this.choix = [...this.selectedChoise]
-    console.log('Choix Selected', this.selectedChoise)
   }
 }

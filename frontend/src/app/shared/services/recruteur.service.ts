@@ -35,7 +35,10 @@ export class RecruteurService {
   allRecruteur: any = [
     // #region just one
     {
+
       logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/8124/logo.png?1469002464',
+
+
       imageBg:
         'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/6192405/index.png?1659520006',
       title: 'Patronas',
@@ -178,6 +181,7 @@ export class RecruteurService {
 
 
 
+
   filter(
     searchFiltre: string = '',
     secteurFiltre: string,
@@ -187,6 +191,7 @@ export class RecruteurService {
     typeSociete: any
   ) {
     this.listRecruteur = this.allRecruteur;
+
 
     this.secteurFiltre = secteurFiltre;
     this.paysFiltre = paysFiltre;
@@ -199,8 +204,8 @@ export class RecruteurService {
     //     return offre.title.toLowerCase().includes(searchFiltre.toLowerCase());
     //   });
     // }
+
     if (paysFiltre != '') {
-      console.log('entred', paysFiltre);
 
       this.listRecruteur = this.listRecruteur.filter((offre: any) => {
         return offre.Pays.toLowerCase() == paysFiltre.toLowerCase();

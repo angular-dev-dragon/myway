@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core'
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
@@ -55,7 +55,6 @@ export class DemandeSpecifiqueService {
     niveauxExFiltre: any
   ) {
     this.listDemandes = this.listAllDemandes;
-    console.log('entred');
 
     if (searchFiltre != '') {
       this.listDemandes = this.listDemandes.filter((offre: any) => {

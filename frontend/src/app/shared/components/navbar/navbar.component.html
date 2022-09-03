@@ -26,11 +26,7 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div
-      class="collapse navbar-collapse"
-      id="navbarColor"
-      style="padding-left: 100px;"
-    >
+    <div class="collapse navbar-collapse" id="navbarColor">
       <ul
         class="navbar-nav me-auto mb-2 mb-lg-0"
         style="padding-left: 15px; align-items: baseline;"
@@ -132,7 +128,7 @@
             <li>
               <a
                 class="dropdown-item"
-                [routerLink]="['/recruteursetablissements']"
+                [routerLink]="['/recruteurs/etablissements']"
               >
                 Etablissements de formation
               </a>
@@ -216,12 +212,18 @@
               </a>
             </li>
             <li>
-              <a class="dropdown-item">
+              <a
+                class="dropdown-item"
+                [routerLink]="['/rubrique/details-rubrique']"
+              >
                 Hard-Skills
               </a>
             </li>
             <li>
-              <a class="dropdown-item">
+              <a
+                class="dropdown-item"
+                [routerLink]="['/rubrique/details-rubrique']"
+              >
                 Soft-Skills
               </a>
             </li>
@@ -245,13 +247,15 @@
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
-            [routerLink]="['/rubrique/details-rubrique']"
           >
             Evénements et actualités
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item">
+              <a
+                class="dropdown-item"
+                [routerLink]="['/rubrique/details-rubrique']"
+              >
                 Actualités d'emploi
               </a>
             </li>

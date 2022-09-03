@@ -42,7 +42,6 @@ export class EntretienComponent implements OnInit {
   }
   sendEntretien() {
     if (this.entretienForm.valid) {
-      console.log('this.entretienForm', this.entretienForm)
     } else {
       this.entretienForm.markAllAsTouched()
     }

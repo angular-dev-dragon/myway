@@ -1,20 +1,8 @@
+import { Component, OnInit } from '@angular/core'
 
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 
-
-
-
-
-import { Component, OnInit } from '@angular/core';
-
-import {
-  FormGroup,
-  FormBuilder,
-  Validators,
-  FormControl,
-} from '@angular/forms';
-
-import { DynamicDialogRef } from 'primeng/dynamicdialog';
-
+import { DynamicDialogRef } from 'primeng/dynamicdialog'
 
 @Component({
   selector: 'education-from',
@@ -22,7 +10,7 @@ import { DynamicDialogRef } from 'primeng/dynamicdialog';
   styleUrls: ['./education-from.component.scss'],
 })
 export class EducationFromComponent implements OnInit {
-  public education_form: FormGroup;
+  public education_form: FormGroup
 
   constructor(private fb: FormBuilder, private ref: DynamicDialogRef) {
     this.education_form = this.fb.group({
@@ -42,20 +30,18 @@ export class EducationFromComponent implements OnInit {
       education_form_education_contry_input: new FormControl('', [
         Validators.required,
       ]),
-      education_form_education_ctiy_input: new FormControl('',
-        [Validators.required]),
- 
-    });
+      education_form_education_ctiy_input: new FormControl('', [
+        Validators.required,
+      ]),
+    })
   }
   ngOnInit() {}
 
   save_education_from() {
     if (this.education_form.valid) {
-      console.log('this.ceducation_from', this.education_form);
-      this.ref.close();
+      this.ref.close()
     } else {
-      this.education_form.markAllAsTouched();
-      console.log('not valid');
+      this.education_form.markAllAsTouched()
     }
   }
 }

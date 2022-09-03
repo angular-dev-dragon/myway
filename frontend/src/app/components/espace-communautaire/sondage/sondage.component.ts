@@ -209,10 +209,10 @@ export class SondageComponent implements OnInit {
     let date = new Date()
     var today = new Date().toISOString().slice(0, 10)
 
-    // console.log('Sondage', res,today,res[0].date_cloture.slice(0, 10))
+    //
     if (res.length) {
       for (let i in res) {
-        //  console.log(res[i].date_cloture,"===>",res[i].date_cloture.slice(0, 10) < today)
+        //
         if (res[i].date_cloture.slice(0, 10) < today) {
           this.sondageHistorique.push(res[i])
         } else this.Sondage.push(res[i])
@@ -230,21 +230,21 @@ export class SondageComponent implements OnInit {
     // this.Sondage = sondage;
 
     //current sondage
-    // console.log('Sondage', this.Sondage)
-    // console.log('Sondage', this.sondageHistorique)
+    //
+    //
     // this.currentSondage = this.Sondage.pop();
-    // console.log('CSondage', this.currentSondage)
+    //
     //
     // this.sondageHistorique = this.Sondage.reverse()
-    //console.log('HSondage', this.sondageHistorique)
+    //
   }
 
   public reponse: any
   increment(id: any) {
     // this.reponse.nombre_reponse += 1;
-    // //console.log(id)
+    // //
     // this.sondageService.updateChoix_S(id,this.reponse).subscribe(res => {
-    //   //console.log(res);
+    //   //  ;
     // })
   }
 
