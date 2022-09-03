@@ -66,7 +66,7 @@ export class FilterByTextComponent implements OnInit, AfterViewInit, OnChanges {
       this.pageName == 'recruteur'
     ) {
 
-    this.genericService.getAllService(this.pageName)?.filterByText(searchValue);
+    this.genericService.get(this.pageName)?.filterByText(searchValue);
 
       // let dataFiltred = this.genericService
       //   .get(this.pageName)

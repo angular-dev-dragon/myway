@@ -28,7 +28,7 @@
 
           <div class="row">
             <app-card-recruiter *ngFor="
-                let recruiter of this.genericervice.get(pageName)
+                let recruiter of resultData
                   | paginate: { itemsPerPage: 6, currentPage: p }
               " [routerLink]="['/recruiter/{{recruiter.id}}/details']" class="col-md-4 col-sm-6" [imageBg]="recruiter.imageBg" [logo]="recruiter.logo"
               [title]="recruiter.title" [type]="recruiter.type" [salaries]="recruiter.salaries"

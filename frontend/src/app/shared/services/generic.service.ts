@@ -1,3 +1,4 @@
+import { DefaultService } from './default.service';
 import { TemoignageService } from './temoignage.service';
 import { RecruteurService } from 'src/app/shared/services/recruteur.service';
 import { QuizService } from 'src/app/shared/services/quiz.service';
@@ -36,46 +37,32 @@ export class GenericService {
     private postService: PostService,
     private QuizService: QuizService,
     private recruteurService: RecruteurService,
-    private rubriaueService: RubriqueService,
+    private rubriqueService: RubriqueService,
     private sondageService: SondageService,
-    private temoingnageService: TemoignageService
+    private temoingnageService: TemoignageService,
+    private defaultService: DefaultService
   ) {}
-  get(pageName: string) {
+  get(pageName: string):any {
     switch (pageName) {
-      case 'adresses utiles': {
-        return this.addesseService.getAllInfo();
-      }
-      case 'blogeurs': {
-        return this.blogService.getAllInfo();
-      }
-      case 'candidat': {
-        return this.candidatService.getAllInfo();
-      }
-      case 'candidature spontanee': {
-        return this.condidatureSpontaneeService.getAllInfo();
-      }
-      case 'demande specifique': {
-        return this.demandeSpecifiqueService.getAllInfo();
-      }
-      case 'documents': {
-        return this.documentService.getAllInfo();
-      }
-      case 'recruteur': {
-        return this.recruteurService.getAllRecruteursInfo();
-      }
-      // #region
-      // case 'evenement': { return this.evenementService.getAllInfo() }
-      // case 'forums':{return this.forumService.getAllInfo() }
-      // case 'liens utiles':{return this.lienUtileService.getAllInfo() }
-      // case 'metier':{return this.metierService.getAllInfo() }
-      // case 'quiz':{return this.QuizService.getAllInfo() }
-      // case 'offre':{return this.offreService.getAllInfo() }
-      // case 'recruteur':{return this.recruteurService.getAllInfo() }
-      // case 'sondage':{return this.sondageService.getAllInfo() }
-      // case 'rubrique':{return this.rubriaueService.getAllInfo() }
-      // case 'temoignage': {return this.temoingnageService.getAllInfo() }
-      // // case '':this.postService;
-      // #endregion
+      case 'blogeurs':return this.blogService;
+      case 'candidat':return this.candidatService;
+      case 'candidature spontanee':return this.condidatureSpontaneeService;
+      case 'demande specifique':return this.demandeSpecifiqueService;
+      case 'documents':return this.documentService;
+      case 'recruteur':return this.recruteurService;
+      case 'adresses utiles':return this.addesseService;
+      case 'evenement':return this.evenementService;
+      case 'forums':return this.forumService;
+      case 'liens utiles':return this.lienUtileService;
+      case 'metier':return this.metierService;
+      case 'quiz':return this.QuizService;
+      case 'offre':return this.offreService;
+      case 'sondage':return this.sondageService;
+      case 'rubrique':return this.rubriqueService;
+      case 'temoignage':return this.temoingnageService;
+      case 'post':return this.postService;
+      case 'recruteur':return this.recruteurService;
+      default:return this.defaultService;
     }
   }
 
@@ -83,12 +70,4 @@ export class GenericService {
 
   // conseils pratique
 
-  getAllService(pageName: string) {
-    if (pageName == 'recruteur') {
-      console.log('getAllService');
-
-      return this.recruteurService;
-    }
-    return;
-  }
 }

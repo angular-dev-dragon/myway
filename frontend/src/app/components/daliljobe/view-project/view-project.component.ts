@@ -16,7 +16,7 @@ export class ViewProjectComponent implements OnInit {
   showSideFilter: boolean = true;
   showHeader: boolean = true;
   showTopFilter: boolean = true;
-
+  resultData: any;
   constructor(
     public genericervice: GenericService,
     private activatedRoute: ActivatedRoute,
@@ -30,13 +30,14 @@ export class ViewProjectComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         this.pageName = event.url.split('/')[2];
         this.pageName = this.removeAccent(this.pageName);
+
       }
     });
   }
 
   ngOnInit(): void {
     this.controlView();
-  //  this.getDataFromService(this.pageName);
+    //  this.getDataFromService(this.pageName);
   }
 
   getDataFromService(pageName: string) {
@@ -53,6 +54,15 @@ export class ViewProjectComponent implements OnInit {
       this.showSideFilter = true;
       this.showHeader = true;
       this.showTopFilter = true;
+
+    }
+
+    else if (this.pageName == 'recruteur') {
+      this.showSideFilter = true;
+      this.showHeader = true;
+      this.showTopFilter = true;
+      this.resultData =
+        this.genericervice.get(this.pageName)?.getAllRecruteursInfo() || [];
     } else if (this.pageName == 'offre') {
       this.showSideFilter = true;
       this.showHeader = true;
@@ -142,12 +152,9 @@ export class ViewProjectComponent implements OnInit {
   };
   // #endregion
 
-  resultData: any = [];
   orientation: string = '';
   filtredData(value: any) {
     this.data = value;
-
-    console.log('result data', this.resultData);
   }
 
   getOrientaion(value: any) {
