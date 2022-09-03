@@ -9,10 +9,10 @@ export class BlogService {
   constructor(private http: HttpClient) {}
 
   getBlogueur() {
-    return this.http.get(API + '/blogueur')
+    return this.http.get(API + '/blogueur');
   }
   getBlogueurById(id: any) {
-    return this.http.get(API + '/blogueur+' + id)
+    return this.http.get(API + '/blogueur+' + id);
   }
   listBlogueurs: any = [
     {
@@ -62,4 +62,11 @@ export class BlogService {
         'I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores. My passion is to design digital user experiences through the bold interface and meaningful interactions.',
     },
   ]
+
+
+
+
+  getAllInfo() {
+    return this.listBlogueurs
+  }
 }

@@ -1,3 +1,4 @@
+import { RecruteurService } from 'src/app/shared/services/recruteur.service';
 import {
   AfterViewInit,
   Component,
@@ -9,6 +10,7 @@ import {
   SimpleChanges,
   ViewChild,
 } from '@angular/core'
+import { GenericService } from '../services/generic.service'
 
 @Component({
   selector: 'app-filter-by-text',
@@ -21,11 +23,11 @@ export class FilterByTextComponent implements OnInit, AfterViewInit, OnChanges {
 
   @Output() filtredData: any = new EventEmitter<any>()
 
-  constructor() {}
+  constructor(public genericService: GenericService) {}
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['data'] && this.data) {
-      this.filterByText()
-    }
+    // if (changes['data'] && this.data) {
+    //   this.filterByText()
+    // }
   }
   ngAfterViewInit(): void {
     this.filterByText()
@@ -37,9 +39,7 @@ export class FilterByTextComponent implements OnInit, AfterViewInit, OnChanges {
 
   filterByText() {
     let searchValue = this.searchInput?.nativeElement.value || ''
-    console.log('filterByText', searchValue)
-    console.log('data', this.data)
-    console.log('pageName', this.pageName)
+
 
     if (this.pageName == 'quiz') {
       let dataFiltred = this.data.filter((data: any) => {
@@ -62,10 +62,15 @@ export class FilterByTextComponent implements OnInit, AfterViewInit, OnChanges {
       this.pageName == 'candidature spontanee' ||
       this.pageName == 'recruteur'
     ) {
-      let dataFiltred = this.data.filter((data: any) => {
-        return data.title.toLowerCase().includes(searchValue.toLowerCase())
-      })
-      this.filtredData.emit(dataFiltred)
+
+    this.genericService.getAllService(this.pageName)?.filterByText(searchValue);
+
+      // let dataFiltred = this.genericService
+      //   .get(this.pageName)
+      //   .filter((data: any) => {
+      //     return data.title.toLowerCase().includes(searchValue.toLowerCase());
+      //   });
+      // this.filtredData.emit(dataFiltred)
     } else if (this.pageName == 'candidat') {
       let dataFiltred = this.data.filter((data: any) => {
         return data.info.name.first_name
@@ -120,3 +125,10 @@ export class FilterByTextComponent implements OnInit, AfterViewInit, OnChanges {
     return this.filtredData
   }
 }
+
+
+
+
+
+
+

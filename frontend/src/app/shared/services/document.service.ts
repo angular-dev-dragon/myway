@@ -9,11 +9,11 @@ export class DocumentService {
   constructor(private http: HttpClient) {}
 
   getDocuments() {
-    return this.http.get<any[]>(`${API}/doc/document`)
+    return this.http.get<any[]>(`${API}/doc/document`);
   }
 
   getDocument_by_id(docId: any) {
-    return this.http.get(`${API}/doc/document/${docId}`)
+    return this.http.get(`${API}/doc/document/${docId}`);
   }
 
   documents: any[] = [
@@ -165,5 +165,9 @@ export class DocumentService {
       etat_validation: 'en cours de publication',
       __v: 0,
     },
-  ]
+  ];
+
+  getAllInfo() {
+    return this.documents;
+  }
 }

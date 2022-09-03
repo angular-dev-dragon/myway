@@ -1,43 +1,41 @@
-import { HttpClient } from '@angular/common/http'
-import { Injectable } from '@angular/core'
-import { API } from './api.service'
+import { filter } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { API } from './api.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RecruteurService {
   constructor(private http: HttpClient) {
-    this.listRecruteur = this.allRecruteur
+    this.listRecruteur = this.allRecruteur;
   }
   getAllRecruteurs() {
-    return this.http.get(API + '/recruteur')
+    return this.http.get(API + '/recruteur');
   }
   getRecruteurCondidaturesSpontanees() {
-    return this.http.get(API + '/recruteur/condidatures-spontanees')
+    return this.http.get(API + '/recruteur/condidatures-spontanees');
   }
   getRecruteurById(id: any) {
-    return this.http.get(API + '/recruteur/' + id)
+    return this.http.get(API + '/recruteur/' + id);
   }
   public postReview(review: any, id: any) {
-    return this.http.post(API + '/recruteur/review/' + id, review)
+    return this.http.post(API + '/recruteur/review/' + id, review);
   }
   public postEntretien(entretien: any, id: any) {
-    return this.http.post(API + '/recruteur/entretien/' + id, entretien)
+    return this.http.post(API + '/recruteur/entretien/' + id, entretien);
   }
   public postCondidatureSpontanee(condidature: any, id: any) {
     return this.http.post(
       API + '/recruteur/condidature-spontanee/' + id,
-      condidature,
-    )
+      condidature
+    );
   }
 
-
   allRecruteur: any = [
-   // #region just one
+    // #region just one
     {
-
-      logo:
-        'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/8124/logo.png?1469002464',
+      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/8124/logo.png?1469002464',
       imageBg:
         'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/6192405/index.png?1659520006',
       title: 'Patronas',
@@ -50,8 +48,7 @@ export class RecruteurService {
       Region: 'Grand Casablanca',
     },
     {
-      logo:
-        'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/4537715/logo.png?1622715420',
+      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/4537715/logo.png?1622715420',
       imageBg:
         'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/4548600/index.png?1623058769',
       title: 'Aramco S.A',
@@ -65,8 +62,7 @@ export class RecruteurService {
     },
 
     {
-      logo:
-        'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/3195090/logo.png?1587552503',
+      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/3195090/logo.png?1587552503',
       imageBg:
         'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/5310523/index.png?1640179035',
       title: 'Total Energies',
@@ -78,8 +74,7 @@ export class RecruteurService {
       secteur: 'Informatique',
     },
     {
-      logo:
-        'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/1007848/logo.png?1558457886',
+      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/1007848/logo.png?1558457886',
       imageBg:
         'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/5027463/index.png?1634721315',
       title: 'Total Energies',
@@ -92,8 +87,7 @@ export class RecruteurService {
       Region: 'Grand Casablanca',
     },
     {
-      logo:
-        'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/69883/logo.png?1621953434',
+      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/69883/logo.png?1621953434',
       imageBg:
         'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/6179891/index.png?1659017908',
       title: 'Total Energies',
@@ -106,8 +100,7 @@ export class RecruteurService {
       Region: 'Tanger-Tetouan',
     },
     {
-      logo:
-        'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/8124/logo.png?1469002464',
+      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/8124/logo.png?1469002464',
       imageBg:
         'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/6192405/index.png?1659520006',
       title: 'Patronas',
@@ -120,8 +113,7 @@ export class RecruteurService {
       Region: 'Grand Casablanca',
     },
     {
-      logo:
-        'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/4537715/logo.png?1622715420',
+      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/4537715/logo.png?1622715420',
       imageBg:
         'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/4548600/index.png?1623058769',
       title: 'Aramco S.A',
@@ -135,8 +127,7 @@ export class RecruteurService {
     },
 
     {
-      logo:
-        'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/3195090/logo.png?1587552503',
+      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/3195090/logo.png?1587552503',
       imageBg:
         'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/5310523/index.png?1640179035',
       title: 'Total Energies',
@@ -148,8 +139,7 @@ export class RecruteurService {
       secteur: 'Informatique',
     },
     {
-      logo:
-        'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/1007848/logo.png?1558457886',
+      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/1007848/logo.png?1558457886',
       imageBg:
         'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/5027463/index.png?1634721315',
       title: 'Total Energies',
@@ -161,11 +151,10 @@ export class RecruteurService {
       Ville: 'Casablanca',
       Region: 'Grand Casablanca',
     },
-   // #endregion
+    // #endregion
 
     {
-      logo:
-        'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/69883/logo.png?1621953434',
+      logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/69883/logo.png?1621953434',
       imageBg:
         'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/6179891/index.png?1659017908',
       title: 'Total Energies',
@@ -177,69 +166,116 @@ export class RecruteurService {
       Ville: 'Tanger',
       Region: 'Tanger-Tetouan',
     },
-  ]
+  ];
+
+  secteurFiltre: string = '';
+  paysFiltre: string = '';
+  regionFiltre: string = '';
+  villeFiltre: string = '';
+  typeSociete: any = []
+  searchValue: string = '';
+  listRecruteur: any[] = [];
 
 
 
-  listRecruteur: any[] = []
   filter(
     searchFiltre: string = '',
     secteurFiltre: string,
     paysFiltre: string,
     regionFiltre: string,
     villeFiltre: string,
-    typeSociete: any,
+    typeSociete: any
   ) {
-    this.listRecruteur = this.allRecruteur
+    this.listRecruteur = this.allRecruteur;
 
-    if (searchFiltre != '') {
-      this.listRecruteur = this.listRecruteur.filter((offre: any) => {
-        return offre.title.toLowerCase().includes(searchFiltre.toLowerCase());
-      })
-    }
+    this.secteurFiltre = secteurFiltre;
+    this.paysFiltre = paysFiltre;
+    this.regionFiltre = regionFiltre;
+    this.villeFiltre = villeFiltre;
+    this.typeSociete = typeSociete;
+
+    // if (searchFiltre != '') {
+    //   this.listRecruteur = this.listRecruteur.filter((offre: any) => {
+    //     return offre.title.toLowerCase().includes(searchFiltre.toLowerCase());
+    //   });
+    // }
     if (paysFiltre != '') {
-      console.log('entred', paysFiltre)
+      console.log('entred', paysFiltre);
 
       this.listRecruteur = this.listRecruteur.filter((offre: any) => {
-        return offre.Pays.toLowerCase() == paysFiltre.toLowerCase()
-      })
+        return offre.Pays.toLowerCase() == paysFiltre.toLowerCase();
+      });
     } else if (regionFiltre != '') {
       this.listRecruteur = this.listRecruteur.filter((offre: any) => {
-        return offre.Region == regionFiltre
-      })
+        return offre.Region == regionFiltre;
+      });
     } else if (villeFiltre != '') {
       this.listRecruteur = this.listRecruteur.filter((offre: any) => {
-        return offre.Ville == villeFiltre
-      })
+        return offre.Ville == villeFiltre;
+      });
     } else if (secteurFiltre != '') {
       this.listRecruteur = this.listRecruteur.filter((offre: any) => {
-        return offre.secteur == secteurFiltre
-      })
+        return offre.secteur == secteurFiltre;
+      });
     }
 
-    this.checkboxFiltre(typeSociete, 'type')
+    this.checkboxFiltre(typeSociete, 'type');
+
+    if (this.searchValue != '') {
+
+
+
+   this.listRecruteur = this.listRecruteur.filter((data: any) => {
+     return data.title.toLowerCase().includes(this.searchValue.toLowerCase());
+   });
+
+    }
+    console.log('end function filter globale');
+
   }
 
   checkboxFiltre(CheckboxList: any, label: any) {
-    let newList2
-    let newList3: any = this.listRecruteur
-    let isFirstTime: Boolean = true
+    let newList2;
+    let newList3: any = this.listRecruteur;
+    let isFirstTime: Boolean = true;
     CheckboxList.map((filtre: any) => {
       if (filtre.nativeElement.checked) {
         if (isFirstTime == true) {
-          isFirstTime = false
-          newList3 = []
+          isFirstTime = false;
+          newList3 = [];
         }
-        newList2 = this.listRecruteur
+        newList2 = this.listRecruteur;
         newList2 = newList2.filter((offre: any) => {
-          return offre[label] == filtre.nativeElement.value
-        })
+          return offre[label] == filtre.nativeElement.value;
+        });
 
         newList2.map((list: any) => {
-          newList3.push(list)
-        })
+          newList3.push(list);
+        });
       }
-    })
-    this.listRecruteur = newList3
+    });
+    this.listRecruteur = newList3;
   }
+  getAllRecruteursInfo() {
+    return this.listRecruteur;
+  }
+
+  filterByText(text: string) {
+this.searchValue=text
+
+    this.filter(
+      '',
+      this.secteurFiltre,
+      this.paysFiltre,
+      this.regionFiltre,
+      this.villeFiltre,
+      this.typeSociete
+    );
+
+
+
+    }
+
+
+
 }

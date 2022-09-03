@@ -1,3 +1,4 @@
+import { RecruteurService } from 'src/app/shared/services/recruteur.service';
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core'
 
 @Component({
@@ -14,7 +15,7 @@ export class SortComponent implements OnInit {
   @Input() sortByName: boolean = true;
   @Input() sortByDate: boolean = true;
 
-  constructor() {}
+  constructor(private recruteurService:RecruteurService) {}
 
   ngOnInit(): void {}
   ngOnChanges(changes: SimpleChanges): void {
@@ -45,24 +46,25 @@ export class SortComponent implements OnInit {
     // #endregion
     // #region condidat
     else if (this.pageName == 'condidat') {
-
-
-       if (this.sort_by_name_value == 'sort-up') {
-         this.data.sort((a: any, b: any) =>
-           a.info.name.first_name.toLowerCase() > b.info.name.first_name.toLowerCase() ? 1 : -1
-         );
-         this.sort_by_name_value = 'sort-down';
-       } else if (this.sort_by_name_value == 'sort-down') {
-         this.data.sort((a: any, b: any) =>
-           a.info.name.first_name.toLowerCase() < b.info.name.first_name.toLowerCase() ? 1 : -1
-         );
-         this.sort_by_name_value = 'sort-up';
-       } else if (this.sort_by_name_value == 'sort') {
-         this.sort_by_name_value = 'sort-down';
-       }
-
-
-
+      if (this.sort_by_name_value == 'sort-up') {
+        this.data.sort((a: any, b: any) =>
+          a.info.name.first_name.toLowerCase() >
+          b.info.name.first_name.toLowerCase()
+            ? 1
+            : -1
+        );
+        this.sort_by_name_value = 'sort-down';
+      } else if (this.sort_by_name_value == 'sort-down') {
+        this.data.sort((a: any, b: any) =>
+          a.info.name.first_name.toLowerCase() <
+          b.info.name.first_name.toLowerCase()
+            ? 1
+            : -1
+        );
+        this.sort_by_name_value = 'sort-up';
+      } else if (this.sort_by_name_value == 'sort') {
+        this.sort_by_name_value = 'sort-down';
+      }
     }
     // #endregion
     // #region metier
@@ -136,12 +138,12 @@ export class SortComponent implements OnInit {
     // #region condidature recruteur
     else if (this.pageName == 'recruteur') {
       if (this.sort_by_name_value == 'sort-up') {
-        this.data.sort((a: any, b: any) =>
+        this.recruteurService.listRecruteur.sort((a: any, b: any) =>
           a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1
         );
         this.sort_by_name_value = 'sort-down';
       } else if (this.sort_by_name_value == 'sort-down') {
-        this.data.sort((a: any, b: any) =>
+        this.recruteurService.listRecruteur.sort((a: any, b: any) =>
           a.title.toLowerCase() < b.title.toLowerCase() ? 1 : -1
         );
         this.sort_by_name_value = 'sort-up';

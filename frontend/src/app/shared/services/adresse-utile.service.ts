@@ -600,4 +600,15 @@ export class AdresseUtileService {
   public getAdresse(): Observable<any> {
     return this.http.get<any>(API + '/adresse-utile')
   }
+
+
+
+  getAllInfo() {
+
+
+    return this.adressesUtiles
+
+  }
+
+
 }

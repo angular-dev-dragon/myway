@@ -2,7 +2,7 @@
   <app-filter-by-text
     *ngIf="showTextInput"
     [pageName]="pageName"
-    [data]="data"
+    [data]=""
     (filtredData)="filtredDataFunction($event)"
   ></app-filter-by-text>
 
@@ -24,7 +24,7 @@
   </div>
   <app-sort
     *ngIf="showSort"
-    [data]="dataFiltrer"
+    [data]=""
     [pageName]="pageName"
     [type]="'titre'"
   ></app-sort>
