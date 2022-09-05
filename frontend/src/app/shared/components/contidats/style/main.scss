@@ -1,4 +1,3 @@
-
 $online: true;
 
 // color
@@ -23,11 +22,9 @@ $bg-gray-3: #fcfcfc;
 $bg-gray-4: #fdfdfd;
 
 // hover colors
-$three : rgb(248, 183, 3);
-$three-hover :#34f803;
+$three: rgb(248, 183, 3);
+$three-hover: #34f803;
 //import new bootstrap stiles from online
-
-
 
 // text fontes
 $font-family-1: 'Roboto', sans-serif;
@@ -43,7 +40,7 @@ $shadow-1: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
 $shadow-2: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 $shadow-3: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 $shadow-4: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-$shadow-5: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+$shadow-5: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 
 //  border
 $border-1: 1px solid #e0e0e0;
@@ -54,7 +51,6 @@ $border-5: 5px solid #e0e0e0;
 
 // important
 
-
 // transition
 $t-1: all 0.1s ease-in-out;
 $t-2: all 0.2s ease-in-out;
@@ -64,10 +60,6 @@ $t-5: all 0.5s ease-in-out;
 
 //@import
 
-
-
-
-
 .addbtn {
   margin: auto;
   width: 300px;
@@ -75,10 +67,8 @@ $t-5: all 0.5s ease-in-out;
   background-color: rgb(250, 195, 13);
 }
 
-
-
 :host ::ng-deep .p-button {
-  margin: 0 .5rem 0 0;
+  margin: 0 0.5rem 0 0;
   min-width: 10rem;
 }
 
@@ -96,31 +86,13 @@ p {
   min-width: 6rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 .b {
   background-color: $three;
-
 }
-
-
 
 .main-body {
   padding: 15px 0px;
 }
-
-
 
 .card {
   box-shadow: $shadow-1;
@@ -129,20 +101,19 @@ p {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: $bg-white ;
+  background-color: $bg-white;
   background-clip: border-box;
   border: $border-1;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
 }
-
 
 .gutters-sm {
   margin-right: -8px;
   margin-left: -8px;
 }
 
-.gutters-sm>.col,
-.gutters-sm>[class*=col-] {
+.gutters-sm > .col,
+.gutters-sm > [class*='col-'] {
   padding-right: 8px;
   padding-left: 8px;
 }
@@ -198,7 +169,7 @@ p {
   }
 
   &:after {
-    content: "\f040";
+    content: '\f040';
     font-family: 'FontAwesome';
     color: $text-gray-3;
     position: absolute;
@@ -217,25 +188,16 @@ p {
 
 .about {
   text-align: center;
-
 }
-
 
 .wtf {
   display: flex;
-
 }
-
-
-
-
-
-
 
 @if $online ==true {
-  $online-color-1 : rgba(16, 236, 27, 0.904);
-  $online-color-2 : rgba(16, 236, 27, 0.61);
-  $online-color-3 : rgba(16, 236, 27, 0.411);
+  $online-color-1: rgba(16, 236, 27, 0.904);
+  $online-color-2: rgba(16, 236, 27, 0.61);
+  $online-color-3: rgba(16, 236, 27, 0.411);
 
   .online {
     background-color: $online-color-1;
@@ -244,7 +206,6 @@ p {
     border-radius: 50%;
 
     position: relative;
-
   }
 
   .spinner-grow {
@@ -252,7 +213,7 @@ p {
     height: 30px;
     width: 30px;
     margin-left: -5px;
-    margin-top: -5PX;
+    margin-top: -5px;
   }
 
   .init {
@@ -261,14 +222,12 @@ p {
     width: 45px;
     border-radius: 50%;
     margin-left: -8px;
-    margin-top: -8PX;
+    margin-top: -8px;
   }
-}
-
-@else {
-  $online-color-1 : rgba(236, 16, 16, 0.904);
-  $online-color-2 : rgba(236, 16, 16, 0.61);
-  $online-color-3 : rgba(236, 16, 16, 0.411);
+} @else {
+  $online-color-1: rgba(236, 16, 16, 0.904);
+  $online-color-2: rgba(236, 16, 16, 0.61);
+  $online-color-3: rgba(236, 16, 16, 0.411);
 
   .online {
     background-color: $online-color-1;
@@ -277,7 +236,6 @@ p {
     border-radius: 50%;
 
     position: relative;
-
   }
 
   .spinner-grow {
@@ -285,7 +243,7 @@ p {
     height: 30px;
     width: 30px;
     margin-left: -5px;
-    margin-top: -5PX;
+    margin-top: -5px;
   }
 
   .init {
@@ -294,37 +252,9 @@ p {
     width: 45px;
     border-radius: 50%;
     margin-left: -8px;
-    margin-top: -8PX;
+    margin-top: -8px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .single-timeline-area {
   position: relative;
@@ -368,7 +298,7 @@ p {
   position: absolute;
   width: 3px;
   height: 95%;
-  content: "";
+  content: '';
   background-color: #ebebeb;
   top: 0;
   right: 45px;
@@ -381,7 +311,7 @@ p {
   height: 11px;
   border-radius: 50%;
   background-color: $three;
-  content: "";
+  content: '';
   top: 50%;
   right: 40px;
   z-index: 5;
@@ -454,57 +384,10 @@ p {
   color: $three;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #list-example {
   position: sticky;
   top: 30px;
-
 }
-
-
-
-
-
-
-
-
 
 .ccard {
   background-color: #fff;
@@ -518,8 +401,6 @@ p {
   display: flex;
   align-items: center;
 }
-
-
 
 .name {
   font-size: 15px;
@@ -539,7 +420,6 @@ p {
 .middle-container {
   background-color: #eee;
   border-radius: 12px;
-
 }
 
 .middle-container:hover {
@@ -565,10 +445,9 @@ p {
 
 .dollar {
   font-size: 16px !important;
-  color: $three  !important;
+  color: $three !important;
   font-weight: bold !important;
 }
-
 
 .current-balance {
   font-size: 15px;
@@ -592,7 +471,6 @@ p {
   border-left: 2px solid $three;
   display: flex;
   align-items: center;
-
 }
 
 .recent-border:hover {
@@ -610,7 +488,6 @@ p {
   font-size: 16px;
   font-weight: 700;
   color: #272727;
-
 }
 
 .wishlist-border:hover {
@@ -627,78 +504,7 @@ p {
   border-bottom: 1px solid #dee2e6 !important;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .main-container {
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -709,7 +515,7 @@ p {
   margin: 0 0 80px 0;
   color: $three;
   font-size: 30px;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 400;
 }
 
@@ -736,7 +542,7 @@ p {
   cursor: pointer;
 }
 
-.radio-btn>i {
+.radio-btn > i {
   color: #ffffff;
   background-color: $three;
   font-size: 20px;
@@ -761,42 +567,27 @@ p {
 }
 
 .radio-btn .hobbies-icon i {
-  color: $three ;
+  color: $three;
   line-height: 80px;
   font-size: 60px;
 }
 
 .radio-btn .hobbies-icon h3 {
   color: $three;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 13px;
   font-weight: 400;
   text-transform: uppercase;
 }
 
-.custom-radio input:checked+.radio-btn {
+.custom-radio input:checked + .radio-btn {
   border: 3px solid $three;
 }
 
-.custom-radio input:checked+.radio-btn>i {
+.custom-radio input:checked + .radio-btn > i {
   opacity: 1;
   transform: translateX(-50%) scale(1);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .list-group {
   list-style: none;
@@ -807,7 +598,6 @@ p {
 .list-group-itemM {
   display: flex;
   align-items: center;
-
 
   border-radius: 0.25rem;
   border: 1px solid #e9ecef;
@@ -820,6 +610,5 @@ p {
   i {
     margin-top: 0;
     margin: -5px;
-
   }
 }

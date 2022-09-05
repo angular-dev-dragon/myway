@@ -6,7 +6,7 @@
     margin-bottom: 6px;
   "
 >
-  <div class="col-md-3 image text-center">
+  <div class="col-md-3 image text-center min-image">
     <img
       [routerLink]="link"
       [lazyLoad]="image"
@@ -16,41 +16,20 @@
       [class.smallImg]="reduireCard"
     />
   </div>
-  <div class="product col-md-9">
+  <div class="min-content col-md-9">
     <div class="d-flex flex-column" style="margin-inline: 0.5em;">
-      <div class="flexible-title">
-        <h5 [routerLink]="link" class="card-title cursor-pointer">
+      <div class="d-flex align-items-center justify-content-between mb-2">
+        <h3 [routerLink]="link" class="cursor-pointer m-0 card-custom-title">
           {{ Intitule }}
-        </h5>
-
-        <div class="dropdown">
+        </h3>
+        <div class="">
           <button
-            class="btn btn-secondary dropdown-toggle"
-            type="button"
-            id="dropdownMenuButton"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          ></button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a
-              class="dropdown-item"
-              *ngIf="!reduireCard"
-              (click)="reduireCard = !reduireCard"
-            >
-              Reduire
-            </a>
-            <a
-              class="dropdown-item"
-              *ngIf="reduireCard"
-              (click)="reduireCard = !reduireCard"
-            >
-              Etendre
-            </a>
-
-            <a class="dropdown-item">Ajouter Au Favoris</a>
-            <a class="dropdown-item">Partager</a>
-          </div>
+            class="btn-fav"
+            style="border-style: none;"
+            (click)="genericService.addToWishList(id, pageName)"
+          >
+            <i class="far fa-heart"></i>
+          </button>
         </div>
         <!-- 
         <div class="favorite-offre">

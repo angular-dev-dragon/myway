@@ -9,59 +9,67 @@
 
     <div class="w-100">
       <div *ngIf="showHeader" class="section-recruteur mb-3 w-100">
-        <h2 class="px-1" style="font-size: 25px">
+        <h2 class="px-1" style="font-size: 25px;">
           {{ pageName | titlecase }}
         </h2>
       </div>
       <div class="section-recruteur mb-3 w-100">
         <div class="flex-grow-1">
           <div *ngIf="showTopFilter" class="">
+
             <app-top-bar [pageName]="pageName"> </app-top-bar>
+
           </div>
           <hr *ngIf="pageName != 'undfind'" />
 
           <div class="row">
-            <ng-container *ngIf="pageName == 'recruteur'">
+
+            <ng-container *ngIf="this.pageName == 'recruteur'">
               <app-card-recruiter
                 *ngFor="
                   let recruiter of genericervice
-                    .get(pageName)
+                    .get('recruteur')
                     .getAllRecruteursInfo()
-                    | paginate: { itemsPerPage: 20, currentPage: p }
+                    | paginate: { itemsPerPage: 6, currentPage: p }
                 "
-                [routerLink]="['/recruiter/details',recruiter.id]"
+                [link]="['/recruteurs/details-recruteur/', recruiter.id]"
+                [id]="recruiter.id"
+                [pageName]="pageName"
                 class="col-md-4 col-sm-6"
-                [imageBg]="recruiter.imageBg"
-                [logo]="recruiter.logo"
-                [title]="recruiter.title"
-                [type]="recruiter.type"
-                [salaries]="recruiter.salaries"
-                [caption]="recruiter.caption"
-              >
-              </app-card-recruiter>
+                [imageBg]="recruiter?.imageBg"
+                [logo]="recruiter?.logo"
+                [title]="recruiter?.title"
+                [type]="recruiter?.type"
+                [salaries]="recruiter?.salaries"
+                [caption]="recruiter?.caption"
+              ></app-card-recruiter>
+
             </ng-container>
             <ng-container *ngIf="pageName == 'offre'">
               <div class="row" *ngIf="genericervice.orientation == 'verticale'">
                 <app-card-offre-Verticale
                   *ngFor="
-                    let offre of genericervice.get(pageName)?.getoffres()
+
+                    let offre of genericervice.get('offre')?.getoffres()
                       | paginate: { itemsPerPage: 20, currentPage: p }
                   "
+                  [pageName]="pageName"
                   [link]="['/offres/details-offres/', offre.id]"
-                  [Intitule]="offre.Intitule"
-                  [Secteur]="offre.Secteur"
-                  [Poste]="offre.Poste"
-                  [TypePoste]="offre.TypePoste"
-                  [NomEntreprise]="offre.NomEntreprise"
-                  [TypeEntreprise]="offre.TypeEntreprise"
-                  [TypeContrat]="offre.TypeContrat"
-                  [Ville]="offre.Ville"
-                  [Date]="offre.Date"
-                  [image]="offre.Image"
-                  [dateDisponibilite]="offre.dateDisponibilite"
-                  [image]="offre.Image"
-                >
-                </app-card-offre-Verticale>
+                  [id]="offre?.id"
+                  [Intitule]="offre?.Intitule"
+                  [Secteur]="offre?.Secteur"
+                  [Poste]="offre?.Poste"
+                  [TypePoste]="offre?.TypePoste"
+                  [NomEntreprise]="offre?.NomEntreprise"
+                  [TypeEntreprise]="offre?.TypeEntreprise"
+                  [TypeContrat]="offre?.TypeContrat"
+                  [Ville]="offre?.Ville"
+                  [Date]="offre?.Date"
+                  [image]="offre?.Image"
+                  [dateDisponibilite]="offre?.dateDisponibilite"
+                  [image]="offre?.Image"
+                ></app-card-offre-Verticale>
+
               </div>
               <div
                 class="row"
@@ -70,6 +78,7 @@
                 <app-card-offre-horizontale
                   class="col-md-6 mb-3"
                   *ngFor="
+
                     let offre of genericervice.get(pageName)?.getoffres()
                       | paginate: { itemsPerPage: 20, currentPage: p }
                   "
@@ -297,6 +306,7 @@
               ></app-card-article>
             </ng-container>
             <ng-container *ngIf="pageName == 'undfind'">
+
               <section class="section p-0 bg-img cover-background">
                 <div class="container-fluid d-flex flex-column">
                   <div class="row align-items-center justify-content-center">
@@ -313,8 +323,11 @@
                           <a
                             href="#"
                             class="btn btn-inf btn-info btn-lg me-sm-2 mb-2 mb-sm-0"
-                            >Return Home</a
+
                           >
+                            Return Home
+                          </a>
+
                         </div>
                       </div>
                     </div>
@@ -324,11 +337,15 @@
             </ng-container>
 
             <pagination-controls
+
               *ngIf="!['undfind', 'temoignage'].includes(pageName)"
               class="text-center"
               (pageChange)="p = $event"
             >
             </pagination-controls>
+
+
+
           </div>
         </div>
       </div>

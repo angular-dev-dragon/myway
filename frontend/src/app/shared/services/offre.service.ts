@@ -5,12 +5,12 @@ import { Injectable } from '@angular/core'
 })
 export class OffreService {
   constructor() {
-    this.listOffres = this.allOffres;
+    this.listOffres = this.allOffres
   }
 
   allOffres: any = [
     {
-      id: '87432875023785',
+      id: '1',
       Intitule: 'AHMED',
       TypeContrat: 'CDI',
       Poste:
@@ -29,7 +29,8 @@ export class OffreService {
       langue: 'Français',
       Region: 'Tanger-Tetouan',
     },
-    { id : '87432875023785',
+    {
+      id: '2',
       Intitule: 'Ingénieur génie civil et minier ',
       TypeContrat: 'Anapec',
       Poste: 'technicien en mécanique et électrique mécanique et électrique',
@@ -47,7 +48,8 @@ export class OffreService {
       langue: 'Français',
       Region: 'Tanger-Tetouan',
     },
-    { id : '87432875023785',
+    {
+      id: '3',
       Intitule: 'développeur3',
       TypeContrat: 'CDD',
       Poste: 'Développeur Front-End',
@@ -65,7 +67,8 @@ export class OffreService {
       langue: 'Espagnol',
       Region: 'Tanger-Tetouan',
     },
-    { id : '87432875023785',
+    {
+      id: '4',
       Intitule: 'Développeur',
       TypeContrat: 'A discuter',
       NomEntreprise: 'Jumia',
@@ -83,7 +86,8 @@ export class OffreService {
       langue: 'Arabe',
       Region: 'Grand Casablanca',
     },
-    { id : '87432875023785',
+    {
+      id: '5',
       Intitule: 'Développeur4',
       TypeContrat: 'CDI',
       NomEntreprise: 'Jumia',
@@ -102,8 +106,8 @@ export class OffreService {
       NiveauxExperience: "moins d'un ans",
       langue: 'Espagnol',
     },
-  ];
-  listOffres: any = [];
+  ]
+  listOffres: any = []
 
   filter(
     searchFiltre: string = '',
@@ -115,72 +119,72 @@ export class OffreService {
     contratFiltre: any,
     niveauxEtFiltre: any,
     niveauxExFiltre: any,
-    langueFiltre: any
+    langueFiltre: any,
     // sort_by_name: string,
     // sort_by_date: string,
   ) {
-    this.listOffres = this.allOffres;
+    this.listOffres = this.allOffres
 
     if (searchFiltre != '') {
       this.listOffres = this.listOffres.filter((offre: any) => {
-        offre.Intitule.toLowerCase().includes(searchFiltre.toLowerCase());
-      });
-      return this.allOffres;
+        offre.Intitule.toLowerCase().includes(searchFiltre.toLowerCase())
+      })
+      return this.allOffres
     }
 
     if (paysFiltre != '') {
       this.listOffres = this.listOffres.filter((offre: any) => {
-        return offre.Pays == paysFiltre;
-      });
+        return offre.Pays == paysFiltre
+      })
     } else if (regionFiltre != '') {
       this.listOffres = this.listOffres.filter((offre: any) => {
-        return offre.Region == regionFiltre;
-      });
+        return offre.Region == regionFiltre
+      })
     } else if (villeFiltre != '') {
       this.listOffres = this.listOffres.filter((offre: any) => {
-        return offre.Ville == villeFiltre;
-      });
+        return offre.Ville == villeFiltre
+      })
     } else if (secteurFiltre != '') {
       this.listOffres = this.listOffres.filter((offre: any) => {
-        return offre.Secteur == secteurFiltre;
-      });
+        return offre.Secteur == secteurFiltre
+      })
     }
 
     if (dateFiltre != '') {
       this.listOffres = this.listOffres.filter((offre: any) => {
-        return offre.Date == dateFiltre;
-      });
+        return offre.Date == dateFiltre
+      })
     }
-    this.checkboxFiltre(contratFiltre, 'TypeContrat');
-    this.checkboxFiltre(niveauxEtFiltre, 'NiveauxEtude');
-    this.checkboxFiltre(niveauxExFiltre, 'NiveauxExperience');
-    this.checkboxFiltre(langueFiltre, 'langue');
+    this.checkboxFiltre(contratFiltre, 'TypeContrat')
+    this.checkboxFiltre(niveauxEtFiltre, 'NiveauxEtude')
+    this.checkboxFiltre(niveauxExFiltre, 'NiveauxExperience')
+    this.checkboxFiltre(langueFiltre, 'langue')
   }
 
   checkboxFiltre(CheckboxList: any, label: any) {
-    let newList2;
-    let newList3: any = this.listOffres;
-    let isFirstTime: Boolean = true;
+    let newList2
+    let newList3: any = this.listOffres
+    let isFirstTime: Boolean = true
     CheckboxList.map((filtre: any) => {
       if (filtre.nativeElement.checked) {
         if (isFirstTime == true) {
-          isFirstTime = false;
-          newList3 = [];
+          isFirstTime = false
+          newList3 = []
         }
-        newList2 = this.listOffres;
+        newList2 = this.listOffres
         newList2 = newList2.filter((offre: any) => {
-          return offre[label] == filtre.nativeElement.value;
-        });
+          return offre[label] == filtre.nativeElement.value
+        })
 
         newList2.map((list: any) => {
-          newList3.push(list);
-        });
+          newList3.push(list)
+        })
       }
-    });
-    this.listOffres = newList3;
+    })
+    this.listOffres = newList3
   }
 
   getoffres() {
-    return this.listOffres;
+    return this.listOffres
   }
 }

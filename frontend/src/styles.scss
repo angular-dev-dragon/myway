@@ -163,9 +163,7 @@ a {
 .cursor-pointer {
   cursor: pointer;
 }
-* {
-  font-family: 'Arial';
-}
+
 .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
   border-color: #000 !important;
 }
@@ -184,11 +182,30 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 .no-style-list {
   list-style: none;
 }
 .spacing-inline-end {
   margin-inline-end: 1em;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700&display=swap');
+
+* {
+  font-family: 'Mukta', sans-serif;
+}
+
+.favoris-container {
+  display: flex;
+  background-color: #a9a9a985;
+  padding: 5px;
+  border-radius: 5px;
+  margin-inline-start: 0.5em;
+}
+.spacing-article-divider {
+  padding: 20px 0;
+  &:not(:first-child) {
+    border-top: 1px solid #ccc;
+  }
 }

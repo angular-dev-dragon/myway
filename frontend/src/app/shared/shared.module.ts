@@ -114,8 +114,10 @@ import { CDetailsComponent } from './components/c-details/c-details.component'
 import { FilterComponent } from './components/filter/filter.component'
 import { FilterByTextComponent } from './filter-by-text/filter-by-text.component'
 import { SortComponent } from './sort/sort.component'
+
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { TemoignageComponent } from './components/temoignage/temoignage.component'
+
 
 
 
@@ -124,7 +126,6 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 let modules: any = [
-
   // material ui
   MatSliderModule,
   MatMenuModule,
@@ -245,7 +246,9 @@ let modules: any = [
     FilterByTextComponent,
     SortComponent,
     TopBarComponent,
+
     TemoignageComponent,
+
   ],
 
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
@@ -300,8 +303,14 @@ export class SharedModule {
     translate: TranslateService
   ) {
     if (isPlatformBrowser(this.platformId)) {
-      document.body.classList.add('ltr');
-      localStorage.setItem('lang', 'fr');
+
+      if (sessionStorage.getItem('wishList') == null) {
+        sessionStorage.setItem('wishList', JSON.stringify([]))
+      }
+
+      document.body.classList.add('ltr')
+      localStorage.setItem('lang', 'fr')
+
 
       var lang = 'fr';
       translate.setDefaultLang(lang);

@@ -56,3 +56,9 @@
     text-decoration: none;
   }
 }
+.article-paragraphe-figure {
+  .article-paragraphe-image,
+  .article-paragraphe-video {
+    max-height: 400px;
+  }
+}
