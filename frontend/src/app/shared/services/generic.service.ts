@@ -42,32 +42,53 @@ export class GenericService {
     private temoingnageService: TemoignageService,
     private defaultService: DefaultService
   ) {}
-  get(pageName: string):any {
+  get(pageName: string): any {
     switch (pageName) {
-      case 'blogeurs':return this.blogService;
-      case 'candidat':return this.candidatService;
-      case 'candidature spontanee':return this.condidatureSpontaneeService;
-      case 'demande specifique':return this.demandeSpecifiqueService;
-      case 'documents':return this.documentService;
-      case 'recruteur':return this.recruteurService;
-      case 'adresses utiles':return this.addesseService;
-      case 'evenement':return this.evenementService;
-      case 'forums':return this.forumService;
-      case 'liens utiles':return this.lienUtileService;
-      case 'metier':return this.metierService;
-      case 'quiz':return this.QuizService;
-      case 'offre':return this.offreService;
-      case 'sondage':return this.sondageService;
-      case 'rubrique':return this.rubriqueService;
-      case 'temoignage':return this.temoingnageService;
-      case 'post':return this.postService;
-      case 'recruteur':return this.recruteurService;
-      default:return this.defaultService;
+      case 'blogeurs':
+        return this.blogService;
+      case 'candidat':
+        return this.candidatService;
+      case 'candidature spontanee':
+        return this.condidatureSpontaneeService;
+      case 'demande specifique':
+        return this.demandeSpecifiqueService;
+      case 'documents':
+        return this.documentService;
+      case 'recruteur':
+        return this.recruteurService;
+      case 'adresses utiles':
+        return this.addesseService;
+      case 'evenement':
+        return this.evenementService;
+      case 'forums':
+        return this.forumService;
+      case 'liens utiles':
+        return this.lienUtileService;
+      case 'metier':
+        return this.metierService;
+      case 'quiz':
+        return this.QuizService;
+      case 'offre':
+        return this.offreService;
+      case 'sondage':
+        return this.sondageService;
+      case 'rubrique':
+        return this.rubriqueService;
+      case 'temoignage':
+        return this.temoingnageService;
+      case 'post':
+        return this.postService;
+      default:
+        return this.defaultService;
     }
+  }
+
+  orientation: string = 'verticale';
+  toggleOrientation(orientation: any) {
+    this.orientation = orientation;
   }
 
   // rubrique-details
 
   // conseils pratique
-
 }

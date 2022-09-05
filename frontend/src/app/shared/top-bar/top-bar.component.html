@@ -6,16 +6,21 @@
     (filtredData)="filtredDataFunction($event)"
   ></app-filter-by-text>
 
-  <div class="btn-group" *ngIf="showOrientation">
+  <div class="btn-group" *ngIf="
+
+  pageName=='offre' ||
+  pageName=='demande specifique' ||
+  pageName=='candidat'"
+  >
     <button
-      (click)="toggleOrientation('verticale')"
+      (click)="genericService.toggleOrientation('verticale')"
       type="button"
       class="btn btn-default active"
     >
       <i class="fa fa-list"></i>
     </button>
     <button
-      (click)="toggleOrientation('horizontale')"
+      (click)="genericService.toggleOrientation('horizontale')"
       type="button"
       class="btn btn-default"
     >

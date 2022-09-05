@@ -11,7 +11,7 @@ export class RecruteurService {
     this.listRecruteur = this.allRecruteur;
   }
   getAllRecruteurs() {
-    return this.http.get(API + '/recruteur');
+    return this.allRecruteur= this.http.get(API + '/recruteur');
   }
   getRecruteurCondidaturesSpontanees() {
     return this.http.get(API + '/recruteur/condidatures-spontanees');
@@ -262,7 +262,10 @@ export class RecruteurService {
     this.listRecruteur = newList3;
   }
   getAllRecruteursInfo() {
-    return this.listRecruteur;
+
+
+      return this.listRecruteur;
+
   }
 
   filterByText(text: string) {

@@ -74,6 +74,10 @@ const routes: Routes = [
         path: 'bloggers',
         component: ViewProjectComponent,
       },
+      {
+        path: 'undfind',
+        component: ViewProjectComponent,
+      },
     ],
   },
 ];

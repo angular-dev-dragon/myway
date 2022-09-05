@@ -14,10 +14,10 @@ const routes: Routes = [
     component: ListOffresEmploiComponent,
   },
   {
-    path: 'details-offres',
+    path: 'details-offres/:id',
     component: DetailOffresComponent,
   },
-]
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

@@ -6,14 +6,17 @@ import {
 } from '@angular/router';
 import { GenericService } from 'src/app/shared/services/generic.service';
 @Component({
+
   selector: 'app-view-project',
+ styleUrls:['./view.scss'],
   templateUrl: './view-project.component.html',
 })
 export class ViewProjectComponent implements OnInit {
   pageName: string = '';
   p: number = 0;
   data: any = [];
-  showSideFilter: boolean = true;
+  showLeftSideBar: boolean = true;
+  showRightSideBar: boolean = true;
   showHeader: boolean = true;
   showTopFilter: boolean = true;
   resultData: any;
@@ -30,7 +33,7 @@ export class ViewProjectComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         this.pageName = event.url.split('/')[2];
         this.pageName = this.removeAccent(this.pageName);
-
+        console.log(this.pageName)
       }
     });
   }
@@ -46,86 +49,48 @@ export class ViewProjectComponent implements OnInit {
 
   // #region view conrollers
   controlView() {
-    if (this.pageName == 'home') {
-      this.showSideFilter = true;
+    if (
+      this.pageName == 'condidat' ||
+      this.pageName == 'recruteur' ||
+      this.pageName == 'quiz' ||
+      this.pageName == 'metier' ||
+      this.pageName == 'evenement' ||
+      this.pageName == 'demande specifique' ||
+      this.pageName == 'candidature spontanee' ||
+      this.pageName == 'offre'
+    ) {
+      this.showLeftSideBar = true;
       this.showHeader = true;
       this.showTopFilter = true;
-    } else if (this.pageName == 'metier') {
-      this.showSideFilter = true;
+      this.showRightSideBar = false;
+    } else if (
+      this.pageName == 'conseils pratique' ||
+      this.pageName == 'temoignage' ||
+      this.pageName == 'rubrique' ||
+      this.pageName == 'sondage' ||
+      this.pageName == 'liens utiles' ||
+      this.pageName == 'forums' ||
+      this.pageName == 'blogeurs' ||
+      this.pageName == 'adresses utiles' ||
+      this.pageName == 'documents'
+    ) {
+      this.showLeftSideBar = false;
       this.showHeader = true;
       this.showTopFilter = true;
-
+      this.showRightSideBar = false;
+    } else if (this.pageName == 'undfind') {
+      this.showLeftSideBar = false;
+      this.showHeader = false;
+      this.showTopFilter = false;
+      this.showRightSideBar = false;
     }
-
-    else if (this.pageName == 'recruteur') {
-      this.showSideFilter = true;
-      this.showHeader = true;
-      this.showTopFilter = true;
-      this.resultData =
-        this.genericervice.get(this.pageName)?.getAllRecruteursInfo() || [];
-    } else if (this.pageName == 'offre') {
-      this.showSideFilter = true;
-      this.showHeader = true;
-      this.showTopFilter = true;
-    } else if (this.pageName == 'demande specifique') {
-      this.showSideFilter = true;
-      this.showHeader = true;
-      this.showTopFilter = true;
-    }
-    // else if (this.pageName == '') {
-    //   this.showSideFilter = true;
-    //   this.showHeader = true;
-    //   this.showTopFilter = true;
-    // } else if (this.pageName == '') {
-    //   this.showSideFilter = true;
-    //   this.showHeader = true;
-    //   this.showTopFilter = true;
-    // } else if (this.pageName == '') {
-    //   this.showSideFilter = true;
-    //   this.showHeader = true;
-    //   this.showTopFilter = true;
-    // } else if (this.pageName == '') {
-    //   this.showSideFilter = true;
-    //   this.showHeader = true;
-    //   this.showTopFilter = true;
-    // } else if (this.pageName == '') {
-    //   this.showSideFilter = true;
-    //   this.showHeader = true;
-    //   this.showTopFilter = true;
-    // } else if (this.pageName == '') {
-    //   this.showSideFilter = true;
-    //   this.showHeader = true;
-    //   this.showTopFilter = true;
-    // } else if (this.pageName == '') {
-    //   this.showSideFilter = true;
-    //   this.showHeader = true;
-    //   this.showTopFilter = true;
-    // } else if (this.pageName == '') {
-    //   this.showSideFilter = true;
-    //   this.showHeader = true;
-    //   this.showTopFilter = true;
-    // } else if (this.pageName == '') {
-    //   this.showSideFilter = true;
-    //   this.showHeader = true;
-    //   this.showTopFilter = true;
-    // } else if (this.pageName == '') {
-    //   this.showSideFilter = true;
-    //   this.showHeader = true;
-    //   this.showTopFilter = true;
-    // } else if (this.pageName == '') {
-    //   this.showSideFilter = true;
-    //   this.showHeader = true;
-    //   this.showTopFilter = true;
-    // }
   }
   // #endregion
   // #region REMODULE
 
   removeAccent = function (s: any) {
     var r = s.toLowerCase();
-
     r = r.replace(new RegExp('offres'), 'offre');
-
     r = r.replace(new RegExp('candidats'), 'candidat');
     r = r.replace(new RegExp('demandes-specifiques'), 'demande specifique');
     r = r.replace(

@@ -23,7 +23,7 @@ export class TopBarComponent implements OnInit {
 
 
 
-  constructor() {}
+  constructor( public genericService: GenericService) {}
 
 
   ngOnInit(): void {
@@ -40,8 +40,5 @@ export class TopBarComponent implements OnInit {
 
   }
 
-  toggleOrientation(orientation: any) {
-    this.orientation = orientation;
-    this.orientationView.emit(this.orientation);
-  }
+
 }
