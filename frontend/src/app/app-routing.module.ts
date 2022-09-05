@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { ListRecruiterComponent } from './components/recruiter/list-recruiter/list-recruiter.component'
@@ -17,6 +18,7 @@ const routes: Routes = [
     },
     // canActivate: [AuthGuard],
   },
+
 ]
 
 @NgModule({

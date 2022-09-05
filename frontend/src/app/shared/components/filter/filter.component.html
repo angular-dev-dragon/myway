@@ -1,16 +1,16 @@
 <div *ngIf="pfilterType == 'detail'" class="sideBar-Main">
   <div
     class="btn btn-outline-secondary"
-    #btnSideBar
-    (click)="sidebarOffre.classList.toggle('open')"
+
+    (click)="sidebarOffre2.classList.toggle('open')"
   >
     <i class="fa fa-filter"></i>
   </div>
   <div
     class="sidebar-offre open"
-    #sidebarOffre
-    (mouseenter)="sidebarOffre.classList.remove('closed')"
-    (mouseleave)="sidebarOffre.classList.add('closed')"
+    #sidebarOffre2
+    (mouseenter)="sidebarOffre2.classList.remove('closed')"
+    (mouseleave)="sidebarOffre2.classList.add('closed')"
   >
     <div class="sideBarContainer">
       <!--  début filter par l'emplacement -->

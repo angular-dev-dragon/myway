@@ -1,3 +1,5 @@
+
+
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 
@@ -20,6 +22,7 @@ import { CompetencesModule } from './components/competences/competences.module'
 import { MetiersModule } from './components/metiers/metiers.module'
 import { QuizModule } from './components/quiz/quiz.module'
 import { EvenementModule } from './components/evenement/evenement.module'
+import { DaliljobeModule } from './components/daliljobe/daliljobe.module'
 
 @NgModule({
   declarations: [AppComponent, ListBlogeurComponent],
@@ -32,7 +35,7 @@ import { EvenementModule } from './components/evenement/evenement.module'
     ResumeProfilesModule,
     MetiersModule,
     OffresModule,
-
+    DaliljobeModule,
     InfoPratiqueModule,
     RubriquePostModule,
     EspaceCommunautaireModule,

@@ -2,10 +2,18 @@ import { Routes } from '@angular/router'
 
 export const content: Routes = [
   {
+    path: 'daliljob',
+    loadChildren: () =>
+      import('../../components/daliljobe/daliljobe.module').then(
+        (m) => m.DaliljobeModule
+      ),
+  },
+
+  {
     path: '',
     loadChildren: () =>
       import('../../components/landing-page/landing-page.module').then(
-        (m) => m.LandingPageModule,
+        (m) => m.LandingPageModule
       ),
   },
 
@@ -13,7 +21,7 @@ export const content: Routes = [
     path: 'Candidats',
     loadChildren: () =>
       import('../../components/competences/condida-c/condida-c.module').then(
-        (m) => m.CondidaCModule,
+        (m) => m.CondidaCModule
       ),
   },
 
@@ -21,14 +29,14 @@ export const content: Routes = [
     path: 'recruteurs',
     loadChildren: () =>
       import('../../components/recruiter/recruiter.module').then(
-        (m) => m.RecruiterModule,
+        (m) => m.RecruiterModule
       ),
   },
   {
     path: 'offres',
     loadChildren: () =>
       import('./../../components/offres/offres.module').then(
-        (m) => m.OffresModule,
+        (m) => m.OffresModule
       ),
   },
 
@@ -36,7 +44,7 @@ export const content: Routes = [
     path: 'resume-profiles',
     loadChildren: () =>
       import('../../components/resume-profiles/resume-profiles.module').then(
-        (m) => m.ResumeProfilesModule,
+        (m) => m.ResumeProfilesModule
       ),
   },
 
@@ -44,14 +52,14 @@ export const content: Routes = [
     path: 'rubrique',
     loadChildren: () =>
       import('../../components/rubrique-article/rubrique-post.module').then(
-        (m) => m.RubriquePostModule,
+        (m) => m.RubriquePostModule
       ),
   },
   {
     path: 'info-pratique',
     loadChildren: () =>
       import('../../components/info-pratique/info-pratique.module').then(
-        (m) => m.InfoPratiqueModule,
+        (m) => m.InfoPratiqueModule
       ),
   },
   {
@@ -70,7 +78,7 @@ export const content: Routes = [
     path: 'competences',
     loadChildren: () =>
       import('../../components/competences/competences.module').then(
-        (m) => m.CompetencesModule,
+        (m) => m.CompetencesModule
       ),
   },
   {
@@ -78,7 +86,7 @@ export const content: Routes = [
 
     loadChildren: () =>
       import('../../components/metiers/metiers.module').then(
-        (m) => m.MetiersModule,
+        (m) => m.MetiersModule
       ),
   },
   {
@@ -92,7 +100,7 @@ export const content: Routes = [
 
     loadChildren: () =>
       import('../../components/evenement/evenement.module').then(
-        (m) => m.EvenementModule,
+        (m) => m.EvenementModule
       ),
   },
   // {
@@ -192,4 +200,4 @@ export const content: Routes = [
   //   pathMatch: 'full',
   //   redirectTo: 'PageNotFound',
   // },
-]
+];

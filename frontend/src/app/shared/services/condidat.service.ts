@@ -4,5 +4,14 @@ import { Injectable } from '@angular/core'
   providedIn: 'root',
 })
 export class CondidatService {
+  condidaInfo=[]
   constructor() {}
+
+
+
+getAllInfo()
+{
+  return this.condidaInfo
+}
+
 }

@@ -115,13 +115,14 @@ import { FilterComponent } from './components/filter/filter.component'
 import { FilterByTextComponent } from './filter-by-text/filter-by-text.component'
 import { SortComponent } from './sort/sort.component'
 import { TopBarComponent } from './top-bar/top-bar.component';
-import { ViewProjectComponent } from './components/view-project/view-project.component'
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
 }
 
 let modules: any = [
+
   // material ui
   MatSliderModule,
   MatMenuModule,
@@ -242,7 +243,7 @@ let modules: any = [
     FilterByTextComponent,
     SortComponent,
     TopBarComponent,
-    ViewProjectComponent,
+
   ],
 
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
