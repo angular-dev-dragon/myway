@@ -25,10 +25,5 @@ export class CondidatListComponent implements OnInit {
     this.resultData = value
   }
 
-  getOrientaion(value: any) {
-    console.log(
-      '-----------------------------filtredData-------------------------------',
-    )
-    this.orientation = value
-  }
+
 }

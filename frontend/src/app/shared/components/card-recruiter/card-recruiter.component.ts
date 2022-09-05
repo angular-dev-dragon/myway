@@ -6,12 +6,14 @@ import { Component, Input, OnInit } from '@angular/core'
   styleUrls: ['./card-recruiter.component.scss'],
 })
 export class CardRecruiterComponent implements OnInit {
-  @Input() imageBg = ''
-  @Input() logo = ''
-  @Input() title = ''
-  @Input() type = ''
-  @Input() salaries = ''
-  @Input() caption = ''
+  @Input() imageBg = '';
+  @Input() logo = '';
+  @Input() title = '';
+  @Input() type = '';
+  @Input() salaries = '';
+  @Input() caption = '';
+
+  @Input() link :any = '';
 
   constructor() {}
 

@@ -9,6 +9,7 @@ export class CondidatureSpontaneeService {
   }
   allSocieteCondidature: any = [
     {
+      id: 'i845 8',
       logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/3195090/logo.png?1587552503',
       imageBg:
         'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/5310523/index.png?1640179035',
@@ -20,7 +21,9 @@ export class CondidatureSpontaneeService {
       caption: 'Une Compagnie intégrée multi-énergies',
       secteur: 'Informatique',
     },
+
     {
+      id: 'i845 8',
       logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/4537715/logo.png?1622715420',
       imageBg:
         'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/4548600/index.png?1623058769',
@@ -34,6 +37,7 @@ export class CondidatureSpontaneeService {
       Region: 'Grand Casablanca',
     },
     {
+      id: 'i845 8',
       logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/8124/logo.png?1469002464',
       imageBg:
         'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/6192405/index.png?1659520006',
@@ -46,7 +50,9 @@ export class CondidatureSpontaneeService {
       Ville: 'Casablanca',
       Region: 'Grand Casablanca',
     },
+
     {
+      id: 'i845 8',
       logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/1007848/logo.png?1558457886',
       imageBg:
         'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/5027463/index.png?1634721315',
@@ -59,7 +65,9 @@ export class CondidatureSpontaneeService {
       Ville: 'Casablanca',
       Region: 'Grand Casablanca',
     },
+
     {
+      id: 'i845 8',
       logo: 'https://d1guu6n8gz71j.cloudfront.net/system/asset/logos/69883/logo.png?1621953434',
       imageBg:
         'https://d1guu6n8gz71j.cloudfront.net/system/asset/covers/6179891/index.png?1659017908',
@@ -94,7 +102,6 @@ export class CondidatureSpontaneeService {
       );
     }
     if (paysFiltre != '') {
-
       this.listSocieteCondidature = this.listSocieteCondidature.filter(
         (offre: any) => {
           return offre.Pays.toLowerCase() == paysFiltre.toLowerCase();
@@ -145,7 +152,7 @@ export class CondidatureSpontaneeService {
     });
     this.listSocieteCondidature = newList3;
   }
-  getAllInfo() {
+  getlist() {
     return this.listSocieteCondidature;
   }
 }

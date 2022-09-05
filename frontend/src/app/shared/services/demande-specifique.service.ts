@@ -10,6 +10,7 @@ export class DemandeSpecifiqueService {
   }
   listAllDemandes: any = [
     {
+      id: 1,
       Intitule: 'Développeur',
       TypeContrat: 'Stage',
       Poste: 'Developpeur Full Stack (MEAN) ',
@@ -26,6 +27,143 @@ export class DemandeSpecifiqueService {
       langue: 'Français',
     },
     {
+      id: 1,
+      Intitule: 'Développeur',
+      TypeContrat: 'Stage',
+      Poste: 'Developpeur Full Stack (MEAN) ',
+      TypePoste: 'Stage Alternance',
+
+      Image: '',
+      Ville: 'Tanger',
+      Secteur: 'Informatique',
+      dateDisponibilite: '2023-02-02',
+
+      Pays: 'Maroc',
+      NiveauxEtude: 'Bac',
+      NiveauxExperience: 'entre 3 et 4',
+      langue: 'Français',
+    },
+    {
+      id: 1,
+      Intitule: 'Développeur',
+      TypeContrat: 'Stage',
+      Poste: 'Developpeur Full Stack (MEAN) ',
+      TypePoste: 'Stage Alternance',
+
+      Image: '',
+      Ville: 'Tanger',
+      Secteur: 'Informatique',
+      dateDisponibilite: '2023-02-02',
+
+      Pays: 'Maroc',
+      NiveauxEtude: 'Bac',
+      NiveauxExperience: 'entre 3 et 4',
+      langue: 'Français',
+    },
+    {
+      id: 1,
+      Intitule: 'Développeur',
+      TypeContrat: 'Stage',
+      Poste: 'Developpeur Full Stack (MEAN) ',
+      TypePoste: 'Stage Alternance',
+
+      Image: '',
+      Ville: 'Tanger',
+      Secteur: 'Informatique',
+      dateDisponibilite: '2023-02-02',
+
+      Pays: 'Maroc',
+      NiveauxEtude: 'Bac',
+      NiveauxExperience: 'entre 3 et 4',
+      langue: 'Français',
+    },
+    {
+      id: 1,
+      Intitule: 'Développeur',
+      TypeContrat: 'Stage',
+      Poste: 'Developpeur Full Stack (MEAN) ',
+      TypePoste: 'Stage Alternance',
+
+      Image: '',
+      Ville: 'Tanger',
+      Secteur: 'Informatique',
+      dateDisponibilite: '2023-02-02',
+
+      Pays: 'Maroc',
+      NiveauxEtude: 'Bac',
+      NiveauxExperience: 'entre 3 et 4',
+      langue: 'Français',
+    },
+    {
+      id: 1,
+      Intitule: 'Développeur',
+      TypeContrat: 'Stage',
+      Poste: 'Developpeur Full Stack (MEAN) ',
+      TypePoste: 'Stage Alternance',
+
+      Image: '',
+      Ville: 'Tanger',
+      Secteur: 'Informatique',
+      dateDisponibilite: '2023-02-02',
+
+      Pays: 'Maroc',
+      NiveauxEtude: 'Bac',
+      NiveauxExperience: 'entre 3 et 4',
+      langue: 'Français',
+    },
+    {
+      id: 1,
+      Intitule: 'Développeur',
+      TypeContrat: 'Stage',
+      Poste: 'Developpeur Full Stack (MEAN) ',
+      TypePoste: 'Stage Alternance',
+
+      Image: '',
+      Ville: 'Tanger',
+      Secteur: 'Informatique',
+      dateDisponibilite: '2023-02-02',
+
+      Pays: 'Maroc',
+      NiveauxEtude: 'Bac',
+      NiveauxExperience: 'entre 3 et 4',
+      langue: 'Français',
+    },
+    {
+      id: 1,
+      Intitule: 'Développeur',
+      TypeContrat: 'Stage',
+      Poste: 'Developpeur Full Stack (MEAN) ',
+      TypePoste: 'Stage Alternance',
+
+      Image: '',
+      Ville: 'Tanger',
+      Secteur: 'Informatique',
+      dateDisponibilite: '2023-02-02',
+
+      Pays: 'Maroc',
+      NiveauxEtude: 'Bac',
+      NiveauxExperience: 'entre 3 et 4',
+      langue: 'Français',
+    },
+    {
+      id: 1,
+      Intitule: 'Développeur',
+      TypeContrat: 'Stage',
+      Poste: 'Developpeur Full Stack (MEAN) ',
+      TypePoste: 'Stage Alternance',
+
+      Image: '',
+      Ville: 'Tanger',
+      Secteur: 'Informatique',
+      dateDisponibilite: '2023-02-02',
+
+      Pays: 'Maroc',
+      NiveauxEtude: 'Bac',
+      NiveauxExperience: 'entre 3 et 4',
+      langue: 'Français',
+    },
+    {
+      id: 1,
       Intitule: 'Développeur',
       TypeContrat: 'Stage',
       Poste: 'Developpeur Full Stack (MEAN) ',
@@ -113,7 +251,7 @@ export class DemandeSpecifiqueService {
     this.listDemandes = newList3;
   }
 
-  getAllInfo() {
+  getlist() {
     return this.listAllDemandes;
   }
 }

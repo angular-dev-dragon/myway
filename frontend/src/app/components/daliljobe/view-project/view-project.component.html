@@ -1,6 +1,9 @@
 <div class="container mt-5">
   <div class="d-flex flex-main">
-    <div *ngIf="showLeftSideBar" class="section-recruteur spacing-inline-end mb-3">
+    <div
+      *ngIf="showLeftSideBar"
+      class="section-recruteur spacing-inline-end mb-3"
+    >
       <app-filter [pageName]="pageName"></app-filter>
     </div>
 
@@ -13,121 +16,326 @@
       <div class="section-recruteur mb-3 w-100">
         <div class="flex-grow-1">
           <div *ngIf="showTopFilter" class="">
-            <app-top-bar [pageName]="pageName">
-            </app-top-bar>
+            <app-top-bar [pageName]="pageName"> </app-top-bar>
           </div>
-          <hr *ngIf="this.pageName != 'undfind'" />
+          <hr *ngIf="pageName != 'undfind'" />
 
           <div class="row">
-            <ng-container *ngIf="this.pageName == 'recruteur'">
-              <app-card-recruiter *ngFor="
-                              let recruiter of genericervice
-                                .get('recruteur')
-                                .getAllRecruteursInfo()
-                                | paginate: { itemsPerPage: 6, currentPage: p }
-                " [routerLink]="['/recruiter/{{recruiter.id}}/details']" class="col-md-4 col-sm-6"
-                [imageBg]="recruiter.imageBg" [logo]="recruiter.logo" [title]="recruiter.title" [type]="recruiter.type"
-                [salaries]="recruiter.salaries" [caption]="recruiter.caption">
+            <ng-container *ngIf="pageName == 'recruteur'">
+              <app-card-recruiter
+                *ngFor="
+                  let recruiter of genericervice
+                    .get(pageName)
+                    .getAllRecruteursInfo()
+                    | paginate: { itemsPerPage: 20, currentPage: p }
+                "
+                [routerLink]="['/recruiter/details',recruiter.id]"
+                class="col-md-4 col-sm-6"
+                [imageBg]="recruiter.imageBg"
+                [logo]="recruiter.logo"
+                [title]="recruiter.title"
+                [type]="recruiter.type"
+                [salaries]="recruiter.salaries"
+                [caption]="recruiter.caption"
+              >
               </app-card-recruiter>
             </ng-container>
-            <ng-container *ngIf="this.pageName == 'offre'">
+            <ng-container *ngIf="pageName == 'offre'">
               <div class="row" *ngIf="genericervice.orientation == 'verticale'">
-                <app-card-offre-Verticale *ngFor="
-                    let offre of genericervice.get('offre')?.getoffres()
+                <app-card-offre-Verticale
+                  *ngFor="
+                    let offre of genericervice.get(pageName)?.getoffres()
                       | paginate: { itemsPerPage: 20, currentPage: p }
-                  " [link]="['/offres/details-offres/',offre.id]" [Intitule]="offre.Intitule" [Secteur]="offre.Secteur"
-                  [Poste]="offre.Poste" [TypePoste]="offre.TypePoste" [NomEntreprise]="offre.NomEntreprise"
-                  [TypeEntreprise]="offre.TypeEntreprise" [TypeContrat]="offre.TypeContrat" [Ville]="offre.Ville"
-                  [Date]="offre.Date" [image]="offre.Image" [dateDisponibilite]="offre.dateDisponibilite"
-                  [image]="offre.Image">
+                  "
+                  [link]="['/offres/details-offres/', offre.id]"
+                  [Intitule]="offre.Intitule"
+                  [Secteur]="offre.Secteur"
+                  [Poste]="offre.Poste"
+                  [TypePoste]="offre.TypePoste"
+                  [NomEntreprise]="offre.NomEntreprise"
+                  [TypeEntreprise]="offre.TypeEntreprise"
+                  [TypeContrat]="offre.TypeContrat"
+                  [Ville]="offre.Ville"
+                  [Date]="offre.Date"
+                  [image]="offre.Image"
+                  [dateDisponibilite]="offre.dateDisponibilite"
+                  [image]="offre.Image"
+                >
                 </app-card-offre-Verticale>
               </div>
-              <div class="row" *ngIf="genericervice.orientation == 'horizontale'">
-                <app-card-offre-horizontale class="col-md-6 mb-3" *ngFor="
-                    let offre of genericervice.get('offre')?.getoffres()
+              <div
+                class="row"
+                *ngIf="genericervice.orientation == 'horizontale'"
+              >
+                <app-card-offre-horizontale
+                  class="col-md-6 mb-3"
+                  *ngFor="
+                    let offre of genericervice.get(pageName)?.getoffres()
                       | paginate: { itemsPerPage: 20, currentPage: p }
-                  " [link]="['/offres/details-offres/',offre.id]" [Intitule]="offre.Intitule" [Secteur]="offre.Secteur"
-                  [Poste]="offre.Poste" [TypePoste]="offre.TypePoste" [NomEntreprise]="offre.NomEntreprise"
-                  [TypeEntreprise]="offre.TypeEntreprise" [TypeContrat]="offre.TypeContrat" [Ville]="offre.Ville"
-                  [Date]="offre.Date" [dateDisponibilite]="offre.dateDisponibilite" [image]="offre.Image">
+                  "
+                  [link]="['/offres/details-offres/', offre.id]"
+                  [Intitule]="offre.Intitule"
+                  [Secteur]="offre.Secteur"
+                  [Poste]="offre.Poste"
+                  [TypePoste]="offre.TypePoste"
+                  [NomEntreprise]="offre.NomEntreprise"
+                  [TypeEntreprise]="offre.TypeEntreprise"
+                  [TypeContrat]="offre.TypeContrat"
+                  [Ville]="offre.Ville"
+                  [Date]="offre.Date"
+                  [dateDisponibilite]="offre.dateDisponibilite"
+                  [image]="offre.Image"
+                >
                 </app-card-offre-horizontale>
               </div>
             </ng-container>
-            <ng-container *ngIf="this.pageName == 'condidat'">
-
+            <ng-container *ngIf="pageName == 'candidat'">
+              <div *ngIf="genericervice.orientation == 'verticale'">
+                <condida-c-cart-tow
+                  *ngFor="
+                    let c of genericervice.get(pageName)?.getcondidats()
+                      | paginate: { itemsPerPage: 20, currentPage: p }
+                  "
+                  [routerLink]="['/Candidats/details', c.info.id]"
+                  class=""
+                  [available]="c?.info.available"
+                  [img]="c?.info.img"
+                  [last_name]="c?.info.name.last_name"
+                  [first_name]="c?.info.name.first_name"
+                  [age]="c?.info.age"
+                  [countrie]="c?.info.address.countrie"
+                  [city]="c?.info.address.city"
+                  [tital_job]="c?.info.tital_job"
+                  [years_of_ex]="c?.info.job_post.years_of_ex"
+                  [ed_lavel]="c.info.ed_lavel"
+                  [tag]="c?.info.tag"
+                >
+                </condida-c-cart-tow>
+              </div>
+              <div
+                class="row m-1"
+                *ngIf="genericervice.orientation == 'horizontale'"
+              >
+                <condida-c-card
+                  *ngFor="
+                    let c of genericervice.get(pageName)?.getcondidats()
+                      | paginate: { itemsPerPage: 20, currentPage: p }
+                  "
+                  [routerLink]="['/Candidats/details', c.info.id]"
+                  class="col-md-6"
+                  [available]="c.info.available"
+                  [img]="c?.info.img"
+                  [last_name]="c?.info.name.last_name"
+                  [first_name]="c?.info.name.first_name"
+                  [age]="c?.info.age"
+                  [countrie]="c?.info.address.countrie"
+                  [city]="c?.info.address.city"
+                  [tital_job]="c?.info.tital_job"
+                  [years_of_ex]="c?.info.job_post.years_of_ex"
+                  [ed_lavel]="c?.info.ed_lavel"
+                  [tag]="c?.info.tag"
+                ></condida-c-card>
+              </div>
             </ng-container>
-            <ng-container *ngIf="this.pageName == 'quiz'">
-
+            <ng-container *ngIf="pageName == 'quiz'">
+              <app-card-quiz
+                class="col-md-4 mb-3"
+                *ngFor="
+                  let quiz of genericervice.get(pageName).getQuiz()
+                    | paginate: { itemsPerPage: 20, currentPage: p }
+                "
+                [routerLink]="['/quiz/quiz-details', quiz.id]"
+                [image]="quiz.image"
+                [titre]="quiz.titre"
+                [resume]="quiz.resume"
+                [link]="quiz?.link"
+                [domaine]="quiz.domaine"
+                [specialisation]="quiz.specialisation"
+                [nbQuestions]="quiz.nbQuestions"
+                [date]="quiz?.date"
+                [niveau]="quiz?.niveau"
+                [note]="quiz?.note"
+              ></app-card-quiz>
             </ng-container>
-            <ng-container *ngIf="this.pageName == 'metier'">
-
-            </ng-container>
-            <ng-container *ngIf="this.pageName == 'evenement'">
-
-            </ng-container>
-            <ng-container *ngIf="this.pageName == 'demande specifique'">
-
-            </ng-container>
-            <ng-container *ngIf="this.pageName == 'candidature spontanee'">
-
-            </ng-container>
-            <ng-container *ngIf="this.pageName == 'conseils pratique'">
-
-            </ng-container>
-            <ng-container *ngIf="this.pageName == 'temoignage'">
-
-            </ng-container>
-
-            <ng-container *ngIf="this.pageName == 'rubrique'">
-
-            </ng-container>
-            <ng-container *ngIf="this.pageName == 'sondage'">
-
-            </ng-container>
-            <ng-container *ngIf="this.pageName == 'liens utiles'">
-
-            </ng-container>
-            <ng-container *ngIf="this.pageName == 'forums'">
-
-            </ng-container>
-            <ng-container *ngIf="this.pageName == 'temoignage'">
-
+            <ng-container *ngIf="pageName == 'metier'">
+              <div class="container bootstrap snippets bootdeys">
+                <div class="row">
+                  <app-card-metiers
+                    class="col-lg-3 col-md-4 col-sm-6"
+                    *ngFor="
+                      let metier of genericervice.get(pageName).getlist()
+                        | paginate: { itemsPerPage: 20, currentPage: p }
+                    "
+                    [Image]="metier.Image"
+                    [Secteur]="metier.Secteur"
+                    [Intitule]="metier.Intitule"
+                    [link]="['/metiers/details-metiers', metier.id]"
+                  >
+                  </app-card-metiers>
+                </div>
+              </div>
             </ng-container>
 
-          <ng-container *ngIf="this.pageName == 'adresses utiles'">
+            <ng-container *ngIf="pageName == 'evenement'">
+              <app-card-article
+                class="col-md-6 mb-3"
+                *ngFor="
+                  let event of genericervice.get(pageName).getlist()
+                    | paginate: { itemsPerPage: 6, currentPage: p }
+                "
+                [isArticle]="false"
+                [link]="['/evenement/details-event', event.id]"
+                [image]="event.image"
+                [titre]="event.titre"
+                [dateDebut]="event.dateDebut"
+                [dateFin]="event.dateFin"
+                [heureDebut]="event.heureDebut"
+                [heureFin]="event.heureFin"
+                [typeEvent]="event.TypeEvenement"
+                [organisateur]="event.organisateur"
+              >
+              </app-card-article>
+            </ng-container>
+            <ng-container *ngIf="pageName == 'demande specifique'">
+              <div class="row" *ngIf="genericervice.orientation == 'verticale'">
+                <app-card-offre-Verticale
+                  *ngFor="
+                    let offre of genericervice.get(pageName).getlist()
+                      | paginate: { itemsPerPage: 20, currentPage: p }
+                  "
+                  [link]="['/offres/details-offres/', offre.id]"
+                  [Intitule]="offre.Intitule"
+                  [Secteur]="offre.Secteur"
+                  [Poste]="offre.Poste"
+                  [TypePoste]="offre.TypePoste"
+                  [NomEntreprise]="offre.NomEntreprise"
+                  [TypeEntreprise]="offre.TypeEntreprise"
+                  [TypeContrat]="offre.TypeContrat"
+                  [Ville]="offre.Ville"
+                  [Date]="offre.Date"
+                  [image]="offre.Image"
+                  [dateDisponibilite]="offre.dateDisponibilite"
+                  [image]="offre.Image"
+                ></app-card-offre-Verticale>
+              </div>
+              <div
+                class="row"
+                *ngIf="genericervice.orientation == 'horizontale'"
+              >
+                <app-card-offre-horizontale
+                  class="col-md-6 mb-3"
+                  *ngFor="
+                    let offre of genericervice.get(pageName).getlist()
+                      | paginate: { itemsPerPage: 20, currentPage: p }
+                  "
+                  [link]="['/offres/details-offres/', offre.id]"
+                  [Intitule]="offre.Intitule"
+                  [Secteur]="offre.Secteur"
+                  [Poste]="offre.Poste"
+                  [TypePoste]="offre.TypePoste"
+                  [NomEntreprise]="offre.NomEntreprise"
+                  [TypeEntreprise]="offre.TypeEntreprise"
+                  [TypeContrat]="offre.TypeContrat"
+                  [Ville]="offre.Ville"
+                  [Date]="offre.Date"
+                  [dateDisponibilite]="offre.dateDisponibilite"
+                  [image]="offre.Image"
+                ></app-card-offre-horizontale>
+              </div>
+            </ng-container>
+            <ng-container *ngIf="pageName == 'candidature spontanee'">
+              <div class="row">
+                <app-card-recruiter
+                  *ngFor="
+                    let r of genericervice.get(pageName).getlist()
+                      | paginate: { itemsPerPage: 6, currentPage: p }
+                  "
+                  class="col-md-4 col-sm-6"
+                  [link]="['/recruiter/details', r.id]"
+                  [imageBg]="r.imageBg"
+                  [logo]="r.logo"
+                  [title]="r.title"
+                  [type]="r.type"
+                  [salaries]="r.salaries"
+                  [caption]="r.caption"
+                ></app-card-recruiter>
+              </div>
+            </ng-container>
 
-          </ng-container>
-          <ng-container *ngIf="this.pageName == 'documents'">
+            <ng-container *ngIf="pageName == 'temoignage'">
+              <app-temoignage
+                [pageName]="pageName"
+                [data]="genericervice.get(pageName).getlist()"
+              ></app-temoignage>
+            </ng-container>
 
-          </ng-container>
-          <ng-container  *ngIf="this.pageName == 'undfind'">
+            <ng-container *ngIf="pageName == 'rubrique'"> </ng-container>
+            <ng-container *ngIf="pageName == 'sondage'"> </ng-container>
+            <ng-container *ngIf="pageName == 'liens utiles'"> </ng-container>
+            <ng-container *ngIf="pageName == 'forums'"> </ng-container>
+            <ng-container *ngIf="pageName == 'temoignage'"> </ng-container>
 
-          <section class=" section p-0 bg-img cover-background"
-          >
-            <div class="container-fluid d-flex flex-column">
-              <div class="row align-items-center justify-content-center ">
-                <div class="col-md-9 col-lg-6 my-5">
-                  <div class="text-center error-page">
-                    <h1 class="mb-0 text-secondary">404</h1>
-                    <h2 class=" text-white">Sorry, something went wrong!</h2>
-                    <p class="w-sm-80 mx-auto  text-white">This page is incidentally inaccessible because of support. We will
-                      back very before long much obliged for your understanding</p>
-                    <div>
-                      <a href="#" class="btn  btn-inf btn-info btn-lg me-sm-2 mb-2 mb-sm-0">Return Home</a>
+            <ng-container *ngIf="pageName == 'adresses utiles'"> </ng-container>
+            <ng-container *ngIf="pageName == 'documents'"> </ng-container>
+            <ng-container *ngIf="pageName == 'conseils pratique'">
+              <app-card-article
+                class="col-md-6 mb-3"
+                *ngFor="
+                  let event of genericervice.get(pageName).getlist()
+                    | paginate: { itemsPerPage: 20, currentPage: p }
+                "
+                [isArticle]="false"
+                [link]="['/evenement/details-event']"
+                [image]="event.image"
+                [titre]="event.titre"
+                [dateDebut]="event.dateDebut"
+                [dateFin]="event.dateFin"
+                [heureDebut]="event.heureDebut"
+                [heureFin]="event.heureFin"
+                [typeEvent]="event.TypeEvenement"
+                [organisateur]="event.organisateur"
+              ></app-card-article>
+            </ng-container>
+            <ng-container *ngIf="pageName == 'undfind'">
+              <section class="section p-0 bg-img cover-background">
+                <div class="container-fluid d-flex flex-column">
+                  <div class="row align-items-center justify-content-center">
+                    <div class="col-md-9 col-lg-6 my-5">
+                      <div class="text-center error-page">
+                        <h1 class="mb-0 text-secondary">404</h1>
+                        <h2 class="text-white">Sorry, something went wrong!</h2>
+                        <p class="w-sm-80 mx-auto text-white">
+                          This page is incidentally inaccessible because of
+                          support. We will back very before long much obliged
+                          for your understanding
+                        </p>
+                        <div>
+                          <a
+                            href="#"
+                            class="btn btn-inf btn-info btn-lg me-sm-2 mb-2 mb-sm-0"
+                            >Return Home</a
+                          >
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </section>
-          
-          </ng-container>
+              </section>
+            </ng-container>
 
-            <pagination-controls *ngIf="this.pageName != 'undfind'" class="text-center" (pageChange)="p = $event"></pagination-controls>
+            <pagination-controls
+              *ngIf="!['undfind', 'temoignage'].includes(pageName)"
+              class="text-center"
+              (pageChange)="p = $event"
+            >
+            </pagination-controls>
           </div>
         </div>
       </div>
     </div>
-    <div *ngIf="showRightSideBar" class="section-recruteur spacing-inline-end mb-3"></div>
+    <div
+      *ngIf="showRightSideBar"
+      class="section-recruteur spacing-inline-end mb-3"
+    ></div>
   </div>
 </div>

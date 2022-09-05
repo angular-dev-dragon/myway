@@ -11,6 +11,7 @@ export class EvenementService {
   ngOnInit(): void {}
   allEvents: any = [
     {
+      id: '1',
       image: 'assets/images/',
       titre: 'Evenement Test 1',
       dateDebut: '2022-07-02',
@@ -22,6 +23,7 @@ export class EvenementService {
     },
 
     {
+      id: '134',
       image:
         'https://www.sqli.com/sites/default/files/styles/xs_thumbnail_teaser/public/2021-12/SQLI-marketing_2021_Bridgestone-Square.jpg?h=cd2a7045&itok=k4P1Rjtd',
 
@@ -34,6 +36,7 @@ export class EvenementService {
       organisateur: 'Test Organisateur',
     },
     {
+      id: '145',
       image:
         'https://www.sqli.com/sites/default/files/styles/xs_thumbnail_teaser/public/2021-12/lausanne-tourism-teaser-image.jpg?h=1e66e246&itok=oIdMhXB3',
       titre: 'Promoting Lausanne’s Tourism and Development',
@@ -45,38 +48,158 @@ export class EvenementService {
       TypeEvenement: 'En Ligne',
       organisateur: 'Test Organisateur',
     },
-    // {
-    //   titre: "Titre de l'article",
-    //   sousTitre: "Sous titre de l'article",
-    //   resume: "Titre de l'article",
-    //   etiquette: 'Tag',
-    //   motsCles: ['motCle', 'motCle2'],
-    // },
-    // {
-    //   titre: 'Seasalt & SQLI make a perfect fit for digital fashion',
-    //   sousTitre: "Sous titre de l'article",
-    //   resume: "Titre de l'article",
-    //   etiquette: 'Tag',
-    //   motsCles: ['motCle', 'motCle2'],
-    //   image:
-    //     'https://www.sqli.com/sites/default/files/styles/xs_thumbnail_teaser/public/2021-12/SQLI-marketing_2021_Bridgestone-Square.jpg?h=cd2a7045&itok=k4P1Rjtd',
-    // },
-    // {
-    //   titre: 'Promoting Lausanne’s Tourism and Development',
-    //   sousTitre: "Sous titre de l'article",
-    //   resume: "Titre de l'article",
-    //   etiquette: 'Tag',
-    //   motsCles: ['motCle', 'motCle2'],
-    //   image:
-    //     'https://www.sqli.com/sites/default/files/styles/xs_thumbnail_teaser/public/2021-12/lausanne-tourism-teaser-image.jpg?h=1e66e246&itok=oIdMhXB3',
-    // },
-    // {
-    //   titre: "Titre de l'article",
-    //   sousTitre: "Sous titre de l'article",
-    //   resume: "Titre de l'article",
-    //   etiquette: 'Tag',
-    //   motsCles: ['motCle', 'motCle2'],
-    // },
+    {
+      id: '1',
+      image: 'assets/images/',
+      titre: 'Evenement Test 1',
+      dateDebut: '2022-07-02',
+      heureDebut: '10:00',
+      dateFin: '2022-10-20',
+      heureFin: '15:30',
+      TypeEvenement: 'Presentiel',
+      organisateur: 'Test Organisateur',
+    },
+
+    {
+      id: '134',
+      image:
+        'https://www.sqli.com/sites/default/files/styles/xs_thumbnail_teaser/public/2021-12/SQLI-marketing_2021_Bridgestone-Square.jpg?h=cd2a7045&itok=k4P1Rjtd',
+
+      titre: 'Evenement Test 1',
+      dateDebut: '2022-08-10',
+      heureDebut: '10:00',
+      dateFin: '2022-12-15',
+      heureFin: '15:30',
+      TypeEvenement: 'En Ligne',
+      organisateur: 'Test Organisateur',
+    },
+    {
+      id: '145',
+      image:
+        'https://www.sqli.com/sites/default/files/styles/xs_thumbnail_teaser/public/2021-12/lausanne-tourism-teaser-image.jpg?h=1e66e246&itok=oIdMhXB3',
+      titre: 'Promoting Lausanne’s Tourism and Development',
+
+      dateDebut: '2022-05-07',
+      heureDebut: '12:00',
+      dateFin: '2022-08-15',
+      heureFin: '15:30',
+      TypeEvenement: 'En Ligne',
+      organisateur: 'Test Organisateur',
+    },
+    {
+      id: '1',
+      image: 'assets/images/',
+      titre: 'Evenement Test 1',
+      dateDebut: '2022-07-02',
+      heureDebut: '10:00',
+      dateFin: '2022-10-20',
+      heureFin: '15:30',
+      TypeEvenement: 'Presentiel',
+      organisateur: 'Test Organisateur',
+    },
+
+    {
+      id: '134',
+      image:
+        'https://www.sqli.com/sites/default/files/styles/xs_thumbnail_teaser/public/2021-12/SQLI-marketing_2021_Bridgestone-Square.jpg?h=cd2a7045&itok=k4P1Rjtd',
+
+      titre: 'Evenement Test 1',
+      dateDebut: '2022-08-10',
+      heureDebut: '10:00',
+      dateFin: '2022-12-15',
+      heureFin: '15:30',
+      TypeEvenement: 'En Ligne',
+      organisateur: 'Test Organisateur',
+    },
+    {
+      id: '145',
+      image:
+        'https://www.sqli.com/sites/default/files/styles/xs_thumbnail_teaser/public/2021-12/lausanne-tourism-teaser-image.jpg?h=1e66e246&itok=oIdMhXB3',
+      titre: 'Promoting Lausanne’s Tourism and Development',
+
+      dateDebut: '2022-05-07',
+      heureDebut: '12:00',
+      dateFin: '2022-08-15',
+      heureFin: '15:30',
+      TypeEvenement: 'En Ligne',
+      organisateur: 'Test Organisateur',
+    },
+    {
+      id: '1',
+      image: 'assets/images/',
+      titre: 'Evenement Test 1',
+      dateDebut: '2022-07-02',
+      heureDebut: '10:00',
+      dateFin: '2022-10-20',
+      heureFin: '15:30',
+      TypeEvenement: 'Presentiel',
+      organisateur: 'Test Organisateur',
+    },
+
+    {
+      id: '134',
+      image:
+        'https://www.sqli.com/sites/default/files/styles/xs_thumbnail_teaser/public/2021-12/SQLI-marketing_2021_Bridgestone-Square.jpg?h=cd2a7045&itok=k4P1Rjtd',
+
+      titre: 'Evenement Test 1',
+      dateDebut: '2022-08-10',
+      heureDebut: '10:00',
+      dateFin: '2022-12-15',
+      heureFin: '15:30',
+      TypeEvenement: 'En Ligne',
+      organisateur: 'Test Organisateur',
+    },
+    {
+      id: '145',
+      image:
+        'https://www.sqli.com/sites/default/files/styles/xs_thumbnail_teaser/public/2021-12/lausanne-tourism-teaser-image.jpg?h=1e66e246&itok=oIdMhXB3',
+      titre: 'Promoting Lausanne’s Tourism and Development',
+
+      dateDebut: '2022-05-07',
+      heureDebut: '12:00',
+      dateFin: '2022-08-15',
+      heureFin: '15:30',
+      TypeEvenement: 'En Ligne',
+      organisateur: 'Test Organisateur',
+    },
+    {
+      id: '1',
+      image: 'assets/images/',
+      titre: 'Evenement Test 1',
+      dateDebut: '2022-07-02',
+      heureDebut: '10:00',
+      dateFin: '2022-10-20',
+      heureFin: '15:30',
+      TypeEvenement: 'Presentiel',
+      organisateur: 'Test Organisateur',
+    },
+
+    {
+      id: '134',
+      image:
+        'https://www.sqli.com/sites/default/files/styles/xs_thumbnail_teaser/public/2021-12/SQLI-marketing_2021_Bridgestone-Square.jpg?h=cd2a7045&itok=k4P1Rjtd',
+
+      titre: 'Evenement Test 1',
+      dateDebut: '2022-08-10',
+      heureDebut: '10:00',
+      dateFin: '2022-12-15',
+      heureFin: '15:30',
+      TypeEvenement: 'En Ligne',
+      organisateur: 'Test Organisateur',
+    },
+    {
+      id: '145',
+      image:
+        'https://www.sqli.com/sites/default/files/styles/xs_thumbnail_teaser/public/2021-12/lausanne-tourism-teaser-image.jpg?h=1e66e246&itok=oIdMhXB3',
+      titre: 'Promoting Lausanne’s Tourism and Development',
+
+      dateDebut: '2022-05-07',
+      heureDebut: '12:00',
+      dateFin: '2022-08-15',
+      heureFin: '15:30',
+      TypeEvenement: 'En Ligne',
+      organisateur: 'Test Organisateur',
+    },
   ];
 
   detailsEvent: any = {
@@ -201,7 +324,7 @@ export class EvenementService {
     this.listEvents = newList3;
   }
 
-  getAllInfo() {
+  getlist() {
     return this.allEvents;
   }
 }

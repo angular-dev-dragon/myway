@@ -10,12 +10,9 @@ const routes: Routes = [
     path: 'list-condidatures-spontannes',
     component: ListCondidaturesSpontaneesComponent,
   },
+
   {
-    path: 'list-condidatures-spontannes',
-    component: ListCondidaturesSpontaneesComponent,
-  },
-  {
-    path: 'details-condidature-spontanee',
+    path: 'condidature-spontanee-details/:id',
     component: DetailsCondidatureSpontaneeComponent,
   },
 
@@ -23,11 +20,7 @@ const routes: Routes = [
     path: 'list-demandes-specifiques',
     component: ListDemandesSpecifiquesComponent,
   },
-  {
-    path: 'details-demandes-specifiques',
-    component: DetailsDemandesSpecifiquesComponent,
-  },
-]
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

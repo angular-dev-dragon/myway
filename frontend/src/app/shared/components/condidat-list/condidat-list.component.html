@@ -24,63 +24,14 @@
                   [showOrientation]="true"
                   [data]="candidatService.condidats_list"
                   (filtredData)="filtredData($event)"
-                  (orientationView)="getOrientaion($event)"
+                  
                 ></app-top-bar>
               </div>
 
               <!-- BEGIN TABLE RESULT -->
               <hr />
 
-              <div *ngIf="orientation == 'verticale'">
-                <condida-c-cart-tow
-                  *ngFor="
-                    let c of resultData
-                      | paginate: { itemsPerPage: 8, currentPage: paginate }
-                  "
-                  [routerLink]="['/Candidats/details', c.info.id]"
-                  class=""
-                  [available]="c.info.available"
-                  [img]="c.info.img"
-                  [last_name]="c.info.name.last_name"
-                  [first_name]="c.info.name.first_name"
-                  [age]="c.info.age"
-                  [countrie]="c.info.address.countrie"
-                  [city]="c.info.address.city"
-                  [tital_job]="c.info.tital_job"
-                  [years_of_ex]="c.info.job_post.years_of_ex"
-                  [ed_lavel]="c.info.ed_lavel"
-                  [tag]="c.info.tag"
-                ></condida-c-cart-tow>
-                <pagination-controls
-                  class="text-center"
-                  (pageChange)="paginate = $event"
-                ></pagination-controls>
-              </div>
-              <div class="row m-1" *ngIf="orientation == 'horizontale'">
-                <condida-c-card
-                  *ngFor="
-                    let c of resultData
-                      | paginate: { itemsPerPage: 4, currentPage: paginate }
-                  "
-                  [routerLink]="['/Candidats/details', c.info.id]"
-                  class="col-md-6"
-                  [available]="c.info.available"
-                  [img]="c.info.img"
-                  [last_name]="c.info.name.last_name"
-                  [first_name]="c.info.name.first_name"
-                  [age]="c.info.age"
-                  [countrie]="c.info.address.countrie"
-                  [city]="c.info.address.city"
-                  [tital_job]="c.info.tital_job"
-                  [years_of_ex]="c.info.job_post.years_of_ex"
-                  [ed_lavel]="c.info.ed_lavel"
-                  [tag]="c.info.tag"
-                ></condida-c-card>
-                <pagination-controls
-                  class="text-center"
-                  (pageChange)="paginate = $event"
-                ></pagination-controls>
-              </div>
+
             </div>
           </div>
         </div>

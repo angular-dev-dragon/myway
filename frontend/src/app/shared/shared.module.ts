@@ -115,6 +115,8 @@ import { FilterComponent } from './components/filter/filter.component'
 import { FilterByTextComponent } from './filter-by-text/filter-by-text.component'
 import { SortComponent } from './sort/sort.component'
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { TemoignageComponent } from './components/temoignage/temoignage.component'
+
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -243,7 +245,7 @@ let modules: any = [
     FilterByTextComponent,
     SortComponent,
     TopBarComponent,
-
+    TemoignageComponent,
   ],
 
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
@@ -287,6 +289,7 @@ let modules: any = [
     FilterByTextComponent,
     SortComponent,
     TopBarComponent,
+    TemoignageComponent,
 
     ...modules,
   ],
@@ -294,15 +297,15 @@ let modules: any = [
 export class SharedModule {
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    translate: TranslateService,
+    translate: TranslateService
   ) {
     if (isPlatformBrowser(this.platformId)) {
-      document.body.classList.add('ltr')
-      localStorage.setItem('lang', 'fr')
+      document.body.classList.add('ltr');
+      localStorage.setItem('lang', 'fr');
 
-      var lang = 'fr'
-      translate.setDefaultLang(lang)
-      translate.addLangs(['en', 'fr'])
+      var lang = 'fr';
+      translate.setDefaultLang(lang);
+      translate.addLangs(['en', 'fr']);
     }
   }
 }

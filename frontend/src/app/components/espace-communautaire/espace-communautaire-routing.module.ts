@@ -4,7 +4,7 @@ import { DetailsForumComponent } from './details-forum/details-forum.component'
 import { DetailsThemeComponent } from './details-theme/details-theme.component'
 import { ListForumComponent } from './list-forum/list-forum.component'
 import { SondageComponent } from './sondage/sondage.component'
-import { TemoignageComponent } from './temoignage/temoignage.component'
+import { TemoignageComponent } from '../../shared/components/temoignage/temoignage.component'
 
 const routes: Routes = [
   {

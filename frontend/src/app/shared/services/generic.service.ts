@@ -78,6 +78,7 @@ export class GenericService {
         return this.temoingnageService;
       case 'post':
         return this.postService;
+     // case 'conseils pratique' : return this.con
       default:
         return this.defaultService;
     }

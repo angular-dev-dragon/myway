@@ -5,17 +5,19 @@ import { NavigationEnd, NavigationStart, Router } from '@angular/router'
   providedIn: 'root',
 })
 export class QuizService {
-  reponses: any = []
+  reponses: any = [];
 
   constructor(private router: Router) {
     router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.listQuiz = this.allListQuiz
+        this.listQuiz = this.allListQuiz;
       }
-    })
+    });
   }
   allListQuiz: any = [
     {
+      id: 'a93asdfasd9 ',
+
       image:
         'https://wegate.eu/sites/default/files/styles/resize_750x450/public/coursera.jpg?itok=5dhpuGwQ',
       titre: 'Quiz HTML CSS',
@@ -31,6 +33,8 @@ export class QuizService {
       metier: ['Developpeur', 'Developpeur Front-End'],
     },
     {
+      id: 'a93e9 ',
+
       image:
         'https://wegate.eu/sites/all/themes/wegate_foundation/images/logo-footer.svg',
       titre: 'Quiz Backend Developpement',
@@ -47,6 +51,7 @@ export class QuizService {
       metier: ['Developpeur'],
     },
     {
+      id: 'aew939 ',
       image:
         'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/ba/e14875b76f4e799e067d3551076e8c/1200x600_DA.png?auto=format%2Ccompress&dpr=1&w=268',
       titre: 'Quiz Marketing Digitale',
@@ -63,6 +68,7 @@ export class QuizService {
       metier: ['DevOps'],
     },
     {
+      id: 'a939 ',
       image:
         'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/14/b2d530f1ad11e7ab380fc0c6c817a8/Search-Thumbnail.jpg?auto=format%2Ccompress&dpr=1&w=268',
       titre: 'Quiz React JS',
@@ -78,46 +84,48 @@ export class QuizService {
       secteur: 'Électronique',
       metier: ['DevOps'],
     },
-  ]
-  listQuiz: any = this.allListQuiz
-  getQuiz() {
-    return this.allListQuiz
-  }
+  ];
+  listQuiz: any = this.allListQuiz;
 
   filter(metierBox: any, secteurSelect: any) {
-    this.listQuiz = this.allListQuiz
+    this.listQuiz = this.allListQuiz;
 
     if (secteurSelect != '') {
       this.listQuiz = this.listQuiz.filter((quiz: any) => {
-        return quiz.secteur == secteurSelect
-      })
+        return quiz.secteur == secteurSelect;
+      });
     }
-    this.checkboxFiltre(metierBox, 'metier')
+    this.checkboxFiltre(metierBox, 'metier');
 
-    return this.listQuiz
+    return this.listQuiz;
   }
 
   checkboxFiltre(CheckboxList: any, label: any) {
-    let newList2
-    let newList3: any = this.listQuiz
-    let isFirstTime: Boolean = true
+    let newList2;
+    let newList3: any = this.listQuiz;
+    let isFirstTime: Boolean = true;
     CheckboxList.map((filtre: any) => {
       if (filtre.nativeElement.checked) {
         if (isFirstTime == true) {
-          isFirstTime = false
-          newList3 = []
+          isFirstTime = false;
+          newList3 = [];
         }
 
-        newList2 = this.listQuiz
+        newList2 = this.listQuiz;
         newList2 = newList2.filter((quiz: any) => {
-          return quiz.metier.includes(filtre.nativeElement.value)
-        })
+          return quiz.metier.includes(filtre.nativeElement.value);
+        });
 
         newList2.map((list: any) => {
-          newList3.push(list)
-        })
+          newList3.push(list);
+        });
       }
-    })
-    this.listQuiz = newList3
+    });
+
+    this.listQuiz = newList3;
+  }
+  getQuiz() {
+    return this.listQuiz;
   }
 }
+
