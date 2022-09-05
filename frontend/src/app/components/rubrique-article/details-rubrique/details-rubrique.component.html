@@ -14,9 +14,9 @@
     <hr />
     <div class="row">
       <app-card-article
-        [link]="['/rubrique/details-article']"
+      *ngFor="let article of resultData"
+        [link]="['/rubrique/details-article',article.id]"
         class="col-md-6 mb-3"
-        *ngFor="let article of resultData"
         [image]="article.image"
         [titre]="article.titre"
         [sousTitre]="article.sousTitre"

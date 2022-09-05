@@ -98,14 +98,14 @@ export class ViewProjectComponent implements OnInit {
       'candidature spontanee'
     );
     r = r.replace(new RegExp('recruteurs'), 'recruteur');
-    r = r.replace(new RegExp('rubrique-details'), 'rubrique detail');
+    r = r.replace(new RegExp('rubrique-details'), 'rubrique');
 
     r = r.replace(new RegExp('-', 'g'), ' ');
     r = r.replace(new RegExp('_', 'g'), ' ');
 
     r = r.replace(new RegExp('[àáâãäå]', 'g'), 'a');
     r = r.replace(new RegExp('æ', 'g'), 'ae');
-    r = r.replace(new RegExp('ç', 'g'), 'c');
+    r = r.replace(new RegExp('ç', 'g'), 'c');''
     r = r.replace(new RegExp('[èéêë]', 'g'), 'e');
     r = r.replace(new RegExp('[ìíîï]', 'g'), 'i');
     r = r.replace(new RegExp('ñ', 'g'), 'n');

@@ -260,7 +260,7 @@
                       | paginate: { itemsPerPage: 6, currentPage: p }
                   "
                   class="col-md-4 col-sm-6"
-                  [link]="['/recruiter/details', r.id]"
+                  [link]="['/recruteurs/details-recruteur/{{r.id }}/condidature-spontanee']"
                   [imageBg]="r.imageBg"
                   [logo]="r.logo"
                   [title]="r.title"
@@ -278,7 +278,23 @@
               ></app-temoignage>
             </ng-container>
 
-            <ng-container *ngIf="pageName == 'rubrique'"> </ng-container>
+            <ng-container *ngIf="pageName == 'rubrique'">
+
+            <div class="row">
+              <app-card-article
+                [link]="['/rubrique/details-article',article.id]"
+                class="col-md-6 mb-3"
+                *ngFor="let article of genericervice.get(pageName).getlist()"
+                [image]="article.image"
+                [titre]="article.titre"
+                [sousTitre]="article.sousTitre"
+                [resume]="article.resume"
+                [etiquette]="article.etiquette"
+                [motsCles]="article.motsCles"
+              ></app-card-article>
+            </div>
+
+            </ng-container>
             <ng-container *ngIf="pageName == 'sondage'"> </ng-container>
             <ng-container *ngIf="pageName == 'liens utiles'"> </ng-container>
             <ng-container *ngIf="pageName == 'forums'"> </ng-container>
