@@ -18,7 +18,11 @@
   <div class="contain">
     <div class="d-flex flex-row-reverse justify-content-between">
       <div class="">
-        <button class="btn-fav" style="border-style: none;">
+        <button
+          class="btn-fav"
+          style="border-style: none;"
+          (click)="genericService.addToWishList(id, pageName)"
+        >
           <i class="far fa-heart"></i>
         </button>
       </div>
@@ -38,7 +42,7 @@
         </div>
       </div>
     </div>
-    <div class="body-card mt-3">
+    <div class="body-card mt-3" [routerLink]="link">
       <div class="card-right">
         <h5>{{ title }}</h5>
         <div class="info-small text-secondary mb-2">

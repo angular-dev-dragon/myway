@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core'
+import { GenericService } from '../../services/generic.service'
 
 @Component({
   selector: 'app-card-recruiter',
@@ -12,8 +13,11 @@ export class CardRecruiterComponent implements OnInit {
   @Input() type = ''
   @Input() salaries = ''
   @Input() caption = ''
+  @Input() id = ''
+  @Input() pageName = ''
+  @Input() link: any = ''
 
-  constructor() {}
+  constructor(public genericService: GenericService) {}
 
   ngOnInit(): void {}
 }

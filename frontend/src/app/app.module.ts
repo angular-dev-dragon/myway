@@ -22,10 +22,11 @@ import { CompetencesModule } from './components/competences/competences.module'
 import { MetiersModule } from './components/metiers/metiers.module'
 import { QuizModule } from './components/quiz/quiz.module'
 import { EvenementModule } from './components/evenement/evenement.module'
-import { DaliljobeModule } from './components/daliljobe/daliljobe.module'
+import { DaliljobeModule } from './components/daliljobe/daliljobe.module';
+import { ListFavorisComponent } from './components/list-favoris/list-favoris.component'
 
 @NgModule({
-  declarations: [AppComponent, ListBlogeurComponent],
+  declarations: [AppComponent, ListBlogeurComponent, ListFavorisComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
