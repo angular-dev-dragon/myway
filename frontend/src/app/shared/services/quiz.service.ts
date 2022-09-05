@@ -18,7 +18,7 @@ export class QuizService {
     {
       image:
         'https://wegate.eu/sites/default/files/styles/resize_750x450/public/coursera.jpg?itok=5dhpuGwQ',
-      titre: 'Quiz HTML CSS',
+      titre: 'HTML CSS JS',
       resume:
         'Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They’re made interactive with the included Bootstrap dropdown JavaScript plugin. They’re toggled by clicking, not by hovering; this is an intentional design decision.',
       domaine: 'Front-End Developpement',
@@ -33,7 +33,7 @@ export class QuizService {
     {
       image:
         'https://wegate.eu/sites/all/themes/wegate_foundation/images/logo-footer.svg',
-      titre: 'Quiz Backend Developpement',
+      titre: 'Backend Developpement',
       resume:
         'Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They’re made interactive with the included Bootstrap dropdown JavaScript plugin. They’re toggled by clicking, not by hovering; this is an intentional design decision.',
 
@@ -54,7 +54,7 @@ export class QuizService {
         'Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They’re made interactive with the included Bootstrap dropdown JavaScript plugin. They’re toggled by clicking, not by hovering; this is an intentional design decision.',
 
       domaine: 'Front-End Developpement',
-      specialisation: 'Bootstrap Html CSS',
+      specialisation: 'Angular Prime Ng',
       nbQuestions: 10,
       date: '2022-05-15',
       niveau: 'Débutant',

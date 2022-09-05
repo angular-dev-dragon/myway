@@ -93,7 +93,7 @@
           class="col-12"
           *ngFor="let paragraphe of article?.paragraphes; let i = index"
         >
-          <h4 class="">
+          <h4 class="mb-3">
             {{ paragraphe?.designation }}
           </h4>
           <figure
@@ -113,17 +113,17 @@
                 class="article-paragraphe-image img-fluid mb-1"
               />
             </a>
-            <a>
-              <video
-                controls
-                [src]="paragraphe?.Chemin_associe"
-                *ngIf="paragraphe?.type_contenu === 'video'"
-                class="article-paragraphe-video w-100 mb-1"
-                type="video/mp4"
-              >
-                Your browser does not support the video tag.
-              </video>
-            </a>
+
+            <video
+              controls
+              [src]="paragraphe?.Chemin_associe"
+              *ngIf="paragraphe?.type_contenu === 'video'"
+              class="article-paragraphe-video w-100 mb-1"
+              type="video/mp4"
+            >
+              Your browser does not support the video tag.
+            </video>
+
             <figcaption class="d-flex justify-content-between figure-caption">
               <span>
                 {{ paragraphe?.titre_contenu }}
@@ -143,9 +143,9 @@
         </div>
         <div class="space-comment-form">
           <div class="documents my-3" *ngIf="article.Document.length != 0">
-            <h5 class="">
+            <h4 class="">
               {{ 'document.docA' | translate }}
-            </h5>
+            </h4>
 
             <div class="article-download" *ngFor="let doc of article.Document">
               <span class="article-details bold my-2">{{ doc?.titre }} :</span>
@@ -160,9 +160,9 @@
             </div>
           </div>
           <div class="Reference my-3" *ngIf="article.Reference.length != 0">
-            <h5 class="">
+            <h4 class="">
               {{ 'article.ref' | translate }}
-            </h5>
+            </h4>
 
             <div
               class="article-download"

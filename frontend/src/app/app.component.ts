@@ -7,7 +7,7 @@ import { PrimeNGConfig } from 'primeng/api'
 })
 export class AppComponent {
   constructor(private primengConfig: PrimeNGConfig) {}
-
+  title: string = 'My Way'
   ngOnInit() {
     this.primengConfig.ripple = true
   }

@@ -16,19 +16,28 @@
     </div>
   </div>
   <div class="contain">
-    <div class="mb-1">
-      <i class="fa-regular fa-folder me-2"></i>
-      <span class="small">{{ type }}</span>
-    </div>
-    <div class="mb-1">
-      <i class="fa-regular fa-user me-2"></i>
-      <span class="small">500 Salariés</span>
-    </div>
-    <div class="mb-1">
-      <i class="fa-regular fa-map me-2"></i>
-      <span class="small">Casablanca</span>
-    </div>
+    <div class="d-flex flex-row-reverse justify-content-between">
+      <div class="">
+        <button class="btn-fav" style="border-style: none;">
+          <i class="far fa-heart"></i>
+        </button>
+      </div>
 
+      <div class="">
+        <div class="mb-1">
+          <i class="fa-regular fa-folder me-2"></i>
+          <span class="small">{{ type }}</span>
+        </div>
+        <div class="mb-1">
+          <i class="fa-regular fa-user me-2"></i>
+          <span class="small">500 Salariés</span>
+        </div>
+        <div class="mb-1">
+          <i class="fa-regular fa-map me-2"></i>
+          <span class="small">Casablanca</span>
+        </div>
+      </div>
+    </div>
     <div class="body-card mt-3">
       <div class="card-right">
         <h5>{{ title }}</h5>

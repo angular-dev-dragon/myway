@@ -5,9 +5,9 @@
   <div class="row">
     <div class="col-md-9">
       <div class="section-recruteur mb-3">
-        <h2 class="py-2 j-title-lg" *ngIf="!isValide">
+        <h4 class="py-2" *ngIf="!isValide">
           {{ 'sondage.sondae_encours' | translate }}
-        </h2>
+        </h4>
         <div class="row">
           <div class="col-12" *ngFor="let currentS of Sondage">
             <div class="row">
@@ -115,27 +115,28 @@
             </div>
           </div>
         </div>
-        <div class="section-recruteur mb-3">
-          <div class="row">
-            <div class="title1" *ngIf="sondageHistorique.length">
-              <h2 class="py-3 j-title-lg">
-                {{ 'sondage.historique_sondages' | translate }}
-              </h2>
-            </div>
-
-            <div class=" " *ngFor="let s of sondageHistorique; let i = index">
-              <div class="col-12">
-                <app-sondage-historique [sondage]="s"></app-sondage-historique>
-              </div>
-            </div>
-            <div
-              class="text-center col-md-12"
-              *ngIf="sondageHistorique.length"
-            ></div>
+      </div>
+      <div class="section-recruteur mb-3">
+        <div class="row">
+          <div class="" *ngIf="sondageHistorique.length">
+            <h4 class="py-3 j-title-lg">
+              {{ 'sondage.historique_sondages' | translate }}
+            </h4>
           </div>
+
+          <div class=" " *ngFor="let s of sondageHistorique; let i = index">
+            <div class="col-12">
+              <app-sondage-historique [sondage]="s"></app-sondage-historique>
+            </div>
+          </div>
+          <div
+            class="text-center col-md-12"
+            *ngIf="sondageHistorique.length"
+          ></div>
         </div>
       </div>
     </div>
+
     <div class="col-md-3">
       <div class="section-recruteur"></div>
     </div>
