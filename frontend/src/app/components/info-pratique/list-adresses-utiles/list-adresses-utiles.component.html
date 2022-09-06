@@ -6,14 +6,14 @@
     <div class="flex-grow-1">
       <app-top-bar
         [pageName]="'adresses utiles'"
-        [data]="adressesUtilesService.adressesUtiles"
+        [data]="adressesUtilesService.listAdresseUtiles"
         (filtredData)="filtredData($event)"
         (orientationView)="getOrientaion($event)"
       ></app-top-bar>
     </div>
     <hr />
 
-    <div class="row my-3">
+    <div class="row smy-3">
       <div class="col-md-9">
         <div class="section-recruteur">
           <ul class="row list-adresse">
