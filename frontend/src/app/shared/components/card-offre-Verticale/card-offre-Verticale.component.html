@@ -22,15 +22,7 @@
         <h3 [routerLink]="link" class="cursor-pointer m-0 card-custom-title">
           {{ Intitule }}
         </h3>
-        <div class="">
-          <button
-            class="btn-fav"
-            style="border-style: none;"
-            (click)="genericService.addToWishList(id, pageName)"
-          >
-            <i class="far fa-heart"></i>
-          </button>
-        </div>
+        <app-fav-button [pageName]="pageName" [id]="id"></app-fav-button>
         <!-- 
         <div class="favorite-offre">
           <button class="btn-fav" style="border-style: none;">

@@ -1,12 +1,14 @@
-import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { Injectable } from '@angular/core'
+import { API } from './api.service'
 
 @Injectable({
   providedIn: 'root',
 })
 export class DemandeSpecifiqueService {
-  listDemandes: any = [];
-  constructor() {
-    this.listDemandes = this.listAllDemandes;
+  listDemandes: any = []
+  constructor(private http: HttpClient) {
+    this.listDemandes = this.listAllDemandes
   }
   listAllDemandes: any = [
     {
@@ -27,7 +29,7 @@ export class DemandeSpecifiqueService {
       langue: 'Français',
     },
     {
-      id: 1,
+      id: 2,
       Intitule: 'Développeur',
       TypeContrat: 'Stage',
       Poste: 'Developpeur Full Stack (MEAN) ',
@@ -44,7 +46,7 @@ export class DemandeSpecifiqueService {
       langue: 'Français',
     },
     {
-      id: 1,
+      id: 3,
       Intitule: 'Développeur',
       TypeContrat: 'Stage',
       Poste: 'Developpeur Full Stack (MEAN) ',
@@ -61,7 +63,7 @@ export class DemandeSpecifiqueService {
       langue: 'Français',
     },
     {
-      id: 1,
+      id: 4,
       Intitule: 'Développeur',
       TypeContrat: 'Stage',
       Poste: 'Developpeur Full Stack (MEAN) ',
@@ -78,7 +80,7 @@ export class DemandeSpecifiqueService {
       langue: 'Français',
     },
     {
-      id: 1,
+      id: 5,
       Intitule: 'Développeur',
       TypeContrat: 'Stage',
       Poste: 'Developpeur Full Stack (MEAN) ',
@@ -95,7 +97,7 @@ export class DemandeSpecifiqueService {
       langue: 'Français',
     },
     {
-      id: 1,
+      id: 6,
       Intitule: 'Développeur',
       TypeContrat: 'Stage',
       Poste: 'Developpeur Full Stack (MEAN) ',
@@ -112,7 +114,7 @@ export class DemandeSpecifiqueService {
       langue: 'Français',
     },
     {
-      id: 1,
+      id: 7,
       Intitule: 'Développeur',
       TypeContrat: 'Stage',
       Poste: 'Developpeur Full Stack (MEAN) ',
@@ -129,7 +131,7 @@ export class DemandeSpecifiqueService {
       langue: 'Français',
     },
     {
-      id: 1,
+      id: 8,
       Intitule: 'Développeur',
       TypeContrat: 'Stage',
       Poste: 'Developpeur Full Stack (MEAN) ',
@@ -146,7 +148,7 @@ export class DemandeSpecifiqueService {
       langue: 'Français',
     },
     {
-      id: 1,
+      id: 9,
       Intitule: 'Développeur',
       TypeContrat: 'Stage',
       Poste: 'Developpeur Full Stack (MEAN) ',
@@ -163,7 +165,7 @@ export class DemandeSpecifiqueService {
       langue: 'Français',
     },
     {
-      id: 1,
+      id: 10,
       Intitule: 'Développeur',
       TypeContrat: 'Stage',
       Poste: 'Developpeur Full Stack (MEAN) ',
@@ -179,7 +181,7 @@ export class DemandeSpecifiqueService {
       NiveauxExperience: 'entre 3 et 4',
       langue: 'Français',
     },
-  ];
+  ]
 
   filter(
     searchFiltre: string = '',
@@ -190,68 +192,78 @@ export class DemandeSpecifiqueService {
     dateFiltre: string,
     contratFiltre: any,
     niveauxEtFiltre: any,
-    niveauxExFiltre: any
+    niveauxExFiltre: any,
   ) {
-    this.listDemandes = this.listAllDemandes;
+    this.listDemandes = this.listAllDemandes
 
     if (searchFiltre != '') {
       this.listDemandes = this.listDemandes.filter((offre: any) => {
-        return offre.Intitule.toLowerCase().includes(
-          searchFiltre.toLowerCase()
-        );
-      });
+        return offre.Intitule.toLowerCase().includes(searchFiltre.toLowerCase())
+      })
     }
     if (paysFiltre != '') {
       this.listDemandes = this.listDemandes.filter((offre: any) => {
-        return offre.Pays == paysFiltre;
-      });
+        return offre.Pays == paysFiltre
+      })
     } else if (regionFiltre != '') {
       this.listDemandes = this.listDemandes.filter((offre: any) => {
-        return offre.Region == regionFiltre;
-      });
+        return offre.Region == regionFiltre
+      })
     } else if (villeFiltre != '') {
       this.listDemandes = this.listDemandes.filter((offre: any) => {
-        return offre.Ville == villeFiltre;
-      });
+        return offre.Ville == villeFiltre
+      })
     } else if (secteurFiltre != '') {
       this.listDemandes = this.listDemandes.filter((offre: any) => {
-        return offre.Secteur == secteurFiltre;
-      });
+        return offre.Secteur == secteurFiltre
+      })
     }
     if (dateFiltre != '') {
       this.listDemandes = this.listDemandes.filter((offre: any) => {
-        return offre.dateDisponibilite == dateFiltre;
-      });
+        return offre.dateDisponibilite == dateFiltre
+      })
     }
-    -this.checkboxFiltre(contratFiltre, 'TypeContrat');
-    this.checkboxFiltre(niveauxEtFiltre, 'NiveauxEtude');
-    this.checkboxFiltre(niveauxExFiltre, 'NiveauxExperience');
+    ;-this.checkboxFiltre(contratFiltre, 'TypeContrat')
+    this.checkboxFiltre(niveauxEtFiltre, 'NiveauxEtude')
+    this.checkboxFiltre(niveauxExFiltre, 'NiveauxExperience')
   }
 
   checkboxFiltre(CheckboxList: any, label: any) {
-    let newList2;
-    let newList3: any = this.listDemandes;
-    let isFirstTime: Boolean = true;
+    let newList2
+    let newList3: any = this.listDemandes
+    let isFirstTime: Boolean = true
     CheckboxList.map((filtre: any) => {
       if (filtre.nativeElement.checked) {
         if (isFirstTime == true) {
-          isFirstTime = false;
-          newList3 = [];
+          isFirstTime = false
+          newList3 = []
         }
-        newList2 = this.listDemandes;
+        newList2 = this.listDemandes
         newList2 = newList2.filter((offre: any) => {
-          return offre[label] == filtre.nativeElement.value;
-        });
+          return offre[label] == filtre.nativeElement.value
+        })
 
         newList2.map((list: any) => {
-          newList3.push(list);
-        });
+          newList3.push(list)
+        })
       }
-    });
-    this.listDemandes = newList3;
+    })
+    this.listDemandes = newList3
   }
 
   getlist() {
-    return this.listAllDemandes;
+    return this.listAllDemandes
+  }
+
+  getByIdWishList(ids: any) {
+    return this.http.get<any>(
+      API + '/demande/wishList',
+
+      {
+        headers: new HttpHeaders({
+          ids,
+        }),
+      },
+    )
   }
 }

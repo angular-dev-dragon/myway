@@ -16,7 +16,9 @@ export class CondidaCardComponent implements OnInit {
   @Input() years_of_ex: number = 0
   @Input() ed_lavel: string = ''
   @Input() tag: any[] = []
-  @Input() link: string = ''
+  @Input() link: any = ''
+  @Input() id: string = ''
+  @Input() pageName: string = ''
 
   name_all: any
   name_mix: string | undefined

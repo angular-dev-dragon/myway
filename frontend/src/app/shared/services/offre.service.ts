@@ -1,10 +1,12 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Injectable } from '@angular/core'
+import { API } from './api.service'
 
 @Injectable({
   providedIn: 'root',
 })
 export class OffreService {
-  constructor() {
+  constructor(private http: HttpClient) {
     this.listOffres = this.allOffres
   }
 
@@ -186,5 +188,13 @@ export class OffreService {
 
   getoffres() {
     return this.listOffres
+  }
+
+  getByIdWishList(ids: any) {
+    return this.http.get<any>(API + '/candidat/wishList', {
+      headers: new HttpHeaders({
+        ids,
+      }),
+    })
   }
 }

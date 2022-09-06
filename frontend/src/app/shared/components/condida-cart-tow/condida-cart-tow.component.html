@@ -6,7 +6,7 @@
     margin-bottom: 6px;
   "
 >
-  <div class="col-md-3 image">
+  <div class="col-md-3 image" [routerLink]="link">
     <img
       src="{{ img }}"
       alt=""
@@ -18,17 +18,13 @@
     <div class="">
       <div class="d-flex justify-content-between align-items-center">
         <h3 class="m-0 card-custom-title">{{ last_name }} {{ first_name }}</h3>
-        <div class="">
-          <button class="btn-fav" style="border-style: none;">
-            <i class="far fa-heart"></i>
-          </button>
-        </div>
+        <app-fav-button [pageName]="pageName" [id]="id"></app-fav-button>
       </div>
-      <div class="">
+      <div class="" [routerLink]="link">
         <h6 class="h6">
           {{ tital_job }}
         </h6>
-        {{ years_of_ex }}: yearsof experince
+        {{ years_of_ex }}: years of experince
         <br />
         {{ ed_lavel }}
         {{ age }} years old

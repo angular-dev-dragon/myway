@@ -7,19 +7,19 @@ import { GenericService } from '../../services/generic.service'
   styleUrls: ['./card-recruiter.component.scss'],
 })
 export class CardRecruiterComponent implements OnInit {
-
   @Input() imageBg = ''
   @Input() logo = ''
   @Input() title = ''
   @Input() type = ''
   @Input() salaries = ''
+  @Input() location = ''
+
   @Input() caption = ''
   @Input() id = ''
   @Input() pageName = ''
   @Input() link: any = ''
 
-
-  constructor(public genericService: GenericService) {}
+  constructor() {}
 
   ngOnInit(): void {}
 }

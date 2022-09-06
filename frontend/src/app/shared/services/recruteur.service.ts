@@ -1,5 +1,5 @@
 import { filter } from 'rxjs'
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { API } from './api.service'
 
@@ -292,6 +292,18 @@ export class RecruteurService {
       this.regionFiltre,
       this.villeFiltre,
       this.typeSociete,
+    )
+  }
+
+  getByIdWishList(ids: any) {
+    return this.http.get<any>(
+      API + '/recruteur/wishList',
+
+      {
+        headers: new HttpHeaders({
+          ids,
+        }),
+      },
     )
   }
 }

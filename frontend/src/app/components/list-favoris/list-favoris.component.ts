@@ -7,13 +7,41 @@ import { GenericService } from 'src/app/shared/services/generic.service'
   styleUrls: ['./list-favoris.component.scss'],
 })
 export class ListFavorisComponent implements OnInit {
+  wishListSessionStorage: any = []
   wishList: any = []
-  constructor(genericService: GenericService) {
+
+  constructor(public genericService: GenericService) {
+    this.getWishListItems()
+  }
+
+  ngOnInit(): void {}
+
+  getWishListItems() {
     this.wishList = sessionStorage.getItem('wishList')
     this.wishList = JSON.parse(this.wishList)
 
     console.log(this.wishList)
-  }
 
-  ngOnInit(): void {}
+    if (this.wishList.length > 0) {
+      this.wishList.map((element: any) => {
+        if (element.pageName == 'offre') {
+          element.items = this.genericService
+            .get(element.pageName)
+            .getByIdWishList(element.items)
+        } else if (element.pageName == 'candidat') {
+          element.items = this.genericService
+            .get(element.pageName)
+            .getByIdWishList(element.items)
+        } else if (element.pageName == 'recruteur') {
+          element.items = this.genericService
+            .get(element.pageName)
+            .getByIdWishList(element.items)
+        } else if (element.pageName == 'demande specifique') {
+          element.items = this.genericService
+            .get(element.pageName)
+            .getByIdWishList(element.items)
+        }
+      })
+    }
+  }
 }

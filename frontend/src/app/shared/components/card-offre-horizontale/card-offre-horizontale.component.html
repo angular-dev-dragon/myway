@@ -16,13 +16,7 @@
         <h3 class="cursor-pointer mb-0 card-custom-title" [routerLink]="link">
           {{ Intitule }}
         </h3>
-        <button
-          class="btn-fav"
-          style="border-style: none;"
-          (click)="genericService.addToWishList(id, pageName)"
-        >
-          <i class="far fa-heart"></i>
-        </button>
+        <app-fav-button [pageName]="pageName" [id]="id"></app-fav-button>
       </div>
       <h5 *ngIf="Secteur">{{ Secteur }}</h5>
       <div *ngIf="TypePoste && Poste">

@@ -44,12 +44,10 @@
             <ng-container *ngIf="pageName == 'offre'">
               <div class="row" *ngIf="genericervice.orientation == 'verticale'">
                 <app-card-offre-Verticale
-
                   *ngFor="
                     let offre of genericervice.get('offre')?.getoffres()
                       | paginate: { itemsPerPage: 20, currentPage: p }
                   "
-
                   [pageName]="pageName"
                   [id]="offre?.id"
                   [link]="['/offres/details-offres/', offre.id]"
@@ -101,7 +99,9 @@
                     let c of genericervice.get(pageName)?.getcondidats()
                       | paginate: { itemsPerPage: 20, currentPage: p }
                   "
-                  [routerLink]="['/Candidats/details', c.info.id]"
+                  [link]="['/Candidats/details', c.info.id]"
+                  [pageName]="pageName"
+                  [id]="c?.id"
                   class=""
                   [available]="c?.info.available"
                   [img]="c?.info.img"
@@ -125,8 +125,10 @@
                     let c of genericervice.get(pageName)?.getcondidats()
                       | paginate: { itemsPerPage: 20, currentPage: p }
                   "
-                  [routerLink]="['/Candidats/details', c.info.id]"
+                  [link]="['/Candidats/details', c.info.id]"
                   class="col-md-6"
+                  [pageName]="pageName"
+                  [id]="c?.id"
                   [available]="c.info.available"
                   [img]="c?.info.img"
                   [last_name]="c?.info.name.last_name"
@@ -170,10 +172,10 @@
                       let metier of genericervice.get(pageName).getlist()
                         | paginate: { itemsPerPage: 20, currentPage: p }
                     "
-                    [Image]="metier.Image"
-                    [Secteur]="metier.Secteur"
-                    [Intitule]="metier.Intitule"
-                    [link]="['/metiers/details-metiers', metier.id]"
+                    [Image]="metier?.Image"
+                    [Secteur]="metier?.Secteur"
+                    [Intitule]="metier?.Intitule"
+                    [link]="['/metiers/details-metiers', metier?.id]"
                   ></app-card-metiers>
                 </div>
               </div>
@@ -187,15 +189,15 @@
                     | paginate: { itemsPerPage: 6, currentPage: p }
                 "
                 [isArticle]="false"
-                [link]="['/evenement/details-event', event.id]"
-                [image]="event.image"
-                [titre]="event.titre"
-                [dateDebut]="event.dateDebut"
-                [dateFin]="event.dateFin"
-                [heureDebut]="event.heureDebut"
-                [heureFin]="event.heureFin"
-                [typeEvent]="event.TypeEvenement"
-                [organisateur]="event.organisateur"
+                [link]="['/evenement/details-event', event?.id]"
+                [image]="event?.image"
+                [titre]="event?.titre"
+                [dateDebut]="event?.dateDebut"
+                [dateFin]="event?.dateFin"
+                [heureDebut]="event?.heureDebut"
+                [heureFin]="event?.heureFin"
+                [typeEvent]="event?.TypeEvenement"
+                [organisateur]="event?.organisateur"
               ></app-card-article>
             </ng-container>
             <ng-container *ngIf="pageName == 'demande specifique'">
@@ -205,19 +207,21 @@
                     let offre of genericervice.get(pageName).getlist()
                       | paginate: { itemsPerPage: 20, currentPage: p }
                   "
-                  [link]="['/offres/details-offres/', offre.id]"
-                  [Intitule]="offre.Intitule"
-                  [Secteur]="offre.Secteur"
-                  [Poste]="offre.Poste"
-                  [TypePoste]="offre.TypePoste"
-                  [NomEntreprise]="offre.NomEntreprise"
-                  [TypeEntreprise]="offre.TypeEntreprise"
+                  [link]="['/offres/details-offres/', offre?.id]"
+                  [pageName]="pageName"
+                  [id]="offre?.id"
+                  [Intitule]="offre?.Intitule"
+                  [Secteur]="offre?.Secteur"
+                  [Poste]="offre?.Poste"
+                  [TypePoste]="offre?.TypePoste"
+                  [NomEntreprise]="offre?.NomEntreprise"
+                  [TypeEntreprise]="offre?.TypeEntreprise"
                   [TypeContrat]="offre.TypeContrat"
-                  [Ville]="offre.Ville"
-                  [Date]="offre.Date"
-                  [image]="offre.Image"
-                  [dateDisponibilite]="offre.dateDisponibilite"
-                  [image]="offre.Image"
+                  [Ville]="offre?.Ville"
+                  [Date]="offre?.Date"
+                  [image]="offre?.Image"
+                  [dateDisponibilite]="offre?.dateDisponibilite"
+                  [image]="offre?.Image"
                 ></app-card-offre-Verticale>
               </div>
               <div
@@ -231,17 +235,17 @@
                       | paginate: { itemsPerPage: 20, currentPage: p }
                   "
                   [link]="['/offres/details-offres/', offre.id]"
-                  [Intitule]="offre.Intitule"
-                  [Secteur]="offre.Secteur"
-                  [Poste]="offre.Poste"
-                  [TypePoste]="offre.TypePoste"
-                  [NomEntreprise]="offre.NomEntreprise"
-                  [TypeEntreprise]="offre.TypeEntreprise"
-                  [TypeContrat]="offre.TypeContrat"
-                  [Ville]="offre.Ville"
-                  [Date]="offre.Date"
-                  [dateDisponibilite]="offre.dateDisponibilite"
-                  [image]="offre.Image"
+                  [Intitule]="offre?.Intitule"
+                  [Secteur]="offre?.Secteur"
+                  [Poste]="offre?.Poste"
+                  [TypePoste]="offre?.TypePoste"
+                  [NomEntreprise]="offre?.NomEntreprise"
+                  [TypeEntreprise]="offre?.TypeEntreprise"
+                  [TypeContrat]="offre?.TypeContrat"
+                  [Ville]="offre?.Ville"
+                  [Date]="offre?.Date"
+                  [dateDisponibilite]="offre?.dateDisponibilite"
+                  [image]="offre?.Image"
                 ></app-card-offre-horizontale>
               </div>
             </ng-container>
@@ -253,13 +257,14 @@
                       | paginate: { itemsPerPage: 6, currentPage: p }
                   "
                   class="col-md-4 col-sm-6"
-                  [link]="['/recruteurs/details-recruteur/{{r.id }}/condidature-spontanee']"
-                  [imageBg]="r.imageBg"
-                  [logo]="r.logo"
-                  [title]="r.title"
-                  [type]="r.type"
-                  [salaries]="r.salaries"
-                  [caption]="r.caption"
+                  [link]="['/recruteurs/details-recruteur/{{r?.id }}/condidature-spontanee']"
+                  [imageBg]="r?.imageBg"
+                  [logo]="r?.logo"
+                  [title]="r?.title"
+                  [type]="r?.type"
+                  [salaries]="r?.salaries"
+                  [caption]="r?.caption"
+                  [location]="r?.Pays"
                 ></app-card-recruiter>
               </div>
             </ng-container>
@@ -272,42 +277,43 @@
             </ng-container>
 
             <ng-container *ngIf="pageName == 'rubrique'">
-
-
-            <div class="row">
-              <app-card-article
-              *ngFor="let article of genericervice.get(pageName).getlist()
-              | paginate: { itemsPerPage: 6, currentPage: p }"
-                [link]="['/rubrique/details-article',article.id]"
-                class="col-md-6 mb-3"
-                [image]="article.image"
-                [titre]="article.titre"
-                [sousTitre]="article.sousTitre"
-                [resume]="article.resume"
-                [etiquette]="article.etiquette"
-                [motsCles]="article.motsCles"
-              ></app-card-article>
-            </div>
-
+              <div class="row">
+                <app-card-article
+                  *ngFor="
+                    let article of genericervice.get(pageName).getlist()
+                      | paginate: { itemsPerPage: 6, currentPage: p }
+                  "
+                  [link]="['/rubrique/details-article', article?.id]"
+                  class="col-md-6 mb-3"
+                  [image]="article?.image"
+                  [titre]="article?.titre"
+                  [sousTitre]="article?.sousTitre"
+                  [resume]="article?.resume"
+                  [etiquette]="article?.etiquette"
+                  [motsCles]="article?.motsCles"
+                ></app-card-article>
+              </div>
             </ng-container>
             <ng-container *ngIf="pageName == 'sondage'">
-                <app-sondage-historique
-                *ngFor="let sondage of genericervice.get(pageName).getlist()
-              | paginate: { itemsPerPage: 4, currentPage: p }"
-              [sondage]="sondage"
-                ></app-sondage-historique>
+              <app-sondage-historique
+                *ngFor="
+                  let sondage of genericervice.get(pageName).getlist()
+                    | paginate: { itemsPerPage: 4, currentPage: p }
+                "
+                [sondage]="sondage"
+              ></app-sondage-historique>
             </ng-container>
             <ng-container *ngIf="pageName == 'liens utiles'">
-               <app-card-lien-utile
-                             *ngFor="let lienUtile of genericervice.get(pageName).getlist()
-              | paginate: { itemsPerPage: 4, currentPage: p }"
-            [data]="lienUtile"
-
-               ></app-card-lien-utile>
+              <app-card-lien-utile
+                *ngFor="
+                  let lienUtile of genericervice.get(pageName).getlist()
+                    | paginate: { itemsPerPage: 4, currentPage: p }
+                "
+                [data]="lienUtile"
+              ></app-card-lien-utile>
             </ng-container>
-            <ng-container *ngIf="pageName == 'forums'"> </ng-container>
-            <ng-container *ngIf="pageName == 'temoignage'"> </ng-container>
-
+            <ng-container *ngIf="pageName == 'forums'"></ng-container>
+            <ng-container *ngIf="pageName == 'temoignage'"></ng-container>
 
             <ng-container *ngIf="pageName == 'adresses utiles'"></ng-container>
             <ng-container *ngIf="pageName == 'documents'"></ng-container>
@@ -320,14 +326,14 @@
                 "
                 [isArticle]="false"
                 [link]="['/evenement/details-event']"
-                [image]="event.image"
-                [titre]="event.titre"
-                [dateDebut]="event.dateDebut"
-                [dateFin]="event.dateFin"
-                [heureDebut]="event.heureDebut"
-                [heureFin]="event.heureFin"
-                [typeEvent]="event.TypeEvenement"
-                [organisateur]="event.organisateur"
+                [image]="event?.image"
+                [titre]="event?.titre"
+                [dateDebut]="event?.dateDebut"
+                [dateFin]="event?.dateFin"
+                [heureDebut]="event?.heureDebut"
+                [heureFin]="event?.heureFin"
+                [typeEvent]="event?.TypeEvenement"
+                [organisateur]="event?.organisateur"
               ></app-card-article>
             </ng-container>
             <ng-container *ngIf="pageName == 'undfind'">

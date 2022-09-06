@@ -1,13 +1,14 @@
-
-import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { Injectable } from '@angular/core'
+import { of } from 'rxjs'
+import { API } from './api.service'
 
 @Injectable({
   providedIn: 'root',
 })
 export class CondidatService {
-  a: any;
-  condidats_list: any[] = [];
+  a: any
+  condidats_list: any[] = []
   // #endregion
   allCondidat: any = [
     {
@@ -57,7 +58,8 @@ export class CondidatService {
           },
           {
             platfrom: 'linkedin',
-            url: 'https://www.linkedin.com/posts/scottdresden_next-generation-silent-drone-achieves-major-activity-6885948728314736640-eH9i/',
+            url:
+              'https://www.linkedin.com/posts/scottdresden_next-generation-silent-drone-achieves-major-activity-6885948728314736640-eH9i/',
           },
         ],
 
@@ -1260,9 +1262,9 @@ export class CondidatService {
       tag: ['web', 'developer', 'art', 'kldin'],
     },
     // #endregion
-  ];
-  constructor() {
-    this.condidats_list = this.allCondidat;
+  ]
+  constructor(private http: HttpClient) {
+    this.condidats_list = this.allCondidat
   }
   ngOnInit() {}
 
@@ -1274,9 +1276,9 @@ export class CondidatService {
     villeFiltre: any,
     niveauxEtFiltre: any,
     niveauxExFiltre: any,
-    langueFiltre: any
+    langueFiltre: any,
   ) {
-    this.condidats_list = this.allCondidat;
+    this.condidats_list = this.allCondidat
 
     if (searchFiltre != '') {
       this.condidats_list = this.condidats_list.filter((candidat: any) => {
@@ -1287,60 +1289,60 @@ export class CondidatService {
           candidat.info.name.last_name
             .toLowerCase()
             .includes(searchFiltre.toLowerCase())
-        );
-      });
+        )
+      })
     }
     if (paysFiltre != '') {
       this.condidats_list = this.condidats_list.filter((candidat: any) => {
-        return candidat.info.address.countrie == paysFiltre;
-      });
+        return candidat.info.address.countrie == paysFiltre
+      })
     } else if (regionFiltre != '') {
       this.condidats_list = this.condidats_list.filter((candidat: any) => {
-        return candidat.info.address.region == regionFiltre;
-      });
+        return candidat.info.address.region == regionFiltre
+      })
     } else if (villeFiltre != '') {
       this.condidats_list = this.condidats_list.filter((candidat: any) => {
-        return candidat.info.address.city == villeFiltre;
-      });
+        return candidat.info.address.city == villeFiltre
+      })
     } else if (secteurFiltre != '') {
       this.condidats_list = this.condidats_list.filter((candidat: any) => {
-        return candidat.info.job_post.secteur == secteurFiltre;
-      });
+        return candidat.info.job_post.secteur == secteurFiltre
+      })
     }
 
-    this.checkboxFiltre(niveauxEtFiltre, 'NiveauxEtude');
-    this.checkboxFiltre(niveauxExFiltre, 'NiveauxExperience');
-    this.checkboxFiltre(langueFiltre, 'langue');
+    this.checkboxFiltre(niveauxEtFiltre, 'NiveauxEtude')
+    this.checkboxFiltre(niveauxExFiltre, 'NiveauxExperience')
+    this.checkboxFiltre(langueFiltre, 'langue')
   }
 
   checkboxFiltre(CheckboxList: any, label: any) {
-    let newList2;
-    let newList3: any = this.condidats_list;
-    let isFirstTime: Boolean = true;
+    let newList2
+    let newList3: any = this.condidats_list
+    let isFirstTime: Boolean = true
     CheckboxList.map((filtre: any) => {
       if (filtre.nativeElement.checked) {
         if (isFirstTime == true) {
-          isFirstTime = false;
-          newList3 = [];
+          isFirstTime = false
+          newList3 = []
         }
-        newList2 = this.condidats_list;
+        newList2 = this.condidats_list
         newList2 = newList2.filter((candidat: any) => {
           // return candidat[label] == filtre.nativeElement.value;
-        });
+        })
         newList2.map((list: any) => {
-          newList3.push(list);
-        });
+          newList3.push(list)
+        })
       }
-    });
-    this.condidats_list = newList3;
+    })
+    this.condidats_list = newList3
   }
 
   get_all_condidats() {
-    return this.condidats_list;
+    return this.condidats_list
   }
 
   get_condidats_by_id(id: string) {
-    return of(this.condidats_list.find((i) => i.info.id === id));
+    return of(this.condidats_list.find((i) => i.info.id === id))
   }
 
   get_condidats_by_name(name: string) {
@@ -1353,24 +1355,36 @@ export class CondidatService {
           condidat.info.name.fris_name
             .toLowerCase()
             .includes(name.toLocaleLowerCase())
-        );
-      })
-    );
+        )
+      }),
+    )
   }
 
   get_condidats_by_age(age: number) {
-    return of(this.condidats_list.filter((a) => a.info.age == age));
+    return of(this.condidats_list.filter((a) => a.info.age == age))
   }
 
   get_condidats_by_avalilaiblelty(av: boolean) {
     return of(
       this.condidats_list.filter(
-        (a) => a.info.jop_post.are_you_ready.avalibal == av
-      )
-    );
+        (a) => a.info.jop_post.are_you_ready.avalibal == av,
+      ),
+    )
   }
 
   getcondidats() {
-    return this.condidats_list;
+    return this.condidats_list
+  }
+
+  getByIdWishList(ids: any) {
+    return this.http.get<any>(
+      API + '/candidat/wishList',
+
+      {
+        headers: new HttpHeaders({
+          ids,
+        }),
+      },
+    )
   }
 }

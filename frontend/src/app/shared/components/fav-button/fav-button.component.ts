@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core'
+import { GenericService } from '../../services/generic.service'
 
 @Component({
   selector: 'app-fav-button',
@@ -8,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core'
 export class FavButtonComponent implements OnInit {
   @Input() id = ''
   @Input() pageName = ''
-  constructor() {}
+  constructor(public genericService: GenericService) {}
 
   ngOnInit(): void {}
 }
