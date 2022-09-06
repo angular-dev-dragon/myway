@@ -16,14 +16,11 @@
       <div class="section-recruteur mb-3 w-100">
         <div class="flex-grow-1">
           <div *ngIf="showTopFilter" class="">
-
-            <app-top-bar [pageName]="pageName"> </app-top-bar>
-
+            <app-top-bar [pageName]="pageName"></app-top-bar>
           </div>
           <hr *ngIf="pageName != 'undfind'" />
 
           <div class="row">
-
             <ng-container *ngIf="this.pageName == 'recruteur'">
               <app-card-recruiter
                 *ngFor="
@@ -43,19 +40,17 @@
                 [salaries]="recruiter?.salaries"
                 [caption]="recruiter?.caption"
               ></app-card-recruiter>
-
             </ng-container>
             <ng-container *ngIf="pageName == 'offre'">
               <div class="row" *ngIf="genericervice.orientation == 'verticale'">
                 <app-card-offre-Verticale
                   *ngFor="
-
                     let offre of genericervice.get('offre')?.getoffres()
                       | paginate: { itemsPerPage: 20, currentPage: p }
                   "
                   [pageName]="pageName"
-                  [link]="['/offres/details-offres/', offre.id]"
                   [id]="offre?.id"
+                  [link]="['/offres/details-offres/', offre.id]"
                   [Intitule]="offre?.Intitule"
                   [Secteur]="offre?.Secteur"
                   [Poste]="offre?.Poste"
@@ -69,7 +64,6 @@
                   [dateDisponibilite]="offre?.dateDisponibilite"
                   [image]="offre?.Image"
                 ></app-card-offre-Verticale>
-
               </div>
               <div
                 class="row"
@@ -78,10 +72,11 @@
                 <app-card-offre-horizontale
                   class="col-md-6 mb-3"
                   *ngFor="
-
                     let offre of genericervice.get(pageName)?.getoffres()
                       | paginate: { itemsPerPage: 20, currentPage: p }
                   "
+                  [pageName]="pageName"
+                  [id]="offre?.id"
                   [link]="['/offres/details-offres/', offre.id]"
                   [Intitule]="offre.Intitule"
                   [Secteur]="offre.Secteur"
@@ -94,8 +89,7 @@
                   [Date]="offre.Date"
                   [dateDisponibilite]="offre.dateDisponibilite"
                   [image]="offre.Image"
-                >
-                </app-card-offre-horizontale>
+                ></app-card-offre-horizontale>
               </div>
             </ng-container>
             <ng-container *ngIf="pageName == 'candidat'">
@@ -118,8 +112,7 @@
                   [years_of_ex]="c?.info.job_post.years_of_ex"
                   [ed_lavel]="c.info.ed_lavel"
                   [tag]="c?.info.tag"
-                >
-                </condida-c-cart-tow>
+                ></condida-c-cart-tow>
               </div>
               <div
                 class="row m-1"
@@ -179,8 +172,7 @@
                     [Secteur]="metier.Secteur"
                     [Intitule]="metier.Intitule"
                     [link]="['/metiers/details-metiers', metier.id]"
-                  >
-                  </app-card-metiers>
+                  ></app-card-metiers>
                 </div>
               </div>
             </ng-container>
@@ -202,8 +194,7 @@
                 [heureFin]="event.heureFin"
                 [typeEvent]="event.TypeEvenement"
                 [organisateur]="event.organisateur"
-              >
-              </app-card-article>
+              ></app-card-article>
             </ng-container>
             <ng-container *ngIf="pageName == 'demande specifique'">
               <div class="row" *ngIf="genericervice.orientation == 'verticale'">
@@ -278,14 +269,14 @@
               ></app-temoignage>
             </ng-container>
 
-            <ng-container *ngIf="pageName == 'rubrique'"> </ng-container>
-            <ng-container *ngIf="pageName == 'sondage'"> </ng-container>
-            <ng-container *ngIf="pageName == 'liens utiles'"> </ng-container>
-            <ng-container *ngIf="pageName == 'forums'"> </ng-container>
-            <ng-container *ngIf="pageName == 'temoignage'"> </ng-container>
+            <ng-container *ngIf="pageName == 'rubrique'"></ng-container>
+            <ng-container *ngIf="pageName == 'sondage'"></ng-container>
+            <ng-container *ngIf="pageName == 'liens utiles'"></ng-container>
+            <ng-container *ngIf="pageName == 'forums'"></ng-container>
+            <ng-container *ngIf="pageName == 'temoignage'"></ng-container>
 
-            <ng-container *ngIf="pageName == 'adresses utiles'"> </ng-container>
-            <ng-container *ngIf="pageName == 'documents'"> </ng-container>
+            <ng-container *ngIf="pageName == 'adresses utiles'"></ng-container>
+            <ng-container *ngIf="pageName == 'documents'"></ng-container>
             <ng-container *ngIf="pageName == 'conseils pratique'">
               <app-card-article
                 class="col-md-6 mb-3"
@@ -306,7 +297,6 @@
               ></app-card-article>
             </ng-container>
             <ng-container *ngIf="pageName == 'undfind'">
-
               <section class="section p-0 bg-img cover-background">
                 <div class="container-fluid d-flex flex-column">
                   <div class="row align-items-center justify-content-center">
@@ -323,11 +313,9 @@
                           <a
                             href="#"
                             class="btn btn-inf btn-info btn-lg me-sm-2 mb-2 mb-sm-0"
-
                           >
                             Return Home
                           </a>
-
                         </div>
                       </div>
                     </div>
@@ -337,15 +325,10 @@
             </ng-container>
 
             <pagination-controls
-
               *ngIf="!['undfind', 'temoignage'].includes(pageName)"
               class="text-center"
               (pageChange)="p = $event"
-            >
-            </pagination-controls>
-
-
-
+            ></pagination-controls>
           </div>
         </div>
       </div>

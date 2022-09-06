@@ -1,1 +1,54 @@
-<p>list-favoris works!</p>
+<div class="container text-dark py-5 text-center">
+  <h1 class="display-4">WishList</h1>
+</div>
+<div class="w-100 text-center" *ngIf="wishList.length == 0">
+  <h3>liste vide selectionner un element</h3>
+</div>
+<div class="container">
+  <div *ngIf="wishList.length > 0">
+    <div class="" *ngFor="let whishItem of wishList">
+      <div *ngIf="whishItem.pageName == 'recruteur'" class="section-recruteur">
+        <h3 class="wishList-title">{{ whishItem.pageName }}</h3>
+        <div class="row">
+          <app-card-recruiter
+            *ngFor="let recruiter of whishItem.items"
+            [link]="['/recruteurs/details-recruteur/', recruiter.id]"
+            [id]="recruiter.id"
+            [pageName]="whishItem.pageName"
+            class="col-md-4 col-sm-6"
+            [imageBg]="recruiter?.imageBg"
+            [logo]="recruiter?.logo"
+            [title]="recruiter?.title"
+            [type]="recruiter?.type"
+            [salaries]="recruiter?.salaries"
+            [caption]="recruiter?.caption"
+          ></app-card-recruiter>
+        </div>
+      </div>
+      <div *ngIf="whishItem.pageName == 'offre'" class="section-recruteur">
+        <h3 class="wishList-title">{{ whishItem.pageName }}</h3>
+
+        <div class="row">
+          <app-card-offre-horizontale
+            class="col-md-6 mb-3"
+            *ngFor="let offre of whishItem.items"
+            [pageName]="whishItem.pageName"
+            [id]="offre?.id"
+            [link]="['/offres/details-offres/', offre.id]"
+            [Intitule]="offre.Intitule"
+            [Secteur]="offre.Secteur"
+            [Poste]="offre.Poste"
+            [TypePoste]="offre.TypePoste"
+            [NomEntreprise]="offre.NomEntreprise"
+            [TypeEntreprise]="offre.TypeEntreprise"
+            [TypeContrat]="offre.TypeContrat"
+            [Ville]="offre.Ville"
+            [Date]="offre.Date"
+            [dateDisponibilite]="offre.dateDisponibilite"
+            [image]="offre.Image"
+          ></app-card-offre-horizontale>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

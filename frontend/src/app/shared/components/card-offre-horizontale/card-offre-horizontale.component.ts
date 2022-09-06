@@ -22,7 +22,6 @@ export class CardOffreHorizontaleComponent implements OnInit {
   @Input() showBtn: boolean = true
   @Input() link: any = ''
   @Input() id: string = ''
-
   @Input() pageName: string = ''
 
   constructor(public genericService: GenericService) {}

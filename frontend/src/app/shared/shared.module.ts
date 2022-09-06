@@ -115,11 +115,10 @@ import { FilterComponent } from './components/filter/filter.component'
 import { FilterByTextComponent } from './filter-by-text/filter-by-text.component'
 import { SortComponent } from './sort/sort.component'
 
-import { TopBarComponent } from './top-bar/top-bar.component';
+import { TopBarComponent } from './top-bar/top-bar.component'
 import { TemoignageComponent } from './components/temoignage/temoignage.component'
-
-
-
+import { FavButtonComponent } from './components/fav-button/fav-button.component'
+import { CardLienUtileComponent } from './components/card-lien-utile/card-lien-utile.component'
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -248,7 +247,8 @@ let modules: any = [
     TopBarComponent,
 
     TemoignageComponent,
-
+    FavButtonComponent,
+    CardLienUtileComponent,
   ],
 
   imports: [LazyLoadImageModule, CommonModule, RouterModule, ...modules],
@@ -293,6 +293,8 @@ let modules: any = [
     SortComponent,
     TopBarComponent,
     TemoignageComponent,
+    FavButtonComponent,
+    CardLienUtileComponent,
 
     ...modules,
   ],
@@ -300,10 +302,9 @@ let modules: any = [
 export class SharedModule {
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    translate: TranslateService
+    translate: TranslateService,
   ) {
     if (isPlatformBrowser(this.platformId)) {
-
       if (sessionStorage.getItem('wishList') == null) {
         sessionStorage.setItem('wishList', JSON.stringify([]))
       }
@@ -311,10 +312,9 @@ export class SharedModule {
       document.body.classList.add('ltr')
       localStorage.setItem('lang', 'fr')
 
-
-      var lang = 'fr';
-      translate.setDefaultLang(lang);
-      translate.addLangs(['en', 'fr']);
+      var lang = 'fr'
+      translate.setDefaultLang(lang)
+      translate.addLangs(['en', 'fr'])
     }
   }
 }
