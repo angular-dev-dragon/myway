@@ -30,7 +30,7 @@ const routes: Routes = [
         component: ViewProjectComponent,
       },
       {
-        path: 'rubrique-details',
+        path: 'rubrique',
         component: ViewProjectComponent,
       },
       {
