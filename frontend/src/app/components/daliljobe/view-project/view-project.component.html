@@ -44,10 +44,12 @@
             <ng-container *ngIf="pageName == 'offre'">
               <div class="row" *ngIf="genericervice.orientation == 'verticale'">
                 <app-card-offre-Verticale
+
                   *ngFor="
                     let offre of genericervice.get('offre')?.getoffres()
                       | paginate: { itemsPerPage: 20, currentPage: p }
                   "
+
                   [pageName]="pageName"
                   [id]="offre?.id"
                   [link]="['/offres/details-offres/', offre.id]"
@@ -270,24 +272,42 @@
             </ng-container>
 
             <ng-container *ngIf="pageName == 'rubrique'">
-              <div class="row">
-                <app-card-article
-                  [link]="['/rubrique/details-article', article.id]"
-                  class="col-md-6 mb-3"
-                  *ngFor="let article of genericervice.get(pageName).getlist()"
-                  [image]="article.image"
-                  [titre]="article.titre"
-                  [sousTitre]="article.sousTitre"
-                  [resume]="article.resume"
-                  [etiquette]="article.etiquette"
-                  [motsCles]="article.motsCles"
-                ></app-card-article>
-              </div>
+
+
+            <div class="row">
+              <app-card-article
+              *ngFor="let article of genericervice.get(pageName).getlist()
+              | paginate: { itemsPerPage: 6, currentPage: p }"
+                [link]="['/rubrique/details-article',article.id]"
+                class="col-md-6 mb-3"
+                [image]="article.image"
+                [titre]="article.titre"
+                [sousTitre]="article.sousTitre"
+                [resume]="article.resume"
+                [etiquette]="article.etiquette"
+                [motsCles]="article.motsCles"
+              ></app-card-article>
+            </div>
+
             </ng-container>
-            <ng-container *ngIf="pageName == 'sondage'"></ng-container>
-            <ng-container *ngIf="pageName == 'liens utiles'"></ng-container>
-            <ng-container *ngIf="pageName == 'forums'"></ng-container>
-            <ng-container *ngIf="pageName == 'temoignage'"></ng-container>
+            <ng-container *ngIf="pageName == 'sondage'">
+                <app-sondage-historique
+                *ngFor="let sondage of genericervice.get(pageName).getlist()
+              | paginate: { itemsPerPage: 4, currentPage: p }"
+              [sondage]="sondage"
+                ></app-sondage-historique>
+            </ng-container>
+            <ng-container *ngIf="pageName == 'liens utiles'">
+               <app-card-lien-utile
+                             *ngFor="let lienUtile of genericervice.get(pageName).getlist()
+              | paginate: { itemsPerPage: 4, currentPage: p }"
+            [data]="lienUtile"
+
+               ></app-card-lien-utile>
+            </ng-container>
+            <ng-container *ngIf="pageName == 'forums'"> </ng-container>
+            <ng-container *ngIf="pageName == 'temoignage'"> </ng-container>
+
 
             <ng-container *ngIf="pageName == 'adresses utiles'"></ng-container>
             <ng-container *ngIf="pageName == 'documents'"></ng-container>
