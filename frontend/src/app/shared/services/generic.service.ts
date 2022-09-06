@@ -56,6 +56,14 @@ export class GenericService {
         return this.documentService;
       case 'recruteur':
         return this.recruteurService;
+      case 'associations insertion economique':
+        return this.recruteurService;
+      case 'etablissements formation':
+        return this.recruteurService;
+      case 'cabinets recrutement':
+        return this.recruteurService;
+   
+
       case 'adresses utiles':
         return this.addesseService;
       case 'evenement':

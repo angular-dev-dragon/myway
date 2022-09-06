@@ -61,10 +61,10 @@ export class ViewProjectComponent implements OnInit {
       this.pageName == 'associations insertion economique' ||
       this.pageName == 'etablissements formation' ||
       this.pageName == 'cabinets recrutement' ||
-      this.pageName == '' ||
-      this.pageName == '' ||
-      this.pageName == '' ||
-      this.pageName == ''||
+      this.pageName == 'guides emploi' ||
+      // this.pageName == '' ||
+      // this.pageName == '' ||
+      // this.pageName == '' ||
       this.pageName == 'quiz' ||
       this.pageName == 'metier' ||
       this.pageName == 'evenement'
@@ -84,11 +84,11 @@ export class ViewProjectComponent implements OnInit {
       this.pageName == 'blogeurs' ||
       this.pageName == 'adresses utiles' ||
       this.pageName == 'documents' ||
-      this.pageName == '' ||
-      this.pageName == '' ||
-      this.pageName == '' ||
-      this.pageName == '' ||
-      this.pageName == '' ||
+      this.pageName == 'legislations et textes lois' ||
+      // this.pageName == '' ||
+      // this.pageName == '' ||
+      // this.pageName == '' ||
+      // this.pageName == '' ||
       this.pageName == ''
     ) {
       this.showLeftSideBar = false;
@@ -127,8 +127,19 @@ export class ViewProjectComponent implements OnInit {
       new RegExp('etablissements-formation'),
       'etablissements formation'
     );
-    r = r.replace(new RegExp(''), '');
-    r = r.replace(new RegExp(''), '');
+
+
+
+//
+
+//  Législations et textes de lois
+
+
+    r = r.replace(new RegExp('guides-emploi'), 'guides emploi');
+    r = r.replace(
+      new RegExp('legislations-et-textes-lois'),
+      'legislations et textes lois'
+    );
     r = r.replace(new RegExp(''), '');
     r = r.replace(new RegExp(''), '');
     r = r.replace(new RegExp(''), '');

@@ -9,6 +9,7 @@ const routes: Routes = [
     path: '',
     component: ViewProjectComponent,
     children: [
+      //////////////////////////////
       {
         path: 'offres-emploi',
         component: ViewProjectComponent,
@@ -25,7 +26,7 @@ const routes: Routes = [
         path: 'offres-extra',
         component: ViewProjectComponent,
       },
-
+      ////////////////////////////////////////////////////////////////
       {
         path: 'candidats',
         component: ViewProjectComponent,
@@ -38,7 +39,7 @@ const routes: Routes = [
         path: 'condidatures-spontannes',
         component: ViewProjectComponent,
       },
-
+      /////////////////////////////////////////////
       {
         path: 'recruteurs',
         component: ViewProjectComponent,
@@ -55,12 +56,11 @@ const routes: Routes = [
         path: 'associations-insertion-economique',
         component: ViewProjectComponent,
       },
-      
-
-
-
-
-
+      // ///////////////////////////////
+      {
+        path: 'conseils-pratique',
+        component: ViewProjectComponent,
+      },
       {
         path: 'adresses-utiles',
         component: ViewProjectComponent,
@@ -69,7 +69,19 @@ const routes: Routes = [
         path: 'liens-utiles',
         component: ViewProjectComponent,
       },
-
+      {
+        path: 'documents',
+        component: ViewProjectComponent,
+      },
+      {
+        path: 'guides-emploi',
+        component: ViewProjectComponent,
+      },
+      {
+        path: 'legislations-et-textes-lois',
+        component: ViewProjectComponent,
+      },
+      // //////////////////////////////////////////////////////////////////////////////////////////////////
       {
         path: 'metier',
         component: ViewProjectComponent,
@@ -82,10 +94,7 @@ const routes: Routes = [
         path: 'evenement',
         component: ViewProjectComponent,
       },
-      {
-        path: 'documents',
-        component: ViewProjectComponent,
-      },
+
       {
         path: 'forums',
         component: ViewProjectComponent,
@@ -112,10 +121,6 @@ const routes: Routes = [
       },
       {
         path: 'hard-skills',
-        component: ViewProjectComponent,
-      },
-      {
-        path: 'conseils-pratique',
         component: ViewProjectComponent,
       },
     ],

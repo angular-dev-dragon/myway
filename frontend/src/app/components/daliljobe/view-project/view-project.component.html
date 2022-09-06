@@ -1,3 +1,4 @@
+<!-- #region chad -->
 <div class="container mt-5">
   <div class="d-flex flex-main">
     <div
@@ -21,6 +22,7 @@
           </div>
           <hr *ngIf="pageName != 'undfind'" />
 
+<!-- #endregion -->
           <div class="row">
             <ng-container
               *ngIf="
@@ -38,7 +40,7 @@
                     .getAllRecruteursInfo()
                     | paginate: { itemsPerPage: 6, currentPage: p }
                 "
-                [link]="[pageName == 'candidature spontanee'?'/recruteurs/details-recruteur/{{recruiter.id }}/condidature-spontanee':'/recruteurs/details-recruteur/', recruiter.id]"
+                [link]="[pageName == 'candidature spontanee'?'/recruteurs/details-recruteur/'+recruiter.id +'/condidature-spontanee':'/recruteurs/details-recruteur/'+ recruiter.id]"
                 [id]="recruiter.id"
                 [pageName]="pageName"
                 class="col-md-4 col-sm-6"
@@ -74,6 +76,7 @@
                       : '/offres/details-offres/',
                     offre.id
                   ]"
+
                   [Intitule]="offre?.Intitule"
                   [Secteur]="offre?.Secteur"
                   [Poste]="offre?.Poste"
@@ -102,6 +105,7 @@
                   [id]="offre?.id"
                   [link]="['/offres/details-offres/', offre.id]"
                   [Intitule]="offre.Intitule"
+
                   [Secteur]="offre.Secteur"
                   [Poste]="offre.Poste"
                   [TypePoste]="offre.TypePoste"
@@ -360,6 +364,13 @@
                 ></app-card-article>
               </div>
             </ng-container>
+            <ng-container *ngIf="pageName == 'guides emploi' ">
+           {{ pageName}} khasha d tzad
+            </ng-container>
+            <ng-container *ngIf="pageName == 'legislations et textes lois'">
+             {{ pageName}} khasha d tzad
+            </ng-container>
+
             <ng-container *ngIf="pageName == 'undfind'">
               <section class="section p-0 bg-img cover-background">
                 <div class="container-fluid d-flex flex-column">
