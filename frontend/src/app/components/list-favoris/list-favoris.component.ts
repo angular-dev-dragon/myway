@@ -7,11 +7,12 @@ import { GenericService } from 'src/app/shared/services/generic.service'
   styleUrls: ['./list-favoris.component.scss'],
 })
 export class ListFavorisComponent implements OnInit {
+  wishList: any = []
   constructor(genericService: GenericService) {
-    let wishList: any = sessionStorage.getItem('wishList')
-    wishList = JSON.parse(wishList)
+    this.wishList = sessionStorage.getItem('wishList')
+    this.wishList = JSON.parse(this.wishList)
 
-    console.log(wishList)
+    console.log(this.wishList)
   }
 
   ngOnInit(): void {}

@@ -1,5 +1,3 @@
-
-
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 
@@ -22,11 +20,11 @@ import { CompetencesModule } from './components/competences/competences.module'
 import { MetiersModule } from './components/metiers/metiers.module'
 import { QuizModule } from './components/quiz/quiz.module'
 import { EvenementModule } from './components/evenement/evenement.module'
-import { DaliljobeModule } from './components/daliljobe/daliljobe.module';
-import { ListFavorisComponent } from './components/list-favoris/list-favoris.component'
+import { DaliljobeModule } from './components/daliljobe/daliljobe.module'
+import { WishListModule } from './components/list-favoris/wishList.module'
 
 @NgModule({
-  declarations: [AppComponent, ListBlogeurComponent, ListFavorisComponent],
+  declarations: [AppComponent, ListBlogeurComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -43,6 +41,7 @@ import { ListFavorisComponent } from './components/list-favoris/list-favoris.com
     CompetencesModule,
     QuizModule,
     EvenementModule,
+    WishListModule,
   ],
   exports: [],
   providers: [],

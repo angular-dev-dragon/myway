@@ -1,15 +1,18 @@
-<div [routerLink]="link" class="card-recruiter">
-  <div class="header-card mb-3 position-relative">
+<div class="card-recruiter">
+  <div
+    class="header-card mb-3 position-relative cursor-pointer"
+    [routerLink]="link"
+  >
     <img
       [lazyLoad]="imageBg"
-      [defaultImage]="'assets/images/bg-recruiter'"
+      [defaultImage]="'assets/images/img-bg.jpg'"
       class="img-bg-card"
       alt="Image Bg Recruiter"
     />
     <div class="logo-card-container">
       <img
         [lazyLoad]="logo"
-        [defaultImage]="'assets/images/bg-recruiter'"
+        [defaultImage]="'assets/images/logo-default.png'"
         class="logo-card"
         alt="Logo Recruiter"
       />
@@ -17,17 +20,9 @@
   </div>
   <div class="contain">
     <div class="d-flex flex-row-reverse justify-content-between">
-      <div class="">
-        <button
-          class="btn-fav"
-          style="border-style: none;"
-          (click)="genericService.addToWishList(id, pageName)"
-        >
-          <i class="far fa-heart"></i>
-        </button>
-      </div>
+      <app-fav-button [id]="id" [pageName]="pageName"></app-fav-button>
 
-      <div class="">
+      <div class="cursor-pointer" [routerLink]="link">
         <div class="mb-1">
           <i class="fa-regular fa-folder me-2"></i>
           <span class="small">{{ type }}</span>
@@ -42,7 +37,7 @@
         </div>
       </div>
     </div>
-    <div class="body-card mt-3" [routerLink]="link">
+    <div class="body-card mt-3 cursor-pointer" [routerLink]="link">
       <div class="card-right">
         <h5>{{ title }}</h5>
         <div class="info-small text-secondary mb-2">
