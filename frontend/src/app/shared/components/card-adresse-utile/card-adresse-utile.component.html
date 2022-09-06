@@ -1,34 +1,29 @@
-<div class="container mt-5">
-  <div class="section-recruteur mb-3">
-    <h4>Adresses Utiles</h4>
+<div class="card-container bg-white" (click)="_open(detailLien, data)">
+  <div class="imgwrap" style="display: flex; justify-content: center;">
+    <img
+      class="lien-logo img-fluid mb-2"
+      [defaultImage]="'assets/images/lien-utile.jpg'"
+      [lazyLoad]="data?.image"
+      alt=""
+      style="max-height: 200px;"
+    />
   </div>
-  <div class="section-recruteur">
-    <div class="flex-grow-1">
-      <app-top-bar
-        [pageName]="'adresses utiles'"
-        [data]="adressesUtilesService.listAdresseUtiles"
-        (filtredData)="filtredData($event)"
-        (orientationView)="getOrientaion($event)"
-      ></app-top-bar>
-    </div>
-    <hr />
+  <h4 class="">
+    {{ (data?.translations)['fr']?.__designation | titlecase }}
+  </h4>
 
-    <div class="row smy-3">
-      <div class="col-md-9">
-        <div class="section-recruteur">
-          <ul class="row list-adresse">
-            <li class="col-lg-4 col-md-6 mb-3" *ngFor="let data of resultData">
-              <app-card-adresse-utile [data]="data"></app-card-adresse-utile>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-3 col-lg-3">
-        <div class="section-recruteur"></div>
-      </div>
-    </div>
+  <p class="my-3">
+    {{ (data?.translations)['fr']?.__descriptif | titlecase }}
+  </p>
+  <div class="bt">
+    <a href="{{ data?.siteweb }}" target="_blank">
+      <p class="ellipsis-text text-center mt-2 mb-0">
+        {{ data?.siteweb }}
+      </p>
+    </a>
   </div>
 </div>
+
 <ng-template #detailLien let-modal>
   <div class="modal-header">
     <h2
