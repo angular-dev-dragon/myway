@@ -7,9 +7,12 @@ import { API } from './api.service'
   providedIn: 'root',
 })
 export class LienUtileService {
-  constructor(private http: HttpClient) {}
+  listlienUtiles: any;
+  constructor(private http: HttpClient) {
+    this.listlienUtiles = this.lienUtiles;
+  }
   public getLien(): Observable<any> {
-    return this.http.get<any>(API + '/lien-utile')
+    return this.http.get<any>(API + '/lien-utile');
   }
   lienUtiles: any = [
     {
@@ -97,5 +100,9 @@ export class LienUtileService {
       image:
         'http://localhost:3600/uploads/images/lien_utile/image-1647446003251.jpg',
     },
-  ]
+  ];
+
+  getlist() {
+    return this.listlienUtiles;
+  }
 }
