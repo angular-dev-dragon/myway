@@ -2,7 +2,7 @@ import { Routes } from '@angular/router'
 
 export const content: Routes = [
   {
-    path: 'daliljob',
+    path: '',
     loadChildren: () =>
       import('../../components/daliljobe/daliljobe.module').then(
         (m) => m.DaliljobeModule,
@@ -10,7 +10,7 @@ export const content: Routes = [
   },
 
   {
-    path: '',
+  path: 'home',
     loadChildren: () =>
       import('../../components/landing-page/landing-page.module').then(
         (m) => m.LandingPageModule,

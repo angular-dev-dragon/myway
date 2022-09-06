@@ -15,7 +15,6 @@ export class ListDocumentsComponent implements OnInit {
   filtredData(value: any) {
     this.resultData = value
   }
-
   getOrientaion(value: any) {
     this.orientation = value
   }

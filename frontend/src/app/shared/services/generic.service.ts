@@ -45,43 +45,46 @@ export class GenericService {
   get(pageName: string): any {
     switch (pageName) {
       case 'blogeurs':
-        return this.blogService
+        return this.blogService;
       case 'candidat':
-        return this.candidatService
+        return this.candidatService;
       case 'candidature spontanee':
-        return this.condidatureSpontaneeService
+        return this.condidatureSpontaneeService;
       case 'demande specifique':
-        return this.demandeSpecifiqueService
+        return this.demandeSpecifiqueService;
       case 'documents':
-        return this.documentService
+        return this.documentService;
       case 'recruteur':
-        return this.recruteurService
+        return this.recruteurService;
       case 'adresses utiles':
-        return this.addesseService
+        return this.addesseService;
       case 'evenement':
-        return this.evenementService
+        return this.evenementService;
       case 'forums':
-        return this.forumService
+        return this.forumService;
       case 'liens utiles':
-        return this.lienUtileService
+        return this.lienUtileService;
       case 'metier':
-        return this.metierService
+        return this.metierService;
       case 'quiz':
-        return this.QuizService
+        return this.QuizService;
       case 'offre':
-        return this.offreService
+        return this.offreService;
       case 'sondage':
-        return this.sondageService
-      case 'rubrique':
-        return this.rubriqueService
+        return this.sondageService;
+      case 'conseils pratique':
+        return this.rubriqueService;
+      case 'soft skills':
+        return this.rubriqueService;
+      case 'hard skills':
+        return this.rubriqueService;
       case 'temoignage':
-        return this.temoingnageService
+        return this.temoingnageService;
       case 'post':
-
-        return this.postService
+        return this.postService;
 
       default:
-        return this.defaultService
+        return this.defaultService;
     }
   }
 

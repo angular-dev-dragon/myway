@@ -57,7 +57,7 @@ export class DetailsThemeComponent implements OnInit {
     nbre_theme: '0',
     nbre_echanges: 0,
     date_ouverture: '2022-03-08',
-    date_cloture: '2022-03-30',
+    date_cloture: '2043-03-30',
     etat_validation: 'valide',
     etat_objet: 'active',
     image_theme:

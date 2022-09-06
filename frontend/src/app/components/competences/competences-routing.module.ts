@@ -17,8 +17,12 @@ const routes: Routes = [
   },
 
   {
-    path: 'list-demandes-specifiques',
+    path: 'list-demandes-specifiques/:id',
     component: ListDemandesSpecifiquesComponent,
+  },
+  {
+    path: 'details-demandes-specifiques/:id',
+    component: DetailsDemandesSpecifiquesComponent,
   },
 ];
 

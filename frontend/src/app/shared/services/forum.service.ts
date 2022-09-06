@@ -6,7 +6,10 @@ import { API } from './api.service'
   providedIn: 'root',
 })
 export class ForumService {
-  constructor(private http: HttpClient) {}
+  listforums: any
+  constructor(private http: HttpClient) {
+    this.listforums = this.allforums
+  }
 
   public getForum() {
     return this.http.get<any>(API + '/forum')
@@ -19,12 +22,12 @@ export class ForumService {
   public getThemeById(themeId: any) {
     return this.http.get<any>(API + '/forum/' + '/theme/' + `${themeId}`)
   }
-  forums: any = [
+  allforums: any = [
     {
       _id: { $oid: '624476758b2b471608e6eaee' },
       commentaire_interne: [],
 
-      designation: 'Désignation Forum Forum',
+      designation: 'get blabla',
       descriptif:
         'Description du Forum Désignation Forum Désignation Forum ForumDésignation Forum ForumDésignation Forum ForumDésignation Forum ForumDésignation Forum ForumDésignation Forum ForumDésignation Forum ForumDésignation Forum ForumDésignation Forum Forum',
       responsable: 'Nom du résponsable',
@@ -32,7 +35,7 @@ export class ForumService {
 
       ref_responsable: 'Référence résponsable',
       date_ouverture: '2022-03-07',
-      date_cloture: '2022-03-31',
+      date_cloture: '20245-03-31',
       etat_validation: 'en cours de publication',
       etat_objet: 'active',
       image_forum:
@@ -52,7 +55,7 @@ export class ForumService {
           nbre_theme: '0',
           nbre_echanges: 0,
           date_ouverture: '2022-03-08',
-          date_cloture: '2022-03-30',
+          date_cloture: '2042-03-30',
           etat_validation: 'valide',
           etat_objet: 'active',
           image_theme:
@@ -71,7 +74,7 @@ export class ForumService {
           nbre_theme: '0',
           nbre_echanges: 0,
           date_ouverture: '2021-03-01',
-          date_cloture: '2022-10-29',
+          date_cloture: '2026-10-29',
           etat_validation: 'valide',
           etat_objet: 'active',
           image_theme:
@@ -257,4 +260,7 @@ export class ForumService {
       ],
     },
   ]
+  getlist() {
+    return this.listforums
+  }
 }
