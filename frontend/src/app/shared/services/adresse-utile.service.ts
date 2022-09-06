@@ -7,9 +7,12 @@ import { API } from './api.service'
   providedIn: 'root',
 })
 export class AdresseUtileService {
-  constructor(private http: HttpClient) {}
+  listAdresseUtiles: any = []
+  constructor(private http: HttpClient) {
+    this.listAdresseUtiles = this.allAdresseUtiles
+  }
 
-  adressesUtiles: any = [
+  allAdresseUtiles: any = [
     {
       _id: { $oid: '623223e87fde65e9e542c97a' },
       commentaires_internes: [],
@@ -601,14 +604,7 @@ export class AdresseUtileService {
     return this.http.get<any>(API + '/adresse-utile')
   }
 
-
-
-  getAllInfo() {
-
-
-    return this.adressesUtiles
-
+  getlist() {
+    return this.listAdresseUtiles
   }
-
-
 }

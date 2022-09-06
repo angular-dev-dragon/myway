@@ -5,9 +5,9 @@ import { Injectable } from '@angular/core'
 })
 export class EvenementService {
   constructor() {
-    this.listEvents = this.allEvents;
+    this.listEvents = this.allEvents
   }
-  listEvents: any = [];
+  listEvents: any = []
   ngOnInit(): void {}
   allEvents: any = [
     {
@@ -200,7 +200,7 @@ export class EvenementService {
       TypeEvenement: 'En Ligne',
       organisateur: 'Test Organisateur',
     },
-  ];
+  ]
 
   detailsEvent: any = {
     image:
@@ -282,49 +282,49 @@ export class EvenementService {
       _id: '601e7810e6a8251908c00616',
       translations: { fr: { __titre: 'Débat' } },
     },
-  };
+  }
 
   filter(typeEvent: any, dateDebut: any, dateFin: any) {
-    this.listEvents = this.allEvents;
+    this.listEvents = this.allEvents
 
     if (dateDebut != '') {
       this.listEvents = this.listEvents.filter((event: any) => {
-        return event.dateDebut > dateDebut ? -1 : 1;
-      });
+        return event.dateDebut > dateDebut ? -1 : 1
+      })
     } else if (dateFin != '') {
       this.listEvents = this.listEvents.filter((event: any) => {
-        return event.dateFin < dateFin ? -1 : 1;
-      });
+        return event.dateFin < dateFin ? -1 : 1
+      })
     }
 
-    this.checkboxFiltre(typeEvent, 'TypeEvenement');
+    this.checkboxFiltre(typeEvent, 'TypeEvenement')
   }
 
   checkboxFiltre(CheckboxList: any, label: any) {
-    let newList2;
-    let newList3: any = this.listEvents;
-    let isFirstTime: Boolean = true;
+    let newList2
+    let newList3: any = this.listEvents
+    let isFirstTime: Boolean = true
     CheckboxList.map((filtre: any) => {
       if (filtre.nativeElement.checked) {
         if (isFirstTime == true) {
-          isFirstTime = false;
-          newList3 = [];
+          isFirstTime = false
+          newList3 = []
         }
 
-        newList2 = this.listEvents;
+        newList2 = this.listEvents
         newList2 = newList2.filter((offre: any) => {
-          return offre[label] == filtre.nativeElement.value;
-        });
+          return offre[label] == filtre.nativeElement.value
+        })
 
         newList2.map((list: any) => {
-          newList3.push(list);
-        });
+          newList3.push(list)
+        })
       }
-    });
-    this.listEvents = newList3;
+    })
+    this.listEvents = newList3
   }
 
   getlist() {
-    return this.allEvents;
+    return this.listEvents
   }
 }
