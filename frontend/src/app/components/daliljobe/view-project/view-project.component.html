@@ -305,9 +305,10 @@
             </ng-container>
             <ng-container *ngIf="pageName == 'liens utiles'">
               <app-card-lien-utile
+                class="col-md-3 mb-3"
                 *ngFor="
                   let lienUtile of genericervice.get(pageName).getlist()
-                    | paginate: { itemsPerPage: 4, currentPage: p }
+                    | paginate: { itemsPerPage: 6, currentPage: p }
                 "
                 [data]="lienUtile"
               ></app-card-lien-utile>
