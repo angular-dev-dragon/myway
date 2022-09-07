@@ -62,7 +62,7 @@ export class GenericService {
         return this.recruteurService;
       case 'cabinets recrutement':
         return this.recruteurService;
-   
+
 
       case 'adresses utiles':
         return this.addesseService;
@@ -89,8 +89,8 @@ export class GenericService {
       case 'temoignage':
         return this.temoingnageService;
       case 'post':
-        return this.postService;
 
+        return this.postService;
       default:
         return this.defaultService;
     }
@@ -121,10 +121,10 @@ export class GenericService {
       let pageNameExist: boolean = false
       let itemExistOnList: boolean = false
 
-      wishList.map((whilshlist: any) => {
-        if (whilshlist.pageName == pageName) {
+      wishList.map((wishItem: any, index: any) => {
+        if (wishItem.pageName == pageName) {
           pageNameExist = true
-          whilshlist.items.map((id: any) => {
+          wishItem.items.map((id: any) => {
             if (id == idPassed) {
               itemExistOnList = true
             }
@@ -132,7 +132,10 @@ export class GenericService {
           if (itemExistOnList) {
             console.log('Already Exist + removed from List')
 
-            whilshlist.items.splice(whilshlist.items.indexOf(idPassed), 1)
+            wishItem.items.splice(wishItem.items.indexOf(idPassed), 1)
+          }
+          if (wishItem.items.length == 0) {
+            wishList.splice(index, 1)
           }
         }
       })
@@ -146,9 +149,9 @@ export class GenericService {
         })
       } else {
         if (!itemExistOnList) {
-          wishList.map((whilshlist: any) => {
-            if (whilshlist.pageName == pageName) {
-              whilshlist.items.push(idPassed)
+          wishList.map((wishItem: any) => {
+            if (wishItem.pageName == pageName) {
+              wishItem.items.push(idPassed)
 
               console.log('add element in exist type')
             }

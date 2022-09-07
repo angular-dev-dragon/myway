@@ -14,13 +14,9 @@
       <div class="">
         <div class="row">
           <h3 class="card-custom-title">{{ last_name }} {{ first_name }}</h3>
-          <div class="favorite-offre">
-            <button class="btn-fav" style="border-style: none;">
-              <i class="far fa-heart"></i>
-            </button>
-          </div>
+          <app-fav-button [pageName]="pageName" [id]="id"></app-fav-button>
         </div>
-        <div class="row">
+        <div class="row" [routerLink]="link">
           <div class="col-9">
             <h6 class="h6">
               {{ tital_job }}
