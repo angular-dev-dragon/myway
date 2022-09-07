@@ -12,7 +12,7 @@ const routes: Routes = [
     component: ListForumComponent,
   },
   {
-    path: 'details-forum',
+    path: 'details-forum/:id',
     component: DetailsForumComponent,
   },
   {

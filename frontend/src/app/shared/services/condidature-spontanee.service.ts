@@ -82,6 +82,14 @@ export class CondidatureSpontaneeService {
     },
   ];
   listSocieteCondidature: any = [];
+  secteurFiltre: string = '';
+  paysFiltre: string = '';
+  regionFiltre: string = '';
+  villeFiltre: string = '';
+  typeSociete: any = [];
+  searchValue: string = '';
+  
+
   filter(
     searchFiltre: string = '',
     secteurFiltre: string,
@@ -90,44 +98,48 @@ export class CondidatureSpontaneeService {
     villeFiltre: string,
     typeSociete: any
   ) {
-    this.listSocieteCondidature = this.allSocieteCondidature;
+  this.listSocieteCondidature = this.allSocieteCondidature;
 
-    if (searchFiltre != '') {
-      this.listSocieteCondidature = this.listSocieteCondidature.filter(
-        (offre: any) => {
-          return offre.Intitule.toLowerCase().includes(
-            searchFiltre.toLowerCase()
-          );
-        }
-      );
-    }
+    this.secteurFiltre = secteurFiltre;
+    this.paysFiltre = paysFiltre;
+    this.regionFiltre = regionFiltre;
+    this.villeFiltre = villeFiltre;
+    this.typeSociete = typeSociete;
+
+    // if (searchFiltre != '') {
+    //   this.listSocieteCondidature = this.listSocieteCondidature.filter((offre: any) => {
+    //     return offre.title.toLowerCase().includes(searchFiltre.toLowerCase());
+    //   });
+    // }
+
     if (paysFiltre != '') {
-      this.listSocieteCondidature = this.listSocieteCondidature.filter(
-        (offre: any) => {
-          return offre.Pays.toLowerCase() == paysFiltre.toLowerCase();
-        }
-      );
+      this.listSocieteCondidature = this.listSocieteCondidature.filter((offre: any) => {
+        return offre.Pays.toLowerCase() == paysFiltre.toLowerCase();
+      });
     } else if (regionFiltre != '') {
-      this.listSocieteCondidature = this.listSocieteCondidature.filter(
-        (offre: any) => {
-          return offre.Region == regionFiltre;
-        }
-      );
+      this.listSocieteCondidature = this.listSocieteCondidature.filter((offre: any) => {
+        return offre.Region == regionFiltre;
+      });
     } else if (villeFiltre != '') {
-      this.listSocieteCondidature = this.listSocieteCondidature.filter(
-        (offre: any) => {
-          return offre.Ville == villeFiltre;
-        }
-      );
+      this.listSocieteCondidature = this.listSocieteCondidature.filter((offre: any) => {
+        return offre.Ville == villeFiltre;
+      });
     } else if (secteurFiltre != '') {
-      this.listSocieteCondidature = this.listSocieteCondidature.filter(
-        (offre: any) => {
-          return offre.secteur == secteurFiltre;
-        }
-      );
+      this.listSocieteCondidature = this.listSocieteCondidature.filter((offre: any) => {
+        return offre.secteur == secteurFiltre;
+      });
     }
 
     this.checkboxFiltre(typeSociete, 'type');
+
+    if (this.searchValue != '') {
+      this.listSocieteCondidature = this.listSocieteCondidature.filter((data: any) => {
+        return data.title
+          .toLowerCase()
+          .includes(this.searchValue.toLowerCase());
+      });
+    }
+    console.log('end function filter globale');
   }
 
   checkboxFiltre(CheckboxList: any, label: any) {
@@ -151,6 +163,22 @@ export class CondidatureSpontaneeService {
       }
     });
     this.listSocieteCondidature = newList3;
+  }
+  getAllRecruteursInfo() {
+    return this.listSocieteCondidature;
+  }
+
+  filterByText(text: string) {
+    this.searchValue = text;
+
+    this.filter(
+      '',
+      this.secteurFiltre,
+      this.paysFiltre,
+      this.regionFiltre,
+      this.villeFiltre,
+      this.typeSociete
+    );
   }
   getlist() {
     return this.listSocieteCondidature;

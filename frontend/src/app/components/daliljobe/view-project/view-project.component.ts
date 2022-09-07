@@ -26,8 +26,9 @@ export class ViewProjectComponent implements OnInit {
 
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
-        this.pageName = event.url.split('/')[2]
+        this.pageName = event.url.split('/')[1]
         this.pageName = this.removeAccent(this.pageName)
+
         console.log(this.pageName)
       }
     })
@@ -46,28 +47,45 @@ export class ViewProjectComponent implements OnInit {
   controlView() {
     if (
       this.pageName == 'condidat' ||
-      this.pageName == 'recruteur' ||
-      this.pageName == 'quiz' ||
-      this.pageName == 'metier' ||
-      this.pageName == 'evenement' ||
       this.pageName == 'demande specifique' ||
       this.pageName == 'candidature spontanee' ||
-      this.pageName == 'offre'
+      this.pageName == 'offres emploi' ||
+      this.pageName == 'offres de stage' ||
+      this.pageName == 'offres alternance' ||
+      this.pageName == 'offres extra' ||
+      this.pageName == 'recruteur' ||
+      this.pageName == 'associations insertion economique' ||
+      this.pageName == 'etablissements formation' ||
+      this.pageName == 'cabinets recrutement' ||
+      this.pageName == 'guides emploi' ||
+      // this.pageName == '' ||
+      // this.pageName == '' ||
+      // this.pageName == '' ||
+      this.pageName == 'quiz' ||
+      this.pageName == 'metier' ||
+      this.pageName == 'evenement'
     ) {
       this.showLeftSideBar = true
       this.showHeader = true
       this.showTopFilter = true
       this.showRightSideBar = false
     } else if (
-      this.pageName == 'conseils pratique' ||
       this.pageName == 'temoignage' ||
-      this.pageName == 'rubrique' ||
+      this.pageName == 'soft skills' ||
+      this.pageName == 'conseils pratique' ||
+      this.pageName == 'hard skills' ||
       this.pageName == 'sondage' ||
       this.pageName == 'liens utiles' ||
       this.pageName == 'forums' ||
       this.pageName == 'blogeurs' ||
       this.pageName == 'adresses utiles' ||
-      this.pageName == 'documents'
+      this.pageName == 'documents' ||
+      this.pageName == 'legislations et textes lois' ||
+      // this.pageName == '' ||
+      // this.pageName == '' ||
+      // this.pageName == '' ||
+      // this.pageName == '' ||
+      this.pageName == ''
     ) {
       this.showLeftSideBar = false
       this.showHeader = true
@@ -80,38 +98,55 @@ export class ViewProjectComponent implements OnInit {
       this.showRightSideBar = false
     }
   }
-  // #endregion
-  // #region REMODULE
 
   removeAccent = function (s: any) {
     var r = s.toLowerCase()
-    r = r.replace(new RegExp('offres'), 'offre')
     r = r.replace(new RegExp('candidats'), 'candidat')
     r = r.replace(new RegExp('demandes-specifiques'), 'demande specifique')
     r = r.replace(
       new RegExp('condidatures-spontannes'),
       'candidature spontanee',
     )
-    r = r.replace(new RegExp('recruteurs'), 'recruteur')
-    r = r.replace(new RegExp('rubrique-details'), 'rubrique')
 
+    r = r.replace(new RegExp('offres-emploi'), 'offres emploi')
+    r = r.replace(new RegExp('offres-de-stage'), 'offres de stage')
+    r = r.replace(new RegExp('offres-alternance'), 'offres alternance')
+    r = r.replace(new RegExp('offres-extra'), 'offres extra')
+
+    r = r.replace(
+      new RegExp('associations-insertion-economique'),
+      'associations insertion economique',
+    )
+    r = r.replace(new RegExp('cabinets-recrutement'), 'cabinets recrutement')
+    r = r.replace(
+      new RegExp('etablissements-formation'),
+      'etablissements formation',
+    )
+
+    //
+
+    //  Législations et textes de lois
+
+    r = r.replace(new RegExp('guides-emploi'), 'guides emploi')
+    r = r.replace(
+      new RegExp('legislations-et-textes-lois'),
+      'legislations et textes lois',
+    )
+    r = r.replace(new RegExp(''), '')
+    r = r.replace(new RegExp(''), '')
+    r = r.replace(new RegExp(''), '')
+    r = r.replace(new RegExp(''), '')
+    r = r.replace(new RegExp(''), '')
+    r = r.replace(new RegExp(''), '')
+
+    r = r.replace(new RegExp('recruteurs'), 'recruteur')
+    r = r.replace(new RegExp('soft-skills'), 'soft skills')
+    r = r.replace(new RegExp('hard-skills'), 'hard skills')
+    r = r.replace(new RegExp('conseils-pratique'), 'conseils pratique')
     r = r.replace(new RegExp('-', 'g'), ' ')
     r = r.replace(new RegExp('_', 'g'), ' ')
-
-    r = r.replace(new RegExp('[àáâãäå]', 'g'), 'a')
-    r = r.replace(new RegExp('æ', 'g'), 'ae')
-    r = r.replace(new RegExp('ç', 'g'), 'c')
-    ''
-    r = r.replace(new RegExp('[èéêë]', 'g'), 'e')
-    r = r.replace(new RegExp('[ìíîï]', 'g'), 'i')
-    r = r.replace(new RegExp('ñ', 'g'), 'n')
-    r = r.replace(new RegExp('[òóôõö]', 'g'), 'o')
-    r = r.replace(new RegExp('œ', 'g'), 'oe')
-    r = r.replace(new RegExp('[ùúûü]', 'g'), 'u')
-    r = r.replace(new RegExp('[ýÿ]', 'g'), 'y')
     return r
   }
-  // #endregion
 
   orientation: string = ''
   filtredData(value: any) {
@@ -124,18 +159,3 @@ export class ViewProjectComponent implements OnInit {
     this.orientation = value
   }
 }
-
-// quiz
-// metier
-// offre
-// demande specifique
-// candidature spontanee
-// recruteur
-// candidat
-// evenement
-// conseils pratique
-// adresses utiles
-// liens utiles
-// documents
-// forums
-// blogeurs

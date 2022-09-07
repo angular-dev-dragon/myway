@@ -25,7 +25,7 @@ export class DetailsForumComponent implements OnInit {
 
     ref_responsable: 'Réf00125',
     date_ouverture: '2022-03-07',
-    date_cloture: '2022-03-31',
+    date_cloture: '2024-03-31',
     etat_validation: 'en cours de publication',
     etat_objet: 'active',
     image_forum:
@@ -45,7 +45,7 @@ export class DetailsForumComponent implements OnInit {
         nbre_theme: '0',
         nbre_echanges: 0,
         date_ouverture: '2022-03-08',
-        date_cloture: '2022-03-30',
+        date_cloture: '202245-03-30',
         etat_validation: 'valide',
         etat_objet: 'active',
         image_theme:
@@ -64,7 +64,7 @@ export class DetailsForumComponent implements OnInit {
         nbre_theme: '0',
         nbre_echanges: 0,
         date_ouverture: '2021-03-01',
-        date_cloture: '2022-10-29',
+        date_cloture: '20225-10-29',
         etat_validation: 'valide',
         etat_objet: 'active',
         image_theme:
