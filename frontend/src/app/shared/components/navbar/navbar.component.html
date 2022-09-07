@@ -40,14 +40,25 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item"
-              [routerLink]="['/offres/list-offres']">
+              <a class="dropdown-item" [routerLink]="['/offres-emploi']">
                 Offres d'emploi
               </a>
             </li>
-            <li><a class="dropdown-item" href="#">Offres de stage</a></li>
-            <li><a class="dropdown-item" href="#">Offres d'alternance</a></li>
-            <li><a class="dropdown-item" href="#">Offres d'extra</a></li>
+            <li>
+              <a class="dropdown-item" [routerLink]="['/offres-de-stage']">
+                Offres de stage
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" [routerLink]="['/offres-alternance']">
+                Offres d'alternance
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" [routerLink]="['/offres-extra']">
+                Offres d'extra
+              </a>
+            </li>
           </ul>
         </li>
 
@@ -63,23 +74,20 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item" [routerLink]="['/Candidats/list']">
+              <a class="dropdown-item" [routerLink]="['/candidats']">
                 Candidats
               </a>
             </li>
 
             <li>
-              <a
-                class="dropdown-item"
-                [routerLink]="['/competences/list-demandes-specifiques']"
-              >
+              <a class="dropdown-item" [routerLink]="['/demandes-specifiques']">
                 Demandes spécifiques
               </a>
             </li>
             <li>
               <a
                 class="dropdown-item"
-                [routerLink]="['/competences/list-condidatures-spontannes']"
+                [routerLink]="['/condidatures-spontannes']"
               >
                 Candidatures spontanées
               </a>
@@ -105,17 +113,14 @@
               </a>
             </li>
             <li>
-              <a
-                class="dropdown-item"
-                [routerLink]="['recruteurs/cabinets-recrutements']"
-              >
+              <a class="dropdown-item" [routerLink]="['/cabinets-recrutement']">
                 Cabinets de recrutement
               </a>
             </li>
             <li>
               <a
                 class="dropdown-item"
-                [routerLink]="['recruteurs/associations']"
+                [routerLink]="['/associations-insertion-economique']"
               >
                 Associations d'insertion économique
               </a>
@@ -126,7 +131,7 @@
             <li>
               <a
                 class="dropdown-item"
-                [routerLink]="['/recruteurs/etablissements']"
+                [routerLink]="['/etablissements-formation']"
               >
                 Etablissements de formation
               </a>
@@ -146,39 +151,27 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a
-                class="dropdown-item"
-                [routerLink]="['/rubrique/details-rubrique']"
-              >
+              <a class="dropdown-item" [routerLink]="['/conseils-pratique']">
                 Conseils pratiques
               </a>
             </li>
             <li>
-              <a
-                class="dropdown-item"
-                [routerLink]="['/info-pratique/list-adresses-utiles']"
-              >
+              <a class="dropdown-item" [routerLink]="['/adresses-utiles']">
                 Adresses utiles
               </a>
             </li>
             <li>
-              <a
-                class="dropdown-item"
-                [routerLink]="['/info-pratique/list-liens-utiles']"
-              >
+              <a class="dropdown-item" [routerLink]="['/liens-utiles']">
                 Liens utiles
               </a>
             </li>
             <li>
-              <a class="dropdown-item" [routerLink]="['']">
+              <a class="dropdown-item" [routerLink]="['/guides-emploi']">
                 Guides d'emploi
               </a>
             </li>
             <li>
-              <a
-                class="dropdown-item"
-                [routerLink]="['/info-pratique/list-documents-a-telecharger']"
-              >
+              <a class="dropdown-item" [routerLink]="['/documents']">
                 Documents et formulaires à télécharger
               </a>
             </li>
@@ -186,7 +179,7 @@
               <a
                 class="dropdown-item"
                 href="#"
-                [routerLink]="['/rubrique/details-rubrique']"
+                [routerLink]="['/legislations-et-textes-lois']"
               >
                 Législations et textes de lois
               </a>
@@ -205,28 +198,25 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item" [routerLink]="['/metiers']">
+              <a
+                class="dropdown-item"
+                [routerLink]="['/decouverte-des-metiers']"
+              >
                 Découverte des métiers
               </a>
             </li>
             <li>
-              <a
-                class="dropdown-item"
-                [routerLink]="['/rubrique/details-rubrique']"
-              >
+              <a class="dropdown-item" [routerLink]="['/hard-skills']">
                 Hard-Skills
               </a>
             </li>
             <li>
-              <a
-                class="dropdown-item"
-                [routerLink]="['/rubrique/details-rubrique']"
-              >
+              <a class="dropdown-item" [routerLink]="['/soft-skills']">
                 Soft-Skills
               </a>
             </li>
             <li>
-              <a class="dropdown-item">
+              <a class="dropdown-item" [routerLink]="['/metiers-pour-vous']">
                 Métiers pour vous
               </a>
             </li>
@@ -250,18 +240,12 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a
-                class="dropdown-item"
-                [routerLink]="['/rubrique/details-rubrique']"
-              >
+              <a class="dropdown-item" [routerLink]="['/actualites-emploi']">
                 Actualités d'emploi
               </a>
             </li>
             <li>
-              <a
-                class="dropdown-item"
-                [routerLink]="['/evenement/list-events']"
-              >
+              <a class="dropdown-item" [routerLink]="['/evenement']">
                 Evénement
               </a>
             </li>
@@ -279,31 +263,22 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a
-                class="dropdown-item"
-                [routerLink]="['/espace-communautaire/list-forum']"
-              >
+              <a class="dropdown-item" [routerLink]="['/forums']">
                 Forums de discussions
               </a>
             </li>
             <li>
-              <a
-                class="dropdown-item"
-                [routerLink]="['/espace-communautaire/sondage']"
-              >
+              <a class="dropdown-item" [routerLink]="['/sondage']">
                 Sondages
               </a>
             </li>
             <li>
-              <a
-                class="dropdown-item"
-                [routerLink]="['/espace-communautaire/temoignage']"
-              >
+              <a class="dropdown-item" [routerLink]="['/temoignage']">
                 Témoignages
               </a>
             </li>
             <li>
-              <a class="dropdown-item" href="#" [routerLink]="['/blog']">
+              <a class="dropdown-item" href="#" [routerLink]="['/bloggers']">
                 Blog
               </a>
             </li>
