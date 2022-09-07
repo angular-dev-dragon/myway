@@ -218,17 +218,17 @@
                 <li class="j-description j-resume-lg">
                   {{ 'statistique_quiz.meilleur_note' | translate }}&nbsp;{{
                     notes.maxNote
-                  }}/10
+                  }}/{{ evaluationNote }}
                 </li>
                 <li class="j-description j-resume-lg">
                   {{ 'statistique_quiz.note_moyen' | translate }}&nbsp;{{
                     notes.moyenneNote | number: '1.2-2'
-                  }}/10
+                  }}/{{ evaluationNote }}
                 </li>
                 <li class="j-description j-resume-lg">
                   {{ 'statistique_quiz.dernier_note' | translate }}&nbsp;{{
                     notes.minNote
-                  }}/10
+                  }}/{{ evaluationNote }}
                 </li>
               </ul>
             </div>
