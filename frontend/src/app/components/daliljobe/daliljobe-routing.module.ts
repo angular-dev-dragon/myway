@@ -83,18 +83,36 @@ const routes: Routes = [
       },
       // //////////////////////////////////////////////////////////////////////////////////////////////////
       {
-        path: 'metier',
+        path: 'decouverte-des-metiers',
+        component: ViewProjectComponent,
+      },
+      {
+        path: 'soft-skills',
+        component: ViewProjectComponent,
+      },
+      {
+        path: 'hard-skills',
+        component: ViewProjectComponent,
+      },
+      {
+        path: 'metiers-pour-vous',
         component: ViewProjectComponent,
       },
       {
         path: 'quiz',
         component: ViewProjectComponent,
       },
+      ////////////////////////////////////////////////////////////////
+
       {
         path: 'evenement',
         component: ViewProjectComponent,
       },
-
+      {
+        path: 'actualites-emploi',
+        component: ViewProjectComponent,
+      },
+      //////////////////////////////////////////////////////////////////////////////////////////////////
       {
         path: 'forums',
         component: ViewProjectComponent,
@@ -113,14 +131,6 @@ const routes: Routes = [
       },
       {
         path: 'undfind',
-        component: ViewProjectComponent,
-      },
-      {
-        path: 'soft-skills',
-        component: ViewProjectComponent,
-      },
-      {
-        path: 'hard-skills',
         component: ViewProjectComponent,
       },
     ],
