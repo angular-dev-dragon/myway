@@ -11,7 +11,11 @@ export class ListFavorisComponent implements OnInit {
   wishList: any = []
 
   constructor(public genericService: GenericService) {
-    this.getWishListItems()
+    //this.getWishListItems()
+    this.wishList = sessionStorage.getItem('wishList')
+    this.wishList = JSON.parse(this.wishList)
+
+    console.log(this.wishList)
   }
 
   ngOnInit(): void {}

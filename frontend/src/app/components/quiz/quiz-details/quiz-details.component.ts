@@ -75,27 +75,27 @@ export class QuizDetailsComponent implements OnInit {
       {
         _id: { $oid: '625938d6cefa5c161c8dc2f2' },
         score_obtenu: '1',
-        note_obtenue: '0.5',
+        note_obtenue: '2',
       },
       {
         _id: { $oid: '6259394bcefa5c161c8dc2f6' },
         score_obtenu: '0',
-        note_obtenue: '0',
+        note_obtenue: '3',
       },
       {
         _id: { $oid: '62593dbecefa5c161c8dc322' },
         score_obtenu: '0',
-        note_obtenue: '0',
+        note_obtenue: '1',
       },
       {
         _id: { $oid: '625d93b17d9de5eb4b15f24f' },
         score_obtenu: '0',
-        note_obtenue: '0',
+        note_obtenue: '2',
       },
       {
         _id: { $oid: '625d94307d9de5eb4b15f253' },
         score_obtenu: '0',
-        note_obtenue: '0',
+        note_obtenue: '3',
       },
       {
         _id: { $oid: '625fe07678cb1361a3cd9131' },
@@ -110,7 +110,7 @@ export class QuizDetailsComponent implements OnInit {
       {
         _id: { $oid: '6308f271fe8f1fc7911c7cf6' },
         score_obtenu: '1',
-        note_obtenue: '0.5',
+        note_obtenue: '2',
       },
     ],
 
@@ -125,7 +125,7 @@ export class QuizDetailsComponent implements OnInit {
           ar: { __label_question: '', __indicateur: '' },
           en: { __label_question: '', __indicateur: '' },
         },
-        valeur_evaluation: '0',
+        valeur_evaluation: '1',
         ordre: '',
         etat_objet: 'active',
         etat_validation: '',
@@ -175,7 +175,7 @@ export class QuizDetailsComponent implements OnInit {
           ar: { __label_question: '', __indicateur: '' },
           en: { __label_question: '', __indicateur: '' },
         },
-        valeur_evaluation: '0',
+        valeur_evaluation: '2',
         ordre: '',
         etat_objet: 'active',
         etat_validation: '',
@@ -231,7 +231,12 @@ export class QuizDetailsComponent implements OnInit {
   scores: any = {}
   notes: any = {}
   nb_participant = 0
+  evaluationNote: number = 0
   calculStatistique(success: any) {
+    this.quiz.question_quiz.map((question: any) => {
+      this.evaluationNote += +question.valeur_evaluation
+    })
+
     this.nb_participant = success.participation_quiz.length || 0
     if (success && success.participation_quiz && this.nb_participant) {
       this.statistique_score = success.statistique_score
@@ -253,16 +258,21 @@ export class QuizDetailsComponent implements OnInit {
       }
       this.scores['minScore'] = Math.min.apply(null, scores)
       this.scores['maxScore'] = Math.max.apply(null, scores)
-      this.notes['minNote'] = Math.min.apply(null, notes) * 10
-      this.notes['maxNote'] = Math.max.apply(null, notes) * 10
-      this.notes['moyenneNote'] = (summNotes / this.nb_participant) * 10
+      this.notes['minNote'] = Math.min.apply(null, notes)
+      this.notes['maxNote'] = Math.max.apply(null, notes)
+      this.notes['moyenneNote'] = summNotes / this.nb_participant
       this.scores['moyenScore'] = summScore / this.nb_participant
+      console.log(
+        '🚀 ~ file: quiz-details.component.ts ~ line 267 ~ QuizDetailsComponent ~ calculStatistique ~ success',
+        success,
+      )
 
       for (let participation of success.participation_quiz) {
         if (participation.reponse) {
           for (let reponse of participation.reponse)
             this.statistique_qst.push(reponse)
         }
+        console.log('participation.reponse', participation.reponse)
       }
 
       let res = []

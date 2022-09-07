@@ -28,16 +28,39 @@ export class QuizResultComponent implements OnInit {
     participation_quiz: [],
   }
   index: any
+  noteObtenue: number = 0
+  evaluationNote: number = 0
+
   ngOnInit(): void {
     this.reponses = this.quizService.reponses
+    console.log(this.reponses)
 
     let userResponse: any = []
     this.reponses.forEach((rp: any) => {
       if (rp.type == 'simple') {
-        rp.userReponse.__valeur_reponse_juste == false ||
-        rp.userReponse.__valeur_reponse_juste == null
-          ? (this.rFausse += 1)
-          : (this.rJuste += 1)
+        // console.log(
+        //   '🚀 ~ ~Simple  ~ rp.userReponse.__valeur_reponse_juste',
+        //   rp.userReponse.__valeur_reponse_juste,
+        // )
+
+        if (
+          rp.userReponse.__valeur_reponse_juste == false ||
+          rp.userReponse.__valeur_reponse_juste == null
+        ) {
+          this.rFausse += 1
+          this.noteObtenue += 0
+          this.evaluationNote += +rp.valeur_evaluation
+          console.log('🚀 ~ ~ noteObtenue', this.noteObtenue)
+        } else {
+          this.rJuste += 1
+          this.noteObtenue += +rp.valeur_evaluation
+          this.evaluationNote += +rp.valeur_evaluation
+        }
+
+        // rp.userReponse.__valeur_reponse_juste == false ||
+        // rp.userReponse.__valeur_reponse_juste == null
+        //   ? (this.rFausse += 1)
+        //   : (this.rJuste += 1)
 
         userResponse.push({
           type: 'simple',
@@ -53,9 +76,19 @@ export class QuizResultComponent implements OnInit {
           (response: any) => response.__valeur_reponse_juste == true,
         )
 
-        filterdResponse.length == filterdResponseQuiz.length
-          ? (this.rJuste += 1)
-          : (this.rFausse += 1)
+        // filterdResponse.length == filterdResponseQuiz.length
+        //   ? (this.rJuste += 1)
+        //   : (this.rFausse += 1)
+
+        if (filterdResponse.length != filterdResponseQuiz.length) {
+          this.rFausse += 1
+          this.noteObtenue += 0
+          this.evaluationNote += +rp.valeur_evaluation
+        } else {
+          this.rJuste += 1
+          this.noteObtenue += +rp.valeur_evaluation
+          this.evaluationNote += +rp.valeur_evaluation
+        }
 
         userResponse.push({
           type: 'multiple',
@@ -68,7 +101,9 @@ export class QuizResultComponent implements OnInit {
     if (this.reponses.length > 0) {
       const participation = {
         score_obtenu: this.rJuste,
-        note_obtenue: this.rJuste / this.quiz.question_quiz.length,
+
+        note_obtenue: this.noteObtenue / this.evaluationNote,
+
         reponse: userResponse,
       }
       this.participation = participation
@@ -259,37 +294,37 @@ export class QuizResultComponent implements OnInit {
       {
         _id: { $oid: '625938d6cefa5c161c8dc2f2' },
         score_obtenu: '1',
-        note_obtenue: '0.5',
+        note_obtenue: '3',
       },
       {
         _id: { $oid: '6259394bcefa5c161c8dc2f6' },
         score_obtenu: '0',
-        note_obtenue: '0',
+        note_obtenue: '2',
       },
       {
         _id: { $oid: '62593dbecefa5c161c8dc322' },
         score_obtenu: '0',
-        note_obtenue: '0',
+        note_obtenue: '3',
       },
       {
         _id: { $oid: '625d93b17d9de5eb4b15f24f' },
         score_obtenu: '0',
-        note_obtenue: '0',
+        note_obtenue: '1',
       },
       {
         _id: { $oid: '625d94307d9de5eb4b15f253' },
         score_obtenu: '0',
-        note_obtenue: '0',
+        note_obtenue: '2',
       },
       {
         _id: { $oid: '625fe07678cb1361a3cd9131' },
         score_obtenu: '0',
-        note_obtenue: '0',
+        note_obtenue: '1',
       },
       {
         _id: { $oid: '62e2ad36125d8d57290a97b3' },
         score_obtenu: '0',
-        note_obtenue: '0',
+        note_obtenue: '3',
       },
       {
         _id: { $oid: '6308f271fe8f1fc7911c7cf6' },
@@ -309,7 +344,7 @@ export class QuizResultComponent implements OnInit {
           ar: { __label_question: '', __indicateur: '' },
           en: { __label_question: '', __indicateur: '' },
         },
-        valeur_evaluation: '0',
+        valeur_evaluation: '1',
         ordre: '',
         etat_objet: 'active',
         etat_validation: '',
@@ -359,7 +394,7 @@ export class QuizResultComponent implements OnInit {
           ar: { __label_question: '', __indicateur: '' },
           en: { __label_question: '', __indicateur: '' },
         },
-        valeur_evaluation: '0',
+        valeur_evaluation: '2',
         ordre: '',
         etat_objet: 'active',
         etat_validation: '',
@@ -440,9 +475,9 @@ export class QuizResultComponent implements OnInit {
       }
       this.scores['minScore'] = Math.min.apply(null, scores)
       this.scores['maxScore'] = Math.max.apply(null, scores)
-      this.notes['minNote'] = Math.min.apply(null, notes) * 10
-      this.notes['maxNote'] = Math.max.apply(null, notes) * 10
-      this.notes['moyenneNote'] = (summNotes / this.nb_participant) * 10
+      this.notes['minNote'] = Math.min.apply(null, notes)
+      this.notes['maxNote'] = Math.max.apply(null, notes)
+      this.notes['moyenneNote'] = summNotes / this.nb_participant
       this.scores['moyenScore'] = summScore / this.nb_participant
 
       for (let participation of success.participation_quiz) {

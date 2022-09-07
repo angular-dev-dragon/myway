@@ -13,7 +13,7 @@
         <div class="col-md-12 mb-4">
           <div class="row">
             <div class="col-md-12 mb-2">
-              <div fxFlex.xs="100" fxFlex.sm="100">
+              <div>
                 <div class="d-flex flex-row align-items-center flex-wrap">
                   <p class="j-description j-resume-lg">
                     <strong>{{ 'resultat.juste' | translate }} : &nbsp;</strong>
@@ -42,6 +42,16 @@
                     </strong>
                   </p>
                 </div>
+
+                <div class="d-flex flex-row align-items-center flex-wrap">
+                  <p class="j-description j-resume-lg">
+                    <strong>{{ 'Note Obtennue' | translate }} : &nbsp;</strong>
+                  </p>
+                  <p class="j-description j-resume-lg">
+                    <strong>{{ noteObtenue }} / {{ evaluationNote }}</strong>
+                  </p>
+                </div>
+
                 <div class="d-flex flex-row align-items-center flex-wrap">
                   <p class="j-description j-resume-lg">
                     <strong>{{ 'resultat.class' | translate }} : &nbsp;</strong>
@@ -69,8 +79,6 @@
               <div
                 *ngIf="rJuste < quiz.question_quiz.length"
                 class="border text-accent p-2 text-center bg-result"
-                fxFlex.xs="100"
-                fxFlex.sm="100"
               >
                 {{ 'resultat.mieux' | translate }}
               </div>
@@ -302,16 +310,6 @@
     </div>
     <div class="col-md-5">
       <div class="section-recruteur ms-1">
-        <!-- <div class="test mb-2">
-              <h4><strong>{{'resultat.autre'| translate}}</strong> </h4>
-            </div>
-            <div class="hover text-center rtlCenter" *ngFor="let q of autres_quizzes">
-              <img style="height: 150px;width: 100%" [defaultImage]="'assets/images/quiz.jpg'" [lazyLoad]="q?.image"
-                alt="post">
-              <h4><strong>{{q?.translations['fr']?.__designation}}</strong></h4>
-            </div>
-          </div>  -->
-
         <div class="col-md-12 bl-quiz py-3">
           <div class="col-md-12 col-sm-12">
             <img
@@ -346,10 +344,7 @@
           </div>
           <hr />
           {{ this.quiz.nb_participant }}
-          <div
-            class="col-lg-12 col-md-12"
-            *ngIf="quiz.participation_quiz.length > 0"
-          >
+          <div class="col-md-12" *ngIf="quiz.participation_quiz.length > 0">
             <div class="row col-md-12">
               <ul class="col-md-6 no-style-list">
                 <li class="j-description j-resume-lg">
@@ -372,17 +367,17 @@
                 <li class="j-description j-resume-lg">
                   {{ 'statistique_quiz.meilleur_note' | translate }}&nbsp;{{
                     notes.maxNote
-                  }}/10
+                  }}/{{ evaluationNote }}
                 </li>
                 <li class="j-description j-resume-lg">
                   {{ 'statistique_quiz.note_moyen' | translate }}&nbsp;{{
                     notes.moyenneNote | number: '1.2-2'
-                  }}/10
+                  }}/{{ evaluationNote }}
                 </li>
                 <li class="j-description j-resume-lg">
                   {{ 'statistique_quiz.dernier_note' | translate }}&nbsp;{{
                     notes.minNote
-                  }}/10
+                  }}/{{ evaluationNote }}
                 </li>
               </ul>
             </div>

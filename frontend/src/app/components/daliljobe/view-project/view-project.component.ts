@@ -1,8 +1,5 @@
-import {  Component, OnInit } from '@angular/core';
-import {
-  NavigationEnd,
-  Router,
-} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { GenericService } from 'src/app/shared/services/generic.service';
 @Component({
   selector: 'app-view-project',
@@ -20,12 +17,7 @@ export class ViewProjectComponent implements OnInit {
   showTopFilter: boolean = true;
   showInLeftSideBar: boolean = true;
   resultData: any;
-  constructor(
-    public genericervice: GenericService,
-    private router: Router
-  ) {
-
-
+  constructor(public genericervice: GenericService, private router: Router) {
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
         this.pageName = event.url.split('/')[1];
@@ -35,19 +27,16 @@ export class ViewProjectComponent implements OnInit {
 
   ngOnInit(): void {
     this.controlView();
-    //  this.getDataFromService(this.pageName);
   }
 
   getDataFromService(pageName: string) {
     this.data = this.genericervice.get(pageName);
   }
 
-  // #region view conrollers
   controlView() {
-    if
-(
-      this.pageName == 'offres-emploi'||
-      this.pageName ==  'offres-de-stage' ||
+    if (
+      this.pageName == 'offres-emploi' ||
+      this.pageName == 'offres-de-stage' ||
       this.pageName == 'offres-alternance' ||
       this.pageName == 'offres-extra' ||
       ///////////////////////////////////////////
@@ -57,48 +46,45 @@ export class ViewProjectComponent implements OnInit {
       ///////////////////////////////////////////
       this.pageName == 'recruteurs' ||
       this.pageName == 'associations-insertion-economique' ||
-      this.pageName ==  'etablissements-formation' ||
-      this.pageName ==  'cabinets-recrutement' ||
+      this.pageName == 'etablissements-formation' ||
+      this.pageName == 'cabinets-recrutement' ||
       ///////////////////////////////////////////
       this.pageName == 'decouverte-des-metiers' ||
-      this.pageName ==  'metiers-pour-vous' ||
+      this.pageName == 'metiers-pour-vous' ||
       this.pageName == 'quiz' ||
       ///////////////////////////////////////////
       this.pageName == 'guides-emploi' ||
       //////////////////////////////
-      this.pageName == 'evenement')
-    {
+      this.pageName == 'evenement'
+    ) {
       this.showLeftSideBar = true;
       this.showHeader = true;
       this.showTopFilter = true;
       this.showRightSideBar = false;
-     this.showInLeftSideBar = false;
+      this.showInLeftSideBar = false;
     } else if (
-
-      this.pageName ==  'soft-skills' ||
+      this.pageName == 'soft-skills' ||
       this.pageName == 'hard-skills' ||
       // //////////////////////////////
       this.pageName == 'conseils-pratique' ||
-      this.pageName == 'legislations-et-textes-lois'||
+      this.pageName == 'legislations-et-textes-lois' ||
       this.pageName == 'liens-utiles' ||
       this.pageName == 'adresses-utiles' ||
       this.pageName == 'documents' ||
       // //////////////////////////////
       this.pageName == 'actualites-emploi' ||
       // //////////////////////////////
-      this.pageName ==  'temoignage' ||
-      this.pageName ==  'sondage'||
+      this.pageName == 'temoignage' ||
+      this.pageName == 'sondage' ||
       this.pageName == 'forums' ||
-      this.pageName ==  'bloggers'
+      this.pageName == 'bloggers'
     ) {
       this.showLeftSideBar = false;
       this.showHeader = true;
       this.showTopFilter = true;
       this.showRightSideBar = false;
       this.showInLeftSideBar = false;
-    }
-
-    else if (this.pageName == 'undfind') {
+    } else if (this.pageName == 'undfind') {
       this.showLeftSideBar = false;
       this.showHeader = false;
       this.showTopFilter = false;
@@ -106,8 +92,6 @@ export class ViewProjectComponent implements OnInit {
       this.showInLeftSideBar = false;
     }
   }
-
-
 
   filtredData(value: any) {
     this.data = value;
@@ -117,27 +101,3 @@ export class ViewProjectComponent implements OnInit {
     this.orientation = value;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

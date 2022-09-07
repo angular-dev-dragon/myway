@@ -94,124 +94,6 @@ nav.main-menu li.active > a,
   width: 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $primary: #0c63e4;
 $secondary: #77c9ec;
 
@@ -239,7 +121,7 @@ $gray: #666666;
     color: transparent;
   }
 
-  &:placeholder-shown~.form__label {
+  &:placeholder-shown ~ .form__label {
     font-size: 1.3rem;
     cursor: text;
     top: 20px;
@@ -256,7 +138,7 @@ $gray: #666666;
 }
 
 .form__field:focus {
-  ~.form__label {
+  ~ .form__label {
     position: absolute;
     top: 0;
     display: block;
@@ -275,7 +157,6 @@ $gray: #666666;
 
 /* reset input */
 .form__field {
-
   &:required,
   &:invalid {
     box-shadow: none;

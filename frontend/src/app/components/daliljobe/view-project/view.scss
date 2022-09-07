@@ -42,9 +42,22 @@
   margin-bottom: 1.5rem !important;
 }
 
-
-.btn-inf
-{
+.btn-inf {
   background-color: rgb(176, 214, 247);
   border-color: rgb(176, 214, 247);
+}
+
+@media (max-width: 991px) {
+  .flex-main {
+    flex-wrap: wrap;
+  }
+
+  .sideBar-Main,
+  .section-recruteur {
+    width: 100%;
+  }
+
+  .spacing-inline-end {
+    margin-inline-end: 0;
+  }
 }
