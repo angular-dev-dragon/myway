@@ -17,6 +17,7 @@ import { ForumService } from './forum.service';
 import { PostService } from './post.service';
 import { RubriqueService } from './rubrique.service';
 import { SondageService } from './sondage.service';
+import { GuidesEmploiService } from './guides-emploi.service';
 
 @Injectable({
   providedIn: 'root',
@@ -40,101 +41,84 @@ export class GenericService {
     private rubriqueService: RubriqueService,
     private sondageService: SondageService,
     private temoingnageService: TemoignageService,
-    private defaultService: DefaultService
+    private defaultService: DefaultService,
+    private guidesEmploiService : GuidesEmploiService
   ) { }
   get(pageName: string): any {
 
-
-
-      'offres-emploi';
-      'offres-de-stage';
-      'offres-alternance';
-      'offres-extra';
-      ////////////////////
-      'candidats';
-      'demandes-specifiques';
-      'condidatures-spontannes';
-      ////////////////////
-      'recruteurs';
-      'etablissements-formation';
-      'cabinets-recrutement';
-      'associations-insertion-economique';
-      ////////////////////
-      'decouverte-des-metiers';
-      'soft-skills';
-      'hard-skills';
-      'metiers-pour-vous';
-      'quiz';
-      ////////////////////
-      'conseils-pratique';
-      'adresses-utiles';
-      'liens-utiles';
-      'documents';
-      'guides-emploi';
-      'legislations-et-textes-lois';
-
-      ////////////////////
-      'evenement';
-      'actualites-emploi';
-      // ///////////////
-      'forums';
-      'sondage';
-      'temoignage';
-      'bloggers';
-      ////////////////////
-    'undfind';
-
-
-
-
-      'candidats'
-      'demandes-specifiques'
-      'condidatures-spontannes'
-
-
-
-
-
-
-
-
     switch (pageName) {
-      case 'offres-emploi':                     return this.offreService;
-      case 'offres-de-stage'  :                 return this.offreService;
-      case 'offres-alternance'  :               return this.offreService;
-      case 'offres-extra' :                     return this.offreService;
+      // #region  HAS THE SAME  RubriqueService
+      case 'legislations-et-textes-lois':
+        return this.rubriqueService;
+      case 'soft-skills':
+        return this.rubriqueService;
+      case 'hard-skills':
+        return this.rubriqueService;
+      case 'conseils-pratique':
+        return this.rubriqueService;
+      case 'actualites-emploi':
+        return this.rubriqueService;
+      // #endregion
+      // #region HASE THE SAME  offreService
 
+      case 'offres-emploi':
+        return this.offreService;
+      case 'offres-de-stage':
+        return this.offreService;
+      case 'offres-alternance':
+        return this.offreService;
+      case 'offres-extra':
+        return this.offreService;
 
+      // #endregion
+      // #region HASE THE SAME recruteurService
+      case 'recruteurs':
+        return this.recruteurService;
+      case 'etablissements-formation':
+        return this.recruteurService;
+      case 'cabinets-recrutement':
+        return this.recruteurService;
+      case 'associations-insertion-economique':
+        return this.recruteurService;
 
+      // #endregion
+      // #region  HASE THE SAME metierService
+      case 'decouverte-des-metiers':
+        return this.metierService;
+      case 'metiers-pour-vous':
+        return this.metierService;
 
-
-
-      case 'candidats':                          return this.candidatService;
-      case 'demandes-specifiques':             return this.condidatureSpontaneeService;
-      case 'demande specifique':                return this.demandeSpecifiqueService;
-
-
-
-
-      case 'blogeurs':                          return this.blogService;
-      case 'documents':                         return this.documentService;
-      case 'recruteur':                         return this.recruteurService;
-      case 'associations insertion economique': return this.recruteurService;
-      case 'etablissements formation':          return this.recruteurService;
-      case 'cabinets recrutement':              return this.recruteurService;
-      case 'adresses utiles':                   return this.addesseService;
-      case 'evenement':                         return this.evenementService;
-      case 'forums':                            return this.forumService;
-      case 'liens utiles':                      return this.lienUtileService;
-      case 'metier':                            return this.metierService;
-      case 'quiz':                              return this.QuizService;
-      case 'sondage':                           return this.sondageService;
-      case 'conseils pratique':                 return this.rubriqueService;
-      case 'soft skills':                       return this.rubriqueService;
-      case 'hard skills':                       return this.rubriqueService;
-      case 'temoignage':                        return this.temoingnageService;
-      case 'post':                              return this.postService;
-      default:                                  return this.defaultService;
+      // #endregion
+      // #region  EVRYTHING IS OKY
+      case 'evenement':
+        return this.evenementService;
+      case 'candidats':
+        return this.candidatService;
+      case 'condidatures-spontannes':
+        return this.condidatureSpontaneeService;
+      case 'demandes-specifiques':
+        return this.demandeSpecifiqueService;
+      case 'quiz':
+        return this.QuizService;
+      case 'forums':
+        return this.forumService;
+      case 'sondage':
+        return this.sondageService;
+      case 'temoignage':
+        return this.temoingnageService;
+      case 'bloggers':
+        return this.blogService;
+      case 'documents':
+        return this.documentService;
+      case 'adresses-utiles':
+        return this.addesseService;
+      case 'liens-utiles':
+        return this.lienUtileService;
+      case 'guides-emploi':
+        return this.guidesEmploiService;
+      default:
+        return this.defaultService;
+      // #endregion
     }
   }
 
@@ -208,4 +192,76 @@ export class GenericService {
       wishList
     );
   }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // 'offres-emploi';
+      // 'offres-de-stage';
+      // 'offres-alternance';
+      // 'offres-extra';
+      ////////////////////
+      // 'candidats';
+      // 'demandes-specifiques';
+      // 'condidatures-spontannes';
+      // ////////////////////
+      // 'recruteurs';
+      // 'etablissements-formation';
+      // 'cabinets-recrutement';
+      // 'associations-insertion-economique';
+      // ////////////////////
+      // 'decouverte-des-metiers';
+      // 'soft-skills';
+      // 'hard-skills';
+      // 'metiers-pour-vous';
+      // 'quiz';
+      // ////////////////////
+      // 'conseils-pratique';
+      // 'adresses-utiles';
+      // 'liens-utiles';
+      // 'documents';
+      // 'guides-emploi';
+      // 'legislations-et-textes-lois';
+
+      // ////////////////////
+      // 'evenement';
+      // 'actualites-emploi';
+      // // ///////////////
+      // 'forums';
+      // 'sondage';
+      // 'temoignage';
+      // 'bloggers';
+      // ////////////////////
+      // 'undfind';
+
+
