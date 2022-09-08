@@ -6,7 +6,9 @@ import { API } from './api.service'
   providedIn: 'root',
 })
 export class BlogService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.listBlogueurs = this.AllBlogueurs
+  }
 
   getBlogueur() {
     return this.http.get(API + '/blogueur');
@@ -14,8 +16,10 @@ export class BlogService {
   getBlogueurById(id: any) {
     return this.http.get(API + '/blogueur+' + id);
   }
-  listBlogueurs: any = [
+  listBlogueurs: any = [];
+  AllBlogueurs: any = [
     {
+      __id: '67987987987987',
       nom: 'Hicham',
       prenom: 'Berdouki',
       fonction: 'Mean Stack Developper',
@@ -27,6 +31,7 @@ export class BlogService {
         'I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores. My passion is to design digital user experiences through the bold interface and meaningful interactions.',
     },
     {
+      __id: '67987987987987',
       nom: 'Ahmad',
       prenom: 'Omari',
       fonction: 'Mean Stack Developper',
@@ -38,6 +43,7 @@ export class BlogService {
         'I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores. My passion is to design digital user experiences through the bold interface and meaningful interactions.',
     },
     {
+      __id: '67987987987987',
       nom: 'Hicham',
       prenom: 'Berdouki',
       fonction: 'Mean Stack Developper',
@@ -50,6 +56,7 @@ export class BlogService {
         'I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores. My passion is to design digital user experiences through the bold interface and meaningful interactions.',
     },
     {
+      __id: '67987987987987',
       nom: 'Hicham',
       prenom: 'Berdouki',
       fonction: 'Mean Stack Developper',
@@ -61,12 +68,9 @@ export class BlogService {
       resume:
         'I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores. My passion is to design digital user experiences through the bold interface and meaningful interactions.',
     },
-  ]
+  ];
 
-
-
-
-  getAllInfo() {
-    return this.listBlogueurs
+  getlist() {
+    return this.listBlogueurs;
   }
 }

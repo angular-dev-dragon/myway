@@ -21,50 +21,17 @@
           </div>
           <hr *ngIf="pageName != 'undfind'" />
 
-          <!-- #endregion -->
           <div class="row">
-            <ng-container
-              *ngIf="
-                pageName == 'recruteur' ||
-                pageName == 'associations insertion economique' ||
-                pageName == 'etablissements formation' ||
-                pageName == 'cabinets recrutement' ||
-                pageName == 'candidature spontanee'
-              "
-            >
-              <app-card-recruiter
-                *ngFor="
-                  let recruiter of genericervice
-                    .get(pageName)
-                    .getAllRecruteursInfo()
-                    | paginate: { itemsPerPage: 6, currentPage: p }
-                "
-                [link]="[
-                  pageName == 'candidature spontanee'
-                    ? '/recruteurs/details-recruteur/' +
-                      recruiter.id +
-                      '/condidature-spontanee'
-                    : '/recruteurs/details-recruteur/' + recruiter.id
-                ]"
-                [id]="recruiter.id"
-                [pageName]="pageName"
-                class="col-md-4 col-sm-6"
-                [imageBg]="recruiter?.imageBg"
-                [logo]="recruiter?.logo"
-                [title]="recruiter?.title"
-                [type]="recruiter?.type"
-                [salaries]="recruiter?.salaries"
-                [caption]="recruiter?.caption"
-              ></app-card-recruiter>
-            </ng-container>
-            <ng-container
-              *ngIf="
-                pageName == 'offre' ||
-                pageName == 'offres emploi' ||
-                pageName == 'offres de stage' ||
-                pageName == 'offres alternance' ||
+           <ng-container *ngIf="pageName == 'offres-emploi' ||
+                pageName == 'offres-de-stage' ||
+                pageName == 'offres-alternance' ||
                 pageName == 'offres extra' ||
-                pageName == 'demande specifique'
+                pageName == 'demandes-specifiques'
+
+
+
+
+
               "
             >
               <div class="row" *ngIf="genericervice.orientation == 'verticale'">
@@ -76,7 +43,7 @@
                   [pageName]="pageName"
                   [id]="offre?.id"
                   [link]="[
-                    pageName == 'demande specifique'
+                    pageName == 'demandes-specifiques'
                       ? 'details-demandes-specifiques/'
                       : '/offres/details-offres/',
                     offre.id
@@ -122,7 +89,7 @@
                 ></app-card-offre-horizontale>
               </div>
             </ng-container>
-            <ng-container *ngIf="pageName == 'candidat'">
+            <ng-container *ngIf="pageName == 'candidats'">
               <div *ngIf="genericervice.orientation == 'verticale'">
                 <condida-c-cart-tow
                   *ngFor="
@@ -173,6 +140,100 @@
                 ></condida-c-card>
               </div>
             </ng-container>
+            <ng-container *ngIf="pageName == 'recruteurs'||
+                pageName == 'associations-insertion-economique' ||
+                pageName == 'etablissements-formation'||
+                pageName == 'cabinets-recrutement'||
+                pageName == 'condidatures-spontannes'
+              "
+            >
+              <app-card-recruiter
+                *ngFor="
+                  let recruiter of genericervice
+                    .get(pageName)
+                    .getAllRecruteursInfo()
+                    | paginate: { itemsPerPage: 6, currentPage: p }
+                "
+                [link]="[
+                  pageName == 'condidatures-spontannes'
+                    ? '/recruteurs/details-recruteur/' +
+                      recruiter.id +
+                      '/condidature-spontanee'
+                    : '/recruteurs/details-recruteur/' + recruiter.id
+                ]"
+                [id]="recruiter.id"
+                [pageName]="pageName"
+                class="col-md-4 col-sm-6"
+                [imageBg]="recruiter?.imageBg"
+                [logo]="recruiter?.logo"
+                [title]="recruiter?.title"
+                [type]="recruiter?.type"
+                [salaries]="recruiter?.salaries"
+                [caption]="recruiter?.caption"
+              ></app-card-recruiter>
+            </ng-container>
+
+
+
+
+
+            <ng-container *ngIf="pageName == 'decouverte-des-metiers'">
+              <div class="container bootstrap snippets bootdeys">
+                <div class="row">
+                  <app-card-metiers
+                    class="col-lg-3 col-md-4 col-sm-6"
+                    *ngFor="
+                      let metier of genericervice.get(pageName).getlist()
+                        | paginate: { itemsPerPage: 20, currentPage: p }
+                    "
+                    [Image]="metier?.Image"
+                    [Secteur]="metier?.Secteur"
+                    [Intitule]="metier?.Intitule"
+                    [link]="['/metiers/details-metiers', metier?.id]"
+                  ></app-card-metiers>
+                </div>
+              </div>
+            </ng-container>
+            <ng-container *ngIf="pageName ==  'metiers-pour-vous'">
+              <div class="container bootstrap snippets bootdeys">
+                <div class="row">
+                  <app-card-metiers
+                    class="col-lg-3 col-md-4 col-sm-6"
+                    *ngFor="
+                      let metier of genericervice.get(pageName).getlist()
+                        | paginate: { itemsPerPage: 20, currentPage: p }
+                    "
+                    [Image]="metier?.Image"
+                    [Secteur]="metier?.Secteur"
+                    [Intitule]="metier?.Intitule"
+                    [link]="['/metiers/details-metiers', metier?.id]"
+                  ></app-card-metiers>
+                </div>
+              </div>
+            </ng-container>
+            <ng-container *ngIf="pageName == 'hard-skills'||
+            pageName ==   'conseils-pratique'||
+            pageName == 'actualites-emploi' ||
+            pageName == 'soft-skills'||
+            pageName == 'legislations-et-textes-lois'
+            ">
+              <div class="row">
+                <app-card-article
+                  *ngFor="
+                    let article of genericervice.get(pageName).getlist()
+                      | paginate: { itemsPerPage: 6, currentPage: p }
+                  "
+                  [link]="['/rubrique/details-article', article.id]"
+                  class="col-md-6 mb-3"
+                  [image]="article.image"
+                  [titre]="article.titre"
+                  [sousTitre]="article.sousTitre"
+                  [resume]="article.resume"
+                  [etiquette]="article.etiquette"
+                  [motsCles]="article.motsCles"
+                ></app-card-article>
+              </div>
+            </ng-container>
             <ng-container *ngIf="pageName == 'quiz'">
               <app-card-quiz
                 class="col-md-4 mb-3"
@@ -193,58 +254,13 @@
                 [note]="quiz?.note"
               ></app-card-quiz>
             </ng-container>
-            <ng-container *ngIf="pageName == 'metier'">
-              <div class="container bootstrap snippets bootdeys">
-                <div class="row">
-                  <app-card-metiers
-                    class="col-lg-3 col-md-4 col-sm-6"
-                    *ngFor="
-                      let metier of genericervice.get(pageName).getlist()
-                        | paginate: { itemsPerPage: 20, currentPage: p }
-                    "
-                    [Image]="metier?.Image"
-                    [Secteur]="metier?.Secteur"
-                    [Intitule]="metier?.Intitule"
-                    [link]="['/metiers/details-metiers', metier?.id]"
-                  ></app-card-metiers>
-                </div>
-              </div>
-            </ng-container>
-            <ng-container *ngIf="pageName == 'evenement'">
-              <app-card-article
-                class="col-md-6 mb-3"
-                *ngFor="
-                  let event of genericervice.get(pageName).getlist()
-                    | paginate: { itemsPerPage: 6, currentPage: p }
-                "
-                [isArticle]="false"
-                [link]="['/evenement/details-event', event?.id]"
-                [image]="event?.image"
-                [titre]="event?.titre"
-                [dateDebut]="event?.dateDebut"
-                [dateFin]="event?.dateFin"
-                [heureDebut]="event?.heureDebut"
-                [heureFin]="event?.heureFin"
-                [typeEvent]="event?.TypeEvenement"
-                [organisateur]="event?.organisateur"
-              ></app-card-article>
-            </ng-container>
-            <ng-container *ngIf="pageName == 'temoignage'">
-              <app-temoignage
-                [pageName]="pageName"
-                [data]="genericervice.get(pageName).getlist()"
-              ></app-temoignage>
-            </ng-container>
-            <ng-container *ngIf="pageName == 'sondage'">
-              <app-sondage-historique
-                *ngFor="
-                  let sondage of genericervice.get(pageName).getlist()
-                    | paginate: { itemsPerPage: 4, currentPage: p }
-                "
-                [sondage]="sondage"
-              ></app-sondage-historique>
-            </ng-container>
-            <ng-container *ngIf="pageName == 'liens utiles'">
+
+
+
+
+
+
+             <ng-container *ngIf="pageName == 'liens-utiles'">
               <app-card-lien-utile
                 class="col-md-3 mb-3"
                 *ngFor="
@@ -254,7 +270,7 @@
                 [data]="lienUtile"
               ></app-card-lien-utile>
             </ng-container>
-            <ng-container *ngIf="pageName == 'adresses utiles'">
+            <ng-container *ngIf="pageName == 'adresses-utiles'">
               <app-card-adresse-utile
                 class="col-md-3 mb-3"
                 *ngFor="
@@ -264,27 +280,7 @@
                 [data]="adresseUtile"
               ></app-card-adresse-utile>
             </ng-container>
-            <ng-container *ngIf="pageName == 'forums'">
-              <app-card-forum
-                *ngFor="
-                  let item of genericervice.get(pageName).getlist()
-                    | paginate: { itemsPerPage: 6, currentPage: p }
-                "
-                class="col-md-4 mb-2"
-                [routerLink]="[
-                  '/espace-communautaire/details-forum',
-                  item._id.$oid
-                ]"
-                [image]="item.image"
-                [designation]="item.designation"
-                [descriptif]="item.descriptif"
-                [nbrTheme]="item.nbrTheme"
-                [nbrParticipants]="item.nbrParticipants"
-                [nbrEchanges]="item.nbrEchanges"
-              >
-              </app-card-forum>
-            </ng-container>
-            <ng-container *ngIf="pageName == 'documents'">
+            <ng-container *ngIf="pageName ==  'documents'">
               <div class="container">
                 <div class="section-recruteur mb-3">
                   <h4>Documents a Telecharger</h4>
@@ -315,122 +311,25 @@
                 </div>
               </div>
             </ng-container>
-            <ng-container *ngIf="pageName == 'hard skills'">
-              <div class="row">
-                <app-card-article
-                  *ngFor="
-                    let article of genericervice.get(pageName).getlist()
-                      | paginate: { itemsPerPage: 6, currentPage: p }
-                  "
-                  [link]="['/rubrique/details-article', article.id]"
-                  class="col-md-6 mb-3"
-                  [image]="article.image"
-                  [titre]="article.titre"
-                  [sousTitre]="article.sousTitre"
-                  [resume]="article.resume"
-                  [etiquette]="article.etiquette"
-                  [motsCles]="article.motsCles"
-                ></app-card-article>
-              </div>
-            </ng-container>
-            <ng-container *ngIf="pageName == 'soft skills'">
-              <div class="row">
-                <app-card-article
-                  *ngFor="
-                    let article of genericervice.get(pageName).getlist()
-                      | paginate: { itemsPerPage: 6, currentPage: p }
-                  "
-                  [link]="['/rubrique/details-article', article.id]"
-                  class="col-md-6 mb-3"
-                  [image]="article.image"
-                  [titre]="article.titre"
-                  [sousTitre]="article.sousTitre"
-                  [resume]="article.resume"
-                  [etiquette]="article.etiquette"
-                  [motsCles]="article.motsCles"
-                ></app-card-article>
-              </div>
-            </ng-container>
-            <ng-container *ngIf="pageName == 'conseils pratique'">
-              <div class="row">
-                <app-card-article
-                  *ngFor="
-                    let article of genericervice.get(pageName).getlist()
-                      | paginate: { itemsPerPage: 6, currentPage: p }
-                  "
-                  [link]="['/rubrique/details-article', article.id]"
-                  class="col-md-6 mb-3"
-                  [image]="article.image"
-                  [titre]="article.titre"
-                  [sousTitre]="article.sousTitre"
-                  [resume]="article.resume"
-                  [etiquette]="article.etiquette"
-                  [motsCles]="article.motsCles"
-                ></app-card-article>
-              </div>
-            </ng-container>
-            <ng-container *ngIf="pageName == 'guides emploi'">
+            <ng-container *ngIf="pageName == 'guides-emploi'">
               {{ pageName }} khasha d tzad
             </ng-container>
-            <ng-container *ngIf="pageName == 'legislations et textes lois'">
-              {{ pageName }} khasha d tzad
-            </ng-container>
-            <ng-container *ngIf="pageName == 'temoignage'">
-              <app-temoignage
-                [pageName]="pageName"
-                [data]="genericervice.get(pageName).getlist()"
-              ></app-temoignage>
-            </ng-container>
-            <ng-container *ngIf="pageName == 'rubrique'">
-              <div class="row">
-                <app-card-article
-                  *ngFor="
-                    let article of genericervice.get(pageName).getlist()
-                      | paginate: { itemsPerPage: 6, currentPage: p }
-                  "
-                  [link]="['/rubrique/details-article', article?.id]"
-                  class="col-md-6 mb-3"
-                  [image]="article?.image"
-                  [titre]="article?.titre"
-                  [sousTitre]="article?.sousTitre"
-                  [resume]="article?.resume"
-                  [etiquette]="article?.etiquette"
-                  [motsCles]="article?.motsCles"
-                ></app-card-article>
-              </div>
-            </ng-container>
-            <ng-container *ngIf="pageName == 'sondage'">
-              <app-sondage-historique
-                *ngFor="
-                  let sondage of genericervice.get(pageName).getlist()
-                    | paginate: { itemsPerPage: 4, currentPage: p }
-                "
-                [sondage]="sondage"
-              ></app-sondage-historique>
-            </ng-container>
-            <ng-container *ngIf="pageName == 'liens utiles'">
-              <app-card-lien-utile
-                class="col-md-3 mb-3"
-                *ngFor="
-                  let lienUtile of genericervice.get(pageName).getlist()
-                    | paginate: { itemsPerPage: 6, currentPage: p }
-                "
-                [data]="lienUtile"
-              ></app-card-lien-utile>
-            </ng-container>
-            <ng-container *ngIf="pageName == 'forums'"></ng-container>
-            <ng-container *ngIf="pageName == 'temoignage'"></ng-container>
-            <ng-container *ngIf="pageName == 'adresses utiles'"></ng-container>
-            <ng-container *ngIf="pageName == 'documents'"></ng-container>
-            <ng-container *ngIf="pageName == 'conseils pratique'">
+
+
+
+
+
+
+
+            <ng-container *ngIf="pageName == 'evenement'">
               <app-card-article
                 class="col-md-6 mb-3"
                 *ngFor="
                   let event of genericervice.get(pageName).getlist()
-                    | paginate: { itemsPerPage: 20, currentPage: p }
+                    | paginate: { itemsPerPage: 6, currentPage: p }
                 "
                 [isArticle]="false"
-                [link]="['/evenement/details-event']"
+                [link]="['/evenement/details-event', event?.id]"
                 [image]="event?.image"
                 [titre]="event?.titre"
                 [dateDebut]="event?.dateDebut"
@@ -441,6 +340,67 @@
                 [organisateur]="event?.organisateur"
               ></app-card-article>
             </ng-container>
+
+
+
+
+
+
+            <ng-container *ngIf="pageName ==  'temoignage'">
+              <app-temoignage
+                [pageName]="pageName"
+                [data]="genericervice.get(pageName).getlist()"
+              ></app-temoignage>
+            </ng-container>
+            <ng-container *ngIf="pageName == 'sondage'">
+              <app-sondage-historique
+                *ngFor="
+                  let sondage of genericervice.get(pageName).getlist()
+                    | paginate: { itemsPerPage: 4, currentPage: p }
+                "
+                [sondage]="sondage"
+              ></app-sondage-historique>
+            </ng-container>
+            <ng-container *ngIf="pageName ==  'forums'">
+              <app-card-forum
+                *ngFor="
+                  let item of genericervice.get(pageName).getlist()
+                    | paginate: { itemsPerPage: 6, currentPage: p }
+                "
+                class="col-md-4 mb-2"
+                [routerLink]="[
+                  '/espace-communautaire/details-forum',
+                  item._id.$oid
+                ]"
+                [image]="item.image"
+                [designation]="item.designation"
+                [descriptif]="item.descriptif"
+                [nbrTheme]="item.nbrTheme"
+                [nbrParticipants]="item.nbrParticipants"
+                [nbrEchanges]="item.nbrEchanges"
+              >
+              </app-card-forum>
+            </ng-container>
+
+
+
+            <ng-container *ngIf="pageName ==  'bloggers'">
+                    <app-card-blogueur
+                      *ngFor="
+                  let membre of genericervice.get(pageName).getlist()
+                    | paginate: { itemsPerPage: 6, currentPage: p }
+                "
+                  [routerLink]="['/details-blogeur/',membre.__id]"
+                  class="col-md-4 mb-3"
+                  [nom]="membre.nom"
+                  [prenom]="membre.prenom"
+                  [fonction]="membre.fonction"
+                  [resume]="membre.resume"
+                  [image]="membre.image"
+                ></app-card-blogueur>
+            </ng-container>
+
+
             <ng-container *ngIf="pageName == 'undfind'">
               <section class="section p-0 bg-img cover-background">
                 <div class="container-fluid d-flex flex-column">
@@ -468,20 +428,22 @@
                 </div>
               </section>
             </ng-container>
-
             <pagination-controls
               *ngIf="!['undfind', 'temoignage'].includes(pageName)"
               class="text-center"
               (pageChange)="p = $event"
             >
             </pagination-controls>
+
+
+
           </div>
         </div>
       </div>
     </div>
-    <div
-      *ngIf="showRightSideBar"
-      class="section-recruteur spacing-inline-end mb-3"
-    ></div>
+      <div
+        *ngIf="showRightSideBar"
+        class="section-recruteur spacing-inline-end mb-3"
+      ></div>
   </div>
 </div>
