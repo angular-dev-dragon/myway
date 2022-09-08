@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { OwlOptions } from 'ngx-owl-carousel-o'
 import { GenericService } from 'src/app/shared/services/generic.service'
 
 @Component({
@@ -47,5 +48,33 @@ export class ListFavorisComponent implements OnInit {
         }
       })
     }
+  }
+
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
+    navSpeed: 700,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      400: {
+        items: 1,
+      },
+      740: {
+        items: 2,
+      },
+      940: {
+        items: 3,
+      },
+    },
+    nav: true,
+    navText: [
+      '<i style="color: #7c2bbb;" class="ti-angle-left"></i>',
+      '<i style="color: #7c2bbb;" class="ti-angle-right"></i>',
+    ],
   }
 }

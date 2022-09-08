@@ -120,6 +120,7 @@ import { TemoignageComponent } from './components/temoignage/temoignage.componen
 import { FavButtonComponent } from './components/fav-button/fav-button.component'
 import { CardLienUtileComponent } from './components/card-lien-utile/card-lien-utile.component'
 import { CardAdresseUtileComponent } from './components/card-adresse-utile/card-adresse-utile.component'
+import { CarouselModule } from 'ngx-owl-carousel-o'
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json')
@@ -182,6 +183,7 @@ let modules: any = [
   DialogModule,
   FormsModule,
   HttpClientModule,
+  CarouselModule,
   TranslateModule.forRoot({
     loader: {
       provide: TranslateLoader,

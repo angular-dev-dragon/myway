@@ -1,4 +1,4 @@
-import { RecruteurService } from 'src/app/shared/services/recruteur.service';
+import { RecruteurService } from 'src/app/shared/services/recruteur.service'
 import {
   AfterViewInit,
   Component,
@@ -39,10 +39,7 @@ export class FilterByTextComponent implements OnInit, AfterViewInit, OnChanges {
 
   filterByText() {
     let searchValue = this.searchInput?.nativeElement.value || ''
-
-
-
-
+    console.log(this.pageName)
 
     if (this.pageName == 'quiz') {
       let dataFiltred = this.data.filter((data: any) => {
@@ -65,8 +62,7 @@ export class FilterByTextComponent implements OnInit, AfterViewInit, OnChanges {
       this.pageName == 'candidature spontanee' ||
       this.pageName == 'recruteur'
     ) {
-
-    this.genericService.get(this.pageName)?.filterByText(searchValue);
+      this.genericService.get(this.pageName)?.filterByText(searchValue)
 
       // let dataFiltred = this.genericService
       //   .get(this.pageName)
@@ -92,12 +88,12 @@ export class FilterByTextComponent implements OnInit, AfterViewInit, OnChanges {
       })
       this.filtredData.emit(dataFiltred)
     } else if (this.pageName == 'adresses utiles') {
-      let dataFiltred = this.data.filter((data: any) => {
-        return data.translations['fr'].__designation
-          .toLowerCase()
-          .includes(searchValue.toLowerCase())
-      })
-      this.filtredData.emit(dataFiltred)
+      // let dataFiltred = this.data.filter((data: any) => {
+      //   this.genericService.get(this.pageName)?.filterByText(searchValue)
+      // })
+
+      this.genericService.get(this.pageName)?.filterByText(searchValue)
+      //this.filtredData.emit(dataFiltred)
     } else if (this.pageName == 'liens utiles') {
       let dataFiltred = this.data.filter((data: any) => {
         return data.translations['fr'].__designation
@@ -133,10 +129,3 @@ export class FilterByTextComponent implements OnInit, AfterViewInit, OnChanges {
     return this.filtredData
   }
 }
-
-
-
-
-
-
-
