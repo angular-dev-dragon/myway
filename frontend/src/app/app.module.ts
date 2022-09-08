@@ -21,6 +21,8 @@ import { MetiersModule } from './components/metiers/metiers.module'
 import { QuizModule } from './components/quiz/quiz.module'
 import { EvenementModule } from './components/evenement/evenement.module'
 import { DaliljobeModule } from './components/daliljobe/daliljobe.module'
+import { GuideEmploiModule } from './components/guides/guide.module'
+
 import { WishListModule } from './components/list-favoris/wishList.module'
 
 @NgModule({
@@ -42,6 +44,7 @@ import { WishListModule } from './components/list-favoris/wishList.module'
     QuizModule,
     EvenementModule,
     WishListModule,
+    GuideEmploiModule,
   ],
   exports: [],
   providers: [],

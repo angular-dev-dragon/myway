@@ -10,13 +10,19 @@ export const content: Routes = [
   },
 
   {
-  path: 'home',
+    path: 'home',
     loadChildren: () =>
       import('../../components/landing-page/landing-page.module').then(
         (m) => m.LandingPageModule,
       ),
   },
-
+  {
+    path: 'guide',
+    loadChildren: () =>
+      import('../../components/guides/guide.module').then(
+        (m) => m.GuideEmploiModule,
+      ),
+  },
   {
     path: 'Candidats',
     loadChildren: () =>

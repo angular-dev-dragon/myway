@@ -186,7 +186,7 @@ export class OffreService {
     this.listOffres = newList3
   }
 
-  getoffres() {
+  getlist() {
     return this.listOffres
   }
 

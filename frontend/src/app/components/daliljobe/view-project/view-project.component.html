@@ -10,7 +10,7 @@
 
     <div class="w-100">
       <div *ngIf="showHeader" class="section-recruteur mb-3 w-100">
-        <h2 class="px-1" style="font-size: 25px">
+        <h2 class="px-1" style="font-size: 25px;">
           {{ pageName | titlecase }}
         </h2>
       </div>
@@ -22,22 +22,19 @@
           <hr *ngIf="pageName != 'undfind'" />
 
           <div class="row">
-           <ng-container *ngIf="pageName == 'offres-emploi' ||
+            <ng-container
+              *ngIf="
+                pageName == 'offres-emploi' ||
                 pageName == 'offres-de-stage' ||
                 pageName == 'offres-alternance' ||
                 pageName == 'offres extra' ||
                 pageName == 'demandes-specifiques'
-
-
-
-
-
               "
             >
               <div class="row" *ngIf="genericervice.orientation == 'verticale'">
                 <app-card-offre-Verticale
                   *ngFor="
-                    let offre of genericervice.get('offre')?.getoffres()
+                    let offre of genericervice.get(pageName)?.getlist()
                       | paginate: { itemsPerPage: 20, currentPage: p }
                   "
                   [pageName]="pageName"
@@ -69,7 +66,7 @@
                 <app-card-offre-horizontale
                   class="col-md-6 mb-3"
                   *ngFor="
-                    let offre of genericervice.get(pageName)?.getoffres()
+                    let offre of genericervice.get(pageName)?.getlist()
                       | paginate: { itemsPerPage: 20, currentPage: p }
                   "
                   [pageName]="pageName"
@@ -140,10 +137,12 @@
                 ></condida-c-card>
               </div>
             </ng-container>
-            <ng-container *ngIf="pageName == 'recruteurs'||
+            <ng-container
+              *ngIf="
+                pageName == 'recruteurs' ||
                 pageName == 'associations-insertion-economique' ||
-                pageName == 'etablissements-formation'||
-                pageName == 'cabinets-recrutement'||
+                pageName == 'etablissements-formation' ||
+                pageName == 'cabinets-recrutement' ||
                 pageName == 'condidatures-spontannes'
               "
             >
@@ -173,10 +172,6 @@
               ></app-card-recruiter>
             </ng-container>
 
-
-
-
-
             <ng-container *ngIf="pageName == 'decouverte-des-metiers'">
               <div class="container bootstrap snippets bootdeys">
                 <div class="row">
@@ -194,7 +189,7 @@
                 </div>
               </div>
             </ng-container>
-            <ng-container *ngIf="pageName ==  'metiers-pour-vous'">
+            <ng-container *ngIf="pageName == 'metiers-pour-vous'">
               <div class="container bootstrap snippets bootdeys">
                 <div class="row">
                   <app-card-metiers
@@ -211,12 +206,15 @@
                 </div>
               </div>
             </ng-container>
-            <ng-container *ngIf="pageName == 'hard-skills'||
-            pageName ==   'conseils-pratique'||
-            pageName == 'actualites-emploi' ||
-            pageName == 'soft-skills'||
-            pageName == 'legislations-et-textes-lois'
-            ">
+            <ng-container
+              *ngIf="
+                pageName == 'hard-skills' ||
+                pageName == 'conseils-pratique' ||
+                pageName == 'actualites-emploi' ||
+                pageName == 'soft-skills' ||
+                pageName == 'legislations-et-textes-lois'
+              "
+            >
               <div class="row">
                 <app-card-article
                   *ngFor="
@@ -255,12 +253,7 @@
               ></app-card-quiz>
             </ng-container>
 
-
-
-
-
-
-             <ng-container *ngIf="pageName == 'liens-utiles'">
+            <ng-container *ngIf="pageName == 'liens-utiles'">
               <app-card-lien-utile
                 class="col-md-3 mb-3"
                 *ngFor="
@@ -280,7 +273,7 @@
                 [data]="adresseUtile"
               ></app-card-adresse-utile>
             </ng-container>
-            <ng-container *ngIf="pageName ==  'documents'">
+            <ng-container *ngIf="pageName == 'documents'">
               <div class="container">
                 <div class="section-recruteur mb-3">
                   <h4>Documents a Telecharger</h4>
@@ -312,14 +305,8 @@
               </div>
             </ng-container>
             <ng-container *ngIf="pageName == 'guides-emploi'">
-              {{ pageName }} khasha d tzad
+              <app-card-guide></app-card-guide>
             </ng-container>
-
-
-
-
-
-
 
             <ng-container *ngIf="pageName == 'evenement'">
               <app-card-article
@@ -341,12 +328,7 @@
               ></app-card-article>
             </ng-container>
 
-
-
-
-
-
-            <ng-container *ngIf="pageName ==  'temoignage'">
+            <ng-container *ngIf="pageName == 'temoignage'">
               <app-temoignage
                 [pageName]="pageName"
                 [data]="genericervice.get(pageName).getlist()"
@@ -361,7 +343,7 @@
                 [sondage]="sondage"
               ></app-sondage-historique>
             </ng-container>
-            <ng-container *ngIf="pageName ==  'forums'">
+            <ng-container *ngIf="pageName == 'forums'">
               <app-card-forum
                 *ngFor="
                   let item of genericervice.get(pageName).getlist()
@@ -378,28 +360,24 @@
                 [nbrTheme]="item.nbrTheme"
                 [nbrParticipants]="item.nbrParticipants"
                 [nbrEchanges]="item.nbrEchanges"
-              >
-              </app-card-forum>
+              ></app-card-forum>
             </ng-container>
 
-
-
-            <ng-container *ngIf="pageName ==  'bloggers'">
-                    <app-card-blogueur
-                      *ngFor="
+            <ng-container *ngIf="pageName == 'bloggers'">
+              <app-card-blogueur
+                *ngFor="
                   let membre of genericervice.get(pageName).getlist()
                     | paginate: { itemsPerPage: 6, currentPage: p }
                 "
-                  [routerLink]="['/details-blogeur/',membre.__id]"
-                  class="col-md-4 mb-3"
-                  [nom]="membre.nom"
-                  [prenom]="membre.prenom"
-                  [fonction]="membre.fonction"
-                  [resume]="membre.resume"
-                  [image]="membre.image"
-                ></app-card-blogueur>
+                [routerLink]="['/details-blogeur/', membre.__id]"
+                class="col-md-4 mb-3"
+                [nom]="membre.nom"
+                [prenom]="membre.prenom"
+                [fonction]="membre.fonction"
+                [resume]="membre.resume"
+                [image]="membre.image"
+              ></app-card-blogueur>
             </ng-container>
-
 
             <ng-container *ngIf="pageName == 'undfind'">
               <section class="section p-0 bg-img cover-background">
@@ -432,18 +410,14 @@
               *ngIf="!['undfind', 'temoignage'].includes(pageName)"
               class="text-center"
               (pageChange)="p = $event"
-            >
-            </pagination-controls>
-
-
-
+            ></pagination-controls>
           </div>
         </div>
       </div>
     </div>
-      <div
-        *ngIf="showRightSideBar"
-        class="section-recruteur spacing-inline-end mb-3"
-      ></div>
+    <div
+      *ngIf="showRightSideBar"
+      class="section-recruteur spacing-inline-end mb-3"
+    ></div>
   </div>
 </div>
