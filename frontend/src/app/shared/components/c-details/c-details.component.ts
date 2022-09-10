@@ -1,7 +1,8 @@
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Component, Input, OnInit } from '@angular/core'
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router'
-import { CondidaInfoService } from 'src/app/shared/Services/condida-info/condida-info.service'
+import { CondidatService } from '../../services/condidat.service'
+
 
 @Component({
   selector: 'app-c-details',
@@ -19,7 +20,7 @@ export class CDetailsComponent implements OnInit {
 
   public condida_contact: FormGroup
   constructor(
-    private data: CondidaInfoService,
+    private data: CondidatService,
     private fb: FormBuilder,
     private activatedRoute: ActivatedRoute,
   ) {

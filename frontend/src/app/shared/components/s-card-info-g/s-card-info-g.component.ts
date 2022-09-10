@@ -1,10 +1,11 @@
-import { CondidaInfoService } from '../../Services/condida-info/condida-info.service';
+
 
 import { MegaMenuItem, MenuItem } from 'primeng/api';
 import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap';
 import { style } from '@angular/animations';
-import { SCardInfoGService } from '../../Services/s-card_info_g/s-card-info-g.service';
+import { SCardInfoGService } from '../../tools/services/s-card_info_g/s-card-info-g.service';
+import { CondidatService } from '../../services/condidat.service';
 
 
 @Component({
@@ -32,38 +33,13 @@ export class SCardInfoGComponent implements OnInit {
   offer_filter: boolean = true;
   filter_show: boolean = true;
 
+  info_slids: any = [];
 
-
-
-  info_slids :any = [];
-
-
-  constructor(
-    
-    private data: SCardInfoGService,
-    public data2: CondidaInfoService
-
-  ) {
-
-   this.info_slids = this.data.get_all_s_card()
+  constructor(private data: SCardInfoGService, public data2: CondidatService) {
+    this.info_slids = this.data.get_all_s_card();
   }
 
   ngOnInit() {}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 

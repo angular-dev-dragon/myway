@@ -1,4 +1,4 @@
-<div *ngIf="pfilterType == 'detail'" class="sideBar-Main">
+<div class="sideBar-Main">
   <div
     class="btn btn-outline-secondary"
 
@@ -80,10 +80,14 @@
           class="accordion-item"
           *ngIf="
             pageName == 'offre' ||
+            pageName == 'offres-emploi'||
+            pageName ==  'offres-de-stage'||
+            pageName ==  'offres-alternance'||
+            pageName ==  'offres-extra'||
             pageName == 'candidat' ||
             pageName == 'demande specifique' ||
             pageName == 'candidature spontanee' ||
-            pageName == 'recruteur'
+            pageName == 'recruteurs'
           "
         >
           <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
@@ -209,7 +213,11 @@
 
         <div
           class="accordion-item"
-          *ngIf="pageName == 'offre' || pageName == 'demande specifique'"
+          *ngIf="pageName == 'offre' ||
+            pageName == 'offres-emploi'||
+            pageName ==  'offres-de-stage'||
+            pageName ==  'offres-alternance'||
+            pageName ==  'offres-extra'|| pageName == 'demande specifique'"
         >
           <h2 class="accordion-header" id="panelsStayOpen-headingThree">
             <button
@@ -257,7 +265,11 @@
         <!-- #region Type Contrat -->
         <div
           class="accordion-item"
-          *ngIf="pageName == 'offre' || pageName == 'demande specifique'"
+          *ngIf="pageName == 'offre' ||
+            pageName == 'offres-emploi'||
+            pageName ==  'offres-de-stage'||
+            pageName ==  'offres-alternance'||
+            pageName ==  'offres-extra'|| pageName == 'demande specifique'"
         >
           <h2 class="accordion-header" id="panelsStayOpen-headingFour">
             <button
@@ -383,6 +395,10 @@
           class="accordion-item"
           *ngIf="
             pageName == 'offre' ||
+            pageName == 'offres-emploi'||
+            pageName ==  'offres-de-stage'||
+            pageName ==  'offres-alternance'||
+            pageName ==  'offres-extra'||
             pageName == 'demande specifique' ||
             pageName == 'candidat'
           "
@@ -503,6 +519,10 @@
           class="accordion-item"
           *ngIf="
             pageName == 'offre' ||
+            pageName == 'offres-emploi'||
+            pageName ==  'offres-de-stage'||
+            pageName ==  'offres-alternance'||
+            pageName ==  'offres-extra'||
             pageName == 'candidat' ||
             pageName == 'demande specifique'
           "
@@ -620,7 +640,11 @@
 
         <div
           class="accordion-item"
-          *ngIf="pageName == 'offre' || pageName == 'candidat'"
+          *ngIf="pageName == 'offre' ||
+            pageName == 'offres-emploi'||
+            pageName ==  'offres-de-stage'||
+            pageName ==  'offres-alternance'||
+            pageName ==  'offres-extra'|| pageName == 'candidat'"
         >
           <h2 class="accordion-header" id="panelsStayOpen-headingSeven">
             <button
@@ -802,7 +826,7 @@
         <!-- #region Type Societe -->
         <div
           class="accordion-item"
-          *ngIf="pageName == 'candidature spontanee' || pageName == 'recruteur'"
+          *ngIf="pageName == 'candidature spontanee' || pageName == 'recruteurs'"
         >
           <h2 class="accordion-header" id="panelsStayOpen-headingFive">
             <button
@@ -1030,7 +1054,7 @@
   </div>
 </div>
 
-<div *ngIf="pfilterType == 'name'" class="row px-2">
+<!-- <div *ngIf="pfilterType == 'name'" class="row px-2">
   <div class="col-md-8">
     <div class="my-2">
       <div class="my-2">
@@ -1112,9 +1136,9 @@
       <!-- </div>
           </li>
         </ul> -->
-    </div>
-  </div>
-</div>
+    <!-- </div>
+  </div> -->
+<!-- </div> -->
 <!-- <div class="btn-group">
     <button
       (click)="changeview('verticale')"

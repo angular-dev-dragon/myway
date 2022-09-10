@@ -1,142 +1,85 @@
-import { RecruteurService } from 'src/app/shared/services/recruteur.service';
 import {
   AfterViewInit,
   Component,
-  EventEmitter,
   Input,
-  OnChanges,
   OnInit,
-  Output,
-  SimpleChanges,
   ViewChild,
-} from '@angular/core'
-import { GenericService } from '../services/generic.service'
+} from '@angular/core';
+import { GenericService } from '../services/generic.service';
+import { FilterService } from '../tools/services/filter/filter.service';
+
 
 @Component({
   selector: 'app-filter-by-text',
   templateUrl: './filter-by-text.component.html',
   styleUrls: ['./filter-by-text.component.scss'],
 })
-export class FilterByTextComponent implements OnInit, AfterViewInit, OnChanges {
-  @Input() data: any = []
-  @Input() pageName: string = ''
+export class FilterByTextComponent implements OnInit, AfterViewInit {
+  path: string | string [] = '';
+  data: any;
+  @Input() pageName: string = '';
+  @ViewChild('search') searchInput!: any;
 
-  @Output() filtredData: any = new EventEmitter<any>()
+  constructor(
+    private filterService: FilterService,
+    private genericService: GenericService
+  ) {}
 
-  constructor(public genericService: GenericService) {}
-  ngOnChanges(changes: SimpleChanges): void {
-    // if (changes['data'] && this.data) {
-    //   this.filterByText()
-    // }
-  }
   ngAfterViewInit(): void {
-    this.filterByText()
+   this.data = this.filterService.getdata(this.pageName);
   }
 
   ngOnInit(): void {}
 
-  @ViewChild('search') searchInput!: any
-
   filterByText() {
-    let searchValue = this.searchInput?.nativeElement.value || ''
+    this.data = this.filterService.getdata(this.pageName);
+
+    let search = this.searchInput?.nativeElement.value || '';
+
+
+
+
+        this.pageName == 'offres-emploi'? (this.path = ['Intitule', 'Poste'])
+      : this.pageName == 'offres-de-stage'? (this.path = ['Intitule', 'Poste'])
+      : this.pageName == 'offres-alternance'? (this.path = ['Intitule', 'Poste'])
+      : this.pageName == 'offres-extra' ? (this.path = ['Intitule', 'Poste'])
+      : this.pageName == 'conseils-pratique'? (this.path = ['titre', 'sousTitre'])
+      : this.pageName == 'actualites-emploi'? (this.path = ['titre', 'sousTitre'])
+      : this.pageName == 'soft-skills'? (this.path = ['titre', 'sousTitre'])
+      : this.pageName == 'hard-skills'? (this.path = ['titre', 'sousTitre'])
+      : this.pageName == 'legislations-et-textes-lois' ? (this.path = ['titre', 'sousTitre'])
+      : this.pageName == 'candidats'? (this.path = ['info.name.first_name', 'info.name.last_name'])
+      : this.pageName == 'quiz'? (this.path = ['titre', 'domaine'])
+      : this.pageName == 'demandes-specifiques' ? (this.path = ['Poste'])
+      : this.pageName == 'forums'? (this.path = ['designation'])
+      : this.pageName == 'sondage'? (this.path = ['translations.fr.__designation'])
+      : this.pageName == 'temoignage' ? (this.path = ['nom_ou_pseudo', 'fonction'])
+      : this.pageName == 'condidatures-spontannes'? (this.path = ['title', 'secteur'])
+      : this.pageName == 'recruteurs'? (this.path = ['title', 'secteur'])
+      : this.pageName == 'etablissements-formation'? (this.path = ['title', 'secteur'])
+      : this.pageName == 'cabinets-recrutement'? (this.path = ['title', 'secteur'])
+      : this.pageName == 'associations-insertion-economique'? (this.path = ['title', 'secteur'])
+      : this.pageName == 'bloggers'? (this.path = ['nom', 'Secteur'])
+      : this.pageName == 'decouverte-des-metiers'? (this.path = ['Intitule', 'Secteur'])
+      : this.pageName == 'metiers-pour-vous' ? (this.path = ['Intitule', 'Secteur'])
+      : this.pageName == 'adresses-utiles'? (this.path = ['translations.fr.__designation'])
+      : this.pageName == 'liens-utiles'? (this.path = ['translations.fr.__designation'])
+      : this.pageName == 'documents'? (this.path = ['translations.fr.__titre', 'translations.fr.__sous_titre'])
+      // : this.pageName == 'guides-emploi'? (this.path = [])
+      : this.pageName == 'evenement'? (this.path = ['titre', 'TypeEvenement'])
+      : (this.path = '');
 
 
 
 
 
-    if (this.pageName == 'quiz') {
-      let dataFiltred = this.data.filter((data: any) => {
-        return data.titre.toLowerCase().includes(searchValue.toLowerCase())
-      })
 
-      this.filtredData.emit(dataFiltred)
-      return this.filtredData
-    } else if (this.pageName == 'evenement') {
-      let dataFiltred = this.data.filter((data: any) => {
-        return data.titre.toLowerCase().includes(searchValue.toLowerCase())
-      })
-      this.filtredData.emit(dataFiltred)
-    } else if (this.pageName == 'offre') {
-      let dataFiltred = this.data.filter((data: any) => {
-        return data.Intitule.toLowerCase().includes(searchValue.toLowerCase())
-      })
-      this.filtredData.emit(dataFiltred)
-    } else if (
-      this.pageName == 'candidature spontanee' ||
-      this.pageName == 'recruteur'
-    ) {
-
-    this.genericService.get(this.pageName)?.filterByText(searchValue);
-
-      // let dataFiltred = this.genericService
-      //   .get(this.pageName)
-      //   .filter((data: any) => {
-      //     return data.title.toLowerCase().includes(searchValue.toLowerCase());
-      //   });
-      // this.filtredData.emit(dataFiltred)
-    } else if (this.pageName == 'candidat') {
-      let dataFiltred = this.data.filter((data: any) => {
-        return data.info.name.first_name
-          .toLowerCase()
-          .includes(searchValue.toLowerCase())
-      })
-      this.filtredData.emit(dataFiltred)
-    } else if (this.pageName == 'evenement') {
-      let dataFiltred = this.data.filter((data: any) => {
-        return data.titre.toLowerCase().includes(searchValue.toLowerCase())
-      })
-      this.filtredData.emit(dataFiltred)
-    } else if (this.pageName == 'conseils pratique') {
-      let dataFiltred = this.data.filter((data: any) => {
-        return data.titre.toLowerCase().includes(searchValue.toLowerCase())
-      })
-      this.filtredData.emit(dataFiltred)
-    } else if (this.pageName == 'adresses utiles') {
-      let dataFiltred = this.data.filter((data: any) => {
-        return data.translations['fr'].__designation
-          .toLowerCase()
-          .includes(searchValue.toLowerCase())
-      })
-      this.filtredData.emit(dataFiltred)
-    } else if (this.pageName == 'liens utiles') {
-      let dataFiltred = this.data.filter((data: any) => {
-        return data.translations['fr'].__designation
-          .toLowerCase()
-          .includes(searchValue.toLowerCase())
-      })
-      this.filtredData.emit(dataFiltred)
-    } else if (this.pageName == 'documents') {
-      let dataFiltred = this.data.filter((data: any) => {
-        return data.translations['fr'].__titre
-          .toLowerCase()
-          .includes(searchValue.toLowerCase())
-      })
-      this.filtredData.emit(dataFiltred)
-    } else if (this.pageName == 'forums') {
-      let dataFiltred = this.data.filter((data: any) => {
-        return data.designation
-          .toLowerCase()
-          .includes(searchValue.toLowerCase())
-      })
-      this.filtredData.emit(dataFiltred)
-    } else if (this.pageName == 'blogeurs') {
-      let dataFiltred = this.data.filter((data: any) => {
-        return data.nom.toLowerCase().includes(searchValue.toLowerCase())
-      })
-      this.filtredData.emit(dataFiltred)
-    } else if (this.pageName == 'metier') {
-      let dataFiltred = this.data.filter((data: any) => {
-        return data.Intitule.toLowerCase().includes(searchValue.toLowerCase())
-      })
-      this.filtredData.emit(dataFiltred)
+    if (search != '' || this.path != '') {
+      this.data = this.filterService.filter(this.data, {
+        path: this.path,
+        filterbythis: search,
+      });
     }
-    return this.filtredData
   }
 }
-
-
-
-
-
-
 

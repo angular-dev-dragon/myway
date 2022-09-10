@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
-import { SliderService } from 'src/app/shared/Services/slider/slider.service';
+import { SliderService } from 'src/app/shared/tools/services/slider/slider.service';
+
 @Component({
   selector: 'landing-page-hero-section',
   templateUrl: './hero-section.component.html',

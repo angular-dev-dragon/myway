@@ -1,8 +1,8 @@
 // #region importes
 
 import { Component, OnInit } from '@angular/core'
+import { CondidatService } from 'src/app/shared/services/condidat.service'
 
-import { CondidaInfoService } from 'src/app/shared/Services/condida-info/condida-info.service'
 
 // #endregion
 // #region selectoes
@@ -33,8 +33,8 @@ export class CListComponent implements OnInit {
   orientation: any = 'horizontale'
 
   // #endregion
-  constructor(private condida_data: CondidaInfoService) {
-    this.condidatsList = this.condida_data.get_all_condidats()
+  constructor(private condida_data: CondidatService) {
+    this.condidatsList = this.condida_data.getlist()
 
     // #region condida data
     // this.condidatsList = [

@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core'
 
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { DynamicDialogRef } from 'primeng/dynamicdialog'
-import { CountriesInfoService } from '../../../../../shared/Services/Countries-info/countries-info.service'
+import { CountriesInfoService } from '../../../../../shared/tools/services/Countries-info/countries-info.service'
 @Component({
   selector: 'header-profile-from',
   templateUrl: './header-profile-from.component.html',

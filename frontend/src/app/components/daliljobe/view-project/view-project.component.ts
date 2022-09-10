@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { GenericService } from 'src/app/shared/services/generic.service';
+import { FilterService } from 'src/app/shared/tools/services/filter/filter.service';
 @Component({
   selector: 'app-view-project',
   styleUrls: ['./view.scss'],
@@ -17,11 +18,19 @@ export class ViewProjectComponent implements OnInit {
   showTopFilter: boolean = true;
   showInLeftSideBar: boolean = true;
   resultData: any;
-  constructor(public genericervice: GenericService, private router: Router) {
+
+  constructor(
+    public filterService:FilterService,
+    public genericervice: GenericService, private router: Router) {
     this.router.events.subscribe((event: any) => {
+       console.log('test function');
       if (event instanceof NavigationEnd) {
         this.pageName = event.url.split('/')[1];
       }
+    this.genericervice.get(this.pageName)
+      this.resultData = this.genericervice.reusltdata;
+
+
     });
   }
 
@@ -57,11 +66,15 @@ export class ViewProjectComponent implements OnInit {
       //////////////////////////////
       this.pageName == 'evenement'
     ) {
+
+
       this.showLeftSideBar = true;
       this.showHeader = true;
       this.showTopFilter = true;
       this.showRightSideBar = false;
       this.showInLeftSideBar = false;
+      console.log(this.showLeftSideBar);
+
     } else if (
       this.pageName == 'soft-skills' ||
       this.pageName == 'hard-skills' ||

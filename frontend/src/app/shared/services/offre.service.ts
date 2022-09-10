@@ -7,7 +7,7 @@ import { API } from './api.service'
 })
 export class OffreService {
   constructor(private http: HttpClient) {
-    this.listOffres = this.allOffres
+    this.listOffres = this.allOffres;
   }
 
   allOffres: any = [
@@ -15,13 +15,12 @@ export class OffreService {
       id: '1',
       Intitule: 'AHMED',
       TypeContrat: 'CDI',
-      Poste:
-        ' Développeur Front-End Développeur Front-End Développeur Front-End',
+      Poste:' Développeur Front-End Développeur Front-End Développeur Front-End',
       TypePoste: 'Emploi',
       NomEntreprise: 'Jumia',
       TypeEntreprise: 'StartUp',
       Image: '',
-      Ville: 'Tanger',
+      ville: 'Tanger',
       Secteur: 'Informatique',
       Date: '2023-02-02',
       Competences: 'HTML',
@@ -40,7 +39,7 @@ export class OffreService {
       NomEntreprise: 'Smart automation technologies',
       TypeEntreprise: 'StartUp',
       Image: '',
-      Ville: 'Tétouan',
+      ville: 'Tétouan',
       Secteur: 'Informatique',
       Date: '2022-02-02',
       Competences: 'HTML',
@@ -59,14 +58,14 @@ export class OffreService {
       NomEntreprise: 'Jumia',
       TypeEntreprise: 'StartUp',
       Image: '',
-      Ville: 'Tanger',
+      ville: 'Tanger',
       Secteur: 'Informatique',
       Date: '2000-02-02',
       Competences: 'HTML',
       Pays: 'Algérie',
       NiveauxEtude: 'Bac',
       NiveauxExperience: 'entre 1 et 2',
-      langue: 'Espagnol',
+      langue: 'Français',
       Region: 'Tanger-Tetouan',
     },
     {
@@ -78,7 +77,7 @@ export class OffreService {
       TypePoste: 'extra',
       TypeEntreprise: 'StartUp',
       Image: '',
-      Ville: 'Tétouan',
+      ville: 'Tétouan',
       Secteur: 'Textile',
       Date: '2022-05-02',
       Competences: 'HTML',
@@ -101,15 +100,15 @@ export class OffreService {
       Date: '2022-02-02',
       Competences: 'HTML',
       Pays: 'Algérie',
-      Ville: 'Tanger',
+      ville: 'Tanger',
       Region: 'Grand Casablanca',
 
       NiveauxEtude: 'qualification avant bac',
       NiveauxExperience: "moins d'un ans",
       langue: 'Espagnol',
     },
-  ]
-  listOffres: any = []
+  ];
+  listOffres: any = [];
 
   filter(
     searchFiltre: string = '',
@@ -121,73 +120,73 @@ export class OffreService {
     contratFiltre: any,
     niveauxEtFiltre: any,
     niveauxExFiltre: any,
-    langueFiltre: any,
+    langueFiltre: any
     // sort_by_name: string,
     // sort_by_date: string,
   ) {
-    this.listOffres = this.allOffres
+    this.listOffres = this.allOffres;
 
     if (searchFiltre != '') {
       this.listOffres = this.listOffres.filter((offre: any) => {
-        offre.Intitule.toLowerCase().includes(searchFiltre.toLowerCase())
-      })
-      return this.allOffres
+        offre.Intitule.toLowerCase().includes(searchFiltre.toLowerCase());
+      });
+      return this.allOffres;
     }
 
     if (paysFiltre != '') {
       this.listOffres = this.listOffres.filter((offre: any) => {
-        return offre.Pays == paysFiltre
-      })
+        return offre.Pays == paysFiltre;
+      });
     } else if (regionFiltre != '') {
       this.listOffres = this.listOffres.filter((offre: any) => {
-        return offre.Region == regionFiltre
-      })
+        return offre.Region == regionFiltre;
+      });
     } else if (villeFiltre != '') {
       this.listOffres = this.listOffres.filter((offre: any) => {
-        return offre.Ville == villeFiltre
-      })
+        return offre.ville == villeFiltre;
+      });
     } else if (secteurFiltre != '') {
       this.listOffres = this.listOffres.filter((offre: any) => {
-        return offre.Secteur == secteurFiltre
-      })
+        return offre.Secteur == secteurFiltre;
+      });
     }
 
     if (dateFiltre != '') {
       this.listOffres = this.listOffres.filter((offre: any) => {
-        return offre.Date == dateFiltre
-      })
+        return offre.Date == dateFiltre;
+      });
     }
-    this.checkboxFiltre(contratFiltre, 'TypeContrat')
-    this.checkboxFiltre(niveauxEtFiltre, 'NiveauxEtude')
-    this.checkboxFiltre(niveauxExFiltre, 'NiveauxExperience')
-    this.checkboxFiltre(langueFiltre, 'langue')
+    this.checkboxFiltre(contratFiltre, 'TypeContrat');
+    this.checkboxFiltre(niveauxEtFiltre, 'NiveauxEtude');
+    this.checkboxFiltre(niveauxExFiltre, 'NiveauxExperience');
+    this.checkboxFiltre(langueFiltre, 'langue');
   }
 
   checkboxFiltre(CheckboxList: any, label: any) {
-    let newList2
-    let newList3: any = this.listOffres
-    let isFirstTime: Boolean = true
+    let newList2;
+    let newList3: any = this.listOffres;
+    let isFirstTime: Boolean = true;
     CheckboxList.map((filtre: any) => {
       if (filtre.nativeElement.checked) {
         if (isFirstTime == true) {
-          isFirstTime = false
-          newList3 = []
+          isFirstTime = false;
+          newList3 = [];
         }
-        newList2 = this.listOffres
+        newList2 = this.listOffres;
         newList2 = newList2.filter((offre: any) => {
-          return offre[label] == filtre.nativeElement.value
-        })
+          return offre[label] == filtre.nativeElement.value;
+        });
 
         newList2.map((list: any) => {
-          newList3.push(list)
-        })
+          newList3.push(list);
+        });
       }
-    })
-    this.listOffres = newList3
+    });
+    this.listOffres = newList3;
   }
 
-  getoffres() {
-    return this.listOffres
+  getlist() {
+    return this.listOffres;
   }
 
   getByIdWishList(ids: any) {
@@ -195,6 +194,6 @@ export class OffreService {
       headers: new HttpHeaders({
         ids,
       }),
-    })
+    });
   }
 }

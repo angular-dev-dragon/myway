@@ -85,6 +85,9 @@ export class QuizService {
       metier: ['DevOps'],
     },
   ];
+  getlist() {
+    return this.allListQuiz;
+  }
   listQuiz: any = this.allListQuiz;
 
   filter(metierBox: any, secteurSelect: any) {
