@@ -12,51 +12,59 @@ export class GalleryComponent implements OnInit {
   ngOnInit(): void {}
   gallerie: any = [
     {
+      id: 1,
       type_contenu: 'image',
 
-      image: 'https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Square/1.webp',
+      source: 'https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Square/1.webp',
       title: '',
     },
     {
       type_contenu: 'image',
+      id: 2,
 
-      image: 'https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Square/1.webp',
+      source: 'https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Square/1.webp',
       title: '',
     },
     {
       type_contenu: 'video',
+      id: 3,
 
-      image: 'https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Square/1.webp',
+      source: 'https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Square/1.webp',
       title: '',
     },
     {
       type_contenu: 'video',
+      id: 4,
 
-      image: 'https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Square/1.webp',
+      source: 'https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Square/1.webp',
       title: '',
     },
     {
       type_contenu: 'image',
+      id: 5,
 
-      image: 'https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Square/1.webp',
+      source: 'https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Square/1.webp',
       title: '',
     },
     {
       type_contenu: 'image',
+      id: 6,
 
-      image: 'https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Square/1.webp',
+      source: 'https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Square/1.webp',
       title: '',
     },
     {
       type_contenu: 'video',
+      id: 7,
 
-      image: 'https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Square/1.webp',
+      source: 'https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Square/1.webp',
       title: '',
     },
     {
       type_contenu: 'image',
+      id: 8,
 
-      image: 'https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Square/1.webp',
+      source: 'https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Square/1.webp',
       title: '',
     },
   ]
@@ -66,5 +74,10 @@ export class GalleryComponent implements OnInit {
     this.modalService
       .open(modal, { ariaLabelledBy: 'modal-basic-title' })
       .result.then((result) => {})
+  }
+  activeSliderId: any = 0
+  cycleToSlide(photo: any) {
+    this.activeSliderId = 'ngb-slide-' + photo.id
+    console.log(this.activeSliderId)
   }
 }

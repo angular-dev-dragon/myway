@@ -604,6 +604,18 @@ export class AdresseUtileService {
     return this.http.get<any>(API + '/adresse-utile')
   }
 
+  filterByText(searchValue: string) {
+    if (searchValue != '') {
+      this.listAdresseUtiles = this.allAdresseUtiles
+
+      this.listAdresseUtiles = this.listAdresseUtiles.filter((data: any) => {
+        return data.translations['fr'].__designation
+          .toLowerCase()
+          .includes(searchValue.toLowerCase())
+      })
+    }
+  }
+
   getlist() {
     return this.listAdresseUtiles
   }

@@ -35,7 +35,8 @@
 // @include mat.all-component-themes($frontend-theme);
 
 /* You can add global styles to this file, and also import other style files */
-
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 *body {
   background-color: #f6f6f9;
 }
@@ -57,6 +58,13 @@
   background: #ffffff;
   border-color: #3f1c92 !important;
   color: #1a578d !important;
+}
+
+.p-accordion .p-accordion-content {
+  color: #000 !important;
+}
+.p-tabview .p-tabview-panels {
+  color: #000 !important;
 }
 .ellipsis-text {
   text-overflow: ellipsis;
@@ -81,6 +89,7 @@ a {
   border: 0.1rem solid #dcdada;
   border-radius: 0.2rem;
   padding: 1rem;
+  margin-bottom: 1em;
 }
 
 .p-calendar .p-inputtext {
@@ -208,4 +217,74 @@ body {
   &:not(:first-child) {
     border-top: 1px solid #ccc;
   }
+}
+.card-custom-title {
+  height: max-content;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.truncate {
+  height: max-content;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical;
+}
+.truncate-1-line {
+  -webkit-line-clamp: 1;
+}
+.truncate-2-line {
+  -webkit-line-clamp: 2;
+}
+.truncate-3-line {
+  -webkit-line-clamp: 3;
+}
+.truncate-4-line {
+  -webkit-line-clamp: 4;
+}
+.truncate-5-line {
+  -webkit-line-clamp: 5;
+}
+.truncate-6-line {
+  -webkit-line-clamp: 6;
+}
+.truncate-7-line {
+  -webkit-line-clamp: 7;
+}
+.truncate-8-line {
+  -webkit-line-clamp: 8;
+}
+.bt-adresse-lien {
+  border-top: 1px solid #ccc;
+  margin-top: auto;
+}
+.responsive > svg {
+  width: 150px !important;
+}
+.responsive {
+  width: 100%;
+  padding-bottom: 12% !important;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-color: #000000b0;
+}
+.info-small-card {
+  margin-top: 15px;
+
+  line-height: 1.75;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
 }

@@ -5,15 +5,23 @@
       *ngIf="showLeftSideBar"
       class="section-recruteur spacing-inline-end mb-3"
     >
-      <app-filter *ngIf="this.pageName != 'guides-emploi'" class="sideBar-Main" [pageName]="pageName"></app-filter>
-      <dir *ngIf="this.pageName == 'guides-emploi'">
-        hnaya :{{pageName}}
-      </dir>
+
+      <app-card-guide
+        *ngIf="this.pageName == 'guides-emploi'"
+        [pageName]="pageName"
+      ></app-card-guide>
+
+      <app-filter
+        class="sideBar-Main"
+        [pageName]="pageName"
+        *ngIf="this.pageName != 'guides-emploi'"
+      ></app-filter>
+
     </div>
 
     <div class="w-100">
       <div *ngIf="showHeader" class="section-recruteur mb-3 w-100">
-        <h2 class="px-1" style="font-size: 25px">
+        <h2 class="px-1" style="font-size: 25px;">
           {{ pageName | titlecase }}
         </h2>
       </div>
@@ -22,10 +30,12 @@
           <div *ngIf="showTopFilter" class="">
             <app-top-bar [pageName]="pageName"></app-top-bar>
           </div>
-          <hr *ngIf="pageName != 'undfind'" />
+          <hr *ngIf="pageName != 'undfind' && pageName != 'guides-emploi'" />
 
           <div class="row">
-           <ng-container *ngIf="pageName == 'offres-emploi' ||
+            <ng-container
+              *ngIf="
+                pageName == 'offres-emploi' ||
                 pageName == 'offres-de-stage' ||
                 pageName == 'offres-alternance' ||
                 pageName == 'offres-extra' ||
@@ -35,14 +45,16 @@
               <div class="row" *ngIf="genericervice.orientation == 'verticale'">
                 <app-card-offre-Verticale
                   *ngFor="
+
                     let offre of filterService.getlist()
+
                       | paginate: { itemsPerPage: 20, currentPage: p }
                   "
                   [pageName]="pageName"
                   [id]="offre?.id"
                   [link]="[
                     pageName == 'demandes-specifiques'
-                      ? 'details-demandes-specifiques/'
+                      ? '/competences/details-demandes-specifiques/'
                       : '/offres/details-offres/',
                     offre.id
                   ]"
@@ -67,7 +79,9 @@
                 <app-card-offre-horizontale
                   class="col-md-6 mb-3"
                   *ngFor="
+
                     let offre of filterService.getlist()
+
                       | paginate: { itemsPerPage: 20, currentPage: p }
                   "
                   [pageName]="pageName"
@@ -138,10 +152,12 @@
                 ></condida-c-card>
               </div>
             </ng-container>
-            <ng-container *ngIf="pageName == 'recruteurs'||
+            <ng-container
+              *ngIf="
+                pageName == 'recruteurs' ||
                 pageName == 'associations-insertion-economique' ||
-                pageName == 'etablissements-formation'||
-                pageName == 'cabinets-recrutement'||
+                pageName == 'etablissements-formation' ||
+                pageName == 'cabinets-recrutement' ||
                 pageName == 'condidatures-spontannes'
               "
             >
@@ -169,10 +185,6 @@
               ></app-card-recruiter>
             </ng-container>
 
-
-
-
-
             <ng-container *ngIf="pageName == 'decouverte-des-metiers'">
               <div class="container bootstrap snippets bootdeys">
                 <div class="row">
@@ -190,7 +202,7 @@
                 </div>
               </div>
             </ng-container>
-            <ng-container *ngIf="pageName ==  'metiers-pour-vous'">
+            <ng-container *ngIf="pageName == 'metiers-pour-vous'">
               <div class="container bootstrap snippets bootdeys">
                 <div class="row">
                   <app-card-metiers
@@ -207,12 +219,15 @@
                 </div>
               </div>
             </ng-container>
-            <ng-container *ngIf="pageName == 'hard-skills'||
-            pageName ==   'conseils-pratique'||
-            pageName == 'actualites-emploi' ||
-            pageName == 'soft-skills'||
-            pageName == 'legislations-et-textes-lois'
-            ">
+            <ng-container
+              *ngIf="
+                pageName == 'hard-skills' ||
+                pageName == 'conseils-pratique' ||
+                pageName == 'actualites-emploi' ||
+                pageName == 'soft-skills' ||
+                pageName == 'legislations-et-textes-lois'
+              "
+            >
               <div class="row">
                 <app-card-article
                   *ngFor="
@@ -251,14 +266,9 @@
               ></app-card-quiz>
             </ng-container>
 
-
-
-
-
-
-             <ng-container *ngIf="pageName == 'liens-utiles'">
+            <ng-container *ngIf="pageName == 'liens-utiles'">
               <app-card-lien-utile
-                class="col-md-3 mb-3"
+                class="col-md-4 col-lg-3 mb-3"
                 *ngFor="
                   let lienUtile of filterService.getlist()
                     | paginate: { itemsPerPage: 6, currentPage: p }
@@ -268,7 +278,7 @@
             </ng-container>
             <ng-container *ngIf="pageName == 'adresses-utiles'">
               <app-card-adresse-utile
-                class="col-md-3 mb-3"
+                class="col-md-4 col-lg-3 mb-3"
                 *ngFor="
                   let adresseUtile of filterService.getlist()
                     | paginate: { itemsPerPage: 6, currentPage: p }
@@ -276,7 +286,7 @@
                 [data]="adresseUtile"
               ></app-card-adresse-utile>
             </ng-container>
-            <ng-container *ngIf="pageName ==  'documents'">
+            <ng-container *ngIf="pageName == 'documents'">
               <div class="container">
                 <div class="section-recruteur mb-3">
                   <h4>Documents a Telecharger</h4>
@@ -288,19 +298,16 @@
                         let doc of filterService.getlist()
                           | paginate: { itemsPerPage: 6, currentPage: p }
                       "
-                      class="col-md-3 col-sm-6 mb-2"
-                      [routerLink]="[
-                        '/info-pratique/document-details',
-                        doc._id.$oid
-                      ]"
+                      class="col-md-4 col-lg-3 mb-2"
+                      [routerLink]="['/info-pratique/document-details', doc.id]"
                       [dateEdition]="doc?.date_edition"
-                      [titre]="(doc?.translations)['fr']?.__titre"
-                      [sousTitre]="(doc?.translations)['fr']?.__sous_titre"
+                      [titre]="(doc?.translations)['fr']?.titre"
+                      [sousTitre]="(doc?.translations)['fr']?.sous_titre"
                       [image]="doc?.image"
                       [lienContenu]="doc?.lien_contenu"
                       [format]="doc?.format"
                       [taille]="doc?.taille"
-                      [tags]="(doc?.translations)['fr']?.__tags"
+                      [tags]="(doc?.translations)['fr']?.tags"
                       [file]="doc?.file"
                     ></app-card-document>
                   </div>
@@ -309,13 +316,9 @@
             </ng-container>
             <ng-container *ngIf="pageName == 'guides-emploi'">
 
+              <router-outlet></router-outlet>
+
             </ng-container>
-
-
-
-
-
-
 
             <ng-container *ngIf="pageName == 'evenement'">
               <app-card-article
@@ -337,27 +340,18 @@
               ></app-card-article>
             </ng-container>
 
-
-
-
-
-
-            <ng-container *ngIf="pageName ==  'temoignage'">
+            <ng-container *ngIf="pageName == 'temoignage'">
               <app-temoignage
                 [pageName]="pageName"
                 [data]="filterService.getlist()"
               ></app-temoignage>
             </ng-container>
             <ng-container *ngIf="pageName == 'sondage'">
-              <app-sondage-historique
-                *ngFor="
-                  let sondage of filterService.getlist()
-                    | paginate: { itemsPerPage: 4, currentPage: p }
-                "
-                [sondage]="sondage"
-              ></app-sondage-historique>
+
+              <app-sondage></app-sondage>
+
             </ng-container>
-            <ng-container *ngIf="pageName ==  'forums'">
+            <ng-container *ngIf="pageName == 'forums'">
               <app-card-forum
                 *ngFor="
                   let item of filterService.getlist()
@@ -374,9 +368,9 @@
                 [nbrTheme]="item.nbrTheme"
                 [nbrParticipants]="item.nbrParticipants"
                 [nbrEchanges]="item.nbrEchanges"
-              >
-              </app-card-forum>
+              ></app-card-forum>
             </ng-container>
+
 
 
 
@@ -384,18 +378,18 @@
                     <app-card-blogueur
                       *ngFor="
                   let membre of filterService.getlist()
+
                     | paginate: { itemsPerPage: 6, currentPage: p }
                 "
-                  [routerLink]="['/details-blogeur/',membre.__id]"
-                  class="col-md-4 mb-3"
-                  [nom]="membre.nom"
-                  [prenom]="membre.prenom"
-                  [fonction]="membre.fonction"
-                  [resume]="membre.resume"
-                  [image]="membre.image"
-                ></app-card-blogueur>
+                [routerLink]="['/bloggers/details-blogeur/', membre.__id]"
+                class="col-md-4 mb-3"
+                [nom]="membre.nom"
+                [prenom]="membre.prenom"
+                [fonction]="membre.fonction"
+                [resume]="membre.resume"
+                [image]="membre.image"
+              ></app-card-blogueur>
             </ng-container>
-
 
             <ng-container *ngIf="pageName == 'undfind'">
               <section class="section p-0 bg-img cover-background">
@@ -428,18 +422,14 @@
               *ngIf="!['undfind', 'temoignage'].includes(pageName)"
               class="text-center"
               (pageChange)="p = $event"
-            >
-            </pagination-controls>
-
-
-
+            ></pagination-controls>
           </div>
         </div>
       </div>
     </div>
-      <div
-        *ngIf="showRightSideBar"
-        class="section-recruteur spacing-inline-end mb-3"
-      ></div>
+    <div
+      *ngIf="showRightSideBar"
+      class="section-recruteur spacing-inline-end mb-3"
+    ></div>
   </div>
 </div>

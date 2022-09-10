@@ -36,7 +36,7 @@ export class ForumService {
       ref_responsable: 'Référence résponsable',
       date_ouverture: '2022-03-07',
       date_cloture: '20245-03-31',
-      etat_validation: 'en cours de publication',
+      etat_validation: 'en c  ours de publication',
       etat_objet: 'active',
       image_forum:
         'http://localhost:3600/uploads/images/forum/image_forum-1647861519425.jpg',

@@ -186,7 +186,9 @@ export class OffreService {
   }
 
   getlist() {
+
     return this.listOffres;
+
   }
 
   getByIdWishList(ids: any) {

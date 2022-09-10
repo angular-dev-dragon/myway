@@ -43,7 +43,7 @@ export class CDetailsComponent implements OnInit {
       missage: new FormControl('', [Validators.required]),
     })
 
-    this.misag_type = ['interveiw', 'qoution', 'advice', 'cominter']
+    this.misag_type = ['Entretien', 'Question', 'Conseil', 'Commentaire']
   }
   TrackEventroute(a: any) {
     this.data.get_condidats_by_id(a).subscribe({

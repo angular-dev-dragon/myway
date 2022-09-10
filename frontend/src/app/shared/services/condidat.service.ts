@@ -175,13 +175,13 @@ export class CondidatService {
         experience: [
           {
             experience_job_title: 'full stack devoper',
-            experience_company: 'netflix',
-            experience_start_date: '2022/7',
-            experience_end_date: '2026/7',
-            experience_city: 'tanger',
+            experience_company: 'Netflix',
+            experience_start_date: '2018-06-15',
+            experience_end_date: '2022-05-27',
+            experience_city: 'Tanger',
 
             experience_job_description:
-              'exper ience_job_ desc ription exp  erience_job_descripti onexperience _job_des criptionexper ience_j ob_descrip tionexperience_ job_descripti onexperien ce_job _descri ptionex  pe rience_job_  descrip tionexperience_job_desc ription',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. .',
             experience_job_type: 'experience_job_type',
             experience_he_gine: [
               'time orginistion',
@@ -202,7 +202,7 @@ export class CondidatService {
             experience_city: 'tanger',
 
             experience_job_description:
-              'exper ience_job_ desc ription exp  erience_job_descripti onexperience _job_des criptionexper ience_j ob_descrip tionexperience_ job_descripti onexperien ce_job _descri ptionex  pe rience_job_  descrip tionexperience_job_desc ription',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. .',
             experience_job_type: 'experience_job_type',
             experience_he_gine: [
               'time orginistion',
@@ -223,7 +223,8 @@ export class CondidatService {
             experience_city: 'tanger',
 
             experience_job_description:
-              'exper ience_job_ desc ription exp  erience_job_descripti onexperience _job_des criptionexper ience_j ob_descrip tionexperience_ job_descripti onexperien ce_job _descri ptionex  pe rience_job_  descrip tionexperience_job_desc ription',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. .',
+
             experience_job_type: 'experience_job_type',
             experience_he_gine: [
               'time orginistion',

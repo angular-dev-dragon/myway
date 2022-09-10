@@ -98,39 +98,53 @@
           <p-tabPanel header="{{ 'Education' | translate }}">
             <p-accordion *ngFor="let i of condida_data.info.education">
               <p-accordionTab [selected]="true" header="{{ i.education_name }}">
-                <div>
+                <div class="">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <div class="">
+                        <h3 class="">{{ i.education_school | titlecase }}</h3>
+                      </div>
+                    </div>
+
+                    <div class="d-flex align-items-center flex-row">
+                      <p class="me-1">From</p>
+                      <P class="me-1">
+                        {{ i.education_start_date | date: 'dd-MM-yyyy' }}
+                      </P>
+                      <p class="me-1">To</p>
+                      <p class="me-1">
+                        {{ i.education_end_date | date: 'dd-MM-yyyy' }}
+                      </p>
+
+                      <div class="w-100">
+                        <i class="fa fa-map-marker me-1"></i>
+                        {{ i.education_city | titlecase }}
+                      </div>
+                    </div>
+                  </div>
+
                   <ul class="ul-one">
                     <li class="li-one">
-                      <P class="top-t">{{ i.education_school | titlecase }}</P>
-                      <p class="top-ctiy">
-                        ®️ {{ i.education_city | titlecase }}
-                      </p>
-                    </li>
-                    <li class="li-one">
-                      <p class="li_one_init_h">From</p>
-                      <P class="li_one_init">{{ i.education_start_date }}</P>
-                      <p class="li_one_init_h">,To</p>
-                      <p class="li_one_init">{{ i.education_end_date }}</p>
-                    </li>
-                    <li class="li-one education_descriptionli">
                       <p class="education_description">
                         {{ i.education_description }}
                       </p>
                     </li>
+                    <hr />
+
                     <li class="li-one">
-                      <ul class="init-ul-col none_list">
-                        <li>
-                          <div class="" *ngFor="let k of i.deplome">
-                            <p class="ed-sub-t">
-                              {{ 'deplome' | titlecase | translate }}
-                            </p>
-                            <ul class="none_list sub_ul_col">
-                              <h3 class="name_deplom">{{ k.deplome_name }}</h3>
-                              <li class="sub_li" *ngIf="k.deplome_description">
+                      <div class="">
+                        <div class="mb-2">
+                          <div class="mb-3" *ngFor="let k of i.deplome">
+                            <h4 class="">
+                              {{ 'diplome' | titlecase | translate }}
+                            </h4>
+                            <div class="none_list sub_ul_col">
+                              <h5 class="">{{ k.deplome_name }}</h5>
+                              <div class="sub_li" *ngIf="k.deplome_description">
                                 <P class="sub_li_d">
                                   {{ k.deplome_description }}
                                 </P>
-                              </li>
+                              </div>
                               <li>
                                 <ul class="none_list li-one">
                                   <li class="d-flexx" *ngIf="k.deplome_img">
@@ -145,29 +159,29 @@
                                   </li>
                                 </ul>
                               </li>
-                            </ul>
+                            </div>
                           </div>
-                        </li>
-                        <li>
+                        </div>
+                        <div class="my-2">
                           <div
                             class="ed_sub_box"
                             *ngFor="let k of i.srtificate"
                           >
-                            <p class="ed-sub-t">
-                              {{ 'srtificate' | titlecase | translate }}
-                            </p>
-                            <ul class="none_list sub_ul_col">
-                              <h3 class="name_deplom">
+                            <h4 class="">
+                              {{ 'Certificat' | titlecase | translate }}
+                            </h4>
+                            <div class="none_list sub_ul_col">
+                              <h5 class="">
                                 {{ k.srtificate_name }}
-                              </h3>
-                              <li
+                              </h5>
+                              <ng-container
                                 class="sub_li"
                                 *ngIf="k.srtificate_description"
                               >
                                 <P class="sub_li_d">
                                   {{ k.srtificate_description }}
                                 </P>
-                              </li>
+                              </ng-container>
                               <li>
                                 <ul class="none_list li-one">
                                   <li class="d-flexx" *ngIf="k.srtificate_img">
@@ -182,10 +196,10 @@
                                   </li>
                                 </ul>
                               </li>
-                            </ul>
+                            </div>
                           </div>
-                        </li>
-                      </ul>
+                        </div>
+                      </div>
                     </li>
                   </ul>
                 </div>
@@ -198,152 +212,180 @@
             <p-accordion *ngFor="let i of condida_data.info.experience">
               <p-accordionTab
                 [selected]="true"
-                header="{{ i.experience_job_title }}"
+                header="{{ i.experience_job_title }} {{
+                  i.experience_start_date | date: 'dd-MM-yyyy'
+                }} {{ i.experience_end_date | date: 'dd-MM-yyyy' }}"
               >
                 <div>
-                  <ul class="ul-one">
-                    <li class="li-one">
-                      <P class="top-t">
-                        {{ i.experience_company | titlecase }}
-                      </P>
-                      <p class="top-ctiy">
-                        ®️ {{ i.experience_city | titlecase }}
-                      </p>
-                    </li>
-                    <li class="li-one">
-                      <p class="li_one_init_h">From</p>
-                      <P class="li_one_init">{{ i.experience_start_date }}</P>
-                      <p class="li_one_init_h">,To</p>
-                      <p class="li_one_init">{{ i.experience_end_date }}</p>
-                    </li>
-                    <li class="li-one education_descriptionli">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center flex-row">
+                        <h4 class="me-1">From :</h4>
+                        <h4 class="me-1">
+                          {{ i.experience_start_date | date: 'dd/MM/yyyy' }}
+                        </h4>
+                        <h4 class="me-1">- To :</h4>
+                        <h4 class="me-1">
+                          {{ i.experience_end_date | date: 'dd/MM/yyyy' }}
+                        </h4>
+                      </div>
+
+                      <h5>{{ i.experience_job_title | titlecase }}</h5>
+                      <h5>{{ i.experience_company | titlecase }}</h5>
+                      <h5>{{ i.experience_city | titlecase }}</h5>
+                    </div>
+                    <div class="col-md-6">
                       <p class="education_description">
                         {{ i.experience_job_description }}
                       </p>
-                    </li>
-                    <li class="li-one">
-                      <ul class="init-ul-col none_list">
-                        <li>
-                          <div class="row">
-                            <div class="col">
-                              <p class="ed-sub-t">
-                                {{
-                                  'my rouls at ' + i.experience_company
-                                    | titlecase
-                                    | translate
-                                }}
-                              </p>
-                              <ul
-                                *ngFor="let k of i.experience_roul"
-                                class="st li-one"
-                              >
-                                <li class="d-flexx lista">
-                                  {{ k }}
-                                </li>
-                              </ul>
-                            </div>
-                            <div class="col">
-                              <p class="ed-sub-t">
-                                {{ 'what i learn' | titlecase | translate }}
-                              </p>
-                              <ul
-                                *ngFor="let k of i.experience_he_gine"
-                                class="st li-one"
-                              >
-                                <li class="d-flexx lista">
-                                  {{ k }}
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div
-                            class="ed_sub_box"
-                            *ngFor="let k of i.srtificate"
-                          >
-                            <p class="ed-sub-t">
-                              {{ 'deplome' | titlecase | translate }}
-                            </p>
-                            <ul class="none_list sub_ul_col">
-                              <li
-                                class="sub_li"
-                                *ngIf="k.srtificate_description"
-                              >
-                                <P class="sub_li_d">
-                                  {{ k.srtificate_description }}
-                                </P>
-                              </li>
+                    </div>
+                  </div>
 
-                              <li>
-                                <ul class="none_list li-one">
-                                  <li class="d-flexx" *ngIf="k.srtificate_img">
-                                    <a class="btnn btn btn-secondary" href="#">
-                                      view doc
-                                    </a>
-                                  </li>
-                                  <li class="sub_li" *ngIf="k.srtificate_url">
-                                    <a class="btnn btn btn-secondary" href="#">
-                                      view onlin
-                                    </a>
-                                  </li>
-                                </ul>
+                  <!-- <div class="d-flex justify-content-between">
+                    <div>
+                      <h3 class="">
+                        {{ i.experience_company | titlecase }}
+                      </h3>
+                    </div>
+                    <div class="d-flex align-items-center flex-row">
+                      <p class="me-1">From</p>
+                      <P class="me-1">{{ i.experience_start_date }}</P>
+                      <p class="me-1">,To</p>
+                      <p class="me-1">{{ i.experience_end_date }}</p>
+
+                      <div class="w-100">
+                        <i class="fa fa-map-marker me-1"></i>
+                        {{ i.experience_city | titlecase }}
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- <li class="li-one">
+                    <p class="education_description">
+                      {{ i.experience_job_description }}
+                    </p>
+                  </li> -->
+
+                  <div class="ul-one">
+                    <ul class="">
+                      <div class="my-2">
+                        <h5 class="education_description">
+                          {{ 'Mon Role :  ' | titlecase | translate }}
+                        </h5>
+                        <ul class="">
+                          <li
+                            class="d-flexx lista"
+                            *ngFor="let k of i.experience_roul"
+                          >
+                            {{ k }}
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="my-2">
+                        <h5 class="">
+                          {{ 'what i learn' | titlecase | translate }}
+                        </h5>
+                        <ul class="">
+                          <li
+                            class="d-flexx lista"
+                            *ngFor="let k of i.experience_he_gine"
+                          >
+                            {{ k }}
+                          </li>
+                        </ul>
+                      </div>
+                    </ul>
+                    <ng-container *ngIf="i.srtificate">
+                      <div class="ed_sub_box" *ngFor="let k of i.srtificate">
+                        <p class="ed-sub-t">
+                          {{ 'deplome' | titlecase | translate }}
+                        </p>
+                        <ul class="none_list sub_ul_col">
+                          <li class="sub_li" *ngIf="k.srtificate_description">
+                            <P class="sub_li_d">
+                              {{ k.srtificate_description }}
+                            </P>
+                          </li>
+
+                          <li>
+                            <ul class="none_list li-one">
+                              <li class="d-flexx" *ngIf="k.srtificate_img">
+                                <a class="btnn btn btn-secondary" href="#">
+                                  view doc
+                                </a>
+                              </li>
+                              <li class="sub_li" *ngIf="k.srtificate_url">
+                                <a class="btnn btn btn-secondary" href="#">
+                                  view onlin
+                                </a>
                               </li>
                             </ul>
-                          </div>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </ng-container>
+                  </div>
                 </div>
               </p-accordionTab>
             </p-accordion>
           </p-tabPanel>
           <!--3-->
 
-          <p-tabPanel header="{{ 'skilss' | titlecase | translate }}">
+          <p-tabPanel header="{{ 'Competence' | titlecase | translate }}">
             <div class="row">
               <div class="col-md-6">
                 <p class="skills_titale">
-                  {{ ' soft skils' | titlecase | translate }}
+                  {{ 'Competences Generale' | titlecase | translate }}
                 </p>
                 <ul
-                  *ngFor="let k of condida_data.info.soft_skills"
+                  *ngFor="let softSkill of condida_data.info?.soft_skills"
                   class="flexx"
                 >
                   <li class="li_skils">
-                    {{ k }}
+                    {{ softSkill?.label }} : {{ softSkill?.qualification }}
                   </li>
                 </ul>
               </div>
               <div class="col-md-6">
                 <p class="skills_titale">
-                  {{ 'sikils tchnic' | titlecase | translate }}
+                  {{ 'Competences Technique' | titlecase | translate }}
                 </p>
                 <ul
-                  *ngFor="let k of condida_data.info.skills_tach"
-                  class="flexx"
+                  *ngFor="let k of condida_data.info?.skills_tach"
+                  class="d-flex align-items-center"
                 >
-                  <li class="li_skils">
-                    {{ k.skill_name }}
-                  </li>
+                  <div class="me-3 label-info">
+                    {{ k?.skill_name }}
+                  </div>
+
+                  <app-circular-progress
+                    [niveau]="k.niveau"
+                  ></app-circular-progress>
                 </ul>
               </div>
 
               <div class="col-md-6">
                 <p class="skills_titale">
-                  {{ ' langouge skilss' | titlecase | translate }}
+                  {{ 'Langues' | titlecase | translate }}
                 </p>
-                <ul *ngFor="let k of condida_data.info.languages" class="flexx">
-                  <li class="li_skils">
-                    {{ k.language_name }}
-                  </li>
+                <ul
+                  *ngFor="let k of condida_data?.info?.languages"
+                  class="d-flex align-items-center"
+                >
+                  <div class="me-3 label-info">
+                    {{ k?.language_name }}
+                  </div>
+
+                  <app-circular-progress
+                    [niveau]="k.niveau"
+                  ></app-circular-progress>
                 </ul>
               </div>
             </div>
           </p-tabPanel>
 
-          <p-tabPanel header="{{ 'hobbis' | titlecase | translate }}">
+          <p-tabPanel
+            header="{{ 'Centre d\'interet' | titlecase | translate }}"
+          >
             <p class="skills_titale">
               {{ 'hobbies list' | titlecase | translate }}
             </p>
@@ -356,21 +398,17 @@
 
           <!--4-->
           <p-tabPanel header="{{ 'contact' | translate }}">
-            <div class="row">
-              <ul class="d-flexV">
-                <li class="lili">
-                  <h1 class="h11">
-                    {{ 'contact me' | titlecase | translate }}
-                  </h1>
-                </li>
-              </ul>
+            <div class="">
+              <h3 class="">
+                {{ 'contact me' | titlecase | translate }}
+              </h3>
             </div>
             <form [formGroup]="condida_contact" (ngSubmit)="sendMissage()">
               <div class="row">
                 <!--misag_type-->
                 <div class="mb-63 col-md-6">
                   <label for="misag_type" class="form-label">
-                    {{ 'taype misage' | titlecase | translate }}:
+                    {{ 'Type de Message' | titlecase | translate }}:
                   </label>
                   <select
                     id="misag_type"
@@ -408,7 +446,7 @@
                 <!-- name input -->
                 <div class="mb-3 col-md-6">
                   <label class="form-label" for="name">
-                    {{ 'form.name' | translate }}:
+                    {{ 'form.nom' | translate }}:
                   </label>
                   <input
                     class="form-control"
@@ -442,7 +480,10 @@
                 </div>
               </div>
 
-              <div class="form-floating">
+              <div class="form-group">
+                <label class="form-label" for="missage">
+                  {{ 'form.message' | translate }}:
+                </label>
                 <textarea
                   formControlName="missage"
                   [ngClass]="{
@@ -455,9 +496,6 @@
                   id="floatingTextarea"
                 ></textarea>
 
-                <label for="floatingTextarea">
-                  {{ 'missage' | translate }}:
-                </label>
                 <div
                   *ngIf="
                     condida_contact.get('missage')?.touched &&

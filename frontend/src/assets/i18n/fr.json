@@ -156,12 +156,17 @@
     "exp_langue": "ex : Anglais",
     "niveau": "Niveau",
     "posteOccupe": "Post Occupé",
-    "exp_posteOccupe": "ex: Chauffeur"
+    "exp_posteOccupe": "ex: Chauffeur",
+    "indic": "Indication",
+    "exp_indic": "Votre Indication"
   },
 
   "document": {
     "telecharger": "Télécharger ",
-    "docA": "Document a Télécharger"
+    "docA": "Document a Télécharger",
+    "nbr_telech": "Nombre de Telechargement",
+    "date_publ": "Date De Publication",
+    "taille": "Taille"
   },
   "article": {
     "ref": "Réferences"

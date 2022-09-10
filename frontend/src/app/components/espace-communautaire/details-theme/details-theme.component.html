@@ -244,14 +244,15 @@
 </div>
 <ng-template #participer let-modal>
   <div class="modal-header">
-    <h2 class="j-title-lg blue-color" id="modal-basic-title">
+    <h3 class="j-title-lg blue-color" id="modal-basic-title">
       {{ 'deta.forum' | translate }}
-    </h2>
+    </h3>
     <button
       type="button"
       (click)="modal.dismiss('Cross click')"
       class="close"
       aria-label="Close"
+      class="btn btn-outline-dark"
     >
       <span aria-hidden="true">&times;</span>
     </button>
@@ -270,16 +271,18 @@
                 <div class="form-row">
                   <div class="container">
                     <div class="row">
-                      <div class="col-md-6">
+                      <div class="col-md-6 mb-3">
                         <label for="review">
-                          {{ 'deta.nom_pre' | translate }}
+                          {{ 'form.nom' | translate }} &nbsp;{{
+                            'form.prenom' | translate
+                          }}
                         </label>
                         <input
                           type="text"
                           formControlName="nom"
                           class="form-control"
-                          id="email"
-                          placeholder="{{ 'deta.ecrire' | translate }}"
+                          id="nom"
+                          placeholder="{{ 'form.exp_nom' | translate }}"
                           required=""
                           [ngClass]="{
                             'is-invalid':
@@ -316,7 +319,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-6 mb-3">
                         <label for="review">
                           {{ 'form.email' | translate }}
                         </label>
@@ -352,7 +355,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-6 mb-3">
                         <label for="review">
                           {{ 'form.titre' | translate }}
                         </label>
@@ -365,16 +368,16 @@
                           required=""
                         />
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-6 mb-3">
                         <label for="review">
-                          {{ 'deta.indic' | translate }}
+                          {{ 'form.indic' | translate }}
                         </label>
                         <input
                           type="text"
                           formControlName="indicateur"
                           class="form-control"
-                          id="email"
-                          placeholder="{{ 'deta.ecri_indic' | translate }} "
+                          id="indic"
+                          placeholder="{{ 'form.exp_indic' | translate }} "
                           required=""
                         />
                       </div>

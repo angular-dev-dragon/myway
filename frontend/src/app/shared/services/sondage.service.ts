@@ -6,7 +6,7 @@ import { API } from './api.service'
   providedIn: 'root',
 })
 export class SondageService {
-  listsondage: any[] = [];
+  listsondage: any[] = []
   allSondages: any = [
     {
       _id: { $oid: '6245a77363da22654c292349' },
@@ -41,6 +41,60 @@ export class SondageService {
       nombre_questions: '',
       etat_validation: 'en cours de publication',
       question_sondage: [
+        {
+          _id: { $oid: '6245a78263da22654c29234a' },
+          translations: {
+            fr: {
+              __label_question: 'Question de test 1',
+              __commentaire_associe: '',
+            },
+            ar: { __label_question: '', __commentaire_associe: '' },
+            en: { __label_question: '', __commentaire_associe: '' },
+          },
+          etat_objet: 'active',
+          etat_validation: '',
+          reponse_sondage: [
+            {
+              translations: {
+                fr: { __valeur_choix1: 'choix1' },
+                ar: { __valeur_choix1: '' },
+                en: { __valeur_choix1: '' },
+              },
+              _id: { $oid: '6245a78263da22654c29234b' },
+              etat_objet: 'active',
+              etat_validation: '',
+              ref_choix: '',
+              ordre: '0',
+              nombre_reponse: 0,
+            },
+            {
+              translations: {
+                fr: { __valeur_choix1: 'choix 2' },
+                ar: { __valeur_choix1: '' },
+                en: { __valeur_choix1: '' },
+              },
+              _id: { $oid: '6245a78263da22654c29234c' },
+              etat_objet: 'active',
+              etat_validation: '',
+              ref_choix: '',
+              ordre: '0',
+              nombre_reponse: 0,
+            },
+            {
+              translations: {
+                fr: { __valeur_choix1: 'choix 3' },
+                ar: { __valeur_choix1: '' },
+                en: { __valeur_choix1: '' },
+              },
+              _id: { $oid: '6245a78263da22654c29234d' },
+              etat_objet: 'active',
+              etat_validation: '',
+              ref_choix: '',
+              ordre: '0',
+              nombre_reponse: 3,
+            },
+          ],
+        },
         {
           _id: { $oid: '6245a78263da22654c29234a' },
           translations: {
@@ -458,33 +512,33 @@ export class SondageService {
       ],
       __v: 0,
     },
-  ];
+  ]
 
   filter() {}
   constructor(private http: HttpClient) {
     {
-      this.listsondage = this.allSondages;
+      this.listsondage = this.allSondages
     }
   }
 
   public getSondage() {
-    return this.http.get<any>(`${API}/sondage`);
+    return this.http.get<any>(`${API}/sondage`)
   }
   public getQuestionBySondage(sondage: any) {
-    return this.http.get<any>(`${API}/Question_Sondages?sondage=${sondage}`);
+    return this.http.get<any>(`${API}/Question_Sondages?sondage=${sondage}`)
   }
   public getChoix(question_sondage: any) {
     return this.http.get<any>(
-      `${API}/Choix?question_sondage=${question_sondage}`
-    );
+      `${API}/Choix?question_sondage=${question_sondage}`,
+    )
   }
   public edit_sondage(id: any, editedSondage: any) {
-    return this.http.put<any>(`${API}/sondage/` + `${id}`, editedSondage);
+    return this.http.put<any>(`${API}/sondage/` + `${id}`, editedSondage)
   }
   public updateChoixSondage(id: any, choix: any) {
-    return this.http.put<any>(`${API}/sondage/choix/${id}`, choix);
+    return this.http.put<any>(`${API}/sondage/choix/${id}`, choix)
   }
   getlist() {
-    return this.listsondage;
+    return this.listsondage
   }
 }

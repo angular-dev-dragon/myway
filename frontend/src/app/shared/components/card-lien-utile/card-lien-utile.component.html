@@ -9,18 +9,18 @@
         style="max-height: 200px;"
       />
     </div>
-    <h4 class="">
+    <h4 class="text-center">
       {{ (data?.translations)['fr']?.__designation | titlecase }}
     </h4>
 
-    <p class="my-3">
+    <p class="my-3 truncate truncate-5-line">
       {{ (data?.translations)['fr']?.__descriptif | titlecase }}
     </p>
-    <div class="bt">
+    <div class="info-small-card">
       <a href="{{ data?.valeur_lien }}" target="_blank">
-        <p class="ellipsis-text text-center mt-2 mb-0">
+        <h6 class="ellipsis-text text-center mt-2 mb-0">
           {{ data?.valeur_lien }}
-        </p>
+        </h6>
       </a>
     </div>
   </div>

@@ -48,11 +48,13 @@ export class CondidatureSpontaneeComponent implements OnInit {
       niveauExperience: new FormControl('', [Validators.required]),
       disponibility: new FormControl('', [Validators.required]),
       secteur: new FormControl('', [Validators.required]),
-      domaine: new FormControl('', [
-        Validators.required,
-        Validators.minLength(3),
-        Validators.maxLength(30),
-      ]),
+      secteurActivite: new FormControl('', [Validators.required]),
+
+      // domaine: new FormControl('', [
+      //   Validators.required,
+      //   Validators.minLength(3),
+      //   Validators.maxLength(30),
+      // ]),
       ecole: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
@@ -76,6 +78,8 @@ export class CondidatureSpontaneeComponent implements OnInit {
       anneeObtention: new FormControl('', [Validators.required]),
 
       lettreMotivation: new FormControl('', [Validators.required]),
+      lettreDeRecommandation: new FormControl('', [Validators.required]),
+
       langue: new FormControl('', [Validators.required]),
 
       niveauLangue: new FormControl('', [Validators.required]),
@@ -110,6 +114,7 @@ export class CondidatureSpontaneeComponent implements OnInit {
   }
   cvFile: any = ''
   lettreFile: any = ''
+  lettreRecommendationFile: any = ''
 
   onCvSelected(event: any) {
     if (event.target.files) this.cvFile = event.target.files[0].name
@@ -117,6 +122,11 @@ export class CondidatureSpontaneeComponent implements OnInit {
   }
   onLettrteSelected(event: any) {
     if (event.target.files) this.lettreFile = event.target.files[0].name
+    //this.currentInput = event.target.files[i].name
+  }
+  onLettrtRecommendationeSelected(event: any) {
+    if (event.target.files)
+      this.lettreRecommendationFile = event.target.files[0].name
     //this.currentInput = event.target.files[i].name
   }
 
