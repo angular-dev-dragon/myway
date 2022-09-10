@@ -1,4 +1,4 @@
-<div class="card-recruiter">
+<div class="card-recruiter card-container">
   <div
     class="header-card mb-3 position-relative cursor-pointer"
     [routerLink]="link"
@@ -37,47 +37,15 @@
         </div>
       </div>
     </div>
-    <div class="body-card mt-3 cursor-pointer" [routerLink]="link">
+    <div class="body-card mt-2 cursor-pointer" [routerLink]="link">
       <div class="card-right">
         <h5>{{ title }}</h5>
-        <div class="info-small text-secondary mb-2">
+        <div class="info-small-card mb-2">
           <div class="">
-            <p class="m-0">{{ caption }}</p>
+            <h6 class="m-0">{{ caption }}</h6>
           </div>
         </div>
       </div>
-      <div class="footer-card"></div>
     </div>
   </div>
-  <!-- <div class="card-recruiter">
-  <div class="header-card">
-    <img
-      [lazyLoad]="imageBg"
-      [defaultImage]="'assets/images/bg-recruiter'"
-      class="img-bg-card"
-      alt="Image Bg Recruiter"
-    />
-  </div>
-  <div class="body-card">
-    <div class="card-left">
-      <img
-        [lazyLoad]="logo"
-        [defaultImage]="'assets/images/bg-recruiter'"
-        class="logo-card"
-        alt="Logo Recruiter"
-      />
-    </div>
-    <div class="card-right">
-      <h6>{{ title }}</h6>
-      <div class="info-small text-secondary mb-2">
-        <span class="small">{{ type }}</span>
-        <span class="small" *ngIf="salaries != ''">{{ salaries }}</span>
-      </div>
-      <div class="">
-        <p>{{ caption }}</p>
-      </div>
-    </div>
-  </div>
-  <div class="footer-card"></div>
-</div> -->
 </div>

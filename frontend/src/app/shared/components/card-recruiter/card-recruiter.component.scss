@@ -30,7 +30,7 @@
     }
   }
   .contain {
-    padding: 3em 1.5em 1em;
+    padding: 3em 0 0 0;
   }
   .body-card {
     display: flex;
@@ -43,7 +43,7 @@
         width: 90px;
       }
     }
-    .info-small {
+    .info-small-card {
       margin-top: 15px;
 
       line-height: 1.75;

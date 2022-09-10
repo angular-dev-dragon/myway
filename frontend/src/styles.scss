@@ -89,6 +89,7 @@ a {
   border: 0.1rem solid #dcdada;
   border-radius: 0.2rem;
   padding: 1rem;
+  margin-bottom: 1em;
 }
 
 .p-calendar .p-inputtext {
@@ -217,6 +218,16 @@ body {
     border-top: 1px solid #ccc;
   }
 }
+.card-custom-title {
+  height: max-content;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
 .truncate {
   height: max-content;
   overflow: hidden;
@@ -263,4 +274,17 @@ body {
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
   background-color: #000000b0;
+}
+.info-small-card {
+  margin-top: 15px;
+
+  line-height: 1.75;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
 }

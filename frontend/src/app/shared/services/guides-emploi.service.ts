@@ -27,6 +27,8 @@ export class GuidesEmploiService {
           id: '123574',
           titre: 'Sous Guide 1.3',
           type: 'sub',
+          description: '',
+
           children: [
             {
               titre: 'Sous Guide 1.3.1',
