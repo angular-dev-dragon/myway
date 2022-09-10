@@ -284,36 +284,42 @@
 
       <!-- Disponibility input -->
       <div class="mb-3 col-md-6">
-        <label class="form-label" for="domaine">
-          {{ 'form.domaine' | translate }}
+        <label class="form-label" for="secteurActivite">
+          {{ 'form.secteurActivite' | translate }}
         </label>
         <input
           class="form-control"
-          id="domaine"
+          id="secteurActivite"
           type="text"
           [ngClass]="{
             'is-invalid':
-              CondidatureForm.get('domaine')?.touched &&
-              CondidatureForm.get('domaine')?.invalid
+              CondidatureForm.get('secteurActivite')?.touched &&
+              CondidatureForm.get('secteurActivite')?.invalid
           }"
-          formControlName="domaine"
-          name="domaine"
+          formControlName="secteurActivite"
+          name="secteurActivite"
         />
 
         <div
           *ngIf="
-            CondidatureForm.get('domaine')?.touched &&
-            CondidatureForm.get('domaine')?.invalid
+            CondidatureForm.get('secteurActivite')?.touched &&
+            CondidatureForm.get('secteurActivite')?.invalid
           "
           class="invalid-feedback mb-2"
         >
-          <div *ngIf="CondidatureForm.get('domaine')?.errors?.['required']">
+          <div
+            *ngIf="CondidatureForm.get('secteurActivite')?.errors?.['required']"
+          >
             {{ 'form.champ_oblig' | translate }}
           </div>
-          <div *ngIf="CondidatureForm.get('domaine')?.errors?.['minlength']">
+          <div
+            *ngIf="CondidatureForm.get('secteurActivite')?.errors?.['minlength']"
+          >
             {{ 'form.champ_3' | translate }}
           </div>
-          <div *ngIf="CondidatureForm.get('domaine')?.errors?.['maxlength']">
+          <div
+            *ngIf="CondidatureForm.get('secteurActivite')?.errors?.['maxlength']"
+          >
             {{ 'form.champ_30' | translate }}
           </div>
         </div>
@@ -822,6 +828,44 @@
           >
             <div
               *ngIf="CondidatureForm.get('lettreMotivation')?.errors?.['required']"
+            >
+              {{ 'form.champ_oblig' | translate }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!-- Prenom input -->
+      <div class="mb-4 col-md-6">
+        <div class="file-upload-wrapper">
+          <label class="form-label" for="lettreDeRecommandation">
+            {{ 'form.lettreDeRecommandation' | translate }}
+          </label>
+          <input
+            class="form-control"
+            id="lettreDeRecommandation"
+            #lettreDeRecommandation
+            type="file"
+            name="lettreDeRecommandation"
+            formControlName="lettreDeRecommandation"
+            (change)="onLettrtRecommendationeSelected($event)"
+            [ngClass]="{
+              'is-invalid':
+                CondidatureForm.get('lettreDeRecommandation')?.touched &&
+                CondidatureForm.get('lettreDeRecommandation')?.invalid
+            }"
+          />
+          <span class="span-preuve">{{ lettreRecommendationFile }}</span>
+          <div
+            *ngIf="
+              CondidatureForm.get('lettreDeRecommandation')?.touched &&
+              CondidatureForm.get('lettreDeRecommandation')?.invalid
+            "
+            class="invalid-feedback mb-2"
+          >
+            <div
+              *ngIf="CondidatureForm.get('lettreDeRecommandation')?.errors?.['required']"
             >
               {{ 'form.champ_oblig' | translate }}
             </div>

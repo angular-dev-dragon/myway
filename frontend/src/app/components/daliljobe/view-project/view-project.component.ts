@@ -1,36 +1,36 @@
-import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { GenericService } from 'src/app/shared/services/generic.service';
+import { Component, OnInit } from '@angular/core'
+import { NavigationEnd, Router } from '@angular/router'
+import { GenericService } from 'src/app/shared/services/generic.service'
 @Component({
   selector: 'app-view-project',
   styleUrls: ['./view.scss'],
   templateUrl: './view-project.component.html',
 })
 export class ViewProjectComponent implements OnInit {
-  orientation: string = '';
-  pageName: string = '';
-  p: number = 0;
-  data: any = [];
-  showLeftSideBar: boolean = true;
-  showRightSideBar: boolean = true;
-  showHeader: boolean = true;
-  showTopFilter: boolean = true;
-  showInLeftSideBar: boolean = true;
-  resultData: any;
+  orientation: string = ''
+  pageName: string = ''
+  p: number = 0
+  data: any = []
+  showLeftSideBar: boolean = true
+  showRightSideBar: boolean = true
+  showHeader: boolean = true
+  showTopFilter: boolean = true
+  showInLeftSideBar: boolean = true
+  resultData: any
   constructor(public genericervice: GenericService, private router: Router) {
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
-        this.pageName = event.url.split('/')[1];
+        this.pageName = event.url.split('/')[1]
       }
-    });
+    })
   }
 
   ngOnInit(): void {
-    this.controlView();
+    this.controlView()
   }
 
   getDataFromService(pageName: string) {
-    this.data = this.genericervice.get(pageName);
+    this.data = this.genericervice.get(pageName)
   }
 
   controlView() {
@@ -53,15 +53,15 @@ export class ViewProjectComponent implements OnInit {
       this.pageName == 'metiers-pour-vous' ||
       this.pageName == 'quiz' ||
       ///////////////////////////////////////////
-      this.pageName == 'guides-emploi' ||
+
       //////////////////////////////
       this.pageName == 'evenement'
     ) {
-      this.showLeftSideBar = true;
-      this.showHeader = true;
-      this.showTopFilter = true;
-      this.showRightSideBar = false;
-      this.showInLeftSideBar = false;
+      this.showLeftSideBar = true
+      this.showHeader = true
+      this.showTopFilter = true
+      this.showRightSideBar = false
+      this.showInLeftSideBar = false
     } else if (
       this.pageName == 'soft-skills' ||
       this.pageName == 'hard-skills' ||
@@ -79,25 +79,37 @@ export class ViewProjectComponent implements OnInit {
       this.pageName == 'forums' ||
       this.pageName == 'bloggers'
     ) {
-      this.showLeftSideBar = false;
-      this.showHeader = true;
-      this.showTopFilter = true;
-      this.showRightSideBar = false;
-      this.showInLeftSideBar = false;
+      this.showLeftSideBar = false
+      this.showHeader = true
+      this.showTopFilter = true
+      this.showRightSideBar = false
+      this.showInLeftSideBar = false
     } else if (this.pageName == 'undfind') {
-      this.showLeftSideBar = false;
-      this.showHeader = false;
-      this.showTopFilter = false;
-      this.showRightSideBar = false;
-      this.showInLeftSideBar = false;
+      this.showLeftSideBar = false
+      this.showHeader = false
+      this.showTopFilter = false
+      this.showRightSideBar = false
+      this.showInLeftSideBar = false
+    } else if (this.pageName == 'undfind') {
+      this.showLeftSideBar = false
+      this.showHeader = false
+      this.showTopFilter = false
+      this.showRightSideBar = false
+      this.showInLeftSideBar = false
+    } else if (this.pageName == 'guides-emploi') {
+      this.showLeftSideBar = true
+      this.showHeader = true
+      this.showTopFilter = false
+      this.showRightSideBar = false
+      this.showInLeftSideBar = false
     }
   }
 
   filtredData(value: any) {
-    this.data = value;
+    this.data = value
   }
 
   getOrientaion(value: any) {
-    this.orientation = value;
+    this.orientation = value
   }
 }

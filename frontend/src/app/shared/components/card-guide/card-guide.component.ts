@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core'
-import { GuideService } from '../../services/guide.service'
+import { Component, Input, OnInit } from '@angular/core'
+import { ActivatedRoute, Router } from '@angular/router'
+import { GenericService } from '../../services/generic.service'
 
 @Component({
   selector: 'app-card-guide',
@@ -7,7 +8,31 @@ import { GuideService } from '../../services/guide.service'
   styleUrls: ['./card-guide.component.scss'],
 })
 export class CardGuideComponent implements OnInit {
-  constructor(public guideService: GuideService) {}
+  @Input() pageName: string = ''
 
-  ngOnInit(): void {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+
+    public genericService: GenericService,
+  ) {
+    console.log('pageName in guide Card', this.pageName)
+
+    // this.route.params.subscribe((params) => {
+    //   console.log(params) //log the entire params object
+    //   console.log(params['id']) //log the value of id
+    //   if (params['idGuide']) {
+    //     //   this.guide = this.guideService.getSubById(
+    //     //     params['id'],
+    //     //     params['idGuide'],
+    //     //   )
+    //     // }
+    //   }
+    // })
+  }
+  ngOnInit(): void {
+    let idGuide = this.genericService.get(this.pageName)?.getlist()[0]?.id
+    console.log('🚀 ~ ------------------ idGuide', idGuide)
+    this.router.navigate(['/guides-emploi/details-guide/', idGuide])
+  }
 }

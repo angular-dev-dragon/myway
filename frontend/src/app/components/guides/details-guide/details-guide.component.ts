@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
-import { GuideService } from 'src/app/shared/services/guide.service'
+
+import { GuidesEmploiService } from 'src/app/shared/services/guides-emploi.service'
 
 @Component({
   selector: 'app-details-guide',
@@ -11,7 +12,7 @@ export class DetailsGuideComponent implements OnInit {
   guide: any = {}
   constructor(
     private route: ActivatedRoute,
-    private guideService: GuideService,
+    private guideService: GuidesEmploiService,
   ) {
     console.log('test')
 

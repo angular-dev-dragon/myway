@@ -3,7 +3,7 @@
 </div>
 <div class="section-recruteur">
   <p-tabView>
-    <p-tabPanel header="Parcourir Les Evaluation">
+    <p-tabPanel header="Expérience de l'entretien">
       <div class="row">
         <div class="col-md-6 mb-3">
           <label class="form-label">
@@ -75,7 +75,7 @@
         </div>
       </div>
     </p-tabPanel>
-    <p-tabPanel header="Ajouter Une Evaluation">
+    <p-tabPanel header="Partager votre expérience d'entretien">
       <div class="section-recruteur">
         <form [formGroup]="entretienForm" (ngSubmit)="sendEntretien()">
           <div class="row">
@@ -233,36 +233,37 @@
           </div>
 
           <div class="row">
-            <!-- Name input -->
-
-            <div class="mb-3 col-md-6">
-              <label class="form-label" for="noteEntretien">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">
                 {{ 'form.noteEntretien' | translate }}
               </label>
-              <div
-                class=""
+              <select
+                class="form-select"
+                id="noteEntretien"
+                type="texte"
+                formControlName="noteEntretien"
+                name="noteEntretien"
                 [ngClass]="{
                   'is-invalid':
                     entretienForm.get('noteEntretien')?.touched &&
                     entretienForm.get('noteEntretien')?.invalid
                 }"
               >
-                <p-rating
-                  [ngClass]="{
-                    'is-invalid':
-                      entretienForm.get('noteEntretien')?.touched &&
-                      entretienForm.get('noteEntretien')?.invalid
-                  }"
-                  formControlName="noteEntretien"
-                  [cancel]="false"
-                ></p-rating>
-              </div>
+                <option selected disabled value="">
+                  Choisir une noteEntretien
+                </option>
+
+                <option value="niveau1">Facile</option>
+                <option value="niveau2">Moyen</option>
+                <option value="niveau3">Bien</option>
+                <option value="niveau4">Difficile</option>
+              </select>
               <div
                 *ngIf="
                   entretienForm.get('noteEntretien')?.touched &&
                   entretienForm.get('noteEntretien')?.invalid
                 "
-                class="invalid-feedback mb-2"
+                class="invalid-feedback"
               >
                 <div
                   *ngIf="entretienForm.get('noteEntretien')?.errors?.['required']"
@@ -271,34 +272,37 @@
                 </div>
               </div>
             </div>
-            <div class="mb-3 col-md-6">
-              <label class="form-label" for="difficulte">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">
                 {{ 'form.difficulte' | translate }}
               </label>
-              <div
-                class=""
+              <select
+                class="form-select"
+                id="difficulte"
+                type="texte"
+                formControlName="difficulte"
+                name="difficulte"
                 [ngClass]="{
                   'is-invalid':
                     entretienForm.get('difficulte')?.touched &&
                     entretienForm.get('difficulte')?.invalid
                 }"
               >
-                <p-rating
-                  [ngClass]="{
-                    'is-invalid':
-                      entretienForm.get('difficulte')?.touched &&
-                      entretienForm.get('difficulte')?.invalid
-                  }"
-                  formControlName="difficulte"
-                  [cancel]="false"
-                ></p-rating>
-              </div>
+                <option selected disabled value="">
+                  Choisir une difficulte
+                </option>
+
+                <option value="niveau1">Facile</option>
+                <option value="niveau2">Moyen</option>
+                <option value="niveau3">Bien</option>
+                <option value="niveau4">Difficile</option>
+              </select>
               <div
                 *ngIf="
                   entretienForm.get('difficulte')?.touched &&
                   entretienForm.get('difficulte')?.invalid
                 "
-                class="invalid-feedback mb-2"
+                class="invalid-feedback"
               >
                 <div
                   *ngIf="entretienForm.get('difficulte')?.errors?.['required']"
@@ -309,150 +313,163 @@
             </div>
           </div>
           <div class="row">
-            <!-- Name input -->
-
-            <div class="mb-3 col-md-6">
-              <label class="form-label" for="recommandation">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">
                 {{ 'form.recommandation' | translate }}
               </label>
-              <div
-                class=""
-                [ngClass]="{
-                  'is-invalid':
-                    entretienForm.get('recommandation')?.touched &&
-                    entretienForm.get('recommandation')?.invalid
-                }"
-              >
-                <p-rating
+              <div class="">
+                <select
+                  class="form-select"
+                  id="recommandation"
+                  type="texte"
+                  formControlName="recommandation"
+                  name="recommandation"
                   [ngClass]="{
                     'is-invalid':
                       entretienForm.get('recommandation')?.touched &&
                       entretienForm.get('recommandation')?.invalid
                   }"
-                  formControlName="recommandation"
-                  [cancel]="false"
-                ></p-rating>
-              </div>
-              <div
-                *ngIf="
-                  entretienForm.get('recommandation')?.touched &&
-                  entretienForm.get('recommandation')?.invalid
-                "
-                class="invalid-feedback mb-2"
-              >
-                <div
-                  *ngIf="entretienForm.get('recommandation')?.errors?.['required']"
                 >
-                  {{ 'form.champ_oblig' | translate }}
+                  <option selected disabled value="">
+                    Choisir une recommandation
+                  </option>
+
+                  <option value="niveau1">Facile</option>
+                  <option value="niveau2">Moyen</option>
+                  <option value="niveau3">Bien</option>
+                  <option value="niveau4">Difficile</option>
+                </select>
+                <div
+                  *ngIf="
+                    entretienForm.get('recommandation')?.touched &&
+                    entretienForm.get('recommandation')?.invalid
+                  "
+                  class="invalid-feedback"
+                >
+                  <div
+                    *ngIf="entretienForm.get('recommandation')?.errors?.['required']"
+                  >
+                    {{ 'form.champ_oblig' | translate }}
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="mb-3 col-md-6">
-              <label class="form-label" for="note">
-                {{ 'form.note' | translate }}
-              </label>
-              <div
-                class=""
-                [ngClass]="{
-                  'is-invalid':
-                    entretienForm.get('note')?.touched &&
-                    entretienForm.get('note')?.invalid
-                }"
-              >
-                <p-rating
+            <div class="col-md-6 mb-3">
+              <label class="form-label">{{ 'form.note' | translate }}</label>
+              <div class="">
+                <select
+                  class="form-select"
+                  id="note"
+                  type="texte"
+                  formControlName="note"
+                  name="note"
                   [ngClass]="{
                     'is-invalid':
                       entretienForm.get('note')?.touched &&
                       entretienForm.get('note')?.invalid
                   }"
-                  formControlName="note"
-                  [cancel]="false"
-                ></p-rating>
-              </div>
-              <div
-                *ngIf="
-                  entretienForm.get('note')?.touched &&
-                  entretienForm.get('note')?.invalid
-                "
-                class="invalid-feedback mb-2"
-              >
-                <div *ngIf="entretienForm.get('note')?.errors?.['required']">
-                  {{ 'form.champ_oblig' | translate }}
+                >
+                  <option selected disabled value="">
+                    Choisir une note
+                  </option>
+
+                  <option value="niveau1">Facile</option>
+                  <option value="niveau2">Moyen</option>
+                  <option value="niveau3">Bien</option>
+                  <option value="niveau4">Difficile</option>
+                </select>
+                <div
+                  *ngIf="
+                    entretienForm.get('note')?.touched &&
+                    entretienForm.get('note')?.invalid
+                  "
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="entretienForm.get('note')?.errors?.['required']">
+                    {{ 'form.champ_oblig' | translate }}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-
           <div class="row">
-            <!-- Name input -->
-
-            <div class="mb-3 col-md-6">
-              <label class="form-label" for="salaire">
-                {{ 'form.salaire' | translate }}
-              </label>
-              <div
-                class=""
-                [ngClass]="{
-                  'is-invalid':
-                    entretienForm.get('salaire')?.touched &&
-                    entretienForm.get('salaire')?.invalid
-                }"
-              >
-                <p-rating
+            <div class="col-md-6 mb-3">
+              <label class="form-label">{{ 'form.salaire' | translate }}</label>
+              <div class="">
+                <select
+                  class="form-select"
+                  id="salaire"
+                  type="texte"
+                  formControlName="salaire"
+                  name="salaire"
                   [ngClass]="{
                     'is-invalid':
                       entretienForm.get('salaire')?.touched &&
                       entretienForm.get('salaire')?.invalid
                   }"
-                  formControlName="salaire"
-                  [cancel]="false"
-                ></p-rating>
-              </div>
-              <div
-                *ngIf="
-                  entretienForm.get('salaire')?.touched &&
-                  entretienForm.get('salaire')?.invalid
-                "
-                class="invalid-feedback mb-2"
-              >
-                <div *ngIf="entretienForm.get('salaire')?.errors?.['required']">
-                  {{ 'form.champ_oblig' | translate }}
+                >
+                  <option selected disabled value="">
+                    Choisir une salaire
+                  </option>
+
+                  <option value="niveau1">Facile</option>
+                  <option value="niveau2">Moyen</option>
+                  <option value="niveau3">Bien</option>
+                  <option value="niveau4">Difficile</option>
+                </select>
+                <div
+                  *ngIf="
+                    entretienForm.get('salaire')?.touched &&
+                    entretienForm.get('salaire')?.invalid
+                  "
+                  class="invalid-feedback"
+                >
+                  <div
+                    *ngIf="entretienForm.get('salaire')?.errors?.['required']"
+                  >
+                    {{ 'form.champ_oblig' | translate }}
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="mb-3 col-md-6">
-              <label class="form-label" for="securite">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">
                 {{ 'form.securite' | translate }}
               </label>
-              <div
-                class=""
-                [ngClass]="{
-                  'is-invalid':
-                    entretienForm.get('securite')?.touched &&
-                    entretienForm.get('securite')?.invalid
-                }"
-              >
-                <p-rating
+              <div class="">
+                <select
+                  class="form-select"
+                  id="securite"
+                  type="texte"
+                  formControlName="securite"
+                  name="securite"
                   [ngClass]="{
                     'is-invalid':
                       entretienForm.get('securite')?.touched &&
                       entretienForm.get('securite')?.invalid
                   }"
-                  formControlName="securite"
-                  [cancel]="false"
-                ></p-rating>
-              </div>
-              <div
-                *ngIf="
-                  entretienForm.get('securite')?.touched &&
-                  entretienForm.get('securite')?.invalid
-                "
-                class="invalid-feedback mb-2"
-              >
-                <div
-                  *ngIf="entretienForm.get('securite')?.errors?.['required']"
                 >
-                  {{ 'form.champ_oblig' | translate }}
+                  <option selected disabled value="">
+                    Choisir une securite
+                  </option>
+
+                  <option value="niveau1">Facile</option>
+                  <option value="niveau2">Moyen</option>
+                  <option value="niveau3">Bien</option>
+                  <option value="niveau4">Difficile</option>
+                </select>
+                <div
+                  *ngIf="
+                    entretienForm.get('securite')?.touched &&
+                    entretienForm.get('securite')?.invalid
+                  "
+                  class="invalid-feedback"
+                >
+                  <div
+                    *ngIf="entretienForm.get('securite')?.errors?.['required']"
+                  >
+                    {{ 'form.champ_oblig' | translate }}
+                  </div>
                 </div>
               </div>
             </div>

@@ -4,3 +4,11 @@
 .niveau-2 a {
   color: #5f6f94 !important;
 }
+.width-card-guide {
+  width: 220px;
+}
+@media (max-width: 991px) {
+  .width-card-guide {
+    width: 100%;
+  }
+}

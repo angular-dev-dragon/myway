@@ -16,13 +16,13 @@ export const content: Routes = [
         (m) => m.LandingPageModule,
       ),
   },
-  {
-    path: 'guide',
-    loadChildren: () =>
-      import('../../components/guides/guide.module').then(
-        (m) => m.GuideEmploiModule,
-      ),
-  },
+  // {
+  //   path: 'guide',
+  //   loadChildren: () =>
+  //     import('../../components/guides/guide.module').then(
+  //       (m) => m.GuideEmploiModule,
+  //     ),
+  // },
   {
     path: 'Candidats',
     loadChildren: () =>
@@ -76,7 +76,7 @@ export const content: Routes = [
       ).then((m) => m.EspaceCommunautaireModule),
   },
   {
-    path: 'blog',
+    path: 'bloggers',
     loadChildren: () =>
       import('../../components/blog/blog.module').then((m) => m.BlogModule),
   },

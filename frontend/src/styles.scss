@@ -59,6 +59,13 @@
   border-color: #3f1c92 !important;
   color: #1a578d !important;
 }
+
+.p-accordion .p-accordion-content {
+  color: #000 !important;
+}
+.p-tabview .p-tabview-panels {
+  color: #000 !important;
+}
 .ellipsis-text {
   text-overflow: ellipsis;
   overflow: hidden;
@@ -241,4 +248,19 @@ body {
 }
 .truncate-8-line {
   -webkit-line-clamp: 8;
+}
+.bt-adresse-lien {
+  border-top: 1px solid #ccc;
+  margin-top: auto;
+}
+.responsive > svg {
+  width: 150px !important;
+}
+.responsive {
+  width: 100%;
+  padding-bottom: 12% !important;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-color: #000000b0;
 }

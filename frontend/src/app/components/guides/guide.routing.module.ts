@@ -1,24 +1,27 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { FaqPageComponent } from 'src/app/shared/components/faq-page/faq-page.component'
-import { FaqComponent } from '../recruiter/faq/faq.component'
+import { FilterComponent } from 'src/app/shared/components/filter/filter.component'
+import { DetailsArticleComponent } from '../rubrique-article/details-article/details-article.component'
 import { DetailsGuideComponent } from './details-guide/details-guide.component'
 
 const routes: Routes = [
   {
     path: 'details-guide/:id',
     component: DetailsGuideComponent,
-    children: [],
+  },
+  {
+    path: 'details-guide/article/:id',
+    component: DetailsArticleComponent,
   },
   {
     path: 'details-guide/:id/:idGuide',
     component: DetailsGuideComponent,
-    children: [],
   },
+
   {
     path: 'faq',
     component: FaqPageComponent,
-    children: [],
   },
 ]
 

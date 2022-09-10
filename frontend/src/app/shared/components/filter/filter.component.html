@@ -17,7 +17,10 @@
         <hr />
         <!-- #region Secteur d'activité -->
 
-        <div class="accordion-item" *ngIf="pageName != 'evenement'">
+        <div
+          class="accordion-item"
+          *ngIf="pageName != 'evenement' && pageName != 'sondages'"
+        >
           <h2 class="accordion-header" id="panelsStayOpen-headingOne">
             <button
               class="accordion-button"

@@ -1,8 +1,10 @@
-
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { viewport } from '@popperjs/core';
-import { ViewProjectComponent } from './view-project/view-project.component';
+import { NgModule } from '@angular/core'
+import { RouterModule, Routes } from '@angular/router'
+import { viewport } from '@popperjs/core'
+import { FaqPageComponent } from 'src/app/shared/components/faq-page/faq-page.component'
+import { DetailsGuideComponent } from '../guides/details-guide/details-guide.component'
+import { DetailsArticleComponent } from '../rubrique-article/details-article/details-article.component'
+import { ViewProjectComponent } from './view-project/view-project.component'
 
 const routes: Routes = [
   {
@@ -75,7 +77,11 @@ const routes: Routes = [
       },
       {
         path: 'guides-emploi',
-        component: ViewProjectComponent,
+
+        loadChildren: () =>
+          import('../../components/guides/guide.module').then(
+            (m) => m.GuideEmploiModule,
+          ),
       },
       {
         path: 'legislations-et-textes-lois',
@@ -135,12 +141,10 @@ const routes: Routes = [
       },
     ],
   },
-];
+]
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class DaliljobeRoutingModule { }
-
-
+export class DaliljobeRoutingModule {}

@@ -6,8 +6,8 @@ import { of } from 'rxjs'
   providedIn: 'root',
 })
 export class CondidaInfoService {
-  a: any;
-  condidats_list: any[] = [];
+  a: any
+  condidats_list: any[] = []
   // #endregion
   allCondidat: any = [
     {
@@ -57,7 +57,8 @@ export class CondidaInfoService {
           },
           {
             platfrom: 'linkedin',
-            url: 'https://www.linkedin.com/posts/scottdresden_next-generation-silent-drone-achieves-major-activity-6885948728314736640-eH9i/',
+            url:
+              'https://www.linkedin.com/posts/scottdresden_next-generation-silent-drone-achieves-major-activity-6885948728314736640-eH9i/',
           },
         ],
 
@@ -74,35 +75,43 @@ export class CondidaInfoService {
         },
         skills_tach: [
           {
-            skill_name: 'Paython',
-            persant: '90%',
+            skill_name: 'Python',
+            niveau: 'niveau1',
           },
           {
-            skill_name: 'javascript',
-            persant: '90%',
+            skill_name: 'Javascript',
+            niveau: 'niveau2',
           },
           {
-            skill_name: 'ruby',
-            persant: '50%',
+            skill_name: 'Ruby',
+            niveau: 'niveau3',
+          },
+          {
+            skill_name: 'Angular',
+            niveau: 'niveau4',
           },
         ],
-        soft_skills: ['travil on group', 'manger a project', ' aj lksd dikd '],
+        soft_skills: [
+          { label: 'Travail en group', qualification: 'niveau4' },
+          { label: 'Manager un projet', qualification: 'Assez Bien' },
+          { label: 'Gestion de stress', qualification: 'niveau2' },
+        ],
         languages: [
           {
-            language_name: 'englidh',
-            persant: '60%',
+            language_name: 'Anglais',
+            niveau: 'niveau4',
           },
           {
-            language_name: 'arabic',
-            persant: '60%',
+            language_name: 'Arabe',
+            niveau: 'niveau1',
           },
           {
-            language_name: 'franch',
-            persant: '60%',
+            language_name: 'Francais',
+            niveau: 'niveau3',
           },
           {
-            language_name: 'eespan',
-            persant: '60%',
+            language_name: 'Espagnol',
+            niveau: 'niveau2',
           },
         ],
         education: [
@@ -174,12 +183,12 @@ export class CondidaInfoService {
           {
             experience_job_title: 'full stack devoper',
             experience_company: 'netflix',
-            experience_start_date: '2022/7',
-            experience_end_date: '2026/7',
+            experience_start_date: '2019-07-15',
+            experience_end_date: '2022-11-28',
             experience_city: 'tanger',
 
             experience_job_description:
-              'exper ience_job_ desc ription exp  erience_job_descripti onexperience _job_des criptionexper ience_j ob_descrip tionexperience_ job_descripti onexperien ce_job _descri ptionex  pe rience_job_  descrip tionexperience_job_desc ription',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. .',
             experience_job_type: 'experience_job_type',
             experience_he_gine: [
               'time orginistion',
@@ -195,12 +204,12 @@ export class CondidaInfoService {
           {
             experience_job_title: 'web devloper',
             experience_company: 'sat',
-            experience_start_date: '2022/7',
-            experience_end_date: '2026/7',
+            experience_start_date: '2019-07-15',
+            experience_end_date: '2022-11-28',
             experience_city: 'tanger',
 
             experience_job_description:
-              'exper ience_job_ desc ription exp  erience_job_descripti onexperience _job_des criptionexper ience_j ob_descrip tionexperience_ job_descripti onexperien ce_job _descri ptionex  pe rience_job_  descrip tionexperience_job_desc ription',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. .',
             experience_job_type: 'experience_job_type',
             experience_he_gine: [
               'time orginistion',
@@ -216,12 +225,12 @@ export class CondidaInfoService {
           {
             experience_job_title: 'manger',
             experience_company: 'google',
-            experience_start_date: '2022/7',
-            experience_end_date: '2026/7',
+            experience_start_date: '2019-07-15',
+            experience_end_date: '2022-11-28',
             experience_city: 'tanger',
 
             experience_job_description:
-              'exper ience_job_ desc ription exp  erience_job_descripti onexperience _job_des criptionexper ience_j ob_descrip tionexperience_ job_descripti onexperien ce_job _descri ptionex  pe rience_job_  descrip tionexperience_job_desc ription',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. .',
             experience_job_type: 'experience_job_type',
             experience_he_gine: [
               'time orginistion',
@@ -1260,9 +1269,9 @@ export class CondidaInfoService {
       tag: ['web', 'developer', 'art', 'kldin'],
     },
     // #endregion
-  ];
+  ]
   constructor() {
-    this.condidats_list = this.allCondidat;
+    this.condidats_list = this.allCondidat
   }
   ngOnInit() {}
 
@@ -1274,9 +1283,9 @@ export class CondidaInfoService {
     villeFiltre: any,
     niveauxEtFiltre: any,
     niveauxExFiltre: any,
-    langueFiltre: any
+    langueFiltre: any,
   ) {
-    this.condidats_list = this.allCondidat;
+    this.condidats_list = this.allCondidat
 
     if (searchFiltre != '') {
       this.condidats_list = this.condidats_list.filter((candidat: any) => {
@@ -1287,60 +1296,60 @@ export class CondidaInfoService {
           candidat.info.name.last_name
             .toLowerCase()
             .includes(searchFiltre.toLowerCase())
-        );
-      });
+        )
+      })
     }
     if (paysFiltre != '') {
       this.condidats_list = this.condidats_list.filter((candidat: any) => {
-        return candidat.info.address.countrie == paysFiltre;
-      });
+        return candidat.info.address.countrie == paysFiltre
+      })
     } else if (regionFiltre != '') {
       this.condidats_list = this.condidats_list.filter((candidat: any) => {
-        return candidat.info.address.region == regionFiltre;
-      });
+        return candidat.info.address.region == regionFiltre
+      })
     } else if (villeFiltre != '') {
       this.condidats_list = this.condidats_list.filter((candidat: any) => {
-        return candidat.info.address.city == villeFiltre;
-      });
+        return candidat.info.address.city == villeFiltre
+      })
     } else if (secteurFiltre != '') {
       this.condidats_list = this.condidats_list.filter((candidat: any) => {
-        return candidat.info.job_post.secteur == secteurFiltre;
-      });
+        return candidat.info.job_post.secteur == secteurFiltre
+      })
     }
 
-    this.checkboxFiltre(niveauxEtFiltre, 'NiveauxEtude');
-    this.checkboxFiltre(niveauxExFiltre, 'NiveauxExperience');
-    this.checkboxFiltre(langueFiltre, 'langue');
+    this.checkboxFiltre(niveauxEtFiltre, 'NiveauxEtude')
+    this.checkboxFiltre(niveauxExFiltre, 'NiveauxExperience')
+    this.checkboxFiltre(langueFiltre, 'langue')
   }
 
   checkboxFiltre(CheckboxList: any, label: any) {
-    let newList2;
-    let newList3: any = this.condidats_list;
-    let isFirstTime: Boolean = true;
+    let newList2
+    let newList3: any = this.condidats_list
+    let isFirstTime: Boolean = true
     CheckboxList.map((filtre: any) => {
       if (filtre.nativeElement.checked) {
         if (isFirstTime == true) {
-          isFirstTime = false;
-          newList3 = [];
+          isFirstTime = false
+          newList3 = []
         }
-        newList2 = this.condidats_list;
+        newList2 = this.condidats_list
         newList2 = newList2.filter((candidat: any) => {
           // return candidat[label] == filtre.nativeElement.value;
-        });
+        })
         newList2.map((list: any) => {
-          newList3.push(list);
-        });
+          newList3.push(list)
+        })
       }
-    });
-    this.condidats_list = newList3;
+    })
+    this.condidats_list = newList3
   }
 
   get_all_condidats() {
-    return this.condidats_list;
+    return this.condidats_list
   }
 
   get_condidats_by_id(id: string) {
-    return of(this.condidats_list.find((i) => i.info.id === id));
+    return of(this.condidats_list.find((i) => i.info.id === id))
   }
 
   get_condidats_by_name(name: string) {
@@ -1353,24 +1362,24 @@ export class CondidaInfoService {
           condidat.info.name.fris_name
             .toLowerCase()
             .includes(name.toLocaleLowerCase())
-        );
-      })
-    );
+        )
+      }),
+    )
   }
 
   get_condidats_by_age(age: number) {
-    return of(this.condidats_list.filter((a) => a.info.age == age));
+    return of(this.condidats_list.filter((a) => a.info.age == age))
   }
 
   get_condidats_by_avalilaiblelty(av: boolean) {
     return of(
       this.condidats_list.filter(
-        (a) => a.info.jop_post.are_you_ready.avalibal == av
-      )
-    );
+        (a) => a.info.jop_post.are_you_ready.avalibal == av,
+      ),
+    )
   }
 
-  getcondidats(){
+  getcondidats() {
     return this.condidats_list
-  };
+  }
 }

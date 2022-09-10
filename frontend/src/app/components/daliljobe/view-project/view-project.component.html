@@ -5,7 +5,16 @@
       *ngIf="showLeftSideBar"
       class="section-recruteur spacing-inline-end mb-3"
     >
-      <app-filter class="sideBar-Main" [pageName]="pageName"></app-filter>
+      <app-card-guide
+        *ngIf="this.pageName == 'guides-emploi'"
+        [pageName]="pageName"
+      ></app-card-guide>
+
+      <app-filter
+        class="sideBar-Main"
+        [pageName]="pageName"
+        *ngIf="this.pageName != 'guides-emploi'"
+      ></app-filter>
     </div>
 
     <div class="w-100">
@@ -19,7 +28,7 @@
           <div *ngIf="showTopFilter" class="">
             <app-top-bar [pageName]="pageName"></app-top-bar>
           </div>
-          <hr *ngIf="pageName != 'undfind'" />
+          <hr *ngIf="pageName != 'undfind' && pageName != 'guides-emploi'" />
 
           <div class="row">
             <ng-container
@@ -41,7 +50,7 @@
                   [id]="offre?.id"
                   [link]="[
                     pageName == 'demandes-specifiques'
-                      ? 'details-demandes-specifiques/'
+                      ? '/competences/details-demandes-specifiques/'
                       : '/offres/details-offres/',
                     offre.id
                   ]"
@@ -255,7 +264,7 @@
 
             <ng-container *ngIf="pageName == 'liens-utiles'">
               <app-card-lien-utile
-                class="col-md-3 mb-3"
+                class="col-md-4 col-lg-3 mb-3"
                 *ngFor="
                   let lienUtile of genericervice.get(pageName).getlist()
                     | paginate: { itemsPerPage: 6, currentPage: p }
@@ -265,7 +274,7 @@
             </ng-container>
             <ng-container *ngIf="pageName == 'adresses-utiles'">
               <app-card-adresse-utile
-                class="col-md-3 mb-3"
+                class="col-md-4 col-lg-3 mb-3"
                 *ngFor="
                   let adresseUtile of genericervice.get(pageName).getlist()
                     | paginate: { itemsPerPage: 6, currentPage: p }
@@ -285,19 +294,16 @@
                         let doc of genericervice.get(pageName).getlist()
                           | paginate: { itemsPerPage: 6, currentPage: p }
                       "
-                      class="col-md-3 col-sm-6 mb-2"
-                      [routerLink]="[
-                        '/info-pratique/document-details',
-                        doc._id.$oid
-                      ]"
+                      class="col-md-4 col-lg-3 mb-2"
+                      [routerLink]="['/info-pratique/document-details', doc.id]"
                       [dateEdition]="doc?.date_edition"
-                      [titre]="(doc?.translations)['fr']?.__titre"
-                      [sousTitre]="(doc?.translations)['fr']?.__sous_titre"
+                      [titre]="(doc?.translations)['fr']?.titre"
+                      [sousTitre]="(doc?.translations)['fr']?.sous_titre"
                       [image]="doc?.image"
                       [lienContenu]="doc?.lien_contenu"
                       [format]="doc?.format"
                       [taille]="doc?.taille"
-                      [tags]="(doc?.translations)['fr']?.__tags"
+                      [tags]="(doc?.translations)['fr']?.tags"
                       [file]="doc?.file"
                     ></app-card-document>
                   </div>
@@ -305,7 +311,7 @@
               </div>
             </ng-container>
             <ng-container *ngIf="pageName == 'guides-emploi'">
-              <app-card-guide></app-card-guide>
+              <router-outlet></router-outlet>
             </ng-container>
 
             <ng-container *ngIf="pageName == 'evenement'">
@@ -335,13 +341,7 @@
               ></app-temoignage>
             </ng-container>
             <ng-container *ngIf="pageName == 'sondage'">
-              <app-sondage-historique
-                *ngFor="
-                  let sondage of genericervice.get(pageName).getlist()
-                    | paginate: { itemsPerPage: 4, currentPage: p }
-                "
-                [sondage]="sondage"
-              ></app-sondage-historique>
+              <app-sondage></app-sondage>
             </ng-container>
             <ng-container *ngIf="pageName == 'forums'">
               <app-card-forum
@@ -369,7 +369,7 @@
                   let membre of genericervice.get(pageName).getlist()
                     | paginate: { itemsPerPage: 6, currentPage: p }
                 "
-                [routerLink]="['/details-blogeur/', membre.__id]"
+                [routerLink]="['/bloggers/details-blogeur/', membre.__id]"
                 class="col-md-4 mb-3"
                 [nom]="membre.nom"
                 [prenom]="membre.prenom"
