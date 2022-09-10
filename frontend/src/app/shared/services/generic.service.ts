@@ -92,86 +92,84 @@ export class GenericService {
     //   { field: 'Pays', filterBy: this.secteurFiltre },
     // ]);
   }
+
   get(pageName: string): any {
-    this.pageName = pageName;
+
+    switch (pageName) {
+      // #region  HAS THE SAME  RubriqueService
+      case 'legislations-et-textes-lois':
+        return this.rubriqueService
+      case 'soft-skills':
+        return this.rubriqueService
+      case 'hard-skills':
+        return this.rubriqueService
+      case 'conseils-pratique':
+        return this.rubriqueService
+      case 'actualites-emploi':
+        return this.rubriqueService
+      // #endregion
+      // #region HASE THE SAME  offreService
+
+      case 'offres-emploi':
+        return this.offreService
+      case 'offres-de-stage':
+        return this.offreService
+      case 'offres-alternance':
+        return this.offreService
+      case 'offres-extra':
+        return this.offreService
+
+      // #endregion
+      // #region HASE THE SAME recruteurService
+      case 'recruteurs':
+        return this.recruteurService
+      case 'etablissements-formation':
+        return this.recruteurService
+      case 'cabinets-recrutement':
+        return this.recruteurService
+      case 'associations-insertion-economique':
+        return this.recruteurService
+
+      // #endregion
+      // #region  HASE THE SAME metierService
+      case 'decouverte-des-metiers':
+        return this.metierService
+      case 'metiers-pour-vous':
+        return this.metierService
+
+      // #endregion
+      // #region  EVRYTHING IS OKY
+      case 'evenement':
+        return this.evenementService
+      case 'candidats':
+        return this.candidatService
+      case 'condidatures-spontannes':
+        return this.condidatureSpontaneeService
+      case 'demandes-specifiques':
+        return this.demandeSpecifiqueService
+      case 'quiz':
+        return this.QuizService
+      case 'forums':
+        return this.forumService
+      case 'sondage':
+        return this.sondageService
+      case 'temoignage':
+        return this.temoingnageService
+      case 'bloggers':
+        return this.blogService
+      case 'documents':
+        return this.documentService
+      case 'adresses-utiles':
+        return this.addesseService
+      case 'liens-utiles':
+        return this.lienUtileService
+      case 'guides-emploi':
+        return this.guidesEmploiService
+      default:
+        return this.defaultService
+      // #endregion
+    }
   }
-  // get(pageName: string): any {
-
-  //   switch (pageName) {
-  //     // #region  HAS THE SAME  RubriqueService
-  //     case 'legislations-et-textes-lois':
-  //       return this.rubriqueService
-  //     case 'soft-skills':
-  //       return this.rubriqueService
-  //     case 'hard-skills':
-  //       return this.rubriqueService
-  //     case 'conseils-pratique':
-  //       return this.rubriqueService
-  //     case 'actualites-emploi':
-  //       return this.rubriqueService
-  //     // #endregion
-  //     // #region HASE THE SAME  offreService
-
-  //     case 'offres-emploi':
-  //       return this.offreService
-  //     case 'offres-de-stage':
-  //       return this.offreService
-  //     case 'offres-alternance':
-  //       return this.offreService
-  //     case 'offres-extra':
-  //       return this.offreService
-
-  //     // #endregion
-  //     // #region HASE THE SAME recruteurService
-  //     case 'recruteurs':
-  //       return this.recruteurService
-  //     case 'etablissements-formation':
-  //       return this.recruteurService
-  //     case 'cabinets-recrutement':
-  //       return this.recruteurService
-  //     case 'associations-insertion-economique':
-  //       return this.recruteurService
-
-  //     // #endregion
-  //     // #region  HASE THE SAME metierService
-  //     case 'decouverte-des-metiers':
-  //       return this.metierService
-  //     case 'metiers-pour-vous':
-  //       return this.metierService
-
-  //     // #endregion
-  //     // #region  EVRYTHING IS OKY
-  //     case 'evenement':
-  //       return this.evenementService
-  //     case 'candidats':
-  //       return this.candidatService
-  //     case 'condidatures-spontannes':
-  //       return this.condidatureSpontaneeService
-  //     case 'demandes-specifiques':
-  //       return this.demandeSpecifiqueService
-  //     case 'quiz':
-  //       return this.QuizService
-  //     case 'forums':
-  //       return this.forumService
-  //     case 'sondage':
-  //       return this.sondageService
-  //     case 'temoignage':
-  //       return this.temoingnageService
-  //     case 'bloggers':
-  //       return this.blogService
-  //     case 'documents':
-  //       return this.documentService
-  //     case 'adresses-utiles':
-  //       return this.addesseService
-  //     case 'liens-utiles':
-  //       return this.lienUtileService
-  //     case 'guides-emploi':
-  //       return this.guidesEmploiService
-  //     default:
-  //       return this.defaultService
-  //     // #endregion
-  //   }
-  // }
 
 
   // #region  orientation
