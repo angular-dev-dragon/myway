@@ -206,33 +206,180 @@
               </p-accordionTab>
             </p-accordion>
           </p-tabPanel>
-
+          <!-- Education Update -->
           <!--2-->
-          <p-tabPanel header="{{ 'Experience' | translate }}">
-            <p-accordion *ngFor="let i of condida_data.info.experience">
+          <p-tabPanel header="{{ 'Formation' | translate }}">
+            <p-accordion *ngFor="let formation of condida_data?.formation">
               <p-accordionTab
+                class="accordion-tab-title"
                 [selected]="true"
-                header="{{ i.experience_job_title }} {{
-                  i.experience_start_date | date: 'dd-MM-yyyy'
-                }} {{ i.experience_end_date | date: 'dd-MM-yyyy' }}"
+                header="{{
+                  formation?.translations?.fr?.reconnaissance | titlecase
+                }} 
+      
+      {{ formation?.translations?.fr?.intitule }}
+      {{ formation?.dateFin | date: 'MM-yyyy' }}"
               >
                 <div>
-                  <div class="row">
+                  <div class="row align-items-center">
+                    <div class="col-md-6 text-center">
+                      <div
+                        class="d-flex align-items-center flex-row justify-content-center"
+                      >
+                        <h6 class="me-1">Du :</h6>
+                        <h6 class="me-1">
+                          {{ formation?.dateDebut | date: 'MM/yyyy' }}
+                        </h6>
+                        <h6 class="me-1">- A :</h6>
+                        <h6 class="me-1">
+                          {{ formation?.dateFin | date: 'MM/yyyy' }}
+                        </h6>
+                      </div>
+                      <div class="text-center">
+                        <div
+                          class="d-flex align-items-center justify-content-center"
+                        >
+                          <h5>
+                            {{
+                              formation?.translations?.fr?.reconnaissance
+                                | titlecase
+                            }}
+                          </h5>
+                          <span>&nbsp; - &nbsp;</span>
+                          <h5>
+                            {{
+                              formation?.translations?.fr?.typeFormation
+                                | titlecase
+                            }}
+                          </h5>
+                          <span>&nbsp; - &nbsp;</span>
+                          <h5>
+                            {{
+                              formation?.translations?.fr?.natureFormation
+                                | titlecase
+                            }}
+                          </h5>
+                        </div>
+                        <h5>
+                          {{
+                            formation?.translations?.fr?.niveauEtude | titlecase
+                          }}
+                        </h5>
+                        <h5>{{ formation?.translations?.fr?.intitule }}</h5>
+                        <h6>
+                          {{ formation?.translations?.fr?.nomEtablisement }}
+                        </h6>
+                      </div>
+                    </div>
                     <div class="col-md-6">
-                      <div class="d-flex align-items-center flex-row">
+                      <h5>
+                        {{ formation?.translations?.fr?.nomEtablisement }}
+                      </h5>
+                      <h6>
+                        {{ formation?.translations?.fr?.pays }}
+                      </h6>
+                      <h6>
+                        {{ formation?.translations?.fr?.ville }}
+                      </h6>
+                      <!-- <p class="education_description">
+                        {{ formation?.translations?.fr?.description }}
+                      </p> -->
+                    </div>
+                  </div>
+
+                  <!-- <div class="info-small-card">
+          <ul class="d-flex flex-wrap">
+            <div class="my-2 col-md-6">
+              <h5 class="education_description">
+                {{ 'Mon Role :  ' | titlecase | translate }}
+              </h5>
+              <ul class="">
+                <li
+                  class="d-flexx lista"
+                  *ngFor="let k of i.experience_roul"
+                >
+                  {{ k }}
+                </li>
+              </ul>
+            </div>
+            <div class="my-2 col-md-6">
+              <h5 class="">
+                {{ 'what i learn' | titlecase | translate }}
+              </h5>
+              <ul class="">
+                <li
+                  class="d-flexx lista"
+                  *ngFor="let k of i.experience_he_gine"
+                >
+                  {{ k }}
+                </li>
+              </ul>
+            </div>
+          </ul>
+          <ng-container *ngIf="i.srtificate">
+            <div class="ed_sub_box" *ngFor="let k of i.srtificate">
+              <p class="ed-sub-t">
+                {{ 'deplome' | titlecase | translate }}
+              </p>
+              <ul class="none_list sub_ul_col">
+                <li class="sub_li" *ngIf="k.srtificate_description">
+                  <P class="sub_li_d">
+                    {{ k.srtificate_description }}
+                  </P>
+                </li>
+
+                <li>
+                  <ul class="none_list li-one">
+                    <li class="d-flexx" *ngIf="k.srtificate_img">
+                      <a class="btnn btn btn-secondary" href="#">
+                        view doc
+                      </a>
+                    </li>
+                    <li class="sub_li" *ngIf="k.srtificate_url">
+                      <a class="btnn btn btn-secondary" href="#">
+                        view onlin
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </ng-container>
+        </div> -->
+                </div>
+              </p-accordionTab>
+            </p-accordion>
+          </p-tabPanel>
+          <!--2-->
+          <p-tabPanel header="{{ 'Experience' | translate }}">
+            <p-accordion *ngFor="let i of condida_data?.info.experience">
+              <p-accordionTab
+                class="accordion-tab-title"
+                [selected]="true"
+                header="{{ i.experience_job_title | titlecase }} {{
+                  i.experience_start_date | date: 'MM-yyyy'
+                }} {{ i.experience_end_date | date: 'MM-yyyy' }}"
+              >
+                <div>
+                  <div class="row align-items-center">
+                    <div class="col-md-6 text-center">
+                      <div
+                        class="d-flex align-items-center flex-row justify-content-center"
+                      >
                         <h4 class="me-1">From :</h4>
                         <h4 class="me-1">
-                          {{ i.experience_start_date | date: 'dd/MM/yyyy' }}
+                          {{ i.experience_start_date | date: 'MM/yyyy' }}
                         </h4>
                         <h4 class="me-1">- To :</h4>
                         <h4 class="me-1">
-                          {{ i.experience_end_date | date: 'dd/MM/yyyy' }}
+                          {{ i.experience_end_date | date: 'MM/yyyy' }}
                         </h4>
                       </div>
-
-                      <h5>{{ i.experience_job_title | titlecase }}</h5>
-                      <h5>{{ i.experience_company | titlecase }}</h5>
-                      <h5>{{ i.experience_city | titlecase }}</h5>
+                      <div class="text-center">
+                        <h5>{{ i.experience_job_title | titlecase }}</h5>
+                        <h6>{{ i.experience_company | titlecase }}</h6>
+                        <h6>{{ i.experience_city | titlecase }}</h6>
+                      </div>
                     </div>
                     <div class="col-md-6">
                       <p class="education_description">
@@ -241,33 +388,9 @@
                     </div>
                   </div>
 
-                  <!-- <div class="d-flex justify-content-between">
-                    <div>
-                      <h3 class="">
-                        {{ i.experience_company | titlecase }}
-                      </h3>
-                    </div>
-                    <div class="d-flex align-items-center flex-row">
-                      <p class="me-1">From</p>
-                      <P class="me-1">{{ i.experience_start_date }}</P>
-                      <p class="me-1">,To</p>
-                      <p class="me-1">{{ i.experience_end_date }}</p>
-
-                      <div class="w-100">
-                        <i class="fa fa-map-marker me-1"></i>
-                        {{ i.experience_city | titlecase }}
-                      </div>
-                    </div>
-                  </div> -->
-                  <!-- <li class="li-one">
-                    <p class="education_description">
-                      {{ i.experience_job_description }}
-                    </p>
-                  </li> -->
-
-                  <div class="ul-one">
-                    <ul class="">
-                      <div class="my-2">
+                  <div class="info-small-card">
+                    <ul class="d-flex flex-wrap">
+                      <div class="my-2 col-md-6">
                         <h5 class="education_description">
                           {{ 'Mon Role :  ' | titlecase | translate }}
                         </h5>
@@ -280,7 +403,7 @@
                           </li>
                         </ul>
                       </div>
-                      <div class="my-2">
+                      <div class="my-2 col-md-6">
                         <h5 class="">
                           {{ 'what i learn' | titlecase | translate }}
                         </h5>
@@ -338,11 +461,17 @@
                 </p>
                 <ul
                   *ngFor="let softSkill of condida_data.info?.soft_skills"
-                  class="flexx"
+                  class="d-flex align-items-center"
                 >
-                  <li class="li_skils">
-                    {{ softSkill?.label }} : {{ softSkill?.qualification }}
-                  </li>
+                  <div class="me-3 label-info">
+                    {{ softSkill?.label }}
+                  </div>
+
+                  <app-circular-progress
+                    [niveau]="softSkill?.qualification"
+                  ></app-circular-progress>
+
+                  <!-- {{ softSkill?.label }} : {{ softSkill?.qualification }} -->
                 </ul>
               </div>
               <div class="col-md-6">

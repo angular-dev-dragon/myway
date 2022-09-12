@@ -66,6 +66,12 @@
 .p-tabview .p-tabview-panels {
   color: #000 !important;
 }
+.p-accordion-header-text {
+  font-size: 18px !important;
+  color: #000 !important;
+  font-weight: 600 !important;
+}
+
 .ellipsis-text {
   text-overflow: ellipsis;
   overflow: hidden;
@@ -89,7 +95,7 @@ a {
   border: 0.1rem solid #dcdada;
   border-radius: 0.2rem;
   padding: 1rem;
-  margin-bottom: 1em;
+  // margin-bottom: 1em;
 }
 
 .p-calendar .p-inputtext {
