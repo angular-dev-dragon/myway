@@ -1,28 +1,43 @@
-import { Component, OnInit } from '@angular/core'
-import { NavigationEnd, Router } from '@angular/router'
-import { GenericService } from 'src/app/shared/services/generic.service'
+
+import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { GenericService } from 'src/app/shared/services/generic.service';
+import { FilterService } from 'src/app/shared/tools/services/filter/filter.service';
+
 @Component({
   selector: 'app-view-project',
   styleUrls: ['./view.scss'],
   templateUrl: './view-project.component.html',
 })
 export class ViewProjectComponent implements OnInit {
-  orientation: string = ''
-  pageName: string = ''
-  p: number = 0
-  data: any = []
-  showLeftSideBar: boolean = true
-  showRightSideBar: boolean = true
-  showHeader: boolean = true
-  showTopFilter: boolean = true
-  showInLeftSideBar: boolean = true
-  resultData: any
-  constructor(public genericervice: GenericService, private router: Router) {
+
+  orientation: string = '';
+  pageName: string = '';
+  p: number = 0;
+  data: any = [];
+  showLeftSideBar: boolean = true;
+  showRightSideBar: boolean = true;
+  showHeader: boolean = true;
+  showTopFilter: boolean = true;
+  showInLeftSideBar: boolean = true;
+  resultData: any;
+
+  constructor(
+    public filterService:FilterService,
+    public genericervice: GenericService, private router: Router) {
+
     this.router.events.subscribe((event: any) => {
+       console.log('test function');
       if (event instanceof NavigationEnd) {
         this.pageName = event.url.split('/')[1]
       }
-    })
+
+    this.genericervice.get(this.pageName)
+      this.resultData = this.genericervice.reusltdata;
+
+
+    });
+
   }
 
   ngOnInit(): void {
@@ -57,11 +72,17 @@ export class ViewProjectComponent implements OnInit {
       //////////////////////////////
       this.pageName == 'evenement'
     ) {
-      this.showLeftSideBar = true
-      this.showHeader = true
-      this.showTopFilter = true
-      this.showRightSideBar = false
-      this.showInLeftSideBar = false
+
+
+
+      this.showLeftSideBar = true;
+      this.showHeader = true;
+      this.showTopFilter = true;
+      this.showRightSideBar = false;
+      this.showInLeftSideBar = false;
+      console.log(this.showLeftSideBar);
+
+
     } else if (
       this.pageName == 'soft-skills' ||
       this.pageName == 'hard-skills' ||

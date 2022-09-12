@@ -23,6 +23,49 @@ import { GuidesEmploiService } from './guides-emploi.service'
   providedIn: 'root',
 })
 export class GenericService {
+  inputValues: any = [];
+
+  getallinpute(
+    pageName: string = '',
+    secteurFiltre: any = '',
+    paysFiltre: any = '',
+    regionFiltre: any = '',
+    villeFiltre: any = '',
+    typeSociete: any = '',
+    contratFiltre: any = '',
+    niveauxEtFiltre: any = '',
+    niveauxExFiltre: any = '',
+    langueFiltre: any = '',
+    dateFilter: any = '',
+    dateDebut: any = '',
+    dateFin: any = '',
+    typeEvent: any = '',
+    typeFiltre: any = ''
+  ) {
+    if (pageName == 'recruteurs') {
+      this.inputValues = [paysFiltre, regionFiltre, villeFiltre];
+      this.path = ['Pays', 'Region', 'Ville'];
+    }
+  }
+
+  pageName: string = '';
+  secteurFiltre: any = '';
+  paysFiltre: any = '';
+  regionFiltre: any = '';
+  villeFiltre: any = '';
+  typeSociete: any = '';
+  contratFiltre: any = '';
+  niveauxEtFiltre: any = '';
+  niveauxExFiltre: any = '';
+  langueFiltre: any = '';
+  dateFilter: any = '';
+  dateDebut: any = '';
+  dateFin: any = '';
+  typeEvent: any = '';
+  typeFiltre: any = '';
+  path: any[] = [];
+  allPageName: any;
+  reusltdata: any = [];
   constructor(
     private addesseService: AdresseUtileService,
     private blogService: BlogService,
@@ -35,16 +78,23 @@ export class GenericService {
     private lienUtileService: LienUtileService,
     private metierService: MetierService,
     private offreService: OffreService,
-    private postService: PostService,
     private QuizService: QuizService,
     private recruteurService: RecruteurService,
     private rubriqueService: RubriqueService,
     private sondageService: SondageService,
     private temoingnageService: TemoignageService,
     private defaultService: DefaultService,
-    private guidesEmploiService: GuidesEmploiService,
-  ) {}
+
+    private guidesEmploiService: GuidesEmploiService
+  ) {
+    // this.newFilter(this.get(this.pageName).getlist(), [
+    //   { field: 'Ville', filterBy: this.listRecruteur },
+    //   { field: 'Pays', filterBy: this.secteurFiltre },
+    // ]);
+  }
+
   get(pageName: string): any {
+
     switch (pageName) {
       // #region  HAS THE SAME  RubriqueService
       case 'legislations-et-textes-lois':
@@ -121,15 +171,31 @@ export class GenericService {
     }
   }
 
-  orientation: string = 'verticale'
+
+  // #region  orientation
+  orientation: string = 'verticale';
+
   toggleOrientation(orientation: any) {
     this.orientation = orientation
   }
+  // #endregion
 
-  // rubrique-details
+  // newFilter(array: any[], filter: { field: string; filterBy: string }[]) {
+  //   console.log(this.pageName);
 
-  // conseils pratique
+  //   let tempArr = array;
+  //   filter.forEach((filt) => {
+  //     tempArr = tempArr.filter((i: any) => {
+  //       return this.g(filt.field, i)
+  //         .toLowerCase()
+  //         .includes(filt.filterBy.toLowerCase());
+  //     });
+  //   });
+  //   console.log(tempArr);
+  //   return (this.reusltdata = tempArr);
+  // }
 
+  // #region wishlist
   addToWishList(idPassed: string, pageName: string) {
     let wishList: any = sessionStorage.getItem('wishList')
     wishList = JSON.parse(wishList)
@@ -191,6 +257,54 @@ export class GenericService {
       wishList,
     )
   }
+
+  // #endregion
+
+  // removeAccent(s: string) {
+  //     var r = s.toLowerCase()
+  //     r = r.replace(new RegExp('-', 'g'), ' ')
+  //     return r
+  // }
+
+
+
+//   NamePage(a: string) {
+//     this.removeAccent(a)
+
+//     this.allPageName = {
+//       offresemploi :                        [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       offresalternance :                    [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       offresdestage :                       [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       offresextra :                         [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       candidats :                           [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       demandesspecifiques :                 [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       condidaturesspontannes :              [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       recruteurs :                          [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       etablissementsformation :             [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       cabinetsrecrutement :                 [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       associationsinsertioneconomique :     [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       decouvertedesmetiers :                [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       softskills :                          [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       hardskills :                          [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       metierspourvous :                     [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       quiz :                                [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       conseilspratique :                    [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       adressesutiles :                      [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       liensutiles :                         [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       documents :                           [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       guidesemploi :                        [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       legislationsettexteslois :            [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       evenement :                           [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       actualitesemploi :                    [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       forums :                              [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       sondage :                             [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       temoignage :                          [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}],
+//       bloggers :                            [{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'},{libal:'data', val:'data'}]
+//     }
+//  let getRouteInfo = this.allPageName.nCloud();
+
+//   }
+
 }
 
 // 'offres-emploi';

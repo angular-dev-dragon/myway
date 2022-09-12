@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CondidaInfoService } from './condida-info.service';
+import { FilterService } from './filter.service';
 
-describe('CondidaInfoService', () => {
-  let service: CondidaInfoService;
+describe('FilterService', () => {
+  let service: FilterService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(CondidaInfoService);
+    service = TestBed.inject(FilterService);
   });
 
   it('should be created', () => {

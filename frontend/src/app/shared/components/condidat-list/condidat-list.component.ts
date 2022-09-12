@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core'
 
-import { CondidaInfoService } from '../../Services/condida-info/condida-info.service'
+import { CondidatService } from '../../services/condidat.service';
 
 @Component({
   selector: 'app-condidat-list',
@@ -8,22 +8,20 @@ import { CondidaInfoService } from '../../Services/condida-info/condida-info.ser
   styleUrls: ['./condidat-list.component.scss'],
 })
 export class CondidatListComponent implements OnInit {
-  @Input() link = ''
-  @Input() condidatsList: any = []
-  collapsed = false
-  showSidebar: boolean = false
-  epingledSidebar: boolean = false
+  @Input() link = '';
+  @Input() condidatsList: any = [];
+  collapsed = false;
+  showSidebar: boolean = false;
+  epingledSidebar: boolean = false;
 
-  paginate: any = ''
+  paginate: any = '';
 
-  constructor(public candidatService: CondidaInfoService) {}
+  constructor(public candidatService: CondidatService) {}
 
   ngOnInit(): void {}
-  resultData: any = []
-  orientation: string = ''
+  resultData: any = [];
+  orientation: string = '';
   filtredData(value: any) {
-    this.resultData = value
+    this.resultData = value;
   }
-
-
 }

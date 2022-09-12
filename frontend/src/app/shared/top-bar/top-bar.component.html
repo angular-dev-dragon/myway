@@ -2,15 +2,13 @@
   <app-filter-by-text
     *ngIf="showTextInput"
     [pageName]="pageName"
-    [data]=""
-    (filtredData)="filtredDataFunction($event)"
   ></app-filter-by-text>
 
   <div class="btn-group" *ngIf="
 
-  pageName=='offre' ||
-  pageName=='demande specifique' ||
-  pageName=='candidat'"
+        pageName=='offre' ||
+        pageName=='demande specifique' ||
+        pageName=='candidat'"
   >
     <button
       (click)="genericService.toggleOrientation('verticale')"
@@ -29,7 +27,6 @@
   </div>
   <app-sort
     *ngIf="showSort"
-    [data]=""
     [pageName]="pageName"
     [type]="'titre'"
   ></app-sort>

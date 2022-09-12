@@ -5,6 +5,7 @@
       *ngIf="showLeftSideBar"
       class="section-recruteur spacing-inline-end mb-3"
     >
+
       <app-card-guide
         *ngIf="this.pageName == 'guides-emploi'"
         [pageName]="pageName"
@@ -15,6 +16,7 @@
         [pageName]="pageName"
         *ngIf="this.pageName != 'guides-emploi'"
       ></app-filter>
+
     </div>
 
     <div class="w-100">
@@ -36,14 +38,16 @@
                 pageName == 'offres-emploi' ||
                 pageName == 'offres-de-stage' ||
                 pageName == 'offres-alternance' ||
-                pageName == 'offres extra' ||
+                pageName == 'offres-extra' ||
                 pageName == 'demandes-specifiques'
               "
             >
               <div class="row" *ngIf="genericervice.orientation == 'verticale'">
                 <app-card-offre-Verticale
                   *ngFor="
-                    let offre of genericervice.get(pageName)?.getlist()
+
+                    let offre of filterService.getlist()
+
                       | paginate: { itemsPerPage: 20, currentPage: p }
                   "
                   [pageName]="pageName"
@@ -75,7 +79,9 @@
                 <app-card-offre-horizontale
                   class="col-md-6 mb-3"
                   *ngFor="
-                    let offre of genericervice.get(pageName)?.getlist()
+
+                    let offre of filterService.getlist()
+
                       | paginate: { itemsPerPage: 20, currentPage: p }
                   "
                   [pageName]="pageName"
@@ -99,7 +105,7 @@
               <div *ngIf="genericervice.orientation == 'verticale'">
                 <condida-c-cart-tow
                   *ngFor="
-                    let c of genericervice.get(pageName)?.getcondidats()
+                    let c of filterService.getlist()
                       | paginate: { itemsPerPage: 20, currentPage: p }
                   "
                   [link]="['/Candidats/details', c.info.id]"
@@ -125,7 +131,7 @@
               >
                 <condida-c-card
                   *ngFor="
-                    let c of genericervice.get(pageName)?.getcondidats()
+                    let c of filterService.getlist()
                       | paginate: { itemsPerPage: 20, currentPage: p }
                   "
                   [link]="['/Candidats/details', c.info.id]"
@@ -157,9 +163,7 @@
             >
               <app-card-recruiter
                 *ngFor="
-                  let recruiter of genericervice
-                    .get(pageName)
-                    .getAllRecruteursInfo()
+                  let recruiter of filterService.getlist()
                     | paginate: { itemsPerPage: 6, currentPage: p }
                 "
                 [link]="[
@@ -187,7 +191,7 @@
                   <app-card-metiers
                     class="col-lg-3 col-md-4 col-sm-6"
                     *ngFor="
-                      let metier of genericervice.get(pageName).getlist()
+                      let metier of filterService.getlist()
                         | paginate: { itemsPerPage: 20, currentPage: p }
                     "
                     [Image]="metier?.Image"
@@ -204,7 +208,7 @@
                   <app-card-metiers
                     class="col-lg-3 col-md-4 col-sm-6"
                     *ngFor="
-                      let metier of genericervice.get(pageName).getlist()
+                      let metier of filterService.getlist()
                         | paginate: { itemsPerPage: 20, currentPage: p }
                     "
                     [Image]="metier?.Image"
@@ -227,7 +231,7 @@
               <div class="row">
                 <app-card-article
                   *ngFor="
-                    let article of genericervice.get(pageName).getlist()
+                    let article of filterService.getlist()
                       | paginate: { itemsPerPage: 6, currentPage: p }
                   "
                   [link]="['/rubrique/details-article', article.id]"
@@ -245,7 +249,7 @@
               <app-card-quiz
                 class="col-md-4 mb-3"
                 *ngFor="
-                  let quiz of genericervice.get(pageName).getQuiz()
+                  let quiz of filterService.getlist()
                     | paginate: { itemsPerPage: 20, currentPage: p }
                 "
                 [routerLink]="['/quiz/quiz-details', quiz.id]"
@@ -266,7 +270,7 @@
               <app-card-lien-utile
                 class="col-md-4 col-lg-3 mb-3"
                 *ngFor="
-                  let lienUtile of genericervice.get(pageName).getlist()
+                  let lienUtile of filterService.getlist()
                     | paginate: { itemsPerPage: 6, currentPage: p }
                 "
                 [data]="lienUtile"
@@ -276,7 +280,7 @@
               <app-card-adresse-utile
                 class="col-md-4 col-lg-3 mb-3"
                 *ngFor="
-                  let adresseUtile of genericervice.get(pageName).getlist()
+                  let adresseUtile of filterService.getlist()
                     | paginate: { itemsPerPage: 6, currentPage: p }
                 "
                 [data]="adresseUtile"
@@ -291,7 +295,7 @@
                   <div class="row">
                     <app-card-document
                       *ngFor="
-                        let doc of genericervice.get(pageName).getlist()
+                        let doc of filterService.getlist()
                           | paginate: { itemsPerPage: 6, currentPage: p }
                       "
                       class="col-md-4 col-lg-3 mb-2"
@@ -311,14 +315,16 @@
               </div>
             </ng-container>
             <ng-container *ngIf="pageName == 'guides-emploi'">
+
               <router-outlet></router-outlet>
+
             </ng-container>
 
             <ng-container *ngIf="pageName == 'evenement'">
               <app-card-article
                 class="col-md-6 mb-3"
                 *ngFor="
-                  let event of genericervice.get(pageName).getlist()
+                  let event of filterService.getlist()
                     | paginate: { itemsPerPage: 6, currentPage: p }
                 "
                 [isArticle]="false"
@@ -337,16 +343,18 @@
             <ng-container *ngIf="pageName == 'temoignage'">
               <app-temoignage
                 [pageName]="pageName"
-                [data]="genericervice.get(pageName).getlist()"
+                [data]="filterService.getlist()"
               ></app-temoignage>
             </ng-container>
             <ng-container *ngIf="pageName == 'sondage'">
+
               <app-sondage></app-sondage>
+
             </ng-container>
             <ng-container *ngIf="pageName == 'forums'">
               <app-card-forum
                 *ngFor="
-                  let item of genericervice.get(pageName).getlist()
+                  let item of filterService.getlist()
                     | paginate: { itemsPerPage: 6, currentPage: p }
                 "
                 class="col-md-4 mb-2"
@@ -363,10 +371,14 @@
               ></app-card-forum>
             </ng-container>
 
-            <ng-container *ngIf="pageName == 'bloggers'">
-              <app-card-blogueur
-                *ngFor="
-                  let membre of genericervice.get(pageName).getlist()
+
+
+
+            <ng-container *ngIf="pageName ==  'bloggers'">
+                    <app-card-blogueur
+                      *ngFor="
+                  let membre of filterService.getlist()
+
                     | paginate: { itemsPerPage: 6, currentPage: p }
                 "
                 [routerLink]="['/bloggers/details-blogeur/', membre.__id]"

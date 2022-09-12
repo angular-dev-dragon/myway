@@ -70,7 +70,5 @@ export class TemoignageService {
     return this.listcomments;
   }
 }
-function getlist(): any {
-  throw new Error('Function not implemented.');
-}
+
 

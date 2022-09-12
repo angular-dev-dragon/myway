@@ -1373,7 +1373,7 @@ export class CondidatService {
     )
   }
 
-  getcondidats() {
+  getlist() {
     return this.condidats_list
   }
 

@@ -18,7 +18,7 @@ export class EvenementService {
       heureDebut: '10:00',
       dateFin: '2022-10-20',
       heureFin: '15:30',
-      TypeEvenement: 'Presentiel',
+      TypeEvenement:  'Presentiel',
       organisateur: 'Test Organisateur',
     },
 
