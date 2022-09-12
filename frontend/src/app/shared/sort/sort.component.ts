@@ -17,14 +17,10 @@ import {
 export class SortComponent implements OnInit {
   @Input() data: any = []
   @Input() type: string = ''
-
   @Input() pageName: string = ''
-
   @Input() sortByName: boolean = true
   @Input() sortByDate: boolean = true
-
   constructor(private recruteurService:RecruteurService) {}
-
   ngOnInit(): void {}
   ngOnChanges(changes: SimpleChanges): void {
     this.sort_by_name_value = 'sort'
