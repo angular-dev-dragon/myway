@@ -34,7 +34,18 @@ export class DetailsGuideComponent implements OnInit {
         }
       } else {
         this.guide = this.guideService.getlistById(params['id'])
-        console.log('entred to else')
+        console.log('------------entred to else')
+        if (this.guide.description == '') {
+          console.log(
+            '🚀 ~ file: details-guide.component.ts ~ line 39 ~ DetailsGuideComponent ~ this.route.params.subscribe ~ description',
+          )
+
+          if (this.guide.children[0].type == 'faq') {
+            this.router.navigate(['/guides-emploi/faq'])
+          } else if (this.guide.children[0].type == 'post') {
+            this.router.navigate(['/guides-emploi/details-guide/article/1'])
+          }
+        }
       }
       console.log(this.guide) //log the;
     })

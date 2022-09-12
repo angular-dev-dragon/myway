@@ -76,35 +76,43 @@ export class CondidatService {
         },
         skills_tach: [
           {
-            skill_name: 'Paython',
-            persant: '90%',
+            skill_name: 'Python',
+            niveau: 'niveau1',
           },
           {
-            skill_name: 'javascript',
-            persant: '90%',
+            skill_name: 'Javascript',
+            niveau: 'niveau2',
           },
           {
-            skill_name: 'ruby',
-            persant: '50%',
+            skill_name: 'Ruby',
+            niveau: 'niveau3',
+          },
+          {
+            skill_name: 'Angular',
+            niveau: 'niveau4',
           },
         ],
-        soft_skills: ['travil on group', 'manger a project', ' aj lksd dikd '],
+        soft_skills: [
+          { label: 'Travail en group', qualification: 'niveau4' },
+          { label: 'Manager un projet', qualification: 'niveau1' },
+          { label: 'Gestion de stress', qualification: 'niveau2' },
+        ],
         languages: [
           {
-            language_name: 'englidh',
-            persant: '60%',
+            language_name: 'Anglais',
+            niveau: 'niveau4',
           },
           {
-            language_name: 'arabic',
-            persant: '60%',
+            language_name: 'Arabe',
+            niveau: 'niveau1',
           },
           {
-            language_name: 'franch',
-            persant: '60%',
+            language_name: 'Francais',
+            niveau: 'niveau3',
           },
           {
-            language_name: 'eespan',
-            persant: '60%',
+            language_name: 'Espagnol',
+            niveau: 'niveau2',
           },
         ],
         education: [
@@ -175,10 +183,10 @@ export class CondidatService {
         experience: [
           {
             experience_job_title: 'full stack devoper',
-            experience_company: 'Netflix',
-            experience_start_date: '2018-06-15',
-            experience_end_date: '2022-05-27',
-            experience_city: 'Tanger',
+            experience_company: 'netflix',
+            experience_start_date: '2019-07-15',
+            experience_end_date: '2022-11-28',
+            experience_city: 'tanger',
 
             experience_job_description:
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. .',
@@ -197,8 +205,8 @@ export class CondidatService {
           {
             experience_job_title: 'web devloper',
             experience_company: 'sat',
-            experience_start_date: '2022/7',
-            experience_end_date: '2026/7',
+            experience_start_date: '2019-07-15',
+            experience_end_date: '2022-11-28',
             experience_city: 'tanger',
 
             experience_job_description:
@@ -218,13 +226,12 @@ export class CondidatService {
           {
             experience_job_title: 'manger',
             experience_company: 'google',
-            experience_start_date: '2022/7',
-            experience_end_date: '2026/7',
+            experience_start_date: '2019-07-15',
+            experience_end_date: '2022-11-28',
             experience_city: 'tanger',
 
             experience_job_description:
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. .',
-
             experience_job_type: 'experience_job_type',
             experience_he_gine: [
               'time orginistion',
@@ -276,6 +283,71 @@ export class CondidatService {
       // },
 
       tag: ['web', 'developer', 'art', 'kldin'],
+
+      formation: [
+        {
+          id: '00123654',
+          translations: {
+            fr: {
+              intitule: 'TS en Developpement Informatique',
+              description:
+                'Le technicien spécialisé en développement informatique est en charge du développement et de la maintenance des applications informatiques. Il intervient, généralement pour le compte de sociétés de service et d’ingénierie informatique, dans de nombreux domaines applicatifs (industrie, gestion, loisirs, …) En amont, il est réceptif aux attentes du client, il étudie le cahier des charges, les capacités de l’environnement technique et les contraintes du système de production du client. En aval, il participe à la mise en exploitation et au support technique de l’application.',
+              reconnaissance: 'Diplome',
+              nomEtablisement: 'ISGI',
+              typeFormation: 'Formation Diplomante',
+              natureFormation: 'Hybride',
+
+              pays: 'France',
+              ville: 'Toulouse',
+              niveauEtude: 'Bac +2',
+              secteurActivite: 'Informatique',
+            },
+          },
+          dateDebut: '2017-09-12',
+          dateFin: '2019-06-10',
+        },
+        {
+          id: '00123654',
+          translations: {
+            fr: {
+              intitule: 'BAC Sciences Physiques ',
+              reconnaissance: 'Diplome',
+              nomEtablisement: 'Lycee Mohammed 5',
+              pays: 'Maroc',
+              ville: 'Casablanca',
+
+              typeFormation: 'Formation Initiale',
+              natureFormation: 'Classic',
+
+              niveauEtude: 'Bac',
+              secteurActivite: 'Globale',
+            },
+          },
+          dateDebut: '2017-09-12',
+          dateFin: '2019-06-10',
+        },
+        {
+          id: '145896',
+          translations: {
+            fr: {
+              intitule: 'JS Bootcamp',
+              description:
+                ' This snippet was created to help web designers, front-end and back-end developThis snippet was created to help web designers, front-end and back-end developThis snippet was created to help web designers, front-end and back-end develop',
+
+              reconnaissance: 'Certificat',
+              nomEtablisement: 'Université Harvard',
+              typeFormation: 'Formation Certifiante',
+              pays: 'États-Unis',
+              ville: 'Cambridge',
+              natureFormation: 'En ligne',
+              niveauEtude: '',
+              secteurActivite: 'Informatique',
+            },
+          },
+          dateDebut: '2021-12',
+          dateFin: '2022-02',
+        },
+      ],
     },
 
     // #region just one

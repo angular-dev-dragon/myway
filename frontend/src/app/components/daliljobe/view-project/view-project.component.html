@@ -5,7 +5,6 @@
       *ngIf="showLeftSideBar"
       class="section-recruteur spacing-inline-end mb-3"
     >
-
       <app-card-guide
         *ngIf="this.pageName == 'guides-emploi'"
         [pageName]="pageName"
@@ -16,7 +15,6 @@
         [pageName]="pageName"
         *ngIf="this.pageName != 'guides-emploi'"
       ></app-filter>
-
     </div>
 
     <div class="w-100">
@@ -45,9 +43,7 @@
               <div class="row" *ngIf="genericervice.orientation == 'verticale'">
                 <app-card-offre-Verticale
                   *ngFor="
-
                     let offre of filterService.getlist()
-
                       | paginate: { itemsPerPage: 20, currentPage: p }
                   "
                   [pageName]="pageName"
@@ -79,9 +75,7 @@
                 <app-card-offre-horizontale
                   class="col-md-6 mb-3"
                   *ngFor="
-
                     let offre of filterService.getlist()
-
                       | paginate: { itemsPerPage: 20, currentPage: p }
                   "
                   [pageName]="pageName"
@@ -186,37 +180,33 @@
             </ng-container>
 
             <ng-container *ngIf="pageName == 'decouverte-des-metiers'">
-              <div class="container bootstrap snippets bootdeys">
-                <div class="row">
-                  <app-card-metiers
-                    class="col-lg-3 col-md-4 col-sm-6"
-                    *ngFor="
-                      let metier of filterService.getlist()
-                        | paginate: { itemsPerPage: 20, currentPage: p }
-                    "
-                    [Image]="metier?.Image"
-                    [Secteur]="metier?.Secteur"
-                    [Intitule]="metier?.Intitule"
-                    [link]="['/metiers/details-metiers', metier?.id]"
-                  ></app-card-metiers>
-                </div>
+              <div class="row">
+                <app-card-metiers
+                  class="col-lg-3 col-md-4 col-sm-6 mb-3"
+                  *ngFor="
+                    let metier of filterService.getlist()
+                      | paginate: { itemsPerPage: 20, currentPage: p }
+                  "
+                  [Image]="metier?.Image"
+                  [Secteur]="metier?.Secteur"
+                  [Intitule]="metier?.Intitule"
+                  [link]="['/metiers/details-metiers', metier?.id]"
+                ></app-card-metiers>
               </div>
             </ng-container>
             <ng-container *ngIf="pageName == 'metiers-pour-vous'">
-              <div class="container bootstrap snippets bootdeys">
-                <div class="row">
-                  <app-card-metiers
-                    class="col-lg-3 col-md-4 col-sm-6"
-                    *ngFor="
-                      let metier of filterService.getlist()
-                        | paginate: { itemsPerPage: 20, currentPage: p }
-                    "
-                    [Image]="metier?.Image"
-                    [Secteur]="metier?.Secteur"
-                    [Intitule]="metier?.Intitule"
-                    [link]="['/metiers/details-metiers', metier?.id]"
-                  ></app-card-metiers>
-                </div>
+              <div class="row">
+                <app-card-metiers
+                  class="col-lg-3 col-md-4 col-sm-6"
+                  *ngFor="
+                    let metier of filterService.getlist()
+                      | paginate: { itemsPerPage: 20, currentPage: p }
+                  "
+                  [Image]="metier?.Image"
+                  [Secteur]="metier?.Secteur"
+                  [Intitule]="metier?.Intitule"
+                  [link]="['/metiers/details-metiers', metier?.id]"
+                ></app-card-metiers>
               </div>
             </ng-container>
             <ng-container
@@ -315,9 +305,7 @@
               </div>
             </ng-container>
             <ng-container *ngIf="pageName == 'guides-emploi'">
-
               <router-outlet></router-outlet>
-
             </ng-container>
 
             <ng-container *ngIf="pageName == 'evenement'">
@@ -347,9 +335,7 @@
               ></app-temoignage>
             </ng-container>
             <ng-container *ngIf="pageName == 'sondage'">
-
               <app-sondage></app-sondage>
-
             </ng-container>
             <ng-container *ngIf="pageName == 'forums'">
               <app-card-forum
@@ -371,14 +357,10 @@
               ></app-card-forum>
             </ng-container>
 
-
-
-
-            <ng-container *ngIf="pageName ==  'bloggers'">
-                    <app-card-blogueur
-                      *ngFor="
+            <ng-container *ngIf="pageName == 'bloggers'">
+              <app-card-blogueur
+                *ngFor="
                   let membre of filterService.getlist()
-
                     | paginate: { itemsPerPage: 6, currentPage: p }
                 "
                 [routerLink]="['/bloggers/details-blogeur/', membre.__id]"
