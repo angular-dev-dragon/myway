@@ -1,4 +1,4 @@
-<div [routerLink]="link" class="card card-background">
+<!-- <div [routerLink]="link" class="card card-background">
   <div class="image">
     <img
       [lazyLoad]="Image"
@@ -13,6 +13,28 @@
     </h5>
   </div>
   <div class="footer">
+    <div class="author">
+      <a href="#">
+        <span>{{ Secteur }}</span>
+      </a>
+    </div>
+  </div>
+</div> -->
+<div [routerLink]="link" class="card-container">
+  <div class="img-container">
+    <img
+      [lazyLoad]="Image"
+      [defaultImage]="'assets/images/metier.jpg'"
+      class="img-fluid"
+      alt="Image métier"
+    />
+  </div>
+  <div class="body">
+    <h5 class="card-custom-title">
+      {{ Intitule }}
+    </h5>
+  </div>
+  <div class="info-small-card">
     <div class="author">
       <a href="#">
         <span>{{ Secteur }}</span>
