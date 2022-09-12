@@ -25,15 +25,25 @@ export class ViewProjectComponent implements OnInit {
     public genericervice: GenericService,
     private router: Router,
   ) {
-    this.router.events.subscribe((event: any) => {
+    this.router.events.subscribe((event) => {
       //console.log('test function');
       if (event instanceof NavigationEnd) {
-        this.pageName = event.url.split('/')[1]
+        this.pageName = event.url.split('/')[1];
+        console.log('page name', this.pageName)
+
+
+        this.genericervice.get(this.pageName);
+        this.resultData = this.genericervice.reusltdata;
+
+        
+
       }
 
-      this.genericervice.get(this.pageName)
-      this.resultData = this.genericervice.reusltdata
-    })
+    });
+  }
+
+  ngAfterViewInit() {
+    console.log('after view init')
   }
 
   ngOnInit(): void {

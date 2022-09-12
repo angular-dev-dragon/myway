@@ -1,6 +1,7 @@
 <!-- #region chad -->
-<div class="container mt-5">
+<div class="container mt-5" >
   <div class="d-flex flex-main">
+
     <div
       *ngIf="showLeftSideBar"
       class="section-recruteur spacing-inline-end mb-3"
@@ -40,6 +41,7 @@
                 pageName == 'demandes-specifiques'
               "
             >
+
               <div class="row" *ngIf="genericervice.orientation == 'verticale'">
                 <app-card-offre-Verticale
                   *ngFor="
@@ -102,9 +104,9 @@
                     let c of filterService.getlist()
                       | paginate: { itemsPerPage: 20, currentPage: p }
                   "
-                  [link]="['/Candidats/details', c.info.id]"
+                  [link]="['/Candidats/details', c?.info?.id]"
                   [pageName]="pageName"
-                  [id]="c?.id"
+                  [id]="c?.info?.id"
                   class=""
                   [available]="c?.info.available"
                   [img]="c?.info.img"
