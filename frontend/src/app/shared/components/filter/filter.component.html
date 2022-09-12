@@ -1,10 +1,10 @@
 <div class="sideBar-Main">
   <div
     class="btn btn-outline-secondary"
-    (click)="sidebarOffre2.classList.toggle('open')"
-  >
+    (click)="sidebarOffre2.classList.toggle('open')">
     <i class="fa fa-filter"></i>
   </div>
+
   <div
     class="sidebar-offre open"
     #sidebarOffre2
@@ -15,7 +15,7 @@
       <!--  début filter par l'emplacement -->
       <div class="accordion" id="accordionPanelsStayOpenExample">
         <hr />
-        <!-- #region Secteur d'activité -->
+        <!-- #region Secteur d'activité ******************************** -->
 
         <div
           class="accordion-item"
@@ -81,17 +81,17 @@
         <div
           class="accordion-item"
           *ngIf="
-
-            pageName == 'offre' ||
-            pageName == 'offres-emploi'||
-            pageName ==  'offres-de-stage'||
-            pageName ==  'offres-alternance'||
-            pageName ==  'offres-extra'||
-            pageName == 'candidat' ||
-            pageName == 'demande specifique' ||
-
-            pageName == 'candidature spontanee' ||
-            pageName == 'recruteurs'
+            pageName == 'offres-emploi' ||
+            pageName == 'offres-de-stage' ||
+            pageName == 'offres-alternance' ||
+            pageName == 'offres-extra' ||
+            pageName == 'candidats' ||
+            pageName == 'demandes-specifiques' ||
+            pageName == 'condidatures-spontannes'||
+            pageName == 'recruteurs' ||
+            pageName == 'associations-insertion-economique' ||
+            pageName == 'etablissements-formation' ||
+            pageName == 'cabinets-recrutement'
           "
         >
           <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
@@ -218,11 +218,13 @@
         <div
           class="accordion-item"
 
-          *ngIf="pageName == 'offre' ||
-            pageName == 'offres-emploi'||
-            pageName ==  'offres-de-stage'||
-            pageName ==  'offres-alternance'||
-            pageName ==  'offres-extra'|| pageName == 'demande specifique'"
+          *ngIf="
+           pageName == 'offres-emploi' ||
+           pageName == 'offres-de-stage' ||
+           pageName == 'offres-alternance' ||
+           pageName == 'offres-extra' ||
+           pageName == 'demandes-specifiques'
+           "
 
         >
           <h2 class="accordion-header" id="panelsStayOpen-headingThree">
@@ -272,11 +274,12 @@
         <div
           class="accordion-item"
 
-          *ngIf="pageName == 'offre' ||
-            pageName == 'offres-emploi'||
-            pageName ==  'offres-de-stage'||
-            pageName ==  'offres-alternance'||
-            pageName ==  'offres-extra'|| pageName == 'demande specifique'"
+          *ngIf="
+           pageName == 'offres-emploi' ||
+           pageName == 'offres-de-stage' ||
+           pageName == 'offres-alternance' ||
+           pageName == 'offres-extra' ||
+           pageName == 'demandes-specifiques'"
 
         >
           <h2 class="accordion-header" id="panelsStayOpen-headingFour">
@@ -403,13 +406,12 @@
           class="accordion-item"
           *ngIf="
 
-            pageName == 'offre' ||
-            pageName == 'offres-emploi'||
-            pageName ==  'offres-de-stage'||
-            pageName ==  'offres-alternance'||
-            pageName ==  'offres-extra'||
-            pageName == 'demande specifique' ||
-            pageName == 'candidat'
+           pageName == 'offres-emploi' ||
+           pageName == 'offres-de-stage' ||
+           pageName == 'offres-alternance' ||
+           pageName == 'offres-extra' ||
+           pageName == 'demandes-specifiques' ||
+           pageName == 'candidats'
 
           "
         >
@@ -528,14 +530,12 @@
         <div
           class="accordion-item"
           *ngIf="
-
-            pageName == 'offre' ||
-            pageName == 'offres-emploi'||
-            pageName ==  'offres-de-stage'||
-            pageName ==  'offres-alternance'||
-            pageName ==  'offres-extra'||
-            pageName == 'candidat' ||
-            pageName == 'demande specifique'
+           pageName == 'offres-emploi' ||
+           pageName == 'offres-de-stage' ||
+           pageName == 'offres-alternance' ||
+           pageName == 'offres-extra' ||
+           pageName == 'candidats' ||
+           pageName == 'demandes-specifiques'
 
           "
         >
@@ -652,13 +652,13 @@
 
         <div
           class="accordion-item"
-
-          *ngIf="pageName == 'offre' ||
-            pageName == 'offres-emploi'||
-            pageName ==  'offres-de-stage'||
-            pageName ==  'offres-alternance'||
-            pageName ==  'offres-extra'|| pageName == 'candidat'"
-
+          *ngIf="
+           pageName == 'offres-emploi' ||
+           pageName == 'offres-de-stage' ||
+           pageName == 'offres-alternance' ||
+           pageName == 'offres-extra' ||
+           pageName == 'demandes-specifiques' ||
+           pageName == 'candidats' "
         >
           <h2 class="accordion-header" id="panelsStayOpen-headingSeven">
             <button
@@ -762,7 +762,12 @@
         <!-- #region Metier -->
         <div
           class="accordion-item"
-          *ngIf="pageName == 'quiz' || pageName == 'metier'"
+          *ngIf="
+           pageName == 'decouverte-des-metiers' ||
+           pageName == 'metiers-pour-vous' ||
+           pageName == 'quiz'
+
+          "
         >
           <h2 class="accordion-header" id="panelsStayOpen-headingFive">
             <button
@@ -837,10 +842,16 @@
           </div>
         </div>
         <!-- #endregion -->
+
         <!-- #region Type Societe -->
         <div
           class="accordion-item"
-          *ngIf="pageName == 'candidature spontanee' || pageName == 'recruteurs'"
+          *ngIf="
+           pageName == 'condidatures-spontannes' ||
+           pageName == 'recruteurs' ||
+           pageName == 'associations-insertion-economique' ||
+           pageName == 'etablissements-formation' ||
+           pageName == 'cabinets-recrutement' "
         >
           <h2 class="accordion-header" id="panelsStayOpen-headingFive">
             <button
@@ -915,6 +926,7 @@
           </div>
         </div>
         <!-- #endregion -->
+
         <!-- #region TypeEvent -->
         <div class="accordion-item" *ngIf="pageName == 'evenement'">
           <h2 class="accordion-header" id="panelsStayOpen-headingFive">
@@ -979,6 +991,7 @@
         </div>
 
         <!-- #endregion -->
+
         <!-- #region Date Debut -->
         <div class="accordion-item" *ngIf="pageName == 'evenement'">
           <h2 class="accordion-header" id="panelsStayOpen-headingThree">
@@ -1023,6 +1036,7 @@
           </div>
         </div>
         <!-- #endregion -->
+
         <!-- #region DateFin -->
         <div class="accordion-item" *ngIf="pageName == 'evenement'">
           <h2 class="accordion-header" id="panelsStayOpen-headingThree">
@@ -1063,109 +1077,93 @@
         </div>
 
         <!-- #endregion -->
+
       </div>
     </div>
   </div>
 </div>
 
-<!-- <div *ngIf="pfilterType == 'name'" class="row px-2">
-  <div class="col-md-8">
-    <div class="my-2">
-      <div class="my-2">
-        <div class="form__group field" style="margin-top: -15px;">
-          <input
-            (keyup)="filter()"
-            #search
-            class="form__field"
-            type="text"
-            id="saerchBar"
-            placeholder="Mot clés, titre du poste..."
-            aria-label="Search"
-            aria-describedby="search-addon"
-          />
-          <label for="saerchBar" class="form__label">
-            Mot clés, titre du poste...
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4 order">
-    <div class="my-2 d-flex">
-      <!-- <div class="dropdown">
-        <button
-          class="btn btn-default dropdown-toggle"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarDropdown"
-          aria-controls="navbarDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          Order by
-        </button>
-        <ul
-          class="dropdown-menu custom-navbar"
-          aria-labelledby="navbarDropdown"
-          id="navbarDropdown"
-        >
-          <li>
-            <div class="row">
-              <div class="col-6">Name</div>
 
-              <div class="col-4">
-                <a class="dropdown-item" (click)="sortByNmae(1)">
-                  <i class="fa-solid fa-{{ sort_by_name }}"></i>
-                </a>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="row">
-              <div class="col-6">Date</div>
- -->
-      <!-- <div class="col-4">
-                <a
-                  *ngIf="sort_by_date == 'sort'"
-                  class="dropdown-item"
-                  (click)="sortByDate('sort-down')"
-                >
-                  <i class="fa-solid fa-sort"></i>
-                </a>
-                <a
-                  *ngIf="sort_by_date == 'sort-up'"
-                  class="dropdown-item"
-                  (click)="sortByDate('sort-down')"
-                >
-                  <i class="fa-solid fa-sort-up"></i>
-                </a>
-                <a
-                  *ngIf="sort_by_date == 'sort-down'"
-                  class="dropdown-item"
-                  (click)="sortByDate('sort-up')"
-                >
-                  <i class="fa-solid fa-sort-down"></i>
-                </a>
-               </div> -->
-      <!-- </div>
-          </li>
-        </ul> -->
-    <!-- </div>
-  </div> -->
-<!-- </div> -->
-<!-- <div class="btn-group">
-    <button
-      (click)="changeview('verticale')"
-      type="button"
-      class="btn btn-default active"
-    >
-      <i class="fa fa-list"></i>
-    </button>
-    <button
-      (click)="changeview('horizontale')"
-      type="button"
-      class="btn btn-default"
-    >
-      <i class="fa fa-th"></i>
-    </button>
-  </div> -->
+<!--
+          pageName == 'offres-emploi' ||
+           pageName == 'offres-de-stage' ||
+           pageName == 'offres-alternance' ||
+           pageName == 'offres-extra' ||
+           pageName == 'demandes-specifiques' ||
+      ///////////////////////////////////////////
+           pageName == 'candidats' ||
+           ///////////////////////////////////////////
+           pageName == 'condidatures-spontannes' ||
+           pageName == 'recruteurs' ||
+           pageName == 'associations-insertion-economique' ||
+           pageName == 'etablissements-formation' ||
+           pageName == 'cabinets-recrutement' ||
+      ///////////////////////////////////////////
+           pageName == 'decouverte-des-metiers' ||
+           pageName == 'metiers-pour-vous' ||
+           pageName == 'quiz' ||
+      ///////////////////////////////////////////
+          pageName == 'evenement'
+
+
+
+
+
+
+           pageName == 'soft-skills' ||
+           pageName == 'hard-skills' ||
+           pageName == 'conseils-pratique' ||
+           pageName == 'legislations-et-textes-lois' ||
+           pageName == 'liens-utiles' ||
+           pageName == 'adresses-utiles' ||
+           pageName == 'documents' ||
+           pageName == 'actualites-emploi' ||
+           pageName == 'temoignage' ||
+           pageName == 'sondage' ||
+           pageName == 'forums' ||
+           pageName == 'bloggers'
+
+
+
+
+
+
+<!--
+   // 'offres-emploi';
+// 'offres-de-stage';
+// 'offres-alternance';
+// 'offres-extra';
+////////////////////
+// 'candidats';
+// 'demandes-specifiques';
+// 'condidatures-spontannes';
+// ////////////////////
+// 'recruteurs';
+// 'etablissements-formation';
+// 'cabinets-recrutement';
+// 'associations-insertion-economique';
+// ////////////////////
+// 'decouverte-des-metiers';
+// 'soft-skills';
+// 'hard-skills';
+// 'metiers-pour-vous';
+// 'quiz';
+// ////////////////////
+// 'conseils-pratique';
+// 'adresses-utiles';
+// 'liens-utiles';
+// 'documents';
+// 'guides-emploi';
+// 'legislations-et-textes-lois';
+
+// ////////////////////
+// 'evenement';
+// 'actualites-emploi';
+// // ///////////////
+// 'forums';
+// 'sondage';
+// 'temoignage';
+// 'bloggers';
+// ////////////////////
+// 'undfind';
+-->

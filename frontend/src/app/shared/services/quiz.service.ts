@@ -116,7 +116,7 @@ export class QuizService {
 
         newList2 = this.listQuiz;
         newList2 = newList2.filter((quiz: any) => {
-          return quiz.metier.includes(filtre.nativeElement.value);
+          return quiz[label].includes(filtre.nativeElement.value);
         });
 
         newList2.map((list: any) => {

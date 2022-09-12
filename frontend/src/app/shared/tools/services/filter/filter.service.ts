@@ -107,7 +107,7 @@ export class FilterService {
     return this.reusltdata;
   }
 
-  removeAccent = function (s: any) {
+  removeAccent(s: any) {
     var r = s.toLowerCase();
     r = r.replace(new RegExp('-', 'g'), ' ');
     r = r.replace(new RegExp('_', 'g'), ' ');
