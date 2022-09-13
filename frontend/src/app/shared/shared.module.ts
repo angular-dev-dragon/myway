@@ -105,7 +105,7 @@ import { CardLibraryComponent } from './components/card-library/card-library.com
 import { CondidatListComponent } from './components/condidat-list/condidat-list.component'
 
 import { ListSocieteComponent } from './components/list-societe/list-societe.component'
-import {DetailsHreaderComponent } from './components/details-hreader/j'
+import { DetailsHeaderComponent } from './components/details-header/details-header.component'
 
 import { CardQuizComponent } from './components/card-quiz/card-quiz.component'
 
@@ -240,7 +240,7 @@ let modules: any = [
 
     CondidatListComponent,
 
- DetailsHreaderComponent,
+    DetailsHeaderComponent,
 
     CardQuizComponent,
 
@@ -298,7 +298,7 @@ let modules: any = [
     ListOffresComponent,
 
     ListSocieteComponent,
-DetailsHreaderComponent,
+    DetailsHeaderComponent,
     CardQuizComponent,
     FilterByTextComponent,
     SortComponent,
