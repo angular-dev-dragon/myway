@@ -28,14 +28,14 @@ export class ViewProjectComponent implements OnInit {
     this.router.events.subscribe((event) => {
       //console.log('test function');
       if (event instanceof NavigationEnd) {
-        this.pageName = event.url.split('/')[1];
+        this.pageName = event.url.split('/')[2];
         console.log('page name', this.pageName)
 
 
         this.genericervice.get(this.pageName);
         this.resultData = this.genericervice.reusltdata;
 
-        
+
 
       }
 
@@ -135,3 +135,4 @@ export class ViewProjectComponent implements OnInit {
     this.orientation = value
   }
 }
+

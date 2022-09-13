@@ -105,7 +105,7 @@ import { CardLibraryComponent } from './components/card-library/card-library.com
 import { CondidatListComponent } from './components/condidat-list/condidat-list.component'
 
 import { ListSocieteComponent } from './components/list-societe/list-societe.component'
-import { CardOffreDetailsVerticaleComponent } from './components/card-offre-details-verticale/card-offre-details-verticale.component'
+import {DetailsHreaderComponent } from './components/details-hreader/details-hreader.component'
 
 import { CardQuizComponent } from './components/card-quiz/card-quiz.component'
 
@@ -208,7 +208,6 @@ let modules: any = [
 @NgModule({
   declarations: [
     CDetailsComponent,
-
     ListSocieteComponent,
     ListOffresComponent,
     CardRecruiterComponent,
@@ -241,7 +240,7 @@ let modules: any = [
 
     CondidatListComponent,
 
-    CardOffreDetailsVerticaleComponent,
+ DetailsHreaderComponent,
 
     CardQuizComponent,
 
@@ -299,7 +298,7 @@ let modules: any = [
     ListOffresComponent,
 
     ListSocieteComponent,
-    CardOffreDetailsVerticaleComponent,
+DetailsHreaderComponent,
     CardQuizComponent,
     FilterByTextComponent,
     SortComponent,
