@@ -110,6 +110,8 @@ export class OffreService {
       langue: 'Espagnol',
     },
   ];
+  data: any;
+myData: any;
   details: any = [
     {
       id: 1,
@@ -399,12 +401,26 @@ export class OffreService {
   listOffres: any = [];
 
   getById(id: string) {
-    return of(this.details.find((i) => i.id === id));
+    this.data= this.details.find((i: any) => i.id == id);
+    return this.data;
+  }
+  getDetails(type: ['']) {
+
+
+    this.myData = this.data.find((i: any) => i.id == type.join(' '))
+    return this.myData
+
   }
 
   getlist() {
     return this.listOffres;
   }
+
+
+
+
+
+
 
   getByIdWishList(ids: any) {
     return this.http.get<any>(API + '/candidat/wishList', {
