@@ -22,12 +22,17 @@ export class FilterByTextComponent implements OnInit, AfterViewInit {
   constructor(
     private filterService: FilterService,
     private genericService: GenericService
-  ) {}
-
-  ngAfterViewInit(): void {
-    this.data = this.filterService.getdata(this.pageName);
+  ) {
+    // this.data = this.filterService.getdata(this.pageName);
   }
 
+  ngAfterViewInit(): void {
+    console.log(this.pageName);
+
+    this.data = this.filterService.getdata(this.pageName);
+    console.log('------------',this.data);
+
+  }
   ngOnInit(): void {}
 
   filterByText() {
@@ -90,7 +95,7 @@ export class FilterByTextComponent implements OnInit, AfterViewInit {
           'translations.fr.__titre',
           'translations.fr.__sous_titre',
         ])
-      : // : this.pageName == 'guides-emploi'? (this.path = [])
+      : // : this.pageName == 'guides-emp? (this.path = [])
       this.pageName == 'evenement'
       ? (this.path = ['titre', 'TypeEvenement'])
       : (this.path = '');

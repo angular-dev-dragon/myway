@@ -69,13 +69,10 @@ export class QuizService {
     },
     {
       id: 'a939 ',
-      image:
-        'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/14/b2d530f1ad11e7ab380fc0c6c817a8/Search-Thumbnail.jpg?auto=format%2Ccompress&dpr=1&w=268',
+      image:'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/14/b2d530f1ad11e7ab380fc0c6c817a8/Search-Thumbnail.jpg?auto=format%2Ccompress&dpr=1&w=268',
       titre: 'Quiz React JS',
-      resume:
-        'Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They’re made interactive with the included Bootstrap dropdown JavaScript plugin. They’re toggled by clicking, not by hovering; this is an intentional design decision.',
+      resume:'Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They’re made interactive with the included Bootstrap dropdown JavaScript plugin. They’re toggled by clicking, not by hovering; this is an intentional design decision.',
       niveau: 'Intermediare',
-
       domaine: 'Front-End Developpement',
       specialisation: 'Bootstrap Html CSS',
       nbQuestions: 10,
@@ -116,7 +113,7 @@ export class QuizService {
 
         newList2 = this.listQuiz;
         newList2 = newList2.filter((quiz: any) => {
-          return quiz.metier.includes(filtre.nativeElement.value);
+          return quiz[label].includes(filtre.nativeElement.value);
         });
 
         newList2.map((list: any) => {

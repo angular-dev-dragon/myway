@@ -65,7 +65,7 @@ export class OffreService {
       Pays: 'Algérie',
       NiveauxEtude: 'Bac',
       NiveauxExperience: 'entre 1 et 2',
-      langue: 'Français',
+      langue: ['Français','arabic'],
       Region: 'Tanger-Tetouan',
     },
     {

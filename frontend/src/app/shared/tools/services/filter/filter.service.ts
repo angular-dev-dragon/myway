@@ -9,7 +9,9 @@ export class FilterService {
   path!: any;
 
   allValAndPath!: { path: any; filterbythis: any }[];
-  constructor(private genericService: GenericService) {}
+  constructor(private genericService: GenericService) {
+
+  }
   filter(data: any[], filter: { path: any; filterbythis: any }) {
     this.reusltdata = data;
     if (filter.filterbythis instanceof Array) {
@@ -101,13 +103,18 @@ export class FilterService {
   getdata(page: string) {
 
 
-    return (this.reusltdata = this.genericService.get(page).getlist());
+    this.reusltdata = this.genericService.get(page).getlist()
+
+    console.log('get data' ,JSON.parse(JSON.stringify(this.reusltdata)));
+
+    return JSON.parse(JSON.stringify(this.reusltdata));
   }
+
   getlist() {
     return this.reusltdata;
   }
 
-  removeAccent = function (s: any) {
+  removeAccent(s: any) {
     var r = s.toLowerCase();
     r = r.replace(new RegExp('-', 'g'), ' ');
     r = r.replace(new RegExp('_', 'g'), ' ');
