@@ -294,6 +294,11 @@ export class CondidatService {
           disponibilite: 'Immediate',
         },
       },
+      dateNaissance: '1999-08-05',
+      email: 'hicham.mail@gmail.com',
+      telephone: '0603861321',
+      image: 'https://www.bootdey.com/img/Content/avatar/avatar6.png',
+
       cordeonneeNum: [
         {
           label: 'github',
@@ -317,10 +322,6 @@ export class CondidatService {
           },
         },
       },
-      dateNaissance: '1999-08-05',
-      email: 'hicham.mail@gmail.com',
-      telephone: '0603861321',
-      image: 'https://www.bootdey.com/img/Content/avatar/avatar6.png',
 
       experience: [
         {
@@ -384,7 +385,6 @@ export class CondidatService {
               nomEtablisement: 'ISGI',
               typeFormation: 'Formation Diplomante',
               natureFormation: 'Hybride',
-
               pays: 'France',
               ville: 'Toulouse',
               niveauEtude: 'Bac +2',
