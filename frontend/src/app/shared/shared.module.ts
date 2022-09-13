@@ -105,7 +105,7 @@ import { CardLibraryComponent } from './components/card-library/card-library.com
 import { CondidatListComponent } from './components/condidat-list/condidat-list.component'
 
 import { ListSocieteComponent } from './components/list-societe/list-societe.component'
-import {DetailsHreaderComponent } from './components/details-hreader/details-hreader.component'
+import {DetailsHreaderComponent } from './components/details-hreader/j'
 
 import { CardQuizComponent } from './components/card-quiz/card-quiz.component'
 
