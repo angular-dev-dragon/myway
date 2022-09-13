@@ -9,7 +9,7 @@ export class DetailsDemandesSpecifiquesComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
+  pageNumber:String  = 'offres-emploi';
   demande: any = {
     membre: {
       nom: 'Hicham',
@@ -94,5 +94,5 @@ export class DetailsDemandesSpecifiquesComponent implements OnInit {
         ],
       },
     ],
-  }
+  };
 }
