@@ -76,42 +76,42 @@ export class CondidatService {
         },
         skills_tach: [
           {
-            skill_name: 'Python',
+            label: 'Python',
             niveau: 'niveau1',
           },
           {
-            skill_name: 'Javascript',
+            label: 'Javascript',
             niveau: 'niveau2',
           },
           {
-            skill_name: 'Ruby',
+            label: 'Ruby',
             niveau: 'niveau3',
           },
           {
-            skill_name: 'Angular',
+            label: 'Angular',
             niveau: 'niveau4',
           },
         ],
         soft_skills: [
-          { label: 'Travail en group', qualification: 'niveau4' },
-          { label: 'Manager un projet', qualification: 'niveau1' },
-          { label: 'Gestion de stress', qualification: 'niveau2' },
+          { label: 'Travail en group', niveau: 'niveau4' },
+          { label: 'Manager un projet', niveau: 'niveau1' },
+          { label: 'Gestion de stress', niveau: 'niveau2' },
         ],
         languages: [
           {
-            language_name: 'Anglais',
+            label: 'Anglais',
             niveau: 'niveau4',
           },
           {
-            language_name: 'Arabe',
+            label: 'Arabe',
             niveau: 'niveau1',
           },
           {
-            language_name: 'Francais',
+            label: 'Francais',
             niveau: 'niveau3',
           },
           {
-            language_name: 'Espagnol',
+            label: 'Espagnol',
             niveau: 'niveau2',
           },
         ],
@@ -180,71 +180,71 @@ export class CondidatService {
           },
         ],
 
-        experience: [
-          {
-            experience_job_title: 'full stack devoper',
-            experience_company: 'netflix',
-            experience_start_date: '2019-07-15',
-            experience_end_date: '2022-11-28',
-            experience_city: 'tanger',
+        // experience: [
+        //   {
+        //     experience_job_title: 'full stack devoper',
+        //     experience_company: 'netflix',
+        //     experience_start_date: '2019-07-15',
+        //     experience_end_date: '2022-11-28',
+        //     experience_city: 'tanger',
 
-            experience_job_description:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. .',
-            experience_job_type: 'experience_job_type',
-            experience_he_gine: [
-              'time orginistion',
-              'project ourgisiion',
-              'work on group',
-            ],
-            experience_roul: [
-              'team manager',
-              ' fullstack devloper',
-              ' contant manager',
-            ],
-          },
-          {
-            experience_job_title: 'web devloper',
-            experience_company: 'sat',
-            experience_start_date: '2019-07-15',
-            experience_end_date: '2022-11-28',
-            experience_city: 'tanger',
+        //     experience_job_description:
+        //       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. .',
+        //     experience_job_type: 'experience_job_type',
+        //     experience_he_gine: [
+        //       'time orginistion',
+        //       'project ourgisiion',
+        //       'work on group',
+        //     ],
+        //     experience_roul: [
+        //       'team manager',
+        //       ' fullstack devloper',
+        //       ' contant manager',
+        //     ],
+        //   },
+        //   {
+        //     experience_job_title: 'web devloper',
+        //     experience_company: 'sat',
+        //     experience_start_date: '2019-07-15',
+        //     experience_end_date: '2022-11-28',
+        //     experience_city: 'tanger',
 
-            experience_job_description:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. .',
-            experience_job_type: 'experience_job_type',
-            experience_he_gine: [
-              'time orginistion',
-              'project ourgisiion',
-              'work on group',
-            ],
-            experience_roul: [
-              'team manager',
-              ' fullstack devloper',
-              ' contant manager',
-            ],
-          },
-          {
-            experience_job_title: 'manger',
-            experience_company: 'google',
-            experience_start_date: '2019-07-15',
-            experience_end_date: '2022-11-28',
-            experience_city: 'tanger',
+        //     experience_job_description:
+        //       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. .',
+        //     experience_job_type: 'experience_job_type',
+        //     experience_he_gine: [
+        //       'time orginistion',
+        //       'project ourgisiion',
+        //       'work on group',
+        //     ],
+        //     experience_roul: [
+        //       'team manager',
+        //       ' fullstack devloper',
+        //       ' contant manager',
+        //     ],
+        //   },
+        //   {
+        //     experience_job_title: 'manger',
+        //     experience_company: 'google',
+        //     experience_start_date: '2019-07-15',
+        //     experience_end_date: '2022-11-28',
+        //     experience_city: 'tanger',
 
-            experience_job_description:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. .',
-            experience_job_type: 'experience_job_type',
-            experience_he_gine: [
-              'time orginistion',
-              'project ourgisiion',
-              'work on group',
-            ],
-            experience_roul: [
-              'team manager',
-              ' fullstack devloper',
-              ' contant manager',
-            ],
-          },
-        ],
+        //     experience_job_description:
+        //       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. .',
+        //     experience_job_type: 'experience_job_type',
+        //     experience_he_gine: [
+        //       'time orginistion',
+        //       'project ourgisiion',
+        //       'work on group',
+        //     ],
+        //     experience_roul: [
+        //       'team manager',
+        //       ' fullstack devloper',
+        //       ' contant manager',
+        //     ],
+        //   },
+        // ],
         Achievements: {
           achievement_name: 'achievement_name',
           achievement_description: 'achievement_description',
@@ -283,7 +283,95 @@ export class CondidatService {
       // },
 
       tag: ['web', 'developer', 'art', 'kldin'],
+      translations: {
+        fr: {
+          nom: 'Hicham',
+          prenom: 'Berdouki',
+          nationalite: 'Marocain',
 
+          secteurActivite: 'Informatique',
+          profession: 'Developpeur Web',
+          disponibilite: 'Immediate',
+        },
+      },
+      cordeonneeNum: [
+        {
+          label: 'github',
+          valeur: 'https://github.com/Ahmed-dev-dragon',
+        },
+        {
+          label: 'facebook',
+          valeur: 'https://www.facebook.com/ahmed.dev.dragon',
+        },
+        {
+          label: 'gmail',
+          valeur: 'https://www.facebook.com/ahmed.dev.dragon',
+        },
+      ],
+      cordonneesGeo: {
+        translations: {
+          fr: {
+            adresse: '22, Rue place des Mozzart',
+            pays: 'Maroc',
+            ville: 'Tanger',
+          },
+        },
+      },
+      dateNaissance: '1999-08-05',
+      email: 'hicham.mail@gmail.com',
+      telephone: '0603861321',
+      image: 'https://www.bootdey.com/img/Content/avatar/avatar6.png',
+
+      experience: [
+        {
+          translations: {
+            fr: {
+              designation: 'Full Stack devlopper',
+              cadreExperience: 'Anapec',
+              niveauExperience: 'Debutant',
+              typeOrganisation: 'Start-Up',
+              nomOrganisation: 'Smart Automation',
+
+              description:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. ',
+            },
+          },
+          cordonneesGeo: {
+            translations: {
+              fr: {
+                pays: 'Maroc',
+                ville: 'Tanger',
+              },
+            },
+          },
+          dateDebut: '2017-11-04',
+          dateFin: '2017-12-31',
+        },
+        {
+          translations: {
+            fr: {
+              designation: 'MEAN Stack Developper',
+              cadreExperience: 'CDI',
+              niveauExperience: 'Senior',
+              typeOrganisation: 'Grande Entreprise',
+              nomOrganisation: 'Dell',
+
+              description:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. ',
+            },
+          },
+          cordonneesGeo: {
+            translations: {
+              fr: {
+                pays: 'Maroc',
+                ville: 'Tanger',
+              },
+            },
+          },
+          dateDebut: '2019-01-19',
+          dateFin: '2020-02-12',
+        },
+      ],
       formation: [
         {
           id: '00123654',
@@ -303,6 +391,30 @@ export class CondidatService {
               secteurActivite: 'Informatique',
             },
           },
+          typeObjet: 'pdf',
+          cheminAssocie: 'http://infolab.stanford.edu/pub/papers/google.pdf',
+          dateDebut: '2017-09-12',
+          dateFin: '2019-06-10',
+        },
+        {
+          id: '00123654',
+          translations: {
+            fr: {
+              intitule: 'Licence LIAM',
+              description:
+                'Le technicien spécialisé en développement informatique est en charge du développement et de la maintenance des applications informatiques. Il intervient, généralement pour le compte de sociétés de service et d’ingénierie informatique, dans de nombreux domaines applicatifs (industrie, gestion, loisirs, …) En amont, il est réceptif aux attentes du client, il étudie le cahier des charges, les capacités de l’environnement technique et les contraintes du système de production du client. En aval, il participe à la mise en exploitation et au support technique de l’application.',
+              reconnaissance: 'Diplome',
+              nomEtablisement: 'Faculté des Sciences et Téchniques',
+              typeFormation: 'Formation Diplomante',
+              natureFormation: 'Hybride',
+
+              pays: 'Maroc',
+              ville: 'Tanger',
+              niveauEtude: 'Bac +3',
+              secteurActivite: 'Informatique',
+            },
+          },
+
           dateDebut: '2017-09-12',
           dateFin: '2019-06-10',
         },
@@ -323,6 +435,11 @@ export class CondidatService {
               secteurActivite: 'Globale',
             },
           },
+          typeObjet: 'image',
+
+          cheminAssocie:
+            'https://st4.depositphotos.com/1871501/39151/i/450/depositphotos_391517732-stock-photo-hassan-mosque-sunset-casablanca-morocco.jpg',
+
           dateDebut: '2017-09-12',
           dateFin: '2019-06-10',
         },
@@ -344,6 +461,10 @@ export class CondidatService {
               secteurActivite: 'Informatique',
             },
           },
+          typeObjet: 'link',
+
+          cheminAssocie: 'https://welovedevs.com/app/fr/tests/c-winforms',
+
           dateDebut: '2021-12',
           dateFin: '2022-02',
         },
