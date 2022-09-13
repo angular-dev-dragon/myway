@@ -3,8 +3,8 @@
     <div class="row g-0">
       <div class="col-md-3 text-center">
         <img
-          [lazyLoad]="condida_data.info.img"
-          [defaultImage]=""
+          [lazyLoad]="condida_data?.image"
+          [defaultImage]="'assets/images/user.png'"
           class="img_profile img-fluid"
           alt="..."
         />
@@ -17,17 +17,17 @@
           >
             &nbsp;&nbsp;
             <i class="fa-solid fa-user"></i>
-            {{ condida_data.info.name.first_name }}
-            {{ condida_data.info.name.last_name }}
+            {{ condida_data?.translations?.fr?.nom }}
+            {{ condida_data?.translations?.fr?.prenom }}
             |
             <span style="font-size: 20px; padding-bottom: 0px;">
-              {{ condida_data.info.address.countrie }}
+              {{ condida_data?.translations?.fr?.nationalite }}
             </span>
           </h1>
           <h5 class="poste">
             &nbsp;&nbsp;&nbsp;
             <i class="fa-solid fa-briefcase"></i>
-            {{ condida_data.info.job_post.job_title }}
+            {{ condida_data?.translations?.fr?.profession }}
           </h5>
           <h6
             style="color: #4c4a4a; font-size: 20px; margin-bottom: 13px;"
@@ -35,7 +35,7 @@
           >
             &nbsp;&nbsp;&nbsp;
             <i class="fa-solid fa-calendar-days"></i>
-            : {{ condida_data.info.borthday }}
+            : {{ condida_data?.dateNaissance | date: 'dd/MM/yyyy' }}
           </h6>
           <ul
             style="
@@ -50,12 +50,12 @@
             <li style="margin-right: 20px;">
               <i class="fa-solid fa-envelope"></i>
 
-              {{ condida_data.info.name }}
+              {{ condida_data?.email }}
             </li>
             <li style="margin-right: 20px;">
               <i class="fa-solid fa-phone"></i>
 
-              {{ condida_data.info.phone }}
+              {{ condida_data?.telephone }}
             </li>
           </ul>
 
@@ -68,11 +68,9 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <li>
                   <i class="fa-solid fa-location-dot"></i>
-                  {{ condida_data.info.address.street }}N
-                  {{ condida_data.info.address.building }}
-                  {{ condida_data.info.address.city }}
-                  {{ condida_data.info.address.postalCode }}|
-                  {{ condida_data.info.address.countrie }}
+                  {{ condida_data?.cordonneesGeo?.translations?.fr?.adresse }}
+                  {{ condida_data?.cordonneesGeo?.translations?.fr?.ville }} |
+                  {{ condida_data?.cordonneesGeo?.translations?.fr?.pays }}
                 </li>
               </small>
             </ul>
@@ -95,9 +93,9 @@
       <div class="section-recruteur">
         <!-- <h5>Détails de l'offre</h5> -->
         <p-tabView>
-          <p-tabPanel header="{{ 'Education' | translate }}">
+          <!-- <p-tabPanel header="{{ 'Education' | translate }}">
             <p-accordion *ngFor="let i of condida_data.info.education">
-              <p-accordionTab [selected]="true" header="{{ i.education_name }}">
+              <p-accordionTab  header="{{ i.education_name }}">
                 <div class="">
                   <div class="d-flex justify-content-between">
                     <div>
@@ -205,23 +203,140 @@
                 </div>
               </p-accordionTab>
             </p-accordion>
-          </p-tabPanel>
+          </p-tabPanel> -->
           <!-- Education Update -->
           <!--2-->
           <p-tabPanel header="{{ 'Formation' | translate }}">
             <p-accordion *ngFor="let formation of condida_data?.formation">
               <p-accordionTab
-                class="accordion-tab-title"
                 [selected]="true"
+                class="accordion-tab-title"
                 header="{{
                   formation?.translations?.fr?.reconnaissance | titlecase
                 }} 
       
-      {{ formation?.translations?.fr?.intitule }}
-      {{ formation?.dateFin | date: 'MM-yyyy' }}"
+                  {{ formation?.translations?.fr?.intitule }}
+                  {{ formation?.dateFin | date: 'MM-yyyy' }}"
               >
                 <div>
-                  <div class="row align-items-center">
+                  <div
+                    class="row align-items-center"
+                    *ngIf="!formation.typeObjet"
+                  >
+                    <div class="col-md-6 text-center">
+                      <div
+                        class="d-flex align-items-center flex-row justify-content-center"
+                      >
+                        <h6 class="me-1">Du :</h6>
+                        <h6 class="me-1">
+                          {{ formation?.dateDebut | date: 'MM/yyyy' }}
+                        </h6>
+                        <h6 class="me-1">- A :</h6>
+                        <h6 class="me-1">
+                          {{ formation?.dateFin | date: 'MM/yyyy' }}
+                        </h6>
+                      </div>
+                      <div class="text-center">
+                        <div
+                          class="d-flex align-items-center justify-content-center"
+                        >
+                          <h5>
+                            {{
+                              formation?.translations?.fr?.reconnaissance
+                                | titlecase
+                            }}
+                          </h5>
+                          <span>-</span>
+                          <h5>
+                            {{
+                              formation?.translations?.fr?.typeFormation
+                                | titlecase
+                            }}
+                          </h5>
+                          <span>-</span>
+                          <h5>
+                            {{
+                              formation?.translations?.fr?.natureFormation
+                                | titlecase
+                            }}
+                          </h5>
+                        </div>
+                        <h5>
+                          {{
+                            formation?.translations?.fr?.niveauEtude | titlecase
+                          }}
+                        </h5>
+                        <h5>{{ formation?.translations?.fr?.intitule }}</h5>
+                        <h6>
+                          {{ formation?.translations?.fr?.nomEtablisement }}
+                        </h6>
+                      </div>
+                    </div>
+                    <div class="col-md-6 text-center">
+                      <h5>
+                        {{ formation?.translations?.fr?.nomEtablisement }}
+                      </h5>
+                      <h6>
+                        {{ formation?.translations?.fr?.pays }}
+                      </h6>
+                      <h6>
+                        {{ formation?.translations?.fr?.ville }}
+                      </h6>
+                      <!-- <p class="education_description">
+                        {{ formation?.translations?.fr?.description }}
+                      </p> -->
+                    </div>
+                  </div>
+
+                  <div
+                    class="row align-items-center"
+                    *ngIf="formation.typeObjet"
+                  >
+                    <div class="col-md-6 pr position-relative">
+                      <img
+                        (click)="
+                          openFullScreenFile(
+                            iframeModal,
+                            formation?.cheminAssocie,
+                            formation.typeObjet
+                          )
+                        "
+                        *ngIf="formation.typeObjet == 'image'"
+                        [lazyLoad]="formation?.cheminAssocie"
+                        [defaultImage]="'assets/images/user.png'"
+                        height="250px"
+                        class="img-fluid img-frame"
+                      />
+                      <div class="iframeContainer">
+                        <div
+                          class="absoluteDiv"
+                          (click)="
+                            openFullScreenFile(
+                              iframeModal,
+                              formation?.cheminAssocie,
+                              formation.typeObjet
+                            )
+                          "
+                        ></div>
+
+                        <iframe
+                          class="fullScreen"
+                          *ngIf="formation.typeObjet == 'pdf'"
+                          [src]="transformUrl(formation?.cheminAssocie)"
+                          frameborder="1"
+                          scrolling="auto"
+                          width="100%"
+                        ></iframe>
+                        <iframe
+                          *ngIf="formation.typeObjet == 'link'"
+                          [src]="transformUrl(formation?.cheminAssocie)"
+                          frameborder="1"
+                          scrolling="auto"
+                          height="350px"
+                          width="100%"
+                        ></iframe>
+                      </div>
+                    </div>
                     <div class="col-md-6 text-center">
                       <div
                         class="d-flex align-items-center flex-row justify-content-center"
@@ -270,20 +385,20 @@
                           {{ formation?.translations?.fr?.nomEtablisement }}
                         </h6>
                       </div>
-                    </div>
-                    <div class="col-md-6">
-                      <h5>
-                        {{ formation?.translations?.fr?.nomEtablisement }}
-                      </h5>
-                      <h6>
-                        {{ formation?.translations?.fr?.pays }}
-                      </h6>
-                      <h6>
-                        {{ formation?.translations?.fr?.ville }}
-                      </h6>
-                      <!-- <p class="education_description">
-                        {{ formation?.translations?.fr?.description }}
-                      </p> -->
+                      <div class="">
+                        <h5>
+                          {{ formation?.translations?.fr?.nomEtablisement }}
+                        </h5>
+                        <h6>
+                          {{ formation?.translations?.fr?.pays }}
+                        </h6>
+                        <h6>
+                          {{ formation?.translations?.fr?.ville }}
+                        </h6>
+                        <!-- <p class="education_description">
+                          {{ formation?.translations?.fr?.description }}
+                        </p> -->
+                      </div>
                     </div>
                   </div>
 
@@ -352,38 +467,64 @@
           </p-tabPanel>
           <!--2-->
           <p-tabPanel header="{{ 'Experience' | translate }}">
-            <p-accordion *ngFor="let i of condida_data?.info.experience">
+            <p-accordion *ngFor="let i of condida_data?.experience">
               <p-accordionTab
                 class="accordion-tab-title"
-                [selected]="true"
-                header="{{ i.experience_job_title | titlecase }} {{
-                  i.experience_start_date | date: 'MM-yyyy'
-                }} {{ i.experience_end_date | date: 'MM-yyyy' }}"
+                header="{{ i?.translations?.fr?.designation | titlecase }} {{
+                  i?.dateDebut | date: 'MM-yyyy'
+                }} {{ i?.dateFin | date: 'MM-yyyy' }}"
               >
                 <div>
                   <div class="row align-items-center">
                     <div class="col-md-6 text-center">
                       <div
-                        class="d-flex align-items-center flex-row justify-content-center"
+                        class="d-flex align-items-center flex-row flex-wrap justify-content-center"
                       >
-                        <h4 class="me-1">From :</h4>
+                        <h4 class="me-1">Du :</h4>
                         <h4 class="me-1">
-                          {{ i.experience_start_date | date: 'MM/yyyy' }}
+                          {{ i?.dateDebut | date: 'MM/yyyy' }}
                         </h4>
-                        <h4 class="me-1">- To :</h4>
+                        <h4 class="me-1">- A :</h4>
                         <h4 class="me-1">
-                          {{ i.experience_end_date | date: 'MM/yyyy' }}
+                          {{ i?.dateFin | date: 'MM/yyyy' }}
                         </h4>
                       </div>
                       <div class="text-center">
-                        <h5>{{ i.experience_job_title | titlecase }}</h5>
-                        <h6>{{ i.experience_company | titlecase }}</h6>
-                        <h6>{{ i.experience_city | titlecase }}</h6>
+                        <h5>
+                          {{ i?.translations?.fr?.designation | titlecase }}
+                        </h5>
+                        <h6>
+                          {{
+                            i?.translations?.fr?.nomOrganisation | titlecase
+                          }}-
+                          {{
+                            i?.translations?.fr?.typeOrganisation | titlecase
+                          }}
+                        </h6>
+                        <h6>
+                          {{ i?.translations?.fr?.cadreExperience | titlecase }}
+                          -
+                          {{
+                            i?.translations?.fr?.niveauExperience | titlecase
+                          }}
+                        </h6>
+
+                        <h6>
+                          {{
+                            i?.cordonneesGeo?.translations?.fr?.pays | titlecase
+                          }}
+                        </h6>
+                        <h6>
+                          {{
+                            i?.cordonneesGeo?.translations?.fr?.ville
+                              | titlecase
+                          }}
+                        </h6>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <p class="education_description">
-                        {{ i.experience_job_description }}
+                        {{ i?.translations?.fr?.description }}
                       </p>
                     </div>
                   </div>
@@ -468,10 +609,10 @@
                   </div>
 
                   <app-circular-progress
-                    [niveau]="softSkill?.qualification"
+                    [niveau]="softSkill?.niveau"
                   ></app-circular-progress>
 
-                  <!-- {{ softSkill?.label }} : {{ softSkill?.qualification }} -->
+                  <!-- {{ softSkill?.label }} : {{ softSkill?.niveau }} -->
                 </ul>
               </div>
               <div class="col-md-6">
@@ -483,7 +624,7 @@
                   class="d-flex align-items-center"
                 >
                   <div class="me-3 label-info">
-                    {{ k?.skill_name }}
+                    {{ k?.label }}
                   </div>
 
                   <app-circular-progress
@@ -501,7 +642,7 @@
                   class="d-flex align-items-center"
                 >
                   <div class="me-3 label-info">
-                    {{ k?.language_name }}
+                    {{ k?.label }}
                   </div>
 
                   <app-circular-progress
@@ -646,55 +787,55 @@
 
             <div class="row">
               <ul class="d-flexV">
-                <li *ngFor="let i of condida_data.info.contact" class="lili">
-                  <a class="AAA" href="{{ i.url }}">
+                <li *ngFor="let i of condida_data?.cordeonneeNum" class="lili">
+                  <a class="AAA" href="{{ i.valeur }}">
                     <i
-                      *ngIf="i.platfrom === 'facebook'"
+                      *ngIf="i.label === 'facebook'"
                       class="fa-brands fa-facebook"
                     ></i>
                     <i
-                      *ngIf="i.platfrom === 'github'"
+                      *ngIf="i.label === 'github'"
                       class="fa-brands fa-github"
                     ></i>
                     <i
-                      *ngIf="i.platfrom === 'gmail'"
+                      *ngIf="i.label === 'gmail'"
                       class="fa-solid fa-envelope"
                     ></i>
                     <i
-                      *ngIf="i.platfrom === 'linkedin'"
+                      *ngIf="i.label === 'linkedin'"
                       class="fa-brands fa-linkedin"
                     ></i>
                     <i
-                      *ngIf="i.platfrom === 'stack-overflow'"
+                      *ngIf="i.label === 'stack-overflow'"
                       class="fa-brands fa-stack-overflow"
                     ></i>
                     <i
-                      *ngIf="i.platfrom === 'codepen'"
+                      *ngIf="i.label === 'codepen'"
                       class="fa-brands fa-codepen"
                     ></i>
                     <i
-                      *ngIf="i.platfrom === 'instagram'"
+                      *ngIf="i.label === 'instagram'"
                       class="fa-brands fa-instagram"
                     ></i>
                     <i
-                      *ngIf="i.platfrom === 'twitter'"
+                      *ngIf="i.label === 'twitter'"
                       class="fa-brands fa-twitter"
                     ></i>
                     <i
-                      *ngIf="i.platfrom === 'gitlab'"
+                      *ngIf="i.label === 'gitlab'"
                       class="fa-brands fa-gitlab"
                     ></i>
                     <i
-                      *ngIf="i.platfrom === 'youtube'"
+                      *ngIf="i.label === 'youtube'"
                       class="fa-brands fa-youtube"
                     ></i>
                     <i
-                      *ngIf="i.platfrom === 'telegram'"
+                      *ngIf="i.label === 'telegram'"
                       class="fa-brands fa-telegram"
                     ></i>
                     <i
-                      *ngIf="i.platfrom === 'discord'"
-                      class="CLAS fa-brands fa-discord"
+                      *ngIf="i.label === 'discord'"
+                      class="fa-brands fa-discord"
                     ></i>
                   </a>
                 </li>
@@ -725,3 +866,25 @@
     </div>
   </div>
 </div>
+<ng-template #iframeModal let-modal>
+  <iframe
+    *ngIf="typeObjet == 'pdf'"
+    [src]="transformUrl(link)"
+    frameborder="1"
+    scrolling="auto"
+    class="iframe-modal"
+  ></iframe>
+  <iframe
+    *ngIf="typeObjet == 'link'"
+    [src]="transformUrl(link)"
+    frameborder="1"
+    scrolling="auto"
+    class="iframe-modal"
+  ></iframe>
+  <img
+    *ngIf="typeObjet == 'image'"
+    [lazyLoad]="link"
+    [defaultImage]="'assets/images/user.png'"
+    class="img-fluid"
+  />
+</ng-template>

@@ -39,7 +39,7 @@ body {
 
 .order {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .custom-navbar {
@@ -106,13 +106,13 @@ nav li {
   padding: 0;
 }
 
-.main-menu li:hover>a,
-nav.main-menu li.active>a,
-.dropdown-menu>li>a:hover,
-.dropdown-menu>li>a:focus,
-.dropdown-menu>.active>a,
-.dropdown-menu>.active>a:hover,
-.dropdown-menu>.active>a:focus,
+.main-menu li:hover > a,
+nav.main-menu li.active > a,
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus,
 .no-touch .dashboard-page nav.dashboard-menu ul li:hover a,
 .dashboard-page nav.dashboard-menu ul li.active a {
   color: #fff;
@@ -311,7 +311,7 @@ $gray: #666666;
     color: transparent;
   }
 
-  &:placeholder-shown~.form__label {
+  &:placeholder-shown ~ .form__label {
     font-size: 1.3rem;
     cursor: text;
     top: 20px;
@@ -328,7 +328,7 @@ $gray: #666666;
 }
 
 .form__field:focus {
-  ~.form__label {
+  ~ .form__label {
     position: absolute;
     top: 0;
     display: block;
@@ -347,7 +347,6 @@ $gray: #666666;
 
 /* reset input */
 .form__field {
-
   &:required,
   &:invalid {
     box-shadow: none;
@@ -372,8 +371,7 @@ $gray: #666666;
 .sideBarContainer {
   margin-bottom: 10px;
 }
-.address
-{
+.address {
   font-size: 25px;
   font-weight: 900;
   color: #666666;

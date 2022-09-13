@@ -16,7 +16,7 @@
   display: flex;
   padding-left: 0px;
   margin-bottom: -5px;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .criteres-offres {
@@ -194,4 +194,27 @@
 }
 .label-info {
   width: 100px;
+}
+.img-frame {
+  max-height: 350px;
+}
+.iframeContainer {
+  position: relative;
+}
+
+.absoluteDiv {
+  position: absolute;
+
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 12%;
+}
+
+.fullScreen {
+  height: 400px;
+}
+.iframe-modal {
+  height: 85vh;
+  width: 100%;
 }
