@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common'
 
 import { CondidaCRoutingModule } from './condida-c-routing.module'
 import { CListComponent } from './c-list/c-list.component'
-import { CDetailsComponent } from '../../../shared/components/c-details/c-details.component'
+import { CDetailsComponent } from '../../../shared/components/details-hreader/c-details/c-details.component'
 
 @NgModule({
   declarations: [CListComponent],

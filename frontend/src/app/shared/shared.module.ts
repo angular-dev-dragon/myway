@@ -110,7 +110,7 @@ import { DetailsHeaderComponent } from './components/details-header/details-head
 import { CardQuizComponent } from './components/card-quiz/card-quiz.component'
 
 import { CardMetiersComponent } from './components/card-metiers/card-metiers.component'
-import { CDetailsComponent } from './components/c-details/c-details.component'
+import { CDetailsComponent } from './components/details-hreader/c-details/c-details.component'
 import { FilterComponent } from './components/filter/filter.component'
 import { FilterByTextComponent } from './filter-by-text/filter-by-text.component'
 import { SortComponent } from './sort/sort.component'
